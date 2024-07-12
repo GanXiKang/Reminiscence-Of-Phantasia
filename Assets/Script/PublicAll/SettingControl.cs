@@ -100,20 +100,19 @@ public class SettingControl : MonoBehaviour
         }
     }
 
-    //Button
-    public void LabelGreen_Button()             //ÔO¶¨
+    public void LabelGreen_Button()
     {
         _page = 1;
         BGM.PlayOneShot(onClick);
         StartCoroutine(TurnPageRight());
     }
-    public void LabelBlue_Button()              //²Ù×÷
+    public void LabelBlue_Button()
     {
         _page = 2;
         BGM.PlayOneShot(onClick);
         StartCoroutine(TurnPageLeft());
     }
-    public void Close_Button()               //êPé]
+    public void Close_Button()
     {
         BGM.PlayOneShot(onClick);
         isSettingActive = !isSettingActive;
@@ -138,7 +137,6 @@ public class SettingControl : MonoBehaviour
         isFullS = isFullScreen;
     }
 
-    //·­•ø„Ó®‹
     IEnumerator TurnPageLeft()
     {
         isUIInteractable = false;
