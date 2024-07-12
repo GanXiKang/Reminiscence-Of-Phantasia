@@ -63,7 +63,7 @@ public class SettingControl : MonoBehaviour
         {
             if (settingUI[0].GetComponent<RectTransform>().localScale.x < 1)
             {
-                settingUI[0].GetComponent<RectTransform>().localScale += new Vector3(0.1f, 0.1f, 0f) * Time.deltaTime;
+                settingUI[0].GetComponent<RectTransform>().localScale += new Vector3(0.95f, 0.95f, 0f) * Time.deltaTime;
             }
         }
         else 
