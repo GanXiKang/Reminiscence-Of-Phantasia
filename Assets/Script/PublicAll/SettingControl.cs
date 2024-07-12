@@ -44,7 +44,7 @@ public class SettingControl : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F11))
+        if (Input.GetKeyDown(KeyCode.F11)) //δ�yԇ
         {
             FullScreen(!isFullS);
         }
