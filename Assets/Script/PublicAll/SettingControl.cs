@@ -6,13 +6,9 @@ using UnityEngine.UI;
 public class SettingControl : MonoBehaviour
 {
     [Header("Musia")]
-    public AudioClip onClick;
-    public AudioClip flipBook;
-    public AudioClip open;
-    public AudioClip save;
-    public AudioClip leave;
-    AudioSource BGM;
-
+    public AudioSource BGM;
+    public AudioClip onClick, flipBook, open, save, leave;
+ 
     [Header("UI")]
     public Image bookUI;
     public Slider sliderBGM;
@@ -29,8 +25,6 @@ public class SettingControl : MonoBehaviour
 
     void Start()
     {
-        BGM = GetComponent<AudioSource>();
-
         sliderBGM.value = volumeBGM;
         BGM.volume = volumeBGM;
         fullScreen.isOn = Screen.fullScreen;
