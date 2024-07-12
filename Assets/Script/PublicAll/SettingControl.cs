@@ -33,7 +33,7 @@ public class SettingControl : MonoBehaviour
 
     void Update()
     {
-        settingUI[0].SetActive(isSettingActive);
+        OpenUI();
 
         if (isCanUseSetting())
         {
@@ -55,6 +55,22 @@ public class SettingControl : MonoBehaviour
         return true;
     }
 
+    void OpenUI()
+    {
+        settingUI[0].SetActive(isSettingActive);
+
+        if (isSettingActive)
+        {
+            if (settingUI[0].GetComponent<RectTransform>().localScale.x < 1)
+            {
+                settingUI[0].GetComponent<RectTransform>().localScale += new Vector3(0.1f, 0.1f, 0f) * Time.deltaTime;
+            }
+        }
+        else 
+        {
+            settingUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.2f, 0.2f, 1f);
+        }
+    }
     void UIInteractable()
     {
         if (isUIInteractable)
