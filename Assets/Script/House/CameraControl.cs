@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform player;
+    public float defaultDistance = 5f;
+    public float minDistance = 2f;
+    public float raycastDistance = 10f;
+    public LayerMask wallLayers;
+
+    private Vector3 cameraOffset;
+
     void Start()
     {
-        
+        cameraOffset = transform.position - player.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        Vector3 desiredPosition = player.position + cameraOffset;
+
+        RaycastHit hit;
+        if (Physics.Raycast(player.position, cameraOffset.normalized, out hit, raycastDistance, wallLayers))
+        {
+            float distance = Mathf.Clamp(hit.distance, minDistance, defaultDistance);
+            desiredPosition = player.position + cameraOffset.normalized * distance;
+        }
+
+        transform.position = desiredPosition;
+        transform.LookAt(player);
     }
 }
