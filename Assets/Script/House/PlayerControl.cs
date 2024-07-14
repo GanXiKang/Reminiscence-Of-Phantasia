@@ -24,7 +24,11 @@ public class PlayerControl : MonoBehaviour
         cameraForward.y = 0;
         cameraForward.Normalize();
         Vector3 movement = cameraForward * _moveInput.z + playerCamera.transform.right * _moveInput.x;
-        cc.Move(movement * _moveSpeed * Time.deltaTime);
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(movement);
+            cc.Move(movement * _moveSpeed * Time.deltaTime);
+        }
     } 
 
     void OnMove(InputValue value)
