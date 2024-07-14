@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
         cc = GetComponent<CharacterController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         cc.Move(_moveInput * _moveSpeed * Time.fixedDeltaTime);
     }
