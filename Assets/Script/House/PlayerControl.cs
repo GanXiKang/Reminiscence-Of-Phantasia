@@ -23,14 +23,9 @@ public class PlayerControl : MonoBehaviour
         Vector3 cameraForward = playerCamera.transform.forward;
         cameraForward.y = 0;
         cameraForward.Normalize();
-        //Vector3 movement = cameraForward * _moveInput.z + Camera.main.transform.right * _moveInput.x;
-        //print(movement);
+        Vector3 movement = cameraForward * _moveInput.z + playerCamera.transform.right * _moveInput.x;
+        cc.Move(movement * _moveSpeed * Time.DeltaTime);
     } 
-
-    void FixedUpdate()
-    {
-            cc.Move(_moveInput * _moveSpeed * Time.fixedDeltaTime);
-    }
 
     void OnMove(InputValue value)
     {
