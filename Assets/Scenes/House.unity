@@ -723,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290596003}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.020819765, y: -0.00000003291077, z: 6.85343e-10, w: 0.9997833}
+  m_LocalRotation: {x: 0.020819804, y: -0.000000032897262, z: 6.8506295e-10, w: 0.9997833}
   m_LocalPosition: {x: 0, y: 3.92, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -749,7 +749,7 @@ MonoBehaviour:
   raycastDistance: 10
   wallLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
 --- !u!1 &319537580
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 392911013}
   - component: {fileID: 392911012}
   - component: {fileID: 392911011}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1347,7 +1347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531467955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000016763805, y: -0.000000046199066, z: 0.0000000019249597, w: 1}
+  m_LocalRotation: {x: 0.000000024214383, y: -0.00000004682423, z: 0.000000001951009, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1553,7 +1553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721745899}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11958547, y: -0.000000044468365, z: -0.0000000034858654, w: 0.99282396}
+  m_LocalRotation: {x: -0.11958548, y: -0.00000003829326, z: -0.0000000030018001, w: 0.99282396}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 1054245663}
   - component: {fileID: 1054245662}
   - component: {fileID: 1054245661}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2339,7 +2339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122881270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.101493, y: -0.00000003231224, z: 0.00000000466265, w: 0.9948363}
+  m_LocalRotation: {x: 0.101493, y: -0.00000003258037, z: 0.000000004701341, w: 0.9948363}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2516,7 +2516,7 @@ GameObject:
   - component: {fileID: 1187817123}
   - component: {fileID: 1187817122}
   - component: {fileID: 1187817121}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3724,7 +3724,7 @@ GameObject:
   - component: {fileID: 1938303235}
   - component: {fileID: 1938303234}
   - component: {fileID: 1938303233}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
