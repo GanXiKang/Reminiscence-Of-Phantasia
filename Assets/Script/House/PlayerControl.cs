@@ -16,15 +16,16 @@ public class PlayerControl : MonoBehaviour
         cc = GetComponent<CharacterController>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Vector3 cameraForward = Camera.main.transform.forward;
+        print(cameraForward);
         cameraForward.y = 0;
         cameraForward.Normalize();
-        Vector3 movement = cameraForward * _moveInput.y + Camera.main.transform.right * _moveInput.x;
+        Vector3 movement = cameraForward * _moveInput.z + Camera.main.transform.right * _moveInput.x;
         print(movement);
 
-        cc.Move(movement * _moveSpeed * Time.fixedDeltaTime);
+        cc.Move(movement * _moveSpeed * Time.deltaTime);
     }
 
     void OnMove(InputValue value)
