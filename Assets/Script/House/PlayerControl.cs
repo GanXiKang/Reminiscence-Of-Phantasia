@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour
 
     private Vector3 _moveInput;
 
+    public Camera playerCamera;
+
     public float _moveSpeed = 7f;
 
     void Start()
@@ -18,14 +20,14 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        Vector3 cameraForward = Camera.main.transform.forward;
+        Vector3 cameraForward = playerCamera.transform.forward;
         print(cameraForward);
         cameraForward.y = 0;
         cameraForward.Normalize();
         Vector3 movement = cameraForward * _moveInput.z + Camera.main.transform.right * _moveInput.x;
         print(movement);
 
-        cc.Move(movement * _moveSpeed * Time.deltaTime);
+        cc.Move(_moveInput * _moveSpeed * Time.deltaTime);
     }
 
     void OnMove(InputValue value)
