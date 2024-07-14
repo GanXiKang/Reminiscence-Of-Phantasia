@@ -22,8 +22,7 @@ public class PlayerControl : MonoBehaviour
     {
         Vector3 cameraForward = playerCamera.transform.forward;
         cameraForward.y = 0;
-        print(cameraForward);
-        //cameraForward.Normalize();
+        cameraForward.Normalize();
         //Vector3 movement = cameraForward * _moveInput.z + Camera.main.transform.right * _moveInput.x;
         //print(movement);
     } 
