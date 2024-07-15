@@ -23,6 +23,7 @@ public class CameraControl : MonoBehaviour
 
         RaycastHit hit;
         print(Physics.Raycast(player.position, cameraOffset.normalized, out hit, raycastDistance, wallLayers));
+        Debug.DrawRay(player.position, cameraOffset.normalized * raycastDistance, Color.red);
         if (Physics.Raycast(player.position, cameraOffset.normalized, out hit, raycastDistance, wallLayers))
         {
             print("Yes");
