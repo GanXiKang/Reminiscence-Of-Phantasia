@@ -24,6 +24,7 @@ public class CameraControl : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(player.position, cameraOffset.normalized, out hit, raycastDistance, wallLayers))
         {
+            print("Yes");
             float distance = Mathf.Clamp(hit.distance, minDistance, defaultDistance);
             desiredPosition = player.position + cameraOffset.normalized * distance;
         }
