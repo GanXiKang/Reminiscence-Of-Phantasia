@@ -22,9 +22,8 @@ public class CameraControl : MonoBehaviour
         Vector3 desiredPosition = player.position + cameraOffset;
 
         RaycastHit hit;
-        print(player.position);
-        print(cameraOffset.normalized);
-        print(wallLayers);
+        print("p" + player.position);
+        print("co" + cameraOffset.normalized);
         if (Physics.Raycast(player.position, cameraOffset.normalized, out hit, raycastDistance, wallLayers))
         {
             print("Yes");
