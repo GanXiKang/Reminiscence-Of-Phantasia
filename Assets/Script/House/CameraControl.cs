@@ -19,19 +19,31 @@ public class CameraControl : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector3 desiredPosition = player.position + cameraOffset;
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         RaycastHit hit;
-        print(Physics.Raycast(player.position, cameraOffset.normalized, out hit, raycastDistance, wallLayers));
-        Debug.DrawRay(player.position, cameraOffset.normalized * raycastDistance, Color.red);
-        if (Physics.Raycast(player.position, cameraOffset.normalized, out hit, raycastDistance, wallLayers))
+        if (Physics.Raycast(transform.position, directionToPlayer, out hit, distanceToPlayer, wallLayers))
         {
-            print("Yes");
-            float distance = Mathf.Clamp(hit.distance, minDistance, defaultDistance);
-            desiredPosition = player.position + cameraOffset.normalized * distance;
+            // 射線碰到了牆壁
+            float newDistance = hit.distance - minDistance;
+            transform.position = player.position - directionToPlayer * newDistance;
+
+            // 調試射線
+            Debug.DrawLine(transform.position, hit.point, Color.red);
+            Debug.DrawLine(hit.point, player.position, Color.yellow);
+        }
+        else
+        {
+            // 沒有碰到牆壁，保持默認位置
+            Vector3 desiredPosition = player.position - directionToPlayer * defaultDistance;
+            transform.position = desiredPosition;
+
+            // 調試射線
+            Debug.DrawLine(transform.position, player.position, Color.green);
         }
 
-        transform.position = desiredPosition;
+        // 確保相機始終看向玩家
         transform.LookAt(player);
     }
 }
