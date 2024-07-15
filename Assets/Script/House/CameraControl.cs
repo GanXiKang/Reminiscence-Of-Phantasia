@@ -28,6 +28,10 @@ public class CameraControl : MonoBehaviour
             float distance = Mathf.Clamp(hit.distance, minDistance, defaultDistance);
             desiredPosition = player.position + cameraOffset.normalized * distance;
         }
+        else
+        {
+            print("No");
+        }
 
         transform.position = desiredPosition;
         transform.LookAt(player);
