@@ -6,16 +6,23 @@ using UnityEngine.InputSystem;
 public class PlayerControl : MonoBehaviour
 {
     CharacterController cc;
+    PlayerInput playerInput;
 
-    private Vector3 _moveInput;
-
+    [Header("Camera")]
     public Camera playerCamera;
 
+    [Header("Move")]
     public float _moveSpeed = 7f;
+    public static bool isPlayerInput;
+    private Vector3 _moveInput;
+    
 
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        playerInput = GetComponent<PlayerInput>();
+
+        isPlayerInput = true;
     }
 
     void Update()
@@ -28,6 +35,15 @@ public class PlayerControl : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(movement);
             cc.Move(movement * _moveSpeed * Time.deltaTime);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            isPlayerInput = !isPlayerInput;
+            CameraControl.isFreeLook = isPlayerInput;
+
+            playerInput.enabled = isPlayerInput;
         }
     } 
 
