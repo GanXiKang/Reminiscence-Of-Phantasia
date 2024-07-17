@@ -18,6 +18,7 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         isFreeLook = false;
+        isLookWorkbench = false;
         Invoke("StartFreeLookCamera", 2f);
     }
 
