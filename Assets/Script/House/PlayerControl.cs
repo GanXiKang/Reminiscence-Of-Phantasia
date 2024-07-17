@@ -42,6 +42,7 @@ public class PlayerControl : MonoBehaviour
         {
             isPlayerInput = !isPlayerInput;
             CameraControl.isFreeLook = isPlayerInput;
+            CameraControl.isLookWorkbench = isPlayerInput;
 
             playerInput.enabled = isPlayerInput;
         }
