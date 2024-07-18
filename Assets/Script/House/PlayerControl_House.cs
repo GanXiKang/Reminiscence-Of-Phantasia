@@ -41,8 +41,8 @@ public class PlayerControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             isPlayerInput = !isPlayerInput;
-            CameraControl.isFreeLook = isPlayerInput;
-            CameraControl.isLookWorkbench = !isPlayerInput;
+            CameraControl_House.isFreeLook = isPlayerInput;
+            CameraControl_House.isLookWorkbench = !isPlayerInput;
             playerInput.enabled = isPlayerInput;
         }
     }
