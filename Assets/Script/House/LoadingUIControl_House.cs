@@ -10,7 +10,7 @@ public class LoadingUIControl_House : MonoBehaviour
     public Image a, b, c;
 
     float value = 1;
-    float speed = 0.9f;
+    float speed = 2f;
     bool isClose = false;
     bool isOpen = false;
 
