@@ -8,9 +8,8 @@ public class LoadingUIControl_House : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject UI;
     public Image a, b, c;
-
+    public float speed = 1.5f;
     float value = 1;
-    float speed = 2f;
     bool isClose = false;
     bool isOpen = false;
 
