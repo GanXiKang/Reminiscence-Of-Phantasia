@@ -21,6 +21,7 @@ public class SettingControl : MonoBehaviour
     public static bool isFullS;
     public static bool isSettingActive = false;
     public static int _page = 1;
+    public float _openSpeed = 1f;
     bool isUIInteractable;
 
     void Start()
@@ -63,7 +64,7 @@ public class SettingControl : MonoBehaviour
         {
             if (settingUI[0].GetComponent<RectTransform>().localScale.x < 1)
             {
-                settingUI[0].GetComponent<RectTransform>().localScale += new Vector3(0.95f, 0.95f, 0f) * Time.deltaTime;
+                settingUI[0].GetComponent<RectTransform>().localScale += new Vector3(_openSpeed, _openSpeed, 0f) * Time.deltaTime;
             }
         }
         else 
