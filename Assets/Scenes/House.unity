@@ -2246,7 +2246,7 @@ GameObject:
   - component: {fileID: 883905034}
   - component: {fileID: 883905032}
   - component: {fileID: 883905037}
-  - component: {fileID: 883905036}
+  - component: {fileID: 883905038}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2347,20 +2347,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883905030}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &883905036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883905030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa3ead1a52d39b42ac12018d3b047e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 290596006}
-  _moveSpeed: 7
 --- !u!114 &883905037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,6 +2377,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &883905038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883905030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a014e4093dccbee418015f8aabd5cd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 290596006}
+  _moveSpeed: 7
 --- !u!1 &1024270415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2829,7 @@ MonoBehaviour:
   a: {fileID: 789639003}
   b: {fileID: 67663293}
   c: {fileID: 1881195002}
+  speed: 1.5
 --- !u!1 &1122881270
 GameObject:
   m_ObjectHideFlags: 3
@@ -3298,6 +3299,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0c6157c30a49a1543850c4758d3bb915, type: 3}
   - {fileID: 21300000, guid: 5382caa5f09239743997aa6f3393f053, type: 3}
   - {fileID: 21300000, guid: 0745f6520680aa94faa349f1c7b19bc1, type: 3}
+  _openSpeed: 1
 --- !u!1 &1314571129
 GameObject:
   m_ObjectHideFlags: 3
