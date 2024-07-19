@@ -18,7 +18,7 @@ public class LoadingUIControl_House : MonoBehaviour
     public Image panel;
     Color currentColor;
     float _alpha = 255f;
-    public float _screenSpeed = 3f;
+    public float _screenSpeed = 50f;
     public static bool isCloseBlackScreen = false;
     public static bool isOpenBlackScreen = false;
 
@@ -47,7 +47,6 @@ public class LoadingUIControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             isCloseBlackScreen = true;
-            print("Down");
         } //•º•r¾ŽŒ‘
     }
 
@@ -86,7 +85,7 @@ public class LoadingUIControl_House : MonoBehaviour
             if (_alpha > 0)
             {
                 _alpha -= _screenSpeed * Time.deltaTime;
-                print("Yes");
+                print(_alpha);
             }
             else
             {
