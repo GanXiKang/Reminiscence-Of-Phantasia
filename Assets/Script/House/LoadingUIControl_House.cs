@@ -24,7 +24,7 @@ public class LoadingUIControl_House : MonoBehaviour
 
     void Start()
     {
-        loadingUI.SetActive(true);
+        
         isCloseLoadingUI = true;
 
         currentColor = panel.color;
@@ -32,14 +32,16 @@ public class LoadingUIControl_House : MonoBehaviour
 
     void Update()
     {
+        loadingUI.SetActive(isCloseLoadingUI || isOpenLoadingUI);
         a.fillAmount = value;
         b.fillAmount = value;
         c.fillAmount = value;
-        currentColor.a = _alpha;
-        panel.color = currentColor;
-
         CloseLoadingUI();
         OpenLoadingUI();
+
+        blackScreen.SetActive(isCloseBlackScreen || isOpenBlackScreen);
+        currentColor.a = _alpha;
+        panel.color = currentColor;
         CloseBlackScreen();
         OpenBlackScreen();
 
@@ -60,7 +62,6 @@ public class LoadingUIControl_House : MonoBehaviour
             else
             {
                 isCloseLoadingUI = false;
-                loadingUI.SetActive(false);
             }
         }
     }
@@ -89,7 +90,6 @@ public class LoadingUIControl_House : MonoBehaviour
             else
             {
                 isCloseBlackScreen = false;
-                blackScreen.SetActive(false);
             }
         }
     }
@@ -107,5 +107,4 @@ public class LoadingUIControl_House : MonoBehaviour
             }
         }
     }
-    
 }
