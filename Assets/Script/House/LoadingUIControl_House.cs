@@ -17,7 +17,7 @@ public class LoadingUIControl_House : MonoBehaviour
     public GameObject blackScreen;
     public Image panel;
     Color currentColor;
-    float _alpha = 0f;
+    float _alpha = 255f;
     public float _screenSpeed = 3f;
     public static bool isCloseBlackScreen = false;
     public static bool isOpenBlackScreen = false;
