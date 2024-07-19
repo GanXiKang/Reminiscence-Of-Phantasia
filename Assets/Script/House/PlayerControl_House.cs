@@ -13,6 +13,7 @@ public class PlayerControl_House : MonoBehaviour
 
     [Header("Move")]
     public float _moveSpeed = 7f;
+    public float _gravity = 20f;
     public static bool isPlayerInput;
     private Vector3 _moveInput;
 
@@ -27,16 +28,8 @@ public class PlayerControl_House : MonoBehaviour
 
     void Update()
     {
-        Vector3 cameraForward = playerCamera.transform.forward;
-        cameraForward.y = 0;
-        cameraForward.Normalize();
-        Vector3 movement = cameraForward * _moveInput.z + playerCamera.transform.right * _moveInput.x;
-        if (movement != Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(movement);
-            cc.Move(movement * _moveSpeed * Time.deltaTime);
-        }
-
+        PlayerMove();
+        PlayerOnTheGround();
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -51,5 +44,25 @@ public class PlayerControl_House : MonoBehaviour
     {
         Vector2 input = value.Get<Vector2>();
         _moveInput = new Vector3(input.x, 0f, input.y);
+    }
+
+    void PlayerMove()
+    {
+        Vector3 cameraForward = playerCamera.transform.forward;
+        cameraForward.y = 0;
+        cameraForward.Normalize();
+        Vector3 movement = cameraForward * _moveInput.z + playerCamera.transform.right * _moveInput.x;
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(movement);
+            cc.Move(movement * _moveSpeed * Time.deltaTime);
+        }
+    }
+    void PlayerOnTheGround()
+    {
+        if (!cc.isGrounded)
+        {
+            _moveInput.y -= _gravity * Time.fixedDeltaTime;
+        }
     }
 }
