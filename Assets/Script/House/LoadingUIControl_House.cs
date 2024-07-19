@@ -38,7 +38,6 @@ public class LoadingUIControl_House : MonoBehaviour
         CloseLoadingUI();
         OpenLoadingUI();
 
-        blackScreen.SetActive(isOpenBlackScreen);
         currentColor.a = _alpha;
         panel.color = currentColor;
         OpenBlackScreen();
@@ -46,7 +45,10 @@ public class LoadingUIControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            isOpenBlackScreen = true;
+            if (!isOpenBlackScreen)
+            {
+                isOpenBlackScreen = true;
+            }
         } //•º•r¾ŽŒ‘
     }
 
@@ -89,6 +91,7 @@ public class LoadingUIControl_House : MonoBehaviour
             else
             {
                 isCloseBlackScreen = false;
+                blackScreen.SetActive(false);
             }
         }
     }
@@ -96,6 +99,7 @@ public class LoadingUIControl_House : MonoBehaviour
     {
         if (isOpenBlackScreen)
         {
+            blackScreen.SetActive(true);
             if (_alpha < 1)
             {
                 _alpha += _screenSpeed * Time.deltaTime;
@@ -103,12 +107,7 @@ public class LoadingUIControl_House : MonoBehaviour
             else
             {
                 isOpenBlackScreen = false;
-                Invoke("WaitCloseBlackScreen", 1f);
             }
         }
-    }
-    void WaitCloseBlackScreen()
-    {
-        isCloseBlackScreen = true;
     }
 }
