@@ -1690,7 +1690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &574399487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2862,12 +2862,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15388fa29c187dc4c93a667e66a632ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 812698997}
+  loadingUI: {fileID: 0}
   a: {fileID: 789639003}
   b: {fileID: 67663293}
   c: {fileID: 1881195002}
-  speed: 1.5
-  panel: {fileID: 0}
+  _loadingSpeed: 1.5
+  blackScreen: {fileID: 574399486}
+  panel: {fileID: 1305425837}
+  _screenSpeed: 3
 --- !u!1 &1122881270
 GameObject:
   m_ObjectHideFlags: 3
