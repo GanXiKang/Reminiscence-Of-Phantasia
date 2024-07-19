@@ -6,20 +6,25 @@ using UnityEngine.UI;
 public class LoadingUIControl_House : MonoBehaviour
 {
     [Header("LoadingUI")]
-    public GameObject UI;
+    public GameObject loadingUI;
     public Image a, b, c;
-    public float speed = 1.5f;
     float value = 1;
-    bool isClose = false;
-    bool isOpen = false;
+    public float _loadingSpeed = 1.5f;
+    public static bool isCloseLoadingUI = false;
+    public static bool isOpenLoadingUI = false;
 
     [Header("BlackScreen")]
-    public Image panel;
+    public GameObject blackScreen;
+    public Color panel;
     float _alpha = 0f;
+    public float _screenSpeed = 10f;
+    public static bool isCloseBlackScreen = false;
+    public static bool isOpenBlackScreen = false;
 
     void Start()
     {
-        Close();
+        loadingUI.SetActive(true);
+        isCloseLoadingUI = true;
     }
 
     void Update()
@@ -27,40 +32,71 @@ public class LoadingUIControl_House : MonoBehaviour
         a.fillAmount = value;
         b.fillAmount = value;
         c.fillAmount = value;
+        panel.a = _alpha;
 
-        if (isClose)
+        CloseLoadingUI();
+        OpenLoadingUI();
+        CloseBlackScreen();
+        OpenBlackScreen();
+    }
+
+    void CloseLoadingUI()
+    {
+        if (isCloseLoadingUI)
         {
             if (value > 0)
             {
-                value -= speed * Time.deltaTime;
+                value -= _loadingSpeed * Time.deltaTime;
             }
             else
             {
-                isClose = false;
-                UI.SetActive(false);
+                isCloseLoadingUI = false;
+                loadingUI.SetActive(false);
             }
         }
-        if (isOpen)
+    }
+    void OpenLoadingUI()
+    {
+        if (isOpenLoadingUI)
         {
             if (value < 1)
             {
-                value += speed * Time.deltaTime;
+                value += _loadingSpeed * Time.deltaTime;
             }
             else
             {
-                isOpen = false;
+                isOpenLoadingUI = false;
             }
         }
     }
-
-    void Close()
+    void CloseBlackScreen()
     {
-        UI.SetActive(true);
-        isClose = true;
+        if (isCloseBlackScreen)
+        {
+            if (value > 0)
+            {
+                value -= _screenSpeed * Time.deltaTime;
+            }
+            else
+            {
+                isCloseBlackScreen = false;
+                blackScreen.SetActive(false);
+            }
+        }
     }
-    void Open()
+    void OpenBlackScreen()
     {
-        UI.SetActive(true);
-        isOpen = true;
+        if (isOpenBlackScreen)
+        {
+            if (value < 255)
+            {
+                value += _screenSpeed * Time.deltaTime;
+            }
+            else
+            {
+                isOpenBlackScreen = false;
+            }
+        }
     }
+    
 }
