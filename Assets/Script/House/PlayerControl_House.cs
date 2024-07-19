@@ -29,7 +29,7 @@ public class PlayerControl_House : MonoBehaviour
     void Update()
     {
         PlayerMove();
-        //PlayerOnTheGround();
+        PlayerOnTheGround();
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -52,6 +52,7 @@ public class PlayerControl_House : MonoBehaviour
         cameraForward.y = 0;
         cameraForward.Normalize();
         Vector3 movement = cameraForward * _moveInput.z + playerCamera.transform.right * _moveInput.x;
+        movement.y = _moveInput.y;
         if (movement != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(movement);
@@ -60,9 +61,14 @@ public class PlayerControl_House : MonoBehaviour
     }
     void PlayerOnTheGround()
     {
-        if (!cc.isGrounded)
+        if (cc.isGrounded)
+        { 
+            _moveInput.y = 0f;
+        }
+        else
         {
-            _moveInput.y -= _gravity * Time.fixedDeltaTime;
+            print("Yes");
+            _moveInput.y -= _gravity * Time.deltaTime;
         }
     }
 }
