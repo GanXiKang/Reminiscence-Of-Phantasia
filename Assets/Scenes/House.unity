@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 468588432}
   - component: {fileID: 468588431}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Stair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3210,7 +3210,7 @@ GameObject:
   - component: {fileID: 1161055628}
   - component: {fileID: 1161055627}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: FloorB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3841,7 +3841,7 @@ GameObject:
   - component: {fileID: 1399846425}
   - component: {fileID: 1399846424}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: FloorA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4431,12 +4431,12 @@ Transform:
   m_Children:
   - {fileID: 1399846423}
   - {fileID: 1161055626}
+  - {fileID: 468588430}
   - {fileID: 1938303232}
   - {fileID: 1187817120}
   - {fileID: 392911010}
   - {fileID: 1054245660}
   - {fileID: 1052442712}
-  - {fileID: 468588430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1873582915
