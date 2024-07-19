@@ -17,7 +17,7 @@ public class LoadingUIControl_House : MonoBehaviour
     public GameObject blackScreen;
     public Image panel;
     Color currentColor;
-    float _alpha = 255f;
+    float _alpha = 0f;
     public float _screenSpeed = 50f;
     public static bool isCloseBlackScreen = false;
     public static bool isOpenBlackScreen = false;
@@ -38,7 +38,6 @@ public class LoadingUIControl_House : MonoBehaviour
         CloseLoadingUI();
         OpenLoadingUI();
 
-        //blackScreen.SetActive(isCloseBlackScreen || isOpenBlackScreen);
         currentColor.a = _alpha;
         panel.color = currentColor;
         CloseBlackScreen();
@@ -99,7 +98,7 @@ public class LoadingUIControl_House : MonoBehaviour
         {
             if (_alpha < 255)
             {
-                _alpha += _screenSpeed * Time.deltaTime;
+                _alpha += Mathf.PingPong(Time.time, 1f);
                 print(_alpha);
             }
             else
