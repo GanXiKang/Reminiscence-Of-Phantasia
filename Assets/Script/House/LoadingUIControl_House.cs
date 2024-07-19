@@ -82,7 +82,7 @@ public class LoadingUIControl_House : MonoBehaviour
     {
         if (isCloseBlackScreen)
         {
-            if (value > 0)
+            if (_alpha > 0)
             {
                 _alpha -= _screenSpeed * Time.deltaTime;
             }
@@ -96,7 +96,7 @@ public class LoadingUIControl_House : MonoBehaviour
     {
         if (isOpenBlackScreen)
         {
-            if (value < 255)
+            if (_alpha < 255)
             {
                 _alpha += _screenSpeed * Time.deltaTime;
             }
