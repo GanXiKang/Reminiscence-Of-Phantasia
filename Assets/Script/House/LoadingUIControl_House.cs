@@ -15,7 +15,8 @@ public class LoadingUIControl_House : MonoBehaviour
 
     [Header("BlackScreen")]
     public GameObject blackScreen;
-    public Color panel;
+    public Image panel;
+    Color currentColor;
     float _alpha = 0f;
     public float _screenSpeed = 10f;
     public static bool isCloseBlackScreen = false;
@@ -25,6 +26,8 @@ public class LoadingUIControl_House : MonoBehaviour
     {
         loadingUI.SetActive(true);
         isCloseLoadingUI = true;
+
+        currentColor = panel.color;
     }
 
     void Update()
@@ -32,12 +35,18 @@ public class LoadingUIControl_House : MonoBehaviour
         a.fillAmount = value;
         b.fillAmount = value;
         c.fillAmount = value;
-        panel.a = _alpha;
+        currentColor.a = _alpha;
+        panel.color = currentColor;
 
         CloseLoadingUI();
         OpenLoadingUI();
         CloseBlackScreen();
         OpenBlackScreen();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            isOpenBlackScreen = true;
+        }
     }
 
     void CloseLoadingUI()
