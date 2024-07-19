@@ -98,7 +98,7 @@ public class LoadingUIControl_House : MonoBehaviour
         {
             if (_alpha < 255)
             {
-                _alpha += Mathf.PingPong(Time.time, 1f);
+                _alpha += _screenSpeed * Time.deltaTime;
                 print(_alpha);
             }
             else
