@@ -13,7 +13,7 @@ public class PlayerControl_House : MonoBehaviour
 
     [Header("Move")]
     public float _moveSpeed = 7f;
-    public float _gravity = 9f;
+    public float _gravity = 20f;
     public static bool isPlayerInput;
     private Vector3 _moveInput;
     private Vector3 _velocity;
@@ -56,9 +56,7 @@ public class PlayerControl_House : MonoBehaviour
         if (movement != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(movement);
-            //cc.Move(movement * _moveSpeed * Time.deltaTime);
         }
-
         cc.Move((_velocity + movement * _moveSpeed) * Time.deltaTime);
     }
     void PlayerOnTheGround()
