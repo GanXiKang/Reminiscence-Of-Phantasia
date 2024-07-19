@@ -19,7 +19,7 @@ public class CameraControl_House : MonoBehaviour
     {
         isFreeLook = false;
         isLookWorkbench = false;
-        Invoke("StartFreeLookCamera", 2f);
+        Invoke("StartFreeLookCamera", 1.5f);
     }
 
     void Update()
