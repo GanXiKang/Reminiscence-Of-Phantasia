@@ -59,19 +59,17 @@ public class PlayerControl_House : MonoBehaviour
             //cc.Move(movement * _moveSpeed * Time.deltaTime);
         }
 
-        _velocity.y += -_gravity * Time.deltaTime;
         cc.Move((_velocity + movement * _moveSpeed) * Time.deltaTime);
-
-        if (cc.isGrounded)
-        {
-            _velocity.y = 0;
-        }
     }
     void PlayerOnTheGround()
     {
         if (!cc.isGrounded)
         {
             _velocity.y -= _gravity * Time.deltaTime;
+        }
+        else
+        {
+            _velocity.y = 0;
         }
     }
 }
