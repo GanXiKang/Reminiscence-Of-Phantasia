@@ -24,7 +24,6 @@ public class LoadingUIControl_House : MonoBehaviour
 
     void Start()
     {
-        
         isCloseLoadingUI = true;
 
         currentColor = panel.color;
@@ -85,7 +84,7 @@ public class LoadingUIControl_House : MonoBehaviour
         {
             if (value > 0)
             {
-                value -= _screenSpeed * Time.deltaTime;
+                _alpha -= _screenSpeed * Time.deltaTime;
             }
             else
             {
@@ -99,7 +98,7 @@ public class LoadingUIControl_House : MonoBehaviour
         {
             if (value < 255)
             {
-                value += _screenSpeed * Time.deltaTime;
+                _alpha += _screenSpeed * Time.deltaTime;
             }
             else
             {
