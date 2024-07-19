@@ -13,6 +13,10 @@ public class LoadingUIControl_House : MonoBehaviour
     bool isClose = false;
     bool isOpen = false;
 
+    [Header("BlackScreen")]
+    public Image panel;
+    float _alpha = 0f;
+
     void Start()
     {
         Close();
