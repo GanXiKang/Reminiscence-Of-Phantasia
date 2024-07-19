@@ -1690,7 +1690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &574399487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2841,8 +2841,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 367068358}
-  - {fileID: 812698998}
   - {fileID: 574399487}
+  - {fileID: 812698998}
   m_Father: {fileID: 319537584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2869,7 +2869,7 @@ MonoBehaviour:
   _loadingSpeed: 1.5
   blackScreen: {fileID: 574399486}
   panel: {fileID: 1305425837}
-  _screenSpeed: 3
+  _screenSpeed: 50
 --- !u!1 &1122881270
 GameObject:
   m_ObjectHideFlags: 3
@@ -3390,7 +3390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.17735851, g: 0.17735851, b: 0.17735851, a: 0}
+  m_Color: {r: 0.17735851, g: 0.17735851, b: 0.17735851, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
