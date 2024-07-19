@@ -38,7 +38,7 @@ public class LoadingUIControl_House : MonoBehaviour
         CloseLoadingUI();
         OpenLoadingUI();
 
-        blackScreen.SetActive(isCloseBlackScreen || isOpenBlackScreen);
+        //blackScreen.SetActive(isCloseBlackScreen || isOpenBlackScreen);
         currentColor.a = _alpha;
         panel.color = currentColor;
         CloseBlackScreen();
