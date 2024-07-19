@@ -29,7 +29,7 @@ public class PlayerControl_House : MonoBehaviour
     void Update()
     {
         PlayerMove();
-        PlayerOnTheGround();
+        //PlayerOnTheGround();
 
         if (Input.GetKeyDown(KeyCode.P))
         {
