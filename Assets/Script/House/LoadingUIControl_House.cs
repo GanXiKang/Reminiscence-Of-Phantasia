@@ -51,11 +51,12 @@ public class LoadingUIControl_House : MonoBehaviour
 
     void Close()
     {
+        UI.SetActive(true);
         isClose = true;
     }
     void Open()
     {
-        isOpen = true;
         UI.SetActive(true);
+        isOpen = true;
     }
 }
