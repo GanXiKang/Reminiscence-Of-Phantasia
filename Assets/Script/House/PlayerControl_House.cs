@@ -13,7 +13,6 @@ public class PlayerControl_House : MonoBehaviour
 
     [Header("Move")]
     public float _moveSpeed = 7f;
-    public float _gravity = 20f;
     public static bool isPlayerInput;
     private Vector3 _moveInput;
 
@@ -29,7 +28,6 @@ public class PlayerControl_House : MonoBehaviour
     void Update()
     {
         PlayerMove();
-        PlayerOnTheGround();
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -52,23 +50,10 @@ public class PlayerControl_House : MonoBehaviour
         cameraForward.y = 0;
         cameraForward.Normalize();
         Vector3 movement = cameraForward * _moveInput.z + playerCamera.transform.right * _moveInput.x;
-        movement.y = _moveInput.y;
         if (movement != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(movement);
             cc.Move(movement * _moveSpeed * Time.deltaTime);
-        }
-    }
-    void PlayerOnTheGround()
-    {
-        if (cc.isGrounded)
-        { 
-            _moveInput.y = 0f;
-        }
-        else
-        {
-            print("Yes");
-            _moveInput.y -= _gravity * Time.deltaTime;
         }
     }
 }
