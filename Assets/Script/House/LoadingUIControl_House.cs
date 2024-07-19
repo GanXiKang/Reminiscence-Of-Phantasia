@@ -46,7 +46,8 @@ public class LoadingUIControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            isCloseBlackScreen = true;
+            isOpenBlackScreen = true;
+            blackScreen.SetActive(true);
         } //•º•r¾ŽŒ‘
     }
 
@@ -85,7 +86,6 @@ public class LoadingUIControl_House : MonoBehaviour
             if (_alpha > 0)
             {
                 _alpha -= _screenSpeed * Time.deltaTime;
-                print(_alpha);
             }
             else
             {
@@ -100,6 +100,7 @@ public class LoadingUIControl_House : MonoBehaviour
             if (_alpha < 255)
             {
                 _alpha += _screenSpeed * Time.deltaTime;
+                print(_alpha);
             }
             else
             {
