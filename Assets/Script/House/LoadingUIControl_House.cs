@@ -38,7 +38,7 @@ public class LoadingUIControl_House : MonoBehaviour
         CloseLoadingUI();
         OpenLoadingUI();
 
-        blackScreen.SetActive(isOpenLoadingUI);
+        blackScreen.SetActive(isOpenBlackScreen);
         currentColor.a = _alpha;
         panel.color = currentColor;
         OpenBlackScreen();
@@ -46,7 +46,6 @@ public class LoadingUIControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             isOpenBlackScreen = true;
-            blackScreen.SetActive(true);
         } //•º•r¾ŽŒ‘
     }
 
