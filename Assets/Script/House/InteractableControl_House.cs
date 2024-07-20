@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class InteractableControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("InteractableUI")]
+    public GameObject interactableUI;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
