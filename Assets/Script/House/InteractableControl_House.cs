@@ -28,7 +28,7 @@ public class InteractableControl_House : MonoBehaviour
             switch (ColliderControl_House._nowNumber)
             {
                 case 1:
-                    print("ok");
+                   
                     break;
             }
         }
