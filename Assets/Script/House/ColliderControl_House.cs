@@ -24,7 +24,6 @@ public class ColliderControl_House : MonoBehaviour
         if (other.tag == "Player")
         {
             _nowNumber = _serialNumber;
-            print(_nowNumber);
         }
     }
 
