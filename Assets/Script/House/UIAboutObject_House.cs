@@ -12,7 +12,7 @@ public class UIAboutObject_House : MonoBehaviour
 
     void Update()
     {
-        Vector3 screenPos = cam.WorldToScreenPoint(workbench.position + offset);
-        hint.position = screenPos;
+        Vector3 Pos = workbench.position + offset;
+        hint.position = Pos;
     }
 }
