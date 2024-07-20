@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIAboveObject_House : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Workbench")]
+    public Transform workbench;
+    public RectTransform workbenchHint;
+    public Vector3 workbenchOffset;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Vector3 Pos = workbench.position + workbenchOffset;
+        workbenchHint.position = Pos;
     }
 }
