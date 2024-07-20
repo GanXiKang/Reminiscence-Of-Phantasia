@@ -13,7 +13,7 @@ public class InteractableControl_House : MonoBehaviour
 
     void Start()
     {
-        targetPos = Vector3.zero;
+        targetPos = interactableUI.transform.position + new Vector3(0f, 15f, 0f);
         startPos = interactableUI.transform.position;
     }
 
