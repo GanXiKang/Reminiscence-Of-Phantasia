@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        
+        if (CameraControl_House.isLookWorkbench)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                StartCoroutine(LeaveWorkbench());
+            }
+        }
+    }
+
+    IEnumerator LeaveWorkbench()
+    {
+        LoadingUIControl_House.isOpenBlackScreen = true;
+        yield return new WaitForSeconds(1.5f);
+        PlayerControl_House.isPlayerInput = true;
+        CameraControl_House.isFreeLook = true;
+        CameraControl_House.isLookWorkbench = false;
     }
 }
