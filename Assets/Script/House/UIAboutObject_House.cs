@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIAboutObject_House : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Camera cam;
+    public Transform workbench;
+    public RectTransform hint;
+    public Vector3 offset;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Vector3 screenPos = cam.WorldToScreenPoint(workbench.position + offset);
+        hint.position = screenPos;
     }
 }
