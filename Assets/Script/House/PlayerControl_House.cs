@@ -22,8 +22,6 @@ public class PlayerControl_House : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
-
-        isPlayerInput = true;
     }
 
     void Update()
