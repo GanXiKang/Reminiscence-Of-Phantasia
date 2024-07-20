@@ -11,7 +11,6 @@ public class ColliderControl_House : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            print(_nowNumber);
             //if (!GameControl_House.isNextPlace)
             //{
             //    UIControl_House.isInteractionButtonActive = true;
@@ -25,6 +24,7 @@ public class ColliderControl_House : MonoBehaviour
         if (other.tag == "Player")
         {
             _nowNumber = _serialNumber;
+            print(_nowNumber);
         }
     }
 
