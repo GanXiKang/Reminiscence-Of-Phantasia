@@ -12,7 +12,7 @@ public class CameraControl_House : MonoBehaviour
     public Transform startPos;
     public Transform workbenchPos;
     public static bool isLookWorkbench;
-    float _moveTime = 1f;
+    float _moveTime = 5f;
 
     void Start()
     {
