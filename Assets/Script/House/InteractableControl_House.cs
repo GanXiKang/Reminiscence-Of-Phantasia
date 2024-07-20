@@ -16,5 +16,21 @@ public class InteractableControl_House : MonoBehaviour
     void Update()
     {
         interactableUI.SetActive(isInteractable);
+
+        Interactable();
+    }
+
+    void Interactable()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isInteractable = false;
+            switch (ColliderControl_House._nowNumber)
+            {
+                case 1:
+                    print("ok");
+                    break;
+            }
+        }
     }
 }
