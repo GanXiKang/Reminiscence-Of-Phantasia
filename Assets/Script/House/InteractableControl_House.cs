@@ -28,7 +28,6 @@ public class InteractableControl_House : MonoBehaviour
             switch (ColliderControl_House._nowNumber)
             {
                 case 1:
-                    PlayerControl_House.isPlayerInput = false;
                     CameraControl_House.isFreeLook = false;
                     CameraControl_House.isLookWorkbench = true;
                     break;

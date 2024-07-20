@@ -19,7 +19,6 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         LoadingUIControl_House.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
-        PlayerControl_House.isPlayerInput = true;
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookWorkbench = false;
     }
