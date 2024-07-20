@@ -6,11 +6,16 @@ public class InteractableControl_House : MonoBehaviour
 {
     [Header("InteractableUI")]
     public GameObject interactableUI;
+    public GameObject interactableHint;
     public static bool isInteractable = false;
+    Vector3 targetPos;
+    Vector3 startPos;
+    float _speed = 2f;
 
     void Start()
     {
-        
+        targetPos = Vector3.zero;
+        startPos = interactableHint.transform.position;
     }
 
     void Update()
@@ -22,16 +27,29 @@ public class InteractableControl_House : MonoBehaviour
 
     void Interactable()
     {
-        if (isInteractable && Input.GetKeyDown(KeyCode.F))
+        if (isInteractable)
         {
-            isInteractable = false;
-            switch (ColliderControl_House._nowNumber)
+            AppearInteractableHint();
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                case 1:
-                    CameraControl_House.isFreeLook = false;
-                    CameraControl_House.isLookWorkbench = true;
-                    break;
+                isInteractable = false;
+                DisappearInteractableHint();
+                switch (ColliderControl_House._nowNumber)
+                {
+                    case 1:
+                        CameraControl_House.isFreeLook = false;
+                        CameraControl_House.isLookWorkbench = true;
+                        break;
+                }
             }
         }
+    }
+    void AppearInteractableHint()
+    {
+        interactableHint.transform.position = Vector3.MoveTowards(startPos, targetPos, _speed * Time.deltaTime);
+    }
+    void DisappearInteractableHint()
+    {
+        interactableHint.transform.position = Vector3.MoveTowards(targetPos, startPos, _speed * Time.deltaTime);
     }
 }
