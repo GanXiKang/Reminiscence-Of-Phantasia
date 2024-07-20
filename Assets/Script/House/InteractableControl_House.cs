@@ -6,7 +6,6 @@ public class InteractableControl_House : MonoBehaviour
 {
     [Header("InteractableUI")]
     public GameObject interactableUI;
-    public GameObject interactableHint;
     public static bool isInteractable = false;
     Vector3 targetPos;
     Vector3 startPos;
@@ -15,7 +14,7 @@ public class InteractableControl_House : MonoBehaviour
     void Start()
     {
         targetPos = Vector3.zero;
-        startPos = interactableHint.transform.position;
+        startPos = interactableUI.transform.position;
     }
 
     void Update()
@@ -46,10 +45,10 @@ public class InteractableControl_House : MonoBehaviour
     }
     void AppearInteractableHint()
     {
-        interactableHint.transform.position = Vector3.MoveTowards(startPos, targetPos, _speed * Time.deltaTime);
+        interactableUI.transform.position = Vector3.MoveTowards(startPos, targetPos, _speed * Time.deltaTime);
     }
     void DisappearInteractableHint()
     {
-        interactableHint.transform.position = Vector3.MoveTowards(targetPos, startPos, _speed * Time.deltaTime);
+        interactableUI.transform.position = Vector3.MoveTowards(targetPos, startPos, _speed * Time.deltaTime);
     }
 }
