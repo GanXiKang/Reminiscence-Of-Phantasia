@@ -43,13 +43,6 @@ public class LoadingUIControl_House : MonoBehaviour
         OpenBlackScreen();
         CloseBlackScreen();
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (!isOpenBlackScreen)
-            {
-                isOpenBlackScreen = true;
-            }
-        } //•º•r¾ŽŒ‘
     }
 
     void CloseLoadingUI()
