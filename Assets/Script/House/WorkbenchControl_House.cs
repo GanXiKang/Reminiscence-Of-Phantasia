@@ -18,7 +18,7 @@ public class WorkbenchControl_House : MonoBehaviour
     IEnumerator LeaveWorkbench()
     {
         LoadingUIControl_House.isOpenBlackScreen = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         PlayerControl_House.isPlayerInput = true;
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookWorkbench = false;

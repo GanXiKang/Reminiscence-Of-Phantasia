@@ -100,7 +100,7 @@ public class LoadingUIControl_House : MonoBehaviour
             else
             {
                 isOpenBlackScreen = false;
-                Invoke("WaitCloseBlackSreen", 2f);
+                Invoke("WaitCloseBlackSreen", 1f);
             }
         }
     }
