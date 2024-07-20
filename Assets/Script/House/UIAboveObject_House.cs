@@ -8,7 +8,7 @@ public class UIAboveObject_House : MonoBehaviour
     [Header("Workbench")]
     public Transform workbench;
     public RectTransform workbenchHint;
-    public Vector3 workbenchOffset;
+    public Vector3 aboveWorkbench;
 
     void Update()
     {
