@@ -8,12 +8,11 @@ public class CameraControl_House : MonoBehaviour
     public GameObject freeLookCamera;
     public static bool isFreeLook;
 
-    [Header("CameraPosition")]
+    [Header("CameraWorkbenchPosition")]
     public Transform startPos;
     public Transform workbenchPos;
     public static bool isLookWorkbench;
     float _moveTime = 1f;
-    bool once = false;
 
     void Start()
     {
@@ -26,24 +25,19 @@ public class CameraControl_House : MonoBehaviour
     {
         freeLookCamera.SetActive(isFreeLook);
 
-        if (isLookWorkbench)
-        {
-            once = true;
-            transform.position = Vector3.Lerp(transform.position, workbenchPos.position, _moveTime * Time.deltaTime); ;
-            transform.rotation = Quaternion.Lerp(transform.rotation, workbenchPos.rotation, _moveTime * Time.deltaTime);
-        }
-        else
-        {
-            if (once)
-            {
-                transform.position = startPos.position;
-                transform.rotation = startPos.rotation;
-            }
-        }
+        LookWorkbench();
     }
 
     void StartFreeLookCamera()
     {
         isFreeLook = true;
+    }
+    void LookWorkbench()
+    {
+        if (isLookWorkbench)
+        {
+            transform.position = Vector3.Lerp(transform.position, workbenchPos.position, _moveTime * Time.deltaTime); ;
+            transform.rotation = Quaternion.Lerp(transform.rotation, workbenchPos.rotation, _moveTime * Time.deltaTime);
+        }
     }
 }
