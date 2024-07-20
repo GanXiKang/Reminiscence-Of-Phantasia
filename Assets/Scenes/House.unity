@@ -1828,7 +1828,7 @@ GameObject:
   - component: {fileID: 645830665}
   - component: {fileID: 645830664}
   m_Layer: 5
-  m_Name: Hint
+  m_Name: WorkBenchHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1841,13 +1841,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645830662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1278695958}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2459,13 +2459,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 856620823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d929ad9d079c6e419f0d5897d0ace46, type: 3}
+  m_Script: {fileID: 11500000, guid: 5368071d81a57fa4c896b5b2f3d77082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 290596006}
   workbench: {fileID: 1052442712}
-  hint: {fileID: 645830663}
-  offset: {x: 0, y: 1, z: 0}
+  workbenchHint: {fileID: 645830663}
+  workbenchOffset: {x: 0, y: 6, z: 0}
 --- !u!1 &862492947
 GameObject:
   m_ObjectHideFlags: 0
