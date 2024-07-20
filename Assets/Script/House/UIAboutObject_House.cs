@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class UIAboutObject_House : MonoBehaviour
 {
-    public Camera cam;
+    [Header("Workbench")]
     public Transform workbench;
-    public RectTransform hint;
-    public Vector3 offset;
+    public RectTransform workbenchHint;
+    public Vector3 workbenchOffset;
 
     void Update()
     {
-        Vector3 Pos = workbench.position + offset;
-        hint.position = Pos;
+        Vector3 Pos = workbench.position + workbenchOffset;
+        workbenchHint.position = Pos;
     }
 }
