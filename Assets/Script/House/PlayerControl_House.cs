@@ -29,16 +29,18 @@ public class PlayerControl_House : MonoBehaviour
 
     void Update()
     {
+        playerInput.enabled = isPlayerInput;
+
         PlayerMove();
         PlayerOnTheGround();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            isPlayerInput = !isPlayerInput;
-            CameraControl_House.isFreeLook = isPlayerInput;
-            CameraControl_House.isLookWorkbench = !isPlayerInput;
-            playerInput.enabled = isPlayerInput;
-        }
+        
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    isPlayerInput = !isPlayerInput;
+        //    CameraControl_House.isFreeLook = isPlayerInput;
+        //    CameraControl_House.isLookWorkbench = !isPlayerInput;
+            
+        //}
     }
 
     void OnMove(InputValue value)
