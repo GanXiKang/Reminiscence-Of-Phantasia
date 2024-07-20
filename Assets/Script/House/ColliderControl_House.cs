@@ -11,11 +11,12 @@ public class ColliderControl_House : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (//!GameControl_House.isNextPlace)
-            {
-                //UIControl_House.isInteractionButtonActive = true;
-                //UIControl_House._conveyColliderNumber = _serialNumber;
-            }
+            print(_nowNumber);
+            //if (!GameControl_House.isNextPlace)
+            //{
+            //    UIControl_House.isInteractionButtonActive = true;
+            //    UIControl_House._conveyColliderNumber = _serialNumber;
+            //}
         }
     }
 
