@@ -10,7 +10,7 @@ public class InteractableControl_House : MonoBehaviour
     public Image hintF;
     Color currentColor;
     float _alpha = 0f;
-    public float _screenSpeed = 10f;
+    public float _screenSpeed = 3f;
     public static bool isInteractable = false;
 
     void Start()
