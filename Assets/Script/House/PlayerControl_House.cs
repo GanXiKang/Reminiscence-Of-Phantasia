@@ -14,7 +14,6 @@ public class PlayerControl_House : MonoBehaviour
     [Header("Move")]
     public float _moveSpeed = 7f;
     public float _gravity = 20f;
-    public static bool isPlayerInput;
     private Vector3 _moveInput;
     private Vector3 _velocity;
 
@@ -29,18 +28,10 @@ public class PlayerControl_House : MonoBehaviour
 
     void Update()
     {
-        playerInput.enabled = isPlayerInput;
+        playerInput.enabled = CameraControl_House.isFreeLook;
 
         PlayerMove();
         PlayerOnTheGround();
-        
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    isPlayerInput = !isPlayerInput;
-        //    CameraControl_House.isFreeLook = isPlayerInput;
-        //    CameraControl_House.isLookWorkbench = !isPlayerInput;
-            
-        //}
     }
 
     void OnMove(InputValue value)
