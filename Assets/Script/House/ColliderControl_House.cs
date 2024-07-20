@@ -11,11 +11,7 @@ public class ColliderControl_House : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //if (!GameControl_House.isNextPlace)
-            //{
-            //    UIControl_House.isInteractionButtonActive = true;
-            //    UIControl_House._conveyColliderNumber = _serialNumber;
-            //}
+            InteractableControl_House.isInteractable = true;
         }
     }
 
@@ -31,7 +27,7 @@ public class ColliderControl_House : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //UIControl_House.isInteractionButtonActive = false;
+            InteractableControl_House.isInteractable = false;
         }
     }
 }
