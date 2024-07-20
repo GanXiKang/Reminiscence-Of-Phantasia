@@ -22,7 +22,7 @@ public class InteractableControl_House : MonoBehaviour
 
     void Interactable()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (isInteractable && Input.GetKeyDown(KeyCode.F))
         {
             isInteractable = false;
             switch (ColliderControl_House._nowNumber)
