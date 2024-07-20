@@ -10,7 +10,7 @@ public class InteractableControl_House : MonoBehaviour
     public Image hintF;
     Color currentColor;
     float _alpha = 0f;
-    public float _screenSpeed = 50f;
+    public float _screenSpeed = 10f;
     public static bool isInteractable = false;
 
     void Start()
@@ -35,7 +35,6 @@ public class InteractableControl_House : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 isInteractable = false;
-                _alpha = 0;
                 switch (ColliderControl_House._nowNumber)
                 {
                     case 1:
@@ -44,6 +43,10 @@ public class InteractableControl_House : MonoBehaviour
                         break;
                 }
             }
+        }
+        else 
+        {
+            _alpha = 0;
         }
     }
     void AppearInteractableHint()
