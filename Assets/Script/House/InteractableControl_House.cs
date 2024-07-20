@@ -9,7 +9,7 @@ public class InteractableControl_House : MonoBehaviour
     public static bool isInteractable = false;
     Vector3 targetPos;
     Vector3 startPos;
-    float _speed = 2f;
+    float _speed = 20f;
 
     void Start()
     {
