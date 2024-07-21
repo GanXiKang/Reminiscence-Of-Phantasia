@@ -13,7 +13,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject paper;
     public Sprite[] pattern;
     public Transform endPos;
-    float _speed = 5f;
+    float _speed = 12f;
     bool isAppaerPaper = false;
     int clickButtonNumber;
 
@@ -54,7 +54,6 @@ public class WorkbenchControl_House : MonoBehaviour
         if (isAppaerPaper) 
         {
             paper.transform.position = Vector3.MoveTowards(paper.transform.position, endPos.position, _speed * Time.deltaTime);
-
             if (paper.transform.position == endPos.position)
             {
                 isAppaerPaper = false;
