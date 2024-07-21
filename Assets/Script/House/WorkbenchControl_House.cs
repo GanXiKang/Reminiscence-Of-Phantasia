@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
-    int _process = 0;
+    int _process = 1;
 
     [Header("UI")]
     public GameObject chooseUI;
