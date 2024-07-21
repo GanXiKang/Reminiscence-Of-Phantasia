@@ -16,6 +16,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject stamp;
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
+    float _rotateSpeed = 90f;
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
     int clickButtonNumber;
@@ -47,8 +48,9 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
-            _process = 1;
-            isAppaerPaper = true;
+            //_process = 1;
+            //isAppaerPaper = true;
+            isAppaerStamp = true;
         }
     }
 
@@ -65,7 +67,9 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (isAppaerStamp)
         {
-            
+            stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampEndPos.position, _speed * Time.deltaTime);
+            Quaternion targetRotation = Quaternion.LookRotation(stampEndPos.position - stamp.transform.position);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
         }
     }
     IEnumerator AppaerChooseUI()
