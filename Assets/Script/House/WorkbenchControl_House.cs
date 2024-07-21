@@ -16,7 +16,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject stamp;
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
-    float _rotateSpeed = 90f;
+    float _rotateSpeed = 180f;
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
     bool isStampGo = false;
