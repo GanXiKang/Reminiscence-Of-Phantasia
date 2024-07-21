@@ -6,6 +6,14 @@ public class WorkbenchControl_House : MonoBehaviour
 {
     void Update()
     {
+        Leave();
+        
+    }
+
+    //void Step1_
+
+    void Leave()
+    {
         if (CameraControl_House.isLookWorkbench)
         {
             if (Input.GetKeyDown(KeyCode.Q))
