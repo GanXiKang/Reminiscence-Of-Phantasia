@@ -19,6 +19,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotateSpeed = 90f;
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
+    bool isStampGO = false;
     int clickButtonNumber;
 
     void Start()
@@ -67,11 +68,15 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (isAppaerStamp)
         {
-            stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampEndPos.position, _speed * Time.deltaTime);
-            Quaternion targetRotation = Quaternion.LookRotation(stampEndPos.position - stamp.transform.position);
-            transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+            if (isStampGo)
+            {
+                stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampEndPos.position, _speed * Time.deltaTime);
+                Quaternion targetRotation = Quaternion.LookRotation(stampEndPos.position - stamp.transform.position);
+                stamp.transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+            }
             if (stamp.transform.position == stampEndPos.position)
             {
+                isStampGO = false;
                 paper.GetComponent<SpriteRenderer>().sprite = pattern[clickButtonNumber];
                 Invoke("StampStay", 1f);
             }
@@ -81,7 +86,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
         Quaternion targetRotation = Quaternion.LookRotation(stampStartPos.position - stamp.transform.position);
-        transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+        stamp.transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
         if (stamp.transform.position == stampEndPos.position)
         {
             isAppaerStamp = false;
@@ -109,6 +114,7 @@ public class WorkbenchControl_House : MonoBehaviour
         chooseUI.SetActive(false);
         yield return new WaitForSeconds(0.2f);
         isAppaerStamp = true;
+        isStampGO = true;
     }
     public void Button_ChoosePattern(int num)
     {
