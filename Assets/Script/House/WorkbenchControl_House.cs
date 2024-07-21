@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
-    int _process = 0;
+    int _process;
 
     [Header("Step1")]
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] content;
-    public static bool isAnim = false;
+    bool isAppaerChooseUI = false;
+    int clickButtonNumber;
 
     void Start()
     {
-       
+        _process = 0;
+        clickButtonNumber = 0;
     }
 
     void Update()
@@ -39,14 +41,14 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step1_Choose()
     {
-        if (isAnim)
+        if (isAppaerChooseUI)
         {
-            StartCoroutine(GetItemAnimation());
+            StartCoroutine(AppaerChooseUI());
         }
     }
-    IEnumerator GetItemAnimation()
+    IEnumerator AppaerChooseUI()
     {
-        isAnim = false;
+        isAppaerChooseUI = false;
         chooseUI.SetActive(true);
         for (int v = 0; v <= 7; v++)
         {
