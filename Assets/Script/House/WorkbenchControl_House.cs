@@ -14,7 +14,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Start()
     {
-        isAnim = false;
+        isAnim = true;
     }
 
     void Update()
