@@ -13,9 +13,8 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject paper;
     public Sprite[] pattern;
     public Transform endPos;
-    float _speed = 1f;
+    float _speed = 5f;
     bool isAppaerPaper = false;
-    bool isAppaerChooseUI = false;
     int clickButtonNumber;
 
     void Start()
@@ -42,7 +41,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 Step4_Install();
                 break;
         }
-        Leave();
 
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
@@ -63,15 +61,10 @@ public class WorkbenchControl_House : MonoBehaviour
                 StartCoroutine(AppaerChooseUI());
             }
         }
-        //if (!isAppaerChooseUI)
-        //{
-           
-        //}
     }
     IEnumerator AppaerChooseUI()
     {
         yield return new WaitForSeconds(0.2f);
-        isAppaerChooseUI = false;
         chooseUI.SetActive(true);
         for (int v = 0; v <= 7; v++)
         {
