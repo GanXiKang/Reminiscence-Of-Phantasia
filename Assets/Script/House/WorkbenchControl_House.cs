@@ -6,6 +6,11 @@ public class WorkbenchControl_House : MonoBehaviour
 {
     int _process = 0;
 
+    [Header("UI")]
+    public GameObject chooseUI;
+    public GameObject panel;
+    public GameObject theme;
+
     void Update()
     {
         switch (_process)
