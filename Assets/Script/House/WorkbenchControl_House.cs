@@ -69,7 +69,22 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampEndPos.position, _speed * Time.deltaTime);
             Quaternion targetRotation = Quaternion.LookRotation(stampEndPos.position - stamp.transform.position);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+            if (stamp.transform.position == stampEndPos.position)
+            {
+                paper.GetComponent<SpriteRenderer>().sprite = pattern[clickButtonNumber];
+                Invoke("StampStay", 1f);
+            }
+        }
+    }
+    void StampStay()
+    {
+        stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
+        Quaternion targetRotation = Quaternion.LookRotation(stampStartPos.position - stamp.transform.position);
+        transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+        if (stamp.transform.position == stampEndPos.position)
+        {
+            isAppaerStamp = false;
         }
     }
     IEnumerator AppaerChooseUI()
@@ -95,19 +110,9 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         isAppaerStamp = true;
     }
-    public void ButtonA()
+    public void Button_ChoosePattern(int num)
     {
-        clickButtonNumber = 1;
-        StartCoroutine(DisappaerChooseUI());
-    }
-    public void ButtonB()
-    {
-        clickButtonNumber = 2;
-        StartCoroutine(DisappaerChooseUI());
-    }
-    public void ButtonC()
-    {
-        clickButtonNumber = 3;
+        clickButtonNumber = num;
         StartCoroutine(DisappaerChooseUI());
     }
 
