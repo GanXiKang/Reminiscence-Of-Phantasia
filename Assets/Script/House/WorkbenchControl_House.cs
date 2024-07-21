@@ -9,7 +9,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("UI")]
     public GameObject chooseUI;
     public GameObject panel;
-    public GameObject theme;
+    public GameObject content;
 
     void Update()
     {
