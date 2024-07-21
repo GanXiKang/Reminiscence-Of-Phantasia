@@ -16,7 +16,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject stamp;
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
-    float _rotateSpeed = 180f;
+    float _rotateSpeed = 90f;
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
     bool isStampGo = false;
@@ -71,8 +71,8 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             if (isStampGo)
             {
-                stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampEndPos.position, _speed * Time.deltaTime);
                 Quaternion targetRotation = Quaternion.LookRotation(stampEndPos.position - stamp.transform.position);
+                stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampEndPos.position, _speed * Time.deltaTime);
                 stamp.transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
             }
             if (stamp.transform.position == stampEndPos.position)
@@ -85,8 +85,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void StampStay()
     {
-        stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
         Quaternion targetRotation = Quaternion.LookRotation(stampStartPos.position - stamp.transform.position);
+        stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
         stamp.transform.rotation = Quaternion.RotateTowards(stamp.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
         if (stamp.transform.position == stampEndPos.position)
         {
