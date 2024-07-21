@@ -52,6 +52,7 @@ public class WorkbenchControl_House : MonoBehaviour
             _process = 1;
             //isAppaerPaper = true;
             isAppaerStamp = true;
+            isStampGo = true;
         }
     }
 
