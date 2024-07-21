@@ -502,7 +502,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chooseUI: {fileID: 1901599257}
   panel: {fileID: 2062362386}
-  content: {fileID: 812920239}
+  content:
+  - {fileID: 812920239}
+  - {fileID: 709342365}
+  - {fileID: 1636275975}
+  - {fileID: 1742590573}
 --- !u!4 &1030011994
 Transform:
   m_ObjectHideFlags: 0
