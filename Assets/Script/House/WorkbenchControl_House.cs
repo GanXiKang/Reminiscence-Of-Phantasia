@@ -11,6 +11,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] content;
+    public Sprite[] pattern;
     bool isAppaerChooseUI = false;
     int clickButtonNumber;
 
@@ -18,6 +19,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         _process = 0;
         clickButtonNumber = 0;
+        paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
     }
 
     void Update()
