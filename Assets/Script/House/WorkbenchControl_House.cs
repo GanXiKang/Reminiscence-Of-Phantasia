@@ -17,6 +17,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
     bool isAppaerPaper = false;
+    bool isAppaerStamp = false;
     int clickButtonNumber;
 
     void Start()
@@ -62,6 +63,10 @@ public class WorkbenchControl_House : MonoBehaviour
                 StartCoroutine(AppaerChooseUI());
             }
         }
+        if (isAppaerStamp)
+        {
+            
+        }
     }
     IEnumerator AppaerChooseUI()
     {
@@ -83,6 +88,8 @@ public class WorkbenchControl_House : MonoBehaviour
             yield return new WaitForSeconds(0.04f);
         }
         chooseUI.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        isAppaerStamp = true;
     }
     public void ButtonA()
     {
