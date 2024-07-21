@@ -19,7 +19,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotateSpeed = 90f;
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
-    bool isStampGO = false;
+    bool isStampGo = false;
     int clickButtonNumber;
 
     void Start()
@@ -76,7 +76,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (stamp.transform.position == stampEndPos.position)
             {
-                isStampGO = false;
+                isStampGo = false;
                 paper.GetComponent<SpriteRenderer>().sprite = pattern[clickButtonNumber];
                 Invoke("StampStay", 1f);
             }
@@ -114,7 +114,7 @@ public class WorkbenchControl_House : MonoBehaviour
         chooseUI.SetActive(false);
         yield return new WaitForSeconds(0.2f);
         isAppaerStamp = true;
-        isStampGO = true;
+        isStampGo = true;
     }
     public void Button_ChoosePattern(int num)
     {
