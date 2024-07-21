@@ -37,6 +37,12 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
         }
         Leave();
+
+        if (Input.GetKeyDown(KeyCode.C)) //úy‘á
+        {
+            _process = 1;
+            isAppaerChooseUI = true;
+        }
     }
 
     void Step1_Choose()
