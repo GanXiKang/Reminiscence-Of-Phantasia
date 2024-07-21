@@ -46,6 +46,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     IEnumerator GetItemAnimation()
     {
+        chooseUI.SetActive(true);
         for (int v = 0; v <= 5; v++)
         {
             panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
