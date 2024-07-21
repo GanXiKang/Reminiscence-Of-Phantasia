@@ -7,6 +7,7 @@ public class WorkbenchControl_House : MonoBehaviour
     int _process;
 
     [Header("Step1")]
+    public GameObject paper;
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] content;
