@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
-    int _process = 1;
+    int _process = 0;
 
-    [Header("UI")]
+    [Header("Step1")]
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] content;
-    public static bool isAnim;
+    public static bool isAnim = false;
 
     void Start()
     {
-        isAnim = true;
+       
     }
 
     void Update()
@@ -46,6 +46,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     IEnumerator GetItemAnimation()
     {
+        isAnim = false;
         chooseUI.SetActive(true);
         for (int v = 0; v <= 7; v++)
         {
@@ -53,7 +54,18 @@ public class WorkbenchControl_House : MonoBehaviour
             yield return new WaitForSeconds(0.04f);
         }
         content[0].SetActive(true);
-        isAnim = false;
+    }
+    public void ButtonA()
+    {
+        
+    }
+    public void ButtonB()
+    {
+
+    }
+    public void ButtonC()
+    {
+
     }
 
     void Step2_Cut()
