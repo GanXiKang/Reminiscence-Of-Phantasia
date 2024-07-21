@@ -7,11 +7,14 @@ public class WorkbenchControl_House : MonoBehaviour
     int _process;
 
     [Header("Step1")]
-    public GameObject paper;
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] content;
+    public GameObject paper;
     public Sprite[] pattern;
+    public Transform endPos;
+    float _speed = 1f;
+    bool isAppaerPaper = false;
     bool isAppaerChooseUI = false;
     int clickButtonNumber;
 
@@ -44,19 +47,30 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
             _process = 1;
-            isAppaerChooseUI = true;
+            isAppaerPaper = true;
         }
     }
 
     void Step1_Choose()
     {
-        if (isAppaerChooseUI)
+        if (isAppaerPaper) 
         {
-            StartCoroutine(AppaerChooseUI());
+            paper.transform.position = Vector3.MoveTowards(paper.transform.position, endPos.position, _speed * Time.deltaTime);
+
+            if (paper.transform.position == endPos.position)
+            {
+                isAppaerPaper = false;
+                StartCoroutine(AppaerChooseUI());
+            }
         }
+        //if (!isAppaerChooseUI)
+        //{
+           
+        //}
     }
     IEnumerator AppaerChooseUI()
     {
+        yield return new WaitForSeconds(0.2f);
         isAppaerChooseUI = false;
         chooseUI.SetActive(true);
         for (int v = 0; v <= 7; v++)
