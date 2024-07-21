@@ -9,7 +9,13 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("UI")]
     public GameObject chooseUI;
     public GameObject panel;
-    public GameObject content;
+    public GameObject[] content;
+    public static bool isAnim;
+
+    void Start()
+    {
+        isAnim = false;
+    }
 
     void Update()
     {
@@ -33,20 +39,37 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step1_Choose()
     {
-        
+        if (isAnim)
+        {
+            StartCoroutine(GetItemAnimation());
+        }
     }
+    IEnumerator GetItemAnimation()
+    {
+        for (int v = 0; v <= 5; v++)
+        {
+            panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
+            yield return new WaitForSeconds(0.04f);
+        }
+        content[0].SetActive(true);
+        isAnim = false;
+    }
+
     void Step2_Cut()
     {
 
     }
+
     void Step3_Color()
     {
 
     }
+
     void Step4_Install()
     {
 
     }
+
     void Leave()
     {
         if (CameraControl_House.isLookWorkbench)
@@ -57,7 +80,6 @@ public class WorkbenchControl_House : MonoBehaviour
             }
         }
     }
-
     IEnumerator LeaveWorkbench()
     {
         LoadingUIControl_House.isOpenBlackScreen = true;
