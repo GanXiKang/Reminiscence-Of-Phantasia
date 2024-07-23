@@ -30,7 +30,7 @@ public class WorkbenchControl_House : MonoBehaviour
     Vector2 minBounds = new Vector2(-1, -1);
     Vector2 maxBounds = new Vector2(2, 2);
     Color lineColor = Color.yellow;
-    float lineWidth = 10f;
+    float _lineWidth = 1f;
     float _moveSpeed = 5f;
     float _rotationSpeed = 100f;
     float _rotation = 0;
@@ -189,8 +189,8 @@ public class WorkbenchControl_House : MonoBehaviour
 
         tipLine.startColor = lineColor;
         tipLine.endColor = lineColor;
-        tipLine.startWidth = lineWidth;
-        tipLine.endWidth = lineWidth;
+        tipLine.startWidth = _lineWidth;
+        tipLine.endWidth = _lineWidth;
         tipLine.positionCount = point.Length;
         tipLine.loop = true;
 
