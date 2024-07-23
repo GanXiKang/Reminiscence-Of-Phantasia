@@ -24,9 +24,9 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step1")]
     public GameObject scissors;
-    public LineRenderer scissorsLine;
-    public LineRenderer tipLine;
     public Transform[] point;
+    public LineRenderer tipLine;
+    public float lineWidth = 10f;
     Vector3 direction;
     Vector2 minBounds = new Vector2(-1, -1);
     Vector2 maxBounds = new Vector2(2, 2);
@@ -179,6 +179,10 @@ public class WorkbenchControl_House : MonoBehaviour
                 paper.transform.position = newPosition;
             }
         }
+    }
+    void TipLineSetting()
+    {
+        
     }
 
     void Step3_Color()
