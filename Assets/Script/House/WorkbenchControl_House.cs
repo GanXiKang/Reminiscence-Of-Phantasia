@@ -26,6 +26,9 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject scissors;
     public LineRenderer scissorsLine;
     public LineRenderer tipLine;
+    float _rotationSpeed = 100f;
+    float _rotation = 0;
+    bool isPaperRotation = false;
 
     void Start()
     {
@@ -55,6 +58,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //測試
         {
             _process = 2;
+            isPaperRotation = true;
             //isAppaerPaper = true;
         }
     }
@@ -126,7 +130,28 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step2_Cut()
     {
+        paperRotation();
+    }
+    void paperRotation()
+    {
+        if (isPaperRotation)
+        {
+            _rotation = 0;
 
+            if (Input.GetKey(KeyCode.A))
+            {
+                _rotation = _rotationSpeed * Time.deltaTime;  // 向左旋转
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                _rotation = -_rotationSpeed * Time.deltaTime;  // 向右旋转
+            }
+
+            if (_rotation != 0)
+            {
+                paper.transform.Rotate(Vector3.forward, _rotation);
+            }
+        }
     }
 
     void Step3_Color()
