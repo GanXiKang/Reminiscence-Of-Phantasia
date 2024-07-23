@@ -26,6 +26,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject scissors;
     public LineRenderer scissorsLine;
     public LineRenderer tipLine;
+    public Transform[] point;
     Vector3 direction;
     Vector2 minBounds = new Vector2(-1, -1);
     Vector2 maxBounds = new Vector2(2, 2);
