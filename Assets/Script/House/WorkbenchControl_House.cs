@@ -22,14 +22,15 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isStampGo = false;
     int clickButtonNumber;
 
-    [Header("Step1")]
+    [Header("Step2")]
     public GameObject scissors;
     public Transform[] point;
     public LineRenderer tipLine;
-    public float lineWidth = 10f;
     Vector3 direction;
     Vector2 minBounds = new Vector2(-1, -1);
     Vector2 maxBounds = new Vector2(2, 2);
+    Color lineColor = Color.yellow;
+    float lineWidth = 10f;
     float _moveSpeed = 5f;
     float _rotationSpeed = 100f;
     float _rotation = 0;
@@ -182,7 +183,16 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void TipLineSetting()
     {
-        
+        tipLine = gameObject.AddComponent<LineRenderer>();
+
+        tipLine.startColor = lineColor;
+        tipLine.endColor = lineColor;
+        tipLine.startWidth = lineWidth;
+        tipLine.endWidth = lineWidth;
+        tipLine.positionCount = point.Length;
+        tipLine.loop = true;
+
+        tipLine.material = new Material(Shader.Find("Sprites/Default"));
     }
 
     void Step3_Color()
