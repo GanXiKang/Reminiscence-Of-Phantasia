@@ -208,6 +208,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isUseScissors = true;
+            print("Input");
         }
 
         if (Input.GetMouseButtonUp(0))
