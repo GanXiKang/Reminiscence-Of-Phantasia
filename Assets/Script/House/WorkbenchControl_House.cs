@@ -28,7 +28,9 @@ public class WorkbenchControl_House : MonoBehaviour
     public LineRenderer tipLine;
     float _rotationSpeed = 100f;
     float _rotation = 0;
-    bool isPaperRotation = false;
+    float _moveSpeed = 5f;
+    Vector3 direction;
+    bool isPaperMove = false;
 
     void Start()
     {
@@ -58,7 +60,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //測試
         {
             _process = 2;
-            isPaperRotation = true;
+            isPaperMove = true;
             //isAppaerPaper = true;
         }
     }
@@ -130,11 +132,11 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step2_Cut()
     {
-        paperRotation();
+        PaperMove();
     }
-    void paperRotation()
+    void PaperMove()
     {
-        if (isPaperRotation)
+        if (isPaperMove)
         {
             _rotation = 0;
 
@@ -146,10 +148,25 @@ public class WorkbenchControl_House : MonoBehaviour
             {
                 _rotation = -_rotationSpeed * Time.deltaTime;  // 向右旋转
             }
-
             if (_rotation != 0)
             {
                 paper.transform.Rotate(Vector3.forward, _rotation);
+            }
+
+            direction = Vector3.zero;
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                direction += transform.up; // 向上移动
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                direction -= transform.up; // 向下移动
+            }
+
+            if (direction != Vector3.zero)
+            {
+                paper.transform.position += direction * _moveSpeed * Time.deltaTime;
             }
         }
     }
