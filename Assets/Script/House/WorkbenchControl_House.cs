@@ -27,7 +27,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public LineRenderer scissorsLine;
     public LineRenderer tipLine;
     Vector3 direction;
-    Vector2 minBounds = new Vector2(-2, -2);
+    Vector2 minBounds = new Vector2(-1, -1);
     Vector2 maxBounds = new Vector2(2, 2);
     float _moveSpeed = 5f;
     float _rotationSpeed = 100f;
