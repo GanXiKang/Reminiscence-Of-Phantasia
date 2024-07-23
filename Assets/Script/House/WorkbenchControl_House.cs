@@ -34,9 +34,8 @@ public class WorkbenchControl_House : MonoBehaviour
     float _moveSpeed = 5f;
     float _rotationSpeed = 100f;
     float _rotation = 0;
-
-    
     bool isPaperMove = false;
+    bool isUseScissors = false;
 
     void Start()
     {
@@ -44,7 +43,6 @@ public class WorkbenchControl_House : MonoBehaviour
         clickButtonNumber = 0;
         //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
         TipLineSetting();
-        DrawTipLine();
     }
 
     void Update()
@@ -141,6 +139,8 @@ public class WorkbenchControl_House : MonoBehaviour
     void Step2_Cut()
     {
         PaperMove();
+        DrawTipLine();
+        Scissors();
     }
     void PaperMove()
     {
@@ -201,6 +201,23 @@ public class WorkbenchControl_House : MonoBehaviour
         for (int i = 0; i <= point.Length; i++)
         {
             tipLine.SetPosition(i, point[i].position);
+        }
+    }
+    void Scissors()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            isUseScissors = true;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isUseScissors = false;
+        }
+
+        if (isUseScissors)
+        {
+            print("OK");
         }
     }
 
