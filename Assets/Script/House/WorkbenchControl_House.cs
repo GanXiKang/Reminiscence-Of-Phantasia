@@ -198,27 +198,24 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void DrawTipLine()
     {
-        for (int i = 0; i <= point.Length; i++)
-        {
-            tipLine.SetPosition(i, point[i].position);
-        }
+        //for (int i = 0; i <= point.Length; i++)
+        //{
+        //    tipLine.SetPosition(i, point[i].position);
+        //}
     }
     void Scissors()
     {
         if (Input.GetMouseButtonDown(0))
         {
             isUseScissors = true;
-            print("Input");
         }
-
         if (Input.GetMouseButtonUp(0))
         {
             isUseScissors = false;
         }
-
         if (isUseScissors)
         {
-            print("OK");
+            
         }
     }
 
