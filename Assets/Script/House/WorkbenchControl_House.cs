@@ -198,6 +198,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void DrawTipLine()
     {
+        print(point.Length);
         //for (int i = 0; i <= point.Length; i++)
         //{
         //    tipLine.SetPosition(i, point[i].position);
