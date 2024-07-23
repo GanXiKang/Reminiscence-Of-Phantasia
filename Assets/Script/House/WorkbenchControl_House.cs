@@ -35,6 +35,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotationSpeed = 100f;
     float _rotation = 0;
     bool isPaperMove = false;
+    bool isDraw = false;
     bool isUseScissors = false;
 
     void Start()
@@ -195,14 +196,18 @@ public class WorkbenchControl_House : MonoBehaviour
         tipLine.loop = true;
 
         tipLine.material = new Material(Shader.Find("Sprites/Default"));
+        isDraw = true;
     }
     void DrawTipLine()
     {
-        print(point.Length);
-        //for (int i = 0; i <= point.Length; i++)
-        //{
-        //    tipLine.SetPosition(i, point[i].position);
-        //}
+        if (isDraw)
+        {
+            for (int i = 0; i < point.Length; i++)
+            {
+                tipLine.SetPosition(i, point[i].position);
+            }
+            isDraw = false;
+        }
     }
     void Scissors()
     {
@@ -216,7 +221,7 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (isUseScissors)
         {
-            
+            print("Cut!");
         }
     }
 
