@@ -30,7 +30,7 @@ public class WorkbenchControl_House : MonoBehaviour
     Vector2 minBounds = new Vector2(-1, -1);
     Vector2 maxBounds = new Vector2(2, 2);
     Color lineColor = Color.yellow;
-    float _lineWidth = 1f;
+    float _lineWidth = 0.5f;
     float _moveSpeed = 5f;
     float _rotationSpeed = 100f;
     float _rotation = 0;
