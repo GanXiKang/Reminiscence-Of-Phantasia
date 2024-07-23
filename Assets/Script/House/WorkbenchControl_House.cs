@@ -43,6 +43,7 @@ public class WorkbenchControl_House : MonoBehaviour
         _process = 0;
         clickButtonNumber = 0;
         //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
+        TipLineSetting();
     }
 
     void Update()
@@ -139,6 +140,7 @@ public class WorkbenchControl_House : MonoBehaviour
     void Step2_Cut()
     {
         PaperMove();
+        DrawTipLine();
     }
     void PaperMove()
     {
@@ -193,6 +195,13 @@ public class WorkbenchControl_House : MonoBehaviour
         tipLine.loop = true;
 
         tipLine.material = new Material(Shader.Find("Sprites/Default"));
+    }
+    void DrawTipLine()
+    {
+        for (int i = 0; i <= point.Length; i++)
+        {
+            tipLine.SetPosition(i, point[i].position);
+        }
     }
 
     void Step3_Color()
