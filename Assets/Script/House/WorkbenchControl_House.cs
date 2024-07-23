@@ -26,10 +26,14 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject scissors;
     public LineRenderer scissorsLine;
     public LineRenderer tipLine;
+    Vector3 direction;
+    Vector2 minBounds = new Vector2(-5, -5);
+    Vector2 maxBounds = new Vector2(5, 5);
+    float _moveSpeed = 5f;
     float _rotationSpeed = 100f;
     float _rotation = 0;
-    float _moveSpeed = 5f;
-    Vector3 direction;
+
+    
     bool isPaperMove = false;
 
     void Start()
@@ -166,7 +170,12 @@ public class WorkbenchControl_House : MonoBehaviour
 
             if (direction != Vector3.zero)
             {
-                paper.transform.position += direction * _moveSpeed * Time.deltaTime;
+                Vector3 newPosition = paper.transform.position + direction * _moveSpeed * Time.deltaTime;
+
+                newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
+                newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
+
+                paper.transform.position = newPosition;
             }
         }
     }
