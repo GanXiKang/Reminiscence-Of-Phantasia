@@ -23,7 +23,7 @@ public class WorkbenchControl_House : MonoBehaviour
     int clickButtonNumber;
 
     [Header("Step2")]
-    public GameObject scissors;
+    //public GameObject scissors;
     public Transform[] point;
     public LineRenderer tipLine;
     Vector3 direction;
