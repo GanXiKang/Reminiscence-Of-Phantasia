@@ -22,6 +22,11 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isStampGo = false;
     int clickButtonNumber;
 
+    [Header("Step1")]
+    public GameObject scissors;
+    public LineRenderer scissorsLine;
+    public LineRenderer tipLine;
+
     void Start()
     {
         _process = 0;
@@ -49,7 +54,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
-            _process = 1;
+            _process = 2;
             isAppaerPaper = true;
         }
     }
