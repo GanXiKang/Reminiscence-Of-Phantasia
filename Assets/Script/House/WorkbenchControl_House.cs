@@ -55,7 +55,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
             _process = 2;
-            isAppaerPaper = true;
+            //isAppaerPaper = true;
         }
     }
 
