@@ -40,7 +40,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         _process = 0;
         clickButtonNumber = 0;
-        paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
+        //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
     }
 
     void Update()
