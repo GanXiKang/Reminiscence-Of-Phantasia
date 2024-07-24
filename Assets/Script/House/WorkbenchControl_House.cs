@@ -220,7 +220,6 @@ public class WorkbenchControl_House : MonoBehaviour
             print("Cut!");
         }
 
-        scissors.transform.position = Vector3.zero;
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
         mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
         float newY = scissors.transform.position.y + mouseY;
