@@ -27,7 +27,7 @@ public class ScissorsControl_House : MonoBehaviour
             }
             if (isUseScissors)
             {
-                print("Cut!");
+               
             }
         }
     }
