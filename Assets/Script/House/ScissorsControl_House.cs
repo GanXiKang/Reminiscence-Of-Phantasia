@@ -39,7 +39,7 @@ public class ScissorsControl_House : MonoBehaviour
         float newX = transform.position.x + mouseX;
         newY = Mathf.Clamp(newY, minY, maxY);
         newX = Mathf.Clamp(newX, minX, maxX);
-        transform.position = new Vector3(0f, newY, 0f);
+        transform.position = new Vector3(1.5f, newY, 0f);
     }
 
     private void OnTriggerEnter(Collider other)
