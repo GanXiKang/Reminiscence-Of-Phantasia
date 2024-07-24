@@ -31,7 +31,11 @@ public class WorkbenchControl_House : MonoBehaviour
     Vector2 maxBounds = new Vector2(5, 5);
     Color lineColor = Color.white;
     float _lineWidth = 0.2f;
+    float mouseY;
+    float mouseX;
     float _moveSpeed = 5f;
+    float minY = 0f, maxY = 10f;
+    float minX = -2f, maxX = 2f;
     float _rotationSpeed = 90f;
     float _rotation = 0;
     bool isPaperRotation = false;
