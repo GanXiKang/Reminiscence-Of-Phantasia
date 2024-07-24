@@ -148,11 +148,11 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _rotation = 0;
 
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.A))
             {
                 _rotation = _rotationSpeed * Time.deltaTime;  // 向左旋转
             }
-            else if (Input.GetKey(KeyCode.E))
+            else if (Input.GetKey(KeyCode.D))
             {
                 _rotation = -_rotationSpeed * Time.deltaTime;  // 向右旋转
             }
