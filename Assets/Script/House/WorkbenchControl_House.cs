@@ -38,6 +38,7 @@ public class WorkbenchControl_House : MonoBehaviour
         clickButtonNumber = 0;
         //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
         TipLineSetting();
+        Leave();
     }
 
     void Update()
