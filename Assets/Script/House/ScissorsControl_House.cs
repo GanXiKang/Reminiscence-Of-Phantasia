@@ -7,10 +7,13 @@ public class ScissorsControl_House : MonoBehaviour
     float mouseY;
     float mouseX;
     float _moveSpeed = 12f;
+    float newY;
+    float newX;
     float minY = -3f, maxY = 4f;
     float minX = 1f, maxX = 3f;
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
+
 
     void Update()
     {
@@ -35,11 +38,11 @@ public class ScissorsControl_House : MonoBehaviour
     {
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
         mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-        float newY = transform.position.y + mouseY;
-        float newX = transform.position.x + mouseX;
+        newY = transform.position.y + mouseY;
+        newX = transform.position.x + mouseX;
         newY = Mathf.Clamp(newY, minY, maxY);
         newX = Mathf.Clamp(newX, minX, maxX);
-        transform.position = new Vector3(1.5f, newY, 0f);
+        transform.position = new Vector3(newX, newY, 0f);
     }
 
     private void OnTriggerEnter(Collider other)
