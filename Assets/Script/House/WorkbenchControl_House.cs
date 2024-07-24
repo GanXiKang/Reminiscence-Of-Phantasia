@@ -151,7 +151,6 @@ public class WorkbenchControl_House : MonoBehaviour
         if (isPaperRotation)
         {
             _rotation = 0;
-
             if (Input.GetKey(KeyCode.A))
             {
                 _rotation = _rotationSpeed * Time.deltaTime;  // Ïò×óÐý×ª
@@ -220,6 +219,28 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             print("Cut!");
         }
+
+        mouseY = Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+        float newY = transform.position.y + mouseY;
+        float newX = transform.position.x + mouseX;
+        if (newY < minY)
+        {
+            newY = minY;
+        }
+        else if (newY > maxY)
+        {
+            newY = maxY;
+        }
+        if (newX < minX)
+        {
+            newX = minX;
+        }
+        else if (newX > maxX)
+        {
+            newX = maxX;
+        }
+        scissors.transform.position = new Vector3(newX, newY, transform.position.z);
     }
 
     void Step3_Color()
