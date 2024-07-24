@@ -70,7 +70,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
             _process = 2;
-            isPaperRotation = = true;
+            isPaperRotation = true;
             //isAppaerPaper = true;
         }
     }
@@ -220,8 +220,8 @@ public class WorkbenchControl_House : MonoBehaviour
             print("Cut!");
         }
 
-        mouseY = Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
-        mouseX = Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+        mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
         float newY = transform.position.y + mouseY;
         float newX = transform.position.x + mouseX;
         if (newY < minY)
