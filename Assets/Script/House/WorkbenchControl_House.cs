@@ -26,9 +26,6 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject scissors;
     public Transform[] point;
     public LineRenderer tipLine;
-    Vector3 direction;
-    Vector2 minBounds = new Vector2(-5, -5);
-    Vector2 maxBounds = new Vector2(5, 5);
     Color lineColor = Color.white;
     float _lineWidth = 0.2f;
     float mouseY;
