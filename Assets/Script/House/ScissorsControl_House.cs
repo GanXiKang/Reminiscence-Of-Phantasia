@@ -44,13 +44,26 @@ public class ScissorsControl_House : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Point")
+        if (isUseScissors)
         {
-            print("Yes");
+            if (other.tag == "Point")
+            {
+                print("Yes");
+            }
+            if (other.tag == "Paper")
+            {
+                print("No");
+            }
         }
-        if (other.tag == "Paper")
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (isUseScissors)
         {
-            print("No");
+            if (other.tag == "Paper")
+            {
+                print("No");
+            }
         }
     }
 }
