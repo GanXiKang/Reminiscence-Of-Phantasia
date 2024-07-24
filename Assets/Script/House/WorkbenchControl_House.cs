@@ -222,7 +222,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
         mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-        print(mouseX);
         float newY = transform.position.y + mouseY;
         float newX = transform.position.x + mouseX;
         if (newY < minY)
@@ -241,7 +240,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             newX = maxX;
         }
-        scissors.transform.position = new Vector3(newX, newY, transform.position.z);
+        scissors.transform.position = new Vector3(newX, newY, 0f);
     }
 
     void Step3_Color()
