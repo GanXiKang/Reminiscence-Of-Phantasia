@@ -222,7 +222,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
         mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-        print(mouseX)£»
+        print(mouseX);
         float newY = transform.position.y + mouseY;
         float newX = transform.position.x + mouseX;
         if (newY < minY)
