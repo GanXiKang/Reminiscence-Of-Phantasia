@@ -23,7 +23,7 @@ public class WorkbenchControl_House : MonoBehaviour
     int clickButtonNumber;
 
     [Header("Step2")]
-    //public GameObject scissors;
+    public GameObject scissors;
     public Transform[] point;
     public LineRenderer tipLine;
     Vector3 direction;
@@ -34,6 +34,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _moveSpeed = 5f;
     float _rotationSpeed = 90f;
     float _rotation = 0;
+    bool isPaperRotation = false;
     bool isUseScissors = false;
 
     void Start()
@@ -65,6 +66,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //測試
         {
             _process = 2;
+            isPaperRotation = = true;
             //isAppaerPaper = true;
         }
     }
@@ -136,13 +138,13 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step2_Cut()
     {
-        PaperMove();
+        PaperRotation();
         DrawTipLine();
         Scissors();
     }
-    void PaperMove()
+    void PaperRotation()
     {
-        if (isUseScissors)
+        if (isPaperRotation)
         {
             _rotation = 0;
 
@@ -158,27 +160,26 @@ public class WorkbenchControl_House : MonoBehaviour
             {
                 paper.transform.Rotate(Vector3.forward, _rotation);
             }
+            //direction = Vector3.zero;
 
-            direction = Vector3.zero;
+            //if (Input.GetKey(KeyCode.W))
+            //{
+            //    direction += transform.up; // 向上移动
+            //}
+            //if (Input.GetKey(KeyCode.S))
+            //{
+            //    direction -= transform.up; // 向下移动
+            //}
 
-            if (Input.GetKey(KeyCode.W))
-            {
-                direction += transform.up; // 向上移动
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                direction -= transform.up; // 向下移动
-            }
+            //if (direction != Vector3.zero)
+            //{
+            //    Vector3 newPosition = paper.transform.position + direction * _moveSpeed * Time.deltaTime;
 
-            if (direction != Vector3.zero)
-            {
-                Vector3 newPosition = paper.transform.position + direction * _moveSpeed * Time.deltaTime;
+            //    newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
+            //    newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
 
-                newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
-                newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
-
-                paper.transform.position = newPosition;
-            }
+            //    paper.transform.position = newPosition;
+            //}
         }
     }
     void TipLineSetting()
