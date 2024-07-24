@@ -36,7 +36,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotationSpeed = 90f;
     float _rotation = 0;
     bool isPaperRotation = false;
-    bool isUseScissors = false;
+    public static bool isUseScissors = false;
 
     void Start()
     {
