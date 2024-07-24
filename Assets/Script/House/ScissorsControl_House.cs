@@ -8,7 +8,7 @@ public class ScissorsControl_House : MonoBehaviour
     float mouseX;
     float _moveSpeed = 12f;
     float minY = -3f, maxY = 4f;
-    float minX = 0f, maxX = 3f;
+    float minX = 1f, maxX = 3f;
     public static bool isUseScissors = false;
 
     void Update()
