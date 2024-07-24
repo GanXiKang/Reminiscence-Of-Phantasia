@@ -34,8 +34,8 @@ public class WorkbenchControl_House : MonoBehaviour
     float mouseY;
     float mouseX;
     float _moveSpeed = 5f;
-    float minY = 0f, maxY = 5f;
-    float minX = -2f, maxX = 2f;
+    float minY = -2f, maxY = 3f;
+    float minX = -1f, maxX = 2f;
     float _rotationSpeed = 90f;
     float _rotation = 0;
     bool isPaperRotation = false;
