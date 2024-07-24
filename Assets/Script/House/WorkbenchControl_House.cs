@@ -33,7 +33,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _lineWidth = 0.2f;
     float mouseY;
     float mouseX;
-    float _moveSpeed = 10f;
+    float _moveSpeed = 12f;
     float minY = -3f, maxY = 4f;
     float minX = 0f, maxX = 3f;
     float _rotationSpeed = 90f;
