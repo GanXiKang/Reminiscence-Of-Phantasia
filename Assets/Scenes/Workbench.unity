@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 213950739}
   m_Layer: 0
   m_Name: PointA
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 505485340}
   m_Layer: 0
   m_Name: PointB
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 1338754800}
   m_Layer: 0
   m_Name: PointC
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 1586228310}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1303,7 +1303,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1850,7 +1850,7 @@ GameObject:
   - component: {fileID: 1958059613}
   m_Layer: 0
   m_Name: PointD
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
