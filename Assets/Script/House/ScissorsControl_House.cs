@@ -10,6 +10,7 @@ public class ScissorsControl_House : MonoBehaviour
     float minY = -3f, maxY = 4f;
     float minX = 1f, maxX = 3f;
     public static bool isUseScissors = false;
+    public static int _cutPoint = 0;
 
     void Update()
     {
@@ -39,5 +40,17 @@ public class ScissorsControl_House : MonoBehaviour
         newY = Mathf.Clamp(newY, minY, maxY);
         newX = Mathf.Clamp(newX, minX, maxX);
         transform.position = new Vector3(newX, newY, 0f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Point")
+        {
+            print("Yes");
+        }
+        if (other.tag == "Paper")
+        {
+            print("No");
+        }
     }
 }
