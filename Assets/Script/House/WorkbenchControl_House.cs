@@ -223,11 +223,11 @@ public class WorkbenchControl_House : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
         mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
         float newY = transform.position.y + mouseY;
+        print(newY);
         float newX = transform.position.x + mouseX;
         newY = Mathf.Clamp(newY, minY, minY);
         newX = Mathf.Clamp(newX, minX, minY);
         scissors.transform.position = new Vector3(newX, newY, 0f);
-        print(Input.GetAxis("Mouse Y"));
     }
 
     void Step3_Color()
