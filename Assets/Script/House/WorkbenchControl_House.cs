@@ -27,14 +27,13 @@ public class WorkbenchControl_House : MonoBehaviour
     public Transform[] point;
     public LineRenderer tipLine;
     Vector3 direction;
-    Vector2 minBounds = new Vector2(-3, -3);
-    Vector2 maxBounds = new Vector2(3, 3);
+    Vector2 minBounds = new Vector2(-5, -5);
+    Vector2 maxBounds = new Vector2(5, 5);
     Color lineColor = Color.white;
     float _lineWidth = 0.2f;
     float _moveSpeed = 5f;
     float _rotationSpeed = 90f;
     float _rotation = 0;
-    bool isPaperMove = false;
     bool isUseScissors = false;
 
     void Start()
@@ -66,7 +65,6 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
             _process = 2;
-            isPaperMove = true;
             //isAppaerPaper = true;
         }
     }
@@ -144,7 +142,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void PaperMove()
     {
-        if (isPaperMove)
+        if (isUseScissors)
         {
             _rotation = 0;
 
