@@ -38,7 +38,6 @@ public class WorkbenchControl_House : MonoBehaviour
         clickButtonNumber = 0;
         //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
         TipLineSetting();
-        Leave();
     }
 
     void Update()
@@ -65,6 +64,7 @@ public class WorkbenchControl_House : MonoBehaviour
             isPaperRotation = true;
             //isAppaerPaper = true;
         }
+        Leave();
     }
 
     void Step1_Choose()
