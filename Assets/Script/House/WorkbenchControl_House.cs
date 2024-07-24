@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
-    int _process;
+    public static int _process;
 
     [Header("Step1")]
     public GameObject chooseUI;
@@ -28,15 +28,9 @@ public class WorkbenchControl_House : MonoBehaviour
     public LineRenderer tipLine;
     Color lineColor = Color.white;
     float _lineWidth = 0.2f;
-    float mouseY;
-    float mouseX;
-    float _moveSpeed = 12f;
-    float minY = -3f, maxY = 4f;
-    float minX = 0f, maxX = 3f;
     float _rotationSpeed = 90f;
     float _rotation = 0;
     bool isPaperRotation = false;
-    public static bool isUseScissors = false;
 
     void Start()
     {
@@ -141,7 +135,6 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         PaperRotation();
         DrawTipLine();
-        Scissors();
     }
     void PaperRotation()
     {
@@ -181,29 +174,6 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             tipLine.SetPosition(i, point[i].position);
         }
-    }
-    void Scissors()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            isUseScissors = true;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            isUseScissors = false;
-        }
-        if (isUseScissors)
-        {
-            print("Cut!");
-        }
-
-        mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
-        mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-        float newY = scissors.transform.position.y + mouseY;
-        float newX = scissors.transform.position.x + mouseX;
-        newY = Mathf.Clamp(newY, minY, maxY);
-        newX = Mathf.Clamp(newX, minX, maxX);
-        scissors.transform.position = new Vector3(newX, newY, 0f);
     }
 
     void Step3_Color()
