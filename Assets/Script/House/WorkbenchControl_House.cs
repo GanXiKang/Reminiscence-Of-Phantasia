@@ -33,7 +33,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _lineWidth = 0.2f;
     float mouseY;
     float mouseX;
-    float _moveSpeed = 5f;
+    float _moveSpeed = 10f;
     float minY = -2f, maxY = 3f;
     float minX = -1f, maxX = 2f;
     float _rotationSpeed = 90f;
@@ -163,26 +163,6 @@ public class WorkbenchControl_House : MonoBehaviour
             {
                 paper.transform.Rotate(Vector3.forward, _rotation);
             }
-            //direction = Vector3.zero;
-
-            //if (Input.GetKey(KeyCode.W))
-            //{
-            //    direction += transform.up; // 向上移动
-            //}
-            //if (Input.GetKey(KeyCode.S))
-            //{
-            //    direction -= transform.up; // 向下移动
-            //}
-
-            //if (direction != Vector3.zero)
-            //{
-            //    Vector3 newPosition = paper.transform.position + direction * _moveSpeed * Time.deltaTime;
-
-            //    newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
-            //    newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
-
-            //    paper.transform.position = newPosition;
-            //}
         }
     }
     void TipLineSetting()
