@@ -22,10 +22,12 @@ public class ScissorsControl_House : MonoBehaviour
         if (WorkbenchControl_House._process == 2)
         {
             ScissorsMove();
+
+            Vector3 scissorsPos = new Vector3(scissorsLine.transform.position.x, scissorsLine.transform.position.y, 1f);
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
-                line.Add(Instantiate(scissorsLine, transform.position, transform.rotation, this.transform));
+                line.Add(Instantiate(scissorsLine, scissorsPos, transform.rotation, this.transform));
             }
             if (Input.GetMouseButtonUp(0))
             {
@@ -34,7 +36,7 @@ public class ScissorsControl_House : MonoBehaviour
             }
             if (isUseScissors)
             {
-                line[line.Count - 1].transform.position = transform.position;
+                line[line.Count - 1].transform.position = scissorsPos;
             }
         }
     }
