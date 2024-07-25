@@ -24,7 +24,6 @@ public class ScissorsControl_House : MonoBehaviour
             ScissorsMove();
 
             Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -0.5f);
-            print(scissorsPos);
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
@@ -33,7 +32,7 @@ public class ScissorsControl_House : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 isUseScissors = false;
-                //Invoke("ClearLine", 0.2f);
+                Invoke("ClearLine", 0.2f);
             }
             if (isUseScissors)
             {
