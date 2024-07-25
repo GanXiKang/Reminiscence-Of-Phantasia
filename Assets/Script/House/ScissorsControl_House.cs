@@ -14,7 +14,6 @@ public class ScissorsControl_House : MonoBehaviour
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
 
-    public Camera cam;
     public GameObject scissorsLine;
     List<GameObject> line = new List<GameObject>(0);
 
@@ -50,10 +49,6 @@ public class ScissorsControl_House : MonoBehaviour
         newY = Mathf.Clamp(newY, minY, maxY);
         newX = Mathf.Clamp(newX, minX, maxX);
         transform.position = new Vector3(newX, newY, 0f);
-
-        //Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        //mousePosition.z = transform.position.z;
-        //transform.position = mousePosition;
     }
     void ClearLine()
     {
