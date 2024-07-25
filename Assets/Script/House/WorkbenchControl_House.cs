@@ -24,6 +24,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step2")]
     public GameObject scissors;
+    public GameObject paperB;
     public Transform[] point;
     public LineRenderer tipLine;
     float _rotationSpeed = 90f;
@@ -166,7 +167,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (ScissorsControl_House._cutPoint >= 4)
         {
-            print("Finish");
+            paperB.SetActive(false);
         }
     }
 
