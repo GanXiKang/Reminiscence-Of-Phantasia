@@ -65,7 +65,7 @@ public class ScissorsControl_House : MonoBehaviour
         {
             if (other.tag == "Point")
             {
-                print("Yes");
+                _cutPoint++;
             }
             if (other.tag == "Paper")
             {
