@@ -60,6 +60,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _process = 2;
             isPaperRotation = true;
+            Instantiate(tipLine, point[0].position, point[0].rotation);
             //isAppaerPaper = true;
         }
         Leave();
@@ -165,7 +166,6 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void DrawTipLine()
     {
-        Instantiate(tipLine, transform.position, transform.rotation);
         for (int i = 0; i < point.Length; i++)
         {
             tipLine.SetPosition(i, point[i].position);
