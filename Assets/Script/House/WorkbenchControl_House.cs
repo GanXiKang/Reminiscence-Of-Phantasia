@@ -158,6 +158,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void TipLineSetting()
     {
+        Instantiate(tipLine, transform.position, transform.rotation);
         tipLine = gameObject.AddComponent<LineRenderer>();
 
         tipLine.startColor = lineColor;
