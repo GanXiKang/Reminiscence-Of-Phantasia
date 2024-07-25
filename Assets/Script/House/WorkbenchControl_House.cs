@@ -26,7 +26,6 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject scissors;
     public Transform[] point;
     public LineRenderer tipLine;
-    Color lineColor = Color.white;
     float _lineWidth = 0.2f;
     float _rotationSpeed = 90f;
     float _rotation = 0;
@@ -36,8 +35,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         _process = 0;
         clickButtonNumber = 0;
-        //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
-        TipLineSetting();
+        paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
     }
 
     void Update()
@@ -136,6 +134,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         PaperRotation();
         DrawTipLine();
+        TipLineSetting();
     }
     void PaperRotation()
     {
@@ -158,20 +157,15 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void TipLineSetting()
     {
-        Instantiate(tipLine, transform.position, transform.rotation);
         tipLine = gameObject.AddComponent<LineRenderer>();
-
-        tipLine.startColor = lineColor;
-        tipLine.endColor = lineColor;
         tipLine.startWidth = _lineWidth;
         tipLine.endWidth = _lineWidth;
         tipLine.positionCount = point.Length;
         tipLine.loop = true;
-
-        tipLine.material = new Material(Shader.Find("Sprites/Default"));
     }
     void DrawTipLine()
     {
+        Instantiate(tipLine, transform.position, transform.rotation);
         for (int i = 0; i < point.Length; i++)
         {
             tipLine.SetPosition(i, point[i].position);
