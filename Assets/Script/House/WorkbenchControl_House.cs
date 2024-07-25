@@ -156,7 +156,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (ScissorsControl_House._cutPoint >= 4)
         {
-            paperB.SetActive(false);
+            paperB.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
