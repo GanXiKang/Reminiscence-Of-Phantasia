@@ -6,7 +6,7 @@ public class ScissorsControl_House : MonoBehaviour
 {
     float mouseY;
     float mouseX;
-    float _moveSpeed = 12f;
+    float _moveSpeed = 60f;
     float newY;
     float newX;
     float minY = -3f, maxY = 4f;
@@ -24,11 +24,11 @@ public class ScissorsControl_House : MonoBehaviour
         {
             ScissorsMove();
 
-            //Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -0.5f);
+            Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -0.5f);
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
-                //line.Add(Instantiate(scissorsLine, scissorsPos, transform.rotation, this.transform));
+                line.Add(Instantiate(scissorsLine, scissorsPos, transform.rotation, this.transform));
             }
             if (Input.GetMouseButtonUp(0))
             {
@@ -37,24 +37,23 @@ public class ScissorsControl_House : MonoBehaviour
             }
             if (isUseScissors)
             {
-                //line[line.Count - 1].transform.position = scissorsPos;
+                line[line.Count - 1].transform.position = scissorsPos;
             }
         }
     }
     void ScissorsMove()
     {
-        //mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
-        //mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-        //newY = transform.position.y + mouseY;
-        //newX = transform.position.x + mouseX;
-        //newY = Mathf.Clamp(newY, minY, maxY);
-        //newX = Mathf.Clamp(newX, minX, maxX);
-        //transform.position = new Vector3(newX, newY, 0f);
+        mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
+        newY = transform.position.y + mouseY;
+        newX = transform.position.x + mouseX;
+        newY = Mathf.Clamp(newY, minY, maxY);
+        newX = Mathf.Clamp(newX, minX, maxX);
+        transform.position = new Vector3(newX, newY, 0f);
 
-        Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = transform.position.z;
-        transform.position = mousePosition;
-        print(transform.position);
+        //Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        //mousePosition.z = transform.position.z;
+        //transform.position = mousePosition;
     }
     void ClearLine()
     {
