@@ -35,7 +35,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         _process = 0;
         clickButtonNumber = 0;
-        paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
+        //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
     }
 
     void Update()
@@ -134,8 +134,8 @@ public class WorkbenchControl_House : MonoBehaviour
     void Step2_Cut()
     {
         PaperRotation();
-        DrawTipLine();
-        TipLineSetting();
+        //DrawTipLine();
+        //TipLineSetting();
     }
     void PaperRotation()
     {
