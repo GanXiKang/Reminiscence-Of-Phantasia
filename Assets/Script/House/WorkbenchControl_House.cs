@@ -134,6 +134,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         PaperRotation();
         DrawTipLine();
+        CutFinish();
     }
     void PaperRotation()
     {
@@ -159,6 +160,13 @@ public class WorkbenchControl_House : MonoBehaviour
         for (int i = 0; i < point.Length; i++)
         {
             tipLine.SetPosition(i, point[i].position);
+        }
+    }
+    void CutFinish()
+    {
+        if (ScissorsControl_House._cutPoint >= 4)
+        {
+            print("Finish");
         }
     }
 
