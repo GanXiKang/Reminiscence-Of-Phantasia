@@ -737,12 +737,6 @@ MonoBehaviour:
   stampEndPos: {fileID: 1452256767}
   scissors: {fileID: 2068644940}
   paperB: {fileID: 1260870389}
-  point:
-  - {fileID: 213950738}
-  - {fileID: 505485339}
-  - {fileID: 1338754799}
-  - {fileID: 1958059612}
-  tipLine: {fileID: 6578259983735312514, guid: d31c8b253e36dc440b691e80f403fd18, type: 3}
 --- !u!4 &1030011994
 Transform:
   m_ObjectHideFlags: 0
@@ -1069,6 +1063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260870390}
   - component: {fileID: 1260870391}
+  - component: {fileID: 1260870392}
   m_Layer: 0
   m_Name: paperB
   m_TagString: Untagged
@@ -1143,6 +1138,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!54 &1260870392
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260870389}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1278337063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,7 +2173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167e192759750cb4295da532339470e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1879940717}
   scissorsLine: {fileID: 8772233003372958981, guid: f61db75332569f84d8a8cd1171a351f3, type: 3}
 --- !u!54 &2068644946
 Rigidbody:
