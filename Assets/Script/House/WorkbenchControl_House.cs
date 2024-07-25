@@ -26,7 +26,6 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject scissors;
     public Transform[] point;
     public LineRenderer tipLine;
-    float _lineWidth = 0.2f;
     float _rotationSpeed = 90f;
     float _rotation = 0;
     bool isPaperRotation = false;
@@ -134,8 +133,7 @@ public class WorkbenchControl_House : MonoBehaviour
     void Step2_Cut()
     {
         PaperRotation();
-        //DrawTipLine();
-        //TipLineSetting();
+        DrawTipLine();
     }
     void PaperRotation()
     {
@@ -155,14 +153,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 paper.transform.Rotate(Vector3.forward, _rotation);
             }
         }
-    }
-    void TipLineSetting()
-    {
-        tipLine = gameObject.AddComponent<LineRenderer>();
-        tipLine.startWidth = _lineWidth;
-        tipLine.endWidth = _lineWidth;
-        tipLine.positionCount = point.Length;
-        tipLine.loop = true;
     }
     void DrawTipLine()
     {
