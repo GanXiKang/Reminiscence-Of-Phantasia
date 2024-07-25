@@ -14,6 +14,8 @@ public class ScissorsControl_House : MonoBehaviour
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
 
+    public GameObject scissorsLine;
+    List<GameObject> line = new List<GameObject>(0);
 
     void Update()
     {
@@ -23,14 +25,16 @@ public class ScissorsControl_House : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
+                line.Add(Instantiate(scissorsLine, transform.position, transform.rotation, this.transform));
             }
             if (Input.GetMouseButtonUp(0))
             {
                 isUseScissors = false;
+                //Invoke("ClearLine", 0.2f);
             }
             if (isUseScissors)
             {
-               
+                line[line.Count - 1].transform.position = transform.position;
             }
         }
     }
@@ -43,6 +47,14 @@ public class ScissorsControl_House : MonoBehaviour
         newY = Mathf.Clamp(newY, minY, maxY);
         newX = Mathf.Clamp(newX, minX, maxX);
         transform.position = new Vector3(newX, newY, 0f);
+    }
+    void ClearLine()
+    {
+        for (int i = 0; i < line.Count; i++)
+        {
+            Destroy(line[i]);
+        }
+        line.Clear();
     }
 
     private void OnTriggerEnter(Collider other)
