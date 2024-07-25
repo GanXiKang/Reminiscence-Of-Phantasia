@@ -23,7 +23,7 @@ public class ScissorsControl_House : MonoBehaviour
         {
             ScissorsMove();
 
-            Vector3 scissorsPos = new Vector3(scissorsLine.transform.position.x, scissorsLine.transform.position.y, 0f);
+            Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -3f);
             print(scissorsPos);
             if (Input.GetMouseButtonDown(0))
             {
