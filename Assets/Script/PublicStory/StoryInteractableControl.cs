@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class StoryInteractableControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject player;
+
     void Start()
     {
-        
+        player = GameObject.Find("Player");
+        print(player.transform.position);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
