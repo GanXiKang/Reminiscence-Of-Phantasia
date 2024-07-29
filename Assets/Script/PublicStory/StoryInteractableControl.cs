@@ -8,8 +8,10 @@ public class StoryInteractableControl : MonoBehaviour
     GameObject player;
     public float _snapDistance = 10f;
     public float _scaleSpeed = 5f;
-    public Vector3 scaledSize = new Vector3(0.8f, 0.8f, 0.8f);
+    public Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
     private Vector3 originalScale;
+
+    bool isGet = false;
 
     void Start()
     {
@@ -21,7 +23,15 @@ public class StoryInteractableControl : MonoBehaviour
     
     void Update()
     {
-        
+        if (Input.GetMouseButton(0))
+        {
+            isGet = true;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isGet = false;
+        }
     }
 
     void OnMouseDown()
@@ -34,6 +44,10 @@ public class StoryInteractableControl : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
+
+        if (!isGet) return;
+
+        print("Get");
     }
     void OnMouseExit()
     {
