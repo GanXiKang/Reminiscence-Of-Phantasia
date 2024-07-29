@@ -26,8 +26,8 @@ public class PlayerControl_House : MonoBehaviour
 
     void Update()
     {
-        playerInput.enabled = CameraControl_House.isFreeLook;
-
+        playerInput.enabled = isCanMove();
+        print(isCanMove());
         PlayerMove();
         PlayerOnTheGround();
     }
@@ -60,5 +60,10 @@ public class PlayerControl_House : MonoBehaviour
         {
             _velocity.y = 0;
         }
+    }
+
+    bool isCanMove()
+    {
+        return !CameraControl_House.isFreeLook;
     }
 }
