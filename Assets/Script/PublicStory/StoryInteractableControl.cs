@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class StoryInteractableControl : MonoBehaviour
 {
+    [Header("InteractableDistance")]
     GameObject player;
-    float snapDistance = 10f;
+    public float _snapDistance = 10f;
+    public float _scaleSpeed = 5f;
+    public Vector3 scaledSize = new Vector3(0.8f, 0.8f, 0.8f);
+    private Vector3 originalScale;
 
     void Start()
     {
         player = GameObject.Find("Player");
+
+        originalScale = transform.localScale;
     }
 
     
@@ -18,18 +24,29 @@ public class StoryInteractableControl : MonoBehaviour
         
     }
 
-    void OnMouseEnter()
-    {
-        
-    }
     void OnMouseDown()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > snapDistance) return;
+        if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
             
         print("Down!!");
     }
-    void OnMouseUpAsButton()
+    void OnMouseEnter()
     {
-        print("UP");
+        StopAllCoroutines();
+        StartCoroutine(ScaleObject(scaledSize));
+    }
+    void OnMouseExit()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ScaleObject(originalScale));
+    }
+
+    IEnumerator ScaleObject(Vector3 targetScale)
+    {
+        while (transform.localScale != targetScale)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * _scaleSpeed);
+            yield return null;
+        }
     }
 }
