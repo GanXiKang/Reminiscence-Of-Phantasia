@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class StoryCameraControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("CameraMovement")]
+    public Transform target;
+    public float _smoothTime = 0.5f;
+    public static bool isFollow;
+    private Vector3 velocity = Vector3.zero;
+
     void Start()
     {
-        
+        isFollow = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        if (isFollow)
+        {
+            Vector3 _targetPosition = target.position + new Vector3(0f, 20f, -15f);
+
+            transform.position = Vector3.SmoothDamp(transform.position, _targetPosition, ref velocity, _smoothTime);
+        }
     }
 }
