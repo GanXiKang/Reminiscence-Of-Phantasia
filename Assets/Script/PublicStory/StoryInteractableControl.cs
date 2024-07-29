@@ -5,12 +5,11 @@ using UnityEngine;
 public class StoryInteractableControl : MonoBehaviour
 {
     GameObject player;
-    float snapDistance = 1f;
+    float snapDistance = 10f;
 
     void Start()
     {
         player = GameObject.Find("Player");
-        print(player.transform.position);
     }
 
     
@@ -25,14 +24,9 @@ public class StoryInteractableControl : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= snapDistance)
-        {
-            print("Down!!");
-        }
-        else 
-        {
-            print("No");
-        }
+        if (Vector3.Distance(transform.position, player.transform.position) > snapDistance) return;
+            
+        print("Down!!");
     }
     void OnMouseUpAsButton()
     {
