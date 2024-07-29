@@ -21,12 +21,8 @@ public class StoryInteractableControl : MonoBehaviour
     {
         print("Down!!");
     }
-    void OnMouseEnter()
+    void OnMouseUpAsButton()
     {
-        print("Enter!");
-    }
-    void OnMouseDrag()
-    {
-        print("Drag");
+        print("UP");
     }
 }
