@@ -1312,6 +1312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8010ce16aad0c84f8e69cbfc0910edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _snapDistance: 10
+  _scaleSpeed: 5
+  scaledSize: {x: 0.6, y: 0.6, z: 0.6}
 --- !u!1 &1619258928
 GameObject:
   m_ObjectHideFlags: 0
