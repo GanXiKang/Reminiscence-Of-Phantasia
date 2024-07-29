@@ -8,13 +8,11 @@ public class StoryPlayerControl : MonoBehaviour
     CharacterController cc;
     PlayerInput playerInput;
 
-    private Vector3 _storyMoveInput;
-
     [Header("Movement")]
-    public float _moveSpeed = 10f;
+    public float _moveSpeed = 7f;
     public float _gravity = 20f;
-
-    float _direction = 1;
+    private Vector3 _storyMoveInput;
+    private Vector3 _storyVelocity;
 
     void Start()
     {
@@ -24,25 +22,29 @@ public class StoryPlayerControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            _moveSpeed = 15f;
-        }
-        else
-        {
-            _moveSpeed = 8f;
-        }
-
-        if (!cc.isGrounded)
-        {
-            _storyMoveInput.y -= _gravity * Time.fixedDeltaTime;
-        }
-
-        cc.Move(_storyMoveInput * _moveSpeed * Time.deltaTime);
+        StoryPlayerMove();
+        StoryPlayerOnTheGround();
     }
 
     void OnMove(InputValue value)
     {
-        
+        Vector2 input = value.Get<Vector2>();
+        _storyMoveInput = new Vector3(input.x, 0f, input.y);
+    }
+
+    void StoryPlayerMove()
+    {
+        cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.deltaTime);
+    }
+    void StoryPlayerOnTheGround()
+    {
+        if (!cc.isGrounded)
+        {
+            _storyVelocity.y -= _gravity * Time.deltaTime;
+        }
+        else
+        {
+            _storyVelocity.y = 0;
+        }
     }
 }
