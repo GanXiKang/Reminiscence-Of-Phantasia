@@ -11,7 +11,7 @@ public class PlayerControl_House : MonoBehaviour
     [Header("Camera")]
     public Camera playerCamera;
 
-    [Header("Move")]
+    [Header("Movement")]
     public float _moveSpeed = 7f;
     public float _gravity = 20f;
     private Vector3 _moveInput;
