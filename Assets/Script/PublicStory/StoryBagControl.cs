@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StoryBagControl : MonoBehaviour
 {
     bool isOpenBag = false;
+
     void Start()
     {
         
@@ -16,5 +17,8 @@ public class StoryBagControl : MonoBehaviour
         
     }
 
-    public 
+    public void Bag_Button()
+    {
+        
+    }
 }
