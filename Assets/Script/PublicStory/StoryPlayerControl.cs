@@ -25,10 +25,10 @@ public class StoryPlayerControl : MonoBehaviour
         StoryPlayerMove();
         StoryPlayerOnTheGround();
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            playerInput.enabled = !playerInput.enabled;
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    playerInput.enabled = !playerInput.enabled;
+        //}
     }
 
     void OnMove(InputValue value)
