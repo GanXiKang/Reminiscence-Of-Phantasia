@@ -21,4 +21,8 @@ public class StoryInteractableControl : MonoBehaviour
     {
         print("Yes!!");
     }
+    void OnMouseUp()
+    {
+        print("Try");
+    }
 }
