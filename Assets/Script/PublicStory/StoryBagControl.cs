@@ -8,7 +8,7 @@ public class StoryBagControl : MonoBehaviour
     [Header("BagUI")]
     public Image background;
     public GameObject[] item;
-    public float _speed = 1.5f;
+    public float _speed = 2f;
     bool isOpenBag = false;
     bool isAnim = false;
     float value = 0;
@@ -50,7 +50,7 @@ public class StoryBagControl : MonoBehaviour
         {
             if (value > 0)
             {
-                value -= _speed * Time.deltaTime;
+                value -= _speed * 2 * Time.deltaTime;
                 for (int i = 0; i < 5; i++)
                 {
                     item[i].SetActive(isOpenBag);
