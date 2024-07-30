@@ -14,9 +14,17 @@ public class StoryBagControl : MonoBehaviour
     bool isAnim = false;
     float value = 0;
 
+    [Header("ItemUIDragHandler")]
+    private RectTransform rectTransform;
+    private CanvasGroup canvasGroup;
+    private Canvas canvas;
+    private bool isDragging = false;
+
     void Start()
     {
-        
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        canvas = GetComponentInParent<Canvas>();
     }
 
     void Update()
@@ -65,8 +73,31 @@ public class StoryBagControl : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             item[i].SetActive(isOpenBag);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
         isAnim = false;
+    }
+
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        canvasGroup.alpha = 0.6f; // °ëÍ¸Ã÷ï@Ê¾
+        canvasGroup.blocksRaycasts = false; // ÔÊÔS´©Í¸
+        isDragging = true;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (isDragging)
+        {
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        canvasGroup.alpha = 1.0f;
+        canvasGroup.blocksRaycasts = true;
+        isDragging = false;
     }
 }
