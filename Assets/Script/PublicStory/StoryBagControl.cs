@@ -86,7 +86,7 @@ public class StoryBagControl : MonoBehaviour
         {
             if (i == _whatItem) return;
 
-            item[i].GetComponent<RectTransform>().anchoredPosition = itemBG[i].GetComponent<RectTransform>().position;
+            item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
         }
     }
 
