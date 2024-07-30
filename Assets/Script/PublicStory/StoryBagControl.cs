@@ -11,6 +11,7 @@ public class StoryBagControl : MonoBehaviour
     [Header("BagUI")]
     public Image background;
     public GameObject[] item;
+    public GameObject[] itemBG;
     public float _speed = 2f;
     public static bool isOpenBag = false;
     public static bool isItemFollow = false;
