@@ -81,6 +81,13 @@ public class StoryBagControl : MonoBehaviour
             canvas.worldCamera,
             out localPoint);
         item[_whatItem].GetComponent<RectTransform>().anchoredPosition = localPoint;
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == _whatItem) return;
+
+            item[i].GetComponent<RectTransform>().anchoredPosition = itemBG[i].GetComponent<RectTransform>().position;
+        }
     }
 
     IEnumerator BagItem()
