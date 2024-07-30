@@ -37,8 +37,13 @@ public class StoryBagControl : MonoBehaviour
     }
     public void Item_Button(int _whichItem)
     {
-        isItemFollow = true;
+        isItemFollow = !isItemFollow;
+        StoryInteractableControl.isGet = isItemFollow;
         _whatItem = _whichItem;
+        if (!isItemFollow)
+        {
+            _whatItem = 5;
+        }
     }
 
     void Bag()
@@ -72,8 +77,13 @@ public class StoryBagControl : MonoBehaviour
     }
     void ItemMove()
     {
-        if (!isItemFollow) return;
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == _whatItem) return;
+            item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
+        }
 
+        if (!isItemFollow) return;
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
@@ -81,13 +91,6 @@ public class StoryBagControl : MonoBehaviour
             canvas.worldCamera,
             out localPoint);
         item[_whatItem].GetComponent<RectTransform>().anchoredPosition = localPoint;
-
-        for (int i = 0; i < 5; i++)
-        {
-            if (i == _whatItem) return;
-
-            item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
-        }
     }
 
     IEnumerator BagItem()
