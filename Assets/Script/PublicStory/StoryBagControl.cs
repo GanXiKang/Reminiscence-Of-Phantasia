@@ -33,7 +33,6 @@ public class StoryBagControl : MonoBehaviour
     void Bag()
     {
         background.fillAmount = value;
-        if (!isAnim) return;
 
         if (isOpenBag)
         {
@@ -43,6 +42,7 @@ public class StoryBagControl : MonoBehaviour
             }
             else
             {
+                if (!isAnim) return;
                 StartCoroutine(BagItem());
             }
         }
@@ -54,10 +54,11 @@ public class StoryBagControl : MonoBehaviour
             }
             else 
             {
+                if (!isAnim) return;
                 StartCoroutine(BagItem());
             }
         }
-        //isAnim = false;
+       
     }
     IEnumerator BagItem()
     {
@@ -66,5 +67,6 @@ public class StoryBagControl : MonoBehaviour
             item[i].SetActive(isOpenBag);
             yield return new WaitForSeconds(0.2f);
         }
+        isAnim = false;
     }
 }
