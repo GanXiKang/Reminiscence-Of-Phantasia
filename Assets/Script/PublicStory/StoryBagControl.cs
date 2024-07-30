@@ -10,32 +10,32 @@ public class StoryBagControl : MonoBehaviour
     public Image background;
     public GameObject[] item;
     public float _speed = 2f;
-    bool isOpenBag = false;
+    public static bool isOpenBag = false;
+    public static bool isItemFollow = false;
     bool isAnim = false;
     float value = 0;
-
-    [Header("ItemUIDragHandler")]
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
-    private Canvas canvas;
-    private bool isDragging = false;
+    int _whatItem;
 
     void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
-        canvas = GetComponentInParent<Canvas>();
+        
     }
 
     void Update()
     {
         Bag();
+        ItemMove();
     }
 
     public void Bag_Button()
     {
         isOpenBag = !isOpenBag;
         isAnim = true;
+    }
+    public void ItemA_Button(int _whichItem)
+    {
+        isItemFollow = true;
+        _whatItem = _whichItem;
     }
 
     void Bag()
@@ -67,6 +67,29 @@ public class StoryBagControl : MonoBehaviour
         }
        
     }
+    void ItemMove()
+    {
+        if (!isItemFollow) return;
+
+        switch (_whatItem)
+        {
+            case 1:
+                item[0].GetComponent<RectTransform>().anchoredPosition = Input.mousePosition;
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            case 5:
+                break;
+        }
+    }
 
     IEnumerator BagItem()
     {
@@ -76,28 +99,5 @@ public class StoryBagControl : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         isAnim = false;
-    }
-
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        canvasGroup.alpha = 0.6f; // °ëÍ¸Ã÷ï@Ê¾
-        canvasGroup.blocksRaycasts = false; // ÔÊÔS´©Í¸
-        isDragging = true;
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (isDragging)
-        {
-            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        }
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        canvasGroup.alpha = 1.0f;
-        canvasGroup.blocksRaycasts = true;
-        isDragging = false;
     }
 }
