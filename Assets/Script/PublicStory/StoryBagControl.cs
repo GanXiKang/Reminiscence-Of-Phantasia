@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class StoryBagControl : MonoBehaviour
 {
+    private Canvas canvas;
+
     [Header("BagUI")]
     public Image background;
     public GameObject[] item;
@@ -18,7 +20,7 @@ public class StoryBagControl : MonoBehaviour
 
     void Start()
     {
-        
+        canvas = GetComponentInParent<Canvas>();
     }
 
     void Update()
