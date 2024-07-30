@@ -37,7 +37,6 @@ public class StoryInteractableControl : MonoBehaviour
     void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
-            
         print("Down!!");
     }
     void OnMouseEnter()
@@ -46,7 +45,6 @@ public class StoryInteractableControl : MonoBehaviour
         StartCoroutine(ScaleObject(scaledSize));
 
         if (!isGet) return;
-
         print("Get");
     }
     void OnMouseExit()
