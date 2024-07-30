@@ -34,7 +34,7 @@ public class StoryBagControl : MonoBehaviour
         isOpenBag = !isOpenBag;
         isAnim = true;
     }
-    public void ItemA_Button(int _whichItem)
+    public void Item_Button(int _whichItem)
     {
         isItemFollow = true;
         _whatItem = _whichItem;
@@ -73,24 +73,13 @@ public class StoryBagControl : MonoBehaviour
     {
         if (!isItemFollow) return;
 
-        switch (_whatItem)
-        {
-            case 1:
-                item[0].GetComponent<RectTransform>().anchoredPosition = Input.mousePosition;
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                break;
-
-            case 5:
-                break;
-        }
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            Input.mousePosition,
+            canvas.worldCamera,
+            out localPoint);
+        item[_whatItem].GetComponent<RectTransform>().anchoredPosition = localPoint;
     }
 
     IEnumerator BagItem()
