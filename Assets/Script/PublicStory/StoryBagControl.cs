@@ -16,8 +16,8 @@ public class StoryBagControl : MonoBehaviour
     public static bool isOpenBag = false;
     public static bool isItemFollow = false;
     bool isAnim = false;
-    float value;
-    int _whatItem;
+    float value = 0;
+    int _whatItem = 5;
 
     void Start()
     {
