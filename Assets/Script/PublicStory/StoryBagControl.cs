@@ -9,6 +9,7 @@ public class StoryBagControl : MonoBehaviour
     public Image background;
     public GameObject[] item;
     bool isOpenBag = false;
+    bool isAnim = false;
     float value = 0;
 
 
@@ -19,11 +20,26 @@ public class StoryBagControl : MonoBehaviour
 
     void Update()
     {
-        
+        Bag();
     }
 
     public void Bag_Button()
     {
-        
+        isOpenBag = !isOpenBag;
+        isAnim = true;
+    }
+
+    void Bag()
+    {
+        if (!isAnim) return;
+
+        if (isOpenBag)
+        {
+
+        }
+        else
+        {
+            
+        }
     }
 }
