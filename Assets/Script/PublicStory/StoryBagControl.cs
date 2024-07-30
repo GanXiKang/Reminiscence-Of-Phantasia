@@ -13,7 +13,6 @@ public class StoryBagControl : MonoBehaviour
     bool isAnim = false;
     float value = 0;
 
-
     void Start()
     {
         
@@ -59,6 +58,7 @@ public class StoryBagControl : MonoBehaviour
         }
        
     }
+
     IEnumerator BagItem()
     {
         for (int i = 0; i < 5; i++)
