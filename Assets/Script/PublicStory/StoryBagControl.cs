@@ -37,40 +37,34 @@ public class StoryBagControl : MonoBehaviour
 
         if (isOpenBag)
         {
-            StartCoroutine(OpenBag());
+            if (value < 1)
+            {
+                value += _speed * Time.deltaTime;
+            }
+            else
+            {
+                StartCoroutine(BagItem());
+            }
         }
         else
         {
-            StartCoroutine(CloseBag());
+            if (value > 0)
+            {
+                value -= _speed * Time.deltaTime;
+            }
+            else 
+            {
+                StartCoroutine(BagItem());
+            }
         }
         isAnim = false;
     }
-    IEnumerator OpenBag()
+    IEnumerator BagItem()
     {
-        if (value < 1)
+        for (int i = 0; i < 5; i++)
         {
-            value += _speed * Time.deltaTime;
-        }
-        else 
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                item[i].SetActive(true);
-                yield return new WaitForSeconds(0.2f);
-            }
-        }
-        
-    }
-    IEnumerator CloseBag()
-    {
-        if (value < 1)
-        {
-            value += _speed * Time.deltaTime;
-            for (int i = 0; i < 5; i++)
-            {
-                item[i].SetActive(false);
-                yield return new WaitForSeconds(0.2f);
-            }
+            item[i].SetActive(isOpenBag);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
