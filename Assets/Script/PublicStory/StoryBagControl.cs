@@ -57,7 +57,7 @@ public class StoryBagControl : MonoBehaviour
                 StartCoroutine(BagItem());
             }
         }
-        isAnim = false;
+        //isAnim = false;
     }
     IEnumerator BagItem()
     {
