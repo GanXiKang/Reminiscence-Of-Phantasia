@@ -73,7 +73,8 @@ public class StoryBagControl : MonoBehaviour
                 value -= _speed * 2 * Time.deltaTime;
                 for (int i = 0; i < 5; i++)
                 {
-                    item[i].SetActive(isOpenBag);
+                    itemBG[i].SetActive(false);
+                    item[i].SetActive(false);
                 }
             }
         }
