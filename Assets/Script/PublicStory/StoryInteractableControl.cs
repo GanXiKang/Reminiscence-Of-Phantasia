@@ -6,7 +6,7 @@ public class StoryInteractableControl : MonoBehaviour
 {
     [Header("InteractableDistance")]
     GameObject player;
-    public float _snapDistance = 10f;
+    public float _snapDistance = 12f;
     public float _scaleSpeed = 5f;
     public Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
     private Vector3 originalScale;
@@ -33,6 +33,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     void OnMouseEnter()
     {
+        if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
 
