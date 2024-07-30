@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class StoryBagControl : MonoBehaviour
 {
+    [Header("BagUI")]
+    public Image background;
+    public GameObject[] item;
     bool isOpenBag = false;
+    float value = 0;
+
 
     void Start()
     {
