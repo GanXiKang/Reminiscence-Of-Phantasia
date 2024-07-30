@@ -51,11 +51,10 @@ public class StoryBagControl : MonoBehaviour
             if (value > 0)
             {
                 value -= _speed * Time.deltaTime;
-            }
-            else 
-            {
-                if (!isAnim) return;
-                StartCoroutine(BagItem());
+                for (int i = 0; i < 5; i++)
+                {
+                    item[i].SetActive(isOpenBag);
+                }
             }
         }
        
