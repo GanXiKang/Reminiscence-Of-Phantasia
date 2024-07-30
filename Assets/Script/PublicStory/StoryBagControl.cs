@@ -83,8 +83,10 @@ public class StoryBagControl : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            if (i == _whatItem) return;
-            item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
+            if (i != _whatItem)
+            {
+                item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
+            }
         }
 
         if (!isItemFollow) return;
