@@ -83,11 +83,11 @@ public class StoryBagControl : MonoBehaviour
     }
     void ItemMove()
     {
-        //for (int i = 0; i < 5; i++)
-        //{
-        //    if (i == _whatItem) return;
-        //    item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
-        //}
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == _whatItem) return;
+            item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
+        }
 
         if (!isItemFollow) return;
         Vector2 localPoint;
