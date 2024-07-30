@@ -34,7 +34,7 @@ public class StoryBagControl : MonoBehaviour
         isOpenBag = !isOpenBag;
         isAnim = true;
     }
-    public void ItemA_Button(int _whichItem)
+    public void Item_Button(int _whichItem)
     {
         isItemFollow = true;
         _whatItem = _whichItem;
