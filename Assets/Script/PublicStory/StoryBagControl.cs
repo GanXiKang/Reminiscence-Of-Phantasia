@@ -22,7 +22,6 @@ public class StoryBagControl : MonoBehaviour
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
-        print(_whatItem);
     }
 
     void Update()
@@ -49,7 +48,6 @@ public class StoryBagControl : MonoBehaviour
             _whatItem = 5;
         }
         StoryInteractableControl.isGet = isItemFollow;
-        print(_whatItem);
     }
 
     void Bag()
