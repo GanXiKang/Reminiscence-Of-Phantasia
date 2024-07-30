@@ -11,7 +11,7 @@ public class StoryInteractableControl : MonoBehaviour
     public Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
     private Vector3 originalScale;
 
-    bool isGet = false;
+    public static bool isGet = false;
 
     void Start()
     {
@@ -23,15 +23,7 @@ public class StoryInteractableControl : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            isGet = true;
-        }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            isGet = false;
-        }
     }
 
     void OnMouseDown()
