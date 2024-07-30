@@ -44,6 +44,7 @@ public class StoryBagControl : MonoBehaviour
         {
             _whatItem = 5;
         }
+        print(_whatItem);
     }
 
     void Bag()
