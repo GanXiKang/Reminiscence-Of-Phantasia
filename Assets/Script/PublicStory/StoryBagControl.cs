@@ -16,12 +16,13 @@ public class StoryBagControl : MonoBehaviour
     public static bool isOpenBag = false;
     public static bool isItemFollow = false;
     bool isAnim = false;
-    float value = 0;
+    float value;
     int _whatItem;
 
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
+        print(_whatItem);
     }
 
     void Update()
@@ -37,13 +38,17 @@ public class StoryBagControl : MonoBehaviour
     }
     public void Item_Button(int _whichItem)
     {
-        isItemFollow = !isItemFollow;
-        StoryInteractableControl.isGet = isItemFollow;
-        _whatItem = _whichItem;
-        if (!isItemFollow)
+        if (_whatItem != _whichItem)
         {
+            isItemFollow = true;
+            _whatItem = _whichItem;
+        }
+        else
+        {
+            isItemFollow = false;
             _whatItem = 5;
         }
+        StoryInteractableControl.isGet = isItemFollow;
         print(_whatItem);
     }
 
@@ -78,11 +83,11 @@ public class StoryBagControl : MonoBehaviour
     }
     void ItemMove()
     {
-        for (int i = 0; i < 5; i++)
-        {
-            if (i == _whatItem) return;
-            item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
-        }
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    if (i == _whatItem) return;
+        //    item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
+        //}
 
         if (!isItemFollow) return;
         Vector2 localPoint;
