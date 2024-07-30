@@ -73,30 +73,13 @@ public class StoryBagControl : MonoBehaviour
     {
         if (!isItemFollow) return;
 
-        switch (_whatItem)
-        {
-            case 1:
-                Vector2 localPoint;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    canvas.transform as RectTransform,
-                    Input.mousePosition,
-                    canvas.worldCamera,
-                    out localPoint);
-                item[0].GetComponent<RectTransform>().anchoredPosition = localPoint;
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                break;
-
-            case 5:
-                break;
-        }
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            Input.mousePosition,
+            canvas.worldCamera,
+            out localPoint);
+        item[_whatItem].GetComponent<RectTransform>().anchoredPosition = localPoint;
     }
 
     IEnumerator BagItem()
