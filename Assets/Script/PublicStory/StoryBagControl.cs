@@ -8,6 +8,7 @@ public class StoryBagControl : MonoBehaviour
     [Header("BagUI")]
     public Image background;
     public GameObject[] item;
+    public float _speed = 1.5f;
     bool isOpenBag = false;
     bool isAnim = false;
     float value = 0;
@@ -31,15 +32,45 @@ public class StoryBagControl : MonoBehaviour
 
     void Bag()
     {
+        background.fillAmount = value;
         if (!isAnim) return;
 
         if (isOpenBag)
         {
-
+            StartCoroutine(OpenBag());
         }
         else
         {
-            
+            StartCoroutine(CloseBag());
+        }
+        isAnim = false;
+    }
+    IEnumerator OpenBag()
+    {
+        if (value < 1)
+        {
+            value += _speed * Time.deltaTime;
+        }
+        else 
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                item[i].SetActive(true);
+                yield return new WaitForSeconds(0.2f);
+            }
+        }
+        
+    }
+    IEnumerator CloseBag()
+    {
+        if (value < 1)
+        {
+            value += _speed * Time.deltaTime;
+            for (int i = 0; i < 5; i++)
+            {
+                item[i].SetActive(false);
+                yield return new WaitForSeconds(0.2f);
+            }
         }
     }
 }
