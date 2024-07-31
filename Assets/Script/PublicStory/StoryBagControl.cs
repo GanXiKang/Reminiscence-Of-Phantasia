@@ -106,9 +106,9 @@ public class StoryBagControl : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             itemBG[i].SetActive(true);
-            yield return new WaitForSeconds(0.05f);
-            item[i].SetActive(true);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
+            itemButton[i].SetActive(true);
+            yield return new WaitForSeconds(0.1f);
         }
         isAnim = false;
     }
