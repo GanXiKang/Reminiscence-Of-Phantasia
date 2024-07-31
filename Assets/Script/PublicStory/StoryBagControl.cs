@@ -16,21 +16,18 @@ public class StoryBagControl : MonoBehaviour
     public float _speed = 2f;
     public static bool isOpenBag = false;
     public static bool isItemFollow = false;
-    public static bool[] isHaveItem;
-    bool isAnim = false;
+    public static bool isGet = false;
+    public static int _whichItemToGet;
     float value = 0;
+    bool isAnim = false;
     int _whatItem = 5;
-    int _whatHaveItem = 0;
 
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
 
-        for (int i = 0; i < item.Length; i++)
-        {
-            isHaveItem[i] = false;
-        }
-        isHaveItem[1] = true;
+        isGet = true;
+        _whichItemToGet = 1;
     }
 
     void Update()
@@ -62,17 +59,13 @@ public class StoryBagControl : MonoBehaviour
 
     void BagDisplay()
     {
-        for (int i = 0; i < item.Length; i++)
-        {
-            if (isHaveItem[i])
-            {
-                _whatHaveItem++;
-                itemButton[_whatHaveItem - 1].GetComponent<Image>().sprite = item[i];
-                itemBG[_whatHaveItem - 1].GetComponent<Image>().sprite = item[i];
-            }
+        if (!isGet) return;
 
-            if (_whatHaveItem > 5)
-                _whatHaveItem = 5;
+        for (int i = 0; i < 5; i++)
+        {
+            if (itemBG[i].GetComponent<Image>().sprite != null) return;
+            itemBG[i].GetComponent<Image>().sprite = item[_whichItemToGet];
+            itemButton[i].GetComponent<Image>().sprite = item[_whichItemToGet];
         }
     }
     void Bag()
@@ -96,7 +89,7 @@ public class StoryBagControl : MonoBehaviour
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
-                for (int i = 0; i < _whatHaveItem; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     itemBG[i].SetActive(false);
                     itemButton[i].SetActive(false);
@@ -126,7 +119,7 @@ public class StoryBagControl : MonoBehaviour
 
     IEnumerator BagItem()
     {
-        for (int i = 0; i < _whatHaveItem; i++)
+        for (int i = 0; i < 5; i++)
         {
             itemBG[i].SetActive(true);
             yield return new WaitForSeconds(0.1f);
