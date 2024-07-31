@@ -63,12 +63,18 @@ public class StoryBagControl : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            if (itemBG[i].GetComponent<Image>().sprite != null) return;
-            print("OK");
-            itemBG[i].GetComponent<Image>().sprite = item[_whichItemToGet];
-            itemButton[i].GetComponent<Image>().sprite = item[_whichItemToGet];
-            isGet = true;
-            break;
+            print("In");
+            if (itemBG[i].GetComponent<Image>().sprite != null)
+            {
+                print("Get");
+            }
+            else
+            {
+                print("OK");
+                itemBG[i].GetComponent<Image>().sprite = item[_whichItemToGet];
+                itemButton[i].GetComponent<Image>().sprite = item[_whichItemToGet];
+                isGet = true;
+            }
         }
     }
     void Bag()
