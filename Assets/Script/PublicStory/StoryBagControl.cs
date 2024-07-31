@@ -21,7 +21,6 @@ public class StoryBagControl : MonoBehaviour
     float value = 0;
     int _whatItem = 5;
     int _whatHaveItem = 0;
-    int _recordItem[];
 
     void Start()
     {
@@ -32,6 +31,7 @@ public class StoryBagControl : MonoBehaviour
             isHaveItem[i] = false;
         }
         isHaveItem[1] = true;
+    }
 
     void Update()
     {
