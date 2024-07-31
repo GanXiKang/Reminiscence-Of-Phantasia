@@ -16,17 +16,26 @@ public class StoryBagControl : MonoBehaviour
     public float _speed = 2f;
     public static bool isOpenBag = false;
     public static bool isItemFollow = false;
+    public static bool[] isHaveItem;
     bool isAnim = false;
     float value = 0;
     int _whatItem = 5;
+    int _whatHaveItem = 0;
+    int _recordItem[];
 
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
-    }
+
+        for (int i = 0; i < item.Length; i++)
+        {
+            isHaveItem[i] = false;
+        }
+        isHaveItem[1] = true;
 
     void Update()
     {
+        BagDisplay();
         Bag();
         ItemMove();
     }
@@ -51,6 +60,21 @@ public class StoryBagControl : MonoBehaviour
         StoryInteractableControl.isGet = isItemFollow;
     }
 
+    void BagDisplay()
+    {
+        for (int i = 0; i < item.Length; i++)
+        {
+            if (isHaveItem[i])
+            {
+                _whatHaveItem++;
+                itemButton[_whatHaveItem - 1].GetComponent<Image>().sprite = item[i];
+                itemBG[_whatHaveItem - 1].GetComponent<Image>().sprite = item[i];
+            }
+
+            if (_whatHaveItem > 5)
+                _whatHaveItem = 5;
+        }
+    }
     void Bag()
     {
         background.fillAmount = value;
@@ -72,14 +96,13 @@ public class StoryBagControl : MonoBehaviour
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < _whatHaveItem; i++)
                 {
                     itemBG[i].SetActive(false);
                     itemButton[i].SetActive(false);
                 }
             }
         }
-       
     }
     void ItemMove()
     {
@@ -103,7 +126,7 @@ public class StoryBagControl : MonoBehaviour
 
     IEnumerator BagItem()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < _whatHaveItem; i++)
         {
             itemBG[i].SetActive(true);
             yield return new WaitForSeconds(0.1f);
