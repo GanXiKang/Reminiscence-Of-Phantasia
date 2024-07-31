@@ -75,7 +75,7 @@ public class StoryBagControl : MonoBehaviour
                 for (int i = 0; i < 5; i++)
                 {
                     itemBG[i].SetActive(false);
-                    item[i].SetActive(false);
+                    itemButton[i].SetActive(false);
                 }
             }
         }
@@ -87,7 +87,7 @@ public class StoryBagControl : MonoBehaviour
         {
             if (i != _whatItem)
             {
-                item[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
+                itemButton[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
             }
         }
 
@@ -98,7 +98,7 @@ public class StoryBagControl : MonoBehaviour
             Input.mousePosition,
             canvas.worldCamera,
             out localPoint);
-        item[_whatItem].GetComponent<RectTransform>().anchoredPosition = localPoint;
+        itemButton[_whatItem].GetComponent<RectTransform>().anchoredPosition = localPoint;
     }
 
     IEnumerator BagItem()
