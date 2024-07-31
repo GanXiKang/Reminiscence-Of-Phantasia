@@ -10,7 +10,8 @@ public class StoryBagControl : MonoBehaviour
 
     [Header("BagUI")]
     public Image background;
-    public GameObject[] item;
+    public Sprite[] item;
+    public GameObject[] itemButton;
     public GameObject[] itemBG;
     public float _speed = 2f;
     public static bool isOpenBag = false;
