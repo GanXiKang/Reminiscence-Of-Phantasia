@@ -29,7 +29,9 @@ public class StoryInteractableControl : MonoBehaviour
     void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
-        print("Down!!");
+
+        StoryBagControl.isGet = true;
+        StoryBagControl._whichItemToGet = 1;
     }
     void OnMouseEnter()
     {
