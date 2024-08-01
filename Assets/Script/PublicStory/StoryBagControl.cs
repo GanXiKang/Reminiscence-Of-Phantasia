@@ -94,6 +94,7 @@ public class StoryBagControl : MonoBehaviour
                 {
                     if (itemBG[gridIndex].GetComponent<Image>().sprite == null)
                     {
+                        Debug.Log($"Setting sprite for gridIndex: {gridIndex}, item: {p}");
                         itemBG[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
                         itemButton[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
                         gridIndex++;
