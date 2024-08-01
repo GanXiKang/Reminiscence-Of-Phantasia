@@ -10,7 +10,7 @@ public class StoryBagControl : MonoBehaviour
 
     [Header("BagUI")]
     public Image background;
-    public Sprite[] item;
+    public Sprite[] itemSprite;
     public GameObject[] itemButton;
     public GameObject[] itemBG;
     public float _speed = 2f;
@@ -19,15 +19,18 @@ public class StoryBagControl : MonoBehaviour
     public static bool isGet = false;
     public static int _whichItemToGet;
     float value = 0;
+    bool[] isItemNumber;
     bool isAnim = false;
     int _whatItem = 5;
-
-    private List<int> playerItems;
 
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
-        playerItems = new List<int>();
+
+        for (int i = 0; i < itemSprite.Length; i++)
+        {
+            isItemNumber[i] = false;
+        }
     }
 
     void Update()
@@ -61,6 +64,8 @@ public class StoryBagControl : MonoBehaviour
     {
         if (!isGet) return;
 
+        isItemNumber[_whichItemToGet] = true;
+
         for (int i = 0; i < 5; i++)
         {
             print("In");
@@ -71,8 +76,8 @@ public class StoryBagControl : MonoBehaviour
             else
             {
                 print("OK");
-                itemBG[i].GetComponent<Image>().sprite = item[_whichItemToGet];
-                itemButton[i].GetComponent<Image>().sprite = item[_whichItemToGet];
+                itemBG[i].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
+                itemButton[i].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
                 isGet = true;
                 break;
             }
