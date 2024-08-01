@@ -66,7 +66,7 @@ public class StoryBagControl : MonoBehaviour
         isItemNumber = new bool[itemSprite.Length];
         for (int i = 0; i < itemSprite.Length; i++)
         {
-            isItemNumber[i] = false;
+            isItemNumber[i] = true;
         }
     }
     void BagDisplay()
@@ -78,6 +78,8 @@ public class StoryBagControl : MonoBehaviour
             if (isItemNumber[i])
                 _howManyGrids++;
         }
+        if (_howManyGrids > 5)
+            _howManyGrids = 5;
         print(_howManyGrids);
         isGet = false;
 
