@@ -22,16 +22,12 @@ public class StoryBagControl : MonoBehaviour
     bool isAnim = false;
     int _whatItem = 5;
 
-    public List<Image> slotImages; // 書包格子的 Image
-    public List<Sprite> itemSprites; // 道具的 Sprite
     private List<int> playerItems;
 
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
-
-        isGet = true;
-        _whichItemToGet = 1;
+        playerItems = new List<int>();
     }
 
     void Update()
