@@ -20,7 +20,7 @@ public class StoryPlayerControl : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         StoryPlayerMove();
         StoryPlayerOnTheGround();
@@ -41,7 +41,7 @@ public class StoryPlayerControl : MonoBehaviour
     {
         Quaternion rotation = transform.rotation;
         Vector3 adjustedMoveInput = rotation * _storyMoveInput;
-        cc.Move((_storyVelocity + adjustedMoveInput * _moveSpeed) * Time.deltaTime);
+        cc.Move((_storyVelocity + adjustedMoveInput * _moveSpeed) * Time.fixedDeltaTime);
     }
     void StoryPlayerOnTheGround()
     {
