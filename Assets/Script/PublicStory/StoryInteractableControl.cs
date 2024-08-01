@@ -14,8 +14,8 @@ public class StoryInteractableControl : MonoBehaviour
     [Header("Item")]
     public int _giveItemNumber;
     public int _getItemNumber;
-    public static bool isGet = false;
     bool isGiveItem = false;
+    bool isGetItem = false;
 
     void Start()
     {
@@ -45,7 +45,7 @@ public class StoryInteractableControl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
 
-        if (!isGet) return;
+        if (!isGetItem) return;
         print("Get");
     }
     void OnMouseExit()
