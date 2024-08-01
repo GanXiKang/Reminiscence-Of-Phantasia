@@ -22,17 +22,20 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     void Update()
     {
-        if(!isIntroduce)
+        if (!isIntroduce)
             StopCoroutine(IntroduceDisplay());
     }
 
     public void OnPointEnter(int _whichItem)
     {
-        if(isIntroduce)
+        panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
+        content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
+        if (isIntroduce)
             StartCoroutine(IntroduceDisplay());
     }
     public void OnPointExit()
     {
+        introduce.SetActive(false) ;
         StopCoroutine(IntroduceDisplay());
     }
 
@@ -53,7 +56,5 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         introduce.SetActive(true);
-        panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
-        content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
     }
 }
