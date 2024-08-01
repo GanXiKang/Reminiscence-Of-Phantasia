@@ -25,7 +25,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         switch (_whichItem)
         {
             case 0:
-                introduce.GetComponent<RectTransform>().position = buttonTransform[0].position;
+                panel.GetComponent<RectTransform>().position = buttonTransform[0].position + new Vector3(-100f, 150f, 0f);
                 break;
 
             case 1:
