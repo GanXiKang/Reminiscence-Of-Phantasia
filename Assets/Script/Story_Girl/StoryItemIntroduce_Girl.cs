@@ -22,7 +22,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public void OnPointEnter(int _whichItem)
     {
         introduce.SetActive(true);
-        panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-100f, 160f, 0f);
+        panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
     }
     public void OnPointExit()
     {
