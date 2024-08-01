@@ -30,11 +30,7 @@ public class StoryBagControl : MonoBehaviour
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
-
-        for (int i = 0; i < itemSprite.Length; i++)
-        {
-            isItemNumber[i] = false;
-        }
+        ItemNumber_Start();
     }
 
     void Update()
@@ -64,6 +60,14 @@ public class StoryBagControl : MonoBehaviour
         StoryInteractableControl.isGet = isItemFollow;
     }
 
+    void ItemNumber_Start()
+    {
+        isItemNumber = new bool[itemSprite.Length];
+        for (int i = 0; i < itemSprite.Length; i++)
+        {
+            isItemNumber[i] = false;
+        }
+    }
     void BagDisplay()
     {
         if (!isGet) return;
