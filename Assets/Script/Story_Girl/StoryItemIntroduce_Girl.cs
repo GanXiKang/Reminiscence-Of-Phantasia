@@ -13,7 +13,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     void Start()
     {
-        
+        ItemIntroduceContent();
     }
 
     public void OnPointEnter(int _whichItem)
