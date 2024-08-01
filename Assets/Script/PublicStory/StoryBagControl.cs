@@ -86,6 +86,11 @@ public class StoryBagControl : MonoBehaviour
         }
 
         int gridIndex = 0;
+        //for (int k = 0; k < _howManyGrids; k++)
+        //{
+        //    itemBG[k].GetComponent<Image>().sprite = null;
+        //    itemButton[k].GetComponent<Image>().sprite = null;
+        //}
         for (int p = 0; p < isItemNumber.Length; p++)
         {
             Debug.Log($"Item {p} is {isItemNumber[p]}.");
@@ -93,12 +98,11 @@ public class StoryBagControl : MonoBehaviour
             {
                 if (gridIndex < _howManyGrids)
                 {
-                    if (itemBG[gridIndex].GetComponent<Image>().sprite == null)
-                    {
-                        Debug.Log($"Setting sprite for gridIndex: {gridIndex}, item: {p}");
+                    //if (itemBG[gridIndex].GetComponent<Image>().sprite == null)
+                    //{
                         itemBG[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
                         itemButton[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
-                    }
+                    //}
                     gridIndex++;
                 }
             }
