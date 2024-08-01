@@ -88,7 +88,7 @@ public class StoryBagControl : MonoBehaviour
         int gridIndex = 0;
         for (int p = 0; p < isItemNumber.Length; p++)
         {
-            Debug.Log($"Item {p} is true.");
+            Debug.Log($"Item {p} is {isItemNumber[p]}.");
             if (isItemNumber[p])
             {
                 if (gridIndex < _howManyGrids)
