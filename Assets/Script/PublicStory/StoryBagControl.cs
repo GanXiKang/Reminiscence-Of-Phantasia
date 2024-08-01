@@ -95,6 +95,7 @@ public class StoryBagControl : MonoBehaviour
                     {
                         itemBG[k].GetComponent<Image>().sprite = itemSprite[p];
                         itemButton[k].GetComponent<Image>().sprite = itemSprite[p];
+                        break;
                     }
                 }
             }
