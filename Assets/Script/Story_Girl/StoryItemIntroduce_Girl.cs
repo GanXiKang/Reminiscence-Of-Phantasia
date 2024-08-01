@@ -10,6 +10,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public GameObject panel;
     public Text content;
     string[] introduceItem = new string[10];
+    public static bool isIntroduce = true;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;
@@ -19,14 +20,20 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         ItemIntroduceContent();
     }
 
+    void Update()
+    {
+        if(!isIntroduce)
+            StopCoroutine(IntroduceDisplay());
+    }
+
     public void OnPointEnter(int _whichItem)
     {
-        introduce.SetActive(true);
-        panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
+        if(isIntroduce)
+            StartCoroutine(IntroduceDisplay());
     }
     public void OnPointExit()
     {
-        introduce.SetActive(false);
+        StopCoroutine(IntroduceDisplay());
     }
 
     void ItemIntroduceContent()
@@ -40,5 +47,13 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         introduceItem[7] = "”àµôµÄ˜äÖ¦";
         introduceItem[8] = "Ç¬¾»µÄÌO¹û";
         introduceItem[9] = "¿¾Èâ´®";
+    }
+
+    IEnumerator IntroduceDisplay()
+    {
+        yield return new WaitForSeconds(1f);
+        introduce.SetActive(true);
+        panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
+        content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
     }
 }
