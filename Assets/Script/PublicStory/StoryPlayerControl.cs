@@ -40,13 +40,8 @@ public class StoryPlayerControl : MonoBehaviour
     void StoryPlayerMove()
     {
         Quaternion rotation = transform.rotation;
-
-        // 将输入向量转换到角色的局部空间
         Vector3 adjustedMoveInput = rotation * _storyMoveInput;
-
-        // 移动角色
         cc.Move((_storyVelocity + adjustedMoveInput * _moveSpeed) * Time.deltaTime);
-        //cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.deltaTime);
     }
     void StoryPlayerOnTheGround()
     {
