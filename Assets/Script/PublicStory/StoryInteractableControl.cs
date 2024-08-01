@@ -24,12 +24,6 @@ public class StoryInteractableControl : MonoBehaviour
         originalScale = transform.localScale;
     }
 
-    
-    void Update()
-    {
-
-    }
-
     void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
