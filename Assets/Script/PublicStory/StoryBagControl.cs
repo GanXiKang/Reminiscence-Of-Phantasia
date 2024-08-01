@@ -66,11 +66,13 @@ public class StoryBagControl : MonoBehaviour
         isItemNumber = new bool[itemSprite.Length];
         for (int i = 0; i < itemSprite.Length; i++)
         {
-            isItemNumber[i] = true;
+            isItemNumber[i] = false;
         }
     }
     void BagDisplay()
     {
+        
+
         if (!isGet) return;
         isItemNumber[_whichItemToGet] = true;
         for (int i = 0; i < isItemNumber.Length; i++)
@@ -80,13 +82,7 @@ public class StoryBagControl : MonoBehaviour
         }
         if (_howManyGrids > 5)
             _howManyGrids = 5;
-        print(_howManyGrids);
         isGet = false;
-
-
-        itemBG[0].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
-        itemButton[0].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
-        print("OK");
     }
     void Bag()
     {
@@ -109,7 +105,7 @@ public class StoryBagControl : MonoBehaviour
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < _howManyGrids; i++)
                 {
                     itemBG[i].SetActive(false);
                     itemButton[i].SetActive(false);
@@ -139,7 +135,7 @@ public class StoryBagControl : MonoBehaviour
 
     IEnumerator BagItem()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < _howManyGrids; i++)
         {
             itemBG[i].SetActive(true);
             yield return new WaitForSeconds(0.1f);
