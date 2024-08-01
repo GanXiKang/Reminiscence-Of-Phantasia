@@ -25,6 +25,7 @@ public class StoryBagControl : MonoBehaviour
     public Sprite[] itemSprite;
     public static bool isGet = false;
     public static int _whichItemToGet;
+    public static int[] _gridsItemNumber;
     bool[] isItemNumber;
     int _howManyGrids = 0;
 
@@ -64,6 +65,7 @@ public class StoryBagControl : MonoBehaviour
     void ItemNumber_Start()
     {
         isItemNumber = new bool[itemSprite.Length];
+        _gridsItemNumber = new int[5];
         for (int i = 0; i < itemSprite.Length; i++)
         {
             isItemNumber[i] = false;
@@ -97,6 +99,7 @@ public class StoryBagControl : MonoBehaviour
                 {
                     itemBG[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
                     itemButton[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
+                    _gridsItemNumber[gridIndex] = p;
                     gridIndex++;
                 }
             }
