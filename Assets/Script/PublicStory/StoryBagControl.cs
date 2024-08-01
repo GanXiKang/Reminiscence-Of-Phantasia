@@ -36,7 +36,7 @@ public class StoryBagControl : MonoBehaviour
 
     void Update()
     {
-        BagDisplay();
+        BagGirdDisplay()
         Bag();
         ItemMove();
     }
@@ -69,7 +69,7 @@ public class StoryBagControl : MonoBehaviour
             isItemNumber[i] = false;
         }
     }
-    void BagDisplay()
+    void BagGirdDisplay()
     {
         if (isGet)
         {
@@ -82,13 +82,15 @@ public class StoryBagControl : MonoBehaviour
             }
             if (_howManyGrids > 5)
                 _howManyGrids = 5;
+            BagGirdSprite();
             isGet = false;
         }
-
+    }
+    void BagGirdSprite()
+    {
         int gridIndex = 0;
         for (int p = 0; p < isItemNumber.Length; p++)
         {
-            Debug.Log($"Item {p} is {isItemNumber[p]}.");
             if (isItemNumber[p])
             {
                 if (gridIndex < _howManyGrids)
