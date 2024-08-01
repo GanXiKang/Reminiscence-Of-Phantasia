@@ -14,6 +14,7 @@ public class StoryInteractableControl : MonoBehaviour
     [Header("Item")]
     public int itemNumber;
     public static bool isGet = false;
+    bool isGiveItem = false;
 
     void Start()
     {
@@ -31,9 +32,15 @@ public class StoryInteractableControl : MonoBehaviour
     void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
-
-        StoryBagControl.isGet = true;
-        StoryBagControl._whichItemToGet = itemNumber;
+        if (!isGiveItem)
+        {
+            StoryBagControl.isGet = true;
+            StoryBagControl._whichItemToGet = itemNumber;
+        }
+        else 
+        {
+            print("NO");
+        }
     }
     void OnMouseEnter()
     {
