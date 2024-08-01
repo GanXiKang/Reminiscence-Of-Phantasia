@@ -36,7 +36,7 @@ public class StoryBagControl : MonoBehaviour
 
     void Update()
     {
-        BagGirdDisplay()
+        BagGirdDisplay();
         Bag();
         ItemMove();
     }
