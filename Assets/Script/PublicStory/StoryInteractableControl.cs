@@ -30,7 +30,7 @@ public class StoryInteractableControl : MonoBehaviour
         if (!isGiveItem)
         {
             StoryBagControl.isGet = true;
-            StoryBagControl._whichItemToGet = itemNumber;
+            StoryBagControl._whichItemToGet = _giveItemNumber;
             if (StoryBagControl.isOpenBag)
                 StoryBagControl.isOpenBag = false;
         }
