@@ -58,7 +58,7 @@ public class StoryBagControl : MonoBehaviour
             isItemFollow = false;
             _whatItem = 5;
         }
-        StoryInteractableControl.isGet = isItemFollow;
+        StoryInteractableControl.isGetItem = isItemFollow;
     }
 
     void ItemNumber_Start()
