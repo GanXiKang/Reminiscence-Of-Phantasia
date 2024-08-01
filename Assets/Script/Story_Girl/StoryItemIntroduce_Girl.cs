@@ -8,7 +8,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     //[Header("Introduce")]
     //public GameObject background;
 
-    public void OnPointEnter(/*int _whichItem*/)
+    public void OnPointEnter(int _whichItem)
     {
         print("OK");
     }
