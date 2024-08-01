@@ -98,12 +98,8 @@ public class StoryBagControl : MonoBehaviour
                         Debug.Log($"Setting sprite for gridIndex: {gridIndex}, item: {p}");
                         itemBG[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
                         itemButton[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
-                        gridIndex++;
                     }
-                }
-                else
-                {
-                    Debug.LogWarning("Grid index exceeds the number of available grids.");
+                    gridIndex++;
                 }
             }
         }
