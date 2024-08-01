@@ -11,6 +11,8 @@ public class StoryInteractableControl : MonoBehaviour
     public Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
     private Vector3 originalScale;
 
+    [Header("Item")]
+    public int itemNumber;
     public static bool isGet = false;
 
     void Start()
@@ -31,7 +33,7 @@ public class StoryInteractableControl : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
         StoryBagControl.isGet = true;
-        StoryBagControl._whichItemToGet = 1;
+        StoryBagControl._whichItemToGet = itemNumber;
     }
     void OnMouseEnter()
     {
