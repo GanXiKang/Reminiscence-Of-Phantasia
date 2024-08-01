@@ -85,18 +85,19 @@ public class StoryBagControl : MonoBehaviour
             isGet = false;
         }
 
+        int gridIndex = 0;
         for (int p = 0; p < isItemNumber.Length; p++)
         {
-            for (int k = 0; k < _howManyGrids; k++)
+            if (isItemNumber[p])
             {
-                if (isItemNumber[p])
+                if (gridIndex < _howManyGrids)
                 {
-                    if (itemBG[k].GetComponent<Image>().sprite == null)
+                    if (itemBG[gridIndex].GetComponent<Image>().sprite == null)
                     {
-                        itemBG[k].GetComponent<Image>().sprite = itemSprite[p];
-                        itemButton[k].GetComponent<Image>().sprite = itemSprite[p];
-                        break;
+                        itemBG[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
+                        itemButton[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
                     }
+                    gridIndex++;
                 }
             }
         }
