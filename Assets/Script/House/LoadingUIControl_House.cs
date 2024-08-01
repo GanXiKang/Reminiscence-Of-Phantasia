@@ -42,7 +42,6 @@ public class LoadingUIControl_House : MonoBehaviour
         panel.color = currentColor;
         OpenBlackScreen();
         CloseBlackScreen();
-
     }
 
     void CloseLoadingUI()
