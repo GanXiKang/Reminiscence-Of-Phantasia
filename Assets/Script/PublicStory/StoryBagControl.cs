@@ -88,6 +88,7 @@ public class StoryBagControl : MonoBehaviour
         int gridIndex = 0;
         for (int p = 0; p < isItemNumber.Length; p++)
         {
+            Debug.Log($"Item {p} is true.");
             if (isItemNumber[p])
             {
                 if (gridIndex < _howManyGrids)
@@ -99,6 +100,10 @@ public class StoryBagControl : MonoBehaviour
                         itemButton[gridIndex].GetComponent<Image>().sprite = itemSprite[p];
                         gridIndex++;
                     }
+                }
+                else
+                {
+                    Debug.LogWarning("Grid index exceeds the number of available grids.");
                 }
             }
         }
