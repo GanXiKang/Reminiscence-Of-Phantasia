@@ -40,8 +40,10 @@ public class StoryPlayerControl : MonoBehaviour
     void StoryPlayerMove()
     {
         Quaternion rotation = transform.rotation;
-        Vector3 adjustedMoveInput = rotation * _storyMoveInput;
-        cc.Move((_storyVelocity + adjustedMoveInput * _moveSpeed) * Time.fixedDeltaTime);
+        print(rotation);
+        //Vector3 adjustedMoveInput = rotation * _storyMoveInput;
+        //cc.Move((_storyVelocity + adjustedMoveInput * _moveSpeed) * Time.fixedDeltaTime);
+        cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.fixedDeltaTime);
     }
     void StoryPlayerOnTheGround()
     {
