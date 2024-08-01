@@ -12,7 +12,7 @@ public class StoryCameraControl : MonoBehaviour
 
     void Start()
     {
-        isFollow = true;
+        isFollow = false;
     }
 
     void LateUpdate()
