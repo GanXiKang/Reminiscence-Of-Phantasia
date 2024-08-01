@@ -12,14 +12,14 @@ public class StoryCameraControl : MonoBehaviour
 
     void Start()
     {
-        isFollow = false;
+        isFollow = true;
     }
 
     void LateUpdate()
     {
         if (isFollow)
         {
-            Vector3 _targetPosition = target.position + new Vector3(0f, 20f, -15f);
+            Vector3 _targetPosition = target.position/* + new Vector3(0f, 20f, -15f)*/;
 
             transform.position = Vector3.SmoothDamp(transform.position, _targetPosition, ref velocity, _smoothTime);
         }
