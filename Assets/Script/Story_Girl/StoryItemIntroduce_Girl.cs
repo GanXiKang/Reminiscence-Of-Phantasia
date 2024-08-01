@@ -11,6 +11,9 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public Text content;
     string[] introduceItem = new string[10];
 
+    [Header("IntroduceTransform")]
+    public Transform[] buttonTransform;
+
     void Start()
     {
         ItemIntroduceContent();
@@ -18,9 +21,11 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     public void OnPointEnter(int _whichItem)
     {
+        introduce.SetActive(true);
         switch (_whichItem)
         {
             case 0:
+                introduce.GetComponent<RectTransform>().position = buttonTransform[0].position;
                 break;
 
             case 1:
