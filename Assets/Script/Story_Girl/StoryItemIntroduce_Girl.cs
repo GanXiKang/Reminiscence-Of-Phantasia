@@ -18,11 +18,27 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     public void OnPointEnter(int _whichItem)
     {
-        print("OK");
+        switch (_whichItem)
+        {
+            case 0:
+                break;
+
+            case 1:
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+        }
     }
     public void OnPointExit()
     {
-        print("Yes");
+        introduce.SetActive(false);
     }
 
     void ItemIntroduceContent()
