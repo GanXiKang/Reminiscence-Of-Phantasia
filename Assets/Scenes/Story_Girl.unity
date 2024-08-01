@@ -728,7 +728,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 810348717}
-  - {fileID: 1656735169}
   m_Father: {fileID: 434796057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1655,9 +1654,10 @@ RectTransform:
   m_GameObject: {fileID: 810348716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 1.8, z: 1}
+  m_LocalScale: {x: 3, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1656735169}
   m_Father: {fileID: 321017797}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2556,6 +2556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fadad1c7d75593f4bb1b736a52a1de2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  introduce: {fileID: 0}
+  panel: {fileID: 0}
+  content: {fileID: 0}
 --- !u!1 &1449585029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,17 +3136,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656735168}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33333334, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 321017797}
+  m_Father: {fileID: 810348717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.25099, y: -221.45178}
-  m_SizeDelta: {x: 383.8079, y: 167.8753}
+  m_AnchoredPosition: {x: 0.04824066, y: -1.1234436}
+  m_SizeDelta: {x: 295.3988, y: 148.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656735170
 MonoBehaviour:
@@ -3167,7 +3170,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: bf6b01a58ce1b33439b126982a50cc17, type: 3}
-    m_FontSize: 32
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3178,7 +3181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u53EF\u4EE5\u9EDE\u71C3\u4F86\u77ED\u66AB\u53D6\u6696\u3002\r\n\u6578\u91CF\u6709\u9650\uFF0C\u5FC5\u9808\u8B39\u614E\u4F7F\u7528\u3002"
+  m_Text: "\u7D05\u8272\u7684\u5C0F\u62AB\u80A9"
 --- !u!222 &1656735171
 CanvasRenderer:
   m_ObjectHideFlags: 0
