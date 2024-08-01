@@ -10,18 +10,22 @@ public class StoryBagControl : MonoBehaviour
 
     [Header("BagUI")]
     public Image background;
-    public Sprite[] itemSprite;
+    public static bool isOpenBag = false;
+    public float _speed = 2f;
+    float value = 0;
+    bool isAnim = false;
+
+    [Header("BagButton")]
     public GameObject[] itemButton;
     public GameObject[] itemBG;
-    public float _speed = 2f;
-    public static bool isOpenBag = false;
     public static bool isItemFollow = false;
+    int _whatItem = 5;
+
+    [Header("ItemSprite")]
+    public Sprite[] itemSprite;
     public static bool isGet = false;
     public static int _whichItemToGet;
-    float value = 0;
     bool[] isItemNumber;
-    bool isAnim = false;
-    int _whatItem = 5;
 
     void Start()
     {
@@ -66,6 +70,8 @@ public class StoryBagControl : MonoBehaviour
 
         isItemNumber[_whichItemToGet] = true;
         isGet = true;
+        itemBG[0].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
+        itemButton[0].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
 
         //for (int i = 0; i < 5; i++)
         //{
@@ -79,7 +85,7 @@ public class StoryBagControl : MonoBehaviour
         //        print("OK");
         //        itemBG[i].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
         //        itemButton[i].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
-               
+
         //        break;
         //    }
         //}
