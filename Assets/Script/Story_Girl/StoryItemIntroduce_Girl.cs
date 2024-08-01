@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class StoryItemIntroduce_Girl : MonoBehaviour
 {
-    void Start()
+    public void OnPointEnter()
     {
         
     }
 
-    void Update()
+    public void OnPointExit()
     {
         
     }
