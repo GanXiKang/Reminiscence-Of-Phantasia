@@ -71,18 +71,27 @@ public class StoryBagControl : MonoBehaviour
     }
     void BagDisplay()
     {
-        
-
-        if (!isGet) return;
-        isItemNumber[_whichItemToGet] = true;
-        for (int i = 0; i < isItemNumber.Length; i++)
+        if (isGet)
         {
-            if (isItemNumber[i])
-                _howManyGrids++;
+            isItemNumber[_whichItemToGet] = true;
+            for (int i = 0; i < isItemNumber.Length; i++)
+            {
+                if (isItemNumber[i])
+                    _howManyGrids++;
+            }
+            if (_howManyGrids > 5)
+                _howManyGrids = 5;
+            isGet = false;
         }
-        if (_howManyGrids > 5)
-            _howManyGrids = 5;
-        isGet = false;
+
+        for (int k = 0; k < _howManyGrids; k++)
+        {
+            if (itemBG[k].GetComponent<Image>().sprite == null)
+            {
+                itemBG[k].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
+                itemButton[k].GetComponent<Image>().sprite = itemSprite[_whichItemToGet];
+            }
+        }
     }
     void Bag()
     {
