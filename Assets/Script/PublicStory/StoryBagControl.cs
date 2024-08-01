@@ -74,6 +74,7 @@ public class StoryBagControl : MonoBehaviour
         if (isGet)
         {
             isItemNumber[_whichItemToGet] = true;
+            _howManyGrids = 0;
             for (int i = 0; i < isItemNumber.Length; i++)
             {
                 if (isItemNumber[i])
@@ -81,6 +82,8 @@ public class StoryBagControl : MonoBehaviour
             }
             if (_howManyGrids > 5)
                 _howManyGrids = 5;
+
+            print(_howManyGrids);
             isGet = false;
         }
 
@@ -90,11 +93,8 @@ public class StoryBagControl : MonoBehaviour
             {
                 for (int k = 0; k < _howManyGrids; k++)
                 {
-                    if (itemBG[k].GetComponent<Image>().sprite == null)
-                    {
-                        itemBG[k].GetComponent<Image>().sprite = itemSprite[p];
-                        itemButton[k].GetComponent<Image>().sprite = itemSprite[p];
-                    }
+                    itemBG[k].GetComponent<Image>().sprite = itemSprite[p];
+                    itemButton[k].GetComponent<Image>().sprite = itemSprite[p];
                 }
             }
         }
