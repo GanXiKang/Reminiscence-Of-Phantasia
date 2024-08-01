@@ -12,7 +12,8 @@ public class StoryInteractableControl : MonoBehaviour
     private Vector3 originalScale;
 
     [Header("Item")]
-    public int itemNumber;
+    public int _giveItemNumber;
+    public int _getItemNumber;
     public static bool isGet = false;
     bool isGiveItem = false;
 
