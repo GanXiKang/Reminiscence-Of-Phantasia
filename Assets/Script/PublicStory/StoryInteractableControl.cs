@@ -31,7 +31,8 @@ public class StoryInteractableControl : MonoBehaviour
         if (!isGiveItem)
         {
             StoryBagControl.isGet = true;
-            StoryBagControl._whichItemToGet = _giveItemNumber;
+            StoryBagControl.isItemNumber[_giveItemNumber] = true;
+            //StoryBagControl._whichItemToGet = _giveItemNumber;
             if (StoryBagControl.isOpenBag)
                 StoryBagControl.isOpenBag = false;
         }
@@ -43,10 +44,10 @@ public class StoryInteractableControl : MonoBehaviour
         StartCoroutine(ScaleObject(scaledSize));
 
         if (!isGetItem) return;
-
         if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             StoryBagControl.isOpenBag = false;
+
         }
     }
     void OnMouseExit()

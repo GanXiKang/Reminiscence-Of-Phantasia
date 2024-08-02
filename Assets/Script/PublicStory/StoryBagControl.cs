@@ -26,7 +26,7 @@ public class StoryBagControl : MonoBehaviour
     public static bool isGet = false;     
     public static int _whichItemToGet;        //記錄得到哪個道具編號
     public static int[] _gridsItemNumber;     //記錄每個格子内部的道具編號0~4
-    bool[] isItemNumber;                      //記錄擁有哪個道具0~9
+    public static bool[] isItemNumber;        //記錄擁有哪個道具0~9
     int _howManyGrids = 0;
 
     void Start()
@@ -76,7 +76,7 @@ public class StoryBagControl : MonoBehaviour
     {
         if (isGet)
         {
-            isItemNumber[_whichItemToGet] = true;
+            //isItemNumber[_whichItemToGet] = true;
             _howManyGrids = 0;
             for (int i = 0; i < isItemNumber.Length; i++)
             {
