@@ -19,7 +19,6 @@ public class StoryBagControl : MonoBehaviour
     public GameObject[] itemButton;
     public GameObject[] itemBG;
     public static bool isItemFollow = false;
-    //int _whatItem = 5;
     public static int _whatItemButton = 5;
 
     [Header("ItemSprite")]
