@@ -48,8 +48,8 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         introduceItem[5] = "小紅帽披肩\n用來保暖剛剛好";
         introduceItem[6] = "鐵棒\n摸起來非常堅固";
         introduceItem[7] = "木棒\n看起來是被砍斷的";
-        introduceItem[8] = "乾净的蘋果";
-        introduceItem[9] = "烤肉串";
+        introduceItem[8] = "蘋果\n顏色非常鮮艷";
+        introduceItem[9] = "烤肉串\n香味四溢肚子都餓了";
     }
 
     IEnumerator IntroduceDisplay()
