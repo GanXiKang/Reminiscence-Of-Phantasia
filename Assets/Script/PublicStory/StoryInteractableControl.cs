@@ -47,7 +47,7 @@ public class StoryInteractableControl : MonoBehaviour
         if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             StoryBagControl.isOpenBag = false;
-
+            StoryBagControl.isItemNumber[_getItemNumber] = false;
         }
     }
     void OnMouseExit()
