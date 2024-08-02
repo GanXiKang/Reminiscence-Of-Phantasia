@@ -35,6 +35,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     }
     public void OnPointExit()
     {
+        isIntroduce = false;
         introduce.SetActive(false) ;
         StopCoroutine(IntroduceDisplay());
     }
@@ -55,6 +56,9 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     IEnumerator IntroduceDisplay()
     {
         yield return new WaitForSeconds(0.7f);
-        introduce.SetActive(true);
+        if (isIntroduce)
+        {
+            introduce.SetActive(true);
+        }
     }
 }
