@@ -125,7 +125,7 @@ public class StoryBagControl : MonoBehaviour
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
-                for (int i = 0; i < _howManyGrids; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     itemBG[i].SetActive(false);
                     itemButton[i].SetActive(false);
