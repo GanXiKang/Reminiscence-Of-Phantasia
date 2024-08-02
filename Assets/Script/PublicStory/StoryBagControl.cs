@@ -73,19 +73,20 @@ public class StoryBagControl : MonoBehaviour
     }
     void BagGirdDisplay()
     {
-        if (isGet)
-        {
+        //if (isGet)
+        //{
             _howManyGrids = 0;
             for (int i = 0; i < isItemNumber.Length; i++)
             {
                 if (isItemNumber[i])
                     _howManyGrids++;
+            print(_howManyGrids);
             }
             if (_howManyGrids > 5)
                 _howManyGrids = 5;
             BagGirdSprite();
-            isGet = false;
-        }
+        //    isGet = false;
+        //}
     }
     void BagGirdSprite()
     {
@@ -155,7 +156,6 @@ public class StoryBagControl : MonoBehaviour
 
     IEnumerator BagItem()
     {
-        print(_howManyGrids);
         for (int i = 0; i < _howManyGrids; i++)
         {
             itemBG[i].SetActive(true);
