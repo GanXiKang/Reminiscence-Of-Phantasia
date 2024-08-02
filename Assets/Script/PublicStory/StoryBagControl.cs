@@ -19,7 +19,7 @@ public class StoryBagControl : MonoBehaviour
     public GameObject[] itemButton;
     public GameObject[] itemBG;
     public static bool isItemFollow = false;
-    int _whatItem = 5;
+    //int _whatItem = 5;
     public static int _whatItemButton = 5;
 
     [Header("ItemSprite")]
@@ -41,8 +41,6 @@ public class StoryBagControl : MonoBehaviour
         BagGirdDisplay();
         Bag();
         ItemMove();
-
-        _whatItemButton = _whatItem;  //•º•r
     }
 
     public void Bag_Button()
@@ -52,15 +50,15 @@ public class StoryBagControl : MonoBehaviour
     }
     public void Item_Button(int _whichItem)
     {
-        if (_whatItem != _whichItem)
+        if (_whatItemButton != _whichItem)
         {
             isItemFollow = true;
-            _whatItem = _whichItem;
+            _whatItemButton = _whichItem;
         }
         else
         {
             isItemFollow = false;
-            _whatItem = 5;
+            _whatItemButton = 5;
         }
         StoryInteractableControl.isGetItem = isItemFollow;
         StoryItemIntroduce_Girl.isIntroduce = !isItemFollow;
@@ -142,7 +140,7 @@ public class StoryBagControl : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            if (i != _whatItem)
+            if (i != _whatItemButton)
             {
                 itemButton[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
             }
@@ -155,7 +153,7 @@ public class StoryBagControl : MonoBehaviour
             Input.mousePosition,
             canvas.worldCamera,
             out localPoint);
-        itemButton[_whatItem].GetComponent<RectTransform>().anchoredPosition = localPoint;
+        itemButton[_whatItemButton].GetComponent<RectTransform>().anchoredPosition = localPoint;
     }
 
     IEnumerator BagItem()
