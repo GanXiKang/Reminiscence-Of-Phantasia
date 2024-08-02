@@ -20,6 +20,7 @@ public class StoryBagControl : MonoBehaviour
     public GameObject[] itemBG;
     public static bool isItemFollow = false;
     int _whatItem = 5;
+    public static int _whatItemButton = 5;
 
     [Header("ItemSprite")]
     public Sprite[] itemSprite;
@@ -40,6 +41,8 @@ public class StoryBagControl : MonoBehaviour
         BagGirdDisplay();
         Bag();
         ItemMove();
+
+        _whatItemButton = _whatItem;  //•º•r
     }
 
     public void Bag_Button()
