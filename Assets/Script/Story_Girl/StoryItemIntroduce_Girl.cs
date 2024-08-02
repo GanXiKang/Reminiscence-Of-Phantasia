@@ -11,6 +11,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public Text content;
     string[] introduceItem = new string[10];
     public static bool isIntroduce = true;
+    bool isStop = false;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;
@@ -28,6 +29,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     public void OnPointEnter(int _whichItem)
     {
+        isStop = false;
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
         content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
         if (isIntroduce)
@@ -35,7 +37,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     }
     public void OnPointExit()
     {
-        isIntroduce = false;
+        isStop = true;
         introduce.SetActive(false) ;
         StopCoroutine(IntroduceDisplay());
     }
@@ -56,7 +58,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     IEnumerator IntroduceDisplay()
     {
         yield return new WaitForSeconds(0.7f);
-        if (isIntroduce)
+        if (!isStop)
         {
             introduce.SetActive(true);
         }
