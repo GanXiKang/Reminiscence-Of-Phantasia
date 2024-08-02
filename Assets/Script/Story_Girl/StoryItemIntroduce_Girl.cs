@@ -42,12 +42,12 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     void ItemIntroduceContent()
     {
         introduceItem[1] = "火柴盒\n可以點燃來短暫取暖";
-        introduceItem[2] = "破損的毛衣";
-        introduceItem[3] = "垃圾桶的蓋子";
-        introduceItem[4] = "小熊娃娃";
-        introduceItem[5] = "紅色的小披肩";
-        introduceItem[6] = "細長的鐵棒";
-        introduceItem[7] = "斷掉的樹枝";
+        introduceItem[2] = "破舊的毛衣\n不知道還能不能保暖";
+        introduceItem[3] = "垃圾桶蓋\n感覺之後能夠派上用場";
+        introduceItem[4] = "小熊娃娃\n小朋友一定很喜歡";
+        introduceItem[5] = "小紅帽披肩\n用來保暖剛剛好";
+        introduceItem[6] = "鐵棒\n摸起來非常堅固";
+        introduceItem[7] = "木棒\n看起來是被砍斷的";
         introduceItem[8] = "乾净的蘋果";
         introduceItem[9] = "烤肉串";
     }
