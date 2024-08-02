@@ -41,7 +41,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     void ItemIntroduceContent()
     {
-        introduceItem[1] = "火柴\n盒";
+        introduceItem[1] = "火柴盒\n可以點燃來短暫取暖";
         introduceItem[2] = "破損的毛衣";
         introduceItem[3] = "垃圾桶的蓋子";
         introduceItem[4] = "小熊娃娃";
