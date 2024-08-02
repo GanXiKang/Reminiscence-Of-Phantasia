@@ -35,10 +35,6 @@ public class StoryInteractableControl : MonoBehaviour
             if (StoryBagControl.isOpenBag)
                 StoryBagControl.isOpenBag = false;
         }
-        else 
-        {
-            print("NO");
-        }
     }
     void OnMouseEnter()
     {
