@@ -41,7 +41,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     void ItemIntroduceContent()
     {
-        introduceItem[1] = "»ð²ñºÐ";
+        introduceItem[1] = "»ð²ñ\nºÐ";
         introduceItem[2] = "ÆÆ“pµÄÃ«ÒÂ";
         introduceItem[3] = "À¬»øÍ°µÄÉw×Ó";
         introduceItem[4] = "Ð¡ÐÜÍÞÍÞ";
