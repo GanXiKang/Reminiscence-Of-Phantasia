@@ -80,7 +80,6 @@ public class StoryBagControl : MonoBehaviour
             {
                 if (isItemNumber[i])
                     _howManyGrids++;
-            print(_howManyGrids);
             }
             if (_howManyGrids > 5)
                 _howManyGrids = 5;
