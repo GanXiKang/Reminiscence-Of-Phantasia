@@ -43,7 +43,11 @@ public class StoryInteractableControl : MonoBehaviour
         StartCoroutine(ScaleObject(scaledSize));
 
         if (!isGetItem) return;
-        print("Get");
+
+        if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
+        {
+            print("Get");
+        }
     }
     void OnMouseExit()
     {
