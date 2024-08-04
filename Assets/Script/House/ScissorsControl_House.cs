@@ -53,8 +53,8 @@ public class ScissorsControl_House : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         worldPosition.z = 0f;
-        worldPosition.x = Mathf.Clamp(worldPosition.x, minX, maxX);
-        worldPosition.y = Mathf.Clamp(worldPosition.y, minY, maxY);
+        //worldPosition.x = Mathf.Clamp(worldPosition.x, minX, maxX);
+        //worldPosition.y = Mathf.Clamp(worldPosition.y, minY, maxY);
         transform.position = worldPosition;
     }
     void ClearLine()
