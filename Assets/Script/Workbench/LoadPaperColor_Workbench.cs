@@ -14,7 +14,7 @@ public class LoadPaperColor_Workbench : MonoBehaviour
         LoadTexture();
     }
 
-    public void LoadTexture()
+    void LoadTexture()
     {
         for (int i = 0; i < canvasRenderers.Length; i++)
         {
