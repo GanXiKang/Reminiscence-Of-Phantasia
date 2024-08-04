@@ -15,6 +15,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         texture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.RGBA32, false);
         texture.filterMode = FilterMode.Point;
         texture.wrapMode = TextureWrapMode.Clamp;
+        //Material那邊Read/Write一定要開
         texture.SetPixels(originalTexture.GetPixels());
         texture.Apply();
         canvasRenderer.material.mainTexture = texture;
