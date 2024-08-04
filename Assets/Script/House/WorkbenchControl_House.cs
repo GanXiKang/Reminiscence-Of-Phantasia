@@ -5,8 +5,9 @@ using UnityEngine;
 public class WorkbenchControl_House : MonoBehaviour
 {
     public static int _process;
+    public GameObject[] processObject;
 
-    [Header("Step1")]
+[Header("Step1")]
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] content;
