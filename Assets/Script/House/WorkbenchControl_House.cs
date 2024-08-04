@@ -33,7 +33,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step3")]
     public GameObject colorUI;
-    bool isPaperColor;
 
     //[Header("Step4")]
 
@@ -88,11 +87,12 @@ public class WorkbenchControl_House : MonoBehaviour
                     break;
 
                 case 3:
-                    isPaperColor = true;
+                    colorUI.SetActive(true);
                     isPaperRotation = false;
                     break;
 
                 case 4:
+                    colorUI.SetActive(false);
                     break;
             }
         }
@@ -198,7 +198,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        colorUI.SetActive(isPaperColor);
+        
     }
 
     void Step4_Install()
