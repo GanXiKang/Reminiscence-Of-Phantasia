@@ -11,7 +11,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] content;
-    public GameObject paper;
+    public GameObject paper1;
     public Sprite[] pattern;
     public Transform paperEndPos;
     public GameObject stamp;
@@ -25,7 +25,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step2")]
     public GameObject scissors;
-    public GameObject paperA;
+    public GameObject paper2;
     public GameObject paperB;
     float _rotationSpeed = 90f;
     float _rotation = 0;
@@ -35,7 +35,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         _process = 0;
         clickButtonNumber = 0;
-        //paper.GetComponent<SpriteRenderer>().sprite = pattern[0];
+        paper1.GetComponent<SpriteRenderer>().sprite = pattern[0];
     }
 
     void Update()
@@ -96,8 +96,8 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (isAppaerPaper) 
         {
-            paper.transform.position = Vector3.MoveTowards(paper.transform.position, paperEndPos.position, _speed * Time.deltaTime);
-            if (paper.transform.position == paperEndPos.position)
+            paper1.transform.position = Vector3.MoveTowards(paper.transform.position, paperEndPos.position, _speed * Time.deltaTime);
+            if (paper1.transform.position == paperEndPos.position)
             {
                 isAppaerPaper = false;
                 StartCoroutine(AppaerChooseUI());
@@ -113,7 +113,7 @@ public class WorkbenchControl_House : MonoBehaviour
             if (stamp.transform.position == stampEndPos.position)
             {
                 isStampGo = false;
-                paper.GetComponent<SpriteRenderer>().sprite = pattern[clickButtonNumber];
+                paper1.GetComponent<SpriteRenderer>().sprite = pattern[clickButtonNumber];
                 Invoke("StampStay", 1f);
             }
         }
@@ -177,7 +177,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (_rotation != 0)
             {
-                paperA.transform.Rotate(Vector3.forward, _rotation);
+                paper2.transform.Rotate(Vector3.forward, _rotation);
             }
         }
     }
