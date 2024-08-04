@@ -42,17 +42,13 @@ public class ScissorsControl_House : MonoBehaviour
     }
     void ScissorsMove()
     {
-        //mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
-        //mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-        //newY = transform.position.y + mouseY;
-        //newX = transform.position.x + mouseX;
-        //newY = Mathf.Clamp(newY, minY, maxY);
-        //newX = Mathf.Clamp(newX, minX, maxX);
-        //transform.position = new Vector3(newX, newY, 0f);
-
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+        mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
+        newY = transform.position.y + mouseY;
+        newX = transform.position.x + mouseX;
+        newY = Mathf.Clamp(newY, minY, maxY);
+        newX = Mathf.Clamp(newX, minX, maxX);
+        transform.position = new Vector3(newX, newY, 0f);
     }
     void ClearLine()
     {
