@@ -57,9 +57,23 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C)) //úy‘á
         {
-            _process = 2;
-            isPaperRotation = true;
-            //isAppaerPaper = true;
+            _process++;
+            switch (_process)
+            {
+                case 1:
+                    isAppaerPaper = true;
+                    break;
+
+                case 2:
+                    isPaperRotation = true;
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
+                    break;
+            }
         }
         Leave();
     }
