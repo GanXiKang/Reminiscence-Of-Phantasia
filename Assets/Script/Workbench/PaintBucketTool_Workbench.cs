@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PaintBucketTool_Workbench : MonoBehaviour
 {
-    public Renderer canvasRenderer;
+    Renderer canvasRenderer;
     public ColorPicker_Workbench colorPicker;
-
     private Texture2D texture;
 
     void Start()
     {
+        canvasRenderer = GetComponent<MeshRenderer>();
         Texture2D originalTexture = (Texture2D)canvasRenderer.material.mainTexture;
         texture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.RGBA32, false);
         texture.filterMode = FilterMode.Point;
