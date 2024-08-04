@@ -96,7 +96,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (isAppaerPaper) 
         {
-            paper1.transform.position = Vector3.MoveTowards(paper.transform.position, paperEndPos.position, _speed * Time.deltaTime);
+            paper1.transform.position = Vector3.MoveTowards(paper1.transform.position, paperEndPos.position, _speed * Time.deltaTime);
             if (paper1.transform.position == paperEndPos.position)
             {
                 isAppaerPaper = false;
