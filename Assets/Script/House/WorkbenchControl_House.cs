@@ -25,6 +25,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step2")]
     public GameObject scissors;
+    public GameObject paperA;
     public GameObject paperB;
     float _rotationSpeed = 90f;
     float _rotation = 0;
@@ -176,7 +177,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (_rotation != 0)
             {
-                paper.transform.Rotate(Vector3.forward, _rotation);
+                paperA.transform.Rotate(Vector3.forward, _rotation);
             }
         }
     }
