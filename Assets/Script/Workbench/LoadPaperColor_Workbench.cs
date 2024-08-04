@@ -11,6 +11,7 @@ public class LoadPaperColor_Workbench : MonoBehaviour
     void Start()
     {
         loadDirectory = Application.persistentDataPath + "/Artwork.png";
+        LoadTexture();
     }
 
     public void LoadTexture()
