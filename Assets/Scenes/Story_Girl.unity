@@ -6465,18 +6465,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2331ab164ef2a4abb2c5538f9b1d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: {fileID: 0}
-  onClick: {fileID: 0}
-  flipBook: {fileID: 0}
-  open: {fileID: 0}
-  save: {fileID: 0}
-  leave: {fileID: 0}
-  bookUI: {fileID: 0}
-  sliderBGM: {fileID: 0}
-  fullScreen: {fileID: 0}
-  settingUI: []
-  labelColor: []
-  turnPage: []
+  BGM: {fileID: 1264484142}
+  onClick: {fileID: 8300000, guid: be2afbaf654b3304093e068dc2c937c1, type: 3}
+  flipBook: {fileID: 8300000, guid: 794a9f22c97bd4347be2d65c0f2b70b0, type: 3}
+  open: {fileID: 8300000, guid: 8651bec12aa7f36489ecf7ce62e7feb9, type: 3}
+  save: {fileID: 8300000, guid: 8e2f92d3095720c4891378e6e502fcaa, type: 3}
+  leave: {fileID: 8300000, guid: ed07cd7a178520c4387ff3f7034325b2, type: 3}
+  bookUI: {fileID: 224567043}
+  sliderBGM: {fileID: 618538270}
+  fullScreen: {fileID: 2008759872}
+  settingUI:
+  - {fileID: 1631988912}
+  - {fileID: 566926355}
+  - {fileID: 126940371}
+  labelColor:
+  - {fileID: 0}
+  - {fileID: 1668839271}
+  - {fileID: 920339049}
+  - {fileID: 2017312275}
+  turnPage:
+  - {fileID: 21300000, guid: 88f36bbcbb4cb824abe7b11d79aaaa5b, type: 3}
+  - {fileID: 21300000, guid: 2ea3245a93a86974eb818d48b12d1a5a, type: 3}
+  - {fileID: 21300000, guid: 0c6157c30a49a1543850c4758d3bb915, type: 3}
+  - {fileID: 21300000, guid: 5382caa5f09239743997aa6f3393f053, type: 3}
+  - {fileID: 21300000, guid: 0745f6520680aa94faa349f1c7b19bc1, type: 3}
   _openSpeed: 1
 --- !u!1 &1955089209
 GameObject:
