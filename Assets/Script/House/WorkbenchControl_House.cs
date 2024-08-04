@@ -36,6 +36,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step4")]
     public GameObject pointObject;
+    public static bool isLoadPaperColor = false;
 
 
     void Start()
@@ -93,6 +94,7 @@ public class WorkbenchControl_House : MonoBehaviour
                     break;
 
                 case 4:
+                    isLoadPaperColor = true;
                     pointObject.SetActive(true);
                     colorUI.SetActive(false);
                     break;
