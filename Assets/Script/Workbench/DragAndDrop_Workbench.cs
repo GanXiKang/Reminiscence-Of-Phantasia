@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DragAndDrop_Workbench : MonoBehaviour
+{
+    private Vector3 offset;
+    private bool isDragging = false;
+    private bool isFixed = false;
+    public Transform targetPosition;
+    public float snapDistance = 1.0f;
+
+    void Update()
+    {
+        if (isFixed) return;
+
+        if (isDragging)
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
+            transform.position = new Vector3(worldPosition.x, worldPosition.y, transform.position.z);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+            if (Vector3.Distance(transform.position, targetPosition.position) <= snapDistance)
+            {
+                transform.position = targetPosition.position;
+                isFixed = true;
+            }
+        }
+    }
+
+    void OnMouseDown()
+    {
+        if (isFixed) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isDragging = true;
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            offset = transform.position - worldPosition;
+        }
+    }
+}
