@@ -182,7 +182,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void CutFinish()
     {
-        if (ScissorsControl_House._cutPoint >= 4)
+        if (ScissorsControl_Workbench._cutPoint >= 4)
         {
             paperB.GetComponent<Rigidbody>().isKinematic = false;
         }
