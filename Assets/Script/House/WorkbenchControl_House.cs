@@ -34,7 +34,8 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step3")]
     public GameObject colorUI;
 
-    //[Header("Step4")]
+    [Header("Step4")]
+    public GameObject pointObject;
 
 
     void Start()
@@ -92,6 +93,7 @@ public class WorkbenchControl_House : MonoBehaviour
                     break;
 
                 case 4:
+                    pointObject.SetActive(true);
                     colorUI.SetActive(false);
                     break;
             }
