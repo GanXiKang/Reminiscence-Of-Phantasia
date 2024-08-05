@@ -48,15 +48,16 @@ public class StoryBagControl : MonoBehaviour
     }
     public void Item_Button(int _whichItem)
     {
+        isItemFollow = !isItemFollow;
         if (_whatItemButton != _whichItem)
         {
+            isItemFollow = true;
             _whatItemButton = _whichItem;
         }
         else
         {
             _whatItemButton = 5;
         }
-        isItemFollow = !isItemFollow;
         StoryInteractableControl.isGetItem = isItemFollow;
         StoryItemIntroduce_Girl.isIntroduce = !isItemFollow;
     }
