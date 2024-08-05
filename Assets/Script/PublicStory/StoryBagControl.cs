@@ -122,6 +122,7 @@ public class StoryBagControl : MonoBehaviour
         }
         else
         {
+            isItemFollow = false;
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
@@ -131,27 +132,35 @@ public class StoryBagControl : MonoBehaviour
                     itemButton[i].SetActive(false);
                 }
             }
-            _whatItemButton = 5;
         }
     }
     void ItemMove()
     {
-        for (int i = 0; i < 5; i++)
+        if (!isItemFollow)
         {
-            if (i != _whatItemButton)
+            for (int i = 0; i < 5; i++)
             {
                 itemButton[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
             }
         }
-
-        if (!isItemFollow) return;
-        Vector2 localPoint;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.transform as RectTransform,
-            Input.mousePosition,
-            canvas.worldCamera,
-            out localPoint);
-        itemButton[_whatItemButton].GetComponent<RectTransform>().anchoredPosition = localPoint;
+        else
+        {
+            Vector2 localPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvas.transform as RectTransform,
+                Input.mousePosition,
+                canvas.worldCamera,
+                out localPoint);
+            itemButton[_whatItemButton].GetComponent<RectTransform>().anchoredPosition = localPoint;
+            for (int i = 0; i < 5; i++)
+            {
+                if (i != _whatItemButton)
+                {
+                    itemButton[i].GetComponent<RectTransform>().position = itemBG[i].GetComponent<RectTransform>().position;
+                }
+            }
+        }
+        
     }
 
     IEnumerator BagItem()
