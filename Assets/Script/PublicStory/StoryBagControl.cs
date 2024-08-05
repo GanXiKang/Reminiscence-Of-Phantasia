@@ -38,7 +38,7 @@ public class StoryBagControl : MonoBehaviour
     {
         for (int i = 0; i < itemSprite.Length; i++)
         {
-            print("{i}is{isItemNumber[i]}");
+            print(i + "is" + isItemNumber[i]);
         }
         BagGirdDisplay();
         Bag();
