@@ -35,11 +35,7 @@ public class StoryBagControl : MonoBehaviour
     }
 
     void Update()
-    {
-        for (int i = 0; i < itemSprite.Length; i++)
-        {
-            print(i + "is" + isItemNumber[i]);
-        }
+    { 
         BagGirdDisplay();
         Bag();
         ItemMove();
@@ -135,6 +131,7 @@ public class StoryBagControl : MonoBehaviour
                     itemButton[i].SetActive(false);
                 }
             }
+            _whatItemButton = 5;
         }
     }
     void ItemMove()
