@@ -52,12 +52,8 @@ public class StoryBagControl : MonoBehaviour
         if (_whatItemButton != _whichItem)
         {
             isItemFollow = true;
-            _whatItemButton = _whichItem;
         }
-        else
-        {
-            _whatItemButton = 5;
-        }
+        _whatItemButton = _whichItem;
         StoryInteractableControl.isGetItem = isItemFollow;
         StoryItemIntroduce_Girl.isIntroduce = !isItemFollow;
     }
