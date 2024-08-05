@@ -36,6 +36,10 @@ public class StoryBagControl : MonoBehaviour
 
     void Update()
     {
+        for (int i = 0; i < itemSprite.Length; i++)
+        {
+            print("{i}is{isItemNumber[i]}");
+        }
         BagGirdDisplay();
         Bag();
         ItemMove();
