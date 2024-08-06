@@ -44,7 +44,7 @@ public class StoryInteractableControl : MonoBehaviour
         float rotationThisFrame = _speed * Time.deltaTime;
         totalRotation += rotationThisFrame;
 
-        if (totalRotation <= 180f)
+        if (totalRotation <= 150f)
         {
             Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f); // À@YÝSÐýÞD
             transform.rotation = transform.rotation * deltaRotation;
