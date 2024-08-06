@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryInteractableControl : MonoBehaviour
 {
+    public Camera cam;
+
     [Header("InteractableDistance")]
     GameObject player;
     public float _snapDistance = 12f;
@@ -25,6 +28,12 @@ public class StoryInteractableControl : MonoBehaviour
     bool isRotation = false;
     float _speed = 180f;
 
+    [Header("ItemPickUp")]
+    public GameObject moveItemUI;
+    public Vector3 uiOffset = new Vector3(0, 100, 0); // UI從物件上方上升的偏移量
+    public Transform bagUIPosition;
+    private bool isPickedUp = false;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -36,6 +45,7 @@ public class StoryInteractableControl : MonoBehaviour
     void Update()
     {
         InteractableIsRotationSprite();
+        PickUpItem();
     }
 
     void InteractableIsRotationSprite()
@@ -61,6 +71,16 @@ public class StoryInteractableControl : MonoBehaviour
             transform.rotation = initialRotation;
         }
     }
+    void PickUpItem()
+    {
+        if (!isPickedUp) return;
+
+        moveItemUI.SetActive(true);
+        Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
+        moveItemUI.transform.position = startPosition;
+
+        StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
+    }
 
     void OnMouseDown()
     {
@@ -69,9 +89,9 @@ public class StoryInteractableControl : MonoBehaviour
         if (!isGiveItem)
         {
             isGiveItem = true;
+            isPickedUp = true;
             StoryBagControl.isGet = true;
             StoryBagControl.isItemNumber[_giveItemNumber] = true;
-            StoryBagControl.isPickedUp = true;
             if (StoryBagControl.isOpenBag)
                 StoryBagControl.isOpenBag = false;
         }
@@ -109,5 +129,20 @@ public class StoryInteractableControl : MonoBehaviour
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * _scaleSpeed);
             yield return null;
         }
-    } 
+    }
+    IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
+    {
+        float duration = 1.0f;     //持續時間
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            moveItemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        moveItemUI.transform.position = end;
+        moveItemUI.SetActive(false);
+    }
 }
