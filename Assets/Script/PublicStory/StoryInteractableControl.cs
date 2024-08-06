@@ -77,7 +77,10 @@ public class StoryInteractableControl : MonoBehaviour
         if (!isPickedUp || isMoving) return;
         print("IN");
         moveItemUI.SetActive(true);
-        StartCoroutine(MoveItemUI());
+        Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
+        moveItemUI.transform.position = startPosition;
+
+        StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
     }
 
     void OnMouseDown()
@@ -128,24 +131,23 @@ public class StoryInteractableControl : MonoBehaviour
             yield return null;
         }
     }
-    IEnumerator MoveItemUI()
+    IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
         isMoving = true;
         float duration = 1f;
         float elapsed = 0f;
-        Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
-        moveItemUI.transform.position = startPosition;
 
         while (elapsed < duration)
         {
-            moveItemUI.transform.position = Vector3.Lerp(startPosition, bagUIPosition.position, elapsed / duration);
-            Debug.Log($"Moving... Elapsed: {elapsed}, Position: {moveItemUI.transform.position}");  // 打印當前位置
             elapsed += Time.deltaTime;
+            Debug.Log($"Elapsed: {elapsed}, deltaTime: {Time.deltaTime}");
+            itemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
+            Debug.Log($"Moving... Position: {itemUI.transform.position}");  // 打印當前位置
             yield return null;
         }
 
         moveItemUI.transform.position = end;
-        moveItemUI.SetActive(false);
+        itemUI.SetActive(false);
         isPickedUp = false;
         isMoving = false;
     }
