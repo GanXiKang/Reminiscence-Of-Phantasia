@@ -30,8 +30,7 @@ public class StoryBagControl : MonoBehaviour
     public static int _howManyGrids = 0;      //記錄存在幾個格子
 
     [Header("ItemPickUp")]
-    public GameObject itemUIPrefab;          
-    public Transform uiParent;               
+    public GameObject moveItemUI;                    
     public Vector3 uiOffset = new Vector3(0, 100, 0); // UI從物件上方上升的偏移量
     public Transform bagUIPosition;  
     public static bool isPickedUp = false;
@@ -47,6 +46,7 @@ public class StoryBagControl : MonoBehaviour
         BagGirdDisplay();
         Bag();
         ItemMove();
+        PickUpItem();
     }
 
     public void Bag_Button()
@@ -168,13 +168,13 @@ public class StoryBagControl : MonoBehaviour
     }
     void PickUpItem()
     {
-        isPickedUp = true;
-        GameObject itemUI = Instantiate(itemUIPrefab, uiParent);
+        if (!isPickedUp) return;
 
+        moveItemUI.SetActive(true); 
         Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
-        itemUI.transform.position = startPosition;
+        moveItemUI.transform.position = startPosition;
 
-        StartCoroutine(MoveItemUI(itemUI, startPosition, bagUIPosition.position));
+        StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
     }
 
     IEnumerator BagItem()
@@ -195,12 +195,12 @@ public class StoryBagControl : MonoBehaviour
 
         while (elapsed < duration)
         {
-            itemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
+            moveItemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        itemUI.transform.position = end;
-        Destroy(itemUI);
+        moveItemUI.transform.position = end;
+        moveItemUI.SetActive(false);
     }
 }
