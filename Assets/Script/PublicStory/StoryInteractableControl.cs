@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class StoryInteractableControl : MonoBehaviour
 {
+    GameObject player;
     public Camera cam;
 
     [Header("InteractableDistance")]
-    GameObject player;
     public float _snapDistance = 12f;
     public float _scaleSpeed = 5f;
     public Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
