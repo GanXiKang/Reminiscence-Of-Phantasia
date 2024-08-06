@@ -3706,7 +3706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &967300984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4911,7 +4911,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1e74841d15eca4e4497861b1b671561d, type: 3}
   - {fileID: 21300000, guid: 5dad27279e44b2c4a9662935e554c7ab, type: 3}
   - {fileID: 21300000, guid: 512b16d567f94d841a710d651d032162, type: 3}
-  itemUI: {fileID: 967300983}
+  moveItemUI: {fileID: 967300983}
   uiOffset: {x: 0, y: 100, z: 0}
   bagUIPosition: {fileID: 1968368687}
 --- !u!114 &1353896308
