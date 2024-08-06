@@ -23,7 +23,7 @@ public class StoryInteractableControl : MonoBehaviour
     private float totalRotation = 0f;
     private Quaternion initialRotation;
     bool isRotation = false;
-    float _speed = 150f;
+    float _speed = 180f;
 
     void Start()
     {
@@ -45,17 +45,20 @@ public class StoryInteractableControl : MonoBehaviour
         float rotationThisFrame = _speed * Time.deltaTime;
         totalRotation += rotationThisFrame;
 
-        if (totalRotation <= 150f)
+        if (totalRotation <= 120f)
         {
             Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f); // À@YÝSÐýÞD
             transform.rotation = transform.rotation * deltaRotation;
+            if (totalRotation > 90f)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = getItemSprite;
+            }
         }
         else
         {
             isRotation = false;
             totalRotation = 0f;
             transform.rotation = initialRotation;
-            gameObject.GetComponent<SpriteRenderer>().sprite = getItemSprite;
         }
     }
 
