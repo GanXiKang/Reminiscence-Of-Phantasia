@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class StoryInteractableControl : MonoBehaviour
 {
     GameObject player;
-    public Camera cam;
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
     public float _scaleSpeed = 5f;
-    public Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
+    Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
     private Vector3 originalScale;
 
     [Header("Item")]
@@ -75,7 +74,7 @@ public class StoryInteractableControl : MonoBehaviour
     void PickUpItem()
     {
         if (!isPickedUp || isMoving) return;
-        print("IN");
+
         moveItemUI.SetActive(true);
         Vector3 startPosition = Camera.main.WorldToScreenPoint(transform.position) + uiOffset;
         moveItemUI.transform.position = startPosition;
@@ -142,7 +141,6 @@ public class StoryInteractableControl : MonoBehaviour
             elapsed += Time.deltaTime;
             Debug.Log($"Elapsed: {elapsed}, deltaTime: {Time.deltaTime}");
             itemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
-            Debug.Log($"Moving... Position: {itemUI.transform.position}");  // ¥Ú”°Æî«∞Œª÷√
             yield return null;
         }
 
