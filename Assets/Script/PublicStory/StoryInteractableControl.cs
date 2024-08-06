@@ -19,10 +19,11 @@ public class StoryInteractableControl : MonoBehaviour
     bool isGetItem = false;
 
     [Header("Rotation")]
-    public float _speed = 150f;
+    public Sprite getItemSprite;
     private float totalRotation = 0f;
     private Quaternion initialRotation;
     bool isRotation = false;
+    float _speed = 150f;
 
     void Start()
     {
@@ -54,6 +55,7 @@ public class StoryInteractableControl : MonoBehaviour
             isRotation = false;
             totalRotation = 0f;
             transform.rotation = initialRotation;
+            gameObject.GetComponent<SpriteRenderer>().sprite = getItemSprite;
         }
     }
 
