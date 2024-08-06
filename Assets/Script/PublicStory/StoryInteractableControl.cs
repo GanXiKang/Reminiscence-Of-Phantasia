@@ -44,7 +44,7 @@ public class StoryInteractableControl : MonoBehaviour
         float rotationThisFrame = _speed * Time.deltaTime;
         totalRotation += rotationThisFrame;
 
-        if (totalRotation <= 360f)
+        if (totalRotation <= 180f)
         {
             Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f); // À@YÝSÐýÞD
             transform.rotation = transform.rotation * deltaRotation;
@@ -82,6 +82,7 @@ public class StoryInteractableControl : MonoBehaviour
 
         if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
+            isBagGetItem = false;
             isGetItem = true;
             isRotation = true;
             StoryBagControl.isOpenBag = false;
