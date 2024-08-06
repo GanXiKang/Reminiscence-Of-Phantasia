@@ -77,7 +77,7 @@ public class StoryInteractableControl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
 
-        if (!isGetItem) return;
+        if (isGetItem) return;
 
         if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
