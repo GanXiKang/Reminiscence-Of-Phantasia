@@ -11,7 +11,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public Text content;
     string[] introduceItem = new string[10];
     public static bool isIntroduce = true;
-    bool isStop = false;
+    public static bool isStop = false;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;
