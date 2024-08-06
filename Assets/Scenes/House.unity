@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 853523664}
   m_Layer: 0
   m_Name: CameraPosition
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3936,17 +3936,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09af44792f200ff4985680f781e813eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  processObject: []
   chooseUI: {fileID: 0}
   panel: {fileID: 0}
   content: []
-  paper: {fileID: 0}
+  paper1: {fileID: 0}
   pattern: []
   paperEndPos: {fileID: 0}
   stamp: {fileID: 0}
   stampStartPos: {fileID: 0}
   stampEndPos: {fileID: 0}
   scissors: {fileID: 0}
+  paper2: {fileID: 0}
   paperB: {fileID: 0}
+  colorUI: {fileID: 0}
+  pointObject: {fileID: 0}
 --- !u!1 &1305425835
 GameObject:
   m_ObjectHideFlags: 0
