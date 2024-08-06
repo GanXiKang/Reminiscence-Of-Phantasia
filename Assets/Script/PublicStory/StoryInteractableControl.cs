@@ -77,7 +77,7 @@ public class StoryInteractableControl : MonoBehaviour
         if (!isPickedUp || isMoving) return;
         print("IN");
         moveItemUI.SetActive(true);
-        Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
+        Vector3 startPosition = Camera.main.WorldToScreenPoint(transform.position) + uiOffset;
         moveItemUI.transform.position = startPosition;
 
         StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
