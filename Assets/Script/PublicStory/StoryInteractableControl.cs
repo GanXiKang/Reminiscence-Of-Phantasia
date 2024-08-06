@@ -74,8 +74,8 @@ public class StoryInteractableControl : MonoBehaviour
     void PickUpItem()
     {
         if (!isPickedUp) return;
-        if (isGiveItem) return;
         print("OK");
+        isPickedUp = false;
         moveItemUI.SetActive(true);
         Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
         moveItemUI.transform.position = startPosition;
@@ -145,6 +145,5 @@ public class StoryInteractableControl : MonoBehaviour
 
         moveItemUI.transform.position = end;
         moveItemUI.SetActive(false);
-        isPickedUp = false;
     }
 }
