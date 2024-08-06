@@ -50,6 +50,7 @@ public class StoryInteractableControl : MonoBehaviour
         }
         else
         {
+            isRotation = false;
             totalRotation = 0f;
             transform.rotation = initialRotation;
         }
