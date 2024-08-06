@@ -14,8 +14,9 @@ public class StoryInteractableControl : MonoBehaviour
     [Header("Item")]
     public int _giveItemNumber;
     public int _getItemNumber;
-    public static bool isGetItem = false;
+    public static bool isBagGetItem = false;
     bool isGiveItem = false;
+    bool isGetItem = false;
 
     [Header("Rotation")]
     public float _speed = 150f;
