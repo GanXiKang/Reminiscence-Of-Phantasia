@@ -18,10 +18,10 @@ public class StoryInteractableControl : MonoBehaviour
     bool isGiveItem = false;
 
     [Header("Rotation")]
-    public float _speed = 100f;
+    public float _speed = 150f;
     private float totalRotation = 0f;
     private Quaternion initialRotation;
-
+    bool isRotation = false;
 
     void Start()
     {
@@ -33,7 +33,14 @@ public class StoryInteractableControl : MonoBehaviour
 
     void Update()
     {
-        float rotationThisFrame = rotationSpeed * Time.deltaTime;
+        InteractableIsRotationSprite();
+    }
+
+    void InteractableIsRotationSprite()
+    {
+        if (!isRotation) return;
+        
+        float rotationThisFrame = _speed * Time.deltaTime;
         totalRotation += rotationThisFrame;
 
         if (totalRotation <= 360f)
@@ -43,14 +50,15 @@ public class StoryInteractableControl : MonoBehaviour
         }
         else
         {
-            totalRotation = 0f; // 重置旋轉計數
-            transform.rotation = initialRotation; // 重置為初始旋轉角度
+            totalRotation = 0f;
+            transform.rotation = initialRotation;
         }
     }
 
     void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
+
         if (!isGiveItem)
         {
             StoryBagControl.isGet = true;
@@ -62,12 +70,15 @@ public class StoryInteractableControl : MonoBehaviour
     void OnMouseEnter()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
+
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
 
         if (!isGetItem) return;
+
         if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
+            isRotation = true;
             StoryBagControl.isOpenBag = false;
             StoryBagControl.isItemNumber[_getItemNumber] = false;
             StoryBagControl._howManyGrids--;
