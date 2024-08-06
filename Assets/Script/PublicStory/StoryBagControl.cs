@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class StoryBagControl : MonoBehaviour
 {
-    public Camera cam;
     private Canvas canvas;
 
     [Header("BagUI")]
@@ -29,12 +28,6 @@ public class StoryBagControl : MonoBehaviour
     public static int[] _gridsItemNumber;     //記錄每個格子内部的道具編號0~4
     public static int _howManyGrids = 0;      //記錄存在幾個格子
 
-    [Header("ItemPickUp")]
-    public GameObject moveItemUI;                    
-    public Vector3 uiOffset = new Vector3(0, 100, 0); // UI從物件上方上升的偏移量
-    public Transform bagUIPosition;  
-    public static bool isPickedUp = false;
-
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
@@ -46,7 +39,6 @@ public class StoryBagControl : MonoBehaviour
         BagGirdDisplay();
         Bag();
         ItemMove();
-        PickUpItem();
     }
 
     public void Bag_Button()
@@ -166,17 +158,7 @@ public class StoryBagControl : MonoBehaviour
         }
         
     }
-    void PickUpItem()
-    {
-        if (!isPickedUp) return;
-
-        moveItemUI.SetActive(true); 
-        Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
-        moveItemUI.transform.position = startPosition;
-
-        StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
-    }
-
+    
     IEnumerator BagItem()
     {
         for (int i = 0; i < _howManyGrids; i++)
@@ -187,20 +169,5 @@ public class StoryBagControl : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         isAnim = false;
-    }
-    IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
-    {
-        float duration = 1.0f;     //持續時間
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            moveItemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        moveItemUI.transform.position = end;
-        moveItemUI.SetActive(false);
     }
 }
