@@ -74,7 +74,8 @@ public class StoryInteractableControl : MonoBehaviour
     void PickUpItem()
     {
         if (!isPickedUp) return;
-
+        if (isGiveItem) return;
+        print("OK");
         moveItemUI.SetActive(true);
         Vector3 startPosition = cam.WorldToScreenPoint(transform.position) + uiOffset;
         moveItemUI.transform.position = startPosition;
@@ -132,8 +133,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
-        //yield return new WaitForSeconds(1f);
-        float duration = 1f;
+        float duration = 2f;
         float elapsed = 0f;
 
         while (elapsed < duration)
