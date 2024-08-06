@@ -132,6 +132,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
+        yield return new WaitForSeconds(0.5f);
         float duration = 2f;
         float elapsed = 0f;
 
