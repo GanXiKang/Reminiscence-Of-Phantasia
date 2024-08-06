@@ -62,6 +62,7 @@ public class StoryInteractableControl : MonoBehaviour
 
         if (!isGiveItem)
         {
+            isGiveItem = true;
             StoryBagControl.isGet = true;
             StoryBagControl.isItemNumber[_giveItemNumber] = true;
             if (StoryBagControl.isOpenBag)
@@ -79,6 +80,7 @@ public class StoryInteractableControl : MonoBehaviour
 
         if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
+            isGetItem = true;
             isRotation = true;
             StoryBagControl.isOpenBag = false;
             StoryBagControl.isItemNumber[_getItemNumber] = false;
