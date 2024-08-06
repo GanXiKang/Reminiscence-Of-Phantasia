@@ -132,7 +132,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
-        yield return new WaitForSeconds(0.5f);
+        isPickedUp = false;
         float duration = 2f;
         float elapsed = 0f;
 
@@ -145,6 +145,5 @@ public class StoryInteractableControl : MonoBehaviour
 
         moveItemUI.transform.position = end;
         moveItemUI.SetActive(false);
-        isPickedUp = false;
     }
 }
