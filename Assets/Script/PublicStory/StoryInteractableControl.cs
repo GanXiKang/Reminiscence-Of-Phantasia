@@ -17,12 +17,35 @@ public class StoryInteractableControl : MonoBehaviour
     public static bool isGetItem = false;
     bool isGiveItem = false;
 
+    [Header("Rotation")]
+    public float _speed = 100f;
+    private float totalRotation = 0f;
+    private Quaternion initialRotation;
+
 
     void Start()
     {
         player = GameObject.Find("Player");
 
         originalScale = transform.localScale;
+        initialRotation = transform.rotation;
+    }
+
+    void Update()
+    {
+        float rotationThisFrame = rotationSpeed * Time.deltaTime;
+        totalRotation += rotationThisFrame;
+
+        if (totalRotation <= 360f)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f); // À@YÝSÐýÞD
+            transform.rotation = transform.rotation * deltaRotation;
+        }
+        else
+        {
+            totalRotation = 0f; // ÖØÖÃÐýÞDÓ‹”µ
+            transform.rotation = initialRotation; // ÖØÖÃžé³õÊ¼ÐýÞD½Ç¶È
+        }
     }
 
     void OnMouseDown()
@@ -63,5 +86,5 @@ public class StoryInteractableControl : MonoBehaviour
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * _scaleSpeed);
             yield return null;
         }
-    }
+    } 
 }
