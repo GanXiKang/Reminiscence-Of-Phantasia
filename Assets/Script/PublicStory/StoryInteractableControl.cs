@@ -30,8 +30,8 @@ public class StoryInteractableControl : MonoBehaviour
 
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
-    public Vector3 uiOffset = new Vector3(0, 100, 0); // UI從物件上方上升的偏移量
     public Transform bagUIPosition;
+    Vector3 uiOffset = new Vector3(0, 120, 0);
     private bool isPickedUp = false;
 
     void Start()
@@ -132,7 +132,8 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
-        float duration = 1f;     //持續時間
+        //yield return new WaitForSeconds(1f);
+        float duration = 1f;
         float elapsed = 0f;
 
         while (elapsed < duration)
