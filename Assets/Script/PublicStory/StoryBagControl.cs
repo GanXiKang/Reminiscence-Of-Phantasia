@@ -56,7 +56,6 @@ public class StoryBagControl : MonoBehaviour
         _whatItemButton = _whichItem;
         StoryInteractableControl.isGetItem = isItemFollow;
         StoryItemIntroduce_Girl.isIntroduce = !isItemFollow;
-        StoryItemIntroduce_Girl.isStop = true;
     }
 
     void ItemNumber_Start()
