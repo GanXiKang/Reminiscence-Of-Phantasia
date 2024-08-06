@@ -11,7 +11,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public Text content;
     string[] introduceItem = new string[10];
     public static bool isIntroduce = true;
-    public static bool isStop = false;
+    bool isStop = false;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;
@@ -23,8 +23,8 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     void Update()
     {
-        if (!isIntroduce)
-            StopCoroutine(IntroduceDisplay());
+        //if (!isIntroduce)
+        //    StopCoroutine(IntroduceDisplay());
     }
 
     public void OnPointEnter(int _whichItem)
@@ -32,14 +32,13 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         isStop = false;
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
         content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
-        if (isIntroduce)
-            StartCoroutine(IntroduceDisplay());
+        Invoke("IntroduceDisplay", 0.7f);
     }
     public void OnPointExit()
     {
         isStop = true;
         introduce.SetActive(false) ;
-        StopCoroutine(IntroduceDisplay());
+        //StopCoroutine(IntroduceDisplay());
     }
 
     void ItemIntroduceContent()
@@ -54,10 +53,8 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         introduceItem[8] = "蘋果\n顏色非常鮮艷";
         introduceItem[9] = "烤肉串\n香味四溢肚子都餓了";
     }
-
-    IEnumerator IntroduceDisplay()
+    void IntroduceDisplay()
     {
-        yield return new WaitForSeconds(0.7f);
         if (!isStop)
         {
             introduce.SetActive(true);
