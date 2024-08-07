@@ -28,6 +28,9 @@ public class StoryBagControl : MonoBehaviour
     public static int[] _gridsItemNumber;     //記錄每個格子内部的道具編號0~4
     public static int _howManyGrids = 0;      //記錄存在幾個格子
 
+    [Header("GetItemMoveUI")]
+    public Image getMoveItem;
+
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
@@ -38,7 +41,7 @@ public class StoryBagControl : MonoBehaviour
     { 
         BagGirdDisplay();
         Bag();
-        ItemMove();
+        ItemFollow();
     }
 
     public void Bag_Button()
@@ -130,7 +133,7 @@ public class StoryBagControl : MonoBehaviour
             }
         }
     }
-    void ItemMove()
+    void ItemFollow()
     {
         if (!isItemFollow)
         {
