@@ -31,7 +31,7 @@ public class StoryInteractableControl : MonoBehaviour
     public GameObject moveItemUI;
     public Transform bagUIPosition;
     Vector3 uiOffset = new Vector3(0, 120, 0);
-    private bool isPickedUp = false;
+    public static bool isPickedUp = false;
     private bool isMoving = false;
 
     void Start()
