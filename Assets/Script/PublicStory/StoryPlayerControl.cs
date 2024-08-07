@@ -20,14 +20,10 @@ public class StoryPlayerControl : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
     }
 
-    void Update()
-    {
-        print(isCanMove());
-        //playerInput.enabled = isCanMove;
-    }
-
     void FixedUpdate()
     {
+        playerInput.enabled = isCanMove();
+
         StoryPlayerMove();
         StoryPlayerOnTheGround();
     }
@@ -56,6 +52,6 @@ public class StoryPlayerControl : MonoBehaviour
 
     bool isCanMove()
     {
-        return StoryInteractableControl.isPickedUp;
+        return !StoryInteractableControl.isPickedUp;
     }
 }
