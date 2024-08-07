@@ -93,6 +93,7 @@ public class StoryInteractableControl : MonoBehaviour
             isPickedUp = true;
             StoryBagControl.isGet = true;
             StoryBagControl.isItemNumber[_giveItemNumber] = true;
+            StoryBagControl._whichItem = _giveItemNumber;
             if (StoryBagControl.isOpenBag)
                 StoryBagControl.isOpenBag = false;
         }
