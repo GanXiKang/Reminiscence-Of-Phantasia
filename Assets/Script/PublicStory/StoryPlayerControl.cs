@@ -11,8 +11,8 @@ public class StoryPlayerControl : MonoBehaviour
     [Header("Movement")]
     public float _moveSpeed = 12f;
     public float _gravity = 20f;
-    Vector3 _storyMoveInput;
-    Vector3 _storyVelocity;
+    private Vector3 _storyMoveInput;
+    private Vector3 _storyVelocity;
 
     void Start()
     {
