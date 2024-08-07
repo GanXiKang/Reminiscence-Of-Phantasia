@@ -22,7 +22,8 @@ public class StoryPlayerControl : MonoBehaviour
 
     void Update()
     {
-        playerInput.enabled = isCanMove;
+        print(isCanMove());
+        //playerInput.enabled = isCanMove;
     }
 
     void FixedUpdate()
