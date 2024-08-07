@@ -50,8 +50,8 @@ public class StoryPlayerControl : MonoBehaviour
         }
     }
 
-    bool isCanMove()
-    {
+    //bool isCanMove()
+    //{
         //return !StoryInteractableControl.isPickedUp;
-    }
+    //}
 }
