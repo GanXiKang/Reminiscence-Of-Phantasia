@@ -4822,6 +4822,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1e74841d15eca4e4497861b1b671561d, type: 3}
   - {fileID: 21300000, guid: 5dad27279e44b2c4a9662935e554c7ab, type: 3}
   - {fileID: 21300000, guid: 512b16d567f94d841a710d651d032162, type: 3}
+  getMoveItem: {fileID: 2028836016}
 --- !u!114 &1353896308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5535,15 +5536,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8010ce16aad0c84f8e69cbfc0910edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 651876784}
   _snapDistance: 12
   _scaleSpeed: 5
-  scaledSize: {x: 0.55, y: 0.55, z: 0.55}
   _giveItemNumber: 1
   _getItemNumber: 2
   getItemSprite: {fileID: 21300000, guid: 35652147864da7a4eb60e2f05cacbb0b, type: 3}
   moveItemUI: {fileID: 2028836014}
-  uiOffset: {x: 0, y: 100, z: 0}
   bagUIPosition: {fileID: 1968368687}
 --- !u!1 &1619258928
 GameObject:
@@ -5711,15 +5709,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8010ce16aad0c84f8e69cbfc0910edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 651876784}
   _snapDistance: 12
   _scaleSpeed: 5
-  scaledSize: {x: 0.55, y: 0.55, z: 0.55}
   _giveItemNumber: 2
   _getItemNumber: 1
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
-  uiOffset: {x: 0, y: 100, z: 0}
   bagUIPosition: {fileID: 1968368687}
 --- !u!65 &1632911797
 BoxCollider:
