@@ -22,7 +22,7 @@ public class StoryPlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        //playerInput.enabled = isCanMove();
+        playerInput.enabled = isCanMove();
 
         StoryPlayerMove();
         StoryPlayerOnTheGround();
@@ -50,8 +50,8 @@ public class StoryPlayerControl : MonoBehaviour
         }
     }
 
-    //bool isCanMove()
-    //{
-        //return !StoryInteractableControl.isPickedUp;
-    //}
+    bool isCanMove()
+    {
+        return StoryInteractableControl.isPlayerMove;
+    }
 }
