@@ -74,7 +74,7 @@ public class StoryInteractableControl : MonoBehaviour
     void PickUpItem()
     {
         if (!isPickedUp || isMoving) return;
-
+        Debug.Log("PickUpItem called");
         moveItemUI.SetActive(true);
         Vector3 startPosition = Camera.main.WorldToScreenPoint(transform.position) + uiOffset;
         moveItemUI.transform.position = startPosition;
@@ -132,6 +132,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
+        Debug.Log("MoveItemUI started");
         isMoving = true;
         float duration = 1f;
         float elapsed = 0f;
@@ -148,5 +149,6 @@ public class StoryInteractableControl : MonoBehaviour
         itemUI.SetActive(false);
         isPickedUp = false;
         isMoving = false;
+        Debug.Log("MoveItemUI completed");
     }
 }
