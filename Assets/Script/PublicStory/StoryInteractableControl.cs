@@ -30,9 +30,10 @@ public class StoryInteractableControl : MonoBehaviour
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
     public Transform bagUIPosition;
+    public static bool isPlayerMove = true;
     Vector3 uiOffset = new Vector3(0, 120, 0);
     bool isPickedUp = false;
-    bool isMoving = false;
+    bool isAnim = false;
 
     void Start()
     {
@@ -73,7 +74,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     void PickUpItem()
     {
-        if (!isPickedUp || isMoving) return;
+        if (!isPickedUp || isAnim) return;
 
         moveItemUI.SetActive(true);
         Vector3 startPosition = Camera.main.WorldToScreenPoint(transform.position) + uiOffset;
@@ -132,8 +133,8 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
-        Debug.Log("MoveItemUI started");
-        isMoving = true;
+        isAnim = true;
+        isPlayerMove = false;
         float duration = 1f;
         float elapsed = 0f;
 
@@ -148,6 +149,7 @@ public class StoryInteractableControl : MonoBehaviour
         moveItemUI.transform.position = end;
         itemUI.SetActive(false);
         isPickedUp = false;
-        isMoving = false;
+        isAnim = false;
+        isPlayerMove = true;
     }
 }
