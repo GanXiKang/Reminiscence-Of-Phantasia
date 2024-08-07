@@ -30,6 +30,7 @@ public class StoryBagControl : MonoBehaviour
 
     [Header("GetItemMoveUI")]
     public Image getMoveItem;
+    public static int _whichItem = 0;
 
     void Start()
     {
@@ -42,6 +43,7 @@ public class StoryBagControl : MonoBehaviour
         BagGirdDisplay();
         Bag();
         ItemFollow();
+        RenewGetItemMoveUI();
     }
 
     public void Bag_Button()
@@ -161,7 +163,12 @@ public class StoryBagControl : MonoBehaviour
         }
         
     }
-    
+    void RenewGetItemMoveUI()
+    {
+        getMoveItem.sprite = itemSprite[_whichItem];
+    }
+
+
     IEnumerator BagItem()
     {
         for (int i = 0; i < _howManyGrids; i++)
