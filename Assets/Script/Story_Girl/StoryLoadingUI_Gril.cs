@@ -15,17 +15,14 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     public static bool isLoading = false;
     public static bool isLeft = false;
     public static bool isRight = false;
-    float valueA = 0, valueB = 0, valueC = 0;
+    float _loadingSpeed = 1.5f;
 
     void Update()
     {
         loadingUI.SetActive(isLoading);
-        a.fillAmount = valueA;
-        b.fillAmount = valueB;
-        c.fillAmount = valueC;
 
-        LeftSwitchScene();
-        RightSwitchScene();
+        LeftSwitch();
+        RightSwitch();
 
         if (Input.GetKeyDown(KeyCode.L))  //úy‘á
         {
@@ -34,71 +31,60 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         }
     }
 
-    void LeftSwitchScene()
+    void LeftSwitch()
     {
-        if (isLeft)
-        {
-            a.fillOrigin = (int)Image.OriginHorizontal.Left;
-            b.fillOrigin = 0;
-            c.fillOrigin = 0;
-        }
+        //if (isLeft)
+        //{
+        //    a.fillOrigin = (int)Image.OriginHorizontal.Left;
+        //    b.fillOrigin = 0;
+        //    c.fillOrigin = 0;
+        //}
     }
-    void RightSwitchScene()
+    void RightSwitch()
     {
         if (isRight)
         {
-            a.fillOrigin = (int)Image.OriginHorizontal.Right;
-            b.fillOrigin = 1;
-            c.fillOrigin = 1;
-            A_BarValue();
-            B_BarValue();
-            C_BarValue();
+            StartCoroutine(RightSwitchScene());
         }
     }
-    void A_BarValue()
+    void BarValue(Image bar, bool isAdd)
     {
-        if (valueA < 1)
+        if (isAdd)
         {
-            valueA += 1.5f * Time.deltaTime;
+            if (bar.fillAmount < 1)
+            {
+                bar.fillAmount += _loadingSpeed * Time.deltaTime;
+            }
         }
-        else 
+        else
         {
-            isRight = false;
-        }
-        if(valueA > 0)
-        {
-            valueA -= 1.5f * Time.deltaTime;
+            if (bar.fillAmount > 0)
+            {
+                bar.fillAmount -= _loadingSpeed * Time.deltaTime;
+            }
         }
     }
-    void B_BarValue()
-    {
-        if (valueB < 1)
-        {
-            valueB += 1f * Time.deltaTime;
 
-        }
-        else
-        {
-            isRight = false;
-        }
-        if (valueB >0)
-        {
-            valueB -= 1f * Time.deltaTime;
-        }
-    }
-    void C_BarValue()
+    //IEnumerator LeftSwitchScene()
+    //{
+        
+    //}
+    IEnumerator RightSwitchScene()
     {
-        if (valueC < 1)
-        {
-            valueC += 0.5f * Time.deltaTime;
-        }
-        else
-        {
-            isRight = false;
-        }
-        if (valueC > 0)
-        {
-            valueC += 0.5f * Time.deltaTime;
-        }
+        BarValue(a, true);
+        yield return new WaitForSeconds(0.5f);
+        BarValue(b, true);
+        yield return new WaitForSeconds(0.5f);
+        (BarValue(c, true);
+
+        a.fillOrigin = (int)Image.OriginHorizontal.Left;
+        b.fillOrigin = 0;
+        c.fillOrigin = 0;
+
+        BarValue(a, false);
+        yield return new WaitForSeconds(0.5f);
+        BarValue(b, false);
+        yield return new WaitForSeconds(0.5f);
+        (BarValue(c, false);
     }
 }
