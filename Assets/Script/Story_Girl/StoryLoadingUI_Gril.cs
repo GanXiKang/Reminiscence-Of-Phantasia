@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class StoryLoadingUI_Gril : MonoBehaviour
 {
+    [Header("Scene")]
+    public GameObject street;
+    public GameObject forest;
+
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a,b,c;
     public static bool isLeft, isRight;
+    float valueA, valueB, valueC;
 
     void Start()
     {
         isLeft = false;
         isRight = false;
+        valueA = 0;
+        valueB = 0;
+        valueC = 0;
     }
 
     void Update()
