@@ -75,7 +75,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         BarValue(b, true);
         yield return new WaitForSeconds(0.5f);
-        (BarValue(c, true);
+        BarValue(c, true);
 
         a.fillOrigin = (int)Image.OriginHorizontal.Left;
         b.fillOrigin = 0;
@@ -85,6 +85,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         BarValue(b, false);
         yield return new WaitForSeconds(0.5f);
-        (BarValue(c, false);
+        BarValue(c, false);
     }
 }
