@@ -12,29 +12,25 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a,b,c;
-    public static bool isLoading;
-    public static bool isLeft, isRight;
-    float valueA, valueB, valueC;
+    public static bool isLoading = false;
+    public static bool isLeft = false;
+    public static bool isRight = false;
+    float valueA = 0, valueB = 0, valueC = 0;
     float _loadingSpeed = 1.5f;
-
-    void Start()
-    {
-        isLeft = false;
-        isRight = false;
-        valueA = 0;
-        valueB = 0;
-        valueC = 0;
-    }
 
     void Update()
     {
         loadingUI.SetActive(isLoading);
+        a.fillAmount = valueA;
+        b.fillAmount = valueB;
+        c.fillAmount = valueC;
 
         LeftSwitchScene();
         RightSwitchScene();
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))  //úy‘á
         {
+            isLoading = true;
             isRight = true;
         }
     }
@@ -66,7 +62,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if (valueA < 1)
         {
             valueA += _loadingSpeed * Time.deltaTime;
-            a.fillAmount = valueA;
         }
         else 
         {
@@ -75,7 +70,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if(valueA > 0)
         {
             valueA -= _loadingSpeed * Time.deltaTime;
-            a.fillAmount = valueA;
         }
     }
     void B_BarValue()
@@ -83,7 +77,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if (valueB < 1)
         {
             valueB += _loadingSpeed * Time.deltaTime;
-            b.fillAmount = valueB;
+
         }
         else
         {
@@ -92,7 +86,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if (valueB >0)
         {
             valueB -= _loadingSpeed * Time.deltaTime;
-            b.fillAmount = valueB;
         }
     }
     void C_BarValue()
@@ -100,7 +93,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if (valueC < 1)
         {
             valueC += _loadingSpeed * Time.deltaTime;
-            c.fillAmount = valueC;
         }
         else
         {
@@ -109,7 +101,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if (valueC > 0)
         {
             valueC += _loadingSpeed * Time.deltaTime;
-            c.fillAmount = valueC;
         }
     }
 }
