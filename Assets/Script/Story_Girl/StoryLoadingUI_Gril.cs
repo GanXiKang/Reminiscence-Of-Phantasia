@@ -16,7 +16,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     public static bool isLeft = false;
     public static bool isRight = false;
     float valueA = 0, valueB = 0, valueC = 0;
-    float _loadingSpeed = 1.5f;
 
     void Update()
     {
@@ -51,17 +50,16 @@ public class StoryLoadingUI_Gril : MonoBehaviour
             a.fillOrigin = (int)Image.OriginHorizontal.Right;
             b.fillOrigin = 1;
             c.fillOrigin = 1;
-
-            Invoke("A_BarValue", 0.2f);
-            Invoke("B_BarValue", 0.4f);
-            Invoke("C_BarValue", 0.6f);
+            A_BarValue();
+            B_BarValue();
+            C_BarValue();
         }
     }
     void A_BarValue()
     {
         if (valueA < 1)
         {
-            valueA += _loadingSpeed * Time.deltaTime;
+            valueA += 1.5f * Time.deltaTime;
         }
         else 
         {
@@ -69,14 +67,14 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         }
         if(valueA > 0)
         {
-            valueA -= _loadingSpeed * Time.deltaTime;
+            valueA -= 1.5f * Time.deltaTime;
         }
     }
     void B_BarValue()
     {
         if (valueB < 1)
         {
-            valueB += _loadingSpeed * Time.deltaTime;
+            valueB += 1f * Time.deltaTime;
 
         }
         else
@@ -85,14 +83,14 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         }
         if (valueB >0)
         {
-            valueB -= _loadingSpeed * Time.deltaTime;
+            valueB -= 1f * Time.deltaTime;
         }
     }
     void C_BarValue()
     {
         if (valueC < 1)
         {
-            valueC += _loadingSpeed * Time.deltaTime;
+            valueC += 0.5f * Time.deltaTime;
         }
         else
         {
@@ -100,7 +98,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         }
         if (valueC > 0)
         {
-            valueC += _loadingSpeed * Time.deltaTime;
+            valueC += 0.5f * Time.deltaTime;
         }
     }
 }
