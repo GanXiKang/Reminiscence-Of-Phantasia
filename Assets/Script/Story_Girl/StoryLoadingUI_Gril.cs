@@ -12,6 +12,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a,b,c;
+    public static bool isLoading;
     public static bool isLeft, isRight;
     float valueA, valueB, valueC;
     float _loadingSpeed = 1.5f;
@@ -27,6 +28,8 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
     void Update()
     {
+        loadingUI.SetActive(isLoading);
+
         LeftSwitchScene();
         RightSwitchScene();
 
