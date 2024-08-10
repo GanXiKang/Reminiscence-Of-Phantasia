@@ -21,17 +21,23 @@ public class StoryExitControl : MonoBehaviour
 
     void Update()
     {
-        exitUI.SetActive(isExit);
-        exitUI.transform.position = transform.position + new Vector3(0f, 100f, 0f);
-
+        ExitUI();
         Bar();
     }
 
+    void ExitUI()
+    {
+        exitUI.SetActive(isExit);
+
+        Vector3 worldPos = player.transform.position + new Vector3(0f, 100f, 0f);
+        Vector3 screenPos = Camera.main.ScreenToWorldPoint(worldPos);
+        exitUI.transform.position = screenPos;
+    }
     void Bar()
     {
         if (isExit)
         {
-            bar.fillAmount += _barSpeed * Time.deltaTime / 10;
+            bar.fillAmount += _barSpeed * Time.deltaTime / 2;
             if (bar.fillAmount == 1)
             {
                 isExit = false;
