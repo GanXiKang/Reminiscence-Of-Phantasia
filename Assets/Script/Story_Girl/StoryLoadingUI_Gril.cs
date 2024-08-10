@@ -12,9 +12,9 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a, b, c;
-    public static bool isLeftOpen = false;
+    public static bool isLeftOpen = false;     //ªÿ»•
     public static bool isLeftClose = false;
-    public static bool isRightOpen = false;
+    public static bool isRightOpen = false;    //«∞ﬂM
     public static bool isRightClose = false;
     float _loadingSpeed = 1.5f;
     bool isLoading = false;
@@ -28,7 +28,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))  //úy‘á
         {
-            isLeftOpen = true;
+            isRightOpen = true;
         }
     }
 
@@ -75,7 +75,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     IEnumerator LeftSwitchScene_Open()
     {
         isLoading = true;
-        a.fillOrigin = 0;
+        a.fillOrigin = 0; //(int)Image.OriginHorizontal.Left
         b.fillOrigin = 0;
         c.fillOrigin = 0;
 
