@@ -89,6 +89,8 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         {
             isLeftOpen = false;
             yield return new WaitForSeconds(0.5f);
+            street.SetActive(true);
+            forest.SetActive(false);
             isRightClose = true;
         }
     }
@@ -127,6 +129,8 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         {
             isRightOpen = false;
             yield return new WaitForSeconds(0.5f);
+            forest.SetActive(true);
+            street.SetActive(false);
             isLeftClose = true;
         }
     }
