@@ -168,7 +168,6 @@ public class StoryBagControl : MonoBehaviour
         getMoveItem.sprite = itemSprite[_whichItem];
     }
 
-
     IEnumerator BagItem()
     {
         for (int i = 0; i < _howManyGrids; i++)
