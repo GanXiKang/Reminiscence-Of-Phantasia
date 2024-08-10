@@ -3700,6 +3700,7 @@ GameObject:
   - component: {fileID: 1063354010}
   - component: {fileID: 1063354009}
   - component: {fileID: 1063354008}
+  - component: {fileID: 1063354011}
   m_Layer: 0
   m_Name: Exit_Street
   m_TagString: Untagged
@@ -3793,6 +3794,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063354006}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1063354011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063354006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0ef097c49b61040b5225c237d2d2ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1201507674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6669,6 +6682,7 @@ GameObject:
   - component: {fileID: 2050857227}
   - component: {fileID: 2050857226}
   - component: {fileID: 2050857225}
+  - component: {fileID: 2050857228}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -6762,6 +6776,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050857223}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2050857228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050857223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0ef097c49b61040b5225c237d2d2ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2070207991
 GameObject:
   m_ObjectHideFlags: 0
