@@ -12,12 +12,12 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a, b, c;
+    public static bool isLoading = false;
     public static bool isLeftOpen = false;     //ªÿ»•
     public static bool isLeftClose = false;
     public static bool isRightOpen = false;    //«∞ﬂM
     public static bool isRightClose = false;
     float _loadingSpeed = 1.5f;
-    bool isLoading = false;
 
     void Update()
     {
@@ -29,6 +29,10 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))  //úy‘á
         {
             isRightOpen = true;
+        }
+        if (Input.GetKeyDown(KeyCode.K))  //úy‘á
+        {
+            isLeftOpen = true;
         }
     }
 
