@@ -27,10 +27,10 @@ public class StoryExitControl : MonoBehaviour
 
     void ExitUI()
     {
-        //exitUI.SetActive(isExit);
+        exitUI.SetActive(isExit);
 
         Vector3 worldPos = player.transform.position + new Vector3(0f, 10f, 0f);
-        Vector3 screenPos = Camera.main.ScreenToWorldPoint(worldPos);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         exitUI.transform.position = screenPos;
     }
     void Bar()
