@@ -44,6 +44,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     {
         if (isRight)
         {
+            print("OK");
             StartCoroutine(RightSwitchScene());
         }
     }
@@ -76,15 +77,16 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         BarValue(b, true);
         yield return new WaitForSeconds(0.5f);
         BarValue(c, true);
+        isRight = false;
 
-        a.fillOrigin = (int)Image.OriginHorizontal.Left;
-        b.fillOrigin = 0;
-        c.fillOrigin = 0;
+        //a.fillOrigin = (int)Image.OriginHorizontal.Left;
+        //b.fillOrigin = 0;
+        //c.fillOrigin = 0;
 
-        BarValue(a, false);
-        yield return new WaitForSeconds(0.5f);
-        BarValue(b, false);
-        yield return new WaitForSeconds(0.5f);
-        BarValue(c, false);
+        //BarValue(a, false);
+        //yield return new WaitForSeconds(0.5f);
+        //BarValue(b, false);
+        //yield return new WaitForSeconds(0.5f);
+        //BarValue(c, false);
     }
 }
