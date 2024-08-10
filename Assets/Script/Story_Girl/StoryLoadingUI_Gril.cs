@@ -12,12 +12,12 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a, b, c;
-    public static bool isLoading = false;
     public static bool isLeftOpen = false;
     public static bool isLeftClose = false;
     public static bool isRightOpen = false;
     public static bool isRightClose = false;
     float _loadingSpeed = 1.5f;
+    bool isLoading = false;
 
     void Update()
     {
@@ -28,8 +28,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))  //úy‘á
         {
-            isLoading = true;
-            isRightOpen = true;
+            isLeftOpen = true;
         }
     }
 
@@ -75,6 +74,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
     IEnumerator LeftSwitchScene_Open()
     {
+        isLoading = true;
         a.fillOrigin = 0;
         b.fillOrigin = 0;
         c.fillOrigin = 0;
@@ -89,7 +89,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         {
             isLeftOpen = false;
             yield return new WaitForSeconds(0.5f);
-            isRightOpen = true;
+            isRightClose = true;
         }
     }
     IEnumerator LeftSwitchScene_Close()
@@ -98,19 +98,21 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         b.fillOrigin = 0;
         c.fillOrigin = 0;
 
-        BarValue(a, false);
+        BarValue(c, false);
         yield return new WaitForSeconds(0.2f);
         BarValue(b, false);
         yield return new WaitForSeconds(0.2f);
-        BarValue(c, false);
+        BarValue(a, false);
 
-        if (c.fillAmount == 0)
+        if (a.fillAmount == 0)
         {
             isLeftClose = false;
+            isLoading = false;
         }
     }
     IEnumerator RightSwitchScene_Open()
     {
+        isLoading = true;
         a.fillOrigin = 1;
         b.fillOrigin = 1;
         c.fillOrigin = 1;
@@ -134,15 +136,16 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         b.fillOrigin = 1;
         c.fillOrigin = 1;
 
-        BarValue(a, false);
+        BarValue(c, false);
         yield return new WaitForSeconds(0.2f);
         BarValue(b, false);
         yield return new WaitForSeconds(0.2f);
-        BarValue(c, false);
+        BarValue(a, false);
 
-        if (c.fillAmount == 0)
+        if (a.fillAmount == 0)
         {
             isRightClose = false;
+            isLoading = false;
         }
     }
 }
