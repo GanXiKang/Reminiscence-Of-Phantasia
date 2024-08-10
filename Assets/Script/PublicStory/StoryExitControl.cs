@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StoryExitControl : MonoBehaviour
 {
     GameObject player;
-    public static int _goToThatScene;
+    public int _goToThatScene;
 
     [Header("ExitUI")]
     public GameObject exitUI;
