@@ -44,7 +44,6 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     {
         if (isRight)
         {
-            print("OK");
             StartCoroutine(RightSwitchScene());
         }
     }
@@ -73,9 +72,9 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     IEnumerator RightSwitchScene()
     {
         BarValue(a, true);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
         BarValue(b, true);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
         BarValue(c, true);
 
         if (c.fillAmount == 1)
