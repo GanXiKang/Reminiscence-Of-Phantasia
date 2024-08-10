@@ -3806,6 +3806,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0ef097c49b61040b5225c237d2d2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _goToThatScene: 1
+  exitUI: {fileID: 1418007849}
+  bar: {fileID: 1428380599}
 --- !u!1 &1201507674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6788,6 +6791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0ef097c49b61040b5225c237d2d2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _goToThatScene: 2
+  exitUI: {fileID: 1418007849}
+  bar: {fileID: 1428380599}
 --- !u!1 &2070207991
 GameObject:
   m_ObjectHideFlags: 0
