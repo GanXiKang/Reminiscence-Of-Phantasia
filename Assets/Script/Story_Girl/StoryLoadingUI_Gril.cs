@@ -65,12 +65,29 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         }
     }
 
-    //IEnumerator LeftSwitchScene()
-    //{
-        
-    //}
+    IEnumerator LeftSwitchScene()
+    {
+        a.fillOrigin = 0;
+        b.fillOrigin = 0;
+        c.fillOrigin = 0;
+
+        BarValue(a, true);
+        yield return new WaitForSeconds(0.2f);
+        BarValue(b, true);
+        yield return new WaitForSeconds(0.2f);
+        BarValue(c, true);
+
+        if (c.fillAmount == 1)
+        {
+            isRight = false;
+        }
+    }
     IEnumerator RightSwitchScene()
     {
+        a.fillOrigin = 1;
+        b.fillOrigin = 1;
+        c.fillOrigin = 1;
+
         BarValue(a, true);
         yield return new WaitForSeconds(0.2f);
         BarValue(b, true);
@@ -82,9 +99,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
             isRight = false;
         }
 
-            //a.fillOrigin = (int)Image.OriginHorizontal.Left;
-            //b.fillOrigin = 0;
-            //c.fillOrigin = 0;
+            
 
             //BarValue(a, false);
             //yield return new WaitForSeconds(0.5f);
