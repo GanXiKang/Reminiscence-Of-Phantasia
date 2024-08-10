@@ -73,9 +73,9 @@ public class StoryLoadingUI_Gril : MonoBehaviour
     IEnumerator RightSwitchScene()
     {
         BarValue(a, true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         BarValue(b, true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         BarValue(c, true);
         isRight = false;
 
