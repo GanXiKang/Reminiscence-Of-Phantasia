@@ -22,7 +22,7 @@ public class StoryExitControl : MonoBehaviour
     void Update()
     {
         exitUI.SetActive(isExit);
-        exitUI.transform.position = player.transform.position + new Vector3(0f, 100f, 0f);
+        exitUI.transform.position = transform.position + new Vector3(0f, 100f, 0f);
 
         Bar();
     }
@@ -31,7 +31,7 @@ public class StoryExitControl : MonoBehaviour
     {
         if (isExit)
         {
-            bar.fillAmount += _barSpeed * Time.deltaTime / 2;
+            bar.fillAmount += _barSpeed * Time.deltaTime / 10;
             if (bar.fillAmount == 1)
             {
                 isExit = false;
