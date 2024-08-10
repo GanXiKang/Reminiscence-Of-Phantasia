@@ -33,18 +33,16 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
     void LeftSwitch()
     {
-        //if (isLeft)
-        //{
-        //    a.fillOrigin = (int)Image.OriginHorizontal.Left;
-        //    b.fillOrigin = 0;
-        //    c.fillOrigin = 0;
-        //}
+        if (isLeft)
+        {
+            StartCoroutine(LeftSwitchScene_Open());
+        }
     }
     void RightSwitch()
     {
         if (isRight)
         {
-            StartCoroutine(RightSwitchScene());
+            StartCoroutine(RightSwitchScene_Open());
         }
     }
     void BarValue(Image bar, bool isAdd)
@@ -65,7 +63,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         }
     }
 
-    IEnumerator LeftSwitchScene()
+    IEnumerator LeftSwitchScene_Open()
     {
         a.fillOrigin = 0;
         b.fillOrigin = 0;
@@ -79,10 +77,27 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
         if (c.fillAmount == 1)
         {
-            isRight = false;
+            isLeft = false;
         }
     }
-    IEnumerator RightSwitchScene()
+    IEnumerator LeftSwitchScene_Close()
+    {
+        a.fillOrigin = 1;
+        b.fillOrigin = 1;
+        c.fillOrigin = 1;
+
+        BarValue(a, false);
+        yield return new WaitForSeconds(0.2f);
+        BarValue(b, false);
+        yield return new WaitForSeconds(0.2f);
+        BarValue(c, false);
+
+        if (c.fillAmount == 0)
+        {
+            isLeft = false;
+        }
+    }
+    IEnumerator RightSwitchScene_Open()
     {
         a.fillOrigin = 1;
         b.fillOrigin = 1;
@@ -98,13 +113,21 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         {
             isRight = false;
         }
+    }
+    IEnumerator RightSwitchScene_Close()
+    {
+        a.fillOrigin = 1;
+        b.fillOrigin = 1;
+        c.fillOrigin = 1;
 
-            
+        BarValue(a, false);
+        yield return new WaitForSeconds(0.2f);
+        BarValue(b, false);
+        yield return new WaitForSeconds(0.2f);
+        BarValue(c, false);
 
-            //BarValue(a, false);
-            //yield return new WaitForSeconds(0.5f);
-            //BarValue(b, false);
-            //yield return new WaitForSeconds(0.5f);
-            //BarValue(c, false);
+        if (c.fillAmount == 0)
+        {
+            isRight = false;
         }
     }
