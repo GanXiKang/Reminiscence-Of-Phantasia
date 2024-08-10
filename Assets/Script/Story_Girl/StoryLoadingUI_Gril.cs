@@ -11,10 +11,12 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
     [Header("LoadingUI")]
     public GameObject loadingUI;
-    public Image a,b,c;
+    public Image a, b, c;
     public static bool isLoading = false;
-    public static bool isLeft = false;
-    public static bool isRight = false;
+    public static bool isLeftOpen = false;
+    public static bool isLeftClose = false;
+    public static bool isRightOpen = false;
+    public static bool isRightClose = false;
     float _loadingSpeed = 1.5f;
 
     void Update()
@@ -27,22 +29,30 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))  //úy‘á
         {
             isLoading = true;
-            isRight = true;
+            isRightOpen = true;
         }
     }
 
     void LeftSwitch()
     {
-        if (isLeft)
+        if (isLeftOpen)
         {
             StartCoroutine(LeftSwitchScene_Open());
+        }
+        if (isLeftClose)
+        {
+            StartCoroutine(LeftSwitchScene_Close());
         }
     }
     void RightSwitch()
     {
-        if (isRight)
+        if (isRightOpen)
         {
             StartCoroutine(RightSwitchScene_Open());
+        }
+        if (isRightClose)
+        {
+            StartCoroutine(RightSwitchScene_Close());
         }
     }
     void BarValue(Image bar, bool isAdd)
@@ -77,14 +87,16 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
         if (c.fillAmount == 1)
         {
-            isLeft = false;
+            isLeftOpen = false;
+            yield return new WaitForSeconds(0.5f);
+            isRightOpen = true;
         }
     }
     IEnumerator LeftSwitchScene_Close()
     {
-        a.fillOrigin = 1;
-        b.fillOrigin = 1;
-        c.fillOrigin = 1;
+        a.fillOrigin = 0;
+        b.fillOrigin = 0;
+        c.fillOrigin = 0;
 
         BarValue(a, false);
         yield return new WaitForSeconds(0.2f);
@@ -94,7 +106,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
         if (c.fillAmount == 0)
         {
-            isLeft = false;
+            isLeftClose = false;
         }
     }
     IEnumerator RightSwitchScene_Open()
@@ -111,7 +123,9 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
         if (c.fillAmount == 1)
         {
-            isRight = false;
+            isRightOpen = false;
+            yield return new WaitForSeconds(0.5f);
+            isLeftClose = true;
         }
     }
     IEnumerator RightSwitchScene_Close()
@@ -128,6 +142,7 @@ public class StoryLoadingUI_Gril : MonoBehaviour
 
         if (c.fillAmount == 0)
         {
-            isRight = false;
+            isRightClose = false;
         }
     }
+}
