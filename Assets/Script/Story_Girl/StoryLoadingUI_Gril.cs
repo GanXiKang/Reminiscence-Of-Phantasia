@@ -77,16 +77,20 @@ public class StoryLoadingUI_Gril : MonoBehaviour
         BarValue(b, true);
         yield return new WaitForSeconds(0.4f);
         BarValue(c, true);
-        isRight = false;
 
-        //a.fillOrigin = (int)Image.OriginHorizontal.Left;
-        //b.fillOrigin = 0;
-        //c.fillOrigin = 0;
+        if (c.fillAmount == 1)
+        {
+            isRight = false;
+        }
 
-        //BarValue(a, false);
-        //yield return new WaitForSeconds(0.5f);
-        //BarValue(b, false);
-        //yield return new WaitForSeconds(0.5f);
-        //BarValue(c, false);
+            //a.fillOrigin = (int)Image.OriginHorizontal.Left;
+            //b.fillOrigin = 0;
+            //c.fillOrigin = 0;
+
+            //BarValue(a, false);
+            //yield return new WaitForSeconds(0.5f);
+            //BarValue(b, false);
+            //yield return new WaitForSeconds(0.5f);
+            //BarValue(c, false);
+        }
     }
-}
