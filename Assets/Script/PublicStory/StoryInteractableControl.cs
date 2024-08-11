@@ -144,7 +144,7 @@ public class StoryInteractableControl : MonoBehaviour
             elapsed += Time.deltaTime;
             Debug.Log($"Elapsed: {elapsed}, deltaTime: {Time.deltaTime}");
             itemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
 
         moveItemUI.transform.position = end;
