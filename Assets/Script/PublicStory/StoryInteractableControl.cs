@@ -38,7 +38,7 @@ public class StoryInteractableControl : MonoBehaviour
     [Header("InteractableUI")]
     public GameObject interactableUI;
     public Text interactableName;
-    bool isInteractableUI = false;
+    public static bool isInteractableUI = false;
 
     void Start()
     {
@@ -50,9 +50,10 @@ public class StoryInteractableControl : MonoBehaviour
 
     void Update()
     {
+        interactableUI.SetActive(isInteractableUI);
+
         InteractableIsRotationSprite();
-        PickUpItem();
-        InteractableUI();
+        PickUpItem();       
     }
 
     void InteractableIsRotationSprite()
@@ -93,8 +94,6 @@ public class StoryInteractableControl : MonoBehaviour
     }
     void InteractableUI()
     {
-        interactableUI.SetActive(isInteractableUI);
-
         Vector3 worldPos = transform.position + new Vector3(0f, 10f, 0f);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         interactableUI.transform.position = screenPos;
@@ -133,6 +132,7 @@ public class StoryInteractableControl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
         isInteractableUI = true;
+        InteractableUI();
 
         if (!isBagGetItem) return;
         if (isGetItem) return;
