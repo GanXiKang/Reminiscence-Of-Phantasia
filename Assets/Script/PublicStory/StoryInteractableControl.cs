@@ -94,7 +94,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     void InteractableUI()
     {
-        Vector3 worldPos = transform.position + new Vector3(0f, 10f, 0f);
+        Vector3 worldPos = transform.position + new Vector3(0f, 5f, 0f);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         interactableUI.transform.position = screenPos;
 
