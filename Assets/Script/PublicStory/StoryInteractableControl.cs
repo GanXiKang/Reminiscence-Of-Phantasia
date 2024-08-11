@@ -35,6 +35,11 @@ public class StoryInteractableControl : MonoBehaviour
     bool isPickedUp = false;
     bool isAnim = false;
 
+    [Header("InteractableUI")]
+    public GameObject interactableUI;
+    public Text interactableName;
+    bool isInteractableUI = false;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -47,6 +52,7 @@ public class StoryInteractableControl : MonoBehaviour
     {
         InteractableIsRotationSprite();
         PickUpItem();
+        InteractableUI();
     }
 
     void InteractableIsRotationSprite()
@@ -85,6 +91,25 @@ public class StoryInteractableControl : MonoBehaviour
 
         StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
     }
+    void InteractableUI()
+    {
+        interactableUI.SetActive(isInteractableUI);
+
+        Vector3 worldPos = transform.position + new Vector3(0f, 10f, 0f);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        interactableUI.transform.position = screenPos;
+
+        switch (_giveItemNumber)
+        {
+            case 1:
+                interactableName.text = "Ð¡Å®º¢";
+                break;
+
+            case 2:
+                interactableName.text = "À¬»øÍ°";
+                break;
+        }
+    }
 
     void OnMouseDown()
     {
@@ -107,6 +132,7 @@ public class StoryInteractableControl : MonoBehaviour
 
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
+        isInteractableUI = true;
 
         if (!isBagGetItem) return;
         if (isGetItem) return;
@@ -125,6 +151,7 @@ public class StoryInteractableControl : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(ScaleObject(originalScale));
+        isInteractableUI = false;
     }
 
     IEnumerator ScaleObject(Vector3 targetScale)
