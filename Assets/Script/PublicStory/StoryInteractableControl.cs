@@ -101,17 +101,23 @@ public class StoryInteractableControl : MonoBehaviour
         switch (_aboveWho)
         {
             case 1:
-                interactableName.text = "Ð¡Å®º¢";
-                Vector3 worldPosA = transform.position + new Vector3(0f, 8f, 0f);
-                Vector3 screenPosA = Camera.main.WorldToScreenPoint(worldPosA);
-                interactableUI.transform.position = screenPosA;
+                if (_aboveWho == _giveItemNumber)
+                {
+                    interactableName.text = "Ð¡Å®º¢";
+                    Vector3 worldPosA = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPosA = Camera.main.WorldToScreenPoint(worldPosA);
+                    interactableUI.transform.position = screenPosA;
+                }
                 break;
 
             case 2:
-                interactableName.text = "À¬»øÍ°";
-                Vector3 worldPosB = transform.position + new Vector3(0f, 8f, 0f);
-                Vector3 screenPosB = Camera.main.WorldToScreenPoint(worldPosB);
-                interactableUI.transform.position = screenPosB;
+                if (_aboveWho == _giveItemNumber)
+                {
+                    interactableName.text = "À¬»øÍ°";
+                    Vector3 worldPosB = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPosB = Camera.main.WorldToScreenPoint(worldPosB);
+                    interactableUI.transform.position = screenPosB;
+                }
                 break;
         }
     }
