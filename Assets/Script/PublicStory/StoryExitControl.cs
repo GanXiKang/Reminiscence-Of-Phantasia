@@ -11,6 +11,7 @@ public class StoryExitControl : MonoBehaviour
     [Header("ExitUI")]
     public GameObject exitUI;
     public Image bar;
+    public Text sceneName;
     float _barSpeed = 2f;
     bool isExit = false;
 
@@ -44,10 +45,12 @@ public class StoryExitControl : MonoBehaviour
                 switch (_goToThatScene)
                 {
                     case 1:          //Street
+                        sceneName.text = "╫ж╣ю";
                         StoryLoadingScene_Girl.isLeftOpen = true;
                         break;
 
                     case 2:          //forest
+                        sceneName.text = "и╜аж";
                         StoryLoadingScene_Girl.isRightOpen = true;
                         break;
                 }
