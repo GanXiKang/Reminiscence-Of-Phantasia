@@ -39,7 +39,7 @@ public class StoryInteractableControl : MonoBehaviour
     public GameObject interactableUI;
     public Text interactableName;
     public static bool isInteractableUI = false;
-    int _aboveWho = 0;
+    public static int _aboveWho = 0;
 
     void Start()
     {
