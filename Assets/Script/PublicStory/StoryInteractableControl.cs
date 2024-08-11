@@ -54,7 +54,6 @@ public class StoryInteractableControl : MonoBehaviour
 
         InteractableIsRotationSprite();
         PickUpItem();
-        InteractableUI();
     }
 
     void InteractableIsRotationSprite()
@@ -133,6 +132,7 @@ public class StoryInteractableControl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
         isInteractableUI = true;
+        InteractableUI();
 
         if (!isBagGetItem) return;
         if (isGetItem) return;
