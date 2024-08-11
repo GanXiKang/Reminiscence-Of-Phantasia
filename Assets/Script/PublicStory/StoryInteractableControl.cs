@@ -76,7 +76,6 @@ public class StoryInteractableControl : MonoBehaviour
     {
         if (!isPickedUp || isAnim) return;
 
-        isPlayerMove = false;
         moveItemUI.SetActive(true);
         Vector3 startPosition = Camera.main.WorldToScreenPoint(transform.position) + uiOffset;
         moveItemUI.transform.position = startPosition;
@@ -136,6 +135,7 @@ public class StoryInteractableControl : MonoBehaviour
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
         isAnim = true;
+        isPlayerMove = false;
         float duration = 1f;
         float elapsed = 0f;
 
