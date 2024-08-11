@@ -136,7 +136,7 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
-        isAnim = true;
+        //isAnim = true;
         isPlayerMove = false;
         //float duration = 1f;
         //float elapsed = 0f;
