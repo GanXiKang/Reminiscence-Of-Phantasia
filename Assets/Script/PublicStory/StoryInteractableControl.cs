@@ -54,6 +54,7 @@ public class StoryInteractableControl : MonoBehaviour
 
         InteractableIsRotationSprite();
         PickUpItem();
+        InteractableUI();
     }
 
     void InteractableIsRotationSprite()
@@ -94,18 +95,22 @@ public class StoryInteractableControl : MonoBehaviour
     }
     void InteractableUI()
     {
-        Vector3 worldPos = transform.position + new Vector3(0f, 5f, 0f);
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-        interactableUI.transform.position = screenPos;
+        if (!isInteractableUI) return;
 
         switch (_giveItemNumber)
         {
             case 1:
                 interactableName.text = "Ð¡Å®º¢";
+                Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                interactableUI.transform.position = screenPos;
                 break;
 
             case 2:
                 interactableName.text = "À¬»øÍ°";
+                Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                interactableUI.transform.position = screenPos;
                 break;
         }
     }
@@ -132,7 +137,7 @@ public class StoryInteractableControl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
         isInteractableUI = true;
-        InteractableUI();
+        //InteractableUI();
 
         if (!isBagGetItem) return;
         if (isGetItem) return;
