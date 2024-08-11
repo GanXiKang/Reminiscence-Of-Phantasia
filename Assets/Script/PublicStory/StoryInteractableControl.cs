@@ -34,8 +34,6 @@ public class StoryInteractableControl : MonoBehaviour
     Vector3 uiOffset = new Vector3(0, 120, 0);
     bool isPickedUp = false;
     bool isAnim = false;
-    float duration = 1f;
-    float elapsed = 0f;
 
     void Start()
     {
@@ -136,10 +134,10 @@ public class StoryInteractableControl : MonoBehaviour
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
-        //isAnim = true;
+        isAnim = true;
         isPlayerMove = false;
-        //float duration = 1f;
-        //float elapsed = 0f;
+        float duration = 1f;
+        float elapsed = 0f;
 
         while (elapsed < duration)
         {
@@ -153,7 +151,6 @@ public class StoryInteractableControl : MonoBehaviour
         itemUI.SetActive(false);
         isPickedUp = false;
         isAnim = false;
-        elapsed = 0f;
         isPlayerMove = true;
     }
 }
