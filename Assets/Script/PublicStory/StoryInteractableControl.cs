@@ -39,6 +39,7 @@ public class StoryInteractableControl : MonoBehaviour
     public GameObject interactableUI;
     public Text interactableName;
     public static bool isInteractableUI = false;
+    int _aboveWho = 0;
 
     void Start()
     {
@@ -97,7 +98,7 @@ public class StoryInteractableControl : MonoBehaviour
     {
         if (!isInteractableUI) return;
 
-        switch (_giveItemNumber)
+        switch (_aboveWho)
         {
             case 1:
                 interactableName.text = "Ð¡Å®º¢";
@@ -137,7 +138,7 @@ public class StoryInteractableControl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
         isInteractableUI = true;
-        //InteractableUI();
+        _aboveWho = _giveItemNumber;
 
         if (!isBagGetItem) return;
         if (isGetItem) return;
