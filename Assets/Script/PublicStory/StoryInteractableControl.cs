@@ -152,5 +152,6 @@ public class StoryInteractableControl : MonoBehaviour
         isPickedUp = false;
         isAnim = false;
         isPlayerMove = true;
+        Debug.Log("MoveItemUI completed");
     }
 }
