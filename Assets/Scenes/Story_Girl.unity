@@ -3700,7 +3700,7 @@ GameObject:
   - component: {fileID: 1063354010}
   - component: {fileID: 1063354009}
   - component: {fileID: 1063354008}
-  - component: {fileID: 1063354011}
+  - component: {fileID: 1063354012}
   m_Layer: 0
   m_Name: Exit_Street
   m_TagString: Untagged
@@ -3794,7 +3794,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063354006}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1063354011
+--- !u!114 &1063354012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3803,12 +3803,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1063354006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0ef097c49b61040b5225c237d2d2ee, type: 3}
+  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _goToThatScene: 1
   exitUI: {fileID: 1418007849}
   bar: {fileID: 1428380599}
+  sceneName: {fileID: 1181369053}
 --- !u!1 &1181369051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,7 +3822,7 @@ GameObject:
   - component: {fileID: 1181369054}
   - component: {fileID: 1181369053}
   m_Layer: 5
-  m_Name: Text
+  m_Name: SceneName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6765,7 +6766,7 @@ GameObject:
   - component: {fileID: 2050857227}
   - component: {fileID: 2050857226}
   - component: {fileID: 2050857225}
-  - component: {fileID: 2050857228}
+  - component: {fileID: 2050857229}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -6859,7 +6860,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050857223}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2050857228
+--- !u!114 &2050857229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6868,12 +6869,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050857223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0ef097c49b61040b5225c237d2d2ee, type: 3}
+  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _goToThatScene: 2
   exitUI: {fileID: 1418007849}
   bar: {fileID: 1428380599}
+  sceneName: {fileID: 1181369053}
 --- !u!1 &2070207991
 GameObject:
   m_ObjectHideFlags: 0
