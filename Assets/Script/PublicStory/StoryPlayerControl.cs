@@ -52,7 +52,7 @@ public class StoryPlayerControl : MonoBehaviour
 
     bool isCanMove()
     {
-        return StoryInteractableControl.isPlayerMove &&
+        return StoryInteractableControl_Girl.isPlayerMove &&
                !StoryLoadingScene_Girl.isLoading;
     }
 }
