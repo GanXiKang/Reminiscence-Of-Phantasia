@@ -7,7 +7,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 {
     GameObject player;
 
-    public static bool isThermometer = false;
+    public static bool isThermometer = true;
     public static bool isDead = false;
     float _temperature = 36.5f;
     float _decline = 0.1f;
