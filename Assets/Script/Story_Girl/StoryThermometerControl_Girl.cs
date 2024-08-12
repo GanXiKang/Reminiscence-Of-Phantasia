@@ -29,7 +29,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         Thermometer();
         Limit();
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !isDead)
         {
             isUseMatches = true;
             Invoke("Matches", 2f);
