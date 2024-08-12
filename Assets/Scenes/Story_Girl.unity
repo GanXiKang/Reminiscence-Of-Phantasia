@@ -5087,7 +5087,7 @@ GameObject:
   - component: {fileID: 1477972832}
   - component: {fileID: 1477972835}
   - component: {fileID: 1477972834}
-  - component: {fileID: 1477972833}
+  - component: {fileID: 1477972836}
   m_Layer: 0
   m_Name: SantaClaus
   m_TagString: Untagged
@@ -5110,27 +5110,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 190728114}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
---- !u!114 &1477972833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477972831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8010ce16aad0c84f8e69cbfc0910edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _snapDistance: 12
-  _scaleSpeed: 5
-  _giveItemNumber: 4
-  _getItemNumber: 0
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
-  moveItemUI: {fileID: 2028836014}
-  bagUIPosition: {fileID: 1968368687}
-  interactableUI: {fileID: 1500011181}
-  interactableName: {fileID: 319748889}
 --- !u!65 &1477972834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5204,6 +5183,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1477972836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477972831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b69aa088925614883c37db5978c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _snapDistance: 12
+  _scaleSpeed: 5
+  _giveItemNumber: 4
+  _getItemNumber: 0
+  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
+  moveItemUI: {fileID: 2028836014}
+  bagUIPosition: {fileID: 1968368687}
+  interactableUI: {fileID: 1500011181}
+  interactableName: {fileID: 319748889}
 --- !u!1 &1500011181
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,7 +5569,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1618297076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8010ce16aad0c84f8e69cbfc0910edf, type: 3}
+  m_Script: {fileID: 11500000, guid: e5b69aa088925614883c37db5978c53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _snapDistance: 12
@@ -5727,7 +5727,7 @@ GameObject:
   - component: {fileID: 1632911799}
   - component: {fileID: 1632911798}
   - component: {fileID: 1632911797}
-  - component: {fileID: 1632911796}
+  - component: {fileID: 1632911800}
   m_Layer: 0
   m_Name: GarbageCan
   m_TagString: Untagged
@@ -5735,27 +5735,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1632911796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632911795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8010ce16aad0c84f8e69cbfc0910edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _snapDistance: 12
-  _scaleSpeed: 5
-  _giveItemNumber: 2
-  _getItemNumber: 1
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
-  moveItemUI: {fileID: 2028836014}
-  bagUIPosition: {fileID: 1968368687}
-  interactableUI: {fileID: 1500011181}
-  interactableName: {fileID: 319748889}
 --- !u!65 &1632911797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5844,6 +5823,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 190728114}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
+--- !u!114 &1632911800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632911795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b69aa088925614883c37db5978c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _snapDistance: 12
+  _scaleSpeed: 5
+  _giveItemNumber: 2
+  _getItemNumber: 1
+  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
+  moveItemUI: {fileID: 2028836014}
+  bagUIPosition: {fileID: 1968368687}
+  interactableUI: {fileID: 1500011181}
+  interactableName: {fileID: 319748889}
 --- !u!1 &1656735168
 GameObject:
   m_ObjectHideFlags: 0
