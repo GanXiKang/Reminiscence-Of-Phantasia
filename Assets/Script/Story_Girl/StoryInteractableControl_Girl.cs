@@ -105,7 +105,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 {
                     interactableName.text = "Ð¡Å®º¢";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosA);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
                 }
                 break;
@@ -115,7 +115,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 {
                     interactableName.text = "À¬»øÍ°";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosB);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
                 }
                 break;
