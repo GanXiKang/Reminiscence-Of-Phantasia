@@ -149,6 +149,46 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     interactableUI.transform.position = screenPos;
                 }
                 break;
+
+            case 6:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "«CÈË";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 7:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "èF°ô";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 8:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "Ä¾Ö¦";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 9:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "Â¶ IÕß";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
         }
     }
 
