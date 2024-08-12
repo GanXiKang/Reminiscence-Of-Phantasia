@@ -31,7 +31,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public GameObject moveItemUI;
     public Transform bagUIPosition;
     public static bool isPlayerMove = true;
-    Vector3 uiOffset = new Vector3(0, 120, 0);
     bool isPickedUp = false;
     bool isAnim = false;
 
@@ -89,7 +88,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         player.GetComponent<CharacterController>().Move(Vector3.zero);
 
         moveItemUI.SetActive(true);
-        Vector3 startPosition = Camera.main.WorldToScreenPoint(transform.position) + uiOffset;
+        Vector3 targetPos = transform.position + new Vector3(0f, 120f, 0f);
+        Vector3 startPosition = Camera.main.WorldToScreenPoint(targetPos);
         moveItemUI.transform.position = startPosition;
 
         StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
