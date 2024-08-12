@@ -39,7 +39,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     void Thermometer()
     {
         thermometerUI.SetActive(isThermometer);
-        Vector3 worldPos = player.transform.position + new Vector3(-8f, -4f, 0f);
+        Vector3 worldPos = player.transform.position + new Vector3(-8f, -3f, 0f);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         thermometerUI.transform.position = screenPos;
 
