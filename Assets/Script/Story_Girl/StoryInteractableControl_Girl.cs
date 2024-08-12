@@ -104,6 +104,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小女孩";
+                    Vector3 worldPosA = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPosA = Camera.main.WorldToScreenPoint(worldPosA);
+                    interactableUI.transform.position = screenPosA;
                 }
                 break;
 
@@ -111,6 +114,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "垃圾桶";
+                    Vector3 worldPosB = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPosB = Camera.main.WorldToScreenPoint(worldPosB);
+                    interactableUI.transform.position = screenPosB;
                 }
                 break;
 
@@ -118,6 +124,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "聖誕老人";
+                    Vector3 worldPosB = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPosB = Camera.main.WorldToScreenPoint(worldPosB);
+                    interactableUI.transform.position = screenPosB;
                 }
                 break;
 
@@ -125,6 +134,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小彥";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
                 }
                 break;
 
@@ -132,12 +144,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小欣";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
                 }
                 break;
         }
-        Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-        interactableUI.transform.position = screenPos;
     }
 
     void OnMouseDown()
