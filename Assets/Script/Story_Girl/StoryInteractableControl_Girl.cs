@@ -37,6 +37,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("InteractableUI")]
     public GameObject interactableUI;
     public Text interactableName;
+    public int _who;
     public static bool isInteractableUI = false;
     public static int _aboveWho = 0;
 
@@ -97,26 +98,26 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (!isInteractableUI) return;
 
-        switch (_aboveWho)
+        switch (_who)
         {
             case 1:
-                if (_aboveWho == _giveItemNumber)
-                {
+                //if (_aboveWho == _giveItemNumber)
+                //{
                     interactableName.text = "Ð¡Å®º¢";
                     Vector3 worldPosA = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPosA = Camera.main.WorldToScreenPoint(worldPosA);
                     interactableUI.transform.position = screenPosA;
-                }
+                //}
                 break;
 
             case 2:
-                if (_aboveWho == _giveItemNumber)
-                {
+                //if (_aboveWho == _giveItemNumber)
+                //{
                     interactableName.text = "À¬»øÍ°";
                     Vector3 worldPosB = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPosB = Camera.main.WorldToScreenPoint(worldPosB);
                     interactableUI.transform.position = screenPosB;
-                }
+                //}
                 break;
         }
     }
@@ -143,7 +144,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
         isInteractableUI = true;
-        _aboveWho = _giveItemNumber;
+        //_aboveWho = _giveItemNumber;
 
         if (!isBagGetItem) return;
         if (isGetItem) return;
