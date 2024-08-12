@@ -88,8 +88,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         player.GetComponent<CharacterController>().Move(Vector3.zero);
 
         moveItemUI.SetActive(true);
-        Vector3 targetPos = transform.position + new Vector3(0f, 120f, 0f);
-        Vector3 startPosition = Camera.main.WorldToScreenPoint(targetPos);
+        Vector3 targetPos = transform.position;
+        Vector3 startPosition = Camera.main.WorldToScreenPoint(targetPos) + new Vector3(0f, 120f, 0f);
         moveItemUI.transform.position = startPosition;
 
         StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
