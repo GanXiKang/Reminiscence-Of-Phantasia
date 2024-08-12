@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StoryThermometerControl_Girl : MonoBehaviour
 {
+    GameObject player;
+
     public static bool isThermometer = false;
     public static bool isDead = false;
     float _temperature = 36.5f;
@@ -16,6 +18,11 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public GameObject thermometerUI;
     public Image energyBar;
     public Text temperature;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     void Update()
     {
@@ -32,8 +39,9 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     void Thermometer()
     {
         thermometerUI.SetActive(isThermometer);
-        energyBar.fillAmount = (_temperature - 35f) / 2;
-        temperature.text = _temperature.ToString("F1");
+        Vector3 worldPos = player.transform.position + new Vector3(-5f, 0f, 0f);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        thermometerUI.transform.position = screenPos;
 
         if (isThermometer)
         {
@@ -45,6 +53,8 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             {
                 _temperature += _rise * Time.deltaTime;
             }
+            energyBar.fillAmount = (_temperature - 35f) / 2;
+            temperature.text = _temperature.ToString("F1");
         }
     }
     void Matches()
