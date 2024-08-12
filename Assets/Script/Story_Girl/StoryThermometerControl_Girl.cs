@@ -10,6 +10,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     float _temperature = 36.5f;
     float _decline = 0.1f;
     float _rise = 0.15f;
+    bool isUseMatches = false;
 
     [Header("UI")]
     public GameObject thermometerUI;
@@ -20,6 +21,12 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     {
         Thermometer();
         Limit();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isUseMatches = true;
+            Invoke("Matches", 2f);
+        }
     }
 
     void Thermometer()
@@ -30,15 +37,19 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
         if (isThermometer)
         {
-            //if (!StoryGameControl_LittleGirl.isUseMatches)
-            //{
-            //    _temperature -= _decline * Time.deltaTime;
-            //}
-            //else
-            //{
-            //    _temperature += _rise * Time.deltaTime;
-            //}
+            if (!isUseMatches)
+            {
+                _temperature -= _decline * Time.deltaTime;
+            }
+            else
+            {
+                _temperature += _rise * Time.deltaTime;
+            }
         }
+    }
+    void Matches()
+    {
+        isUseMatches = false;
     }
     void Limit()
     {
