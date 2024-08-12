@@ -4058,7 +4058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1103784546
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4623,6 +4623,7 @@ GameObject:
   - component: {fileID: 1353896307}
   - component: {fileID: 1353896308}
   - component: {fileID: 1353896309}
+  - component: {fileID: 1353896310}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -4732,6 +4733,21 @@ MonoBehaviour:
   a: {fileID: 2046397315}
   b: {fileID: 1785703159}
   c: {fileID: 163046341}
+--- !u!114 &1353896310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353896305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55253720a77ccba458cea0314bf46b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thermometerUI: {fileID: 1103784545}
+  energyBar: {fileID: 985565789}
+  temperature: {fileID: 726384671}
 --- !u!1 &1412337225
 GameObject:
   m_ObjectHideFlags: 0
