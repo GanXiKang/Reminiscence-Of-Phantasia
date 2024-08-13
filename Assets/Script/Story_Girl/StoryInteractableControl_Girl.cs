@@ -16,7 +16,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("Item")]
     public int[] _giveItemNumber;
     public int[] _getItemNumber;
-    public int _exchangeItemNumber;
+    public int[] _exchangeItemNumber;
     public bool isExchange;
     public static bool isBagGetItem = false;
     bool isGiveItem = false;
@@ -262,8 +262,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 5:
                 isPickedUp = true;
                 StoryBagControl.isGet = true;
-                StoryBagControl.isItemNumber[_exchangeItemNumber] = true;
-                StoryBagControl._whichItem = _exchangeItemNumber;
+                StoryBagControl.isItemNumber[_exchangeItemNumber[0]] = true;
+                StoryBagControl._whichItem = _exchangeItemNumber[0];
                 if (StoryBagControl.isOpenBag)
                     StoryBagControl.isOpenBag = false;
                 break;
