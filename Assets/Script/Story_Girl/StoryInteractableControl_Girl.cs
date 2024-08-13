@@ -217,7 +217,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
-        StopAllCoroutines();
         StartCoroutine(ScaleObject(scaledSize));
         isInteractableUI = true;
         _aboveWho = _who;
