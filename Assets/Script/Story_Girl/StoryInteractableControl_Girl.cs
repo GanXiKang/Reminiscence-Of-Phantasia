@@ -206,7 +206,16 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl.isItemNumber[_giveItemNumber] = true;
             StoryBagControl._whichItem = _giveItemNumber;
             if (StoryBagControl.isOpenBag)
+            {
                 StoryBagControl.isOpenBag = false;
+            }
+            switch (_who)
+            {
+                case 7:
+                case 8:
+                    this.gameObject.SetActive(false);
+                    break;
+            }
         }
     }
     void OnMouseEnter()
@@ -229,20 +238,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl.isOpenBag = false;
             StoryBagControl.isItemNumber[_getItemNumber] = false;
             StoryBagControl._howManyGrids--;
-
-            if (!isExchange) return;
-
-            switch (_who)
-            {
-                case 5:
-                    isPickedUp = true;
-                    StoryBagControl.isGet = true;
-                    StoryBagControl.isItemNumber[_exchangeItemNumber] = true;
-                    StoryBagControl._whichItem = _exchangeItemNumber;
-                    if (StoryBagControl.isOpenBag)
-                        StoryBagControl.isOpenBag = false;
-                    break;
-            }
+            Invoke("ExchangeItem", 1f);
         }
     }
     void OnMouseExit()
@@ -250,6 +246,23 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ScaleObject(originalScale));
         isInteractableUI = false;
+    }
+
+    void ExchangeItem()
+    {
+        if (!isExchange) return;
+
+        switch (_who)
+        {
+            case 5:
+                isPickedUp = true;
+                StoryBagControl.isGet = true;
+                StoryBagControl.isItemNumber[_exchangeItemNumber] = true;
+                StoryBagControl._whichItem = _exchangeItemNumber;
+                if (StoryBagControl.isOpenBag)
+                    StoryBagControl.isOpenBag = false;
+                break;
+        }
     }
 
     IEnumerator ScaleObject(Vector3 targetScale)
