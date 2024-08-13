@@ -16,6 +16,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("Item")]
     public int _giveItemNumber;
     public int _getItemNumber;
+    public int _exchangeItemNumber;
+    public bool isExchange;
     public static bool isBagGetItem = false;
     bool isGiveItem = false;
     bool isGetItem = false;
@@ -227,6 +229,18 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl.isOpenBag = false;
             StoryBagControl.isItemNumber[_getItemNumber] = false;
             StoryBagControl._howManyGrids--;
+
+            switch (_who)
+            {
+                case 5:
+                    isPickedUp = true;
+                    StoryBagControl.isGet = true;
+                    StoryBagControl.isItemNumber[_exchangeItemNumber] = true;
+                    StoryBagControl._whichItem = _exchangeItemNumber;
+                    if (StoryBagControl.isOpenBag)
+                        StoryBagControl.isOpenBag = false;
+                    break;
+            }
         }
     }
     void OnMouseExit()
