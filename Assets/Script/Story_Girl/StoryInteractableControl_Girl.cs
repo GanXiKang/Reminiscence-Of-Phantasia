@@ -230,6 +230,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl.isItemNumber[_getItemNumber] = false;
             StoryBagControl._howManyGrids--;
 
+            if (!isExchange) return;
+
             switch (_who)
             {
                 case 5:
