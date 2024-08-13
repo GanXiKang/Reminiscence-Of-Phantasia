@@ -22,6 +22,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isGiveItem = false;
     bool isGetItem = false;
     int _exchangeDifferentItemRecord;
+    int _countMouseDown;
 
     [Header("Rotation")]
     public Sprite getItemSprite;
@@ -211,6 +212,21 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 StoryBagControl.isOpenBag = false;
             }
             AfterGettingItem();
+        }
+        if (_who == 2)
+        {
+            _countMouseDown++;
+            if (_countMouseDown == 3)
+            {
+                isPickedUp = true;
+                StoryBagControl.isGet = true;
+                StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
+                StoryBagControl._whichItem = _giveItemNumber[1];
+                if (StoryBagControl.isOpenBag)
+                {
+                    StoryBagControl.isOpenBag = false;
+                }
+            }
         }
     }
     void OnMouseEnter()
