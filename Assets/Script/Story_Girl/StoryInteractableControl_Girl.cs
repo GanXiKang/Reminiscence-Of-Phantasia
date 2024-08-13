@@ -255,7 +255,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         {
             case 7:
             case 8:
-                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                isInteractableUI = false;
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<BoxCollider>().enabled = false;
                 Destroy(this.gameObject, 2f);
                 break;
         }
