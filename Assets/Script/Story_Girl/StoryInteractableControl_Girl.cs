@@ -21,6 +21,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public static bool isBagGetItem = false;
     bool isGiveItem = false;
     bool isGetItem = false;
+    int _exchangeDifferentItemRecord;
 
     [Header("Rotation")]
     public Sprite getItemSprite;
@@ -227,10 +228,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (_getItemNumber[0] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             StoryBagControl.isItemNumber[_getItemNumber[0]] = false;
+            _exchangeDifferentItemRecord = 0;
         }
         else if(_getItemNumber[1] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             StoryBagControl.isItemNumber[_getItemNumber[1]] = false;
+            _exchangeDifferentItemRecord = 1;
         }
         StoryBagControl.isOpenBag = false;
         StoryBagControl._howManyGrids--;
@@ -261,17 +264,14 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (!isExchange) return;
 
-        switch (_who)
+        isPickedUp = true;
+        StoryBagControl.isGet = true;
+        StoryBagControl.isItemNumber[_exchangeItemNumber[_exchangeDifferentItemRecord]] = true;
+        StoryBagControl._whichItem = _exchangeItemNumber[_exchangeDifferentItemRecord];
+        if (StoryBagControl.isOpenBag)
         {
-            case 5:
-                isPickedUp = true;
-                StoryBagControl.isGet = true;
-                StoryBagControl.isItemNumber[_exchangeItemNumber[0]] = true;
-                StoryBagControl._whichItem = _exchangeItemNumber[0];
-                if (StoryBagControl.isOpenBag)
-                    StoryBagControl.isOpenBag = false;
-                break;
-        }
+            StoryBagControl.isOpenBag = false;
+        }         
     }
 
     IEnumerator ScaleObject(Vector3 targetScale)
