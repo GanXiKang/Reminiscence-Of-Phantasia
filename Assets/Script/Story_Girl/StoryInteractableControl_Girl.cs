@@ -14,8 +14,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     private Vector3 originalScale;
 
     [Header("Item")]
-    public int _giveItemNumber;
-    public int _getItemNumber;
+    public int[] _giveItemNumber;
+    public int[] _getItemNumber;
     public int _exchangeItemNumber;
     public bool isExchange;
     public static bool isBagGetItem = false;
