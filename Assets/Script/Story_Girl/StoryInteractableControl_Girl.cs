@@ -198,13 +198,13 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
-        if (!isGiveItem && _giveItemNumber != 0)
+        if (!isGiveItem && _giveItemNumber[0] != 0)
         {
             isGiveItem = true;
             isPickedUp = true;
             StoryBagControl.isGet = true;
-            StoryBagControl.isItemNumber[_giveItemNumber] = true;
-            StoryBagControl._whichItem = _giveItemNumber;
+            StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+            StoryBagControl._whichItem = _giveItemNumber[0];
             if (StoryBagControl.isOpenBag)
             {
                 StoryBagControl.isOpenBag = false;
@@ -224,13 +224,13 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (!isBagGetItem) return;
         if (isGetItem) return;
 
-        if (_getItemNumber == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
+        if (_getItemNumber[0] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             isBagGetItem = false;
             isGetItem = true;
             isRotation = true;
             StoryBagControl.isOpenBag = false;
-            StoryBagControl.isItemNumber[_getItemNumber] = false;
+            StoryBagControl.isItemNumber[_getItemNumber[0]] = false;
             StoryBagControl._howManyGrids--;
             Invoke("ExchangeItem", 1f);
         }
