@@ -196,7 +196,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
-        if (!isGiveItem)
+        if (!isGiveItem && _giveItemNumber != 0)
         {
             isGiveItem = true;
             isPickedUp = true;
