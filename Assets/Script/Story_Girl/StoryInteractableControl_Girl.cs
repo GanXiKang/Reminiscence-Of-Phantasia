@@ -244,7 +244,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     }
     void OnMouseExit()
     {
-        //StopAllCoroutines();
         StartCoroutine(ScaleObject(originalScale));
         isInteractableUI = false;
     }
