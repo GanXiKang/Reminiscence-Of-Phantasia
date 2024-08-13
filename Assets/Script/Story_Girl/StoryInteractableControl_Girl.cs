@@ -209,13 +209,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             {
                 StoryBagControl.isOpenBag = false;
             }
-            switch (_who)
-            {
-                case 7:
-                case 8:
-                    this.gameObject.SetActive(false);
-                    break;
-            }
+            AfterGettingItem();
         }
     }
     void OnMouseEnter()
@@ -248,6 +242,17 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         isInteractableUI = false;
     }
 
+    void AfterGettingItem()
+    {
+        switch (_who)
+        {
+            case 7:
+            case 8:
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                Destroy(this.gameObject, 2f);
+                break;
+        }
+    }
     void ExchangeItem()
     {
         if (!isExchange) return;
