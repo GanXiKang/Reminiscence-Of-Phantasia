@@ -249,10 +249,20 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl.isItemNumber[_getItemNumber[0]] = false;
             _exchangeDifferentItemRecord = 0;
         }
-        else if(_getItemNumber[1] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
+        else if (_getItemNumber[1] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             StoryBagControl.isItemNumber[_getItemNumber[1]] = false;
             _exchangeDifferentItemRecord = 1;
+        }
+        else if (_getItemNumber[2] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
+        {
+            StoryBagControl.isItemNumber[_getItemNumber[2]] = false;
+            _exchangeDifferentItemRecord = 2;
+        }
+        else if (_getItemNumber[3] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
+        {
+            StoryBagControl.isItemNumber[_getItemNumber[3]] = false;
+            _exchangeDifferentItemRecord = 3;
         }
         StoryBagControl.isOpenBag = false;
         StoryBagControl._howManyGrids--;
