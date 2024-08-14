@@ -679,10 +679,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
-  _giveItemNumber: 00000000
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 1
   _getItemNumber: 04000000
-  _exchangeItemNumber: 00000000
   isExchange: 0
+  _exchangeItemNumber: 
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -1844,10 +1846,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
-  _giveItemNumber: 00000000
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 1
   _getItemNumber: 0600000007000000
-  _exchangeItemNumber: 0900000008000000
   isExchange: 1
+  _exchangeItemNumber: 0900000008000000
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -2446,10 +2450,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
+  isGive: 1
   _giveItemNumber: 06000000
-  _getItemNumber: 00000000
-  _exchangeItemNumber: 00000000
+  isGet: 0
+  _getItemNumber: 
   isExchange: 0
+  _exchangeItemNumber: 
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -4712,10 +4718,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
-  _giveItemNumber: 00000000
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 1
   _getItemNumber: 04000000
-  _exchangeItemNumber: 05000000
   isExchange: 1
+  _exchangeItemNumber: 05000000
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -5915,10 +5923,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
+  isGive: 1
   _giveItemNumber: 04000000
-  _getItemNumber: 00000000
-  _exchangeItemNumber: 00000000
+  isGet: 0
+  _getItemNumber: 
   isExchange: 0
+  _exchangeItemNumber: 
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -6189,10 +6199,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
-  _giveItemNumber: 00000000
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 1
   _getItemNumber: 0800000009000000
-  _exchangeItemNumber: 00000000
   isExchange: 0
+  _exchangeItemNumber: 
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -6430,10 +6442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
+  isGive: 1
   _giveItemNumber: 01000000
+  isGet: 1
   _getItemNumber: 02000000050000000300000006000000
-  _exchangeItemNumber: 00000000
   isExchange: 0
+  _exchangeItemNumber: 
   getItemSprite: {fileID: 21300000, guid: 35652147864da7a4eb60e2f05cacbb0b, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -6696,10 +6710,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
+  isGive: 1
   _giveItemNumber: 0200000003000000
-  _getItemNumber: 00000000
-  _exchangeItemNumber: 00000000
+  isGet: 0
+  _getItemNumber: 
   isExchange: 0
+  _exchangeItemNumber: 
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
@@ -7593,10 +7609,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapDistance: 12
   _scaleSpeed: 5
+  isGive: 1
   _giveItemNumber: 07000000
-  _getItemNumber: 00000000
-  _exchangeItemNumber: 00000000
+  isGet: 0
+  _getItemNumber: 
   isExchange: 0
+  _exchangeItemNumber: 
   getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
