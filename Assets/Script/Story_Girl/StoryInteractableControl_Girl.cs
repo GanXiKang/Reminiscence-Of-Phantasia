@@ -14,10 +14,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     private Vector3 originalScale;
 
     [Header("Item")]
+    public bool isGive;
     public int[] _giveItemNumber;
+    public bool isGet;
     public int[] _getItemNumber;
-    public int[] _exchangeItemNumber;
     public bool isExchange;
+    public int[] _exchangeItemNumber;
     public static bool isBagGetItem = false;
     bool isGiveItem = false;
     bool isGetItem = false;
@@ -199,6 +201,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
+        if (!isGive) return;
 
         if (!isGiveItem && _giveItemNumber[0] != 0)
         {
@@ -237,6 +240,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         isInteractableUI = true;
         _aboveWho = _who;
 
+        if (!isGet) return;
         if (!isBagGetItem) return;
         if (isGetItem) return;
 
@@ -244,24 +248,18 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         {
             StoryBagControl.isItemNumber[_getItemNumber[0]] = false;
             _exchangeDifferentItemRecord = 0;
-            StoryBagControl.isOpenBag = false;
-            StoryBagControl._howManyGrids--;
-            isBagGetItem = false;
-            isGetItem = true;
-            isRotation = true;
-            Invoke("ExchangeItem", 1f);
         }
         else if(_getItemNumber[1] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             StoryBagControl.isItemNumber[_getItemNumber[1]] = false;
             _exchangeDifferentItemRecord = 1;
-            StoryBagControl.isOpenBag = false;
-            StoryBagControl._howManyGrids--;
-            isBagGetItem = false;
-            isGetItem = true;
-            isRotation = true;
-            Invoke("ExchangeItem", 1f);
         }
+        StoryBagControl.isOpenBag = false;
+        StoryBagControl._howManyGrids--;
+        isBagGetItem = false;
+        isGetItem = true;
+        isRotation = true;
+        Invoke("ExchangeItem", 1f);
     }
     void OnMouseExit()
     {
