@@ -244,18 +244,24 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         {
             StoryBagControl.isItemNumber[_getItemNumber[0]] = false;
             _exchangeDifferentItemRecord = 0;
+            StoryBagControl.isOpenBag = false;
+            StoryBagControl._howManyGrids--;
+            isBagGetItem = false;
+            isGetItem = true;
+            isRotation = true;
+            Invoke("ExchangeItem", 1f);
         }
         else if(_getItemNumber[1] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
         {
             StoryBagControl.isItemNumber[_getItemNumber[1]] = false;
             _exchangeDifferentItemRecord = 1;
+            StoryBagControl.isOpenBag = false;
+            StoryBagControl._howManyGrids--;
+            isBagGetItem = false;
+            isGetItem = true;
+            isRotation = true;
+            Invoke("ExchangeItem", 1f);
         }
-        StoryBagControl.isOpenBag = false;
-        StoryBagControl._howManyGrids--;
-        isBagGetItem = false;
-        isGetItem = true;
-        isRotation = true;
-        Invoke("ExchangeItem", 1f);
     }
     void OnMouseExit()
     {
