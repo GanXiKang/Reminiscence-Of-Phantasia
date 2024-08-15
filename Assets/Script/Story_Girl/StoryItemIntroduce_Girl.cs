@@ -25,6 +25,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     {
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
         content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
+        isIntroduce = true;
         //if (isIntroduce)
         //{ 
         //    Invoke("IntroduceDisplay", 0.7f);
