@@ -24,13 +24,15 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     {
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
         content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
+        print(isIntroduce);
         if (isIntroduce)
             Invoke("IntroduceDisplay", 0.7f);
     }
     public void OnPointExit()
     {
-        isIntroduce = false;
-        introduce.SetActive(false) ;
+        introduce.SetActive(false);
+        if (isIntroduce)
+            isIntroduce = false;
     }
 
     void ItemIntroduceContent()
