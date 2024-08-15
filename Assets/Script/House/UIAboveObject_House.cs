@@ -10,6 +10,26 @@ public class UIAboveObject_House : MonoBehaviour
     public RectTransform workbenchHint;
     public Vector3 workbenchOffset;
 
+    [Header("Door")]
+    public Transform door;
+    public RectTransform doorHint;
+    public Vector3 doorOffset;
+
+    [Header("Bed")]
+    public Transform bed;
+    public RectTransform bedHint;
+    public Vector3 bedOffset;
+
+    [Header("Bookcase")]
+    public Transform bookcase;
+    public RectTransform bookcaseHint;
+    public Vector3 bookcaseOffset;
+
+    [Header("Showcase")]
+    public Transform showcase;
+    public RectTransform showcaseHint;
+    public Vector3 showcaseOffset;
+
     void Update()
     {
         Vector3 workbenchPos = workbench.position + workbenchOffset;
