@@ -50,11 +50,4 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         introduceItem[8] = "蘋果\n顏色非常鮮艷";
         introduceItem[9] = "烤肉串\n香味四溢肚子都餓了";
     }
-    //void IntroduceDisplay()
-    //{
-    //    if (isIntroduce)
-    //    {
-    //        introduce.SetActive(true);
-    //    }
-    //}
 }
