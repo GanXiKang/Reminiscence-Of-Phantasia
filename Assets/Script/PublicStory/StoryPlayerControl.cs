@@ -32,10 +32,40 @@ public class StoryPlayerControl : MonoBehaviour
     {
         Vector2 input = value.Get<Vector2>();
         //_storyMoveInput = new Vector3(-input.y, 0f, input.x);
-        _storyMoveInput = new Vector3(input.x, 0f, input.y);
-        print(_storyMoveInput);
+        //_storyMoveInput = new Vector3(input.x, 0f, input.y);
 
-
+        if (input.x == 0 && input.y > 0) // 仅按下 W 键
+        {
+            _storyMoveInput = new Vector3(-0.71f, 0f, 0.71f);
+        }
+        else if (input.x == 0 && input.y < 0) // 仅按下 S 键
+        {
+            _storyMoveInput = new Vector3(0.71f, 0f, -0.71f);
+        }
+        else if (input.x < 0 && input.y == 0) // 仅按下 A 键
+        {
+            _storyMoveInput = new Vector3(-0.71f, 0f, -0.71f);
+        }
+        else if (input.x > 0 && input.y == 0) // 仅按下 D 键
+        {
+            _storyMoveInput = new Vector3(0.71f, 0f, 0.71f);
+        }
+        else if ((input.x < 0 && input.y > 0) // 同时按下 W 和 A 键
+        {
+            _storyMoveInput = new Vector3(-1f, 0f, 0f);
+        }
+        else if ((input.x > 0 && input.y > 0) // 同时按下 W 和 D 键
+        {
+            _storyMoveInput = new Vector3(0f, 0f, 1f);
+        }
+        else if ((input.x < 0 && input.y < 0) // 同时按下 A 和 S 键
+        {
+            _storyMoveInput = new Vector3(0f, 0f, -1f);
+        }
+        else if ((input.x > 0 && input.y < 0) // 同时按下 S 和 D 键
+        {
+            _storyMoveInput = new Vector3(1f, 0f, 0f);
+        }
     }
 
     void StoryPlayerMove()
