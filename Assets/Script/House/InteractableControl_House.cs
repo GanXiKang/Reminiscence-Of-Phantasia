@@ -37,10 +37,26 @@ public class InteractableControl_House : MonoBehaviour
                 isInteractable = false;
                 switch (ColliderControl_House._nowNumber)
                 {
-                    case 1:
+                    case 1:         
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookWorkbench = true;
-                        break;
+                        break;  //工作台
+
+                    case 2:
+                        print("Door");
+                        break;  //門
+
+                    case 3:
+                        print("bed");
+                        break;  //床
+
+                    case 4:
+                        print("bookcase");
+                        break;  //書櫃
+
+                    case 5:
+                        print("showcase");
+                        break;  //展示櫃
                 }
             }
         }
