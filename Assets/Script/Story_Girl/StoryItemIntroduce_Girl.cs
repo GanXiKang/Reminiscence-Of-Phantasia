@@ -17,6 +17,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     void Start()
     {
+        introduce.SetActive(isIntroduce);
         ItemIntroduceContent();
     }
 
@@ -24,24 +25,15 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     {
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
         content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
-        print(isIntroduce);
-        if (!isIntroduce)
-        {
-            isIntroduce = true;
-        }
-        else
-        {
-            Invoke("IntroduceDisplay", 0.7f);
-        }
+        //if (isIntroduce)
+        //{ 
+        //    Invoke("IntroduceDisplay", 0.7f);
+        //}
     }
     public void OnPointExit()
     {
-        print(isIntroduce);
-        introduce.SetActive(false);
-        if (isIntroduce)
-        {
-            isIntroduce = false;
-        }
+        //introduce.SetActive(false);
+        isIntroduce = false;
     }
 
     void ItemIntroduceContent()
@@ -56,11 +48,11 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
         introduceItem[8] = "蘋果\n顏色非常鮮艷";
         introduceItem[9] = "烤肉串\n香味四溢肚子都餓了";
     }
-    void IntroduceDisplay()
-    {
-        if (isIntroduce)
-        {
-            introduce.SetActive(true);
-        }
-    }
+    //void IntroduceDisplay()
+    //{
+    //    if (isIntroduce)
+    //    {
+    //        introduce.SetActive(true);
+    //    }
+    //}
 }
