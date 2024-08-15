@@ -2368,7 +2368,7 @@ GameObject:
   - component: {fileID: 580126511}
   - component: {fileID: 580126510}
   m_Layer: 0
-  m_Name: BookCase
+  m_Name: Bookcase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3171,7 +3171,7 @@ GameObject:
   - component: {fileID: 805816458}
   - component: {fileID: 805816457}
   m_Layer: 5
-  m_Name: BookCaseHint
+  m_Name: BookcaseHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3361,6 +3361,18 @@ MonoBehaviour:
   workbench: {fileID: 1052442712}
   workbenchHint: {fileID: 645830663}
   workbenchOffset: {x: 0, y: 6, z: 0}
+  door: {fileID: 0}
+  doorHint: {fileID: 0}
+  doorOffset: {x: 0, y: 0, z: 0}
+  bed: {fileID: 0}
+  bedHint: {fileID: 0}
+  bedOffset: {x: 0, y: 0, z: 0}
+  bookcase: {fileID: 0}
+  bookcaseHint: {fileID: 0}
+  bookcaseOffset: {x: 0, y: 0, z: 0}
+  showcase: {fileID: 0}
+  showcaseHint: {fileID: 0}
+  showcaseOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &862492947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,7 +4642,7 @@ GameObject:
   - component: {fileID: 1197319004}
   - component: {fileID: 1197319003}
   m_Layer: 5
-  m_Name: ShowCaseHint
+  m_Name: ShowcaseHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5446,7 +5458,7 @@ GameObject:
   - component: {fileID: 1465837304}
   - component: {fileID: 1465837303}
   m_Layer: 0
-  m_Name: ShowCase
+  m_Name: Showcase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
