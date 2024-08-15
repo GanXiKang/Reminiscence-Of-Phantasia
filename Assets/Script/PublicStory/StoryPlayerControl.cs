@@ -33,6 +33,7 @@ public class StoryPlayerControl : MonoBehaviour
         Vector2 input = value.Get<Vector2>();
         //_storyMoveInput = new Vector3(-input.y, 0f, input.x);
         _storyMoveInput = new Vector3(input.x, 0f, input.y);
+        print(_storyMoveInput);
     }
 
     void StoryPlayerMove()
