@@ -10,7 +10,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public GameObject panel;
     public Text content;
     string[] introduceItem = new string[10];
-    public static bool isIntroduce = false;
+    public static bool isIntroduce = true;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;
@@ -24,11 +24,14 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     {
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
         content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
-        //if (isIntroduce)
-        //{ 
-        //    Invoke("IntroduceDisplay", 0.7f);
-        //}
-        introduce.SetActive(true);
+        if (isIntroduce)
+        {
+            introduce.SetActive(true);
+        }
+        else
+        {
+            introduce.SetActive(false);
+        }
     }
     public void OnPointExit()
     {
