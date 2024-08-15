@@ -29,6 +29,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     }
     public void OnPointExit()
     {
+        isIntroduce = false;
         introduce.SetActive(false) ;
     }
 
