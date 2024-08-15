@@ -34,11 +34,11 @@ public class StoryPlayerControl : MonoBehaviour
         //_storyMoveInput = new Vector3(-input.y, 0f, input.x);
         _storyMoveInput = new Vector3(input.x, 0f, input.y);
         print("A" + _storyMoveInput);
-        if (_storyMoveInput.x == 0 && _storyMoveInput.y > 0) // 仅按下 W 键
+        if (_storyMoveInput.x == 0 && _storyMoveInput.z > 0) // 仅按下 W 键
         {
             _storyMoveInput = new Vector3(-0.71f, 0f, 0.71f);
         }
-        else if (_storyMoveInput.x == 0 && _storyMoveInput.y < 0) // 仅按下 S 键
+        else if (_storyMoveInput.x == 0 && _storyMoveInput.z < 0) // 仅按下 S 键
         {
             _storyMoveInput = new Vector3(0.71f, 0f, -0.71f);
         }
