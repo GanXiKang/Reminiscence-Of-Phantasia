@@ -34,5 +34,17 @@ public class UIAboveObject_House : MonoBehaviour
     {
         Vector3 workbenchPos = workbench.position + workbenchOffset;
         workbenchHint.position = workbenchPos;
+
+        Vector3 doorPos = door.position + doorOffset;
+        doorHint.position = doorPos;
+
+        Vector3 bedPos = bed.position + bedOffset;
+        bedHint.position = bedPos;
+
+        Vector3 bookcasePos = bookcase.position + bookcaseOffset;
+        bookcaseHint.position = bookcasePos;
+
+        Vector3 showcasePos = showcase.position + showcaseOffset;
+        showcaseHint.position = showcasePos;
     }
 }
