@@ -321,7 +321,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            Debug.Log($"Elapsed: {elapsed}, deltaTime: {Time.deltaTime}");
             itemUI.transform.position = Vector3.Lerp(start, end, elapsed / duration);
             yield return null;
         }
@@ -331,6 +330,5 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         isPickedUp = false;
         isAnim = false;
         isPlayerMove = true;
-        Debug.Log("MoveItemUI completed");
     }
 }
