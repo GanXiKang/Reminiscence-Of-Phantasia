@@ -267,9 +267,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         StoryItemIntroduce_Girl.isIntroduce = true;
         StoryBagControl.isOpenBag = false;
         StoryBagControl._howManyGrids--;
-        isBagGetItem = false;
-        isGetItem = true;
         isRotation = true;
+        if (_who != 9)
+        {
+            isBagGetItem = false;
+        }
         Invoke("ExchangeItem", 1f);
     }
     void OnMouseExit()
