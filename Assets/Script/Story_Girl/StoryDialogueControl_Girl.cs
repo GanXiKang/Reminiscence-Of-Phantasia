@@ -32,7 +32,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     void OnEnable()
     {
-        GetTextFormFile(textFile[textCount]);
+        GetTextFormFile(textFile[_textCount]);
         StartCoroutine(SetTextLabelIndexUI());
     }
 
