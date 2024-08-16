@@ -40,15 +40,16 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         TextController();
 
+        Vector3 offset = new Vector3(10f, 80f, 0f);
         if (isPlayerTalk)
         {
-            Vector3 p = Camera.main.WorldToScreenPoint(player.transform.position);
-            dialogueUI.position = p + new Vector3(0f,10f,0f);
+            Vector3 playerPos = Camera.main.WorldToScreenPoint(player.transform.position);
+            dialogueUI.position = playerPos + offset;
         }
         else
         {
-            Vector3 p = Camera.main.WorldToScreenPoint(target[_isAboveWho].position);
-            dialogueUI.position = p + new Vector3(0f, 10f, 0f);
+            Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho].position);
+            dialogueUI.position = targetPos + offset;
         }
     }
 
