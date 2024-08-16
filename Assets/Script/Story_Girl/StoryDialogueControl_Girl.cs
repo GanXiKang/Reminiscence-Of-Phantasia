@@ -20,7 +20,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public TextAsset[] textFile;
     public int index;
     public float textSpend;
-    public static int textCount = 1;
+    public static int _textCount = 1;
     bool textFinish;
 
     List<string> textList = new List<string>();
