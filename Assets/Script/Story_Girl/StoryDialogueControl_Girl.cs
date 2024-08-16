@@ -9,7 +9,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("UITransform")]
     public Transform[] target;
-    public static int _isAboveWho;
+    public static int _isAboveWho = 0;
+    bool isPlayerTalk;
 
     [Header("UIComponents")]
     public Transform dialogueUI;
@@ -37,7 +38,18 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     void Update()
     {
-        
+        TextController();
+
+        if (isPlayerTalk)
+        {
+            Vector3 p = Camera.main.WorldToScreenPoint(player.transform.position);
+            dialogueUI.position = p + new Vector3(0f,10f,0f);
+        }
+        else
+        {
+            Vector3 p = Camera.main.WorldToScreenPoint(target[_isAboveWho].position);
+            dialogueUI.position = p + new Vector3(0f, 10f, 0f);
+        }
     }
 
     void GetTextFormFile(TextAsset file)
@@ -52,6 +64,24 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             textList.Add(line);
         }
     }
+    void TextController()
+    {
+        if (textFinish)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+            {
+                textSpend = 0.1f;
+                StartCoroutine(SetTextLabelIndexUI());
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+            {
+                textSpend = 0f;
+            }
+        }
+    }
 
     IEnumerator SetTextLabelIndexUI()
     {
@@ -60,16 +90,17 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (textList[index].Trim())
         {
             case "A":
-
+                isPlayerTalk = true;
                 index++;
                 break;
 
             case "B":
+                isPlayerTalk = false;
                 index++;
                 break;
 
             case "Œ¦Ô’½YÊø":
-                textFinish = true;
+                StoryUIControl_Girl.isDialogue = false;
                 break;
         }
         for (int i = 0; i < textList[index].Length; i++)
