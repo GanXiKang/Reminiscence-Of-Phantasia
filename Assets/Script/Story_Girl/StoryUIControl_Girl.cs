@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class StoryUIControl_Girl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("DialogueUI")]
+    public GameObject dialogueUI;
+    public static bool isDialogue;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        dialogueUI.SetActive(isDialogue);
     }
 }
