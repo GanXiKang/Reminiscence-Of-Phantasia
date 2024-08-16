@@ -210,6 +210,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl.isGet = true;
             StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
             StoryBagControl._whichItem = _giveItemNumber[0];
+            StoryDialogueControl_Girl._isAboveWho = _who;
             if (StoryBagControl.isOpenBag)
             {
                 StoryBagControl.isOpenBag = false;
