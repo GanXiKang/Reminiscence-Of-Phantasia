@@ -40,7 +40,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         TextController();
 
-        Vector3 offset = new Vector3(10f, 80f, 0f);
+        Vector3 offset = new Vector3(100f, 320f, 0f);
         if (isPlayerTalk)
         {
             Vector3 playerPos = Camera.main.WorldToScreenPoint(player.transform.position);
