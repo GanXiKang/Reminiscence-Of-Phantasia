@@ -12,9 +12,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public static int _isAboveWho;
 
     [Header("UIComponents")]
-    public GameObject dialogueUI;
+    public Transform dialogueUI;
     public Text content;
-    public static bool isDialogue;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
@@ -38,7 +37,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     void Update()
     {
-        dialogueUI.SetActive(isDialogue);
+        
     }
 
     void GetTextFormFile(TextAsset file)
@@ -61,6 +60,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (textList[index].Trim())
         {
             case "A":
+
                 index++;
                 break;
 
