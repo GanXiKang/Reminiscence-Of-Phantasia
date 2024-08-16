@@ -4229,6 +4229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1013169812}
+  - component: {fileID: 1013169813}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -4257,6 +4258,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1013169813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013169811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84a306c655a78242b579b4f5459b0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target:
+  - {fileID: 0}
+  - {fileID: 1618297078}
+  - {fileID: 1632911799}
+  - {fileID: 1477972832}
+  - {fileID: 126904055}
+  - {fileID: 1133211982}
+  - {fileID: 1577465328}
+  - {fileID: 552316506}
+  - {fileID: 1994478953}
+  - {fileID: 483097904}
+  dialogueUI: {fileID: 1013169812}
+  content: {fileID: 537937617}
+  textFile:
+  - {fileID: 0}
+  - {fileID: 4900000, guid: ec88ec8284a606643a65b78bbebc3fba, type: 3}
+  index: 0
+  textSpend: 0.1
 --- !u!1 &1019517717
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,7 +5377,6 @@ GameObject:
   - component: {fileID: 1353896308}
   - component: {fileID: 1353896309}
   - component: {fileID: 1353896310}
-  - component: {fileID: 1353896311}
   - component: {fileID: 1353896312}
   m_Layer: 5
   m_Name: UI
@@ -5473,36 +5503,6 @@ MonoBehaviour:
   thermometerUI: {fileID: 1103784545}
   energyBar: {fileID: 985565789}
   temperature: {fileID: 726384671}
---- !u!114 &1353896311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353896305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84a306c655a78242b579b4f5459b0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target:
-  - {fileID: 0}
-  - {fileID: 1618297078}
-  - {fileID: 1632911799}
-  - {fileID: 1477972832}
-  - {fileID: 126904055}
-  - {fileID: 1133211982}
-  - {fileID: 1577465328}
-  - {fileID: 552316506}
-  - {fileID: 1994478953}
-  - {fileID: 483097904}
-  dialogueUI: {fileID: 1013169812}
-  content: {fileID: 537937617}
-  textFile:
-  - {fileID: 0}
-  - {fileID: 4900000, guid: ec88ec8284a606643a65b78bbebc3fba, type: 3}
-  index: 0
-  textSpend: 0.1
 --- !u!114 &1353896312
 MonoBehaviour:
   m_ObjectHideFlags: 0
