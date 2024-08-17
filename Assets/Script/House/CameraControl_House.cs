@@ -21,8 +21,7 @@ public class CameraControl_House : MonoBehaviour
     public static bool isLookShowcase = false;
 
     [Header("CameraMovement")]
-    public Transform startPos;
-    float _moveTime = 5f;
+    public float _moveTime = 5f;
 
     void Start()
     {
@@ -33,19 +32,39 @@ public class CameraControl_House : MonoBehaviour
     {
         freeLookCamera.SetActive(isFreeLook);
 
-        LookWorkbench();
+        CameraLooking();
     }
 
     void StartFreeLookCamera()
     {
         isFreeLook = true;
     }
-    void LookWorkbench()
+    void CameraLooking()
     {
         if (isLookWorkbench)
         {
             transform.position = Vector3.Lerp(transform.position, workbenchPos.position, _moveTime * Time.deltaTime); ;
             transform.rotation = Quaternion.Lerp(transform.rotation, workbenchPos.rotation, _moveTime * Time.deltaTime);
+        }
+        else if (isLookDoor)
+        {
+            transform.position = Vector3.Lerp(transform.position, doorPos.position, _moveTime * Time.deltaTime); ;
+            transform.rotation = Quaternion.Lerp(transform.rotation, doorPos.rotation, _moveTime * Time.deltaTime);
+        }
+        else if (isLookBed)
+        {
+            transform.position = Vector3.Lerp(transform.position, bedPos.position, _moveTime * Time.deltaTime); ;
+            transform.rotation = Quaternion.Lerp(transform.rotation, bedPos.rotation, _moveTime * Time.deltaTime);
+        }
+        else if (isLookBookcase)
+        {
+            transform.position = Vector3.Lerp(transform.position, bookcasePos.position, _moveTime * Time.deltaTime); ;
+            transform.rotation = Quaternion.Lerp(transform.rotation, bookcasePos.rotation, _moveTime * Time.deltaTime);
+        }
+        else if (isLookShowcase)
+        {
+            transform.position = Vector3.Lerp(transform.position, showcasePos.position, _moveTime * Time.deltaTime); ;
+            transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
         }
     }
 }
