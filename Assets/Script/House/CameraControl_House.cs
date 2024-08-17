@@ -8,24 +8,16 @@ public class CameraControl_House : MonoBehaviour
     public GameObject freeLookCamera;
     public static bool isFreeLook = false;
 
-    [Header("CameraWorkbenchPosition")]
+    [Header("CameraPosition")]
     public Transform workbenchPos;
-    public static bool isLookWorkbench = false;
-
-    [Header("CameraDoorPosition")]
     public Transform doorPos;
-    public static bool isLookDoor = false;
-
-    [Header("CameraBedPosition")]
     public Transform bedPos;
-    public static bool isLookBed = false;
-
-    [Header("CameraBookcasePosition")]
     public Transform bookcasePos;
-    public static bool isLookBookcase = false;
-
-    [Header("CameraShowcasePosition")]
     public Transform showcasePos;
+    public static bool isLookWorkbench = false;
+    public static bool isLookDoor = false;
+    public static bool isLookBed = false;
+    public static bool isLookBookcase = false;
     public static bool isLookShowcase = false;
 
     [Header("CameraMovement")]
