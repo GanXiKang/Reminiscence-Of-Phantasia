@@ -8,14 +8,12 @@ public class DoorControl_House : MonoBehaviour
     public GameObject loadingUI;
     public static bool isLoading = false;
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
-        Leave();
+        loadingUI.SetActive(isLoading);
+
+        Leave(); 
     }
 
     void Leave()
