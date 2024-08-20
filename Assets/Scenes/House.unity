@@ -5525,6 +5525,10 @@ GameObject:
   - component: {fileID: 1275040578}
   - component: {fileID: 1275040579}
   - component: {fileID: 1275040580}
+  - component: {fileID: 1275040584}
+  - component: {fileID: 1275040583}
+  - component: {fileID: 1275040582}
+  - component: {fileID: 1275040581}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -5626,6 +5630,54 @@ MonoBehaviour:
   paperB: {fileID: 0}
   colorUI: {fileID: 0}
   pointObject: {fileID: 0}
+--- !u!114 &1275040581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275040576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43a679eba0bbc94499035c1ae481358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1275040582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275040576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f826871292ea7bd4792a5f6d7b71aec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1275040583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275040576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b89625727ac00c4ba31d886abd7bda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1275040584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275040576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245f8f0a9c67254087be12bfe9b860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1305425835
 GameObject:
   m_ObjectHideFlags: 0
