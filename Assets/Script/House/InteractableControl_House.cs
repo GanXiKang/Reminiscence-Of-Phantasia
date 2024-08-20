@@ -20,11 +20,11 @@ public class InteractableControl_House : MonoBehaviour
 
     void Update()
     {
-        BlackScreen();
+        InteractableButton();
         Interactable();
     }
 
-    void BlackScreen()
+    void InteractableButton()
     {
         interactableUI.SetActive(isInteractable);
         currentColor.a = _alpha;
