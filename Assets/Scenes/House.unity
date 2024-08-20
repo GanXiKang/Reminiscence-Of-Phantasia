@@ -4505,7 +4505,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -5678,6 +5678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245f8f0a9c67254087be12bfe9b860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingUI: {fileID: 872759458}
 --- !u!1 &1305425835
 GameObject:
   m_ObjectHideFlags: 0
