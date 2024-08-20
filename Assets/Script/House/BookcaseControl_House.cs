@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class BookcaseControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Leave();
+    }
+
+    void Leave()
+    {
+        if (CameraControl_House.isLookBookcase)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                StartCoroutine(LeaveBookcase());
+            }
+        }
+    }
+    IEnumerator LeaveBookcase()
+    {
+        LoadingUIControl_House.isOpenBlackScreen = true;
+        yield return new WaitForSeconds(1f);
+        CameraControl_House.isFreeLook = true;
+        CameraControl_House.isLookBookcase = false;
     }
 }
