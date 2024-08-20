@@ -56,6 +56,7 @@ public class InteractableControl_House : MonoBehaviour
                         DoorControl_House.isLoading = true;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookDoor = true;
+                        Invoke(" DoorLoadingUI", 3f);
                         break;  //ÈT
 
                     case 3:
@@ -79,5 +80,9 @@ public class InteractableControl_House : MonoBehaviour
         {
             _alpha = 0;
         }
+    }
+    void DoorLoadingUI()
+    {
+        DoorControl_House.isLoading = false;
     }
 }
