@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class BedControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Leave();
+    }
+
+    void Leave()
+    {
+        if (CameraControl_House.isLookBed)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                StartCoroutine(LeaveBed());
+            }
+        }
+    }
+    IEnumerator LeaveBed()
+    {
+        LoadingUIControl_House.isOpenBlackScreen = true;
+        yield return new WaitForSeconds(1f);
+        CameraControl_House.isFreeLook = true;
+        CameraControl_House.isLookBed = false;
     }
 }
