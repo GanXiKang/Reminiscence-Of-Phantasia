@@ -20,15 +20,22 @@ public class InteractableControl_House : MonoBehaviour
 
     void Update()
     {
-        InteractableButton();
+        InteractableButton_F();
         Interactable();
     }
 
-    void InteractableButton()
+    void InteractableButton_F()
     {
         interactableUI.SetActive(isInteractable);
         currentColor.a = _alpha;
         hintF.color = currentColor;
+    }
+    void AppearInteractableHint()
+    {
+        if (_alpha < 1)
+        {
+            _alpha += _screenSpeed * Time.deltaTime;
+        }
     }
     void Interactable()
     {
@@ -46,6 +53,7 @@ public class InteractableControl_House : MonoBehaviour
                         break;  //¹¤×÷Ì¨
 
                     case 2:
+                        DoorControl_House.isLoading = true;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookDoor = true;
                         break;  //éT
@@ -70,13 +78,6 @@ public class InteractableControl_House : MonoBehaviour
         else 
         {
             _alpha = 0;
-        }
-    }
-    void AppearInteractableHint()
-    { 
-        if (_alpha < 1)
-        {
-            _alpha += _screenSpeed * Time.deltaTime;
         }
     }
 }
