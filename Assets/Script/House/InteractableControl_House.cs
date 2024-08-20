@@ -54,7 +54,7 @@ public class InteractableControl_House : MonoBehaviour
 
                     case 2:
                         DoorControl_House.isLoading = true;
-                        Invoke(" DoorLoadingUI", 3f);
+                        Invoke("DoorLoadingUI", 3f);
                         break;  //ÈT
 
                     case 3:
