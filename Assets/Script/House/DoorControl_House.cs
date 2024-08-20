@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DoorControl_House : MonoBehaviour
 {
+    [Header("LoadingVideo")]
+    public GameObject loadingUI;
+    public static bool isLoading = false;
+
     void Start()
     {
         
