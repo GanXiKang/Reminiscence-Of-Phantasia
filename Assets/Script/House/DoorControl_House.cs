@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class DoorControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Leave();
+    }
+
+    void Leave()
+    {
+        if (CameraControl_House.isLookDoor)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                StartCoroutine(LeaveDoor());
+            }
+        }
+    }
+    IEnumerator LeaveDoor()
+    {
+        LoadingUIControl_House.isOpenBlackScreen = true;
+        yield return new WaitForSeconds(1f);
+        CameraControl_House.isFreeLook = true;
+        CameraControl_House.isLookDoor = false;
     }
 }
