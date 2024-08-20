@@ -83,7 +83,6 @@ public class InteractableControl_House : MonoBehaviour
     }
     void DoorLoadingUI()
     {
-        
         DoorControl_House.isLoading = false;
     }
 }
