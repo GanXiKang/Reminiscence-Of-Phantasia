@@ -18,8 +18,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("TextFile")]
     public TextAsset[] textFile;
-    public int index;
-    public float textSpend;
+    public int _index;
+    public float _textSpend;
     public static int _textCount = 1;
     bool textFinish;
 
@@ -56,7 +56,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     void GetTextFormFile(TextAsset file)
     {
         textList.Clear();
-        index = 0;
+        _index = 0;
 
         var lineDate = file.text.Split("\n");
 
@@ -71,7 +71,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
-                textSpend = 0.1f;
+                _textSpend = 0.1f;
                 StartCoroutine(SetTextLabelIndexUI());
             }
         }
@@ -79,7 +79,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
-                textSpend = 0f;
+                _textSpend = 0f;
             }
         }
     }
@@ -88,28 +88,28 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         textFinish = false;
         content.text = "";
-        switch (textList[index].Trim())
+        switch (textList[_index].Trim())
         {
             case "A":
                 isPlayerTalk = true;
-                index++;
+                _index++;
                 break;
 
             case "B":
                 isPlayerTalk = false;
-                index++;
+                _index++;
                 break;
 
             case "Œ¦Ô’½YÊø":
                 StoryUIControl_Girl.isDialogue = false;
                 break;
         }
-        for (int i = 0; i < textList[index].Length; i++)
+        for (int i = 0; i < textList[_index].Length; i++)
         {
-            content.text += textList[index][i];
-            yield return new WaitForSeconds(textSpend);
+            content.text += textList[_index][i];
+            yield return new WaitForSeconds(_textSpend);
         }
         textFinish = true;
-        index++;
+        _index++;
     }
 }
