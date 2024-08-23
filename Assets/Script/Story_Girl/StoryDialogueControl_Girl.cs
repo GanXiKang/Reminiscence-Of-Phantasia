@@ -18,11 +18,11 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("UIChoose")]
     public Transform chooseUI;
-    public Vector3 originalPos;
-    public Vector3 targetPos;
     public GameObject buttonUI;
     public Text contentA;
     public Text contentB;
+    Vector3 originalPos;
+    Vector3 targetPos;
     bool isChoose = false;
     bool isChooseUIMove = false;
     int _chooseNum;
@@ -39,6 +39,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        originalPos = chooseUI.position;
+        targetPos = chooseUI.position + new Vector3(350f, 0f, 0f);
     }
 
     void OnEnable()
@@ -104,8 +106,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
         if (isChooseUIMove)
         {
-            chooseUI.position = Vector3.MoveTowards(chooseUI.position, chooseUITarget, 200f * Time.deltaTime);
-            if (chooseUI.position == chooseUITarget)
+            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos, 200f * Time.deltaTime);
+            if (chooseUI.position == targetPos)
             {
                 isChooseUIMove = false;
             }
