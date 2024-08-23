@@ -16,6 +16,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public Transform dialogueUI;
     public Text content;
 
+    [Header("UIChoose")]
+    public Transform chooseUI;
+    public GameObject buttonUI;
+    public Text contentA;
+    public Text contentB;
+    bool isChoose = false;
+    int _chooseNum;
+
     [Header("TextFile")]
     public TextAsset[] textFile;
     public int _index;
@@ -108,7 +116,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case "Choose":
-                
+                isChoose = true;
                 break;
         }
         for (int i = 0; i < textList[_index].Length; i++)
