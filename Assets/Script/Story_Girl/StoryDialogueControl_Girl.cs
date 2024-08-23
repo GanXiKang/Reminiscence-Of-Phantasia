@@ -22,6 +22,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public Text contentA;
     public Text contentB;
     bool isChoose = false;
+    bool isChooseUIMove = false;
     int _chooseNum;
 
     [Header("TextFile")]
@@ -99,8 +100,19 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         if (!isChoose) return;
 
-        Vector3 chooseUITarget = chooseUI.position + new Vector3(350f, 0f, 0f);
-        chooseUI.position = Vector3.MoveTowards(chooseUI.position, chooseUITarget, 200f * Time.deltaTime); 
+        if (isChooseUIMove)
+        {
+            Vector3 chooseUITarget = chooseUI.position + new Vector3(350f, 0f, 0f);
+            chooseUI.position = Vector3.MoveTowards(chooseUI.position, chooseUITarget, 200f * Time.deltaTime);
+            if (chooseUI.position == chooseUITarget)
+            {
+                isChooseUIMove = true;
+            }
+        }
+        else
+        {
+            buttonUI.SetActive(true);
+        }
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -125,6 +137,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case "Choose":
                 isChoose = true;
+                isChooseUIMove = true;
                 _index++;
                 contentA.text = textList[_index];
                 _index++;
