@@ -39,18 +39,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     void Update()
     {
         TextController();
-
-        Vector3 offset = new Vector3(-120f, 300f, 0f);
-        if (isPlayerTalk)
-        {
-            Vector3 playerPos = Camera.main.WorldToScreenPoint(player.transform.position);
-            dialogueUI.position = playerPos + offset;
-        }
-        else
-        {
-            Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho].position);
-            dialogueUI.position = targetPos + offset;
-        }
+        TextPosition();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -81,6 +70,20 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             {
                 _textSpend = 0f;
             }
+        }
+    }
+    void TextPosition()
+    {
+        Vector3 offset = new Vector3(-120f, 300f, 0f);
+        if (isPlayerTalk)
+        {
+            Vector3 playerPos = Camera.main.WorldToScreenPoint(player.transform.position);
+            dialogueUI.position = playerPos + offset;
+        }
+        else
+        {
+            Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho].position);
+            dialogueUI.position = targetPos + offset;
         }
     }
 
