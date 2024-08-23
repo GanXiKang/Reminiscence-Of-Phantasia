@@ -40,7 +40,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         player = GameObject.Find("Player");
         originalPos = chooseUI.position;
-        targetPos = chooseUI.position + new Vector3(350f, 0f, 0f);
+        targetPos = new Vector3(chooseUI.position.x + 350f, 0f, 0f);
     }
 
     void OnEnable()
@@ -106,7 +106,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
         if (isChooseUIMove)
         {
-            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos, 200f * Time.deltaTime);
+            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos, 20f * Time.deltaTime);
             if (chooseUI.position == targetPos)
             {
                 isChooseUIMove = false;
