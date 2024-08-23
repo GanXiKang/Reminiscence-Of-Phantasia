@@ -100,7 +100,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         if (!isChoose) return;
 
         Vector3 chooseUITarget = chooseUI.position + new Vector3(350f, 0f, 0f);
-        chooseUI.position = Vector3.Lerp(chooseUI.position, chooseUITarget, 2f * Time.deltaTime);
+        chooseUI.position = Vector3.Lerp(chooseUI.position, chooseUITarget, 2f * Time.deltaTime); 
+        isChoose = false;
     }
 
     IEnumerator SetTextLabelIndexUI()
