@@ -48,6 +48,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         TextController();
         TextPosition();
+        ChooseUI();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -93,6 +94,13 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho].position);
             dialogueUI.position = targetPos + offset;
         }
+    }
+    void ChooseUI()
+    {
+        if (!isChoose) return;
+
+        Vector3 chooseUITarget = new Vector3(350f, 0f, 0f);
+        chooseUI.position = Vector3.Lerp(chooseUI.position, chooseUITarget, 2f * Time.deltaTime);
     }
 
     IEnumerator SetTextLabelIndexUI()
