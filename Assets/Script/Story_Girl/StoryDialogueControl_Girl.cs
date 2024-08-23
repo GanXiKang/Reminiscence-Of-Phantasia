@@ -100,7 +100,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         if (!isChoose) return;
 
         Vector3 chooseUITarget = chooseUI.position + new Vector3(350f, 0f, 0f);
-        chooseUI.position = Vector3.MoveTowards(chooseUI.position, chooseUITarget, 2f * Time.deltaTime); 
+        chooseUI.position = Vector3.MoveTowards(chooseUI.position, chooseUITarget, 200f * Time.deltaTime); 
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -125,6 +125,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case "Choose":
                 isChoose = true;
+                _index++;
+                contentA.text = textList[_index];
+                _index++;
+                contentB.text = textList[_index];
                 break;
         }
         for (int i = 0; i < textList[_index].Length; i++)
