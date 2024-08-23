@@ -18,11 +18,11 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("UIChoose")]
     public Transform chooseUI;
+    public Transform originalPos;
+    public Transform targetPos;
     public GameObject buttonUI;
     public Text contentA;
     public Text contentB;
-    Vector3 originalPos;
-    Vector3 targetPos;
     bool isChoose = false;
     bool isChooseUIMove = false;
     int _chooseNum;
@@ -39,8 +39,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        originalPos = chooseUI.position;
-        targetPos = new Vector3(350f, 0f, 0f);
     }
 
     void OnEnable()
@@ -106,8 +104,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
         if (isChooseUIMove)
         {
-            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos, 100f * Time.deltaTime);
-            if (chooseUI.position == targetPos)
+            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos.position, 300f * Time.deltaTime);
+            if (chooseUI.position == targetPos.position)
             {
                 isChooseUIMove = false;
             }
@@ -122,7 +120,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         _chooseNum = _chooseButton;
         buttonUI.SetActive(false);
-        chooseUI.position = Vector3.MoveTowards(chooseUI.position, originalPos, 100f * Time.deltaTime);
+        chooseUI.position = Vector3.MoveTowards(chooseUI.position, originalPos.position, 300f * Time.deltaTime);
     }
 
     IEnumerator SetTextLabelIndexUI()
