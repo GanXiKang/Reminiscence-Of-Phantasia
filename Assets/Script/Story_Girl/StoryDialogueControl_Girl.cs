@@ -133,13 +133,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     }
     void JumpToSection(string sectionLabel)
     {
-        // 搜索textList，找到對應的標記
         for (int i = 0; i < textList.Count; i++)
         {
             if (textList[i].Trim() == sectionLabel)
             {
-                _index = i + 1;  // 將索引設置為標記後的下一行
-                StartCoroutine(SetTextLabelIndexUI());  // 繼續顯示對話
+                _index = i + 1;
+                StartCoroutine(SetTextLabelIndexUI());
                 return;
             }
         }
