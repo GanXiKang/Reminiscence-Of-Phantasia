@@ -106,7 +106,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             chooseUI.position = Vector3.MoveTowards(chooseUI.position, chooseUITarget, 200f * Time.deltaTime);
             if (chooseUI.position == chooseUITarget)
             {
-                isChooseUIMove = true;
+                isChooseUIMove = false;
             }
         }
         else
