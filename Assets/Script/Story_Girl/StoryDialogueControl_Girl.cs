@@ -128,7 +128,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     IEnumerator SetTextLabelIndexUI()
     {
         textFinish = false;
-        content.text = "";
+        //content.text = "";
         switch (textList[_index].Trim())
         {
             case "Player":
