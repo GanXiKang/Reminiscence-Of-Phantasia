@@ -212,7 +212,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl._whichItem = _giveItemNumber[0];
 
             //œyÔ‡Œ¦Ô’
-            if (_who == 3)
+            if (_who == 1)
             {
                 StoryUIControl_Girl.isDialogue = true;
                 StoryDialogueControl_Girl._isAboveWho = _who;
