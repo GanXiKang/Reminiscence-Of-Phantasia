@@ -70,7 +70,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     }
     void TextController()
     {
-        if (textFinish)
+        if (textFinish && !isChoose)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
@@ -134,7 +134,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     IEnumerator SetTextLabelIndexUI()
     {
         textFinish = false;
-        content.text = "";
+        if (!isChoose)
+        {
+            content.text = "";
+        }
         switch (textList[_index].Trim())
         {
             case "Player":
@@ -149,7 +152,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case "End":
                 StoryUIControl_Girl.isDialogue = false;
-                break;
+                yield break;
 
             case "Choose":
                 isChoose = true;
@@ -158,7 +161,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 contentA.text = textList[_index];
                 _index++;
                 contentB.text = textList[_index];
-                break;
+                yield break;
         }
         if (!isChoose)
         {
