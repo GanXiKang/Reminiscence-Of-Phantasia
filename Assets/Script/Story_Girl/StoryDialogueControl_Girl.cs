@@ -23,8 +23,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public GameObject buttonUI;
     public Text contentA;
     public Text contentB;
+    public float _moveSpeed = 300;
     bool isChoose = false;
-    bool isChooseUIMove = false;
+    bool isChooseUI_Up = false;
+    bool isChooseUI_Back = false;
     int _chooseNum;
 
     [Header("TextFile")]
@@ -102,13 +104,22 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         if (!isChoose) return;
 
-        if (isChooseUIMove)
+        if (isChooseUI_Up)
         {
-            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos.position, 300f * Time.deltaTime);
+            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos.position, _moveSpeed * Time.deltaTime);
             if (chooseUI.position == targetPos.position)
             {
-                isChooseUIMove = false;
+                isChooseUI_Up = false;
                 buttonUI.SetActive(true);
+            }
+        }
+        if (isChooseUI_Back)
+        {
+            chooseUI.position = Vector3.MoveTowards(chooseUI.position, originalPos.position, _moveSpeed * 2f * Time.deltaTime);
+            if (chooseUI.position == originalPos.position)
+            {
+                isChooseUI_Back = false;
+                isChoose = false;
             }
         }
     }
@@ -117,7 +128,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         _chooseNum = _chooseButton;
         buttonUI.SetActive(false);
-        chooseUI.position = Vector3.MoveTowards(chooseUI.position, originalPos.position, 300f * Time.deltaTime);
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -142,7 +152,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case "Choose":
                 isChoose = true;
-                isChooseUIMove = true;
+                isChooseUI_Up = true;
                 _index++;
                 contentA.text = textList[_index];
                 _index++;
