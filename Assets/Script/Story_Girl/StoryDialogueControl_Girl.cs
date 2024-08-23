@@ -70,7 +70,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     }
     void TextController()
     {
-        if (textFinish && !isChoose)
+        if (textFinish)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
@@ -121,7 +121,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 isChooseUI_Back = false;
                 isChoose = false;
                 _index++;
-                print("OK");
                 StartCoroutine(SetTextLabelIndexUI());
             }
         }
