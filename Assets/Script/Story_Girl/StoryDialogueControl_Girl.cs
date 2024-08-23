@@ -90,18 +90,22 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         content.text = "";
         switch (textList[_index].Trim())
         {
-            case "A":
+            case "Player":
                 isPlayerTalk = true;
                 _index++;
                 break;
 
-            case "B":
+            case "Target":
                 isPlayerTalk = false;
                 _index++;
                 break;
 
-            case "Œ¦Ô’½YÊø":
+            case "End":
                 StoryUIControl_Girl.isDialogue = false;
+                break;
+
+            case "Choose":
+                
                 break;
         }
         for (int i = 0; i < textList[_index].Length; i++)
