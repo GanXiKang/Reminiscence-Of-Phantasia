@@ -120,6 +120,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             {
                 isChooseUI_Back = false;
                 isChoose = false;
+                StartCoroutine(SetTextLabelIndexUI());
             }
         }
     }
@@ -161,7 +162,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         }
         if (!isChoose)
         {
-            print("clear");
             content.text = "";
             for (int i = 0; i < textList[_index].Length; i++)
             {
