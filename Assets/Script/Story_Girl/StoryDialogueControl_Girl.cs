@@ -127,6 +127,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public void ChooseButton(int _chooseButton)
     {
         _chooseNum = _chooseButton;
+        isChooseUI_Back = true;
         buttonUI.SetActive(false);
     }
 
