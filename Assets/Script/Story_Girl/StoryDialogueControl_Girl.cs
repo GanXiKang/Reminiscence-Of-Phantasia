@@ -134,10 +134,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     IEnumerator SetTextLabelIndexUI()
     {
         textFinish = false;
-        if (!isChoose)
-        {
-            content.text = "";
-        }
         switch (textList[_index].Trim())
         {
             case "Player":
@@ -165,6 +161,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         }
         if (!isChoose)
         {
+            print("clear");
+            content.text = "";
             for (int i = 0; i < textList[_index].Length; i++)
             {
                 content.text += textList[_index][i];
