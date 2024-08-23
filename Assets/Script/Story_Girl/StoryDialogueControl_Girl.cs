@@ -120,8 +120,19 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             {
                 isChooseUI_Back = false;
                 isChoose = false;
-                _index++;
-                StartCoroutine(SetTextLabelIndexUI());
+                //_index++;
+                //StartCoroutine(SetTextLabelIndexUI());
+                if (_chooseNum == 1)
+                {
+                    content.text += "好的！";  // 顯示玩家的選擇
+                    _index++;
+                    StartCoroutine(SetTextLabelIndexUI());  // 繼續對話
+                }
+                else if (_chooseNum == 2)
+                {
+                    content.text += "不要！";  // 顯示玩家的選擇
+                    StoryUIControl_Girl.isDialogue = false;  // 結束對話
+                }
             }
         }
     }
