@@ -120,6 +120,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             {
                 isChooseUI_Back = false;
                 isChoose = false;
+                _index++;
+                print("OK");
                 StartCoroutine(SetTextLabelIndexUI());
             }
         }
