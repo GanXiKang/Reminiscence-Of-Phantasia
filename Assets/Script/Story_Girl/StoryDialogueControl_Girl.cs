@@ -106,7 +106,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
         if (isChooseUIMove)
         {
-            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos, 20f * Time.deltaTime);
+            chooseUI.position = Vector3.MoveTowards(chooseUI.position, targetPos, 200f * Time.deltaTime);
             if (chooseUI.position == targetPos)
             {
                 isChooseUIMove = false;
@@ -116,6 +116,13 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         {
             buttonUI.SetActive(true);
         }
+    }
+
+    public void ChooseButton(int _chooseButton)
+    {
+        _chooseNum = _chooseButton;
+        buttonUI.SetActive(false);
+        chooseUI.position = Vector3.MoveTowards(chooseUI.position, originalPos, 200f * Time.deltaTime);
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -158,4 +165,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             _index++;
         }
     }
+
+
 }
