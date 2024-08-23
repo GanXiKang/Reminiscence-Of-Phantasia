@@ -23,7 +23,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public GameObject buttonUI;
     public Text contentA;
     public Text contentB;
-    public float _moveSpeed = 300;
+    public float _moveSpeed = 500;
     bool isChoose = false;
     bool isChooseUI_Up = false;
     bool isChooseUI_Back = false;
