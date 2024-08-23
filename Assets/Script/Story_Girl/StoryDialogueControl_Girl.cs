@@ -126,7 +126,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     IEnumerator SetTextLabelIndexUI()
     {
         textFinish = false;
-        //content.text = "";
         switch (textList[_index].Trim())
         {
             case "Player":
@@ -159,10 +158,9 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 content.text += textList[_index][i];
                 yield return new WaitForSeconds(_textSpend);
             }
+            content.text = "";
             textFinish = true;
             _index++;
         }
     }
-
-
 }
