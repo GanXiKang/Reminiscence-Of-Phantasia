@@ -108,11 +108,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             if (chooseUI.position == targetPos.position)
             {
                 isChooseUIMove = false;
+                buttonUI.SetActive(true);
             }
-        }
-        else
-        {
-            buttonUI.SetActive(true);
         }
     }
 
