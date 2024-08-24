@@ -67,19 +67,19 @@ public class ScissorsControl_Workbench : MonoBehaviour
             {
                 if (other.gameObject.name == "Out_1_1")
                 {
-
+                    _cutPoint = 1;
                 }
                 else if (other.gameObject.name == "Out_2_1")
                 {
-
+                    _cutPoint = 2;
                 }
                 else if (other.gameObject.name == "Out_3_1")
                 {
-
+                    _cutPoint = 3;
                 }
                 else if (other.gameObject.name == "Out_4_1")
-                { 
-
+                {
+                    _cutPoint = 4;
                 }
             }
             if (other.tag == "Paper")
@@ -104,8 +104,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             if (other.tag == "PaperOut")
             {
-                _cutPoint++;
-                WorkbenchControl_House.isFinishCut = false;
+                WorkbenchControl_House.isFinishCut = true;
                 print(_cutPoint);
             }
         }
