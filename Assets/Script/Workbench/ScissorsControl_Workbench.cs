@@ -85,6 +85,13 @@ public class ScissorsControl_Workbench : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-
+        if (isUseScissors)
+        {
+            if (other.tag == "PaperOut")
+            {
+                _cutPoint++;
+                print(_cutPoint);
+            }
+        }
     }
 }
