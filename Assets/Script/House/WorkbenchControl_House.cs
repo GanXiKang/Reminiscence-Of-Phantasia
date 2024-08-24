@@ -26,7 +26,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step2")]
     public GameObject scissors;
     public GameObject paper2;
-    public GameObject paperB;
+    public GameObject[] paperOut;
     float _rotationSpeed = 90f;
     float _rotation = 0;
     bool isPaperRotation = false;
@@ -191,10 +191,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void CutFinish()
     {
-        if (ScissorsControl_Workbench._cutPoint >= 4)
-        {
-            paperB.GetComponent<Rigidbody>().isKinematic = false;
-        }
+        paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void Step3_Color()
