@@ -186,7 +186,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (_rotation != 0)
             {
-                paper2.transform.Rotate(transform.right, _rotation);
+                paper2.transform.Rotate(0, 0, _rotation);
             }
         }
     }
