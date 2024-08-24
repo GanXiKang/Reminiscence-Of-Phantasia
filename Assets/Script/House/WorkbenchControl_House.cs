@@ -196,6 +196,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
         paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
         Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
+        isFinishCut = false;
     }
 
     void Step3_Color()
