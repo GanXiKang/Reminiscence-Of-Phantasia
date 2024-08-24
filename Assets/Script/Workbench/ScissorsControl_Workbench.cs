@@ -65,7 +65,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             if (other.tag == "PaperOut")
             {
-                _cutPoint++;
                 print(_cutPoint);
             }
             if (other.tag == "Paper")
@@ -83,5 +82,9 @@ public class ScissorsControl_Workbench : MonoBehaviour
                 print("No");
             }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+
     }
 }
