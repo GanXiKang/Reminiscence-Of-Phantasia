@@ -63,7 +63,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     {
         if (isUseScissors)
         {
-            if (other.tag == "Point")
+            if (other.tag == "PaperOut")
             {
                 _cutPoint++;
                 print(_cutPoint);
