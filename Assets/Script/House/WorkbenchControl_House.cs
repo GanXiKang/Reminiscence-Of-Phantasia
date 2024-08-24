@@ -30,6 +30,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotationSpeed = 90f;
     float _rotation = 0;
     bool isPaperRotation = false;
+    public static bool isFinishCut = false;
 
     [Header("Step3")]
     public GameObject colorUI;
@@ -191,6 +192,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void CutPaperOutFinish()
     {
+        if (!isFinishCut) return;
+
         paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
         Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
     }
