@@ -168,7 +168,7 @@ public class WorkbenchControl_House : MonoBehaviour
     void Step2_Cut()
     {
         PaperRotation();
-        CutFinish();
+        CutPaperOutFinish();
     }
     void PaperRotation()
     {
@@ -189,9 +189,10 @@ public class WorkbenchControl_House : MonoBehaviour
             }
         }
     }
-    void CutFinish()
+    void CutPaperOutFinish()
     {
         paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
+        Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
     }
 
     void Step3_Color()
