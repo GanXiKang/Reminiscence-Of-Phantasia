@@ -195,7 +195,6 @@ public class WorkbenchControl_House : MonoBehaviour
         if (!isFinishCut) return;
 
         paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
-        Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
         isFinishCut = false;
     }
 
