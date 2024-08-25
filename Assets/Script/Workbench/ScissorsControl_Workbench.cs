@@ -65,19 +65,19 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             if (other.tag == "PaperOut")
             {
-                if (other.gameObject.name == "Out_1_1")
+                if (other.gameObject.name == "11_Out1")
                 {
                     _cutPoint = 1;
                 }
-                else if (other.gameObject.name == "Out_2_1")
+                else if (other.gameObject.name == "11_Out2")
                 {
                     _cutPoint = 2;
                 }
-                else if (other.gameObject.name == "Out_3_1")
+                else if (other.gameObject.name == "11_Out3")
                 {
                     _cutPoint = 3;
                 }
-                else if (other.gameObject.name == "Out_4_1")
+                else if (other.gameObject.name == "11_Out4")
                 {
                     _cutPoint = 4;
                 }
