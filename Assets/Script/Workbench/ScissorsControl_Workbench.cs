@@ -86,7 +86,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
             {
                 isUseScissors = false;
                 Invoke("ClearLine", 0.2f);
-                print("No");
             }
         }
     }
