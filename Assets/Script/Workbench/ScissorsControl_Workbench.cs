@@ -19,6 +19,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
     void Update()
     {
+        print(isUseScissors);
         if (WorkbenchControl_House._process == 2)
         {
             ScissorsMove();
@@ -84,7 +85,8 @@ public class ScissorsControl_Workbench : MonoBehaviour
             }
             if (other.tag == "Paper")
             {
-                isUseScissors = false; 
+                isUseScissors = false;
+                Invoke("ClearLine", 0.2f);
                 print("No");
             }
         }
@@ -115,6 +117,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (other.tag == "Paper")
             {
                 isUseScissors = false;
+                Invoke("ClearLine", 0.2f);
                 print("No");
             }
         }
