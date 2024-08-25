@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ScissorsControl_Workbench : MonoBehaviour
 {
-    float mouseY;
-    float mouseX;
+    //Mouse
+    float mouseY, mouseX;
     float _moveSpeed = 60f;
-    float newY;
-    float newX;
+    float newY, newX;
     float minY = -3f, maxY = 5f;
     float minX = 1f, maxX = 8f;
+    float smoothTime = 0.1f;
+    Vector3 velocity = Vector3.zero;
+
+    //Point
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
 
+    [Header("Line")]
     public GameObject scissorsLine;
     List<GameObject> line = new List<GameObject>(0);
 
@@ -44,11 +48,11 @@ public class ScissorsControl_Workbench : MonoBehaviour
     {
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
         mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-        newY = transform.position.y + mouseY;
-        newX = transform.position.x + mouseX;
-        newY = Mathf.Clamp(newY, minY, maxY);
-        newX = Mathf.Clamp(newX, minX, maxX);
-        transform.position = new Vector3(newX, newY, 0f);
+        newY = Mathf.Clamp(transform.position.y + mouseY, minY, maxY);
+        newX = Mathf.Clamp(transform.position.x + mouseX, minX, maxX);
+        //transform.position = new Vector3(newX, newY, 0f);
+        Vector3 targetPosition = new Vector3(newX, newY, 0f);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
     void ClearLine()
     {
