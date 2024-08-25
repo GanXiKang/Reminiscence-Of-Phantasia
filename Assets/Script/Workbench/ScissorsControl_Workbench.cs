@@ -60,37 +60,37 @@ public class ScissorsControl_Workbench : MonoBehaviour
         line.Clear();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (isUseScissors)
-        {
-            if (other.tag == "PaperOut")
-            {
-                if (other.gameObject.name == "11_Out1")
-                {
-                    _cutPoint = 1;
-                }
-                else if (other.gameObject.name == "11_Out2")
-                {
-                    _cutPoint = 2;
-                }
-                else if (other.gameObject.name == "11_Out3")
-                {
-                    _cutPoint = 3;
-                }
-                else if (other.gameObject.name == "11_Out4")
-                {
-                    _cutPoint = 4;
-                }
-            }
-            if (other.tag == "Paper")
-            {
-                isUseScissors = false;
-                Invoke("ClearLine", 0.2f);
-                print("No");
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (isUseScissors)
+    //    {
+    //        if (other.tag == "PaperOut")
+    //        {
+    //            if (other.gameObject.name == "11_Out1")
+    //            {
+    //                _cutPoint = 1;
+    //            }
+    //            else if (other.gameObject.name == "11_Out2")
+    //            {
+    //                _cutPoint = 2;
+    //            }
+    //            else if (other.gameObject.name == "11_Out3")
+    //            {
+    //                _cutPoint = 3;
+    //            }
+    //            else if (other.gameObject.name == "11_Out4")
+    //            {
+    //                _cutPoint = 4;
+    //            }
+    //        }
+    //        if (other.tag == "Paper")
+    //        {
+    //            isUseScissors = false;
+    //            Invoke("ClearLine", 0.2f);
+    //            print("No");
+    //        }
+    //    }
+    //}
     private void OnTriggerStay(Collider other)
     {
         if (isUseScissors)
@@ -118,7 +118,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
             {
                 isUseScissors = false;
                 Invoke("ClearLine", 0.2f);
-                print("No");
             }
         }
     }
@@ -129,7 +128,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (other.tag == "PaperOut")
             {
                 WorkbenchControl_House.isFinishCut = true;
-                print(_cutPoint);
             }
         }
     }
