@@ -9,8 +9,8 @@ public class ScissorsControl_Workbench : MonoBehaviour
     float _moveSpeed = 60f;
     float newY;
     float newX;
-    float minY = -3f, maxY = 4f;
-    float minX = 1f, maxX = 3f;
+    float minY = -3f, maxY = 5f;
+    float minX = 1f, maxX = 10f;
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
 
