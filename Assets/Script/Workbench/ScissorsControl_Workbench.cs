@@ -10,8 +10,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     float newY, newX;
     float minY = -3f, maxY = 5f;
     float minX = 1f, maxX = 8f;
-    float smoothTime = 0.1f;
-    Vector3 velocity = Vector3.zero;
+    float _lerpSpeed = 10f;
 
     //Point
     public static bool isUseScissors = false;
@@ -52,7 +51,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
         newX = Mathf.Clamp(transform.position.x + mouseX, minX, maxX);
         //transform.position = new Vector3(newX, newY, 0f);
         Vector3 targetPosition = new Vector3(newX, newY, 0f);
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, _lerpSpeed * Time.deltaTime);
     }
     void ClearLine()
     {
