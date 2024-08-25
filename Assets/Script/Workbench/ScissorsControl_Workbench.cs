@@ -106,7 +106,28 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             if (other.tag == "PaperOut")
             {
-                WorkbenchControl_House.isFinishCut = true;
+                switch (_cutPoint)
+                {
+                    case 1:
+                        if (other.gameObject.name == "11_Out1")
+                            WorkbenchControl_House.isFinishCut = true;
+                        break;
+
+                    case 2:
+                        if (other.gameObject.name == "11_Out2")
+                            WorkbenchControl_House.isFinishCut = true;
+                        break;
+
+                    case 3:
+                        if (other.gameObject.name == "11_Out3")
+                            WorkbenchControl_House.isFinishCut = true;
+                        break;
+
+                    case 4:
+                        if (other.gameObject.name == "11_Out4")
+                            WorkbenchControl_House.isFinishCut = true;
+                        break;
+                }
             }
         }
     }
