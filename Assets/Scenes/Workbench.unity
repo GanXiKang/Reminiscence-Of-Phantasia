@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3427973818281681074, guid: 835388c125b25d045beb0f1cfea9b47c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873853907701565140, guid: 57b3e5ce545e60444a00ff7986ed33b6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5253652250374691950, guid: 57b3e5ce545e60444a00ff7986ed33b6, type: 3}
       propertyPath: m_LocalScale.x
@@ -540,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7241189309933896030, guid: d7874f92c7cb69b43897c13bfbf2cb21, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8013610055713102820, guid: d7874f92c7cb69b43897c13bfbf2cb21, type: 3}
       propertyPath: m_LocalScale.x
@@ -939,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076461785179472157, guid: a888d21c57ed3ce44922f8d95f73aee3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1564,10 +1564,10 @@ MonoBehaviour:
   paper2: {fileID: 1333837562}
   paperOut:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1772139723}
+  - {fileID: 1553641706}
+  - {fileID: 1880908888}
+  - {fileID: 157718036}
   colorUI: {fileID: 1157501213}
   pointObject: {fileID: 1403006511}
 --- !u!4 &1030011994
@@ -2024,7 +2024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1168572189
 Transform:
   m_ObjectHideFlags: 0
@@ -2829,7 +2829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794409362384742361, guid: f2bf1049679d51341bc65e60b86edef8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1794409362384742361, guid: f2bf1049679d51341bc65e60b86edef8, type: 3}
       propertyPath: m_TagString
@@ -2916,11 +2916,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944205206428711717, guid: 1a0fddecd89c3924190879be3416191f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4944205206428711717, guid: 1a0fddecd89c3924190879be3416191f, type: 3}
       propertyPath: m_TagString
       value: Paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005835963267935108, guid: 1a0fddecd89c3924190879be3416191f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5752936052677517727, guid: 1a0fddecd89c3924190879be3416191f, type: 3}
       propertyPath: m_LocalScale.x
@@ -3381,7 +3385,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
