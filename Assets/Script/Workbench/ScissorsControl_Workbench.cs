@@ -10,7 +10,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     float newY;
     float newX;
     float minY = -3f, maxY = 5f;
-    float minX = 1f, maxX = 10f;
+    float minX = 1f, maxX = 8f;
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
 
