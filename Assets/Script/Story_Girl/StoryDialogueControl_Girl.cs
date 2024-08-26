@@ -105,7 +105,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (_textCount)
         {
             case 1:
-                print("OK");
+                if (_chooseNum == 1)
+                {
+                    StoryThermometerControl_Girl.isThermometer = true;
+                }
                 break;   
         }
     }
