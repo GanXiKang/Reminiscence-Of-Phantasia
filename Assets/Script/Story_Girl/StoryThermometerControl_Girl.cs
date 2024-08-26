@@ -9,9 +9,11 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
     //Controller
     public static bool isThermometer = false;
+    public static bool isStepOnSnow = false;
     public static bool isDead = false;
     float _temperature = 36.5f;
     float _decline = 0.1f;
+    float _snow = 0.2f;
     float _rise = 0.15f;
     bool isUseMatches = false;
 
@@ -35,6 +37,11 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             isUseMatches = true;
             Invoke("Matches", 2f);
         }
+        if (Input.GetKeyDown(KeyCode.R) && !isDead)
+        {
+            isStepOnSnow = true;
+            Invoke("StepOnSnow", 2f);
+        }
     }
 
     void Thermometer()
@@ -48,11 +55,25 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         {
             if (!isUseMatches)
             {
-                _temperature -= _decline * Time.deltaTime;
+                if (!isStepOnSnow)
+                {
+                    _temperature -= _decline * Time.deltaTime;
+                }
+                else 
+                {
+                    _temperature -= _snow * Time.deltaTime;
+                }
             }
             else
             {
-                _temperature += _rise * Time.deltaTime;
+                if (!isStepOnSnow)
+                {
+                    _temperature += _rise * Time.deltaTime;
+                }
+                else
+                {
+                    _temperature -= _rise / 2 * Time.deltaTime;
+                }
             }
             energyBar.fillAmount = (_temperature - 35f) / 2;
             temperature.text = _temperature.ToString("F1");
@@ -61,6 +82,10 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     void Matches()
     {
         isUseMatches = false;
+    }
+    void StepOnSnow()
+    {
+        isStepOnSnow = false;
     }
     void Limit()
     {
