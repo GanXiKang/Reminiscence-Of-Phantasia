@@ -102,7 +102,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     }
     void DialogurEnd()
     {
-        print("OK");
+        switch (_textCount)
+        {
+            case 1:
+                print("OK");
+                break;   
+        }
     }
     void ChooseUI()
     {
