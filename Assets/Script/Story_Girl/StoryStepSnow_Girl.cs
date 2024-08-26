@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class StoryStepSnow_Girl : MonoBehaviour
 {
-    void Start()
+    void StepOnSnow()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        StoryThermometerControl_Girl.isStepOnSnow = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            
+            StoryThermometerControl_Girl.isStepOnSnow = true;
+            Invoke("StepOnSnow", 2f);
         }
     }
 }
