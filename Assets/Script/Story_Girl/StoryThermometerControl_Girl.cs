@@ -37,11 +37,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             isUseMatches = true;
             Invoke("Matches", 2f);
         }
-        if (Input.GetKeyDown(KeyCode.R) && !isDead)
-        {
-            isStepOnSnow = true;
-            Invoke("StepOnSnow", 2f);
-        }
     }
 
     void Thermometer()
@@ -82,10 +77,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     void Matches()
     {
         isUseMatches = false;
-    }
-    void StepOnSnow()
-    {
-        isStepOnSnow = false;
     }
     void Limit()
     {
