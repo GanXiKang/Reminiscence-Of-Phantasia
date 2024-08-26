@@ -100,6 +100,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             dialogueUI.position = targetPos + offset;
         }
     }
+    void DialogurEnd()
+    {
+        print("OK");
+    }
     void ChooseUI()
     {
         if (!isChoose) return;
@@ -167,6 +171,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case "End":
+                DialogurEnd();
                 StoryUIControl_Girl.isDialogue = false;
                 yield break;
 
