@@ -885,6 +885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 173024067}
+  - component: {fileID: 173024068}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -907,6 +908,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &173024068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173024066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2331ab164ef2a4abb2c5538f9b1d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  onClick: {fileID: 0}
+  flipBook: {fileID: 0}
+  open: {fileID: 0}
+  save: {fileID: 0}
+  leave: {fileID: 0}
+  bookUI: {fileID: 0}
+  sliderBGM: {fileID: 0}
+  fullScreen: {fileID: 0}
+  settingUI: []
+  labelColor: []
+  turnPage: []
+  _openSpeed: 1
 --- !u!1 &196132752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,14 +3211,13 @@ GameObject:
   - component: {fileID: 801956607}
   - component: {fileID: 801956606}
   - component: {fileID: 801956605}
-  - component: {fileID: 801956604}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &801956603
 Transform:
   m_ObjectHideFlags: 0
@@ -3208,22 +3233,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1487504410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &801956604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801956602}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 0}
-  bar: {fileID: 0}
-  sceneName: {fileID: 0}
 --- !u!65 &801956605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6716,7 +6725,6 @@ GameObject:
   - component: {fileID: 1946031797}
   - component: {fileID: 1946031800}
   - component: {fileID: 1946031799}
-  - component: {fileID: 1946031798}
   m_Layer: 0
   m_Name: 01Momotaro
   m_TagString: Untagged
@@ -6739,32 +6747,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1487504410}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
---- !u!114 &1946031798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946031796}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b69aa088925614883c37db5978c53d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _snapDistance: 12
-  _scaleSpeed: 5
-  isGive: 1
-  _giveItemNumber: 01000000
-  isGet: 1
-  _getItemNumber: 02000000050000000300000006000000
-  isExchange: 0
-  _exchangeItemNumber: 
-  getItemSprite: {fileID: 21300000, guid: 35652147864da7a4eb60e2f05cacbb0b, type: 3}
-  moveItemUI: {fileID: 0}
-  bagUIPosition: {fileID: 0}
-  interactableUI: {fileID: 0}
-  interactableName: {fileID: 0}
-  _who: 1
 --- !u!65 &1946031799
 BoxCollider:
   m_ObjectHideFlags: 0
