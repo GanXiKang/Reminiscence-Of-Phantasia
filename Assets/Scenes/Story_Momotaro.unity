@@ -2269,7 +2269,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointEnter
           m_Mode: 3
@@ -2285,7 +2285,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointExit
           m_Mode: 1
@@ -2420,10 +2420,6 @@ GameObject:
   m_Component:
   - component: {fileID: 638759654}
   - component: {fileID: 638759656}
-  - component: {fileID: 638759655}
-  - component: {fileID: 638759659}
-  - component: {fileID: 638759658}
-  - component: {fileID: 638759657}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2456,27 +2452,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &638759655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638759653}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fadad1c7d75593f4bb1b736a52a1de2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  introduce: {fileID: 2041890694}
-  panel: {fileID: 663324220}
-  content: {fileID: 291778636}
-  buttonTransform:
-  - {fileID: 597309063}
-  - {fileID: 1251533702}
-  - {fileID: 1116515217}
-  - {fileID: 773914718}
-  - {fileID: 1250105284}
 --- !u!114 &638759656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2503,64 +2478,8 @@ MonoBehaviour:
   - {fileID: 482222078}
   - {fileID: 1313944824}
   - {fileID: 285624745}
-  itemSprite:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 6548db5b037e4f646b1ae86c35e698eb, type: 3}
-  - {fileID: 21300000, guid: f0f35d8a52c9f42469fc7a4375021e92, type: 3}
-  - {fileID: 21300000, guid: ea521add4f577384f9466e7b0844490a, type: 3}
-  - {fileID: 21300000, guid: ec7981a1304f6194fbfe65add7dd789e, type: 3}
-  - {fileID: 21300000, guid: c24a8df0456296a4baa1bdae26d30370, type: 3}
-  - {fileID: 21300000, guid: 78b5308ca1482b843923bc840176b745, type: 3}
-  - {fileID: 21300000, guid: 1e74841d15eca4e4497861b1b671561d, type: 3}
-  - {fileID: 21300000, guid: 5dad27279e44b2c4a9662935e554c7ab, type: 3}
-  - {fileID: 21300000, guid: 512b16d567f94d841a710d651d032162, type: 3}
+  itemSprite: []
   getMoveItem: {fileID: 2052425914}
---- !u!114 &638759657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638759653}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9162156dd40b345bc52d5d6b6a8090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 1532828456}
---- !u!114 &638759658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638759653}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55253720a77ccba458cea0314bf46b70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thermometerUI: {fileID: 0}
-  energyBar: {fileID: 0}
-  temperature: {fileID: 0}
---- !u!114 &638759659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638759653}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c1ccefc8e5421c4aba3af438a97f41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  street: {fileID: 0}
-  forest: {fileID: 0}
-  loadingUI: {fileID: 2069282692}
-  a: {fileID: 566764494}
-  b: {fileID: 341341958}
-  c: {fileID: 52278456}
 --- !u!1 &663324220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,7 +2977,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointEnter
           m_Mode: 3
@@ -3074,7 +2993,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointExit
           m_Mode: 1
@@ -3890,7 +3809,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointEnter
           m_Mode: 3
@@ -3906,7 +3825,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointExit
           m_Mode: 1
@@ -4087,7 +4006,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointEnter
           m_Mode: 3
@@ -4103,7 +4022,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointExit
           m_Mode: 1
@@ -4283,7 +4202,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointEnter
           m_Mode: 3
@@ -4299,7 +4218,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 638759655}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: StoryItemIntroduce_Girl, Assembly-CSharp
           m_MethodName: OnPointExit
           m_Mode: 1
@@ -5046,7 +4965,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1532828458}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StoryDialogueControl_Girl, Assembly-CSharp
         m_MethodName: ChooseButton
         m_Mode: 3
@@ -5744,7 +5663,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532828457}
-  - component: {fileID: 1532828458}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -5776,43 +5694,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1532828458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532828456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84a306c655a78242b579b4f5459b0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  dialogueUI: {fileID: 1532828457}
-  content: {fileID: 1728204830}
-  chooseUI: {fileID: 73811894}
-  originalPos: {fileID: 839258476}
-  targetPos: {fileID: 836742887}
-  buttonUI: {fileID: 1250802803}
-  contentA: {fileID: 2147025533}
-  contentB: {fileID: 553933767}
-  _moveSpeed: 500
-  textFile:
-  - {fileID: 0}
-  - {fileID: 4900000, guid: ec88ec8284a606643a65b78bbebc3fba, type: 3}
-  _index: 0
-  _textSpend: 0.1
 --- !u!1 &1537611176
 GameObject:
   m_ObjectHideFlags: 0
@@ -7296,7 +7177,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1532828458}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StoryDialogueControl_Girl, Assembly-CSharp
         m_MethodName: ChooseButton
         m_Mode: 3
