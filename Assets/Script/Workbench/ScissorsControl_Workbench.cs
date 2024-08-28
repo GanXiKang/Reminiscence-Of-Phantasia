@@ -84,7 +84,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
             }
             if (other.tag == "Paper")
             {
-                print("No");
                 isUseScissors = false;
                 Invoke("ClearLine", 0.2f);
             }
