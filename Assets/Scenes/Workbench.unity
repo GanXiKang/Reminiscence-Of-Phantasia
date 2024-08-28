@@ -645,6 +645,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4695759204964548526, guid: 32be36973fbfac44bab7bbf7696d6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 488919568}
+    - targetCorrespondingSourceObject: {fileID: 4695759204964548526, guid: 32be36973fbfac44bab7bbf7696d6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 488919571}
   m_SourcePrefab: {fileID: 100100000, guid: 32be36973fbfac44bab7bbf7696d6b8b, type: 3}
 --- !u!4 &488919566 stripped
 Transform:
@@ -678,6 +681,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5133837810680771165, guid: 6604175b32e378f46867e64c7ffe75e2, type: 3}
+--- !u!54 &488919571
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488919567}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &504154181
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1029,7 @@ BoxCollider:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 2
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -1218,6 +1248,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2508193168455626457, guid: 83af225222794ea4eb4ae87e0aeb7577, type: 3}
       insertIndex: -1
       addedObject: {fileID: 645452929}
+    - targetCorrespondingSourceObject: {fileID: 2508193168455626457, guid: 83af225222794ea4eb4ae87e0aeb7577, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 645452932}
   m_SourcePrefab: {fileID: 100100000, guid: 83af225222794ea4eb4ae87e0aeb7577, type: 3}
 --- !u!4 &645452927 stripped
 Transform:
@@ -1251,6 +1284,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3998025308059926741, guid: f3df1a39cb993ab46ba41837e08c8fe2, type: 3}
+--- !u!54 &645452932
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645452928}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &708382633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,7 +2160,7 @@ BoxCollider:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 3
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -2606,12 +2666,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 645452927}
+  - {fileID: 488919566}
   - {fileID: 2139919615}
   - {fileID: 1082594010}
   - {fileID: 549255573}
   - {fileID: 1873015665}
-  - {fileID: 488919566}
-  - {fileID: 645452927}
   m_Father: {fileID: 1168572189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353230077
@@ -3818,7 +3878,7 @@ BoxCollider:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 1
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -4501,7 +4561,7 @@ BoxCollider:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 4
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
