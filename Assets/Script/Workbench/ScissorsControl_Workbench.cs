@@ -6,7 +6,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
 {
     //Mouse
     float mouseY, mouseX;
-    float _moveSpeed = 120f;
+    float _moveSpeed = 100f;
     float newY, newX;
     float minY = -3f, maxY = 5f;
     float minX = 1f, maxX = 8f;
@@ -84,6 +84,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             }
             if (other.tag == "Paper")
             {
+                print("No");
                 isUseScissors = false;
                 Invoke("ClearLine", 0.2f);
             }
