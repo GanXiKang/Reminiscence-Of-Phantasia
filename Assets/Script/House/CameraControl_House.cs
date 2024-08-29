@@ -74,8 +74,8 @@ public class CameraControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             isFreeLook = false;
-            transform.position = Vector3.Lerp(transform.position, renewPos.position, _moveTime * Time.deltaTime); ;
-            transform.rotation = Quaternion.Lerp(transform.rotation, renewPos.rotation, _moveTime * Time.deltaTime);
+            transform.position = renewPos.position;
+            transform.rotation = renewPos.rotation;
             Invoke("StartFreeLookCamera", 0.5f);
         }
     }
