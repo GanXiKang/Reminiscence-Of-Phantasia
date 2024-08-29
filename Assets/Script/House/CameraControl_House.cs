@@ -14,6 +14,7 @@ public class CameraControl_House : MonoBehaviour
     public Transform bedPos;
     public Transform bookcasePos;
     public Transform showcasePos;
+    public Transform renewPos;
     public static bool isLookWorkbench = false;
     public static bool isLookDoor = false;
     public static bool isLookBed = false;
@@ -33,6 +34,7 @@ public class CameraControl_House : MonoBehaviour
         freeLookCamera.SetActive(isFreeLookCamera());
 
         CameraLooking();
+        RenewCameraPosition();
     }
 
     void StartFreeLookCamera()
@@ -65,6 +67,14 @@ public class CameraControl_House : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, showcasePos.position, _moveTime * Time.deltaTime); ;
             transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
+        }
+    }
+    void RenewCameraPosition()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = Vector3.Lerp(transform.position, renewPos.position, _moveTime * Time.deltaTime); ;
+            transform.rotation = Quaternion.Lerp(transform.rotation, renewPos.rotation, _moveTime * Time.deltaTime);
         }
     }
 
