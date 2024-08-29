@@ -30,7 +30,7 @@ public class CameraControl_House : MonoBehaviour
 
     void Update()
     {
-        freeLookCamera.SetActive(isFreeLook);
+        freeLookCamera.SetActive(isFreeLookCamera());
 
         CameraLooking();
     }
@@ -66,5 +66,11 @@ public class CameraControl_House : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, showcasePos.position, _moveTime * Time.deltaTime); ;
             transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
         }
+    }
+
+    bool isFreeLookCamera()
+    {
+        return isFreeLook &&
+               !SettingControl.isSettingActive;
     }
 }
