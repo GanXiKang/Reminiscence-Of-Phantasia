@@ -110,9 +110,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小女孩";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -120,9 +118,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "垃圾桶";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -130,9 +126,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "聖誕老人";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -140,9 +134,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小彥";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -150,9 +142,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小欣";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -160,9 +150,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "獵人";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -170,9 +158,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "鐵棒";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -180,9 +166,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "木枝";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
 
@@ -190,12 +174,16 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "露營者";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
+                    InteractableUIPosition();
                 }
                 break;
         }
+    }
+    void InteractableUIPosition()
+    {
+        Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        interactableUI.transform.position = screenPos;
     }
 
     void OnMouseDown()
