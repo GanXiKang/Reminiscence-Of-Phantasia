@@ -234,8 +234,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
         StartCoroutine(ScaleObject(scaledSize));
-        isInteractableUI = true;
-        _aboveWho = _who;
+        if (!StoryUIControl_Girl.isDialogue)
+        {
+            isInteractableUI = true;
+        }
+        _aboveWho = _who; 
 
         if (!isGet) return;
         if (!isBagGetItem) return;
