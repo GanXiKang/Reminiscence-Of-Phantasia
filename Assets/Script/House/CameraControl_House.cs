@@ -76,7 +76,7 @@ public class CameraControl_House : MonoBehaviour
             isFreeLook = false;
             transform.position = renewPos.position;
             transform.rotation = renewPos.rotation;
-            Invoke("StartFreeLookCamera", 0.5f);
+            Invoke("StartFreeLookCamera", 5f);
         }
     }
 
