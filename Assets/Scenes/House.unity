@@ -937,7 +937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 285809344}
   m_Layer: 0
-  m_Name: StartPos
+  m_Name: RenewCamPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5627,7 +5627,7 @@ MonoBehaviour:
   stampEndPos: {fileID: 0}
   scissors: {fileID: 0}
   paper2: {fileID: 0}
-  paperB: {fileID: 0}
+  paperOut: []
   colorUI: {fileID: 0}
   pointObject: {fileID: 0}
 --- !u!114 &1275040581
