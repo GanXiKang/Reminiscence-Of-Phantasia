@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraControl_House : MonoBehaviour
 {
     [Header("FreeLookCamera")]
     public GameObject freeLookCamera;
     public static bool isFreeLook = false;
+    CinemachineFreeLook cinemachineFreeLook;
 
     [Header("CameraPosition")]
     public Transform workbenchPos;
@@ -26,6 +28,7 @@ public class CameraControl_House : MonoBehaviour
     void Start()
     {
         Invoke("StartFreeLookCamera", 1.5f);
+        cinemachineFreeLook = freeLookCamera.GetComponent<CinemachineFreeLook>();
     }
 
     void Update()
@@ -33,6 +36,7 @@ public class CameraControl_House : MonoBehaviour
         freeLookCamera.SetActive(isFreeLookCamera());
 
         CameraLooking();
+        RecenterFreeLookCamera();
     }
 
     void StartFreeLookCamera()
@@ -65,6 +69,14 @@ public class CameraControl_House : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, showcasePos.position, _moveTime * Time.deltaTime); ;
             transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
+        }
+    }
+    void RecenterFreeLookCamera()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            cinemachineFreeLook.m_RecenterToTargetHeading.m_enabled = true;
+            cinemachineFreeLook.m_YAxisRecentering.m_enabled = true;
         }
     }
 
