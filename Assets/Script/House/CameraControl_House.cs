@@ -77,7 +77,7 @@ public class CameraControl_House : MonoBehaviour
         {
             cinemachineFreeLook.m_RecenterToTargetHeading.m_enabled = true;
             cinemachineFreeLook.m_YAxisRecentering.m_enabled = true;
-            Invoke("FalseRecenteringEnabled", 1f);
+            Invoke("FalseRecenteringEnabled", 2f);
         }
     }
     void FalseRecenteringEnabled()
