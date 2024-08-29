@@ -36,7 +36,7 @@ public class CameraControl_House : MonoBehaviour
         freeLookCamera.SetActive(isFreeLookCamera());
 
         CameraLooking();
-        RecenterFreeLookCamera();
+        RecenteringFreeLookCamera();
     }
 
     void StartFreeLookCamera()
@@ -71,13 +71,19 @@ public class CameraControl_House : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
         }
     }
-    void RecenterFreeLookCamera()
+    void RecenteringFreeLookCamera()
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
             cinemachineFreeLook.m_RecenterToTargetHeading.m_enabled = true;
             cinemachineFreeLook.m_YAxisRecentering.m_enabled = true;
+            Invoke("FalseRecenteringEnabled", 1f);
         }
+    }
+    void FalseRecenteringEnabled()
+    {
+        cinemachineFreeLook.m_RecenterToTargetHeading.m_enabled = false;
+        cinemachineFreeLook.m_YAxisRecentering.m_enabled = false;
     }
 
     bool isFreeLookCamera()
