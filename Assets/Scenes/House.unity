@@ -671,7 +671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &197710867
 Transform:
   m_ObjectHideFlags: 0
@@ -749,8 +749,8 @@ MonoBehaviour:
       m_LegacyVelocityFilterStrength: -1
   m_YAxisRecentering:
     m_enabled: 0
-    m_WaitTime: 1
-    m_RecenteringTime: 2
+    m_WaitTime: 0.3
+    m_RecenteringTime: 0.8
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
@@ -777,8 +777,8 @@ MonoBehaviour:
     m_Bias: 0
   m_RecenterToTargetHeading:
     m_enabled: 0
-    m_WaitTime: 1
-    m_RecenteringTime: 2
+    m_WaitTime: 0.3
+    m_RecenteringTime: 0.8
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_BindingMode: 4
@@ -927,37 +927,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240141777}
   m_CullTransparentMesh: 1
---- !u!1 &285809343
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 285809344}
-  m_Layer: 0
-  m_Name: RenewCamPos
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &285809344
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285809343}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.020819765, y: 0.000000032910677, z: -6.8534106e-10, w: 0.9997833}
-  m_LocalPosition: {x: 0, y: 0.77, z: -3.42}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 883905031}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290596003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290596003}
   serializedVersion: 2
-  m_LocalRotation: {x: -5.8788324e-10, y: 0.99984074, z: -0.017848628, w: -0.000000032931922}
+  m_LocalRotation: {x: -5.883617e-10, y: 0.99984074, z: -0.017848628, w: -0.000000032958724}
   m_LocalPosition: {x: -18.78, y: 3.92, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1105,7 +1074,6 @@ MonoBehaviour:
   bedPos: {fileID: 486215516}
   bookcasePos: {fileID: 1611748570}
   showcasePos: {fileID: 937808342}
-  renewPos: {fileID: 285809344}
   _moveTime: 5
 --- !u!1 &311362476
 GameObject:
@@ -2166,7 +2134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531467955}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000014901161, y: 0.000000047933504, z: -0.000000001711912, w: 1}
+  m_LocalRotation: {x: 0.000000024214387, y: 0.000000046897448, z: -0.0000000016749079, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2884,7 +2852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721745899}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11075608, y: 0.000000030541344, z: 0.0000000023036473, w: 0.99384767}
+  m_LocalRotation: {x: -0.11075604, y: 0.000000025441132, z: 0.0000000019189537, w: 0.99384767}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3694,7 +3662,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2091838677}
-  - {fileID: 285809344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &883905032
@@ -4542,7 +4509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122881270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08758473, y: 0.000000033805073, z: -0.000000004192721, w: 0.9961571}
+  m_LocalRotation: {x: 0.087584764, y: 0.00000003311962, z: -0.000000004107706, w: 0.9961571}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
