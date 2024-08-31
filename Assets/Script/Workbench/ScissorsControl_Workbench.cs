@@ -81,6 +81,14 @@ public class ScissorsControl_Workbench : MonoBehaviour
                 {
                     _cutPoint = 4;
                 }
+                else if (other.gameObject.name == "ColliderA")
+                {
+                    _cutPoint = 1;
+                }
+                else if (other.gameObject.name == "ColliderB")
+                {
+                    _cutPoint = 1;
+                }
             }
             if (other.tag == "Paper")
             {
@@ -109,7 +117,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
                 switch (_cutPoint)
                 {
                     case 1:
-                        if (other.gameObject.name == "11_Out1")
+                        if (other.gameObject.name == /*"11_Out1"*/"ColliderB")
                             WorkbenchControl_House.isFinishCut = true;
                         break;
 
