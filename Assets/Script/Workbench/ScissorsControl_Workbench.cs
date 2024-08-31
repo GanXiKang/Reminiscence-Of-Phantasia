@@ -28,7 +28,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
         if (WorkbenchControl_House._process == 2)
         {
             ScissorsMove();
-            ColliderBoolController();
 
             Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -0.5f);
             if (Input.GetMouseButtonDown(0))
@@ -62,18 +61,8 @@ public class ScissorsControl_Workbench : MonoBehaviour
             Destroy(line[i]);
         }
         line.Clear();
-    }
-    void ColliderBoolController()
-    {
-        if (isColliderA || isColliderB)
-        {
-            if (!isUseScissors)
-            {
-                print("Yes");
-                isColliderA = false;
-                isColliderB = false;
-            }
-        }
+        isColliderA = false;
+        isColliderB = false;
     }
 
     private void OnTriggerEnter(Collider other)
