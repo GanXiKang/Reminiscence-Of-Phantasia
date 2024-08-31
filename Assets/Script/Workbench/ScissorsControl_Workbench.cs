@@ -115,6 +115,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
                 isUseScissors = false;
                 Invoke("ClearLine", 0.2f);
             }
+            print(_cutPoint);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -188,6 +189,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         }
                         break;
                 }
+                print(_cutPoint);
             }
         }
     }
