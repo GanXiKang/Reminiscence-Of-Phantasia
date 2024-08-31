@@ -69,22 +69,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             if (other.tag == "PaperOut")
             {
-                //if (other.gameObject.name == "11_Out1")
-                //{
-                //    _cutPoint = 1;
-                //}
-                //else if (other.gameObject.name == "11_Out2")
-                //{
-                //    _cutPoint = 2;
-                //}
-                //else if (other.gameObject.name == "11_Out3")
-                //{
-                //    _cutPoint = 3;
-                //}
-                //else if (other.gameObject.name == "11_Out4")
-                //{
-                //    _cutPoint = 4;
-                //}
                 if (other.gameObject.name == "ColliderA_1")
                 {
                     _cutPoint = 1;
@@ -93,6 +77,36 @@ public class ScissorsControl_Workbench : MonoBehaviour
                 else if (other.gameObject.name == "ColliderB_1")
                 {
                     _cutPoint = 1;
+                    isColliderB = true;
+                }
+                else if (other.gameObject.name == "ColliderA_2")
+                {
+                    _cutPoint = 2;
+                    isColliderA = true;
+                }
+                else if (other.gameObject.name == "ColliderB_2")
+                {
+                    _cutPoint = 2;
+                    isColliderB = true;
+                }
+                else if (other.gameObject.name == "ColliderA_3")
+                {
+                    _cutPoint = 3;
+                    isColliderA = true;
+                }
+                else if (other.gameObject.name == "ColliderB_3")
+                {
+                    _cutPoint = 3;
+                    isColliderB = true;
+                }
+                else if (other.gameObject.name == "ColliderA_4")
+                {
+                    _cutPoint = 4;
+                    isColliderA = true;
+                }
+                else if (other.gameObject.name == "ColliderB_4")
+                {
+                    _cutPoint = 4;
                     isColliderB = true;
                 }
             }
@@ -136,18 +150,42 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         break;
 
                     case 2:
-                        if (other.gameObject.name == "11_Out2")
+                        if (other.gameObject.name == "ColliderA_2" && isColliderB)
+                        {
                             WorkbenchControl_House.isFinishCut = true;
+                            isColliderB = false;
+                        }
+                        else if (other.gameObject.name == "ColliderB_2" && isColliderA)
+                        {
+                            WorkbenchControl_House.isFinishCut = true;
+                            isColliderA = false;
+                        }
                         break;
 
                     case 3:
-                        if (other.gameObject.name == "11_Out3")
+                        if (other.gameObject.name == "ColliderA_3" && isColliderB)
+                        {
                             WorkbenchControl_House.isFinishCut = true;
+                            isColliderB = false;
+                        }
+                        else if (other.gameObject.name == "ColliderB_3" && isColliderA)
+                        {
+                            WorkbenchControl_House.isFinishCut = true;
+                            isColliderA = false;
+                        }
                         break;
 
                     case 4:
-                        if (other.gameObject.name == "11_Out4")
+                        if (other.gameObject.name == "ColliderA_4" && isColliderB)
+                        {
                             WorkbenchControl_House.isFinishCut = true;
+                            isColliderB = false;
+                        }
+                        else if (other.gameObject.name == "ColliderB_4" && isColliderA)
+                        {
+                            WorkbenchControl_House.isFinishCut = true;
+                            isColliderA = false;
+                        }
                         break;
                 }
             }
