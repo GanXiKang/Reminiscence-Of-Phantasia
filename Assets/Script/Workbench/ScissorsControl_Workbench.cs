@@ -113,7 +113,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         _cutPoint = 4;
                         isColliderB = true;
                     }
-                    print(_cutPoint);
+                    print(_cutPoint + "In");
                 }
             }
             if (other.tag == "Paper")
@@ -194,7 +194,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         }
                         break;
                 }
-                print(_cutPoint);
+                print(_cutPoint + "Out");
             }
         }
     }
