@@ -145,12 +145,16 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         if (other.gameObject.name == "ColliderA_1" && isColliderB)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderB = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         else if (other.gameObject.name == "ColliderB_1" && isColliderA)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderA = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         break;
 
@@ -158,12 +162,16 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         if (other.gameObject.name == "ColliderA_2" && isColliderB)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderB = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         else if (other.gameObject.name == "ColliderB_2" && isColliderA)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderA = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         break;
 
@@ -171,12 +179,16 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         if (other.gameObject.name == "ColliderA_3" && isColliderB)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderB = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         else if (other.gameObject.name == "ColliderB_3" && isColliderA)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderA = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         break;
 
@@ -184,12 +196,16 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         if (other.gameObject.name == "ColliderA_4" && isColliderB)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderB = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         else if (other.gameObject.name == "ColliderB_4" && isColliderA)
                         {
                             WorkbenchControl_House.isFinishCut = true;
+                            isUseScissors = false;
                             isColliderA = false;
+                            Invoke("ClearLine", 0.2f);
                         }
                         break;
                 }
