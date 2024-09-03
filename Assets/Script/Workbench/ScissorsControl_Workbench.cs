@@ -47,6 +47,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             {
                 line[line.Count - 1].transform.position = scissorsPos;
                 line[line.Count - 1].transform.rotation = paper.rotation;
+                print(line[line.Count - 1].transform.rotation);
             }
         }
     }
