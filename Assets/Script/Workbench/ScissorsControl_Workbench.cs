@@ -46,8 +46,10 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (isUseScissors)
             {
                 line[line.Count - 1].transform.position = scissorsPos;
-                line[line.Count - 1].transform.rotation = paper.rotation;
-                print(line[line.Count - 1].transform.rotation);
+            }
+            foreach (GameObject lineRot in line)
+            {
+                lineRot.transform.rotation = paper.rotation;
             }
         }
     }
