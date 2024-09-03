@@ -50,6 +50,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             foreach (GameObject lineRot in line)
             {
                 lineRot.transform.rotation = paper.rotation;
+                print("OK");
             }
         }
     }
