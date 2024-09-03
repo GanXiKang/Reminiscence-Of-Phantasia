@@ -6,7 +6,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
 {
     //Mouse
     float mouseY, mouseX;
-    float _moveSpeed = 100f;
+    float _moveSpeed = 120f;
     float newY, newX;
     float minY = -3f, maxY = 5f;
     float minX = 1f, maxX = 8f;
@@ -33,7 +33,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
-                line.Add(Instantiate(scissorsLine, scissorsPos, transform.rotation, this.transform));
+                line.Add(Instantiate(/*scissorsLine,*/ scissorsPos, transform.rotation, this.transform));
             }
             if (Input.GetMouseButtonUp(0))
             {
