@@ -23,6 +23,9 @@ public class ScissorsControl_Workbench : MonoBehaviour
     public GameObject scissorsLine;
     List<GameObject> line = new List<GameObject>(0);
 
+    [Header("Paper")]
+    public Transform paper;
+
     void Update()
     {
         if (WorkbenchControl_House._process == 2)
@@ -33,7 +36,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
-                line.Add(Instantiate(/*scissorsLine,*/ scissorsPos, transform.rotation, this.transform));
+                line.Add(Instantiate(scissorsLine, scissorsPos, paper.rotation, paper));
             }
             if (Input.GetMouseButtonUp(0))
             {
@@ -43,6 +46,10 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (isUseScissors)
             {
                 line[line.Count - 1].transform.position = scissorsPos;
+                foreach (GameObject line in line)
+                {
+                    line.transform.rotation = paper.rotation;
+                }
             }
         }
     }
