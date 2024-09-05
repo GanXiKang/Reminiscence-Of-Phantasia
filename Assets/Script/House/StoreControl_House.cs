@@ -5,9 +5,7 @@ using UnityEngine;
 public class StoreControl_House : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject storeUI;
-    public GameObject homeUI;
-    public GameObject contentUI;
+    public GameObject[] storeUI;
 
     void Start()
     {

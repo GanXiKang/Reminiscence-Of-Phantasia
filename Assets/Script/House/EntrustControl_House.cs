@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class EntrustControl_House : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject entrustUI;
-    public GameObject letterUI;
-    public GameObject contentUI;
+    public GameObject[] entrustUI;
         
     void Start()
     {
