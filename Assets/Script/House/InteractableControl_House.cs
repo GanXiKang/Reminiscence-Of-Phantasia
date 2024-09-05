@@ -84,5 +84,13 @@ public class InteractableControl_House : MonoBehaviour
     void DoorLoadingUI()
     {
         DoorControl_House.isLoading = false;
+        if (DoorControl_House.isBrid)
+        {
+            EntrustControl_House.isEntrustActive = true;
+        }
+        else if (DoorControl_House.isCat)
+        {
+            StoreControl_House.isStoreActive = true;
+        }
     }
 }
