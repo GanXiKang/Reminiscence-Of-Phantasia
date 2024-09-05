@@ -6878,6 +6878,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1065493212}
   - component: {fileID: 1065493213}
+  - component: {fileID: 1065493215}
+  - component: {fileID: 1065493214}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -6898,8 +6900,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1168015852}
-  - {fileID: 971938935}
   - {fileID: 1537792528}
+  - {fileID: 971938935}
   - {fileID: 367068358}
   - {fileID: 574399487}
   - {fileID: 812698998}
@@ -6931,6 +6933,30 @@ MonoBehaviour:
   blackScreen: {fileID: 574399486}
   panel: {fileID: 1305425837}
   _screenSpeed: 3
+--- !u!114 &1065493214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065493211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5589c88e945c7d941b9edd662e2de4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1065493215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065493211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96e1bd1a3e81c94c8a392206eda2b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1075027521
 GameObject:
   m_ObjectHideFlags: 0
