@@ -28,6 +28,10 @@ public class EntrustControl_House : MonoBehaviour
             {
                 entrustUI[0].GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
             }
+            else
+            {
+                isLetterActive = true;
+            }
         }
         else
         {
