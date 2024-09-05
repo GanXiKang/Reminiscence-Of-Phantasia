@@ -24,10 +24,14 @@ public class EntrustControl_House : MonoBehaviour
 
         if (isEntrustActive)
         {
-
+            if (entrustUI[0].GetComponent<RectTransform>().localScale.x < 1)
+            {
+                entrustUI[0].GetComponent<RectTransform>().localScale += new Vector3(1f, 1f, 0f) * Time.deltaTime;
+            }
         }
         else
         {
+            entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
             isLetterActive = false;
             isContentActive = false;
         }
