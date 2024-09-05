@@ -45,4 +45,10 @@ public class StoreControl_House : MonoBehaviour
             isContentActive = false;
         }
     }
+
+    public void Button_Product(int _product)
+    {
+        isHomePageActive = false;
+        isContentActive = true;
+    }
 }

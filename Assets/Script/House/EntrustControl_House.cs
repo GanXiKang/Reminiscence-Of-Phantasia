@@ -45,4 +45,10 @@ public class EntrustControl_House : MonoBehaviour
             isContentActive = false;
         }
     }
+
+    public void Button_Letter(int _letter)
+    {
+        isLetterActive = false;
+        isContentActive = true;
+    }
 }
