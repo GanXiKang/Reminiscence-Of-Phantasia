@@ -18,7 +18,13 @@ public class DoorControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            print("OK");
+            isBrid = true;
+            isCat = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            isCat = true;
+            isBrid = false;
         }
     }
 
