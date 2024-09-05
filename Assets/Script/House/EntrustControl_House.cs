@@ -11,11 +11,6 @@ public class EntrustControl_House : MonoBehaviour
     bool isLetterActive = false;
     bool isContentActive = false;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         entrustUI[0].SetActive(isEntrustActive);

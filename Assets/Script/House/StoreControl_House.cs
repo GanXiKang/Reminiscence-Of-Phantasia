@@ -11,11 +11,6 @@ public class StoreControl_House : MonoBehaviour
     bool isHomePageActive = false;
     bool isContentActive = false;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         storeUI[0].SetActive(isStoreActive);
