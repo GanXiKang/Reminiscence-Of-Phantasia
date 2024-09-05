@@ -48,8 +48,8 @@ public class EntrustControl_House : MonoBehaviour
                 {
                     isLetterActive = true;
                     StartCoroutine(AnimateButton(letterButton[1], 0f));
-                    StartCoroutine(AnimateButton(letterButton[2], 0.3f));
-                    StartCoroutine(AnimateButton(letterButton[3], 0.6f));
+                    StartCoroutine(AnimateButton(letterButton[2], 0.4f));
+                    StartCoroutine(AnimateButton(letterButton[3], 0.8f));
                 }
             }
         }
