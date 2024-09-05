@@ -31,7 +31,7 @@ public class EntrustControl_House : MonoBehaviour
         {
             letterButton[i].GetComponent<CanvasGroup>().alpha = 0;
             RectTransform rect = letterButton[i].GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(10f, rect.anchoredPosition.y);
+            rect.anchoredPosition = new Vector2(6f, rect.anchoredPosition.y);
         }
     }
     void OpenUI()
@@ -48,8 +48,8 @@ public class EntrustControl_House : MonoBehaviour
                 {
                     isLetterActive = true;
                     StartCoroutine(AnimateButton(letterButton[1], 0f));
-                    StartCoroutine(AnimateButton(letterButton[2], 0.2f));
-                    StartCoroutine(AnimateButton(letterButton[3], 0.4f));
+                    StartCoroutine(AnimateButton(letterButton[2], 0.3f));
+                    StartCoroutine(AnimateButton(letterButton[3], 0.6f));
                 }
             }
         }
