@@ -7,7 +7,8 @@ public class DoorControl_House : MonoBehaviour
     [Header("LoadingVideo")]
     public GameObject loadingUI;
     public static bool isLoading = false;
-
+    public static bool isBrid = false;
+    public static bool isCat = false;
 
     void Update()
     {
