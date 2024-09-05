@@ -19,6 +19,8 @@ public class EntrustControl_House : MonoBehaviour
 
     void Update()
     {
-        
+        entrustUI[0].SetActive(isEntrustActive);
+        entrustUI[1].SetActive(isLetterActive);
+        entrustUI[2].SetActive(isContentActive);
     }
 }

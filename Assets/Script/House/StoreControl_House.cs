@@ -18,6 +18,8 @@ public class StoreControl_House : MonoBehaviour
 
     void Update()
     {
-        
+        storeUI[0].SetActive(isStoreActive);
+        storeUI[1].SetActive(isHomePageActive);
+        storeUI[2].SetActive(isContentActive);
     }
 }
