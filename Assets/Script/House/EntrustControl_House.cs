@@ -77,7 +77,7 @@ public class EntrustControl_House : MonoBehaviour
 
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
-        Vector2 endPosition = new Vector2(1f, startPosition.y);
+        Vector2 endPosition = new Vector2(0f, startPosition.y);
 
         while (_timeElapsed < 2f)
         {
