@@ -30,7 +30,10 @@ public class EntrustControl_House : MonoBehaviour
             }
             else
             {
-                isLetterActive = true;
+                if (!isLetterActive && !isContentActive)
+                {
+                    isLetterActive = true;
+                }
             }
         }
         else
@@ -43,7 +46,7 @@ public class EntrustControl_House : MonoBehaviour
 
     public void Button_Letter(int _letter)
     {
-        isLetterActive = false;
         isContentActive = true;
+        isLetterActive = false;
     }
 }

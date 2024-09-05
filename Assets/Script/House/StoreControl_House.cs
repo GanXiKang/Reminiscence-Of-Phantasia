@@ -30,6 +30,7 @@ public class StoreControl_House : MonoBehaviour
             }
             else
             {
+                if(!isHomePageActive && !isContentActive)
                 isHomePageActive = true;
             }
         }
@@ -43,7 +44,7 @@ public class StoreControl_House : MonoBehaviour
 
     public void Button_Product(int _product)
     {
-        isHomePageActive = false;
         isContentActive = true;
+        isHomePageActive = false; 
     }
 }
