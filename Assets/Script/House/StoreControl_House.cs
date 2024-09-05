@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class StoreControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("UI")]
+    public GameObject storeUI;
+    public GameObject homeUI;
+    public GameObject contentUI;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
