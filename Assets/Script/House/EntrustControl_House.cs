@@ -7,6 +7,7 @@ public class EntrustControl_House : MonoBehaviour
 {
     [Header("UI")]
     public GameObject[] entrustUI;
+    public Button[] letterButton;
     public static bool isEntrustActive = false;
     bool isLetterActive = false;
     bool isContentActive = false;
