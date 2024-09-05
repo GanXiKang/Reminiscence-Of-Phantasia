@@ -47,9 +47,9 @@ public class EntrustControl_House : MonoBehaviour
                 if (!isLetterActive && !isContentActive)
                 {
                     isLetterActive = true;
-                    AnimateButton(letterButton[1], 0f);
-                    AnimateButton(letterButton[2], 0.2f);
-                    AnimateButton(letterButton[3], 0.4f);
+                    StartCoroutine(AnimateButton(letterButton[1], 0f));
+                    StartCoroutine(AnimateButton(letterButton[2], 0.2f));
+                    StartCoroutine(AnimateButton(letterButton[3], 0.4f));
                 }
             }
         }
@@ -70,7 +70,6 @@ public class EntrustControl_House : MonoBehaviour
 
     IEnumerator AnimateButton(Button button, float delay)
     {
-        print("OK");
         yield return new WaitForSeconds(delay);
 
         CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
