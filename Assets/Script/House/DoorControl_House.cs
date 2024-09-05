@@ -14,7 +14,12 @@ public class DoorControl_House : MonoBehaviour
     {
         loadingUI.SetActive(isLoading);
 
-        Leave(); 
+        Leave();
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            print("OK");
+        }
     }
 
     void Leave()
