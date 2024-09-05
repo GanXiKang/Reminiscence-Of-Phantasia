@@ -26,7 +26,7 @@ public class EntrustControl_House : MonoBehaviour
         {
             if (entrustUI[0].GetComponent<RectTransform>().localScale.x < 1)
             {
-                entrustUI[0].GetComponent<RectTransform>().localScale += new Vector3(1f, 1f, 0f) * Time.deltaTime;
+                entrustUI[0].GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
             }
         }
         else
