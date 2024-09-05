@@ -8,13 +8,12 @@ public class EntrustControl_House : MonoBehaviour
     [Header("UI")]
     public GameObject[] entrustUI;
     public static bool isEntrustActive = false;
-    bool isLetterActive;
-    bool isContentActive;
+    bool isLetterActive = false;
+    bool isContentActive = false;
 
     void Start()
     {
-        isLetterActive = false;
-        isContentActive = false;
+
     }
 
     void Update()
@@ -22,5 +21,15 @@ public class EntrustControl_House : MonoBehaviour
         entrustUI[0].SetActive(isEntrustActive);
         entrustUI[1].SetActive(isLetterActive);
         entrustUI[2].SetActive(isContentActive);
+
+        if (isEntrustActive)
+        {
+
+        }
+        else
+        {
+            isLetterActive = false;
+            isContentActive = false;
+        }
     }
 }

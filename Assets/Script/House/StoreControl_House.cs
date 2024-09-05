@@ -7,13 +7,12 @@ public class StoreControl_House : MonoBehaviour
     [Header("UI")]
     public GameObject[] storeUI;
     public static bool isStoreActive = false;
-    bool isHomePageActive;
-    bool isContentActive;
+    bool isHomePageActive = false;
+    bool isContentActive = false;
 
     void Start()
     {
-        isHomePageActive = false;
-        isContentActive = false;
+
     }
 
     void Update()
@@ -21,5 +20,15 @@ public class StoreControl_House : MonoBehaviour
         storeUI[0].SetActive(isStoreActive);
         storeUI[1].SetActive(isHomePageActive);
         storeUI[2].SetActive(isContentActive);
+
+        if (isStoreActive)
+        {
+
+        }
+        else 
+        {
+            isHomePageActive = false;
+            isContentActive = false;
+        }
     }
 }
