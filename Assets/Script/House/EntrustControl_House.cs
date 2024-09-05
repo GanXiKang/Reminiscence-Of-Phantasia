@@ -22,6 +22,11 @@ public class EntrustControl_House : MonoBehaviour
         entrustUI[1].SetActive(isLetterActive);
         entrustUI[2].SetActive(isContentActive);
 
+        OpenUI();
+    }
+
+    void OpenUI()
+    {
         if (isEntrustActive)
         {
             if (entrustUI[0].GetComponent<RectTransform>().localScale.x < 1)
