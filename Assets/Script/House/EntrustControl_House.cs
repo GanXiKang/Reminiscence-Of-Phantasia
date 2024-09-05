@@ -12,6 +12,10 @@ public class EntrustControl_House : MonoBehaviour
     bool isLetterActive = false;
     bool isContentActive = false;
 
+    private void Start()
+    {
+        LetterButtonInitialState();
+    }
     void Update()
     {
         entrustUI[0].SetActive(isEntrustActive);
@@ -21,6 +25,15 @@ public class EntrustControl_House : MonoBehaviour
         OpenUI();
     }
 
+    void LetterButtonInitialState()
+    {
+        for (int i = 1; i < letterButton.Length; i++)
+        {
+            letterButton[i].GetComponent<CanvasGroup>().alpha = 0;
+            RectTransform rect = letterButton[i].GetComponent<RectTransform>();
+            rect.anchoredPosition = new Vector2(10f, rect.anchoredPosition.y);
+        }
+    }
     void OpenUI()
     {
         if (isEntrustActive)
@@ -45,6 +58,7 @@ public class EntrustControl_House : MonoBehaviour
             entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
             isLetterActive = false;
             isContentActive = false;
+            LetterButtonInitialState();
         }
     }
 
