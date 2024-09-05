@@ -70,7 +70,8 @@ public class EntrustControl_House : MonoBehaviour
 
     IEnumerator AnimateButton(Button button, float delay)
     {
-        yield return new WaitForSeconds(delay);  // ÑÓßté_Ê¼„Ó®‹
+        print("OK");
+        yield return new WaitForSeconds(delay);
 
         CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
         RectTransform rect = button.GetComponent<RectTransform>();
