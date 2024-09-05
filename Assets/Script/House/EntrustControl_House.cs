@@ -34,6 +34,9 @@ public class EntrustControl_House : MonoBehaviour
                 if (!isLetterActive && !isContentActive)
                 {
                     isLetterActive = true;
+                    AnimateButton(letterButton[1], 0f);
+                    AnimateButton(letterButton[2], 0.2f);
+                    AnimateButton(letterButton[3], 0.4f);
                 }
             }
         }
@@ -49,5 +52,30 @@ public class EntrustControl_House : MonoBehaviour
     {
         isContentActive = true;
         isLetterActive = false;
+    }
+
+    IEnumerator AnimateButton(Button button, float delay)
+    {
+        yield return new WaitForSeconds(delay);  // ÑÓßté_Ê¼„Ó®‹
+
+        CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
+        RectTransform rect = button.GetComponent<RectTransform>();
+
+        float _timeElapsed = 0f;
+        Vector2 startPosition = rect.anchoredPosition;
+        Vector2 endPosition = new Vector2(1f, startPosition.y);
+
+        while (_timeElapsed < 2f)
+        {
+            _timeElapsed += Time.deltaTime;
+            float t = _timeElapsed / 2f;
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
+            rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1f;
+        rect.anchoredPosition = endPosition;
     }
 }
