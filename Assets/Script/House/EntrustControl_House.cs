@@ -49,17 +49,18 @@ public class EntrustControl_House : MonoBehaviour
             if (!isDeliverActive && !isReceiveActive && !isContentActive)
             {
                 isDeliverActive = true;
-                StartCoroutine(AnimateButton(deliverButton[1], 0f));
-                StartCoroutine(AnimateButton(deliverButton[2], 0.4f));
-                StartCoroutine(AnimateButton(deliverButton[3], 0.8f));
+                StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f));
+                StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f));
+                StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f));
             }
         }
     }
 
     public void Button_Deliver(int _letter)
     {
-        isReceiveActive = true;
-        isDeliverActive = false;
+        StartCoroutine(AnimateButtonDisappear(deliverButton[3], 0f));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[2], 0.4f));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[1], 0.8f));
     }
     public void Button_Receive()
     {
@@ -87,7 +88,7 @@ public class EntrustControl_House : MonoBehaviour
         DeliverButtonInitialState();
     }
 
-    IEnumerator AnimateButton(Button button, float delay)
+    IEnumerator AnimateButtonAppear(Button button, float delay)
     {
         yield return new WaitForSeconds(delay);
 
@@ -110,5 +111,31 @@ public class EntrustControl_House : MonoBehaviour
 
         canvasGroup.alpha = 1f;
         rect.anchoredPosition = endPosition;
+    }
+    IEnumerator AnimateButtonDisappear(Button button, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
+        RectTransform rect = button.GetComponent<RectTransform>();
+
+        float _timeElapsed = 0f;
+        Vector2 startPosition = rect.anchoredPosition;
+        Vector2 endPosition = new Vector2(6f, startPosition.y);
+
+        while (_timeElapsed < 2f)
+        {
+            _timeElapsed += Time.deltaTime;
+            float t = _timeElapsed / 2f;
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
+            rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f;
+        rect.anchoredPosition = endPosition;
+        isReceiveActive = true;
+        isDeliverActive = false;
     }
 }
