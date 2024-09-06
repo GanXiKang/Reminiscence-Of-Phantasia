@@ -10,7 +10,8 @@ public class EntrustControl_House : MonoBehaviour
     public Button[] deliverButton;
     public static bool isEntrustActive = false;
     bool isDeliverActive = false;
-    bool isContentActive = false;
+    bool isReceiveActive = false;
+
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         entrustUI[0].SetActive(isEntrustActive);
         entrustUI[1].SetActive(isDeliverActive);
-        entrustUI[2].SetActive(isContentActive);
+        entrustUI[2].SetActive(isReceiveActive);
 
         OpenUI();
     }
@@ -44,7 +45,7 @@ public class EntrustControl_House : MonoBehaviour
             }
             else
             {
-                if (!isDeliverActive && !isContentActive)
+                if (!isDeliverActive && !isReceiveActive)
                 {
                     isDeliverActive = true;
                     StartCoroutine(AnimateButton(deliverButton[1], 0f));
@@ -57,14 +58,14 @@ public class EntrustControl_House : MonoBehaviour
         {
             entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
             isDeliverActive = false;
-            isContentActive = false;
+            isReceiveActive = false;
             DeliverButtonInitialState();
         }
     }
 
     public void Button_Deliver(int _letter)
     {
-        isContentActive = true;
+        isReceiveActive = true;
         isDeliverActive = false;
     }
     public void Button_Receive()
