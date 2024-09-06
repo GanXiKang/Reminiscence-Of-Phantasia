@@ -71,13 +71,25 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Back()
     {
-        isDeliverActive = true;
-        isReceiveActive = false;
+        if (isReceiveActive)
+        {
+            isDeliverActive = true;
+            isReceiveActive = false;
+        }
+        else if (isContentActive)
+        {
+            isReceiveActive = true;
+            isContentActive = false;
+        }
     }
     public void Button_Letter()
     {
         isContentActive = true;
         isReceiveActive = false;
+    }
+    public void Button_Content()
+    {
+        
     }
     public void Button_Leave()
     {
