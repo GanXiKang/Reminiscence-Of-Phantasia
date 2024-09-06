@@ -158,8 +158,6 @@ public class EntrustControl_House : MonoBehaviour
             yield return null;
         }
 
-        isReceiveActive = true;
-        isDeliverActive = false;
         canvasGroup.alpha = 0f;
         if (isShouldMove)
         {
@@ -167,27 +165,28 @@ public class EntrustControl_House : MonoBehaviour
         }
         else
         {
+            yield return new WaitForSeconds(1f);
             StartCoroutine(AnimateReceiveAppear());
+            isReceiveActive = true;
+            isDeliverActive = false;
         }
     }
     IEnumerator AnimateReceiveAppear()
     {
-        yield return new WaitForSeconds(1f);
-
         CanvasGroup canvasGroup = entrustUI[2].GetComponent<CanvasGroup>();
         RectTransform rect = entrustUI[2].GetComponent<RectTransform>();
 
-        Vector3 startScale = new Vector3(0.5f, 0.5f, 1f);
+        Vector3 startScale = new Vector3(0.7f, 0.7f, 1f);
         Vector3 targetScale = new Vector3(1f, 1f, 1f);
 
         float _timeElapsed = 0f;
         canvasGroup.alpha = 0;
         rect.localScale = startScale;
 
-        while (_timeElapsed < 1f)
+        while (_timeElapsed < 0.8f)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 1f;
+            float t = _timeElapsed / 0.8f;
             rect.localScale = Vector3.Lerp(startScale, targetScale, t);
             canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
 
