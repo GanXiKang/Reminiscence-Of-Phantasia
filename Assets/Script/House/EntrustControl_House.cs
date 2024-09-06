@@ -49,9 +49,9 @@ public class EntrustControl_House : MonoBehaviour
             if (!isDeliverActive && !isReceiveActive && !isContentActive)
             {
                 isDeliverActive = true;
-                //StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f));
-                //StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f));
-                //StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f));
+                StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f));
+                StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f));
+                StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f));
             }
         }
     }
@@ -110,6 +110,7 @@ public class EntrustControl_House : MonoBehaviour
         }
 
         canvasGroup.alpha = 1f;
+        button.GetComponent<CanvasGroup>().interactable = true;
         rect.anchoredPosition = endPosition;
     }
     IEnumerator AnimateButtonDisappear(Button button, float delay)
@@ -122,6 +123,7 @@ public class EntrustControl_House : MonoBehaviour
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
         Vector2 endPosition = new Vector2(6f, startPosition.y);
+        button.GetComponent<CanvasGroup>().interactable = false;
 
         while (_timeElapsed < 2f)
         {
