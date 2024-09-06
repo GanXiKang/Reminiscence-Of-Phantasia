@@ -38,26 +38,21 @@ public class EntrustControl_House : MonoBehaviour
     }
     void OpenUI()
     {
-        if (isEntrustActive)
+        if (!isEntrustActive) return;
+
+        if (entrustUI[0].GetComponent<RectTransform>().localScale.x < 1)
         {
-            if (entrustUI[0].GetComponent<RectTransform>().localScale.x < 1)
-            {
-                entrustUI[0].GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
-            }
-            else
-            {
-                if (!isDeliverActive && !isReceiveActive && !isContentActive)
-                {
-                    isDeliverActive = true;
-                    StartCoroutine(AnimateButton(deliverButton[1], 0f));
-                    StartCoroutine(AnimateButton(deliverButton[2], 0.4f));
-                    StartCoroutine(AnimateButton(deliverButton[3], 0.8f));
-                }
-            }
+            entrustUI[0].GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
         }
         else
         {
-            
+            if (!isDeliverActive && !isReceiveActive && !isContentActive)
+            {
+                isDeliverActive = true;
+                StartCoroutine(AnimateButton(deliverButton[1], 0f));
+                StartCoroutine(AnimateButton(deliverButton[2], 0.4f));
+                StartCoroutine(AnimateButton(deliverButton[3], 0.8f));
+            }
         }
     }
 
