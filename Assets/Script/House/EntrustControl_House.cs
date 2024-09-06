@@ -49,18 +49,20 @@ public class EntrustControl_House : MonoBehaviour
             if (!isDeliverActive && !isReceiveActive && !isContentActive)
             {
                 isDeliverActive = true;
-                StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f));
-                StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f));
-                StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f));
+                StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[0], 1f, false));
             }
         }
     }
 
     public void Button_Deliver(int _letter)
     {
-        StartCoroutine(AnimateButtonDisappear(deliverButton[3], 0f));
-        StartCoroutine(AnimateButtonDisappear(deliverButton[2], 0.4f));
-        StartCoroutine(AnimateButtonDisappear(deliverButton[1], 0.8f));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[0], 0f, false));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[3], 0f, true));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[2], 0.4f, true));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[1], 0.8f, true));
     }
     public void Button_Receive()
     {
@@ -104,16 +106,22 @@ public class EntrustControl_House : MonoBehaviour
             _timeElapsed += Time.deltaTime;
             float t = _timeElapsed / 2f;
             canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
-            rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+            if (isShouldMove)
+            {
+                rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+            }
 
             yield return null;
         }
 
         canvasGroup.alpha = 1f;
         button.GetComponent<CanvasGroup>().interactable = true;
-        rect.anchoredPosition = endPosition;
+        if (isShouldMove)
+        {
+            rect.anchoredPosition = endPosition;
+        }
     }
-    IEnumerator AnimateButtonDisappear(Button button, float delay)
+    IEnumerator AnimateButtonDisappear(Button button, float delay, bool isShouldMove)
     {
         yield return new WaitForSeconds(delay);
 
@@ -130,14 +138,20 @@ public class EntrustControl_House : MonoBehaviour
             _timeElapsed += Time.deltaTime;
             float t = _timeElapsed / 2f;
             canvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
-            rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+            if (isShouldMove)
+            {
+                rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+            }
 
             yield return null;
         }
 
-        canvasGroup.alpha = 0f;
-        rect.anchoredPosition = endPosition;
         isReceiveActive = true;
         isDeliverActive = false;
+        canvasGroup.alpha = 0f;
+        if (isShouldMove)
+        {
+            rect.anchoredPosition = endPosition;
+        }
     }
 }
