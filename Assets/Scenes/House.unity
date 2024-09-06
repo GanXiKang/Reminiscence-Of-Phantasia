@@ -488,7 +488,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1065493215}
         m_TargetAssemblyTypeName: EntrustControl_House, Assembly-CSharp
-        m_MethodName: Button_Letter
+        m_MethodName: Button_Deliver
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4118,7 +4118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632190326}
   m_Layer: 5
-  m_Name: Letter
+  m_Name: LetterDeliver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4228,7 +4228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 637730920}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1065493215}
+        m_TargetAssemblyTypeName: EntrustControl_House, Assembly-CSharp
+        m_MethodName: Button_Receive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &637730920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6668,7 +6680,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1065493215}
         m_TargetAssemblyTypeName: EntrustControl_House, Assembly-CSharp
-        m_MethodName: Button_Letter
+        m_MethodName: Button_Deliver
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7168,7 +7180,8 @@ MonoBehaviour:
   - {fileID: 1537792527}
   - {fileID: 632190325}
   - {fileID: 1703513571}
-  letterButton:
+  - {fileID: 1257752457}
+  deliverButton:
   - {fileID: 0}
   - {fileID: 1110572487}
   - {fileID: 1038554560}
@@ -7525,7 +7538,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1065493215}
         m_TargetAssemblyTypeName: EntrustControl_House, Assembly-CSharp
-        m_MethodName: Button_Letter
+        m_MethodName: Button_Deliver
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8572,7 +8585,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1213071116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1065493215}
+        m_TargetAssemblyTypeName: EntrustControl_House, Assembly-CSharp
+        m_MethodName: Button_Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1213071116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8791,6 +8816,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239638457}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1257752457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1257752458}
+  m_Layer: 5
+  m_Name: LetterContent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1257752458
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257752457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1537792528}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1257755530
 GameObject:
   m_ObjectHideFlags: 0
@@ -9968,6 +10028,7 @@ RectTransform:
   - {fileID: 384198425}
   - {fileID: 632190326}
   - {fileID: 1703513572}
+  - {fileID: 1257752458}
   m_Father: {fileID: 1065493212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
@@ -10130,8 +10191,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1703513572}
+  - component: {fileID: 1703513573}
   m_Layer: 5
-  m_Name: LetterContent
+  m_Name: LetterReceive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10159,6 +10221,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1703513573
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703513571}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1711338608
 GameObject:
   m_ObjectHideFlags: 0
