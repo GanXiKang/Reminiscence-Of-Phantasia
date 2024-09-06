@@ -33,6 +33,7 @@ public class BirdControl_House : MonoBehaviour
         if (isDeliver)
         {
             anim.SetBool("isDeliver", true);
+            anim.SetBool("isDeliver_Close", false);
             isDeliver = false;
         }
         if (isDeliver_Close)
