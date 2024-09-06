@@ -66,15 +66,23 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Receive()
     {
-        isDeliverActive = true;
         isReceiveActive = false;
+        isDeliverActive = true;
+        StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[0], 1f, false));
     }
     public void Button_Back()
     {
         if (isReceiveActive)
         {
-            isDeliverActive = true;
             isReceiveActive = false;
+            isDeliverActive = true;
+            StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[0], 1f, false));
         }
         else if (isContentActive)
         {
