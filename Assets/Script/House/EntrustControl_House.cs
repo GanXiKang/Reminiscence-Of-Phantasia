@@ -11,7 +11,7 @@ public class EntrustControl_House : MonoBehaviour
     public static bool isEntrustActive = false;
     bool isDeliverActive = false;
     bool isReceiveActive = false;
-
+    bool isContentActive = false;
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class EntrustControl_House : MonoBehaviour
         entrustUI[0].SetActive(isEntrustActive);
         entrustUI[1].SetActive(isDeliverActive);
         entrustUI[2].SetActive(isReceiveActive);
+        entrustUI[3].SetActive(isContentActive);
 
         OpenUI();
     }
@@ -45,7 +46,7 @@ public class EntrustControl_House : MonoBehaviour
             }
             else
             {
-                if (!isDeliverActive && !isReceiveActive)
+                if (!isDeliverActive && !isReceiveActive && !isContentActive)
                 {
                     isDeliverActive = true;
                     StartCoroutine(AnimateButton(deliverButton[1], 0f));
@@ -56,10 +57,7 @@ public class EntrustControl_House : MonoBehaviour
         }
         else
         {
-            entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
-            isDeliverActive = false;
-            isReceiveActive = false;
-            DeliverButtonInitialState();
+            
         }
     }
 
@@ -70,15 +68,27 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Receive()
     {
-
+        isDeliverActive = true;
+        isReceiveActive = false;
     }
     public void Button_Back()
     {
-        
+        isDeliverActive = true;
+        isReceiveActive = false;
     }
     public void Button_Letter()
     {
-        
+        isContentActive = true;
+        isReceiveActive = false;
+    }
+    public void Button_Leave()
+    {
+        isEntrustActive = false;
+        isDeliverActive = false;
+        isReceiveActive = false;
+        isContentActive = false;
+        entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+        DeliverButtonInitialState();
     }
 
     IEnumerator AnimateButton(Button button, float delay)
