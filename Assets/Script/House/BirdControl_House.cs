@@ -27,13 +27,11 @@ public class BirdControl_House : MonoBehaviour
     {
         if (isIdle)
         {
-            anim.SetBool("isIdle_In", true);
             anim.SetBool("isIdle", true);
             isIdle = false;
         }
         if (isDeliver)
         {
-            anim.SetBool("isDeliver_Open", true);
             anim.SetBool("isDeliver", true);
             isDeliver = false;
         }
@@ -53,7 +51,6 @@ public class BirdControl_House : MonoBehaviour
         {
             anim.SetBool("isBye", true);
             anim.SetBool("isIdle_Out", true);
-            anim.SetBool("isIdle_In", false);
             anim.SetBool("isIdle", false);
             Invoke("FalseAnimationisBye", 1f);
             isBye = false;
