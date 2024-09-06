@@ -88,7 +88,7 @@ public class EntrustControl_House : MonoBehaviour
         DeliverButtonInitialState();
     }
 
-    IEnumerator AnimateButtonAppear(Button button, float delay)
+    IEnumerator AnimateButtonAppear(Button button, float delay, bool isShouldMove)
     {
         yield return new WaitForSeconds(delay);
 
