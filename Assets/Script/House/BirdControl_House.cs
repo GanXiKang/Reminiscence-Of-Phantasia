@@ -21,6 +21,11 @@ public class BirdControl_House : MonoBehaviour
     
     void Update()
     {
+        Animation();
+    }
+
+    void Animation()
+    {
         
     }
 }
