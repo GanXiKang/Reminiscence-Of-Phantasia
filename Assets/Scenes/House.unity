@@ -9248,7 +9248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingUI: {fileID: 872759458}
   door: {fileID: 381688775}
-  bird: {fileID: 0}
+  bird: {fileID: 1524440274}
 --- !u!1 &1305425835
 GameObject:
   m_ObjectHideFlags: 0
@@ -9927,6 +9927,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512002204}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1524440274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2572b5da851129f4aae01fb18fda977f, type: 3}
+  m_PrefabInstance: {fileID: 1174757745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1524440276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2572b5da851129f4aae01fb18fda977f, type: 3}
