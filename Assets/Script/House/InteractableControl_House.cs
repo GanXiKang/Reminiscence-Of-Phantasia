@@ -84,7 +84,7 @@ public class InteractableControl_House : MonoBehaviour
     void DoorLoadingUI()
     {
         DoorControl_House.isLoading = false;
-        DoorControl_House.isDoorActive = false;
+        DoorControl_House.isDoorMesh = false;
         if (DoorControl_House.isBird)
         {
             EntrustControl_House.isEntrustActive = true;
