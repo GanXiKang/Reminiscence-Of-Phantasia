@@ -87,7 +87,7 @@ public class EntrustControl_House : MonoBehaviour
         isContentActive = true;
         isReceiveActive = false;
     }
-    public void Button_Content()
+    public void Button_Open()
     {
         
     }
