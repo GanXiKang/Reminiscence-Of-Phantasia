@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class DoorControl_House : MonoBehaviour
 {
+    [Header("Door")]
+    public GameObject door;
+    public static bool isLeave = false;
+
     [Header("LoadingVideo")]
     public GameObject loadingUI;
-    public GameObject door;
     public static bool isLoading = false;
-    public static bool isBird = false;
-    public static bool isCat = false;
-    public static bool isDoorActive = true;
 
     [Header("Animals")]
     public GameObject bird;
     //public GameObject cat;
+    public static bool isBird = false;
+    public static bool isCat = false;
+
+    //ï∫ïr
+    public static bool isDoorMesh = true;
 
     void Update()
     {
         loadingUI.SetActive(isLoading);
-        door.GetComponent<MeshRenderer>().enabled = isDoorActive;
+        door.GetComponent<MeshRenderer>().enabled = isDoorMesh;
 
         Leave();
         //úy‘á
@@ -41,7 +46,7 @@ public class DoorControl_House : MonoBehaviour
     {
         if (CameraControl_House.isLookDoor)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (isLeave)
             {
                 StartCoroutine(LeaveDoor());
             }
@@ -49,9 +54,9 @@ public class DoorControl_House : MonoBehaviour
     }
     IEnumerator LeaveDoor()
     {
-        isDoorActive = true;
+        isDoorMesh = true; //ï∫ïr
+        isLeave = false;
         LoadingUIControl_House.isOpenBlackScreen = true;
-        EntrustControl_House.isEntrustActive = false;
         StoreControl_House.isStoreActive = false;
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
