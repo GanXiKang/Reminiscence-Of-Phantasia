@@ -85,7 +85,7 @@ public class InteractableControl_House : MonoBehaviour
     {
         DoorControl_House.isLoading = false;
         DoorControl_House.isDoorActive = false;
-        if (DoorControl_House.isBrid)
+        if (DoorControl_House.isBird)
         {
             EntrustControl_House.isEntrustActive = true;
         }
