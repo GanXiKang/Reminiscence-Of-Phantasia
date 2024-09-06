@@ -83,6 +83,7 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
+        DoorControl_House.isLeave = true;
         isEntrustActive = false;
         isDeliverActive = false;
         isReceiveActive = false;
