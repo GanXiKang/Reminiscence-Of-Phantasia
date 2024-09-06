@@ -105,10 +105,10 @@ public class EntrustControl_House : MonoBehaviour
         {
             _timeElapsed += Time.deltaTime;
             float t = _timeElapsed / 2f;
-            canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
             if (isShouldMove)
             {
                 rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+                canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
             }
 
             yield return null;
@@ -137,10 +137,10 @@ public class EntrustControl_House : MonoBehaviour
         {
             _timeElapsed += Time.deltaTime;
             float t = _timeElapsed / 2f;
-            canvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
             if (isShouldMove)
             {
                 rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+                canvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
             }
 
             yield return null;
