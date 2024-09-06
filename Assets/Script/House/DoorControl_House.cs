@@ -14,7 +14,7 @@ public class DoorControl_House : MonoBehaviour
 
     [Header("Animals")]
     public GameObject brid;
-    public GameObject cat;
+    //public GameObject cat;
 
     void Update()
     {
@@ -33,7 +33,7 @@ public class DoorControl_House : MonoBehaviour
         {
             isCat = true;
             isBrid = false;
-            cat.SetActive(true);
+            //cat.SetActive(true);
         }
     }
 
@@ -57,6 +57,6 @@ public class DoorControl_House : MonoBehaviour
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookDoor = false;
         brid.SetActive(false);
-        cat.SetActive(false);
+        //cat.SetActive(false);
     }
 }
