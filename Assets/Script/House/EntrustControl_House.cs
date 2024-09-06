@@ -13,7 +13,7 @@ public class EntrustControl_House : MonoBehaviour
     bool isReceiveActive = false;
     bool isContentActive = false;
 
-    private void Start()
+    void Start()
     {
         DeliverButtonInitialState();
     }
@@ -158,6 +158,7 @@ public class EntrustControl_House : MonoBehaviour
             yield return null;
         }
 
+        StartCoroutine(AnimateReceiveAppear());
         isReceiveActive = true;
         isDeliverActive = false;
         canvasGroup.alpha = 0f;
@@ -165,5 +166,30 @@ public class EntrustControl_House : MonoBehaviour
         {
             rect.anchoredPosition = endPosition;
         }
+    }
+    IEnumerator AnimateReceiveAppear()
+    {
+        CanvasGroup canvasGroup = entrustUI[2].GetComponent<CanvasGroup>();
+        RectTransform rect = entrustUI[2].GetComponent<RectTransform>();
+
+        Vector3 startScale = new Vector3(0.5f, 0.5f, 1f);
+        Vector3 targetScale = new Vector3(1f, 1f, 1f);
+
+        float _timeElapsed = 0f;
+        canvasGroup.alpha = 0;
+        rect.localScale = startScale;
+
+        while (_timeElapsed < 1f)
+        {
+            _timeElapsed += Time.deltaTime;
+            float t = _timeElapsed / 1f;
+            rect.localScale = Vector3.Lerp(startScale, targetScale, t);
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1;
+        rect.localScale = targetScale;
     }
 }
