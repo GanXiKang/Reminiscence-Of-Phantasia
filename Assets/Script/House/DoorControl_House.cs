@@ -27,6 +27,7 @@ public class DoorControl_House : MonoBehaviour
         door.GetComponent<MeshRenderer>().enabled = isDoorMesh;
 
         Leave();
+
         //úy‘á
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
