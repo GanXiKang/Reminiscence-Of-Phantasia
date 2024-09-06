@@ -121,10 +121,10 @@ public class EntrustControl_House : MonoBehaviour
         Vector2 startPosition = rect.anchoredPosition;
         Vector2 endPosition = new Vector2(0f, startPosition.y);
 
-        while (_timeElapsed < 1.5f)
+        while (_timeElapsed < 1f)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 1.5f;
+            float t = _timeElapsed / 1f;
             if (isShouldMove)
             {
                 rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
@@ -191,10 +191,10 @@ public class EntrustControl_House : MonoBehaviour
         canvasGroup.alpha = 0;
         rect.localScale = startScale;
 
-        while (_timeElapsed < 0.8f)
+        while (_timeElapsed < 0.6f)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 0.8f;
+            float t = _timeElapsed / 0.6f;
             rect.localScale = Vector3.Lerp(startScale, targetScale, t);
             canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
 
