@@ -69,7 +69,7 @@ public class SettingControl : MonoBehaviour
         }
         else 
         {
-            settingUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.2f, 0.2f, 1f);
+            settingUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
         }
     }
     void UIInteractable()
