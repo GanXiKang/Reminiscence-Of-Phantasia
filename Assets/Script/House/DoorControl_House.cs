@@ -15,8 +15,8 @@ public class DoorControl_House : MonoBehaviour
         loadingUI.SetActive(isLoading);
 
         Leave();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        //úy‘á
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             isBrid = true;
             isCat = false;
