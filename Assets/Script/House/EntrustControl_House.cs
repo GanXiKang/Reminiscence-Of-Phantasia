@@ -113,10 +113,10 @@ public class EntrustControl_House : MonoBehaviour
         Vector2 startPosition = rect.anchoredPosition;
         Vector2 endPosition = new Vector2(0f, startPosition.y);
 
-        while (_timeElapsed < 2f)
+        while (_timeElapsed < 1.5f)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 2f;
+            float t = _timeElapsed / 1.5f;
             if (isShouldMove)
             {
                 rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
@@ -145,10 +145,10 @@ public class EntrustControl_House : MonoBehaviour
         Vector2 endPosition = new Vector2(6f, startPosition.y);
         button.GetComponent<CanvasGroup>().interactable = false;
 
-        while (_timeElapsed < 2f)
+        while (_timeElapsed < 0.5f)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 2f;
+            float t = _timeElapsed / 0.5f;
             if (isShouldMove)
             {
                 rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
@@ -158,7 +158,6 @@ public class EntrustControl_House : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(AnimateReceiveAppear());
         isReceiveActive = true;
         isDeliverActive = false;
         canvasGroup.alpha = 0f;
@@ -166,9 +165,15 @@ public class EntrustControl_House : MonoBehaviour
         {
             rect.anchoredPosition = endPosition;
         }
+        else
+        {
+            StartCoroutine(AnimateReceiveAppear());
+        }
     }
     IEnumerator AnimateReceiveAppear()
     {
+        yield return new WaitForSeconds(1f);
+
         CanvasGroup canvasGroup = entrustUI[2].GetComponent<CanvasGroup>();
         RectTransform rect = entrustUI[2].GetComponent<RectTransform>();
 
