@@ -12,6 +12,10 @@ public class DoorControl_House : MonoBehaviour
     public static bool isCat = false;
     public static bool isDoorActive = true;
 
+    [Header("Animals")]
+    public GameObject brid;
+    public GameObject cat;
+
     void Update()
     {
         loadingUI.SetActive(isLoading);
@@ -23,11 +27,13 @@ public class DoorControl_House : MonoBehaviour
         {
             isBrid = true;
             isCat = false;
+            brid.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             isCat = true;
             isBrid = false;
+            cat.SetActive(true);
         }
     }
 
@@ -50,5 +56,7 @@ public class DoorControl_House : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookDoor = false;
+        brid.SetActive(false);
+        cat.SetActive(false);
     }
 }
