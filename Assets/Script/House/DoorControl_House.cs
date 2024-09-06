@@ -6,13 +6,16 @@ public class DoorControl_House : MonoBehaviour
 {
     [Header("LoadingVideo")]
     public GameObject loadingUI;
+    public GameObject door;
     public static bool isLoading = false;
     public static bool isBrid = false;
     public static bool isCat = false;
+    public static bool isDoorActive = true;
 
     void Update()
     {
         loadingUI.SetActive(isLoading);
+        door.GetComponent<MeshRenderer>().enabled = isDoorActive;
 
         Leave();
         //úy‘á
@@ -40,6 +43,7 @@ public class DoorControl_House : MonoBehaviour
     }
     IEnumerator LeaveDoor()
     {
+        isDoorActive = true;
         LoadingUIControl_House.isOpenBlackScreen = true;
         EntrustControl_House.isEntrustActive = false;
         StoreControl_House.isStoreActive = false;
