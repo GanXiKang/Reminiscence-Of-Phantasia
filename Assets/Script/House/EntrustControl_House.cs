@@ -49,9 +49,9 @@ public class EntrustControl_House : MonoBehaviour
             if (!isDeliverActive && !isReceiveActive && !isContentActive)
             {
                 isDeliverActive = true;
-                StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f));
-                StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f));
-                StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f));
+                //StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f));
+                //StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f));
+                //StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f));
             }
         }
     }
