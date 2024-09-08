@@ -126,6 +126,5 @@ public class InteractableControl_House : MonoBehaviour
             StoreControl_House.isStoreActive = true;
             UIAboveObject_House.isDialogBoxActive = false;
         }
-
     }
 }
