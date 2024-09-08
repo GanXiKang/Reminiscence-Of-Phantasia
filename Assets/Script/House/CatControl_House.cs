@@ -25,7 +25,29 @@ public class CatControl_House : MonoBehaviour
 
     void Animation()
     {
-        if()
-
+        if (isSad)
+        {
+            anim.SetBool("isSad", true);
+        }
+        if (isHappy)
+        {
+            anim.SetBool("isHappy", true);
+        }
+        if (isWave)
+        {
+            anim.SetBool("isWave", true);
+        }
+        if (isBye)
+        {
+            anim.SetBool("isBye", true);
+        }
+        if (isBag)
+        {
+            anim.SetBool("isBag", true);
+        }
+        if (isBag_Out)
+        {
+            anim.SetBool("isBag_Out", true);
+        }
     }
 }
