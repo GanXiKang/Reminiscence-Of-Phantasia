@@ -56,8 +56,6 @@ public class StoreControl_House : MonoBehaviour
     {
         if (isHomePageActive)
         {
-            isContentActive = true;
-            isHomePageActive = false;
             CatControl_House.isBag = true;
             StartCoroutine(AnimateButtonDisappear(homePageButton[0], 0f, true));
             StartCoroutine(AnimateButtonDisappear(homePageButton[4], 0f, false));
@@ -185,6 +183,8 @@ public class StoreControl_House : MonoBehaviour
             yield return null;
         }
 
+        isContentActive = true;
+        isHomePageActive = false;
         canvasGroup.interactable = true;
         if (!isOnlyAlpha)
         {
