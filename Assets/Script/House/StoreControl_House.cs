@@ -7,7 +7,7 @@ public class StoreControl_House : MonoBehaviour
 {
     [Header("UI")]
     public GameObject[] storeUI;
-    public GameObject[] homePageButton;
+    public Button[] homePageButton;
     public static bool isStoreActive = false;
     bool isHomePageActive = false;
     bool isContentActive = false;
@@ -32,7 +32,14 @@ public class StoreControl_House : MonoBehaviour
         else
         {
             if (!isHomePageActive && !isContentActive)
+            {
                 isHomePageActive = true;
+                StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f));
+                StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f));
+                StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f));
+                StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f));
+                StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f));
+            }
         }
     }
     void LeaveState()
@@ -75,5 +82,47 @@ public class StoreControl_House : MonoBehaviour
         UIAboveObject_House._whichDialog = 4;
         storeUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 1f);
+    }
+
+    IEnumerator AnimateButtonAppear(Button button, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        float duration = 2f;
+        float elapsed = 0f;
+
+        float startAlpha = 0f;
+        float targetAlpha = 1f;
+
+        Vector3 startScale = new Vector3(0.8f, 0.8f, 1f);
+        Vector3 targetScale = new Vector3(1f, 1f, 1f);
+
+        Quaternion startRotation = Quaternion.Euler(0, 0, 0);
+        Quaternion targetRotation = Quaternion.Euler(0, 0, 360);
+
+        CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
+        RectTransform rectTransform = button.GetComponent<RectTransform>();
+
+        button.interactable = false;
+        canvasGroup.alpha = startAlpha;
+        rectTransform.localScale = startScale;
+        rectTransform.rotation = startRotation;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
+            rectTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
+            rectTransform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = targetAlpha;
+        rectTransform.localScale = targetScale;
+        rectTransform.rotation = targetRotation;
+        button.interactable = true;
     }
 }
