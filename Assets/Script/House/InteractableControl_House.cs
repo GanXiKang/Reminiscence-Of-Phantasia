@@ -99,4 +99,26 @@ public class InteractableControl_House : MonoBehaviour
             StoreControl_House.isStoreActive = true;
         }
     }
+    IEnumerator WhoIsVisit()
+    {
+        yield return new WaitForSeconds(3f);
+        DoorControl_House.isLoading = false;
+        if (DoorControl_House.isBird)
+        {
+            bird.SetActive(true);
+            UIAboveObject_House.isDialogBoxActive = true;
+            UIAboveObject_House._whichDialog = 1;
+            yield return new WaitForSeconds(2f);
+            EntrustControl_House.isEntrustActive = true;
+        }
+        else if (DoorControl_House.isCat)
+        {
+            cat.SetActive(true);
+            UIAboveObject_House.isDialogBoxActive = true;
+            UIAboveObject_House._whichDialog = 2;
+            yield return new WaitForSeconds(2f);
+            StoreControl_House.isStoreActive = true;
+        }
+
+    }
 }
