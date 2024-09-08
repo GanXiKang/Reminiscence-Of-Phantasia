@@ -59,6 +59,11 @@ public class StoreControl_House : MonoBehaviour
             isContentActive = true;
             isHomePageActive = false;
             CatControl_House.isBag = true;
+            StartCoroutine(AnimateButtonDisappear(homePageButton[0], 0f, true));
+            StartCoroutine(AnimateButtonDisappear(homePageButton[4], 0f, false));
+            StartCoroutine(AnimateButtonDisappear(homePageButton[3], 0.2f, false));
+            StartCoroutine(AnimateButtonDisappear(homePageButton[2], 0.4f, false));
+            StartCoroutine(AnimateButtonDisappear(homePageButton[1], 0.6f, false));
         }
         else
         { 
@@ -67,7 +72,7 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Buy()
     {
-        CatControl_House.isHappy = true;
+        
     }
     public void Button_Back()
     {
@@ -130,6 +135,60 @@ public class StoreControl_House : MonoBehaviour
         canvasGroup.alpha = targetAlpha;
         if (!isOnlyAlpha)
         {
+            rectTransform.localScale = targetScale;
+            rectTransform.rotation = targetRotation;
+        }
+    }
+    IEnumerator AnimateButtonDisappear(Button button, float delay, bool isOnlyAlpha)
+    {
+        yield return new WaitForSeconds(delay);
+
+        float duration = 0.5f;
+        float elapsed = 0f;
+
+        float startAlpha = 0f;
+        float targetAlpha = 1f;
+
+        Vector3 startScale = new Vector3(3f, 14f, 1f);
+        Vector3 targetScale = new Vector3(2.5f, 13f, 1f);
+
+        Quaternion startRotation = Quaternion.Euler(0, 0, 0);
+        Quaternion targetRotation = Quaternion.Euler(0, 0, 45);
+
+        CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
+        RectTransform rectTransform = button.GetComponent<RectTransform>();
+
+        canvasGroup.interactable = false;
+        if (!isOnlyAlpha)
+        {
+            canvasGroup.alpha = startAlpha;
+            rectTransform.localScale = startScale;
+            rectTransform.rotation = startRotation;
+        }
+        else
+        {
+            canvasGroup.alpha = targetAlpha;
+        }
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
+            if (!isOnlyAlpha)
+            {
+                rectTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
+                rectTransform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
+            }
+
+            yield return null;
+        }
+
+        canvasGroup.interactable = true;
+        if (!isOnlyAlpha)
+        {
+            canvasGroup.alpha = targetAlpha;
             rectTransform.localScale = targetScale;
             rectTransform.rotation = targetRotation;
         }
