@@ -94,7 +94,7 @@ public class StoreControl_House : MonoBehaviour
         float startAlpha = 0f;
         float targetAlpha = 1f;
 
-        Vector3 startScale = new Vector3(2f, 12f, 1f);
+        Vector3 startScale = new Vector3(2.5f, 13f, 1f);
         Vector3 targetScale = new Vector3(3f, 14f, 1f);
 
         Quaternion startRotation = Quaternion.Euler(0, 0, 180);
