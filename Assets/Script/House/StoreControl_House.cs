@@ -41,12 +41,22 @@ public class StoreControl_House : MonoBehaviour
             isContentActive = false;
         }
     }
+    void LeaveState()
+    {
+        UIAboveObject_House.isDialogBoxActive = false;
+        DoorControl_House.isLeave = true;
+        storeUI[1].GetComponent<CanvasGroup>().interactable = true;
+    }
 
     public void Button_Product(int _product)
     {
         isContentActive = true;
         isHomePageActive = false;
         CatControl_House.isBag = true;
+    }
+    public void Button_Buy()
+    {
+        CatControl_House.isHappy = true;
     }
     public void Button_Back()
     {
@@ -56,8 +66,10 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
+        CatControl_House.isBye = true;
         UIAboveObject_House.isDialogBoxActive = true;
         UIAboveObject_House._whichDialog = 4;
         storeUI[1].GetComponent<CanvasGroup>().interactable = false;
+        Invoke("LeaveState", 1f);
     }
 }
