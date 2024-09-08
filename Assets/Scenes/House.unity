@@ -6005,6 +6005,7 @@ MonoBehaviour:
   dialogText: {fileID: 683017293}
   brid: {fileID: 1524440276}
   cat: {fileID: 967062357}
+  animalsOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &862492947
 GameObject:
   m_ObjectHideFlags: 0
@@ -8917,7 +8918,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2572b5da851129f4aae01fb18fda977f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1524440278}
   m_SourcePrefab: {fileID: 100100000, guid: 2572b5da851129f4aae01fb18fda977f, type: 3}
 --- !u!1 &1187817119
 GameObject:
@@ -10805,6 +10809,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2572b5da851129f4aae01fb18fda977f, type: 3}
   m_PrefabInstance: {fileID: 1174757745}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1524440278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524440274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2efff0d49abc04386413f1950bd293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1537792527
 GameObject:
   m_ObjectHideFlags: 0
