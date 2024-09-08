@@ -29,13 +29,11 @@ public class DoorControl_House : MonoBehaviour
         {
             isBird = true;
             isCat = false;
-            bird.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             isCat = true;
             isBird = false;
-            cat.SetActive(true);
         }
     }
 
