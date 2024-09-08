@@ -34,11 +34,11 @@ public class StoreControl_House : MonoBehaviour
             if (!isHomePageActive && !isContentActive)
             {
                 isHomePageActive = true;
-                StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f));
-                StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f));
-                StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f));
-                StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f));
-                StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f));
+                StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f, true));
+                StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, true));
+                StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, true));
+                StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, true));
+                StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, false));
             }
         }
     }
@@ -84,7 +84,7 @@ public class StoreControl_House : MonoBehaviour
         Invoke("LeaveState", 1f);
     }
 
-    IEnumerator AnimateButtonAppear(Button button, float delay)
+    IEnumerator AnimateButtonAppear(Button button, float delay, bool isScale)
     {
         yield return new WaitForSeconds(delay);
 
@@ -106,7 +106,10 @@ public class StoreControl_House : MonoBehaviour
         button.interactable = false;
         canvasGroup.alpha = startAlpha;
         rectTransform.localScale = startScale;
-        rectTransform.rotation = startRotation;
+        if (isScale)
+        {
+            rectTransform.rotation = startRotation;
+        }
 
         while (elapsed < duration)
         {
@@ -115,14 +118,20 @@ public class StoreControl_House : MonoBehaviour
 
             canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
             rectTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
-            rectTransform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
+            if (isScale)
+            {
+                rectTransform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
+            }
 
             yield return null;
         }
 
         canvasGroup.alpha = targetAlpha;
         rectTransform.localScale = targetScale;
-        rectTransform.rotation = targetRotation;
+        if (isScale)
+        {
+            rectTransform.rotation = targetRotation;
+        }
         button.interactable = true;
     }
 }
