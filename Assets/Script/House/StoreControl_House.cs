@@ -77,6 +77,11 @@ public class StoreControl_House : MonoBehaviour
         isHomePageActive = true;
         isContentActive = false;
         CatControl_House.isBag_Out = true;
+        StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f, false));
+        StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, false));
+        StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, false));
+        StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, false));
+        StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
     }
     public void Button_Leave()
     {
