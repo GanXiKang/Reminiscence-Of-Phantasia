@@ -28,13 +28,13 @@ public class CatControl_House : MonoBehaviour
         if (isSad)
         {
             anim.SetBool("isSad", true);
-            Invoke("FalseAnimation", 0.2f);
+            Invoke("FalseByAnimation", 0.2f);
             isSad = false;
         }
         if (isHappy)
         {
             anim.SetBool("isHappy", true);
-            Invoke("FalseAnimation", 0.2f);
+            Invoke("FalseByAnimation", 0.2f);
             isHappy = false;
         }
         if (isWave)
@@ -48,7 +48,7 @@ public class CatControl_House : MonoBehaviour
         if (isBye)
         {
             anim.SetBool("isBye", true);
-            Invoke("FalseAnimation", 0.2f);
+            Invoke("FalseByAnimation", 0.2f);
             isBye = false;
         }
         if (isBag)
@@ -60,11 +60,11 @@ public class CatControl_House : MonoBehaviour
         {
             anim.SetBool("isBag_Out", true);
             anim.SetBool("isBag", false);
-            Invoke("FalseAnimation", 0.2f);
+            Invoke("FalseByAnimation", 0.2f);
             isBag_Out = false;
         }
     }
-    void FalseAnimation()
+    void FalseByAnimation()
     {
         anim.SetBool("isSad", false);
         anim.SetBool("isHappy", false);
