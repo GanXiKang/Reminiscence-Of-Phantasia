@@ -146,7 +146,7 @@ public class StoreControl_House : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        float duration = 0.5f;
+        float duration = 0.8f;
         float elapsed = 0f;
 
         float startAlpha = 0f;
