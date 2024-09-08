@@ -39,6 +39,12 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Update()
     {
+        Hint();
+        Dialog();
+    }
+
+    void Hint()
+    {
         Vector3 workbenchPos = workbench.position + workbenchOffset;
         workbenchHint.position = workbenchPos;
 
@@ -53,5 +59,9 @@ public class UIAboveObject_House : MonoBehaviour
 
         Vector3 showcasePos = showcase.position + showcaseOffset;
         showcaseHint.position = showcasePos;
+    }
+    void Dialog()
+    {
+        
     }
 }
