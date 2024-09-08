@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CatControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Animator anim;
+
+    public static bool isIdle = false;
+    public static bool isHappy = false;
+    public static bool isBye = false;
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
