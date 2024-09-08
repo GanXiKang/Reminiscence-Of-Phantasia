@@ -70,4 +70,5 @@ public class CatControl_House : MonoBehaviour
         anim.SetBool("isHappy", false);
         anim.SetBool("isBye", false);
         anim.SetBool("isBag_Out", false);
+    }
 }
