@@ -45,6 +45,19 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Product(int _product)
     {
         isContentActive = true;
-        isHomePageActive = false; 
+        isHomePageActive = false;
+        CatControl_House.isBag = true;
+    }
+    public void Button_Back()
+    {
+        isHomePageActive = false;
+        isContentActive = true;
+        CatControl_House.isBag_Out = true;
+    }
+    public void Button_Leave()
+    {
+        UIAboveObject_House.isDialogBoxActive = true;
+        UIAboveObject_House._whichDialog = 4;
+        storeUI[1].GetComponent<CanvasGroup>().interactable = false;
     }
 }
