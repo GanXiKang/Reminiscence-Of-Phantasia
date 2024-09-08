@@ -130,14 +130,15 @@ public class EntrustControl_House : MonoBehaviour
         CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
         RectTransform rect = button.GetComponent<RectTransform>();
 
+        float _duration = 1f;
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
         Vector2 endPosition = new Vector2(0f, startPosition.y);
 
-        while (_timeElapsed < 1f)
+        while (_timeElapsed < _duration)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 1f;
+            float t = _timeElapsed / _duration;
             if (isShouldMove)
             {
                 rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
@@ -161,15 +162,16 @@ public class EntrustControl_House : MonoBehaviour
         CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
         RectTransform rect = button.GetComponent<RectTransform>();
 
+        float _duration = 0.5f;
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
         Vector2 endPosition = new Vector2(6f, startPosition.y);
         button.GetComponent<CanvasGroup>().interactable = false;
 
-        while (_timeElapsed < 0.5f)
+        while (_timeElapsed < _duration)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 0.5f;
+            float t = _timeElapsed / _duration;
             if (isShouldMove)
             {
                 rect.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
@@ -200,14 +202,15 @@ public class EntrustControl_House : MonoBehaviour
         Vector3 startScale = new Vector3(0.7f, 0.7f, 1f);
         Vector3 targetScale = new Vector3(1f, 1f, 1f);
 
+        float _duration = 0.6f;
         float _timeElapsed = 0f;
         canvasGroup.alpha = 0;
         rect.localScale = startScale;
 
-        while (_timeElapsed < 0.6f)
+        while (_timeElapsed < _duration)
         {
             _timeElapsed += Time.deltaTime;
-            float t = _timeElapsed / 0.6f;
+            float t = _timeElapsed / _duration;
             rect.localScale = Vector3.Lerp(startScale, targetScale, t);
             canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
 
