@@ -33,9 +33,10 @@ public class UIAboveObject_House : MonoBehaviour
     [Header("DialogBox")]
     public GameObject dialogBox;
     public Text dialogText;
-    public static bool isDialogBox;
     public Transform brid;
     public Transform cat;
+    public Vector3 animalsOffset;
+    public static bool isDialogBoxActive;
 
     void Update()
     {
@@ -62,6 +63,13 @@ public class UIAboveObject_House : MonoBehaviour
     }
     void Dialog()
     {
-        
+        Vector3 catPos = cat.position + animalsOffset;
+        dialogBox.transform.position = catPos;
+
+        if (isDialogBoxActive)
+        {
+            dialogBox.SetActive(true);
+            dialogText.text = "";
+        }
     }
 }
