@@ -103,7 +103,7 @@ public class StoreControl_House : MonoBehaviour
         CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
         RectTransform rectTransform = button.GetComponent<RectTransform>();
 
-        button.interactable = false;
+        canvasGroup.interactable = false;
         canvasGroup.alpha = startAlpha;
         if (!isOnlyAlpha)
         {
@@ -126,12 +126,12 @@ public class StoreControl_House : MonoBehaviour
             yield return null;
         }
 
+        canvasGroup.interactable = true;
         canvasGroup.alpha = targetAlpha;
         if (!isOnlyAlpha)
         {
             rectTransform.localScale = targetScale;
             rectTransform.rotation = targetRotation;
         }
-        button.interactable = true;
     }
 }
