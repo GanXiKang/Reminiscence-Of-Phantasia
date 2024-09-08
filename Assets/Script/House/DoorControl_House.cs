@@ -15,14 +15,13 @@ public class DoorControl_House : MonoBehaviour
     [Header("Animals")]
     public GameObject bird;
     public GameObject cat;
-    public static bool isAnimalsActive = false;
     public static bool isBird = false;
     public static bool isCat = false;
 
     void Update()
     {
         loadingUI.SetActive(isLoading);
-
+        
         Leave();
 
         //úy‘á
