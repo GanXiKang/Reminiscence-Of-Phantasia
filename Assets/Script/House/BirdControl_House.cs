@@ -44,7 +44,7 @@ public class BirdControl_House : MonoBehaviour
         if (isHappy)
         {
             anim.SetBool("isHappy", true);
-            Invoke("FalseAnimationisHappy", 0.2f);
+            Invoke("FalseByAnimation", 0.2f);
             isHappy = false;
         }
         if (isBye)
@@ -52,17 +52,14 @@ public class BirdControl_House : MonoBehaviour
             anim.SetBool("isBye", true);
             anim.SetBool("isIdle_Out", true);
             anim.SetBool("isIdle", false);
-            Invoke("FalseAnimationisBye", 1f);
+            Invoke("FalseByAnimation", 1f);
             isBye = false;
         }
     }
 
-    void FalseAnimationisHappy()
+    void FalseByAnimation()
     {
         anim.SetBool("isHappy", false);
-    }
-    void FalseAnimationisBye()
-    {
         anim.SetBool("isBye", false);
     }
 }
