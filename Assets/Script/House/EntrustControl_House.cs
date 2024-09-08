@@ -101,13 +101,22 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
-        DoorControl_House.isLeave = true;
-        isEntrustActive = false;
-        isDeliverActive = false;
-        isReceiveActive = false;
-        isContentActive = false;
-        entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
-        DeliverButtonInitialState();
+        if (!UIAboveObject_House.isDialogBoxActive)
+        {
+            UIAboveObject_House.isDialogBoxActive = true;
+            UIAboveObject_House._whichDialog = 3;
+        }
+        else
+        {
+            UIAboveObject_House.isDialogBoxActive = false;
+            DoorControl_House.isLeave = true;
+            isEntrustActive = false;
+            isDeliverActive = false;
+            isReceiveActive = false;
+            isContentActive = false;
+            entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+            DeliverButtonInitialState();
+        }
     }
 
     IEnumerator AnimateButtonAppear(Button button, float delay, bool isShouldMove)
