@@ -34,11 +34,11 @@ public class StoreControl_House : MonoBehaviour
             if (!isHomePageActive && !isContentActive)
             {
                 isHomePageActive = true;
-                StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f, true));
-                StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, true));
-                StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, true));
-                StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, true));
-                StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, false));
+                StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f, false));
+                StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, false));
+                StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, false));
+                StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, false));
+                StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
             }
         }
     }
@@ -84,11 +84,11 @@ public class StoreControl_House : MonoBehaviour
         Invoke("LeaveState", 1f);
     }
 
-    IEnumerator AnimateButtonAppear(Button button, float delay, bool isScale)
+    IEnumerator AnimateButtonAppear(Button button, float delay, bool isOnlyAlpha)
     {
         yield return new WaitForSeconds(delay);
 
-        float duration = 2f;
+        float duration = f;
         float elapsed = 0f;
 
         float startAlpha = 0f;
@@ -105,9 +105,9 @@ public class StoreControl_House : MonoBehaviour
 
         button.interactable = false;
         canvasGroup.alpha = startAlpha;
-        rectTransform.localScale = startScale;
-        if (isScale)
+        if (!isOnlyAlpha)
         {
+            rectTransform.localScale = startScale;
             rectTransform.rotation = startRotation;
         }
 
@@ -117,9 +117,9 @@ public class StoreControl_House : MonoBehaviour
             float t = elapsed / duration;
 
             canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
-            rectTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
-            if (isScale)
+            if (!isOnlyAlpha)
             {
+                rectTransform.localScale = Vector3.Lerp(startScale, targetScale, t);
                 rectTransform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
             }
 
@@ -127,9 +127,9 @@ public class StoreControl_House : MonoBehaviour
         }
 
         canvasGroup.alpha = targetAlpha;
-        rectTransform.localScale = targetScale;
-        if (isScale)
+        if (!isOnlyAlpha)
         {
+            rectTransform.localScale = targetScale;
             rectTransform.rotation = targetRotation;
         }
         button.interactable = true;
