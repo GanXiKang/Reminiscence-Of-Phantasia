@@ -30,6 +30,11 @@ public class UIAboveObject_House : MonoBehaviour
     public RectTransform showcaseHint;
     public Vector3 showcaseOffset;
 
+    [Header("DialogBox")]
+    public GameObject dialogBox;
+    public Text dialogText;
+    public static bool isDialogBox;
+
     void Update()
     {
         Vector3 workbenchPos = workbench.position + workbenchOffset;
