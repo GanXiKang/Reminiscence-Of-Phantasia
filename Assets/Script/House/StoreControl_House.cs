@@ -71,8 +71,8 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Back()
     {
-        isHomePageActive = false;
-        isContentActive = true;
+        isHomePageActive = true;
+        isContentActive = false;
         CatControl_House.isBag_Out = true;
     }
     public void Button_Leave()
