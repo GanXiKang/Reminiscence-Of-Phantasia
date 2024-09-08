@@ -18,13 +18,9 @@ public class DoorControl_House : MonoBehaviour
     public static bool isBird = false;
     public static bool isCat = false;
 
-    //•º•r
-    public static bool isDoorMesh = true;
-
     void Update()
     {
         loadingUI.SetActive(isLoading);
-        door.GetComponent<MeshRenderer>().enabled = isDoorMesh;
 
         Leave();
 
