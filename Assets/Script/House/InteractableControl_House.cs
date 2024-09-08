@@ -111,6 +111,7 @@ public class InteractableControl_House : MonoBehaviour
             UIAboveObject_House._whichDialog = 1;
             yield return new WaitForSeconds(2f);
             EntrustControl_House.isEntrustActive = true;
+            UIAboveObject_House.isDialogBoxActive = false;
         }
         else if (DoorControl_House.isCat)
         {
@@ -119,6 +120,7 @@ public class InteractableControl_House : MonoBehaviour
             UIAboveObject_House._whichDialog = 2;
             yield return new WaitForSeconds(2f);
             StoreControl_House.isStoreActive = true;
+            UIAboveObject_House.isDialogBoxActive = false;
         }
 
     }
