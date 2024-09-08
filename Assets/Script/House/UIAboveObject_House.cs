@@ -34,6 +34,8 @@ public class UIAboveObject_House : MonoBehaviour
     public GameObject dialogBox;
     public Text dialogText;
     public static bool isDialogBox;
+    public Transform brid;
+    public Transform cat;
 
     void Update()
     {
