@@ -33,8 +33,7 @@ public class UIAboveObject_House : MonoBehaviour
     [Header("DialogBox")]
     public GameObject dialogBox;
     public Text dialogText;
-    public Transform brid;
-    public Transform cat;
+    public Transform animals;
     public Vector3 animalsOffset;
     public static bool isDialogBoxActive;
     public static int _whichDialog = 0;
@@ -64,13 +63,13 @@ public class UIAboveObject_House : MonoBehaviour
     }
     void Dialog()
     {
-        Vector3 catPos = cat.position + animalsOffset;
-        dialogBox.transform.position = catPos;
+        dialogBox.SetActive(isDialogBoxActive);
 
-        if (isDialogBoxActive)
-        {
-            dialogBox.SetActive(true);
-            switch (_whichDialog)
+        if (!isDialogBoxActive) return;
+
+        Vector3 catPos = animals.position + animalsOffset;
+        dialogBox.transform.position = catPos;
+        switch (_whichDialog)
             {
                 case 1:
                     dialogText.text = "有信件！有信件！";
@@ -88,6 +87,5 @@ public class UIAboveObject_House : MonoBehaviour
                     dialogText.text = "謝謝惠顧喵！";
                     break;
             }
-        }
     }
 }
