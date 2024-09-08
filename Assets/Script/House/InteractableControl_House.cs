@@ -110,6 +110,8 @@ public class InteractableControl_House : MonoBehaviour
             UIAboveObject_House.isDialogBoxActive = true;
             UIAboveObject_House._whichDialog = 1;
             yield return new WaitForSeconds(2f);
+            BirdControl_House.isIdle = true;
+            BirdControl_House.isDeliver = true;
             EntrustControl_House.isEntrustActive = true;
             UIAboveObject_House.isDialogBoxActive = false;
         }

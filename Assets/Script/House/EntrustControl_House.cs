@@ -71,6 +71,7 @@ public class EntrustControl_House : MonoBehaviour
 
     public void Button_Deliver(int _letter)
     {
+        BirdControl_House.isDeliver_Close = true;
         StartCoroutine(AnimateButtonDisappear(deliverButton[0], 0f, false));
         StartCoroutine(AnimateButtonDisappear(deliverButton[3], 0f, true));
         StartCoroutine(AnimateButtonDisappear(deliverButton[2], 0.4f, true));
@@ -80,6 +81,8 @@ public class EntrustControl_House : MonoBehaviour
     {
         isReceiveActive = false;
         isDeliverActive = true;
+        BirdControl_House.isHappy = true;
+        BirdControl_House.isDeliver = true;
         StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
@@ -91,6 +94,7 @@ public class EntrustControl_House : MonoBehaviour
         {
             isReceiveActive = false;
             isDeliverActive = true;
+            BirdControl_House.isDeliver = true;
             StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
             StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
             StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
@@ -115,6 +119,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         UIAboveObject_House.isDialogBoxActive = true;
         UIAboveObject_House._whichDialog = 3;
+        BirdControl_House.isBye = true;
         entrustUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 2f);
     }
