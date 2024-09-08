@@ -120,7 +120,7 @@ public class EntrustControl_House : MonoBehaviour
         UIAboveObject_House._whichDialog = 3;
         BirdControl_House.isBye = true;
         entrustUI[1].GetComponent<CanvasGroup>().interactable = false;
-        Invoke("LeaveState", 2f);
+        Invoke("LeaveState", 1f);
     }
 
     IEnumerator AnimateButtonAppear(Button button, float delay, bool isShouldMove)
