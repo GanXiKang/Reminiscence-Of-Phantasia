@@ -51,7 +51,6 @@ public class DoorControl_House : MonoBehaviour
     }
     IEnumerator LeaveDoor()
     {
-        isDoorMesh = true; //•º•r
         isLeave = false;
         LoadingUIControl_House.isOpenBlackScreen = true;
         StoreControl_House.isStoreActive = false;
