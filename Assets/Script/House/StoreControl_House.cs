@@ -149,8 +149,8 @@ public class StoreControl_House : MonoBehaviour
         float duration = 0.8f;
         float elapsed = 0f;
 
-        float startAlpha = 0f;
-        float targetAlpha = 1f;
+        float startAlpha = 1f;
+        float targetAlpha = 0f;
 
         Vector3 startScale = new Vector3(3f, 14f, 1f);
         Vector3 targetScale = new Vector3(2.5f, 13f, 1f);
