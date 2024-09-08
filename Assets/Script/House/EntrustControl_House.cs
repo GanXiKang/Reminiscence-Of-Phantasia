@@ -64,6 +64,7 @@ public class EntrustControl_House : MonoBehaviour
         isDeliverActive = false;
         isReceiveActive = false;
         isContentActive = false;
+        entrustUI[1].GetComponent<CanvasGroup>().interactable = true;
         entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
         DeliverButtonInitialState();
     }
@@ -114,6 +115,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         UIAboveObject_House.isDialogBoxActive = true;
         UIAboveObject_House._whichDialog = 3;
+        entrustUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 2f);
     }
 
