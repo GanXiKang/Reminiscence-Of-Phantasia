@@ -13,6 +13,10 @@ public class InteractableControl_House : MonoBehaviour
     public float _screenSpeed = 3f;
     public static bool isInteractable = false;
 
+    [Header("Animals")]
+    public GameObject bird;
+    public GameObject cat;
+
     void Start()
     {
         currentColor = hintF.color;
@@ -86,10 +90,12 @@ public class InteractableControl_House : MonoBehaviour
         DoorControl_House.isLoading = false;
         if (DoorControl_House.isBird)
         {
+            bird.SetActive(true);
             EntrustControl_House.isEntrustActive = true;
         }
         else if (DoorControl_House.isCat)
         {
+            cat.SetActive(true);
             StoreControl_House.isStoreActive = true;
         }
     }
