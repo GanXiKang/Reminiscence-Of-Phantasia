@@ -60,7 +60,6 @@ public class InteractableControl_House : MonoBehaviour
                         DoorControl_House.isLoading = true;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookDoor = true;
-                        //Invoke("DoorLoadingUI", 3f);
                         StartCoroutine(WhoIsVisit());
                         break;  //ÈT
 
@@ -86,20 +85,7 @@ public class InteractableControl_House : MonoBehaviour
             _alpha = 0;
         }
     }
-    void DoorLoadingUI()
-    {
-        DoorControl_House.isLoading = false;
-        if (DoorControl_House.isBird)
-        {
-            bird.SetActive(true);
-            EntrustControl_House.isEntrustActive = true;
-        }
-        else if (DoorControl_House.isCat)
-        {
-            cat.SetActive(true);
-            StoreControl_House.isStoreActive = true;
-        }
-    }
+
     IEnumerator WhoIsVisit()
     {
         yield return new WaitForSeconds(3f);
