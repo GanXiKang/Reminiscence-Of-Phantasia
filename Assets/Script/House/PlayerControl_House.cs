@@ -27,6 +27,7 @@ public class PlayerControl_House : MonoBehaviour
     void Update()
     {
         playerInput.enabled = isCanMove();
+        gameObject.SetActive(!CameraControl_House.isLookDoor);
 
         PlayerMove();
         PlayerOnTheGround();
