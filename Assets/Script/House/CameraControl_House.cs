@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraControl_House : MonoBehaviour
 {
+    GameObject player;
+
     [Header("FreeLookCamera")]
     public GameObject freeLookCamera;
     public static bool isFreeLook = false;
@@ -26,12 +28,14 @@ public class CameraControl_House : MonoBehaviour
     void Start()
     {
         Invoke("StartFreeLookCamera", 1.5f);
+        player = GameObject.Find("Player");
     }
 
     void Update()
     {
+        player.SetActive(!isLookDoor);
         freeLookCamera.SetActive(isFreeLookCamera());
-
+        
         CameraLooking();
     }
 
