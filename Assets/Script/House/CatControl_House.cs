@@ -6,9 +6,12 @@ public class CatControl_House : MonoBehaviour
 {
     Animator anim;
 
-    public static bool isIdle = false;
+    public static bool isSad = false;
     public static bool isHappy = false;
+    public static bool isWave = false;
     public static bool isBye = false;
+    public static bool isBag = false;
+    public static bool isBag_Out = false;
 
     void Start()
     {
@@ -17,6 +20,12 @@ public class CatControl_House : MonoBehaviour
 
     void Update()
     {
-        
+        Animation();
+    }
+
+    void Animation()
+    {
+        if()
+
     }
 }
