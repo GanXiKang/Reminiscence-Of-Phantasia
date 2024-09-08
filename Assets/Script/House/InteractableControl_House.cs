@@ -118,9 +118,11 @@ public class InteractableControl_House : MonoBehaviour
         else if (DoorControl_House.isCat)
         {
             cat.SetActive(true);
+            CatControl_House.isWave = true;
             UIAboveObject_House.isDialogBoxActive = true;
             UIAboveObject_House._whichDialog = 2;
             yield return new WaitForSeconds(2f);
+            CatControl_House.isWave = false;
             StoreControl_House.isStoreActive = true;
             UIAboveObject_House.isDialogBoxActive = false;
         }
