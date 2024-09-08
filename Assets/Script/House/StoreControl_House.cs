@@ -97,8 +97,8 @@ public class StoreControl_House : MonoBehaviour
         Vector3 startScale = new Vector3(2f, 12f, 1f);
         Vector3 targetScale = new Vector3(3f, 14f, 1f);
 
-        Quaternion startRotation = Quaternion.Euler(0, 0, 0);
-        Quaternion targetRotation = Quaternion.Euler(0, 0, 360);
+        Quaternion startRotation = Quaternion.Euler(0, 0, 180);
+        Quaternion targetRotation = Quaternion.Euler(0, 0, 0);
 
         CanvasGroup canvasGroup = button.GetComponent<CanvasGroup>();
         RectTransform rectTransform = button.GetComponent<RectTransform>();
