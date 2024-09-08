@@ -16,7 +16,6 @@ public class BirdControl_House : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-
     
     void Update()
     {
