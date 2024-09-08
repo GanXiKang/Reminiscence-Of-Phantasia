@@ -88,7 +88,7 @@ public class StoreControl_House : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        float duration = f;
+        float duration = 1f;
         float elapsed = 0f;
 
         float startAlpha = 0f;
