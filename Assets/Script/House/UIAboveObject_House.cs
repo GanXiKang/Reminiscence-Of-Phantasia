@@ -37,6 +37,7 @@ public class UIAboveObject_House : MonoBehaviour
     public Transform cat;
     public Vector3 animalsOffset;
     public static bool isDialogBoxActive;
+    public static int _whichDialog = 0;
 
     void Update()
     {
@@ -69,7 +70,24 @@ public class UIAboveObject_House : MonoBehaviour
         if (isDialogBoxActive)
         {
             dialogBox.SetActive(true);
-            dialogText.text = "";
+            switch (_whichDialog)
+            {
+                case 1:
+                    dialogText.text = "有信件！有信件！";
+                    break;
+
+                case 2:
+                    dialogText.text = "我帶了好東西喵！";
+                    break;
+
+                case 3:
+                    dialogText.text = "再見！再見！";
+                    break;
+
+                case 4:
+                    dialogText.text = "謝謝惠顧喵！";
+                    break;
+            }
         }
     }
 }
