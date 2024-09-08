@@ -60,7 +60,7 @@ public class BirdControl_House : MonoBehaviour
     void FalseByAnimationisHappy()
     {
         anim.SetBool("isHappy", false);
-        anim.SetBool("isDeliver", true);
+        isDeliver = true;
     }
     void FalseByAnimationisBye()
     {
