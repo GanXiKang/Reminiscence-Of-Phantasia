@@ -56,6 +56,17 @@ public class EntrustControl_House : MonoBehaviour
             }
         }
     }
+    void LeaveState()
+    {
+        UIAboveObject_House.isDialogBoxActive = false;
+        DoorControl_House.isLeave = true;
+        isEntrustActive = false;
+        isDeliverActive = false;
+        isReceiveActive = false;
+        isContentActive = false;
+        entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+        DeliverButtonInitialState();
+    }
 
     public void Button_Deliver(int _letter)
     {
@@ -101,22 +112,9 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
-        if (!UIAboveObject_House.isDialogBoxActive)
-        {
-            UIAboveObject_House.isDialogBoxActive = true;
-            UIAboveObject_House._whichDialog = 3;
-        }
-        else
-        {
-            UIAboveObject_House.isDialogBoxActive = false;
-            DoorControl_House.isLeave = true;
-            isEntrustActive = false;
-            isDeliverActive = false;
-            isReceiveActive = false;
-            isContentActive = false;
-            entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
-            DeliverButtonInitialState();
-        }
+        UIAboveObject_House.isDialogBoxActive = true;
+        UIAboveObject_House._whichDialog = 3;
+        Invoke("LeaveState", 2f);
     }
 
     IEnumerator AnimateButtonAppear(Button button, float delay, bool isShouldMove)
