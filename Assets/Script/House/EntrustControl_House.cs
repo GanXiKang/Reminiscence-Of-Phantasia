@@ -82,7 +82,6 @@ public class EntrustControl_House : MonoBehaviour
         isReceiveActive = false;
         isDeliverActive = true;
         BirdControl_House.isHappy = true;
-        BirdControl_House.isDeliver = true;
         StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
