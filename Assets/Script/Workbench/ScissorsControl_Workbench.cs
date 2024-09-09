@@ -6,7 +6,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
 {
     //Mouse
     float mouseY, mouseX;
-    float _moveSpeed = 240f;
+    float _moveSpeed = 200f;
     float newZ, newX;
     float minZ = 1f, maxZ = 11f;
     float minX = 1f, maxX = 7f;
