@@ -6,12 +6,11 @@ public class CatControl_House : MonoBehaviour
 {
     Animator anim;
 
-    public static bool isSad = false;
     public static bool isHappy = false;
     public static bool isWave = false;
     public static bool isBye = false;
     public static bool isBag = false;
-    public static bool isBag_Out = false;
+    public static bool isBag_On = false;
 
     void Start()
     {
@@ -25,12 +24,6 @@ public class CatControl_House : MonoBehaviour
 
     void Animation()
     {
-        if (isSad)
-        {
-            anim.SetBool("isSad", true);
-            Invoke("FalseByAnimation", 0.2f);
-            isSad = false;
-        }
         if (isHappy)
         {
             anim.SetBool("isHappy", true);
@@ -56,19 +49,18 @@ public class CatControl_House : MonoBehaviour
             anim.SetBool("isBag", true);
             isBag = false;
         }
-        if (isBag_Out)
+        if (isBag_On)
         {
-            anim.SetBool("isBag_Out", true);
+            anim.SetBool("isBag_On", true);
             anim.SetBool("isBag", false);
             Invoke("FalseByAnimation", 0.2f);
-            isBag_Out = false;
+            isBag_On = false;
         }
     }
     void FalseByAnimation()
     {
-        anim.SetBool("isSad", false);
         anim.SetBool("isHappy", false);
         anim.SetBool("isBye", false);
-        anim.SetBool("isBag_Out", false);
+        anim.SetBool("isBag_On", false);
     }
 }
