@@ -70,13 +70,13 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Buy()
     {
-        
+        CatControl_House.isHappy = true;
     }
     public void Button_Back()
     {
         isHomePageActive = true;
         isContentActive = false;
-        CatControl_House.isBag_Out = true;
+        CatControl_House.isBag_On = true;
         StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f, false));
         StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, false));
         StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, false));
