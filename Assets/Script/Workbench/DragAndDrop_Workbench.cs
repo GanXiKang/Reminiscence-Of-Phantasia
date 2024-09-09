@@ -19,7 +19,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
-            transform.position = new Vector3(worldPosition);
+            transform.position = worldPosition;
         }
 
         if (Input.GetMouseButtonUp(0))
