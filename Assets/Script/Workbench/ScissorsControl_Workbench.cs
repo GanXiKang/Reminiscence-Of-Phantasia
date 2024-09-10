@@ -27,10 +27,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
     void Start()
     {
-        for (int i = 1; i < isCollider.Length; i++)
-        {
-            isCollider[i] = false;
-        }
+        ClearColliderBool();
     }
     void Update()
     {
@@ -72,8 +69,14 @@ public class ScissorsControl_Workbench : MonoBehaviour
             Destroy(line[i]);
         }
         line.Clear();
-        isColliderA = false;
-        isColliderB = false;
+        ClearColliderBool();
+    }
+    void ClearColliderBool()
+    {
+        for (int i = 1; i < isCollider.Length; i++)
+        {
+            isCollider[i] = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -82,47 +85,22 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             if (other.tag == "PaperOut")
             {
-
-                    if (other.gameObject.name == "ColliderA_1")
-                    {
-                        _cutPoint = 1;
-                        isColliderA = true;
-                    }
-                    else if (other.gameObject.name == "ColliderB_1")
-                    {
-                        _cutPoint = 1;
-                        isColliderB = true;
-                    }
-                    else if (other.gameObject.name == "ColliderA_2")
-                    {
-                        _cutPoint = 2;
-                        isColliderA = true;
-                    }
-                    else if (other.gameObject.name == "ColliderB_2")
-                    {
-                        _cutPoint = 2;
-                        isColliderB = true;
-                    }
-                    else if (other.gameObject.name == "ColliderA_3")
-                    {
-                        _cutPoint = 3;
-                        isColliderA = true;
-                    }
-                    else if (other.gameObject.name == "ColliderB_3")
-                    {
-                        _cutPoint = 3;
-                        isColliderB = true;
-                    }
-                    else if (other.gameObject.name == "ColliderA_4")
-                    {
-                        _cutPoint = 4;
-                        isColliderA = true;
-                    }
-                    else if (other.gameObject.name == "ColliderB_4")
-                    {
-                        _cutPoint = 4;
-                        isColliderB = true;
-                    }
+                if (other.gameObject.name == "Collider1")
+                {
+                    isCollider[1] = true;
+                }
+                else if (other.gameObject.name == "Collider2")
+                {
+                    isCollider[2] = true;
+                }
+                else if (other.gameObject.name == "Collider3")
+                {
+                    isCollider[3] = true;
+                }
+                else if (other.gameObject.name == "Collider4")
+                {
+                    isCollider[4] = true;
+                }
             }
             if (other.tag == "Paper")
             {
