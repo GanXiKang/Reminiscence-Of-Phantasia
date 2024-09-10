@@ -16,8 +16,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     public static int _cutPoint = 0;
 
     //collider
-    bool isColliderA = false;
-    bool isColliderB = false;
+    bool[] isCollider = new bool[5];
 
     [Header("Line")]
     public GameObject scissorsLine;
@@ -26,6 +25,13 @@ public class ScissorsControl_Workbench : MonoBehaviour
     [Header("Paper")]
     public Transform paper;
 
+    void Start()
+    {
+        for (int i = 1; i < isCollider.Length; i++)
+        {
+            isCollider[i] = false;
+        }
+    }
     void Update()
     {
         if (WorkbenchControl_House._process == 2)
@@ -50,6 +56,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             }
         }
     }
+
     void ScissorsMove()
     {
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
@@ -75,8 +82,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             if (other.tag == "PaperOut")
             {
-                if (!isColliderA && !isColliderB)
-                {
+
                     if (other.gameObject.name == "ColliderA_1")
                     {
                         _cutPoint = 1;
@@ -117,7 +123,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         _cutPoint = 4;
                         isColliderB = true;
                     }
-                }
             }
             if (other.tag == "Paper")
             {
