@@ -587,6 +587,10 @@ PrefabInstance:
       value: In1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6fa9b2366e1427648bb0849702b59d2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fa9b2366e1427648bb0849702b59d2a, type: 3}
       propertyPath: m_TagString
       value: Paper
       objectReference: {fileID: 0}
@@ -11867,7 +11871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &796285800
 Transform:
   m_ObjectHideFlags: 0
@@ -17069,6 +17073,10 @@ PrefabInstance:
       value: In3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4b6a814869612b2499d11feb47091918, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b6a814869612b2499d11feb47091918, type: 3}
       propertyPath: m_TagString
       value: Paper
       objectReference: {fileID: 0}
@@ -17600,6 +17608,10 @@ PrefabInstance:
       value: In2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f266d16803a27e249ad040df0fb2b959, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f266d16803a27e249ad040df0fb2b959, type: 3}
       propertyPath: m_TagString
       value: Paper
       objectReference: {fileID: 0}
@@ -17882,7 +17894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1168572189
 Transform:
   m_ObjectHideFlags: 0
@@ -18761,7 +18773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1487656151
 Transform:
   m_ObjectHideFlags: 0
@@ -24885,6 +24897,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 16c8ab0aba014fa47b7521f1d0363616, type: 3}
       propertyPath: m_Name
       value: In4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 16c8ab0aba014fa47b7521f1d0363616, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 16c8ab0aba014fa47b7521f1d0363616, type: 3}
       propertyPath: m_TagString
