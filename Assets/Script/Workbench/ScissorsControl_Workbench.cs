@@ -77,7 +77,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
         {
             isCollider[i] = false;
         }
-        print("Clear");
     }
     void Cut()
     {
@@ -95,22 +94,18 @@ public class ScissorsControl_Workbench : MonoBehaviour
                 if (other.gameObject.name == "Collider1")
                 {
                     isCollider[1] = true;
-                    print("1");
                 }
                 else if (other.gameObject.name == "Collider2")
                 {
                     isCollider[2] = true;
-                    print("2");
                 }
                 else if (other.gameObject.name == "Collider3")
                 {
                     isCollider[3] = true;
-                    print("3");
                 }
                 else if (other.gameObject.name == "Collider4")
                 {
                     isCollider[4] = true;
-                    print("4");
                 }
             }
             if (other.tag == "Paper")
