@@ -31,6 +31,9 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotation = 0;
     bool isPaperRotation = false;
     public static bool isFinishCut = false;
+    //úy‘á
+    public GameObject paper2a, paper2b;
+    int _paper2Num = 1;
 
     [Header("Step3")]
     public GameObject colorUI;
@@ -61,8 +64,8 @@ public class WorkbenchControl_House : MonoBehaviour
                 Step4_Install();
                 break;
         }
-
-        if (Input.GetKeyDown(KeyCode.C)) //úy‘á
+        //úy‘á
+        if (Input.GetKeyDown(KeyCode.C)) 
         {
             _process++;
             for (int i = 1; i < 5; i++)
@@ -97,6 +100,18 @@ public class WorkbenchControl_House : MonoBehaviour
                     colorUI.SetActive(false);
                     break;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            paper2a.SetActive(true);
+            paper2b.SetActive(false);
+            _paper2Num = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            paper2a.SetActive(false);
+            paper2b.SetActive(true);
+            _paper2Num = 2;
         }
         Leave();
     }
@@ -195,8 +210,16 @@ public class WorkbenchControl_House : MonoBehaviour
         if (!isFinishCut) return;
         if (ScissorsControl_Workbench._cutPoint == 0) return;
 
-        paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
-        Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
+        if (_paper2Num == 1)
+        {
+            paperOut[ScissorsControl_Workbench._cutPoint + 4].GetComponent<Rigidbody>().isKinematic = false;
+            Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
+        }
+        else
+        {
+            paperOut[ScissorsControl_Workbench._cutPoint + 4].GetComponent<Rigidbody>().isKinematic = false;
+            Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
+        }
         isFinishCut = false;
     }
 
