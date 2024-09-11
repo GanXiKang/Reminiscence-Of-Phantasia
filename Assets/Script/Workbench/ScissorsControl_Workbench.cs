@@ -149,7 +149,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         _cutPoint = 4;
                         Cut();
                     }
-
                 }
                 else if (other.gameObject.name == "Collider2")
                 {
@@ -190,67 +189,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
                         Cut();
                     }
                 }
-                //switch (_cutPoint)
-                //{
-                //    case 1:
-                //        if (other.gameObject.name == "ColliderA_1" && isColliderB)
-                //        {
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        else if (other.gameObject.name == "ColliderB_1" && isColliderA)
-                //        {
-                //            WorkbenchControl_House.isFinishCut = true;
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        break;
-
-                //    case 2:
-                //        if (other.gameObject.name == "ColliderA_2" && isColliderB)
-                //        {
-                //            WorkbenchControl_House.isFinishCut = true;
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        else if (other.gameObject.name == "ColliderB_2" && isColliderA)
-                //        {
-                //            WorkbenchControl_House.isFinishCut = true;
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        break;
-
-                //    case 3:
-                //        if (other.gameObject.name == "ColliderA_3" && isColliderB)
-                //        {
-                //            WorkbenchControl_House.isFinishCut = true;
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        else if (other.gameObject.name == "ColliderB_3" && isColliderA)
-                //        {
-                //            WorkbenchControl_House.isFinishCut = true;
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        break;
-
-                //    case 4:
-                //        if (other.gameObject.name == "ColliderA_4" && isColliderB)
-                //        {
-                //            WorkbenchControl_House.isFinishCut = true;
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        else if (other.gameObject.name == "ColliderB_4" && isColliderA)
-                //        {
-                //            WorkbenchControl_House.isFinishCut = true;
-                //            isUseScissors = false;
-                //            Invoke("ClearLine", 0.2f);
-                //        }
-                //        break;
-                //}
             }
         }
     }
