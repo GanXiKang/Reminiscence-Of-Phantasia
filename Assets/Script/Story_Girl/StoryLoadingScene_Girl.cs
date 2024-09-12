@@ -25,15 +25,6 @@ public class StoryLoadingScene_Girl : MonoBehaviour
 
         LeftSwitch();
         RightSwitch();
-
-        if (Input.GetKeyDown(KeyCode.L))  //úy‘á
-        {
-            isRightOpen = true;
-        }
-        if (Input.GetKeyDown(KeyCode.K))  //úy‘á
-        {
-            isLeftOpen = true;
-        }
     }
 
     void LeftSwitch()
