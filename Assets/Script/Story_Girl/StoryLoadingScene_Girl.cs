@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class StoryLoadingScene_Girl : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip street, forest;
+
     [Header("Scene")]
     public GameObject street;
     public GameObject forest;
