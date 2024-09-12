@@ -90,6 +90,9 @@ public class StoryLoadingScene_Girl : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             street.SetActive(true);
             forest.SetActive(false);
+            BGM.Stop();
+            BGM.clip = streetBGM;
+            BGM.Play();
             isRightClose = true;
         }
     }
@@ -109,6 +112,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
         {
             isLeftClose = false;
             isLoading = false;
+            
         }
     }
     IEnumerator RightSwitchScene_Open()
@@ -130,6 +134,9 @@ public class StoryLoadingScene_Girl : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             forest.SetActive(true);
             street.SetActive(false);
+            BGM.Stop();
+            BGM.clip = forestBGM;
+            BGM.Play();
             isLeftClose = true;
         }
     }
