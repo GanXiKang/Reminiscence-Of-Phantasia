@@ -22,13 +22,13 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public Transform chooseUI;
     public Transform originalPos;
     public Transform targetPos;
-    public GameObject buttonUI;
-    public Text contentA;
-    public Text contentB;
+    public GameObject button2UI, button3UI;
+    public Text contentA, contentB, contentC, contentD, contentE;
     public float _moveSpeed = 500;
     bool isChoose = false;
     bool isChooseUI_Up = false;
     bool isChooseUI_Back = false;
+    int _buttonNum;
     int _chooseNum;
 
     [Header("TextFile")]
@@ -132,7 +132,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             if (chooseUI.position == targetPos.position)
             {
                 isChooseUI_Up = false;
-                buttonUI.SetActive(true);
+                if (_buttonNum == 2)
+                {
+                    button2UI.SetActive(true);
+                }
+                else 
+                {
+                    button3UI.SetActive(true);
+                }
             }
         }
         if (isChooseUI_Back)
@@ -200,13 +207,26 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryUIControl_Girl.isDialogue = false;
                 yield break;
 
-            case "Choose":
+            case "Choose2":
                 isChoose = true;
                 isChooseUI_Up = true;
+                _buttonNum = 2;
                 _index++;
                 contentA.text = textList[_index];
                 _index++;
                 contentB.text = textList[_index];
+                yield break;
+
+            case "Choose3":
+                isChoose = true;
+                isChooseUI_Up = true;
+                _buttonNum = 3;
+                _index++;
+                contentC.text = textList[_index];
+                _index++;
+                contentD.text = textList[_index];
+                _index++;
+                contentE.text = textList[_index];
                 yield break;
 
             case "Event":
