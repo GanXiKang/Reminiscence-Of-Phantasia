@@ -8,8 +8,9 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     [Header("UI")]
     public GameObject storyUI;
     public GameObject buttonLeft, buttonRight;
+    public GameObject buttonStart, buttonLeave;
     public Text content;
-    public static bool isStory;
+    public static bool isStory = true;
 
     [Header("TextFile")]
     public TextAsset textStart;
@@ -30,6 +31,8 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     
     void Update()
     {
+        storyUI.SetActive(isStory);
+
         TextController();
         ButtonActive();
     }
@@ -72,6 +75,8 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             case 1:
                 buttonLeft.SetActive(true);
                 buttonRight.SetActive(true);
+                buttonStart.SetActive(false);
+                buttonLeave.SetActive(false);
                 break;
 
             case 2:
@@ -98,6 +103,14 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             StartCoroutine(StorySystemUI());
         }
     }
+    public void Button_StartGame()
+    {
+        
+    }
+    public void Button_LeaveStory()
+    {
+
+    }
 
     IEnumerator StorySystemUI()
     {
@@ -118,6 +131,10 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             yield return new WaitForSeconds(_textSpend);
         }
         textFinish = true;
+        if (_page == 3)
+        {
+            buttonStart.SetActive(true);
+        }
     }
     IEnumerator StorySystemUIDisappear(CanvasGroup canvasGroup)
     {
@@ -139,5 +156,6 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         }
 
         canvasGroup.alpha = targetAlpha;
+        isStory = false;
     }
 }
