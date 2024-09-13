@@ -5040,7 +5040,7 @@ GameObject:
   - component: {fileID: 46267308}
   - component: {fileID: 46267307}
   m_Layer: 5
-  m_Name: Content_B
+  m_Name: Content_E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5098,7 +5098,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B
+  m_Text: E
 --- !u!222 &46267308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5800,7 +5800,7 @@ GameObject:
   - component: {fileID: 131030454}
   - component: {fileID: 131030453}
   m_Layer: 5
-  m_Name: Content_A
+  m_Name: Content_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5858,7 +5858,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A
+  m_Text: C
 --- !u!222 &131030454
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6315,7 +6315,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9389,7 +9389,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10067,9 +10067,13 @@ MonoBehaviour:
   chooseUI: {fileID: 380198081}
   originalPos: {fileID: 1539176151}
   targetPos: {fileID: 640525158}
-  buttonUI: {fileID: 140355661}
+  button2UI: {fileID: 140355661}
+  button3UI: {fileID: 1335135159}
   contentA: {fileID: 1529930380}
   contentB: {fileID: 1465693893}
+  contentC: {fileID: 131030453}
+  contentD: {fileID: 1284499341}
+  contentE: {fileID: 46267307}
   _moveSpeed: 500
   textFile:
   - {fileID: 0}
@@ -11334,7 +11338,7 @@ GameObject:
   - component: {fileID: 1284499342}
   - component: {fileID: 1284499341}
   m_Layer: 5
-  m_Name: Content_B
+  m_Name: Content_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11392,7 +11396,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B
+  m_Text: D
 --- !u!222 &1284499342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15450,7 +15454,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
