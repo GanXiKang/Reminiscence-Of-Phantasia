@@ -203,7 +203,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             if (_who == 1)
             {
                 StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._isAboveWho = _who;
+                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                StoryDialogueControl_Girl._isAboveWho2 = 2;
                 StoryDialogueControl_Girl._textCount = 1;
             }
 
