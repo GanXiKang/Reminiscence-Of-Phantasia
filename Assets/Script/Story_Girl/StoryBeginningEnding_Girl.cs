@@ -145,8 +145,8 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         float duration = 1f;
         float elapsed = 0f;
 
-        float startAlpha = 0f;
-        float targetAlpha = 1f;
+        float startAlpha = 1f;
+        float targetAlpha = 0f;
 
         canvasGroup.alpha = startAlpha;
 
