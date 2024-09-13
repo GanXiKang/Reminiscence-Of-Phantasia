@@ -31,6 +31,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     void Update()
     {
         TextController();
+        ButtonActive();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -60,7 +61,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         if (_textSpend != 0.1f)
             _textSpend = 0.1f;
     }
-    void ButtonController()
+    void ButtonActive()
     {
         switch (_page)
         {
