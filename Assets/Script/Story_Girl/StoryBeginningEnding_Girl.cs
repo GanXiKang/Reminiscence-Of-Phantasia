@@ -37,7 +37,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         textList.Clear();
         _page = 0;
 
-        var lineDate = file.text.Split("\n");
+        var lineDate = file.text.Replace("\r\n", "\n").Replace("\r", "\n").Split('\n');
 
         foreach (var line in lineDate)
         {
@@ -60,7 +60,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             _textSpend = 0.1f;
     }
 
-    public void Button_Left() //上一頁
+    public void Button_Left()
     {
         if (_page != 0)
         {
@@ -69,7 +69,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             StartCoroutine(StorySystemUI());
         }
     }
-    public void Button_Right() //下一頁
+    public void Button_Right()
     {
         if (_page <= 3)
         {
