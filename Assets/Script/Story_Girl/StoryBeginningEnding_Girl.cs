@@ -135,7 +135,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             yield return new WaitForSeconds(_textSpend);
         }
         textFinish = true;
-        if (_page == 3)
+        if (_page == 2)
         {
             buttonStart.SetActive(true);
         }
