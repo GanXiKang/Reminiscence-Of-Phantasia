@@ -65,16 +65,16 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     {
         switch (_page)
         {
-            case 1:
+            case 0:
                 buttonLeft.SetActive(false);
                 break;
 
-            case 2:
+            case 1:
                 buttonLeft.SetActive(true);
                 buttonRight.SetActive(true);
                 break;
 
-            case 3:
+            case 2:
                 buttonRight.SetActive(false);
                 break;
         }
@@ -82,15 +82,21 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
     public void Button_Left()
     {
-        _page--;
-        ResetTextSpeed();
-        StartCoroutine(StorySystemUI());
+        if (textFinish)
+        {
+            _page--;
+            ResetTextSpeed();
+            StartCoroutine(StorySystemUI());
+        }
     }
     public void Button_Right()
     {
-        _page++;
-        ResetTextSpeed();
-        StartCoroutine(StorySystemUI());
+        if (textFinish)
+        {
+            _page++;
+            ResetTextSpeed();
+            StartCoroutine(StorySystemUI());
+        }
     }
 
     IEnumerator StorySystemUI()
