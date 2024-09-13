@@ -157,6 +157,18 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 {
                     JumpToSection("B");
                 }
+                else if (_chooseNum == 3)
+                {
+                    JumpToSection("C");
+                }
+                else if (_chooseNum == 4)
+                {
+                    JumpToSection("D");
+                }
+                else if (_chooseNum == 5)
+                {
+                    JumpToSection("E");
+                }
             }
         }
     }
@@ -177,7 +189,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         _chooseNum = _chooseButton;
         isChooseUI_Back = true;
-        buttonUI.SetActive(false);
+        if (_chooseButton <= 2)
+        {
+            button2UI.SetActive(false);
+        }
+        else
+        {
+            button3UI.SetActive(false);
+        }
     }
 
     IEnumerator SetTextLabelIndexUI()
