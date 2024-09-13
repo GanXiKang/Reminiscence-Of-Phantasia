@@ -9,8 +9,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("UITransform")]
     public Transform[] target;
-    public static int _isAboveWho = 0;
+    public static int _isAboveWho1 = 0;
+    public static int _isAboveWho2 = 0;
     bool isPlayerTalk;
+    int _targetNum = 0;
 
     [Header("UIComponents")]
     public Transform dialogueUI;
@@ -96,8 +98,16 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         }
         else
         {
-            Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho].position);
-            dialogueUI.position = targetPos + offset;
+            if (_targetNum == 1)
+            {
+                Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho1].position);
+                dialogueUI.position = targetPos + offset;
+            }
+            else
+            {
+                Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho2].position);
+                dialogueUI.position = targetPos + offset;
+            }
         }
     }
     void DialogurEnd()
@@ -173,8 +183,15 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 _index++;
                 break;
 
-            case "Target":
+            case "Target1":
                 isPlayerTalk = false;
+                _targetNum = 1;
+                _index++;
+                break;
+
+            case "Target2":
+                isPlayerTalk = false;
+                _targetNum = 2;
                 _index++;
                 break;
 
@@ -191,6 +208,9 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 _index++;
                 contentB.text = textList[_index];
                 yield break;
+
+            case "Event":
+                break;
         }
         if (!isChoose)
         {
