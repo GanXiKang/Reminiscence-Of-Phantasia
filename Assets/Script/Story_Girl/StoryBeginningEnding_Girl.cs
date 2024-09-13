@@ -54,12 +54,18 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             }
         }
     }
+    void ResetTextSpeed()
+    {
+        if (_textSpend != 0.1f)
+            _textSpend = 0.1f;
+    }
 
     public void Button_Left() //…œ“ªÌì
     {
         if (_page != 0)
         {
             _page--;
+            ResetTextSpeed();
             StartCoroutine(StorySystemUI());
         }
     }
@@ -68,6 +74,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         if (_page <= 3)
         {
             _page++;
+            ResetTextSpeed();
             StartCoroutine(StorySystemUI());
         }
     }
