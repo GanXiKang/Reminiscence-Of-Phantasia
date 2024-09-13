@@ -183,7 +183,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 _index++;
                 break;
 
-            case "Target1":
+            case "Target":
                 isPlayerTalk = false;
                 _targetNum = 1;
                 _index++;
