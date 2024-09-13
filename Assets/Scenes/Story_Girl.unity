@@ -11600,6 +11600,7 @@ GameObject:
   - component: {fileID: 1353896309}
   - component: {fileID: 1353896310}
   - component: {fileID: 1353896312}
+  - component: {fileID: 1353896313}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -11742,6 +11743,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 1013169811}
+--- !u!114 &1353896313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353896305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40009e9e1ad1bc34b8148c60e0035965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyUI: {fileID: 2012275659}
+  content: {fileID: 125562571}
+  textStart: {fileID: 4900000, guid: e983839122c55fa4b8b2793ef9e98833, type: 3}
+  textEnding: {fileID: 4900000, guid: 3a2d6d6c5f60e584e8eb2f92ab6a5749, type: 3}
 --- !u!1 &1412337225
 GameObject:
   m_ObjectHideFlags: 0
