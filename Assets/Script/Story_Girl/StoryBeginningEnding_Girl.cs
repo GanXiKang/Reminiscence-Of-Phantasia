@@ -37,7 +37,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         textList.Clear();
         _page = 0;
 
-        var lineDate = file.text.Replace("\r\n", "\n").Replace("\r", "\n").Split('\n');
+        var lineDate = file.text.Split("\n");
 
         foreach (var line in lineDate)
         {
@@ -84,7 +84,16 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         content.text = "";
         for (int i = 0; i < textList[_page].Length; i++)
         {
-            content.text += textList[_page][i];
+            if (textList[_page][i] == '\\' && i + 1 < textList[_page].Length && textList[_page][i + 1] == 'n')
+            {
+                content.text += "\n";
+                i++;
+            }
+            else
+            {
+                content.text += textList[_page][i]; 
+            }
+
             yield return new WaitForSeconds(_textSpend);
         }
         textFinish = true;
