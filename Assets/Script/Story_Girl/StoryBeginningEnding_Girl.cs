@@ -7,6 +7,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 {
     [Header("UI")]
     public GameObject storyUI;
+    public GameObject buttonLeft, buttonRight;
     public Text content;
     public static bool isStory;
 
@@ -59,25 +60,38 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         if (_textSpend != 0.1f)
             _textSpend = 0.1f;
     }
+    void ButtonController()
+    {
+        switch (_page)
+        {
+            case 1:
+                buttonLeft.SetActive(false);
+                break;
+
+            case 2:
+                buttonLeft.SetActive(true);
+                buttonRight.SetActive(true);
+                break;
+
+            case 3:
+                buttonRight.SetActive(false);
+                break;
+        }
+    }
 
     public void Button_Left()
     {
-        if (_page != 0)
-        {
-            _page--;
-            ResetTextSpeed();
-            StartCoroutine(StorySystemUI());
-        }
+        _page--;
+        ResetTextSpeed();
+        StartCoroutine(StorySystemUI());
     }
     public void Button_Right()
     {
-        if (_page <= 3)
-        {
-            _page++;
-            ResetTextSpeed();
-            StartCoroutine(StorySystemUI());
-        }
+        _page++;
+        ResetTextSpeed();
+        StartCoroutine(StorySystemUI());
     }
+
     IEnumerator StorySystemUI()
     {
         textFinish = false;
@@ -97,5 +111,26 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             yield return new WaitForSeconds(_textSpend);
         }
         textFinish = true;
+    }
+    IEnumerator StorySystemUIDisappear(CanvasGroup canvasGroup)
+    {
+        float duration = 1f;
+        float elapsed = 0f;
+
+        float startAlpha = 0f;
+        float targetAlpha = 1f;
+
+        canvasGroup.alpha = startAlpha;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / duration);
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = targetAlpha;
     }
 }
