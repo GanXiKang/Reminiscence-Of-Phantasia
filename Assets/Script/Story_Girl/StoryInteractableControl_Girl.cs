@@ -73,7 +73,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
         if (totalRotation <= 120f)
         {
-            Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f); // À@YÝSÐýÞD
+            Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f);
             transform.rotation = transform.rotation * deltaRotation;
             if (totalRotation > 90f)
             {
