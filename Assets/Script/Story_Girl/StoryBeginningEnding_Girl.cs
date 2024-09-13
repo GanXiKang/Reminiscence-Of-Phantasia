@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StoryBeginningEnding_Girl : MonoBehaviour
 {
+    CanvasGroup canvasGroup;
+
     [Header("UI")]
     public GameObject storyUI;
     public GameObject buttonLeft, buttonRight;
@@ -24,6 +26,8 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
     void Start()
     {
+        canvasGroup = storyUI.GetComponent<CanvasGroup>();
+
         GetTextFormFile(textStart);
         StartCoroutine(StorySystemUI());
     }
@@ -105,11 +109,11 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     }
     public void Button_StartGame()
     {
-        
+        StartCoroutine(StorySystemUIDisappear(canvasGroup));
     }
     public void Button_LeaveStory()
     {
-
+        StartCoroutine(StorySystemUIDisappear(canvasGroup));
     }
 
     IEnumerator StorySystemUI()
