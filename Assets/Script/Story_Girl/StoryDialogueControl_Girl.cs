@@ -253,6 +253,17 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 yield break;
 
             case "Event":
+                _index++;
+                break;
+
+            case "Normal":
+                dialogueBG.sprite = normal;
+                _index++;
+                break;
+
+            case "Spiked":
+                dialogueBG.sprite = spiked;
+                _index++;
                 break;
         }
         if (!isChoose)
