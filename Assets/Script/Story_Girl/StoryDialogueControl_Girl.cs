@@ -37,8 +37,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public float _textSpend;
     public static int _textCount = 1;
     bool isTextFinish;
-    bool isInsideTag = false;
-    string tagContent = "";
 
     List<string> textList = new List<string>();
 
@@ -258,26 +256,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             content.text = "";
             for (int i = 0; i < textList[_index].Length; i++)
             {
-                if (textList[_index][i] == '(')
-                {
-                    isInsideTag = true;
-                    tagContent = "";
-                }
-
-                if (isInsideTag)
-                {
-                    tagContent += textList[_index][i];
-                    if (textList[_index][i] == ')')
-                    {
-                        isInsideTag = false;
-                        content.text += tagContent;
-                    }
-                }
-                else
-                {
-                    content.text += textList[_index][i];
-                    yield return new WaitForSeconds(_textSpend);
-                }
+                content.text += textList[_index][i];
+                yield return new WaitForSeconds(_textSpend);
             }
             isTextFinish = true;
             _index++;
