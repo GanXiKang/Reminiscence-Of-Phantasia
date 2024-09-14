@@ -36,7 +36,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public int _index;
     public float _textSpend;
     public static int _textCount = 1;
-    bool textFinish;
+    bool isTextFinish;
+    bool isInsideTag;
 
     List<string> textList = new List<string>();
 
@@ -201,7 +202,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     IEnumerator SetTextLabelIndexUI()
     {
-        textFinish = false;
+        isTextFinish = false;
         switch (textList[_index].Trim())
         {
             case "Player":
@@ -259,7 +260,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 content.text += textList[_index][i];
                 yield return new WaitForSeconds(_textSpend);
             }
-            textFinish = true;
+            isTextFinish = true;
             _index++;
         }
     }
