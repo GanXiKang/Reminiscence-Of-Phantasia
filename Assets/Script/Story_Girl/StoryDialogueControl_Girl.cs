@@ -90,7 +90,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     }
     void TextPosition()
     {
-        Vector3 offset = new Vector3(-300f, 300f, 0f);
+        Vector3 offset = new Vector3(-120f, 300f, 0f);
         if (isPlayerTalk)
         {
             Vector3 playerPos = Camera.main.WorldToScreenPoint(player.transform.position);
