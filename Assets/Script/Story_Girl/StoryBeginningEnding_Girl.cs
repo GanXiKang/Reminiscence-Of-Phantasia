@@ -19,7 +19,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     public TextAsset textEnding;
     public static bool isStoryEnding = false;
     float _textSpend = 0.1f;
-    bool textFinish;
+    bool isTextFinish;
     int _page;
 
     List<string> textList = new List<string>();
@@ -55,7 +55,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     }
     void TextController()
     {
-        if (!textFinish)
+        if (!isTextFinish)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
@@ -91,7 +91,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
     public void Button_Left()
     {
-        if (textFinish)
+        if (isTextFinish)
         {
             _page--;
             ResetTextSpeed();
@@ -100,7 +100,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     }
     public void Button_Right()
     {
-        if (textFinish)
+        if (isTextFinish)
         {
             _page++;
             ResetTextSpeed();
