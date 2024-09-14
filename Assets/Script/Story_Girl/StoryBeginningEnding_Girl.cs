@@ -118,7 +118,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
     IEnumerator StorySystemUI()
     {
-        textFinish = false;
+        isTextFinish = false;
         content.text = "";
         for (int i = 0; i < textList[_page].Length; i++)
         {
@@ -134,7 +134,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
             yield return new WaitForSeconds(_textSpend);
         }
-        textFinish = true;
+        isTextFinish = true;
         if (_page == 2)
         {
             buttonStart.SetActive(true);

@@ -73,7 +73,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     }
     void TextController()
     {
-        if (textFinish)
+        if (isTextFinish)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
