@@ -208,6 +208,18 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         isTextFinish = false;
         switch (textList[_index].Trim())
         {
+            case "Normal":
+                dialogueBG.sprite = normal;
+                _index++;
+                break;
+
+            case "Spiked":
+                dialogueBG.sprite = spiked;
+                _index++;
+                break;
+        }
+        switch (textList[_index].Trim())
+        {
             case "Player":
                 isPlayerTalk = true;
                 _index++;
@@ -253,16 +265,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 yield break;
 
             case "Event":
-                _index++;
-                break;
-
-            case "Normal":
-                dialogueBG.sprite = normal;
-                _index++;
-                break;
-
-            case "Spiked":
-                dialogueBG.sprite = spiked;
                 _index++;
                 break;
         }
