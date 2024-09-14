@@ -130,7 +130,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
         if (isChooseUI_Up)
         {
-            chooseUI.transform.position = Vector3.MoveTowards(chooseUI.position, targetPos.position, _moveSpeed * Time.deltaTime);
+            chooseUI.transform.position = Vector3.MoveTowards(chooseUI.transform.position, targetPos.position, _moveSpeed * Time.deltaTime);
             if (chooseUI.transform.position == targetPos.position)
             {
                 isChooseUI_Up = false;
@@ -146,7 +146,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         }
         if (isChooseUI_Back)
         {
-            chooseUI.transform.position = Vector3.MoveTowards(chooseUI.position, originalPos.position, _moveSpeed * 2f * Time.deltaTime);
+            chooseUI.transform.position = Vector3.MoveTowards(chooseUI.transform.position, originalPos.position, _moveSpeed * 2f * Time.deltaTime);
             if (chooseUI.transform.position == originalPos.position)
             {
                 isChooseUI_Back = false;
