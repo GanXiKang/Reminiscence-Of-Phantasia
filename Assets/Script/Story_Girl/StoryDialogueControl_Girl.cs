@@ -16,7 +16,9 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("UIComponents")]
     public Transform dialogueUI;
+    public Image dialogueBG;
     public Text content;
+    public Sprite normal, spiked;
 
     [Header("UIChoose")]
     public GameObject chooseUI;
