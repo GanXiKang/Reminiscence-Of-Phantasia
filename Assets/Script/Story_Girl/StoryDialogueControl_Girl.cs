@@ -258,7 +258,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             content.text = "";
             for (int i = 0; i < textList[_index].Length; i++)
             {
-                if (textList[_index][i] == '<')
+                if (textList[_index][i] == '(')
                 {
                     isInsideTag = true;
                     tagContent = "";
@@ -267,7 +267,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 if (isInsideTag)
                 {
                     tagContent += textList[_index][i];
-                    if (textList[_index][i] == '>')
+                    if (textList[_index][i] == ')')
                     {
                         isInsideTag = false;
                         content.text += tagContent;
