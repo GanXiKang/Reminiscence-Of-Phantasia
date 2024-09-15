@@ -84,7 +84,7 @@ public class StoryBagControl : MonoBehaviour
             if (_howManyGrids > 5)
                 _howManyGrids = 5;
             BagGirdSprite();
-        isGet = false;
+            isGet = false;
         }
     }
     void BagGirdSprite()
