@@ -205,7 +205,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 StoryUIControl_Girl.isDialogue = true;
                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                 StoryDialogueControl_Girl._isAboveWho2 = 2;
-                StoryDialogueControl_Girl._textCount = 1;
+                StoryDialogueControl_Girl._textCount = 0;
             }
 
             if (StoryBagControl.isOpenBag)
