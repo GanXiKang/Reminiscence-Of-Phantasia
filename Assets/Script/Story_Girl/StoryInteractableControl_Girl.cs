@@ -38,7 +38,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public Transform bagUIPosition;
     public Transform skillUIPosition;
     public static bool isPlayerMove = true;
-    public static bool isPickedUp = false;
+    bool isPickedUp = false;
     bool isAnim = false;
 
     [Header("InteractableUI")]
@@ -202,6 +202,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     StoryDialogueControl_Girl._isAboveWho1 = _who;
                     StoryDialogueControl_Girl._textCount = 2;
 
+                    //isPickedUp = true;
+                    //StoryBagControl.isGet = true;
+                    //StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                    //StoryBagControl._whichItem = _giveItemNumber[0];
+
                     if (StoryBagControl.isOpenBag)
                     {
                         StoryBagControl.isOpenBag = false;
@@ -211,16 +216,24 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
             case 2:
                 _countMouseDown++;
-                if (_countMouseDown == 3)
+                switch (_countMouseDown)
                 {
-                    isPickedUp = true;
-                    StoryBagControl.isGet = true;
-                    StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
-                    StoryBagControl._whichItem = _giveItemNumber[1];
-                    if (StoryBagControl.isOpenBag)
-                    {
-                        StoryBagControl.isOpenBag = false;
-                    }
+                    case 1:
+                        break;
+
+                    case 2:
+                        break;
+
+                    case 3:
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
+                        StoryBagControl._whichItem = _giveItemNumber[1];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
+                        break;
                 }
                 break;
 
