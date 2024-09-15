@@ -202,60 +202,63 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         interactableUI.transform.position = screenPos;
     }
-    void GivePlayerObject() 
+    void GivePlayerObject()
     {
         if (StoryUIControl_Girl.isDialogue) return;
 
         if (isGiveItem)
         {
             isGiveItem = false;
-            switch (_who)
+            if (_whoGive == _who)
             {
-                case 1:
-                    isPickedUp = true;
-                    isSkill = true;
-                    if (StoryBagControl.isOpenBag)
-                    {
-                        StoryBagControl.isOpenBag = false;
-                    }
-                    break;
-
-                case 2:
-                    if (_countMouseDown == 1)
-                    {
+                switch (_who)
+                {
+                    case 1:
                         isPickedUp = true;
-                        StoryBagControl.isGet = true;
-                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        isSkill = true;
                         if (StoryBagControl.isOpenBag)
                         {
                             StoryBagControl.isOpenBag = false;
                         }
-                    }
-                    else
-                    {
-                        isPickedUp = true;
-                        StoryBagControl.isGet = true;
-                        StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
-                        StoryBagControl._whichItem = _giveItemNumber[1];
-                        if (StoryBagControl.isOpenBag)
+                        break;
+
+                    case 2:
+                        if (_countMouseDown == 1)
                         {
-                            StoryBagControl.isOpenBag = false;
+                            isPickedUp = true;
+                            StoryBagControl.isGet = true;
+                            StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                            StoryBagControl._whichItem = _giveItemNumber[0];
+                            if (StoryBagControl.isOpenBag)
+                            {
+                                StoryBagControl.isOpenBag = false;
+                            }
                         }
-                    }
-                    break;
+                        else
+                        {
+                            isPickedUp = true;
+                            StoryBagControl.isGet = true;
+                            StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
+                            StoryBagControl._whichItem = _giveItemNumber[1];
+                            if (StoryBagControl.isOpenBag)
+                            {
+                                StoryBagControl.isOpenBag = false;
+                            }
+                        }
+                        break;
 
-                case 3:
-                  
-                    break;
+                    case 3:
 
-                case 7:
-                   
-                    break;
+                        break;
 
-                case 8:
-                    
-                    break;
+                    case 7:
+
+                        break;
+
+                    case 8:
+
+                        break;
+                }
             }
         }
     }
