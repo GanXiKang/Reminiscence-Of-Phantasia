@@ -192,26 +192,21 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
         if (!isGive) return;
 
-        if (!isGiveItem && _giveItemNumber[0] != 0)
-        {
-            isGiveItem = true;
-            isPickedUp = true;
-            StoryBagControl.isGet = true;
-            StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-            StoryBagControl._whichItem = _giveItemNumber[0];
-
-            if (StoryBagControl.isOpenBag)
-            {
-                StoryBagControl.isOpenBag = false;
-            }
-        }
-
         switch (_who)
         {
             case 1:
-                StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                StoryDialogueControl_Girl._textCount = 2;
+                if (!isGiveItem)
+                {
+                    isGiveItem = true;
+                    StoryUIControl_Girl.isDialogue = true;
+                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                    StoryDialogueControl_Girl._textCount = 2;
+
+                    if (StoryBagControl.isOpenBag)
+                    {
+                        StoryBagControl.isOpenBag = false;
+                    }
+                }
                 break;
 
             case 2:
@@ -230,15 +225,19 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 break;
 
             case 3:
-                break;
+                if (!isGiveItem && _giveItemNumber[0] != 0)
+                {
+                    isGiveItem = true;
+                    isPickedUp = true;
+                    StoryBagControl.isGet = true;
+                    StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                    StoryBagControl._whichItem = _giveItemNumber[0];
 
-            case 4:
-                break;
-
-            case 5:
-                break;
-
-            case 6:
+                    if (StoryBagControl.isOpenBag)
+                    {
+                        StoryBagControl.isOpenBag = false;
+                    }
+                }
                 break;
 
             case 7:
@@ -253,9 +252,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 Destroy(this.gameObject, 2f);
-                break;
-
-            case 9:
                 break;
         }
     }
