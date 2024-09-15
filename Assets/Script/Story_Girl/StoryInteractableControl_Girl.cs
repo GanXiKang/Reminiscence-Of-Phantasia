@@ -12,7 +12,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public float _scaleSpeed = 5f;
     private Vector3 originalScale;
     Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
-    int _countMouseDown;
 
     [Header("InteractableUI")]
     public GameObject interactableUI;
@@ -20,6 +19,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public int _who;
     public static int _aboveWho = 0;
     public static bool isInteractableUI = false;
+    int _countMouseDown;
 
     [Header("Item_Give")]
     public bool isGive;
