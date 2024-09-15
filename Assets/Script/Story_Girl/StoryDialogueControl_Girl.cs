@@ -120,7 +120,13 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryThermometerControl_Girl.isThermometer = true;
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 1;
-                break;   
+                break;
+
+            case 11:
+            case 13:
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 2;
+                break;
         }
     }
     void ChooseUI()
