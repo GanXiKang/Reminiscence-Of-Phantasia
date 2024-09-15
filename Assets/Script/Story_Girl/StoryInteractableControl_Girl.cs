@@ -21,7 +21,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public bool isExchange;
     public int[] _exchangeItemNumber;
     public static bool isBagGetItem = false;
-    bool isGiveItem = false;
+    public static bool isGiveItem = false;
     bool isGetItem = false;
     int _exchangeDifferentItemRecord;
     int _countMouseDown;
@@ -36,10 +36,15 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
     public Transform bagUIPosition;
-    public Transform skillUIPosition;
     public static bool isPlayerMove = true;
     bool isPickedUp = false;
     bool isAnim = false;
+
+
+    [Header("SkillPickUp")]
+    public GameObject skillUI;
+    public Transform skillUIPosition;
+    bool isSkill = false;
 
     [Header("InteractableUI")]
     public GameObject interactableUI;
@@ -63,6 +68,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         InteractableIsRotationSprite();
         PickUpItem();
         InteractableUI();
+        GivePlayerObject();
     }
 
     void InteractableIsRotationSprite()
@@ -98,8 +104,14 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         moveItemUI.SetActive(true);
         Vector3 startPosition = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(0f, 120f, 0f);
         moveItemUI.transform.position = startPosition;
-
-        StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
+        if (!isSkill)
+        {
+            StartCoroutine(MoveItemUI(moveItemUI, startPosition, bagUIPosition.position));
+        }
+        else
+        {
+            StartCoroutine(MoveItemUI(moveItemUI, startPosition, skillUIPosition.position));
+        }
     }
     void InteractableUI()
     {
@@ -111,7 +123,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小女孩";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -119,7 +131,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "垃圾桶";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -127,7 +139,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "聖誕老人";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -135,7 +147,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小彥";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -143,7 +155,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "小欣";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -151,7 +163,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "獵人";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -159,7 +171,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "鐵棒";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -167,7 +179,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "木枝";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
 
@@ -175,16 +187,73 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "露營者";
-                    InteractableUIPosition();
+                    InteractableNameUIPosition();
                 }
                 break;
         }
     }
-    void InteractableUIPosition()
+    void InteractableNameUIPosition()
     {
         Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         interactableUI.transform.position = screenPos;
+    }
+    void GivePlayerObject() 
+    {
+        if (StoryUIControl_Girl.isDialogue) return;
+
+        if (isGiveItem)
+        {
+            isGiveItem = false;
+            switch (_who)
+            {
+                case 1:
+                    isPickedUp = true;
+                    isSkill = true;
+                    if (StoryBagControl.isOpenBag)
+                    {
+                        StoryBagControl.isOpenBag = false;
+                    }
+                    break;
+
+                case 2:
+                    if (_countMouseDown == 1)
+                    {
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
+                    }
+                    else
+                    {
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
+                        StoryBagControl._whichItem = _giveItemNumber[1];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
+                    }
+                    break;
+
+                case 3:
+                  
+                    break;
+
+                case 7:
+                   
+                    break;
+
+                case 8:
+                    
+                    break;
+            }
+        }
     }
 
     void OnMouseDown()
@@ -202,16 +271,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     StoryUIControl_Girl.isDialogue = true;
                     StoryDialogueControl_Girl._isAboveWho1 = _who;
                     StoryDialogueControl_Girl._textCount = 2;
-
-                    //isPickedUp = true;
-                    //StoryBagControl.isGet = true;
-                    //StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                    //StoryBagControl._whichItem = _giveItemNumber[0];
-
-                    if (StoryBagControl.isOpenBag)
-                    {
-                        StoryBagControl.isOpenBag = false;
-                    }
                 }
                 break;
 
