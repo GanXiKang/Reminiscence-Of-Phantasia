@@ -10,8 +10,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
     public float _scaleSpeed = 5f;
-    Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
     private Vector3 originalScale;
+    Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
 
     [Header("Item")]
     public bool isGive;
