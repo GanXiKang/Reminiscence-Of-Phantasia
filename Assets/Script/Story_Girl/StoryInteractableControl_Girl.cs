@@ -207,8 +207,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (StoryUIControl_Girl.isDialogue) return;
 
         if (isGiveItem)
-        {
-            isGiveItem = false;
+        { 
             if (_whoGive == _who)
             {
                 switch (_who)
@@ -259,6 +258,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                         break;
                 }
+                isGiveItem = false;
             }
         }
     }
