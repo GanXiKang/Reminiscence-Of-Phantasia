@@ -12,26 +12,31 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public float _scaleSpeed = 5f;
     private Vector3 originalScale;
     Vector3 scaledSize = new Vector3(0.55f, 0.55f, 0.55f);
-
-    [Header("Item")]
-    public bool isGive;
-    public int[] _giveItemNumber;
-    public bool isGet;
-    public int[] _getItemNumber;
-    public bool isExchange;
-    public int[] _exchangeItemNumber;
-    public static bool isBagGetItem = false;
-    public static bool isGiveItem = false;
-    bool isGetItem = false;
-    int _exchangeDifferentItemRecord;
     int _countMouseDown;
 
-    [Header("Rotation")]
-    public Sprite getItemSprite;
-    private float totalRotation = 0f;
-    private Quaternion initialRotation;
-    bool isRotation = false;
-    float _speed = 180f;
+    [Header("InteractableUI")]
+    public GameObject interactableUI;
+    public Text interactableName;
+    public int _who;
+    public static int _aboveWho = 0;
+    public static bool isInteractableUI = false;
+
+    [Header("Item_Give")]
+    public bool isGive;
+    public int[] _giveItemNumber;
+    public static bool isGiveItem = false;
+    public static int _whoGive;
+    bool isGetItem = false;
+
+    [Header("Item_Get")]
+    public bool isGet;
+    public int[] _getItemNumber;
+    public static bool isBagGetItem = false;
+
+    [Header("Item_Exchange")]
+    public bool isExchange;
+    public int[] _exchangeItemNumber;
+    int _exchangeDifferentItemRecord;
 
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
@@ -40,18 +45,17 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isPickedUp = false;
     bool isAnim = false;
 
-
     [Header("SkillPickUp")]
     public GameObject skillUI;
     public Transform skillUIPosition;
     bool isSkill = false;
 
-    [Header("InteractableUI")]
-    public GameObject interactableUI;
-    public Text interactableName;
-    public int _who;
-    public static int _aboveWho = 0;
-    public static bool isInteractableUI = false;
+    [Header("Rotation")]
+    public Sprite getItemSprite;
+    private float totalRotation = 0f;
+    private Quaternion initialRotation;
+    bool isRotation = false;
+    float _speed = 180f;
 
     void Start()
     {
@@ -432,6 +436,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
         moveItemUI.transform.position = end;
         itemUI.SetActive(false);
+        if (isSkill)
+        {
+            skillUI.SetActive(true);
+            isSkill = false;
+        }
         isPickedUp = false;
         isAnim = false;
         isPlayerMove = true;
