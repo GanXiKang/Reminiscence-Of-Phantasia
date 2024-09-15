@@ -116,11 +116,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         switch (_textCount)
         {
-            case 1:
-                if (_chooseNum == 1)
-                {
-                    StoryThermometerControl_Girl.isThermometer = true;
-                }
+            case 2:
+                isPickedUp = true;
+                StoryBagControl.isGet = true;
+                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                StoryBagControl._whichItem = _giveItemNumber[0];
+                StoryThermometerControl_Girl.isThermometer = true;
                 break;   
         }
     }
