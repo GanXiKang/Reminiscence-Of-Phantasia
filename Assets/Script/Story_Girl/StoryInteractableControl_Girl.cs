@@ -36,6 +36,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
     public Transform bagUIPosition;
+    public Transform skillUIPosition;
     public static bool isPlayerMove = true;
     public static bool isPickedUp = false;
     bool isAnim = false;
