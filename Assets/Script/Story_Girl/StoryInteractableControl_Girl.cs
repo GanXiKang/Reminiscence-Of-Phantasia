@@ -289,14 +289,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         StoryUIControl_Girl.isDialogue = true;
                         StoryDialogueControl_Girl._isAboveWho1 = _who;
                         StoryDialogueControl_Girl._textCount = 11;
-                        //isPickedUp = true;
-                        //StoryBagControl.isGet = true;
-                        //StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                        //StoryBagControl._whichItem = _giveItemNumber[0];
-                        //if (StoryBagControl.isOpenBag)
-                        //{
-                        //    StoryBagControl.isOpenBag = false;
-                        //}
                         break;
 
                     case 2:
@@ -309,14 +301,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         StoryUIControl_Girl.isDialogue = true;
                         StoryDialogueControl_Girl._isAboveWho1 = _who;
                         StoryDialogueControl_Girl._textCount = 13;
-                        isPickedUp = true;
-                        StoryBagControl.isGet = true;
-                        StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
-                        StoryBagControl._whichItem = _giveItemNumber[1];
-                        if (StoryBagControl.isOpenBag)
-                        {
-                            StoryBagControl.isOpenBag = false;
-                        }
                         break;
                 }
                 break;
