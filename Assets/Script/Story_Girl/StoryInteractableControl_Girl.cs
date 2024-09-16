@@ -57,7 +57,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     float _speed = 180f;
 
     //Npc_01Girl
-    int _heldMatchboxesQuantity = 1;
+    int _heldMatchboxesQuantity = 6;
     bool isWearingLittleRedRidingHood = false;
 
     void Start()
@@ -457,7 +457,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (isSkill)
         {
             StoryThermometerControl_Girl.isSkillActive = true;
-            StoryThermometerControl_Girl._matchQuantity = 2;
+            StoryThermometerControl_Girl._matchQuantity = 20;
             isSkill = false;
         }
         isPickedUp = false;
