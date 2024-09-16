@@ -337,21 +337,18 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 break;
 
             case 3:
-                if (!isGiveItem && _giveItemNumber[0] != 0)
-                {
-                    isGiveItem = true;
-                    isPickedUp = true;
-                    StoryBagControl.isGet = true;
-                    StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                    StoryBagControl._whichItem = _giveItemNumber[0];
-                    if (StoryBagControl.isOpenBag)
-                    {
-                        StoryBagControl.isOpenBag = false;
-                    }
-                }
+                    
                 break;
 
             case 7:
+                isPickedUp = true;
+                StoryBagControl.isGet = true;
+                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                StoryBagControl._whichItem = _giveItemNumber[0];
+                if (StoryBagControl.isOpenBag)
+                {
+                    StoryBagControl.isOpenBag = false;
+                }
                 isInteractableUI = false;
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -359,6 +356,14 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 break;
 
             case 8:
+                isPickedUp = true;
+                StoryBagControl.isGet = true;
+                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                StoryBagControl._whichItem = _giveItemNumber[0];
+                if (StoryBagControl.isOpenBag)
+                {
+                    StoryBagControl.isOpenBag = false;
+                }
                 isInteractableUI = false;
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider>().enabled = false;
