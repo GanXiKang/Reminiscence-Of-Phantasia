@@ -117,6 +117,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (_textCount)
         {
             case 2:
+            case 7:
                 StoryThermometerControl_Girl.isThermometer = true;
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 1;
