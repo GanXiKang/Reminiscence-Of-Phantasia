@@ -22,6 +22,10 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public Image energyBar;
     public Text temperature;
 
+    [Header("SkillUI")]
+    public GameObject skill;
+    public static bool isSkillActive;
+
     void Start()
     {
         player = GameObject.Find("Player");
