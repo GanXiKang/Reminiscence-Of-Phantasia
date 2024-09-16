@@ -59,6 +59,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     //Npc_01Girl
     int _heldMatchboxesQuantity = 6;
     bool isWearingLittleRedRidingHood = false;
+    //Npc_03SantaClaus
+    public static bool isGetGift = false;
 
     void Start()
     {
@@ -337,7 +339,30 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 break;
 
             case 3:
-                    
+                _countMouseDown++;
+                switch (_countMouseDown)
+                {
+                    case 1:
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                        StoryDialogueControl_Girl._textCount = 15;
+                        break;
+
+                    default:
+                        if (!isGetGift)
+                        {
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 16;
+                        }
+                        else
+                        {
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 17;
+                        }
+                        break;
+                }
                 break;
 
             case 7:
