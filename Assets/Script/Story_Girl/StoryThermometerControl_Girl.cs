@@ -85,6 +85,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     {
         if (!isSkillActive) return;
         if (_matchQuantity <= 0) return;
+        if (isUseMatches) return;
         if (isDead) return;
 
         if (Input.GetKeyDown(KeyCode.E))
