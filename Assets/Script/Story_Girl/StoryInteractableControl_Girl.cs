@@ -282,9 +282,24 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     default:
-                        StoryUIControl_Girl.isDialogue = true;
-                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._textCount = 6;
+                        if (StoryThermometerControl_Girl._matchQuantity > 0)
+                        {
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 6;
+                        }
+                        else if (StoryThermometerControl_Girl._matchQuantity <= 0) 
+                        {
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 7;
+                        }
+                        else if (StoryThermometerControl_Girl._matchQuantity <= 0)
+                        {
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 8;
+                        }
                         break;
                 }
                 break;
