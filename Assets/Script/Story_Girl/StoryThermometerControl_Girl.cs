@@ -33,14 +33,11 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
     void Update()
     {
-        Thermometer();
-        Limit();
+        skill.SetActive(isSkillActive);
 
-        if (Input.GetKeyDown(KeyCode.E) && !isDead)
-        {
-            isUseMatches = true;
-            Invoke("Matches", 2f);
-        }
+        Thermometer();
+        UseMatch();
+        Limit();   
     }
 
     void Thermometer()
@@ -78,7 +75,17 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             temperature.text = _temperature.ToString("F1");
         }
     }
-    void Matches()
+    void UseMatch()
+    {
+        if (!isSkillActive) return;
+
+        if (Input.GetKeyDown(KeyCode.E) && !isDead)
+        {
+            isUseMatches = true;
+            Invoke("FalseUseMatches", 2f);
+        }
+    }
+    void FalseUseMatches()
     {
         isUseMatches = false;
     }
