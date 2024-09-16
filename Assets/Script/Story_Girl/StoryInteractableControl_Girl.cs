@@ -457,6 +457,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (isSkill)
         {
             StoryThermometerControl_Girl.isSkillActive = true;
+            StoryThermometerControl_Girl._matchQuantity = 5;
             isSkill = false;
         }
         isPickedUp = false;
