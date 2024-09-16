@@ -56,6 +56,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isRotation = false;
     float _speed = 180f;
 
+    //Npc_01Girl
+    int _heldMatchboxesQuantity = 6;
+    bool isWearingLittleRedRidingHood = false;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -282,23 +286,27 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     default:
-                        if (StoryThermometerControl_Girl._matchQuantity > 0)
+                        if (!isWearingLittleRedRidingHood)
                         {
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 6;
-                        }
-                        else if (StoryThermometerControl_Girl._matchQuantity <= 0) 
-                        {
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 7;
-                        }
-                        else if (StoryThermometerControl_Girl._matchQuantity <= 0)
-                        {
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 8;
+                            if (StoryThermometerControl_Girl._matchQuantity > 0)
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 6;
+                            }
+                            else if (StoryThermometerControl_Girl._matchQuantity != 0 && _heldMatchboxesQuantity != 0)
+                            {
+                                _heldMatchboxesQuantity--;
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 7;
+                            }
+                            else if (StoryThermometerControl_Girl._matchQuantity == 0 && && _heldMatchboxesQuantity == 0)
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 8;
+                            }
                         }
                         break;
                 }
