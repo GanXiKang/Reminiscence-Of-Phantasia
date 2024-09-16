@@ -301,7 +301,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 7;
                             }
-                            else if (StoryThermometerControl_Girl._matchQuantity == 0 && && _heldMatchboxesQuantity == 0)
+                            else if (StoryThermometerControl_Girl._matchQuantity == 0 && _heldMatchboxesQuantity == 0)
                             {
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
