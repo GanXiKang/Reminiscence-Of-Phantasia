@@ -57,7 +57,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     float _speed = 180f;
 
     //Npc_01Girl
-    int _heldMatchboxesQuantity = 6;
+    int _heldMatchboxesQuantity = 1;
     bool isWearingLittleRedRidingHood = false;
 
     void Start()
