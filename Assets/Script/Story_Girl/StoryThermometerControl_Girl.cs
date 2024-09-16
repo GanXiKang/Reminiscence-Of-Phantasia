@@ -24,9 +24,9 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
     [Header("SkillUI")]
     public GameObject skill;
-    public Text matchQuantity;
+    public Text quantity;
     public static bool isSkillActive;
-    public static int _quantity;
+    public static int _matchQuantity = 20;
 
     void Start()
     {
@@ -34,10 +34,9 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     }
 
     void Update()
-    {
-        skill.SetActive(isSkillActive);
-
+    {    
         Thermometer();
+        SkillUI();
         UseMatch();
         Limit();   
     }
@@ -77,13 +76,21 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             temperature.text = _temperature.ToString("F1");
         }
     }
+    void SkillUI()
+    {
+        skill.SetActive(isSkillActive);
+        quantity.text = _matchQuantity.ToString();
+    }
     void UseMatch()
     {
         if (!isSkillActive) return;
+        if (_matchQuantity <= 0) return;
+        if (isDead) return;
 
-        if (Input.GetKeyDown(KeyCode.E) && !isDead)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             isUseMatches = true;
+            _matchQuantity--;
             Invoke("FalseUseMatches", 2f);
         }
     }
