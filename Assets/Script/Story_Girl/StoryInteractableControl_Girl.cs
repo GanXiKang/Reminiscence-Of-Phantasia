@@ -276,10 +276,15 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 switch (_countMouseDown)
                 {
                     case 1:
-                        isGiveItem = true;
                         StoryUIControl_Girl.isDialogue = true;
                         StoryDialogueControl_Girl._isAboveWho1 = _who;
                         StoryDialogueControl_Girl._textCount = 2;
+                        break;
+
+                    default:
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                        StoryDialogueControl_Girl._textCount = 6;
                         break;
                 }
                 break;
