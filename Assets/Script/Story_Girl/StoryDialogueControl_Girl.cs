@@ -223,6 +223,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 dialogueBG.sprite = spiked;
                 _index++;
                 break;
+
+            case "Event":
+                _index++;
+                break;
         }
         switch (textList[_index].Trim())
         {
@@ -269,10 +273,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 _index++;
                 contentE.text = textList[_index];
                 yield break;
-
-            case "Event":
-                _index++;
-                break;
         }
         if (!isChoose)
         {
