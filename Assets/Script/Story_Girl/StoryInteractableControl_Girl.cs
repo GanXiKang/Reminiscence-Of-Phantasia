@@ -46,7 +46,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isAnim = false;
 
     [Header("SkillPickUp")]
-    public GameObject skillUI;
     public Transform skillUIPosition;
     bool isSkill = false;
 
@@ -442,7 +441,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         itemUI.SetActive(false);
         if (isSkill)
         {
-            skillUI.SetActive(true);
+            StoryThermometerControl_Girl.isSkillActive = true;
             isSkill = false;
         }
         isPickedUp = false;
