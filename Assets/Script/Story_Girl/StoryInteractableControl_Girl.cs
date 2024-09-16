@@ -272,12 +272,15 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         switch (_who)
         {
             case 1:
-                if (!isGiveItem)
+                _countMouseDown++;
+                switch (_countMouseDown)
                 {
-                    isGiveItem = true;
-                    StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._isAboveWho1 = _who;
-                    StoryDialogueControl_Girl._textCount = 2;
+                    case 1:
+                        isGiveItem = true;
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                        StoryDialogueControl_Girl._textCount = 2;
+                        break;
                 }
                 break;
 
