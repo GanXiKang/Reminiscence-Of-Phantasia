@@ -60,7 +60,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     int _heldMatchboxesQuantity = 6;
     bool isWearingLittleRedRidingHood = false;
     //Npc_03SantaClaus
-    public static bool isGetGift = false;
+    bool isGetGift = false;
 
     void Start()
     {
@@ -253,15 +253,15 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 3:
-
-                        break;
-
-                    case 7:
-
-                        break;
-
-                    case 8:
-
+                        isGetGift = true;
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
                         break;
                 }
                 isGiveItem = false;
