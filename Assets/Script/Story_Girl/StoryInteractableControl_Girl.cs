@@ -494,14 +494,28 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
                 _exchangeDifferentItemRecord = i;
 
+                switch (_who)
+                {
+                    case 1:
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        break;
+
+                    case 6:
+                        break;
+
+                    case 9:
+                        break;
+
+                }
                 StoryItemIntroduce_Girl.isIntroduce = true;
                 StoryBagControl.isOpenBag = false;
                 StoryBagControl._howManyGrids--;
                 isRotation = true;
-                //if (_who != 9)
-                //{
-                //    isBagGetItem = false;
-                //}
                 Invoke("ExchangeItem", 1f);
             }
         }
