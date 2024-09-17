@@ -497,6 +497,20 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 switch (_who)
                 {
                     case 1:
+                        switch (i)
+                        {
+                            case 1:
+                                break;
+
+                            case 2:
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                break;
+                        }
                         break;
 
                     case 4:
@@ -506,9 +520,25 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 6:
+                        switch (i)
+                        {
+                            case 1:
+                                break;
+
+                            case 2:
+                                break;
+                        }
                         break;
 
                     case 9:
+                        switch (i)
+                        {
+                            case 1:
+                                break;
+
+                            case 2:
+                                break;
+                        }
                         break;
 
                 }
