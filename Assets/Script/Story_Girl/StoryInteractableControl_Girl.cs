@@ -498,10 +498,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 StoryBagControl.isOpenBag = false;
                 StoryBagControl._howManyGrids--;
                 isRotation = true;
-                if (_who != 9)
-                {
-                    isBagGetItem = false;
-                }
+                //if (_who != 9)
+                //{
+                //    isBagGetItem = false;
+                //}
                 Invoke("ExchangeItem", 1f);
             }
         }
