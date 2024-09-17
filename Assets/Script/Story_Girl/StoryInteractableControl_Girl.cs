@@ -505,20 +505,20 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     case 1:
                         switch (i)
                         {
-                            case 1:
+                            case 0:
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 14;
                                 break;
 
-                            case 2:
+                            case 1:
                                 isRotation = true;
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 25;
                                 break;
 
-                            case 3:
+                            case 2:
                                 break;
                         }
                         break;
@@ -532,10 +532,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     case 6:
                         switch (i)
                         {
-                            case 1:
+                            case 0:
                                 break;
 
-                            case 2:
+                            case 1:
                                 break;
                         }
                         break;
@@ -543,10 +543,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     case 9:
                         switch (i)
                         {
-                            case 1:
+                            case 0:
                                 break;
 
-                            case 2:
+                            case 1:
                                 break;
                         }
                         break;
