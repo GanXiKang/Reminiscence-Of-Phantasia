@@ -128,6 +128,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 2;
                 break;
+
+            case 16:
+                if (_chooseNum == 4)
+                {
+                    StoryInteractableControl_Girl.isGiveItem = true;
+                    StoryInteractableControl_Girl._whoGive = 3;
+                }
+                break;
         }
     }
     void ChooseUI()
