@@ -459,7 +459,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         isInteractableUI = false;
     }
 
-    
     void ExchangeItem()
     {
         if (!isExchange) return;
