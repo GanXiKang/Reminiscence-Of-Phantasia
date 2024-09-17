@@ -414,11 +414,60 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             switch (_who)
             {
                 case 4:
-                   
+                    StoryUIControl_Girl.isDialogue = true;
+                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                    StoryDialogueControl_Girl._textCount = 18;
                     break;
 
                 case 5:
+                    if (!isGetGift)
+                    {
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                        StoryDialogueControl_Girl._textCount = 20;
+                    }
+                    else
+                    {
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                        StoryDialogueControl_Girl._textCount = 21;
+                    }
+                    break;
 
+                case 6:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 33;
+                            break;
+
+                        default:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 34;
+                            break;
+                    }
+                    break;
+
+                case 9:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 37;
+                            break;
+
+                        default:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 38;
+                            break;
+                    }
                     break;
             }
         }
