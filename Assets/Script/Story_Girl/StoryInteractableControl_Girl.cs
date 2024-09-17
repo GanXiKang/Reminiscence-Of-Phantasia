@@ -207,67 +207,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         interactableUI.transform.position = screenPos;
     }
-    void GivePlayerObject()
-    {
-        if (StoryUIControl_Girl.isDialogue) return;
-
-        if (isGiveItem)
-        { 
-            if (_whoGive == _who)
-            {
-                switch (_who)
-                {
-                    case 1:
-                        isPickedUp = true;
-                        isSkill = true;
-                        StoryBagControl._whichItem = _giveItemNumber[0];
-                        if (StoryBagControl.isOpenBag)
-                        {
-                            StoryBagControl.isOpenBag = false;
-                        }
-                        break;
-
-                    case 2:
-                        if (_countMouseDown == 1)
-                        {
-                            isPickedUp = true;
-                            StoryBagControl.isGet = true;
-                            StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                            StoryBagControl._whichItem = _giveItemNumber[0];
-                            if (StoryBagControl.isOpenBag)
-                            {
-                                StoryBagControl.isOpenBag = false;
-                            }
-                        }
-                        else
-                        {
-                            isPickedUp = true;
-                            StoryBagControl.isGet = true;
-                            StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
-                            StoryBagControl._whichItem = _giveItemNumber[1];
-                            if (StoryBagControl.isOpenBag)
-                            {
-                                StoryBagControl.isOpenBag = false;
-                            }
-                        }
-                        break;
-
-                    case 3:
-                        isGetGift = true;
-                        isPickedUp = true;
-                        StoryBagControl.isGet = true;
-                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                        StoryBagControl._whichItem = _giveItemNumber[0];
-                        if (StoryBagControl.isOpenBag)
-                        {
-                            StoryBagControl.isOpenBag = false;
-                        }
-                        break;
-                }
-                isGiveItem = false;
-            }
-        }
-    }
 
     void OnMouseDown()
     {
@@ -447,6 +386,67 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         isInteractableUI = false;
     }
 
+    void GivePlayerObject()
+    {
+        if (StoryUIControl_Girl.isDialogue) return;
+
+        if (isGiveItem)
+        {
+            if (_whoGive == _who)
+            {
+                switch (_who)
+                {
+                    case 1:
+                        isPickedUp = true;
+                        isSkill = true;
+                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
+                        break;
+
+                    case 2:
+                        if (_countMouseDown == 1)
+                        {
+                            isPickedUp = true;
+                            StoryBagControl.isGet = true;
+                            StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                            StoryBagControl._whichItem = _giveItemNumber[0];
+                            if (StoryBagControl.isOpenBag)
+                            {
+                                StoryBagControl.isOpenBag = false;
+                            }
+                        }
+                        else
+                        {
+                            isPickedUp = true;
+                            StoryBagControl.isGet = true;
+                            StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
+                            StoryBagControl._whichItem = _giveItemNumber[1];
+                            if (StoryBagControl.isOpenBag)
+                            {
+                                StoryBagControl.isOpenBag = false;
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        isGetGift = true;
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
+                        break;
+                }
+                isGiveItem = false;
+            }
+        }
+    }
     void ExchangeItem()
     {
         if (!isExchange) return;
