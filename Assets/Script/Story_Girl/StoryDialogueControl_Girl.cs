@@ -233,7 +233,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case "Event":
-                StoryInteractableControl_Girl.isDialogueEvent = true;
+                DialogueEvent();
                 _index++;
                 break;
         }
@@ -293,6 +293,16 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             }
             isTextFinish = true;
             _index++;
+        }
+    }
+
+    void DialogueEvent()
+    {
+        switch (_textCount)
+        {
+            case 25:
+                StoryInteractableControl_Girl.isDialogueEvent = true;
+                break;
         }
     }
 }
