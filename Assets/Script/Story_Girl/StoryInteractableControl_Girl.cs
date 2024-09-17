@@ -492,6 +492,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
             {
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
+                StoryBagControl.isOpenBag = false;
+                StoryBagControl._howManyGrids--;
+                StoryItemIntroduce_Girl.isIntroduce = true;
                 _exchangeDifferentItemRecord = i;
 
                 switch (_who)
@@ -500,15 +503,19 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         switch (i)
                         {
                             case 1:
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 14;
                                 break;
 
                             case 2:
+                                isRotation = true;
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 25;
                                 break;
 
                             case 3:
-                                break;
-
-                            case 4:
                                 break;
                         }
                         break;
@@ -542,10 +549,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                 }
-                StoryItemIntroduce_Girl.isIntroduce = true;
-                StoryBagControl.isOpenBag = false;
-                StoryBagControl._howManyGrids--;
-                isRotation = true;
                 Invoke("ExchangeItem", 1f);
             }
         }
