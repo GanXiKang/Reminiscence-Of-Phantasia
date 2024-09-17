@@ -494,8 +494,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         {
             if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
             {
-                StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
+                isBagGetItem = false;
                 StoryBagControl.isOpenBag = false;
+                StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
                 StoryBagControl._howManyGrids--;
                 StoryItemIntroduce_Girl.isIntroduce = true;
                 _exchangeDifferentItemRecord = i;
