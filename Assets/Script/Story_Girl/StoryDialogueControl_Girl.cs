@@ -233,6 +233,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case "Event":
+                StoryInteractableControl_Girl.isDialogueEvent = true;
                 _index++;
                 break;
         }
