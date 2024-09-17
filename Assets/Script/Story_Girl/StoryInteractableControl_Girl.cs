@@ -285,127 +285,142 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
         if (StoryUIControl_Girl.isDialogue) return;
-        if (!isGive) return;
 
-        switch (_who)
+        if (isGive)
         {
-            case 1:
-                _countMouseDown++;
-                switch (_countMouseDown)
-                {
-                    case 1:
-                        StoryUIControl_Girl.isDialogue = true;
-                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._textCount = 2;
-                        break;
-
-                    default:
-                        if (!isWearingLittleRedRidingHood)
-                        {
-                            if (StoryThermometerControl_Girl._matchQuantity > 0)
-                            {
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 6;
-                            }
-                            else if (StoryThermometerControl_Girl._matchQuantity <= 0 && _heldMatchboxesQuantity != 0)
-                            {
-                                _heldMatchboxesQuantity--;
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 7;
-                            }
-                            else if (StoryThermometerControl_Girl._matchQuantity <= 0 && _heldMatchboxesQuantity == 0)
-                            {
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 8;
-                            }
-                        }
-                        break;
-                }
-                break;
-
-            case 2:
-                _countMouseDown++;
-                switch (_countMouseDown)
-                {
-                    case 1:
-                        StoryUIControl_Girl.isDialogue = true;
-                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._textCount = 11;
-                        break;
-
-                    case 2:
-                        StoryUIControl_Girl.isDialogue = true;
-                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._textCount = 12;
-                        break;
-
-                    case 3:
-                        StoryUIControl_Girl.isDialogue = true;
-                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._textCount = 13;
-                        break;
-                }
-                break;
-
-            case 3:
-                _countMouseDown++;
-                switch (_countMouseDown)
-                {
-                    case 1:
-                        StoryUIControl_Girl.isDialogue = true;
-                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._textCount = 15;
-                        break;
-
-                    default:
-                        if (!isGetGift)
-                        {
+            switch (_who)
+            {
+                case 1:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 16;
-                        }
-                        else
-                        {
+                            StoryDialogueControl_Girl._textCount = 2;
+                            break;
+
+                        default:
+                            if (!isWearingLittleRedRidingHood)
+                            {
+                                if (StoryThermometerControl_Girl._matchQuantity > 0)
+                                {
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 6;
+                                }
+                                else if (StoryThermometerControl_Girl._matchQuantity <= 0 && _heldMatchboxesQuantity != 0)
+                                {
+                                    _heldMatchboxesQuantity--;
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 7;
+                                }
+                                else if (StoryThermometerControl_Girl._matchQuantity <= 0 && _heldMatchboxesQuantity == 0)
+                                {
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 8;
+                                }
+                            }
+                            break;
+                    }
+                    break;
+
+                case 2:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 17;
-                        }
-                        break;
-                }
-                break;
+                            StoryDialogueControl_Girl._textCount = 11;
+                            break;
 
-            case 7:
-                isPickedUp = true;
-                StoryBagControl.isGet = true;
-                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                StoryBagControl._whichItem = _giveItemNumber[0];
-                if (StoryBagControl.isOpenBag)
-                {
-                    StoryBagControl.isOpenBag = false;
-                }
-                isInteractableUI = false;
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(this.gameObject, 2f);
-                break;
+                        case 2:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 12;
+                            break;
 
-            case 8:
-                isPickedUp = true;
-                StoryBagControl.isGet = true;
-                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                StoryBagControl._whichItem = _giveItemNumber[0];
-                if (StoryBagControl.isOpenBag)
-                {
-                    StoryBagControl.isOpenBag = false;
-                }
-                isInteractableUI = false;
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(this.gameObject, 2f);
-                break;
+                        case 3:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 13;
+                            break;
+                    }
+                    break;
+
+                case 3:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 15;
+                            break;
+
+                        default:
+                            if (!isGetGift)
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 16;
+                            }
+                            else
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 17;
+                            }
+                            break;
+                    }
+                    break;
+
+                case 7:
+                    isPickedUp = true;
+                    StoryBagControl.isGet = true;
+                    StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                    StoryBagControl._whichItem = _giveItemNumber[0];
+                    if (StoryBagControl.isOpenBag)
+                    {
+                        StoryBagControl.isOpenBag = false;
+                    }
+                    isInteractableUI = false;
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    Destroy(this.gameObject, 2f);
+                    break;
+
+                case 8:
+                    isPickedUp = true;
+                    StoryBagControl.isGet = true;
+                    StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                    StoryBagControl._whichItem = _giveItemNumber[0];
+                    if (StoryBagControl.isOpenBag)
+                    {
+                        StoryBagControl.isOpenBag = false;
+                    }
+                    isInteractableUI = false;
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    Destroy(this.gameObject, 2f);
+                    break;
+            }
+        }
+        else
+        {
+            switch (_who)
+            {
+                case 4:
+                   
+                    break;
+
+                case 5:
+
+                    break;
+            }
         }
     }
     void OnMouseEnter()
