@@ -43,12 +43,14 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
     void Thermometer()
     {
-        thermometerUI.SetActive(isThermometer);
+        if (!isThermometer) return;
+
+        thermometerUI.SetActive(!StoryUIControl_Girl.isDialogue);
         Vector3 worldPos = player.transform.position + new Vector3(-8f, -3f, 0f);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         thermometerUI.transform.position = screenPos;
 
-        if (isThermometer)
+        if (!StoryUIControl_Girl.isDialogue)
         {
             if (!isUseMatches)
             {
@@ -83,6 +85,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     }
     void UseMatch()
     {
+        if (StoryUIControl_Girl.isDialogue) return;
         if (!isSkillActive) return;
         if (_matchQuantity <= 0) return;
         if (isUseMatches) return;
