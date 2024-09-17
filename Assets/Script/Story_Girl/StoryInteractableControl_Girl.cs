@@ -487,25 +487,13 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (!isBagGetItem) return;
         if (isGetItem) return;
 
-        if (_getItemNumber[0] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
+        for (int i = 0; i < _getItemNumber.Length; i++)
         {
-            StoryBagControl.isItemNumber[_getItemNumber[0]] = false;
-            _exchangeDifferentItemRecord = 0;
-        }
-        else if (_getItemNumber[1] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
-        {
-            StoryBagControl.isItemNumber[_getItemNumber[1]] = false;
-            _exchangeDifferentItemRecord = 1;
-        }
-        else if (_getItemNumber[2] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
-        {
-            StoryBagControl.isItemNumber[_getItemNumber[2]] = false;
-            _exchangeDifferentItemRecord = 2;
-        }
-        else if (_getItemNumber[3] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
-        {
-            StoryBagControl.isItemNumber[_getItemNumber[3]] = false;
-            _exchangeDifferentItemRecord = 3;
+            if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
+            {
+                StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
+                _exchangeDifferentItemRecord = i;
+            }
         }
         StoryItemIntroduce_Girl.isIntroduce = true;
         StoryBagControl.isOpenBag = false;
