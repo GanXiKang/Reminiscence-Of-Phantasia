@@ -26,12 +26,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public int[] _giveItemNumber;
     public static bool isGiveItem = false;
     public static int _whoGive;
-    bool isGetItem = false;
 
     [Header("Item_Get")]
     public bool isGet;
     public int[] _getItemNumber;
     public static bool isBagGetItem = false;
+    bool isGetItem = false;
 
     [Header("Item_Exchange")]
     public bool isExchange;
