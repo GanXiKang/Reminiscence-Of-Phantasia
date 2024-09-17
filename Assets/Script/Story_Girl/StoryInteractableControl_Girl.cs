@@ -53,6 +53,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public Sprite getItemSprite;
     private float totalRotation = 0f;
     private Quaternion initialRotation;
+    public static bool isDialogueEvent = false;
     bool isRotation = false;
     float _speed = 180f;
 
@@ -82,6 +83,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     void InteractableIsRotationSprite()
     {
+        if (!isDialogueEvent) return;
         if (!isRotation) return;
 
         float rotationThisFrame = _speed * Time.deltaTime;
@@ -98,6 +100,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         }
         else
         {
+            isDialogueEvent = false;
             isRotation = false;
             totalRotation = 0f;
             transform.rotation = initialRotation;
