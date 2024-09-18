@@ -161,5 +161,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
         canvasGroup.alpha = targetAlpha;
         isStory = false;
+        StoryUIControl_Girl.isDialogue = true;
+        StoryDialogueControl_Girl._textCount = 1;
     }
 }
