@@ -28,6 +28,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public static bool isSkillActive;
     public static int _matchQuantity = 0;
     int _countUse = 0;
+    bool firstAllUse = false;
 
     void Start()
     {
@@ -100,15 +101,23 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            isUseMatches = true;
-            _matchQuantity--;
-            _countUse++;
-            if (_countUse == 1)
+            if (_matchQuantity != 0)
+            {
+                isUseMatches = true;
+                _matchQuantity--;
+                _countUse++;
+                if (_countUse == 1)
+                {
+                    StoryUIControl_Girl.isDialogue = true;
+                    StoryDialogueControl_Girl._textCount = 4;
+                }
+                Invoke("FalseUseMatches", 2f);
+            }
+            else 
             {
                 StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._textCount = 4;
+                StoryDialogueControl_Girl._textCount = 5;
             }
-            Invoke("FalseUseMatches", 2f);
         }
     }
     void FalseUseMatches()
