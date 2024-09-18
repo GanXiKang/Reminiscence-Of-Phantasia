@@ -28,6 +28,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public static bool isSkillActive;
     public static int _matchQuantity = 0;
     int _countUse = 0;
+    bool isteach = false;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     void Update()
     {    
         Thermometer();
+        Teach();
         SkillUI();
         UseMatch();
         Limit();   
@@ -77,12 +79,15 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             }
             energyBar.fillAmount = (_temperature - 35f) / 2;
             temperature.text = _temperature.ToString("F1");
-
-            if (_temperature < 36f && _countUse == 0)
-            {
-                StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._textCount = 3;
-            }
+        }
+    }
+    void Teach()
+    {
+        if (_temperature < 36f && _countUse == 0 && !isteach)
+        {
+            isteach = true;
+            StoryUIControl_Girl.isDialogue = true;
+            StoryDialogueControl_Girl._textCount = 3;
         }
     }
     void SkillUI()
@@ -94,7 +99,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     {
         if (StoryUIControl_Girl.isDialogue) return;
         if (!isSkillActive) return;
-        if (_matchQuantity <= 0) return;
         if (isUseMatches) return;
         if (isDead) return;
 
