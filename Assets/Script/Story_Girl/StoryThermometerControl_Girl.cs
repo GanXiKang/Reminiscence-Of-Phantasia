@@ -28,7 +28,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public static bool isSkillActive;
     public static int _matchQuantity = 0;
     int _countUse = 0;
-    bool firstAllUse = false;
 
     void Start()
     {
