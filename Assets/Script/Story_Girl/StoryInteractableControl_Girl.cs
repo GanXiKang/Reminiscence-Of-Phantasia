@@ -65,7 +65,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     //Npc_05XiaoXin
     bool isFinishExchangeGift = false;
     //Npc_09Camping
-
+    bool isGiveWoodenStick = false;
 
     void Start()
     {
@@ -506,9 +506,18 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             break;
 
                         default:
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 38;
+                            if (!isGiveWoodenStick)
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 38;
+                            }
+                            else
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 40;
+                            }
                             break;
                     }
                     break;
@@ -599,13 +608,15 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                isExchangeItem = true;
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 39;
+                                
                                 break;
 
                             case 1:
+                                isExchangeItem = true;
+                                isGiveWoodenStick = true;
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 39;
                                 break;
                         }
                         break;
