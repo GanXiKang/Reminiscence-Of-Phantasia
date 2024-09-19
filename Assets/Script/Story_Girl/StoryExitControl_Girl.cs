@@ -64,16 +64,23 @@ public class StoryExitControl_Girl : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            isExit = true;
-            switch (_goToThatScene)
+            if (!StoryInteractableControl_Girl.isWearingLittleRedRidingHood)
             {
-                case 1:
-                    sceneName.text = "街道";
-                    break;
 
-                case 2:
-                    sceneName.text = "森林";
-                    break;
+            }
+            else
+            {
+                isExit = true;
+                switch (_goToThatScene)
+                {
+                    case 1:
+                        sceneName.text = "街道";
+                        break;
+
+                    case 2:
+                        sceneName.text = "森林";
+                        break;
+                }
             }
         }
     }
