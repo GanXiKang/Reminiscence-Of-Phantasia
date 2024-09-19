@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class StoryGameControl_Girl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Scene")]
+    public GameObject wall_NotSee;
+    public static bool isWallActive = true;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        wall_NotSee.SetActive(isWallActive);
     }
 }
