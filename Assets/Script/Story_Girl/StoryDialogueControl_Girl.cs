@@ -174,7 +174,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 isChoose = false;
                 if (_chooseNum == 1)
                 {
-                    JumpToSection("A"); 
+                    JumpToSection("A");
+                    switch (_textCount)
+                    {
+                        case 40:
+                        case 41:
+                            StoryInteractableControl_Girl.isAgreeFind = true;
+                            break;
+                    }
                 }
                 else if (_chooseNum == 2)
                 {
