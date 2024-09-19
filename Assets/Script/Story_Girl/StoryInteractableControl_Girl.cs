@@ -59,7 +59,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     //Npc_01Girl
     int _heldMatchboxesQuantity = 6;
-    bool isWearingLittleRedRidingHood = false;
+    public static bool isWearingLittleRedRidingHood = false;
     //Npc_03SantaClaus
     public static bool isGetGift = false;
     //Npc_05XiaoXin
