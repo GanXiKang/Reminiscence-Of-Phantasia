@@ -64,6 +64,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public static bool isGetGift = false;
     //Npc_05XiaoXin
     bool isFinishExchangeGift = false;
+    //Npc_06Hunter
+    public static bool isKillWolf = false;
     //Npc_09Camping
     bool isGetApple = false;
     public static bool isFirstAskFind = false;
