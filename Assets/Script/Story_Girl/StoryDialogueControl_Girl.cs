@@ -308,6 +308,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         {
             case 22:
             case 25:
+            case 39:
                 isDialogueEvent = true;
                 break;     
         }
