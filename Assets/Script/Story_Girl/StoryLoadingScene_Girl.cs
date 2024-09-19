@@ -27,11 +27,10 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     {
         loadingUI.SetActive(isLoading);
 
-        LeftSwitch();
-        RightSwitch();
+        LeftRightSwitch();
     }
 
-    void LeftSwitch()
+    void LeftRightSwitch()
     {
         if (isLeftOpen)
         {
@@ -41,9 +40,6 @@ public class StoryLoadingScene_Girl : MonoBehaviour
         {
             StartCoroutine(LeftSwitchScene_Close());
         }
-    }
-    void RightSwitch()
-    {
         if (isRightOpen)
         {
             StartCoroutine(RightSwitchScene_Open());
