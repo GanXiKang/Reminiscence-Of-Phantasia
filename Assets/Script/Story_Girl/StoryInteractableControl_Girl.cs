@@ -340,16 +340,16 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             StoryDialogueControl_Girl._textCount = 11;
                             break;
 
-                        case 2:
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 12;
-                            break;
-
                         case 3:
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 13;
+                            break;
+
+                        default:
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 12;
                             break;
                     }
                     break;
