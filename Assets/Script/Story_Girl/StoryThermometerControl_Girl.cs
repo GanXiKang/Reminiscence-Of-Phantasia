@@ -16,6 +16,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     float _snow = 0.2f;
     float _rise = 0.15f;
     bool isUseMatches = false;
+    bool isOnce = true;
 
     [Header("UI")]
     public GameObject thermometerUI;
@@ -137,7 +138,13 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         if (_temperature <= 35.0f)
         {
             _temperature = 35.0f;
-            isDead = true;
+            if (isOnce)
+            {
+                isOnce = false;
+                isDead = true;
+                StoryUIControl_Girl.isDialogue = true;
+                StoryDialogueControl_Girl._textCount = 10;
+            }
         }
     }
 }
