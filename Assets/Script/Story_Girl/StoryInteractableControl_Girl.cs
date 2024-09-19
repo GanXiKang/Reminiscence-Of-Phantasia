@@ -37,6 +37,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public bool isExchange;
     public int[] _exchangeItemNumber;
     int _exchangeDifferentItemRecord;
+    bool isExchangeItem = false;
 
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
@@ -76,37 +77,13 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         interactableUI.SetActive(isInteractableUI);
 
-        InteractableIsRotationSprite();
         PickUpItem();
         InteractableUI();
         GivePlayerObject();
+        ExchangeItem();
+        InteractableIsRotationSprite();
     }
-
-    void InteractableIsRotationSprite()
-    {
-        if (!StoryDialogueControl_Girl.isDialogueEvent) return;
-        if (!isRotation) return;
-
-        float rotationThisFrame = _speed * Time.deltaTime;
-        totalRotation += rotationThisFrame;
-
-        if (totalRotation <= 120f)
-        {
-            Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f);
-            transform.rotation = transform.rotation * deltaRotation;
-            if (totalRotation > 90f)
-            {
-                gameObject.GetComponent<SpriteRenderer>().sprite = getItemSprite;
-            }
-        }
-        else
-        {
-            StoryDialogueControl_Girl.isDialogueEvent = false;
-            isRotation = false;
-            totalRotation = 0f;
-            transform.rotation = initialRotation;
-        }
-    }
+    
     void PickUpItem()
     {
         if (!isPickedUp || isAnim) return;
@@ -282,6 +259,48 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 }
                 isGiveItem = false;
             }
+        }
+    }
+    void ExchangeItem()
+    {
+        if (!isExchange) return;
+        if (!isExchangeItem) return;
+        if (!StoryDialogueControl_Girl.isDialogueEvent) return;
+
+        StoryDialogueControl_Girl.isDialogueEvent = false;
+        isExchangeItem = false;
+        isPickedUp = true;
+        StoryBagControl.isGet = true;
+        StoryBagControl.isItemNumber[_exchangeItemNumber[_exchangeDifferentItemRecord]] = true;
+        StoryBagControl._whichItem = _exchangeItemNumber[_exchangeDifferentItemRecord];
+        if (StoryBagControl.isOpenBag)
+        {
+            StoryBagControl.isOpenBag = false;
+        }
+    }
+    void InteractableIsRotationSprite()
+    {
+        if (!StoryDialogueControl_Girl.isDialogueEvent) return;
+        if (!isRotation) return;
+
+        float rotationThisFrame = _speed * Time.deltaTime;
+        totalRotation += rotationThisFrame;
+
+        if (totalRotation <= 120f)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f);
+            transform.rotation = transform.rotation * deltaRotation;
+            if (totalRotation > 90f)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = getItemSprite;
+            }
+        }
+        else
+        {
+            StoryDialogueControl_Girl.isDialogueEvent = false;
+            isRotation = false;
+            totalRotation = 0f;
+            transform.rotation = initialRotation;
         }
     }
 
@@ -541,6 +560,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 5:
+                        isExchangeItem = true;
                         isFinishExchangeGift = true;
                         StoryUIControl_Girl.isDialogue = true;
                         StoryDialogueControl_Girl._isAboveWho1 = _who;
@@ -578,20 +598,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         StartCoroutine(ScaleObject(originalScale));
         isInteractableUI = false;
-    }
-
-    void ExchangeItem()
-    {
-        if (!isExchange) return;
-
-        isPickedUp = true;
-        StoryBagControl.isGet = true;
-        StoryBagControl.isItemNumber[_exchangeItemNumber[_exchangeDifferentItemRecord]] = true;
-        StoryBagControl._whichItem = _exchangeItemNumber[_exchangeDifferentItemRecord];
-        if (StoryBagControl.isOpenBag)
-        {
-            StoryBagControl.isOpenBag = false;
-        }         
     }
 
     IEnumerator ScaleObject(Vector3 targetScale)
