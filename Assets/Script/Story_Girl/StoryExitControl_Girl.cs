@@ -66,7 +66,8 @@ public class StoryExitControl_Girl : MonoBehaviour
         {
             if (!StoryInteractableControl_Girl.isWearingLittleRedRidingHood)
             {
-
+                StoryUIControl_Girl.isDialogue = true;
+                StoryDialogueControl_Girl._textCount = 24;
             }
             else
             {
