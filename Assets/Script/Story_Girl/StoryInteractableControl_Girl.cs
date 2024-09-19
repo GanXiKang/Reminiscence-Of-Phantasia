@@ -403,6 +403,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     break;
 
                 case 7:
+                    StoryUIControl_Girl.isDialogue = true;
+                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                    StoryDialogueControl_Girl._textCount = 35;
+
                     isPickedUp = true;
                     StoryBagControl.isGet = true;
                     StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
@@ -411,6 +415,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     {
                         StoryBagControl.isOpenBag = false;
                     }
+
                     isInteractableUI = false;
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -418,6 +423,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     break;
 
                 case 8:
+                    StoryUIControl_Girl.isDialogue = true;
+                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                    StoryDialogueControl_Girl._textCount = 36;
+
                     isPickedUp = true;
                     StoryBagControl.isGet = true;
                     StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
@@ -426,6 +435,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     {
                         StoryBagControl.isOpenBag = false;
                     }
+
                     isInteractableUI = false;
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     gameObject.GetComponent<BoxCollider>().enabled = false;
