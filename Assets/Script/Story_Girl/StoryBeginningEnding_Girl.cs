@@ -32,7 +32,6 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         StartCoroutine(StorySystemUI());
     }
 
-    
     void Update()
     {
         storyUI.SetActive(isStory);
