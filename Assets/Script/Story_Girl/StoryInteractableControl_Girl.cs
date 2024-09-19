@@ -353,6 +353,15 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                     StoryDialogueControl_Girl._textCount = 8;
                                 }
                             }
+                            else
+                            {
+                                if (isKillWolf)
+                                {
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 46;
+                                }
+                            }
                             break;
                     }
                     break;
@@ -620,9 +629,17 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         switch (i)
                         {
                             case 0:
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 44;
                                 break;
 
                             case 1:
+                                isKillWolf = true;
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._isAboveWho2 = 1;
+                                StoryDialogueControl_Girl._textCount = 45;
                                 break;
                         }
                         break;
