@@ -66,6 +66,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isFinishExchangeGift = false;
     //Npc_09Camping
     bool isGetApple = false;
+    public static bool isAgreeFind;
 
     void Start()
     {
