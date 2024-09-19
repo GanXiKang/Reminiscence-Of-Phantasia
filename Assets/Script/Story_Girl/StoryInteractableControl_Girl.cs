@@ -62,6 +62,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isWearingLittleRedRidingHood = false;
     //Npc_03SantaClaus
     public static bool isGetGift = false;
+    //Npc_05XiaoXin
+    bool isFinishExchangeGift = false;
 
     void Start()
     {
@@ -431,9 +433,18 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     }
                     else
                     {
-                        StoryUIControl_Girl.isDialogue = true;
-                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._textCount = 21;
+                        if (!isFinishExchangeGift)
+                        {
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 21;
+                        }
+                        else
+                        {
+                            StoryUIControl_Girl.isDialogue = true;
+                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                            StoryDialogueControl_Girl._textCount = 23;
+                        }
                     }
                     break;
 
@@ -531,6 +542,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 5:
+                        isFinishExchangeGift = true;
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                        StoryDialogueControl_Girl._textCount = 22;
                         break;
 
                     case 6:
