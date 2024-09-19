@@ -201,6 +201,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             if (textList[i].Trim() == sectionLabel)
             {
                 _index = i + 1;
+                _textSpend = 0.1f;
                 StartCoroutine(SetTextLabelIndexUI());
                 return;
             }
