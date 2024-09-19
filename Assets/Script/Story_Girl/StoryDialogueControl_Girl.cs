@@ -307,7 +307,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (_textCount)
         {
             case 25:
-                StoryInteractableControl_Girl.isDialogueEvent = true;
+                isDialogueEvent = true;
                 break;
         }
     }

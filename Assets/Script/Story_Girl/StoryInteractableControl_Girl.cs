@@ -101,7 +101,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         }
         else
         {
-            isDialogueEvent = false;
+            StoryDialogueControl_Girl.isDialogueEvent = false;
             isRotation = false;
             totalRotation = 0f;
             transform.rotation = initialRotation;
