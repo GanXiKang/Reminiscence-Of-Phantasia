@@ -404,7 +404,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                 case 7:
                     StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._isAboveWho1 = _who;
                     StoryDialogueControl_Girl._textCount = 35;
 
                     isPickedUp = true;
@@ -424,7 +423,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                 case 8:
                     StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._isAboveWho1 = _who;
                     StoryDialogueControl_Girl._textCount = 36;
 
                     isPickedUp = true;
