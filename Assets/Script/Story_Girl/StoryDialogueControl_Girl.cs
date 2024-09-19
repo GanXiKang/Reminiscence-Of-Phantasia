@@ -136,6 +136,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                     StoryInteractableControl_Girl._whoGive = 3;
                 }
                 break;
+
+            case 47:
+                //StoryEnd
+                break;
         }
     }
     void ChooseUI()
