@@ -14574,6 +14574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1848524136}
   - component: {fileID: 1848524137}
+  - component: {fileID: 1848524138}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -14633,6 +14634,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5382caa5f09239743997aa6f3393f053, type: 3}
   - {fileID: 21300000, guid: 0745f6520680aa94faa349f1c7b19bc1, type: 3}
   _openSpeed: 1
+--- !u!114 &1848524138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848524135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c32c69d3abb7f44eab51019f776b840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall_NotSee: {fileID: 918209599}
 --- !u!1 &1854963754
 GameObject:
   m_ObjectHideFlags: 0
