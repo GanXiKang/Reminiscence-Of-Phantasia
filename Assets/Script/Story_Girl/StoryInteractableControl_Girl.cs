@@ -318,6 +318,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     switch (_countMouseDown)
                     {
                         case 1:
+                            StoryGameControl_Girl.isWallActive = false;
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 2;
