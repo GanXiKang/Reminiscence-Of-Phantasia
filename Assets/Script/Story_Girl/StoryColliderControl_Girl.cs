@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class StoryColliderControl_Girl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int _whatCollider;
+    bool isOnce;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            
+        }
     }
 }
