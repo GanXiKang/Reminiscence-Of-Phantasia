@@ -629,7 +629,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                
+                                isExchangeItem = true;
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 43;
                                 break;
 
                             case 1:
