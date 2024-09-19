@@ -557,6 +557,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 4:
+                        StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                        StoryBagControl._howManyGrids++;
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                        StoryDialogueControl_Girl._isAboveWho2 = 5;
+                        StoryDialogueControl_Girl._textCount = 19;
                         break;
 
                     case 5:
@@ -588,9 +594,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 break;
                         }
                         break;
-
                 }
-                Invoke("ExchangeItem", 1f);
             }
         }
     }
