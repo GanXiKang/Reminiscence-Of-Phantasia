@@ -66,7 +66,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isFinishExchangeGift = false;
     //Npc_09Camping
     bool isGetApple = false;
-    public static bool isAgreeFind;
+    public static bool isFirstAskFind = false;
+    public static bool isAgreeFind = false;
 
     void Start()
     {
@@ -515,9 +516,28 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             }
                             else
                             {
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 40;
+                                if (isFirstAskFind)
+                                {
+                                    isFirstAskFind = true;
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 40;
+                                }
+                                else
+                                {
+                                    if (!isAgreeFind)
+                                    {
+                                        StoryUIControl_Girl.isDialogue = true;
+                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                        StoryDialogueControl_Girl._textCount = 41;
+                                    }
+                                    else
+                                    {
+                                        StoryUIControl_Girl.isDialogue = true;
+                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                        StoryDialogueControl_Girl._textCount = 42;
+                                    }
+                                }
                             }
                             break;
                     }
