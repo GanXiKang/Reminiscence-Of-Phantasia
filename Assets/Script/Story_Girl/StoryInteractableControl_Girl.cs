@@ -406,7 +406,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                 case 7:
                     StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._textCount = 35;
+                    StoryDialogueControl_Girl._textCount = 36;
 
                     isPickedUp = true;
                     StoryBagControl.isGet = true;
@@ -425,7 +425,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                 case 8:
                     StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._textCount = 36;
+                    StoryDialogueControl_Girl._textCount = 35;
 
                     isPickedUp = true;
                     StoryBagControl.isGet = true;
