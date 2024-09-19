@@ -561,7 +561,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         StoryBagControl._howManyGrids++;
                         StoryUIControl_Girl.isDialogue = true;
                         StoryDialogueControl_Girl._isAboveWho1 = _who;
-                        StoryDialogueControl_Girl._isAboveWho2 = 5;
+                        StoryDialogueControl_Girl._isAboveWho2 = 10;
                         StoryDialogueControl_Girl._textCount = 19;
                         break;
 
