@@ -75,7 +75,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
                 }
                 else
                 {
-                    _temperature -= _rise / 2 * Time.deltaTime;
+                    _temperature += _rise / 2 * Time.deltaTime;
                 }
             }
             energyBar.fillAmount = (_temperature - 35f) / 2;
