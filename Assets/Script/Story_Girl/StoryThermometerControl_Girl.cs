@@ -58,13 +58,20 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         {
             if (!isUseMatches)
             {
-                if (!isStepOnSnow)
+                if (!StoryPileWood_Girl.isOutside)
                 {
-                    _temperature -= _decline * Time.deltaTime;
+                    if (!isStepOnSnow)
+                    {
+                        _temperature -= _decline * Time.deltaTime;
+                    }
+                    else
+                    {
+                        _temperature -= _snow * Time.deltaTime;
+                    }
                 }
-                else 
+                else
                 {
-                    _temperature -= _snow * Time.deltaTime;
+                    _temperature += _rise * Time.deltaTime;
                 }
             }
             else
