@@ -26,13 +26,14 @@ public class StoryTeachControl : MonoBehaviour
     public Text content;
     int _page = 1;
 
-    void Start()
+    void Update()
     {
         
     }
 
-    void Update()
+    public void Button_ChangePage(int _change)
     {
-        
+        _page += _change;
+        print(_page);
     }
 }
