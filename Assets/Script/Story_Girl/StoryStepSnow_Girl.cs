@@ -6,11 +6,6 @@ public class StoryStepSnow_Girl : MonoBehaviour
 {
     public static bool isFirstStepSnow = true;
 
-    void StepOnSnow()
-    {
-        StoryThermometerControl_Girl.isStepOnSnow = false;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -21,8 +16,20 @@ public class StoryStepSnow_Girl : MonoBehaviour
                 StoryDialogueControl_Girl._textCount = 9;
                 isFirstStepSnow = false;
             }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
             StoryThermometerControl_Girl.isStepOnSnow = true;
-            Invoke("StepOnSnow", 2f);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            StoryThermometerControl_Girl.isStepOnSnow = false;
         }
     }
 }
