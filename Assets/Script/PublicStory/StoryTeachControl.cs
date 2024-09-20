@@ -45,14 +45,14 @@ public class StoryTeachControl : MonoBehaviour
 
         if (isTeachActive)
         {
-            if (teachUI.GetComponent<RectTransform>().localScale.x < 1)
+            if (window.GetComponent<RectTransform>().localScale.x < 1)
             {
-                teachUI.GetComponent<RectTransform>().localScale += new Vector3(_openSpeed, _openSpeed, 0f) * Time.deltaTime;
+                window.GetComponent<RectTransform>().localScale += new Vector3(_openSpeed, _openSpeed, 0f) * Time.deltaTime;
             }
         }
         else
         {
-            teachUI.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+            window.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
         }
     }
     void Teach()
