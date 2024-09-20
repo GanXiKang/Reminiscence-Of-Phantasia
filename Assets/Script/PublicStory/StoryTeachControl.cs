@@ -28,7 +28,7 @@ public class StoryTeachControl : MonoBehaviour
     public Image background;
     public Text content;
     public Button[] teachButton;
-    public static bool isTeachActive = false;
+    public static bool isTeachActive = true;
     int _page = 1;
 
     void Update()
