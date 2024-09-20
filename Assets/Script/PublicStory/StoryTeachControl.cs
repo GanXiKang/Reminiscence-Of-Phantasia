@@ -24,8 +24,8 @@ public class StoryTeachControl : MonoBehaviour
     [Header("UI")]
     public GameObject teachUI;
     public GameObject window;
-    public Button[] teachButton;
     public Text content;
+    public Button[] teachButton;
     public static bool isTeachActive = false;
     int _page = 1;
 
