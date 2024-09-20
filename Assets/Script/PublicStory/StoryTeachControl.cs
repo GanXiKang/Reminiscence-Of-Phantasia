@@ -42,27 +42,62 @@ public class StoryTeachControl : MonoBehaviour
     {
         if (isTemperature)
         {
-            
+            for (int i = 1; i <= _teachTemperaturePage; i++)
+            {
+                if (i == _page)
+                {
+                    //background.sprite = teachImage[i];
+                    content.text = teachContent[i].ToString();
+                }
+            }
         }
 
         if (isGoddess && !isFinish)
-        { 
-
+        {
+            for (int i = 1; i <= _teachGoddessPage; i++)
+            {
+                if (i == _page)
+                {
+                    //background.sprite = teachImage[i];
+                    content.text = teachContent[i].ToString();
+                }
+            }
         }
 
         if (isWind && isFinish)
         {
-            
+            for (int i = 1; i <= _teachWindPage; i++)
+            {
+                if (i == _page)
+                {
+                    //background.sprite = teachImage[i];
+                    content.text = teachContent[i].ToString();
+                }
+            }
         }
 
         if (isTime && !isFinish)
         {
-
+            for (int i = 1; i <= _teachTimePage; i++)
+            {
+                if (i == _page)
+                {
+                    //background.sprite = teachImage[i];
+                    content.text = teachContent[i].ToString();
+                }
+            }
         }
 
         if (isSupplies && isFinish)
         {
-
+            for (int i = 1; i <= _teachSuppliesPage; i++)
+            {
+                if (i == _page)
+                {
+                    //background.sprite = teachImage[i];
+                    content.text = teachContent[i].ToString();
+                }
+            }
         }
     }
 
