@@ -13,7 +13,7 @@ public class StoryPileWood_Girl : MonoBehaviour
         fireEffect.SetActive(isFireActice);
     }
 
-    void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -21,7 +21,7 @@ public class StoryPileWood_Girl : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
