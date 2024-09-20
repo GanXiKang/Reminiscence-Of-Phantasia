@@ -28,17 +28,33 @@ public class StoryTeachControl : MonoBehaviour
     public Image background;
     public Text content;
     public Button[] teachButton;
+    public float _openSpeed = 1f;
     public static bool isTeachActive = false;
     int _page = 1;
 
     void Update()
     {
-        teachUI.SetActive(isTeachActive);
-
+        OpenUI();
         Teach();
         ButtonActive();
     }
 
+    void OpenUI()
+    {
+        teachUI.SetActive(isTeachActive);
+
+        if (isTeachActive)
+        {
+            if (teachUI.GetComponent<RectTransform>().localScale.x < 1)
+            {
+                teachUI.GetComponent<RectTransform>().localScale += new Vector3(_openSpeed, _openSpeed, 0f) * Time.deltaTime;
+            }
+        }
+        else
+        {
+            teachUI.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+        }
+    }
     void Teach()
     {
         if (isTemperature)
