@@ -20,7 +20,6 @@ public class StoryPileWood_Girl : MonoBehaviour
             isOutside= true;
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
