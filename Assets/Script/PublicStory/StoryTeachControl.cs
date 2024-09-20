@@ -25,15 +25,20 @@ public class StoryTeachControl : MonoBehaviour
     public GameObject teachUI;
     public GameObject window;
     public Text content;
+    public static bool isTeachActive = false;
     int _page = 1;
 
     void Update()
     {
-        
+        teachUI.SetActive(isTeachActive);
     }
 
     public void Button_ChangePage(int _change)
     {
         _page += _change;
+    }
+    public void Button_Close(int _change)
+    {
+        isTeachActive = false;
     }
 }
