@@ -1,16 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryTeachControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Teach")]
+    public bool isTemperature;
+    int _teachTemperaturePage = 4;
+    public bool isGoddess;
+    int _teachGoddessPage = 2;
+    public bool isWind;
+    int _teachWindPage = 2;
+    public bool isTime;
+    int _teachTimePage = 3;
+    public bool isSupplies;
+    int _teachSuppliesPage = 4;
+
+    [Header("TextFile")]
+    public TextAsset[] teachContent;
+    public Sprite[] teachImage;
+
+    [Header("UI")]
+    public GameObject teachUI;
+    public Text content;
+    int _page = 1;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
