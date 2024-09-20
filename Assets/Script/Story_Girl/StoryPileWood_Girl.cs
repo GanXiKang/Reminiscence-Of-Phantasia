@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoryPileWood_Girl : MonoBehaviour
 {
     public GameObject fireEffect;
-    public static bool isFireActice = false;
+    public static bool isFireActice = true;
     public static bool isOutside = false;
 
     void Update()
