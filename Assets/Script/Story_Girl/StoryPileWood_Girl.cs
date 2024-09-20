@@ -6,7 +6,7 @@ public class StoryPileWood_Girl : MonoBehaviour
 {
     SphereCollider sc;
     public GameObject fireEffect;
-    public static bool isFireActice = true; //test
+    public static bool isFireActice = false;
 
     void Start()
     {
