@@ -16,6 +16,7 @@ public class StoryTeachControl : MonoBehaviour
     int _teachTimePage = 3;
     public bool isSupplies;
     int _teachSuppliesPage = 4;
+    bool isFinish = false;
 
     [Header("TextFile")]
     public TextAsset[] teachContent;
@@ -24,6 +25,7 @@ public class StoryTeachControl : MonoBehaviour
     [Header("UI")]
     public GameObject teachUI;
     public GameObject window;
+    public Image background;
     public Text content;
     public Button[] teachButton;
     public static bool isTeachActive = false;
@@ -32,6 +34,36 @@ public class StoryTeachControl : MonoBehaviour
     void Update()
     {
         teachUI.SetActive(isTeachActive);
+
+        Teach();
+    }
+
+    void Teach()
+    {
+        if (isTemperature)
+        {
+            
+        }
+
+        if (isGoddess && !isFinish)
+        { 
+
+        }
+
+        if (isWind && isFinish)
+        {
+            
+        }
+
+        if (isTime && !isFinish)
+        {
+
+        }
+
+        if (isSupplies && isFinish)
+        {
+
+        }
     }
 
     public void Button_ChangePage(int _change)
