@@ -6,7 +6,6 @@ public class StoryPileWood_Girl : MonoBehaviour
 {
     public GameObject fireEffect;
     public static bool isFireActice = true; //test
-    public static bool isOutside = false;
 
     void Update()
     {
@@ -17,14 +16,14 @@ public class StoryPileWood_Girl : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            isOutside= true;
+            StoryThermometerControl_Girl.isFirePB = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            isOutside = false;
+            StoryThermometerControl_Girl.isFirePB = false;
         }
     }
 }
