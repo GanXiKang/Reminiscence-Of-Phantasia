@@ -204,5 +204,30 @@ public class StoryTeachControl : MonoBehaviour
     {
         isTeachActive = false;
         teachButton[0].interactable = false;
+        CloseTeach();
+    }
+
+    void CloseTeach()
+    {
+        if (isTemperature)
+        {
+            StoryThermometerControl_Girl.isThermometer = true;
+        }
+        if (isGoddess && !isFinish)
+        {
+        
+        }
+        if (isWind && isFinish)
+        {
+           
+        }
+        if (isTime && !isFinish)
+        {
+           
+        }
+        if (isSupplies && isFinish)
+        {
+            
+        }
     }
 }
