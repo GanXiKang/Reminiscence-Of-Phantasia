@@ -11472,7 +11472,7 @@ PrefabInstance:
       objectReference: {fileID: 1174057433}
     - target: {fileID: 1003711502020236777, guid: 827dc890cadb0954e9af3584323fc822, type: 3}
       propertyPath: LightsModule.ratio
-      value: 0.03
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1003711502020236777, guid: 827dc890cadb0954e9af3584323fc822, type: 3}
       propertyPath: SizeModule.enabled
@@ -11844,7 +11844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4040360183941004591, guid: 827dc890cadb0954e9af3584323fc822, type: 3}
       propertyPath: m_Intensity
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4040360183941004591, guid: 827dc890cadb0954e9af3584323fc822, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -15570,6 +15570,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 428d163b26fe45b49848989dc2a95aa2, type: 3}
       propertyPath: m_Name
       value: PileWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 428d163b26fe45b49848989dc2a95aa2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
