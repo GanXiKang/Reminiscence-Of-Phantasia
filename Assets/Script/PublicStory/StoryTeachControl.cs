@@ -35,6 +35,5 @@ public class StoryTeachControl : MonoBehaviour
     public void Button_ChangePage(int _change)
     {
         _page += _change;
-        print(_page);
     }
 }
