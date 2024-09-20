@@ -64,6 +64,7 @@ public class StoryExitControl_Girl : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            //test
             //if (!StoryInteractableControl_Girl.isWearingLittleRedRidingHood)
             //{
             //    StoryUIControl_Girl.isDialogue = true;
