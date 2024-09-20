@@ -52,7 +52,6 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-
         if (isGoddess && !isFinish)
         {
             for (int i = 1; i <= _teachGoddessPage; i++)
@@ -64,7 +63,6 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-
         if (isWind && isFinish)
         {
             for (int i = 1; i <= _teachWindPage; i++)
@@ -76,7 +74,6 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-
         if (isTime && !isFinish)
         {
             for (int i = 1; i <= _teachTimePage; i++)
@@ -88,7 +85,6 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-
         if (isSupplies && isFinish)
         {
             for (int i = 1; i <= _teachSuppliesPage; i++)
@@ -115,30 +111,88 @@ public class StoryTeachControl : MonoBehaviour
                     teachButton[1].interactable = true;
                     break;
 
+                case 3:
+                    teachButton[2].interactable = true;
+                    break;
+
                 case 4:
-                    teachButton[1].interactable = true;
+                    teachButton[0].interactable = true;
+                    teachButton[2].interactable = false;
                     break;
             }
         }
-
         if (isGoddess && !isFinish)
         {
-            
-        }
+            switch (_page)
+            {
+                case 1:
+                    teachButton[1].interactable = false;
+                    teachButton[2].interactable = true;
+                    break;
 
+                case 2:
+                    teachButton[0].interactable = true;
+                    teachButton[1].interactable = true;
+                    teachButton[2].interactable = false;
+                    break;
+            }
+        }
         if (isWind && isFinish)
         {
-            
-        }
+            switch (_page)
+            {
+                case 1:
+                    teachButton[1].interactable = false;
+                    teachButton[2].interactable = true;
+                    break;
 
+                case 2:
+                    teachButton[0].interactable = true;
+                    teachButton[1].interactable = true;
+                    teachButton[2].interactable = false;
+                    break;
+            }
+        }
         if (isTime && !isFinish)
         {
-            
-        }
+            switch (_page)
+            {
+                case 1:
+                    teachButton[1].interactable = false;
+                    break;
 
+                case 2:
+                    teachButton[1].interactable = true;
+                    teachButton[2].interactable = true;
+                    break;
+
+                case 3:
+                    teachButton[0].interactable = true;
+                    teachButton[2].interactable = false;
+                    break;
+            }
+        }
         if (isSupplies && isFinish)
         {
-            
+            switch (_page)
+            {
+                case 1:
+                    teachButton[1].interactable = false;
+                    break;
+
+                case 2:
+                    teachButton[1].interactable = true;
+                    break;
+
+                case 3:
+                    teachButton[2].interactable = true;
+                    break;
+
+                case 4:
+                    teachButton[0].interactable = true;
+                    teachButton[2].interactable = false;
+                    break;
+            }
         }
     }
 
@@ -149,5 +203,6 @@ public class StoryTeachControl : MonoBehaviour
     public void Button_Close()
     {
         isTeachActive = false;
+        teachButton[0].interactable = false;
     }
 }
