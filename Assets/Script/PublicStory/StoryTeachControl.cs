@@ -23,6 +23,7 @@ public class StoryTeachControl : MonoBehaviour
 
     [Header("UI")]
     public GameObject teachUI;
+    public GameObject window;
     public Text content;
     int _page = 1;
 
