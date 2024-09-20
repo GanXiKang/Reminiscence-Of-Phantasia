@@ -704,6 +704,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         itemUI.SetActive(false);
         if (isSkill)
         {
+            StoryTeachControl.isTeachActive = true;
             StoryThermometerControl_Girl.isSkillActive = true;
             StoryThermometerControl_Girl._matchQuantity = 20;
             isSkill = false;
