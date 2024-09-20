@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class StoryPileWood_Girl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject fireEffect;
+    public static bool isFireActice = false;
+    public static bool isInPileWoodFire = false;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        fireEffect.SetActive(isFireActice);
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isInPileWoodFire = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isInPileWoodFire = false;
+        }
     }
 }
