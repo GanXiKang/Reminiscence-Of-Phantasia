@@ -36,6 +36,7 @@ public class StoryTeachControl : MonoBehaviour
         teachUI.SetActive(isTeachActive);
 
         Teach();
+        ButtonActive();
     }
 
     void Teach()
@@ -100,12 +101,52 @@ public class StoryTeachControl : MonoBehaviour
             }
         }
     }
+    void ButtonActive()
+    {
+        if (isTemperature)
+        {
+            switch (_page)
+            {
+                case 1:
+                    teachButton[1].interactable = false;
+                    break;
+
+                case 2:
+                    teachButton[1].interactable = true;
+                    break;
+
+                case 4:
+                    teachButton[1].interactable = true;
+                    break;
+            }
+        }
+
+        if (isGoddess && !isFinish)
+        {
+            
+        }
+
+        if (isWind && isFinish)
+        {
+            
+        }
+
+        if (isTime && !isFinish)
+        {
+            
+        }
+
+        if (isSupplies && isFinish)
+        {
+            
+        }
+    }
 
     public void Button_ChangePage(int _change)
     {
         _page += _change;
     }
-    public void Button_Close(int _change)
+    public void Button_Close()
     {
         isTeachActive = false;
     }
