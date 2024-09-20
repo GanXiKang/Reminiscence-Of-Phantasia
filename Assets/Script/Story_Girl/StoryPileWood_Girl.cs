@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class StoryPileWood_Girl : MonoBehaviour
 {
+    SphereCollider sc;
     public GameObject fireEffect;
     public static bool isFireActice = true; //test
+
+    void Start()
+    {
+        sc = GetComponent<SphereCollider>();
+    }
 
     void Update()
     {
         fireEffect.SetActive(isFireActice);
+        sc.enabled = isFireActice;
     }
 
     private void OnTriggerStay(Collider other)
