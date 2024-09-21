@@ -19,6 +19,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public int _who;
     public static int _aboveWho = 0;
     public static bool isInteractableUI = false;
+    bool isInteractable = false;
     int _countMouseDown;
 
     [Header("Item_Give")]
@@ -324,6 +325,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     switch (_countMouseDown)
                     {
                         case 1:
+                            isInteractable = true;
                             StoryGameControl_Girl.isWallActive = false;
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
@@ -467,6 +469,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             switch (_who)
             {
                 case 4:
+                    isInteractable = true;
                     StoryUIControl_Girl.isDialogue = true;
                     StoryDialogueControl_Girl._isAboveWho1 = _who;
                     StoryDialogueControl_Girl._textCount = 18;
@@ -483,6 +486,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     {
                         if (!isFinishExchangeGift)
                         {
+                            isInteractable = true;
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 21;
@@ -501,6 +505,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     switch (_countMouseDown)
                     {
                         case 1:
+                            isInteractable = true;
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 33;
@@ -519,6 +524,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     switch (_countMouseDown)
                     {
                         case 1:
+                            isInteractable = true;
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 37;
@@ -535,6 +541,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             {
                                 if (isFirstAskFind)
                                 {
+                                    isInteractable = true;
                                     isFirstAskFind = true;
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
@@ -576,6 +583,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (!isGet) return;
         if (!isBagGetItem) return;
         if (isGetItem) return;
+        if (!isInteractable) return;
 
         for (int i = 0; i < _getItemNumber.Length; i++)
         {
@@ -663,6 +671,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             case 1:
                                 isExchangeItem = true;
                                 isGetApple = true;
+                                isInteractable = false;
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 39;
