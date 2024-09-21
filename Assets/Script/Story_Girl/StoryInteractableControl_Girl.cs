@@ -541,7 +541,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             {
                                 if (isFirstAskFind)
                                 {
-                                    isInteractable = true;
                                     isFirstAskFind = true;
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
@@ -664,16 +663,23 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                isExchangeItem = true;
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 43;
+                                if (isAgreeFind)
+                                {
+                                    isExchangeItem = true;
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 43;
+                                }
+                                else 
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
+                                    StoryBagControl._howManyGrids--;
+                                }
                                 break;
 
                             case 1:
                                 isExchangeItem = true;
                                 isGetApple = true;
-                                isInteractable = false;
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 39;
