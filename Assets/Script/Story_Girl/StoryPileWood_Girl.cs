@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoryPileWood_Girl : MonoBehaviour
 {
     GameObject player;
-    SphereCollider sc;
+    //SphereCollider sc;
     public GameObject fireEffect;
     public static bool isFireActice = false;
     float _snapDistance = 10f;
@@ -13,13 +13,14 @@ public class StoryPileWood_Girl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        sc = GetComponent<SphereCollider>();
+        //sc = GetComponent<SphereCollider>();
     }
 
     void Update()
     {
         fireEffect.SetActive(isFireActice);
-        sc.enabled = isFireActice;
+        //sc.enabled = isFireActice;
+        DistancePileWoodFire();
     }
 
     void DistancePileWoodFire()
@@ -34,18 +35,18 @@ public class StoryPileWood_Girl : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player")
-        {
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
             
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
             
-        }
-    }
+    //    }
+    //}
 }
