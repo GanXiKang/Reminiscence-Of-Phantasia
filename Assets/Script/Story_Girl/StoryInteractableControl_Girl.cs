@@ -69,6 +69,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public static bool isKillWolf = false;
     //Npc_09Camping
     bool isGetApple = false;
+    bool isGetKebab = false;
     public static bool isFirstAskFind = false;
     public static bool isAgreeFind = false;
 
@@ -539,27 +540,36 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             }
                             else
                             {
-                                if (isFirstAskFind)
+                                if (!isGetKebab)
                                 {
-                                    isFirstAskFind = true;
-                                    StoryUIControl_Girl.isDialogue = true;
-                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                    StoryDialogueControl_Girl._textCount = 40;
-                                }
-                                else
-                                {
-                                    if (!isAgreeFind)
+                                    if (isFirstAskFind)
                                     {
+                                        isFirstAskFind = true;
                                         StoryUIControl_Girl.isDialogue = true;
                                         StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                        StoryDialogueControl_Girl._textCount = 41;
+                                        StoryDialogueControl_Girl._textCount = 40;
                                     }
                                     else
                                     {
-                                        StoryUIControl_Girl.isDialogue = true;
-                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                        StoryDialogueControl_Girl._textCount = 42;
+                                        if (!isAgreeFind)
+                                        {
+                                            StoryUIControl_Girl.isDialogue = true;
+                                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                            StoryDialogueControl_Girl._textCount = 41;
+                                        }
+                                        else
+                                        {
+                                            StoryUIControl_Girl.isDialogue = true;
+                                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                            StoryDialogueControl_Girl._textCount = 42;
+                                        }
                                     }
+                                }
+                                else
+                                {
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 48;
                                 }
                             }
                             break;
@@ -665,6 +675,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             case 0:
                                 if (isAgreeFind)
                                 {
+                                    isGetKebab = true;
                                     isExchangeItem = true;
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
