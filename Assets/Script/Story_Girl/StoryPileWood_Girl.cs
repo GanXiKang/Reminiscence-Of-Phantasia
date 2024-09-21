@@ -25,6 +25,8 @@ public class StoryPileWood_Girl : MonoBehaviour
 
     void DistancePileWoodFire()
     {
+        if (!isFireActice) return;
+
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance)
         {
             StoryThermometerControl_Girl.isFirePB = false;
