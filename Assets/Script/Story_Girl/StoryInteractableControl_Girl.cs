@@ -672,8 +672,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 }
                                 else 
                                 {
-                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
-                                    StoryBagControl._howManyGrids--;
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
                                 }
                                 break;
 
