@@ -10,7 +10,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     //Controller
     public static bool isThermometer = false;
     public static bool isStepOnSnow = false;
-    public static bool isFirePB = false;
+    public static bool isFireBeside = false;
     public static bool isDead = false;
     float _temperature = 36.5f;
     float _decline = 0.1f;
@@ -59,7 +59,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         {
             if (!isUseMatches)
             {
-                if (!isFirePB)
+                if (!isFireBeside)
                 {
                     if (!isStepOnSnow)
                     {
