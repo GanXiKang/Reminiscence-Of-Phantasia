@@ -568,6 +568,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     break;
             }
         }
+        StoryBagControl.isOpenBag = false;
     }
     void OnMouseEnter()
     {
@@ -584,6 +585,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (!isBagGetItem) return;
         if (isGetItem) return;
         if (!isInteractable) return;
+        if (StoryUIControl_Girl.isDialogue) return;
 
         for (int i = 0; i < _getItemNumber.Length; i++)
         {
