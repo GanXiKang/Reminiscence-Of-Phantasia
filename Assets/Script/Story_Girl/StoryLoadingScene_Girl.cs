@@ -108,10 +108,9 @@ public class StoryLoadingScene_Girl : MonoBehaviour
         {
             isLeftClose = false;
             isLoading = false;
-            //test
-            //StoryUIControl_Girl.isDialogue = true;
-            //StoryDialogueControl_Girl._isAboveWho1 = 1;
-            //StoryDialogueControl_Girl._textCount = 26;
+            StoryUIControl_Girl.isDialogue = true;
+            StoryDialogueControl_Girl._isAboveWho1 = 1;
+            StoryDialogueControl_Girl._textCount = 26;
         }
     }
     IEnumerator RightSwitchScene_Open()
