@@ -719,7 +719,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StopCoroutine(currentCoroutine);
         }
         currentCoroutine = StartCoroutine(ScaleObject(originalScale));
-        //transform.localScale = originalScale;
         isInteractableUI = false;
     }
 
