@@ -9,9 +9,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
-    public float _scaleSpeed = 5f;
+    public float _scaleSpeed = 10f;
     private Vector3 originalScale;
-    Vector3 scaledSize = new Vector3(1.05f, 1.05f, 1.05f);
+    Vector3 scaledSize = new Vector3(1.1f, 1.1f, 1.1f);
 
     [Header("InteractableUI")]
     public GameObject interactableUI;
