@@ -6708,7 +6708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &190728114
 Transform:
   m_ObjectHideFlags: 0
@@ -14907,7 +14907,7 @@ GameObject:
   - component: {fileID: 1180831948}
   - component: {fileID: 1180831951}
   m_Layer: 0
-  m_Name: duo
+  m_Name: Hide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14921,13 +14921,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180831946}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.799999, y: -9.4, z: 8.7}
-  m_LocalScale: {x: 15.033576, y: 0.1, z: 8.552634}
+  m_LocalRotation: {x: -0, y: -0.52038556, z: -0, w: 0.8539315}
+  m_LocalPosition: {x: 2.1, y: -20.6, z: 194.4}
+  m_LocalScale: {x: 15.073416, y: 0.1, z: 8.552634}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1579847182}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -62.716, z: 0}
 --- !u!65 &1180831948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14956,7 +14956,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180831946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18027,7 +18027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1579847182
 Transform:
   m_ObjectHideFlags: 0
