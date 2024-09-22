@@ -52,7 +52,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isSkill = false;
 
     [Header("Rotation")]
-    public Sprite getItemSprite;
+    public Sprite getItemSprite; //可能不需要
     private float totalRotation = 0f;
     private Quaternion initialRotation;
     bool isRotation = false;
@@ -60,7 +60,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     //Npc_01Girl
     int _heldMatchboxesQuantity = 6;
-    public static bool isWearingLittleRedRidingHood = false;
+    public static bool isWearingLittleRedHood = false;
     //Npc_03SantaClaus
     public static bool isGetGift = false;
     //Npc_05XiaoXin
@@ -300,7 +300,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             transform.rotation = transform.rotation * deltaRotation;
             if (totalRotation > 90f)
             {
-                gameObject.GetComponent<SpriteRenderer>().sprite = getItemSprite;
+                switch (_who)
+                {
+                    case 1:
+                        isWearingLittleRedHood = true;
+                        break;
+                }
             }
         }
         else
@@ -334,7 +339,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             break;
 
                         default:
-                            if (!isWearingLittleRedRidingHood)
+                            if (!isWearingLittleRedHood)
                             {
                                 if (StoryThermometerControl_Girl._matchQuantity > 0)
                                 {
@@ -620,6 +625,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                             case 1:
                                 isRotation = true;
+                                
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 25;
