@@ -36,6 +36,7 @@ public class StoryPlayerControl : MonoBehaviour
     {
         Vector2 input = value.Get<Vector2>();
         _storyMoveInput = new Vector3(input.x, 0f, input.y);
+
         if (input.x != 0)
         {
             _direction = input.x;
