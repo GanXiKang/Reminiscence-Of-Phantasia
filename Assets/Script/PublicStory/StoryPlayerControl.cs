@@ -7,6 +7,7 @@ public class StoryPlayerControl : MonoBehaviour
 {
     CharacterController cc;
     PlayerInput playerInput;
+    Animator anim;
 
     [Header("Movement")]
     public float _moveSpeed = 12f;
@@ -18,6 +19,7 @@ public class StoryPlayerControl : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
