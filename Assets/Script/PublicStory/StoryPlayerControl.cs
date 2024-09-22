@@ -14,6 +14,7 @@ public class StoryPlayerControl : MonoBehaviour
     public float _gravity = 20f;
     private Vector3 _storyMoveInput;
     private Vector3 _storyVelocity;
+    float _direction = 1;
 
     void Start()
     {
@@ -28,12 +29,21 @@ public class StoryPlayerControl : MonoBehaviour
 
         StoryPlayerMove();
         StoryPlayerOnTheGround();
+        Animation();
     }
 
     void OnMove(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
         _storyMoveInput = new Vector3(input.x, 0f, input.y);
+        if (input.x != 0)
+        {
+            _direction = input.x;
+            if (_direction < 0f)
+            {
+                _direction = 0f;
+            }
+        }
 
         if (_storyMoveInput.x == 0 && _storyMoveInput.z > 0) // ½ö°´ÏÂ W ¼ü
         {
@@ -83,6 +93,10 @@ public class StoryPlayerControl : MonoBehaviour
         {
             _storyVelocity.y = 0;
         }
+    }
+    void Animation()
+    {
+        anim.SetFloat("Direction", _direction);
     }
 
     bool isCanMove()
