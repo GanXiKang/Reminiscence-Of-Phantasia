@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 27316984}
   - component: {fileID: 27316983}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Snow_Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,12 +224,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27316981}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 38.7, y: 14.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 38.517494, y: 21.100002, z: -12.2}
+  m_LocalScale: {x: 1, y: 2.1775, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 633425463}
+  m_Father: {fileID: 1756193621}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &27316983
 ParticleSystemRenderer:
@@ -9514,38 +9514,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &633425462
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 633425463}
-  m_Layer: 0
-  m_Name: SnowEffects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &633425463
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633425462}
-  serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -0.18250585, y: 35.9, z: -12.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 27316982}
-  m_Father: {fileID: 1756193621}
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &640525157
 GameObject:
   m_ObjectHideFlags: 0
@@ -13272,15 +13240,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 52941c51dbd343d4bab6c8a682b3a02b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -66.56751
+      value: 34.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52941c51dbd343d4bab6c8a682b3a02b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -111.61949
+      value: -20.71949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52941c51dbd343d4bab6c8a682b3a02b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.56717503
+      value: 167.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52941c51dbd343d4bab6c8a682b3a02b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15353,6 +15321,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d4f170eced09d7f4e8cb6f6b9d37c4ae, type: 3}
       propertyPath: m_Name
       value: Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d4f170eced09d7f4e8cb6f6b9d37c4ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 975453198873386338, guid: d4f170eced09d7f4e8cb6f6b9d37c4ae, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19481,7 +19453,7 @@ Transform:
   - {fileID: 190728114}
   - {fileID: 1579847182}
   - {fileID: 1618297078}
-  - {fileID: 633425463}
+  - {fileID: 27316982}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1759256443
