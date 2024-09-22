@@ -39,7 +39,6 @@ public class StoryPlayerControl : MonoBehaviour
 
         if (input.x != 0)
         {
-            print(input.x);
             _direction = input.x;
             if (_direction < 0f)
             {
