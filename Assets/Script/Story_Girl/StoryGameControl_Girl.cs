@@ -5,11 +5,11 @@ using UnityEngine;
 public class StoryGameControl_Girl : MonoBehaviour
 {
     [Header("Scene")]
-    public GameObject wall_NotSee;
+    public GameObject teachWall;
     public static bool isWallActive = false; //test
 
     void Update()
     {
-        wall_NotSee.SetActive(isWallActive);
+        teachWall.SetActive(isWallActive);
     }
 }
