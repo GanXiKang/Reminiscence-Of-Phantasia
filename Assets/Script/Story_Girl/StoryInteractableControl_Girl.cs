@@ -588,6 +588,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
+        StopCoroutine(ScaleObject(originalScale));
         StartCoroutine(ScaleObject(scaledSize));
         if (!StoryUIControl_Girl.isDialogue)
         {
@@ -709,7 +710,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     }
     void OnMouseExit()
     {
-        StartCoroutine(ScaleObject(originalScale));
+        StopCoroutine(ScaleObject(scaledSize));
+        //StartCoroutine(ScaleObject(originalScale));
+        transform.localScale = originalScale;
         isInteractableUI = false;
     }
 
