@@ -12,7 +12,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public float _scaleSpeed = 20f;
     private Coroutine currentCoroutine;
     private Vector3 originalScale;
-    Vector3 scaledSize = new Vector3(1.1f, 1.1f, 1.1f);
+    Vector3 scaledSize = new Vector3(1f, 1f, 1f);
 
     [Header("InteractableUI")]
     public GameObject interactableUI;
