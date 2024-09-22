@@ -9,7 +9,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
-    public float _scaleSpeed = 0.1f;
+    public float _scaleSpeed = 20f;
+    private Coroutine currentCoroutine;
     private Vector3 originalScale;
     Vector3 scaledSize = new Vector3(1.1f, 1.1f, 1.1f);
 
@@ -588,8 +589,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
-        StopCoroutine(ScaleObject(originalScale));
-        StartCoroutine(ScaleObject(scaledSize));
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+        currentCoroutine = StartCoroutine(ScaleObject(scaledSize));
         if (!StoryUIControl_Girl.isDialogue)
         {
             isInteractableUI = true;
@@ -710,7 +714,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     }
     void OnMouseExit()
     {
-        transform.localScale = originalScale;
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+        currentCoroutine = StartCoroutine(ScaleObject(originalScale));
+        //transform.localScale = originalScale;
         isInteractableUI = false;
     }
 
@@ -718,9 +727,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         while (transform.localScale != targetScale)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, /*Time.deltaTime **/ _scaleSpeed);
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, _scaleSpeed * Time.deltaTime);
             yield return null;
         }
+        currentCoroutine = null;
     }
     IEnumerator MoveItemUI(GameObject itemUI, Vector3 start, Vector3 end)
     {
