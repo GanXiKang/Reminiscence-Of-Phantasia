@@ -9,7 +9,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
-    public float _scaleSpeed = 10f;
+    public float _scaleSpeed = 20f;
     private Vector3 originalScale;
     Vector3 scaledSize = new Vector3(1.1f, 1.1f, 1.1f);
 
@@ -710,8 +710,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     }
     void OnMouseExit()
     {
-        StopCoroutine(ScaleObject(scaledSize));
-        //StartCoroutine(ScaleObject(originalScale));
         transform.localScale = originalScale;
         isInteractableUI = false;
     }
@@ -720,7 +718,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     {
         while (transform.localScale != targetScale)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * _scaleSpeed);
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, /*Time.deltaTime **/ _scaleSpeed);
             yield return null;
         }
     }
