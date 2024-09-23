@@ -8,6 +8,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip streetBGM, forestBGM;
+    public AudioClip switchScene;
 
     [Header("Scene")]
     public GameObject street;
