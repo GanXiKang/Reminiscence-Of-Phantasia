@@ -5844,7 +5844,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!65 &126904057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8040,7 +8039,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!65 &483097906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8803,7 +8801,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!65 &552316508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13198,6 +13195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 52941c51dbd343d4bab6c8a682b3a02b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1207733883097498387, guid: 52941c51dbd343d4bab6c8a682b3a02b, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
@@ -13602,7 +13603,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!65 &1133211984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17396,7 +17396,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!1 &1483696349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2360753136016497324, guid: d4f170eced09d7f4e8cb6f6b9d37c4ae, type: 3}
@@ -17938,7 +17937,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!65 &1577465330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18207,7 +18205,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 1992830844}
-  getItemSprite: {fileID: 21300000, guid: 35652147864da7a4eb60e2f05cacbb0b, type: 3}
 --- !u!95 &1618297081
 Animator:
   serializedVersion: 5
@@ -18524,7 +18521,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!1 &1643661824
 GameObject:
   m_ObjectHideFlags: 0
@@ -20530,7 +20526,6 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
-  getItemSprite: {fileID: 21300000, guid: 141dd5c95c6d01d4fa2ebfcf6f2f62f0, type: 3}
 --- !u!65 &1994478955
 BoxCollider:
   m_ObjectHideFlags: 0
