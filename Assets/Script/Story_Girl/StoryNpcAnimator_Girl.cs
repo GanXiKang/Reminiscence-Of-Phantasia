@@ -13,7 +13,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static bool isHappy;
     public static bool isSurprise;
     public static bool isTrashCanLid;
-    public static bool isWearingRedHood;
     //02GarbageCan
 
     //03SantaClaus
@@ -21,9 +20,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     //04Child_XiaoYan
 
     //05Child_XiaoXin
-
-    //06Hunter
-    public static bool isNormal;
 
     //09Camping
 
@@ -64,7 +60,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                     anim.SetBool("isSurprise", false);
                 }
                 anim.SetBool("isTrashCanLid", isTrashCanLid);
-                anim.SetBool("isWearingRedHood", isWearingRedHood);
+                anim.SetBool("isWearingRedHood", StoryInteractableControl_Girl.isWearingLittleRedHood);
                 break;
 
             case 2:
@@ -80,7 +76,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 break;
 
             case 6:
-                anim.SetBool("isNormal", isNormal);
+                anim.SetBool("isNormal", StoryInteractableControl_Girl.isCanKillWolf);
                 break;
 
             case 9:
