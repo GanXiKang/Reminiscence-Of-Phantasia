@@ -52,8 +52,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public Transform skillUIPosition;
     bool isSkill = false;
 
-    [Header("Rotation")]
-    public Sprite getItemSprite; //可能不需要
+    //Rotation
     private float totalRotation = 0f;
     private Quaternion initialRotation;
     bool isRotation = false;
@@ -630,7 +629,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                             case 1:
                                 isRotation = true;
-                                
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 25;
