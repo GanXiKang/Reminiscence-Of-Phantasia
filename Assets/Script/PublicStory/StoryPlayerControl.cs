@@ -92,7 +92,6 @@ public class StoryPlayerControl : MonoBehaviour
             {
                 _moveSpeed = 12;
             }
-            print(_moveSpeed);
         }
 
         cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.deltaTime);
