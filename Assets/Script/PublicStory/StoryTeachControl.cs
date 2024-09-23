@@ -15,9 +15,9 @@ public class StoryTeachControl : MonoBehaviour
     int _teachChangePage = 2;
     public bool isWind;
     int _teachWindPage = 1;
-
     public bool isPerformance;
     int _teachPerformancePage = 2;
+
     public bool isTime;
     int _teachTimePage = 3;
     public bool isSupplies;
@@ -89,41 +89,41 @@ public class StoryTeachControl : MonoBehaviour
         }
         else if (isChange && _isFinish == 1)
         {
-            for (int i = _teachGoddessPage + 1; i <= _teachChangePage; i++)
+            for (int i = 1; i <= _teachChangePage; i++)
             {
                 if (i == _page)
                 {
-                    //background.sprite = teachImage[i];
-                    content.text = teachContent[i].ToString();
+                    //background.sprite = teachImage[i + _teachGoddessPage];
+                    content.text = teachContent[i + _teachGoddessPage].ToString();
                 }
             }
         }
         else if (isWind && _isFinish == 2)
         {
-            for (int i = _teachChangePage + 1; i <= _teachWindPage; i++)
+            for (int i = 1; i <= _teachWindPage; i++)
             {
                 if (i == _page)
                 {
-                    //background.sprite = teachImage[i];
-                    content.text = teachContent[i].ToString();
+                    //background.sprite = teachImage[i + _teachChangePage];
+                    content.text = teachContent[i + _teachChangePage].ToString();
                 }
             }
         }
-
-        if (isPerformance && _isFinish == 0)
+        else if (isPerformance && _isFinish == 3)
         {
             for (int i = 1; i <= _teachPerformancePage; i++)
             {
                 if (i == _page)
                 {
-                    //background.sprite = teachImage[i];
-                    content.text = teachContent[i].ToString();
+                    //background.sprite = teachImage[i + _teachWindPage];
+                    content.text = teachContent[i + _teachWindPage].ToString();
                 }
             }
         }
-        else if (isTime && _isFinish == 1)
+
+        if (isTime && _isFinish == 1)
         {
-            for (int i = _teachPerformancePage + 1; i <= _teachTimePage; i++)
+            for (int i = 1; i <= _teachTimePage; i++)
             {
                 if (i == _page)
                 {
@@ -134,12 +134,12 @@ public class StoryTeachControl : MonoBehaviour
         }
         else if (isSupplies && _isFinish == 2)
         {
-            for (int i = _teachTimePage + 1; i <= _teachSuppliesPage; i++)
+            for (int i = 1; i <= _teachSuppliesPage; i++)
             {
                 if (i == _page)
                 {
-                    //background.sprite = teachImage[i];
-                    content.text = teachContent[i].ToString();
+                    //background.sprite = teachImage[i + _teachTimePage];
+                    content.text = teachContent[i + _teachTimePage].ToString();
                 }
             }
         }
@@ -212,8 +212,7 @@ public class StoryTeachControl : MonoBehaviour
                     break;
             }
         }
-
-        if (isPerformance && _isFinish == 0)
+        else if (isPerformance && _isFinish == 3)
         {
             switch (_page)
             {
@@ -229,7 +228,8 @@ public class StoryTeachControl : MonoBehaviour
                     break;
             }
         }
-        else if (isTime && _isFinish == 1)
+
+        if (isTime && _isFinish == 1)
         {
             switch (_page)
             {
@@ -302,12 +302,12 @@ public class StoryTeachControl : MonoBehaviour
         {
             _isFinish++;
         }
-
-        if (isPerformance && _isFinish == 0)
+        else if (isPerformance && _isFinish == 0)
         {
             _isFinish++;
         }
-        else if (isTime && _isFinish == 1)
+
+        if (isTime && _isFinish == 1)
         {
             _isFinish++;
         }
