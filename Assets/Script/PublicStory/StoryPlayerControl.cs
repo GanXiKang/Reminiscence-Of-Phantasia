@@ -86,7 +86,7 @@ public class StoryPlayerControl : MonoBehaviour
         {
             if (_moveSpeed == 12)
             {
-                _moveSpeed = 24;
+                _moveSpeed = 20;
             }
             else
             {
