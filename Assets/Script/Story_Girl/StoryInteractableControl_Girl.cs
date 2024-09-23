@@ -26,7 +26,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("Item_Give")]
     public bool isGive;
     public int[] _giveItemNumber;
-    public GameObject effects;
     public static bool isGiveItem = false;
     public static int _whoGive;
 
@@ -52,6 +51,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("SkillPickUp")]
     public Transform skillUIPosition;
     bool isSkill = false;
+
+    [Header("Effects")]
+    public GameObject effects;
 
     //Rotation
     private float totalRotation = 0f;
