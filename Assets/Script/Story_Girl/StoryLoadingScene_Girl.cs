@@ -22,6 +22,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     public static bool isRightOpen = false;    //Ç°ßM
     public static bool isRightClose = false;
     float _loadingSpeed = 1.5f;
+    bool isOnce = true;
 
     void Update()
     {
@@ -108,11 +109,15 @@ public class StoryLoadingScene_Girl : MonoBehaviour
         {
             isLeftClose = false;
             isLoading = false;
-            StoryUIControl_Girl.isDialogue = true;
-            StoryDialogueControl_Girl._isAboveWho1 = 1;
-            StoryDialogueControl_Girl._textCount = 26;
+            if (!isOnce)
+            {
+                once = true;
+                StoryUIControl_Girl.isDialogue = true;
+                StoryDialogueControl_Girl._isAboveWho1 = 1;
+                StoryDialogueControl_Girl._textCount = 26;
+
+            }
         }
-    }
     IEnumerator RightSwitchScene_Open()
     {
         isLoading = true;
