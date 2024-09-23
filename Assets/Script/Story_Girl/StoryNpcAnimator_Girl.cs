@@ -47,13 +47,24 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
             case 1:
                 if (isHappy)
                 {
-                    isHappy = false;
                     anim.SetBool("isHappy", true);
+                    isHappy = false;
                 }
                 else
                 {
                     anim.SetBool("isHappy", false);
                 }
+                if (isSurprise)
+                {
+                    anim.SetBool("isSurprise", true);
+                    isSurprise = false;
+                }
+                else
+                {
+                    anim.SetBool("isSurprise", false);
+                }
+                anim.SetBool("isTrashCanLid", isTrashCanLid);
+                anim.SetBool("isWearingRedHood", isWearingRedHood);
                 break;
 
             case 2:
@@ -69,12 +80,14 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 break;
 
             case 6:
+                anim.SetBool("isNormal", isNormal);
                 break;
 
             case 9:
                 break;
 
             case 11:
+                anim.SetBool("isScared", isScared);
                 break;
         }
     }
