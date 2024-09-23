@@ -93,7 +93,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         InteractableUI();
         GivePlayerObject();
         ExchangeItem();
-        InteractableIsRotationSprite();
+        RotationSprite();
     }
     
     void PickUpItem()
@@ -290,7 +290,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryBagControl.isOpenBag = false;
         }
     }
-    void InteractableIsRotationSprite()
+    void RotationSprite()
     {
         if (!StoryDialogueControl_Girl.isDialogueEvent) return;
         if (!isRotation) return;
