@@ -26,6 +26,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("Item_Give")]
     public bool isGive;
     public int[] _giveItemNumber;
+    public GameObject effects;
     public static bool isGiveItem = false;
     public static int _whoGive;
 
@@ -446,8 +447,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     }
 
                     isInteractableUI = false;
+                    effects.SetActive(false);
                     gameObject.GetComponent<BoxCollider>().enabled = false;
-                    Destroy(this.gameObject);
+                    Destroy(this.gameObject, 2f);
                     break;
 
                 case 8:
@@ -464,8 +466,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     }
 
                     isInteractableUI = false;
+                    effects.SetActive(false);
                     gameObject.GetComponent<BoxCollider>().enabled = false;
-                    Destroy(this.gameObject);
+                    Destroy(this.gameObject, 2f);
                     break;
             }
         }
