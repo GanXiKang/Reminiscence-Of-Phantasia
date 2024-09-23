@@ -5837,7 +5837,6 @@ MonoBehaviour:
   _who: 4
   isGive: 0
   _giveItemNumber: 
-  effects: {fileID: 0}
   isGet: 1
   _getItemNumber: 04000000
   isExchange: 0
@@ -5845,6 +5844,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!65 &126904057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7319,7 +7319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8038,7 +8038,6 @@ MonoBehaviour:
   _who: 9
   isGive: 0
   _giveItemNumber: 
-  effects: {fileID: 0}
   isGet: 1
   _getItemNumber: 0600000007000000
   isExchange: 1
@@ -8046,6 +8045,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!65 &483097906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8801,7 +8801,6 @@ MonoBehaviour:
   _who: 7
   isGive: 1
   _giveItemNumber: 06000000
-  effects: {fileID: 1682682858}
   isGet: 0
   _getItemNumber: 
   isExchange: 0
@@ -8809,6 +8808,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 1682682858}
 --- !u!65 &552316508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18459,7 +18459,6 @@ MonoBehaviour:
   _who: 5
   isGive: 0
   _giveItemNumber: 
-  effects: {fileID: 0}
   isGet: 1
   _getItemNumber: 04000000
   isExchange: 1
@@ -18467,6 +18466,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!65 &1133211984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31986,7 +31986,6 @@ MonoBehaviour:
   _who: 3
   isGive: 1
   _giveItemNumber: 04000000
-  effects: {fileID: 0}
   isGet: 0
   _getItemNumber: 
   isExchange: 0
@@ -31994,6 +31993,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1483696349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2360753136016497324, guid: d4f170eced09d7f4e8cb6f6b9d37c4ae, type: 3}
@@ -32528,7 +32528,6 @@ MonoBehaviour:
   _who: 6
   isGive: 0
   _giveItemNumber: 
-  effects: {fileID: 0}
   isGet: 1
   _getItemNumber: 0800000009000000
   isExchange: 0
@@ -32536,6 +32535,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!65 &1577465330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32797,7 +32797,6 @@ MonoBehaviour:
   _who: 1
   isGive: 1
   _giveItemNumber: 01000000
-  effects: {fileID: 0}
   isGet: 1
   _getItemNumber: 020000000500000003000000
   isExchange: 0
@@ -32805,6 +32804,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 1992830844}
+  effects: {fileID: 0}
 --- !u!95 &1618297081
 Animator:
   serializedVersion: 5
@@ -33114,7 +33114,6 @@ MonoBehaviour:
   _who: 2
   isGive: 1
   _giveItemNumber: 0200000003000000
-  effects: {fileID: 0}
   isGet: 0
   _getItemNumber: 
   isExchange: 0
@@ -33122,6 +33121,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1643661824
 GameObject:
   m_ObjectHideFlags: 0
@@ -39951,7 +39951,6 @@ MonoBehaviour:
   _who: 8
   isGive: 1
   _giveItemNumber: 07000000
-  effects: {fileID: 1372077041}
   isGet: 0
   _getItemNumber: 
   isExchange: 0
@@ -39959,6 +39958,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
   skillUIPosition: {fileID: 0}
+  effects: {fileID: 1372077041}
 --- !u!65 &1994478955
 BoxCollider:
   m_ObjectHideFlags: 0
