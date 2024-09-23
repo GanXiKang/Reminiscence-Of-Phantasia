@@ -70,7 +70,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     //Npc_05XiaoXin
     bool isFinishExchangeGift = false;
     //Npc_06Hunter
-    public static bool isKillWolf = false;
+    public static bool isCanKillWolf = false;
     //Npc_09Camping
     bool isGetApple = false;
     bool isGetKebab = false;
@@ -308,6 +308,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 {
                     case 1:
                         isWearingLittleRedHood = true;
+                        break;
+
+                    case 6:
+                        isCanKillWolf = true;
                         break;
                 }
             }
@@ -673,7 +677,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 break;
 
                             case 1:
-                                isKillWolf = true;
+                                isRotation = true;
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._isAboveWho2 = 1;
