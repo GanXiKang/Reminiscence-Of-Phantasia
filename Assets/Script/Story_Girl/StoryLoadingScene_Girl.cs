@@ -111,13 +111,14 @@ public class StoryLoadingScene_Girl : MonoBehaviour
             isLoading = false;
             if (!isOnce)
             {
-                once = true;
+                isOnce = true;
                 StoryUIControl_Girl.isDialogue = true;
                 StoryDialogueControl_Girl._isAboveWho1 = 1;
                 StoryDialogueControl_Girl._textCount = 26;
 
             }
         }
+    }
     IEnumerator RightSwitchScene_Open()
     {
         isLoading = true;
