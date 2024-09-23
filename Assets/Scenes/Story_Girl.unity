@@ -19691,6 +19691,7 @@ GameObject:
   - component: {fileID: 1178973548}
   - component: {fileID: 1178973551}
   - component: {fileID: 1178973550}
+  - component: {fileID: 1178973552}
   - component: {fileID: 1178973549}
   m_Layer: 0
   m_Name: 11Wolf
@@ -19808,6 +19809,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1178973552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178973547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa28fde98239caf4aba9bef58ae06c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 11
 --- !u!1 &1180831946
 GameObject:
   m_ObjectHideFlags: 0
@@ -32616,6 +32630,7 @@ GameObject:
   - component: {fileID: 1577465331}
   - component: {fileID: 1577465330}
   - component: {fileID: 1577465329}
+  - component: {fileID: 1577465333}
   - component: {fileID: 1577465332}
   m_Layer: 0
   m_Name: 06Hunter
@@ -32760,6 +32775,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1577465333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577465327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa28fde98239caf4aba9bef58ae06c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 6
 --- !u!1 &1579847181
 GameObject:
   m_ObjectHideFlags: 0
