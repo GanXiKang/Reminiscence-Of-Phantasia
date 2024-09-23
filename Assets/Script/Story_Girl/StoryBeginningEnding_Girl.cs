@@ -12,7 +12,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     public GameObject buttonLeft, buttonRight;
     public GameObject buttonStart, buttonLeave;
     public Text content;
-    public static bool isStory = true;
+    public static bool isStory = false; //test
 
     [Header("TextFile")]
     public TextAsset textStart;
