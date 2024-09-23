@@ -371,7 +371,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             }
                             else
                             {
-                                if (!isKillWolf)
+                                if (!isCanKillWolf)
                                 {
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
