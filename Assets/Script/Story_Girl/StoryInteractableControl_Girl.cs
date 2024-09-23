@@ -60,6 +60,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     //Npc_01Girl
     int _heldMatchboxesQuantity = 6;
+    bool isTeach = false;
     public static bool isWearingLittleRedHood = false;
     //Npc_03SantaClaus
     public static bool isGetGift = false;
@@ -746,7 +747,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         itemUI.SetActive(false);
         if (isSkill)
         {
-            StoryTeachControl.isTeachActive = true;
+            if (!isTeach)
+            {
+                isTeach = true;
+                StoryTeachControl.isTeachActive = true;
+            }
             StoryThermometerControl_Girl.isSkillActive = true;
             StoryThermometerControl_Girl._matchQuantity = 20;
             isSkill = false;
