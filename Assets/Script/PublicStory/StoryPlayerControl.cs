@@ -83,6 +83,18 @@ public class StoryPlayerControl : MonoBehaviour
     void StoryPlayerMove()
     {
         cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.fixedDeltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (_moveSpeed == 12)
+            {
+                _moveSpeed = 20;
+            }
+            else
+            {
+                _moveSpeed = 12;
+            }
+        }
     }
     void StoryPlayerOnTheGround()
     {
