@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class StoryTeachControl : MonoBehaviour
 {
-    [Header("Teach")]
+    [Header("Teach_Story1")]
     public bool isTemperature;
     int _teachTemperaturePage = 4;
 
+    [Header("Teach_Story2")]
     public bool isGoddess;
     int _teachGoddessPage = 2;
     public bool isChange;
@@ -18,12 +19,11 @@ public class StoryTeachControl : MonoBehaviour
     public bool isPerformance;
     int _teachPerformancePage = 2;
 
+    [Header("Teach_Story3")]
     public bool isTime;
     int _teachTimePage = 3;
     public bool isSupplies;
     int _teachSuppliesPage = 4;
-
-   int _isFinish = 0;
 
     [Header("TextFile")]
     public TextAsset[] teachContent;
@@ -38,6 +38,7 @@ public class StoryTeachControl : MonoBehaviour
     public float _openSpeed = 1f;
     public static bool isTeachActive = false;
     int _page = 1;
+    int _isFinish = 0;
 
     void Update()
     {
