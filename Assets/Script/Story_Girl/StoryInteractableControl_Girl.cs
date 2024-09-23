@@ -7,6 +7,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 {
     GameObject player;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip pickUp, get, give;
+
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
     public float _scaleSpeed = 20f;
@@ -269,6 +273,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         }
                         break;
                 }
+                BGM.PlayOneShot(give);
                 isGiveItem = false;
             }
         }
@@ -444,6 +449,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     StoryDialogueControl_Girl._textCount = 36;
 
                     isPickedUp = true;
+                    BGM.PlayOneShot(pickUp);
                     StoryBagControl.isGet = true;
                     StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
                     StoryBagControl._whichItem = _giveItemNumber[0];
@@ -463,6 +469,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     StoryDialogueControl_Girl._textCount = 35;
 
                     isPickedUp = true;
+                    BGM.PlayOneShot(pickUp);
                     StoryBagControl.isGet = true;
                     StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
                     StoryBagControl._whichItem = _giveItemNumber[0];
@@ -618,6 +625,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
             {
                 isBagGetItem = false;
+                BGM.PlayOneShot(get);
                 StoryBagControl.isOpenBag = false;
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
                 StoryBagControl._howManyGrids--;
