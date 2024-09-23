@@ -75,7 +75,8 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-        if (isGoddess && !isFinish)
+
+        if (isGoddess && _isFinish == 0)
         {
             for (int i = 1; i <= _teachGoddessPage; i++)
             {
@@ -86,9 +87,9 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-        if (isWind && isFinish)
+        else if (isChange && _isFinish == 1)
         {
-            for (int i = 1; i <= _teachWindPage; i++)
+            for (int i = _teachGoddessPage + 1; i <= _teachChangePage; i++)
             {
                 if (i == _page)
                 {
@@ -97,9 +98,9 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-        if (isTime && !isFinish)
+        else if (isWind && _isFinish == 2)
         {
-            for (int i = 1; i <= _teachTimePage; i++)
+            for (int i = _teachChangePage + 1; i <= _teachWindPage; i++)
             {
                 if (i == _page)
                 {
@@ -108,9 +109,32 @@ public class StoryTeachControl : MonoBehaviour
                 }
             }
         }
-        if (isSupplies && isFinish)
+
+        if (isPerformance && _isFinish == 0)
         {
-            for (int i = 1; i <= _teachSuppliesPage; i++)
+            for (int i = 1; i <= _teachPerformancePage; i++)
+            {
+                if (i == _page)
+                {
+                    //background.sprite = teachImage[i];
+                    content.text = teachContent[i].ToString();
+                }
+            }
+        }
+        else if (isTime && _isFinish == 1)
+        {
+            for (int i = _teachPerformancePage + 1; i <= _teachTimePage; i++)
+            {
+                if (i == _page)
+                {
+                    //background.sprite = teachImage[i];
+                    content.text = teachContent[i].ToString();
+                }
+            }
+        }
+        else if (isSupplies && _isFinish == 2)
+        {
+            for (int i = _teachTimePage + 1; i <= _teachSuppliesPage; i++)
             {
                 if (i == _page)
                 {
