@@ -8,15 +8,22 @@ public class StoryTeachControl : MonoBehaviour
     [Header("Teach")]
     public bool isTemperature;
     int _teachTemperaturePage = 4;
+
     public bool isGoddess;
     int _teachGoddessPage = 2;
+    public bool isChange;
+    int _teachChangePage = 2;
     public bool isWind;
-    int _teachWindPage = 2;
+    int _teachWindPage = 1;
+
+    public bool isPerformance;
+    int _teachPerformancePage = 2;
     public bool isTime;
     int _teachTimePage = 3;
     public bool isSupplies;
     int _teachSuppliesPage = 4;
-    bool isFinish = false;
+
+   int _isFinish = 0;
 
     [Header("TextFile")]
     public TextAsset[] teachContent;
@@ -137,7 +144,8 @@ public class StoryTeachControl : MonoBehaviour
                     break;
             }
         }
-        if (isGoddess && !isFinish)
+  
+        if (isGoddess && _isFinish == 0)
         {
             switch (_page)
             {
@@ -153,7 +161,7 @@ public class StoryTeachControl : MonoBehaviour
                     break;
             }
         }
-        if (isWind && isFinish)
+        else if (isChange && _isFinish == 1)
         {
             switch (_page)
             {
@@ -169,7 +177,35 @@ public class StoryTeachControl : MonoBehaviour
                     break;
             }
         }
-        if (isTime && !isFinish)
+        else if (isWind && _isFinish == 2)
+        {
+            switch (_page)
+            {
+                case 1:
+                    teachButton[0].interactable = true;
+                    teachButton[1].interactable = false;
+                    teachButton[2].interactable = false;
+                    break;
+            }
+        }
+
+        if (isPerformance && _isFinish == 0)
+        {
+            switch (_page)
+            {
+                case 1:
+                    teachButton[1].interactable = false;
+                    teachButton[2].interactable = true;
+                    break;
+
+                case 2:
+                    teachButton[0].interactable = true;
+                    teachButton[1].interactable = true;
+                    teachButton[2].interactable = false;
+                    break;
+            }
+        }
+        else if (isTime && _isFinish == 1)
         {
             switch (_page)
             {
@@ -188,7 +224,7 @@ public class StoryTeachControl : MonoBehaviour
                     break;
             }
         }
-        if (isSupplies && isFinish)
+        else if (isSupplies && _isFinish == 2)
         {
             switch (_page)
             {
@@ -229,21 +265,31 @@ public class StoryTeachControl : MonoBehaviour
         {
             StoryThermometerControl_Girl.isThermometer = true;
         }
-        if (isGoddess && !isFinish)
+
+        if (isGoddess && _isFinish == 0)
         {
-        
+            _isFinish++;
         }
-        if (isWind && isFinish)
+        else if (isChange && _isFinish == 1)
         {
-           
+            _isFinish++;
         }
-        if (isTime && !isFinish)
+        else if (isWind && _isFinish == 2)
         {
-           
+            _isFinish++;
         }
-        if (isSupplies && isFinish)
+
+        if (isPerformance && _isFinish == 0)
         {
-            
+            _isFinish++;
+        }
+        else if (isTime && _isFinish == 1)
+        {
+            _isFinish++;
+        }
+        else if (isSupplies && _isFinish == 2)
+        {
+            _isFinish++;
         }
     }
 }
