@@ -9,7 +9,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip pickUp, get, give, find;
+    public AudioClip pickUp, give, get, find;
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
