@@ -23,7 +23,7 @@ public class StoryPlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         playerInput.enabled = isCanMove();
 
@@ -95,7 +95,7 @@ public class StoryPlayerControl : MonoBehaviour
             print(_moveSpeed);
         }
 
-        cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.fixedDeltaTime);
+        cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.deltaTime);
     }
     void StoryPlayerOnTheGround()
     {
