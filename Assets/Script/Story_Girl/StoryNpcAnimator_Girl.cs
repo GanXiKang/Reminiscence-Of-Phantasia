@@ -42,10 +42,10 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
         switch (_who)
         {
             case 1:
-                if (isHappy)
+                if (isHappy_Irls)
                 {
                     anim.SetBool("isHappy", true);
-                    isHappy = false;
+                    isHappy_Irls = false;
                 }
                 else
                 {
@@ -76,6 +76,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 break;
 
             case 5:
+                anim.SetBool("isHappy", isHappy_Cri);
                 break;
 
             case 6:
