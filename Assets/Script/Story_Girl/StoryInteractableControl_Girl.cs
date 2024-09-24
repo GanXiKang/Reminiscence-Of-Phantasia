@@ -69,6 +69,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     int _heldMatchboxesQuantity = 6;
     bool isTeach = false;
     public static bool isWearingLittleRedHood = false;
+    public static bool isTrashCanLid = false;
     //Npc_03SantaClaus
     public static bool isGetGift = false;
     //Npc_05XiaoXin
@@ -312,7 +313,14 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 switch (_who)
                 {
                     case 1:
-                        isWearingLittleRedHood = true;
+                        if (!isWearingLittleRedHood)
+                        {
+                            isWearingLittleRedHood = true;
+                        }
+                        else 
+                        {
+                            isTrashCanLid = true;
+                        }
                         break;
 
                     case 4:
@@ -664,6 +672,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 break;
 
                             case 2:
+                                isRotation = true;
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
                                 StoryDialogueControl_Girl._textCount = 47;
