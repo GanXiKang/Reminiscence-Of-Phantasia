@@ -142,10 +142,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isLeave= true;
                 break;
 
-            case 43:
-                isDialogueEvent = true;
-                break;
-
             case 47:
                 //StoryEnd
                 break;
@@ -322,11 +318,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (_textCount)
         {
             case 19:
-            case 22:
             case 25:
+                isDialogueRotation = true;
+                break;
+
+            case 22:
             case 43:
-            case 45:
                 isDialogueEvent = true;
+                isDialogueRotation = true;
                 break;
 
             case 39:
