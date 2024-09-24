@@ -341,6 +341,18 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 isDialogueEvent = true;
                 StoryPileWood_Girl.isFireActice = true;
                 break;
+
+            case 45:
+                switch (_eventNum)
+                {
+                    case 0:
+                        isDialogueRotation = true;
+                        break;
+
+                    case 1:
+                        break;
+                }
+                break;
         }
     }
 }
