@@ -297,7 +297,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     }
     void RotationSprite()
     {
-        if (!StoryDialogueControl_Girl.isDialogueEvent) return;
+        if (!StoryDialogueControl_Girl.isDialogueRotation) return;
         if (!isRotation) return;
 
         float rotationThisFrame = _speed * Time.deltaTime;
@@ -335,7 +335,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         }
         else
         {
-            StoryDialogueControl_Girl.isDialogueEvent = false;
+            StoryDialogueControl_Girl.isDialogueRotation = false;
             isRotation = false;
             totalRotation = 0f;
             transform.rotation = initialRotation;
