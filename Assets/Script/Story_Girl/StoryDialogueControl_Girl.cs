@@ -354,6 +354,19 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 47:
+                switch (_eventNum)
+                {
+                    case 0:
+                        isDialogueRotation = true;
+                        _eventNum++;
+                        break;
+
+                    case 1:
+                        break;
+                }
+                break;
         }
     }
 }
