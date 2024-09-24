@@ -364,6 +364,11 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                         break;
 
                     case 1:
+                        _eventNum++;
+                        break;
+
+                    case 2:
+                        StoryNpcAnimator_Girl.isScared = true;
                         break;
                 }
                 break;
