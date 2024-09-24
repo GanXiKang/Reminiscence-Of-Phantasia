@@ -678,6 +678,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 5:
+                        isRotation = true;
                         isExchangeItem = true;
                         isFinishExchangeGift = true;
                         StoryUIControl_Girl.isDialogue = true;
