@@ -137,6 +137,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 }
                 break;
 
+            case 19:
+                StoryNpcAnimator_Girl.isLeave= true;
+                break;
+
             case 47:
                 //StoryEnd
                 break;
@@ -312,6 +316,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 19:
+                StoryNpcAnimator_Girl.isAngry = true;
+                break;
+
             case 22:
             case 25:
             case 43:
