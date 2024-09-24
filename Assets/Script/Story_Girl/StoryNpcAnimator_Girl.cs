@@ -10,18 +10,18 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public int _who;
 
     //01Irls
-    public static bool isHappy;
+    public static bool isHappy_Irls;
     public static bool isSurprise;
     public static bool isTrashCanLid;
     //02GarbageCan
 
     //03SantaClaus
 
-    //04Child_XiaoYan
+    //04Child_Yan
     public static bool isAngry;
     public static bool isLeave;
-    //05Child_XiaoXin
-
+    //05Child_Cri
+    public static bool isHappy_Cri;
     //09Camping
     public static bool isNormal;
     //11Wolf
