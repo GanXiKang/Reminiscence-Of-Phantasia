@@ -125,7 +125,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 11:
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 2;
+                break;
+
             case 13:
+                StoryGameControl_Girl.isTrashcanLidActice = false;
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 2;
                 break;
