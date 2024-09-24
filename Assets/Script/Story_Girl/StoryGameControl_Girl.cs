@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class StoryGameControl_Girl : MonoBehaviour
 {
-    [Header("Scene")]
+    [Header("TeachWall")]
     public GameObject teachWall;
     public static bool isWallActive = false; //Test
+
+    [Header("GarbageCan")]
+    public GameObject trashcanLid;
+    public static bool isTrashcanLidActice = true;
 
     void Update()
     {
         teachWall.SetActive(isWallActive);
+        trashcanLid.SetActive(isTrashcanLidActice);
     }
 }
