@@ -23,7 +23,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     public static bool isRightOpen = false;    //Ç°ßM
     public static bool isRightClose = false;
     float _loadingSpeed = 1.5f;
-    bool isOnce = false; //test
+    bool isOnce = true;
 
     void Update()
     {

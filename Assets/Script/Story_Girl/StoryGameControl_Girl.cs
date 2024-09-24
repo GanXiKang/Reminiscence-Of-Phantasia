@@ -6,7 +6,7 @@ public class StoryGameControl_Girl : MonoBehaviour
 {
     [Header("Scene")]
     public GameObject teachWall;
-    public static bool isWallActive = false; //test
+    public static bool isWallActive = true;
 
     void Update()
     {
