@@ -38,11 +38,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public int _index;
     public float _textSpend;
     public static int _textCount = 1;
-    public static bool isDialogueEvent = false;
-    public static bool isDialogueRotation = false;
     bool isTextFinish;
 
     List<string> textList = new List<string>();
+
+    //Event
+    public static bool isDialogueEvent = false;
+    public static bool isDialogueRotation = false;
+    int _eventNum;
 
     void Start()
     {
@@ -53,6 +56,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         GetTextFormFile(textFile[_textCount]);
         StartCoroutine(SetTextLabelIndexUI());
+        _eventNum = 0;
     }
 
     void Update()
