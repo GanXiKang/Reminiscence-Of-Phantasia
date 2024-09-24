@@ -318,6 +318,14 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     case 6:
                         isCanKillWolf = true;
                         break;
+
+                    case 19:
+                        StoryNpcAnimator_Girl.isAngry = true;
+                        break;
+
+                    case 43:
+                        StoryNpcAnimator_Girl.isNormal = true;
+                        break;
                 }
             }
         }
@@ -660,6 +668,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 4:
+                        isRotation = true;
                         StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                         StoryBagControl._howManyGrids++;
                         StoryUIControl_Girl.isDialogue = true;
@@ -701,6 +710,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             case 0:
                                 if (isAgreeFind)
                                 {
+                                    isRotation = true;
                                     isGetKebab = true;
                                     isExchangeItem = true;
                                     StoryUIControl_Girl.isDialogue = true;
