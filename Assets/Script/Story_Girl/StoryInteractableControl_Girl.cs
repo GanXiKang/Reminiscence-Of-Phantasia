@@ -319,11 +319,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         isCanKillWolf = true;
                         break;
 
-                    case 19:
+                    case 4:
                         StoryNpcAnimator_Girl.isAngry = true;
                         break;
 
-                    case 43:
+                    case 9:
                         StoryNpcAnimator_Girl.isNormal = true;
                         break;
                 }
