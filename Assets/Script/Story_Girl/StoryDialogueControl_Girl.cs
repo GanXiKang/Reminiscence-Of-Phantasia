@@ -39,6 +39,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public float _textSpend;
     public static int _textCount = 1;
     public static bool isDialogueEvent = false;
+    public static bool isDialogueRotation = false;
     bool isTextFinish;
 
     List<string> textList = new List<string>();
