@@ -13,7 +13,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static float _direction;
     public static bool isHappy_Irls;
     public static bool isSurprise;
-    public static bool isTrashCanLid;
     //02GarbageCan
     public static bool isOpen;
     //04Child_Yan
@@ -60,7 +59,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 {
                     anim.SetBool("isSurprise", false);
                 }
-                anim.SetBool("isTrashCanLid", isTrashCanLid);
+                anim.SetBool("isTrashCanLid", StoryInteractableControl_Girl.isTrashCanLid);
                 anim.SetBool("isWearingRedHood", StoryInteractableControl_Girl.isWearingLittleRedHood);
                 break;
 
