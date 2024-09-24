@@ -71,6 +71,8 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 break;
 
             case 4:
+                anim.SetBool("isAngry", isAngry);
+                anim.SetBool("isLeave", isLeave);
                 break;
 
             case 5:
