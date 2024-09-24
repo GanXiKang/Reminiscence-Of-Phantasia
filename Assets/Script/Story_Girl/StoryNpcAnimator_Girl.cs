@@ -18,7 +18,8 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     //03SantaClaus
 
     //04Child_XiaoYan
-
+    public static bool isAngry;
+    public static bool isLeave;
     //05Child_XiaoXin
 
     //09Camping
