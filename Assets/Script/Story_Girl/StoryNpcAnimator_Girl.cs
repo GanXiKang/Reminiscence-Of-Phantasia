@@ -23,7 +23,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     //05Child_XiaoXin
 
     //09Camping
-
+    public static bool isNormal;
     //11Wolf
     public static bool isScared;
 
@@ -83,6 +83,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 break;
 
             case 9:
+                anim.SetBool("isNormal", isNormal);
                 break;
 
             case 11:
