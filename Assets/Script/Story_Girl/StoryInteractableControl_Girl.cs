@@ -315,12 +315,16 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         isWearingLittleRedHood = true;
                         break;
 
-                    case 6:
-                        isCanKillWolf = true;
-                        break;
-
                     case 4:
                         StoryNpcAnimator_Girl.isAngry = true;
+                        break;
+
+                    case 5:
+                        StoryNpcAnimator_Girl.isHappy_Cri = true;
+                        break;
+
+                    case 6:
+                        isCanKillWolf = true;
                         break;
 
                     case 9:
