@@ -64,13 +64,13 @@ public class StoryExitControl_Girl : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (!StoryInteractableControl_Girl.isWearingLittleRedHood)
-            {
-                StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._textCount = 24;
-            }
-            else
-            {
+            //if (!StoryInteractableControl_Girl.isWearingLittleRedHood)
+            //{
+            //    StoryUIControl_Girl.isDialogue = true;
+            //    StoryDialogueControl_Girl._textCount = 24;
+            //}
+            //else
+            //{
                 isExit = true;
                 switch (_goToThatScene)
                 {
@@ -82,7 +82,7 @@ public class StoryExitControl_Girl : MonoBehaviour
                         sceneName.text = "и╜аж";
                         break;
                 }
-            }
+            //}
         }
     }
     private void OnTriggerExit(Collider other)
