@@ -141,6 +141,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isLeave= true;
                 break;
 
+            case 43:
+                
+                break;
+
             case 47:
                 //StoryEnd
                 break;
