@@ -347,6 +347,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 {
                     case 0:
                         isDialogueRotation = true;
+                        _eventNum++;
                         break;
 
                     case 1:
