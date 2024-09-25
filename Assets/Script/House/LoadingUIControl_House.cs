@@ -104,8 +104,8 @@ public class LoadingUIControl_House : MonoBehaviour
     //        }
     //    }
     //}
-    void WaitCloseBlackSreen()
-    {
-        isCloseBlackScreen = true;
-    }
+    //void WaitCloseBlackSreen()
+    //{
+    //    isCloseBlackScreen = true;
+    //}
 }

@@ -50,7 +50,7 @@ public class DoorControl_House : MonoBehaviour
     IEnumerator LeaveDoor()
     {
         isLeave = false;
-        LoadingUIControl_House.isOpenBlackScreen = true;
+        BlackScreenControl.isOpenBlackScreen = true;
         StoreControl_House.isStoreActive = false;
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;

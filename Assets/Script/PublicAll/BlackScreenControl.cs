@@ -59,4 +59,8 @@ public class BlackScreenControl : MonoBehaviour
             }
         }
     }
+    void WaitCloseBlackSreen()
+    {
+        isCloseBlackScreen = true;
+    }
 }

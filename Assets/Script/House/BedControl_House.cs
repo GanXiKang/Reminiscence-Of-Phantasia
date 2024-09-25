@@ -26,7 +26,7 @@ public class BedControl_House : MonoBehaviour
     }
     IEnumerator LeaveBed()
     {
-        LoadingUIControl_House.isOpenBlackScreen = true;
+        BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookBed = false;

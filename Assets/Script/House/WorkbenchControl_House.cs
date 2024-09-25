@@ -245,7 +245,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     IEnumerator LeaveWorkbench()
     {
-        LoadingUIControl_House.isOpenBlackScreen = true;
+        BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookWorkbench = false;
