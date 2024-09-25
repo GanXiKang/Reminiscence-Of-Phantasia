@@ -318,10 +318,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         {
                             isWearingLittleRedHood = true;
                         }
-                        else 
-                        {
-                            //isTrashCanLid = true;
-                        }
                         break;
 
                     case 4:
@@ -676,9 +672,9 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 break;
 
                             case 2:
-                                if (isWearingLittleRedHood)
+                                if (StoryBagControl.isItemNumber[_getItemNumber[6]])
                                 {
-                                    isRotation = true;
+                                    isTrashCanLid = true;
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
                                     StoryDialogueControl_Girl._textCount = 47;
