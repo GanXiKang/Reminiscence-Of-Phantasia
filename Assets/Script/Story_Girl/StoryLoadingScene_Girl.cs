@@ -118,7 +118,6 @@ public class StoryLoadingScene_Girl : MonoBehaviour
                 StoryUIControl_Girl.isDialogue = true;
                 StoryDialogueControl_Girl._isAboveWho1 = 1;
                 StoryDialogueControl_Girl._textCount = 26;
-
             }
         }
     }
