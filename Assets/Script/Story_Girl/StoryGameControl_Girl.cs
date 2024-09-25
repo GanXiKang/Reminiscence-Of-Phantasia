@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StoryGameControl_Girl : MonoBehaviour
 {
+    GameObject player;
+
     [Header("TeachWall")]
     public GameObject teachWall;
     public static bool isWallActive = false; //Test
@@ -15,12 +17,28 @@ public class StoryGameControl_Girl : MonoBehaviour
     [Header("Resurrection")]
     public Transform streetPoint;
     public Transform forestPoint;
+    //public static bool isResurrection;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+        //isResurrection = false;
+    }
 
     void Update()
     {
         teachWall.SetActive(isWallActive);
         trashcanLid.SetActive(isTrashcanLidActice);
 
+        PlayerResurrection();
+    }
 
+    void PlayerResurrection()
+    {
+        if (!StoryThermometerControl_Girl.isDead) return;
+
+        StoryThermometerControl_Girl.isDead = true;
+        BlackScreenControl.isOpenBlackScreen = true;
+        
     }
 }
