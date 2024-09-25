@@ -7,15 +7,15 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 {
     GameObject player;
 
-    //Controller
+    [Header("Value")]
     public static bool isThermometer = false;
     public static bool isStepOnSnow = false;
     public static bool isFireBeside = false;
     public static bool isDead = false;
-    float _temperature = 36.5f;
-    float _decline = 0.1f;
-    float _snow = 0.2f;
-    float _rise = 0.15f;
+    public float _temperature = 36.5f;
+    public float _decline = 0.1f;
+    public float _snow = 0.2f;
+    public float _rise = 0.15f;
     bool isUseMatches = false;
     bool isOnce = true;
 
