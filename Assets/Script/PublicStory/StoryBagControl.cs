@@ -41,7 +41,7 @@ public class StoryBagControl : MonoBehaviour
     void Update()
     { 
         BagGirdDisplay();
-        RenewBagGirdSprite()
+        RenewBagGirdSprite();
         Bag();
         ItemFollow();
         RenewGetItemMoveUI();
