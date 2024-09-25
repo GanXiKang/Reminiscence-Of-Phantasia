@@ -156,6 +156,11 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isLeave= true;
                 break;
 
+            case 25:
+                StoryNpcAnimator_Girl._direction = 0;
+                StoryNpcAnimator_Girl.isLeaveStreet = true;
+                break;
+
             case 26:
                 StoryInteractableControl_Girl.isFinallyMatch = true;
                 StoryInteractableControl_Girl.isGiveItem = true;
