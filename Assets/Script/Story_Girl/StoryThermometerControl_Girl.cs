@@ -12,14 +12,14 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public AudioClip use;
 
     [Header("Value")]
-    public static bool isThermometer = false;
-    public static bool isStepOnSnow = false;
-    public static bool isFireBeside = false;
-    public static bool isDead = false;
     public float _temperature = 36.5f;
     public float _decline = 0.1f;
     public float _snow = 0.2f;
     public float _rise = 0.15f;
+    public static bool isThermometer = false;
+    public static bool isStepOnSnow = false;
+    public static bool isFireBeside = false;
+    public static bool isDead = false;
     bool isUseMatches = false;
     bool isOnce = true;
 
