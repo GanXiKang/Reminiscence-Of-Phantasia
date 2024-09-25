@@ -9,7 +9,7 @@ public class StoryPileWood_Girl : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip fire;
-    bool isOnce = true;
+    bool isPlayAudio = false;
 
     [Header("Effects")]
     public GameObject fireEffect;
@@ -39,11 +39,18 @@ public class StoryPileWood_Girl : MonoBehaviour
         else
         {
             StoryThermometerControl_Girl.isFireBeside = true;
+
+            if (!isPlayAudio)
+            {
+                BGM.PlayOneShot(fire);
+                isPlayAudio = true;
+                Invoke("isRenewPlayerAudio", 1f);
+            }
         }
+    }
 
-        if (!isOnce) return;
-
-        BGM.PlayOneShot(fire);
-        isOnce = false;
+    void isRenewPlayerAudio()
+    {
+        isPlayAudio = false;
     }
 }
