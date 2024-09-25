@@ -17,14 +17,15 @@ public class StoryGameControl_Girl : MonoBehaviour
     [Header("Resurrection")]
     public Transform streetPoint;
     public Transform forestPoint;
-    public StoryPlayerControl playerControl;
     public static bool isInStreet = true;
     public static bool isResurrection = false;
     public static bool isRenewTemperature = false;
+    StoryPlayerControl playerControl;
 
     void Start()
     {
         player = GameObject.Find("Player");
+        playerControl = player.GetComponent<StoryPlayerControl>();
     }
 
     void Update()
