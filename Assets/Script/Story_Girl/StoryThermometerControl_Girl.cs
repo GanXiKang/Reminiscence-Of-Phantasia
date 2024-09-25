@@ -61,6 +61,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         thermometerUI.transform.position = screenPos;
 
+        if (StoryLoadingScene_Girl.isLoading) return;
         if (StoryUIControl_Girl.isDialogue) return;
 
         if (!isUseMatches)
