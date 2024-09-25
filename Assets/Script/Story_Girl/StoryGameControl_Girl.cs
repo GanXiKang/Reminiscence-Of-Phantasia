@@ -22,6 +22,9 @@ public class StoryGameControl_Girl : MonoBehaviour
     public static bool isRenewTemperature = false;
     StoryPlayerControl playerControl;
 
+    //Animation
+    public static float _direction_Irls;
+
     void Start()
     {
         player = GameObject.Find("Player");
