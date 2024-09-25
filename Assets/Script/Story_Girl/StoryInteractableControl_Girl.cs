@@ -804,7 +804,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             else 
             {
                 StoryThermometerControl_Girl._matchQuantity = 40;
-                //StoryNpcAnimator_Girl.
+                StoryNpcAnimator_Girl._direction = 1;
+
             }
             isSkill = false;
         }
