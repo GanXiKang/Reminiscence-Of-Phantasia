@@ -651,6 +651,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 StoryBagControl.isOpenBag = false;
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
                 StoryBagControl._howManyGrids--;
+                StoryBagControl.isRenewBag = true;
                 StoryItemIntroduce_Girl.isIntroduce = true;
                 _exchangeDifferentItemRecord = i;
 
