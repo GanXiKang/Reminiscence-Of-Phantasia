@@ -40,11 +40,11 @@ public class StoryGameControl_Girl : MonoBehaviour
         if (!isResurrection) return;
 
         isResurrection = false;
+        isChangeTransform = true;
         StartCoroutine(ResurrectionState());
     }
     IEnumerator ResurrectionState()
     {
-        isChangeTransform = true;
         yield return new WaitForSeconds(0.7f);
         if (isInStreet)
         {
