@@ -676,10 +676,18 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 break;
 
                             case 2:
-                                isRotation = true;
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 47;
+                                if (isWearingLittleRedHood)
+                                {
+                                    isRotation = true;
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 47;
+                                }
+                                else
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
+                                }
                                 break;
                         }
                         break;
