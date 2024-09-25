@@ -42,7 +42,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
         switch (_who)
         {
             case 1:
-                print(StoryGameControl_Girl._direction_Irls);
                 anim.SetFloat("Direction", StoryGameControl_Girl._direction_Irls);
                 if (isHappy_Irls)
                 {
