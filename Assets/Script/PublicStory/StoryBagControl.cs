@@ -23,6 +23,7 @@ public class StoryBagControl : MonoBehaviour
     [Header("ItemSprite")]
     public Sprite[] itemSprite;
     public static bool isGet = false;
+    public static bool isRenewBag = false;
     public static bool[] isItemNumber;        //記錄擁有哪個道具0~9
     public static int[] _gridsItemNumber;     //記錄每個格子内部的道具編號0~4
     public static int _howManyGrids = 0;      //記錄存在幾個格子
@@ -40,6 +41,7 @@ public class StoryBagControl : MonoBehaviour
     void Update()
     { 
         BagGirdDisplay();
+        RenewBagGirdSprite()
         Bag();
         ItemFollow();
         RenewGetItemMoveUI();
@@ -103,6 +105,13 @@ public class StoryBagControl : MonoBehaviour
                 }
             }
         }
+    }
+    void RenewBagGirdSprite()
+    {
+        if (!isRenewBag) return;
+
+        BagGirdSprite();
+        isRenewBag = false;
     }
     void Bag()
     {
