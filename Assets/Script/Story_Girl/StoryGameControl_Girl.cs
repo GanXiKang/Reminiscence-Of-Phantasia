@@ -27,7 +27,6 @@ public class StoryGameControl_Girl : MonoBehaviour
 
     void Start()
     {
-        _direction_Irls = 1;
         player = GameObject.Find("Player");
         playerControl = player.GetComponent<StoryPlayerControl>();
     }
