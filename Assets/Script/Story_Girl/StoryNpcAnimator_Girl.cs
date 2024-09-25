@@ -14,6 +14,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static bool isSurprise;
     public static bool isLeaveStreet;
     public static bool isGoGrandmom;
+    float _direction = 1; 
     //02GarbageCan
     public static bool isOpen;
     //04Child_Yan
@@ -42,7 +43,8 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
         switch (_who)
         {
             case 1:
-                anim.SetFloat("Direction", StoryGameControl_Girl._direction_Irls);
+                IrlsDirection();
+                anim.SetFloat("Direction", _direction);
                 if (isHappy_Irls)
                 {
                     anim.SetBool("isHappy", true);
@@ -92,6 +94,17 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 anim.SetBool("isScared", isScared);
                 anim.SetBool("isRunAway", isRunAway);
                 break;
+        }
+    }
+    void IrlsDirection()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            _direction = 0; 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            _direction = 1;
         }
     }
 }
