@@ -44,6 +44,7 @@ public class StoryGameControl_Girl : MonoBehaviour
     }
     IEnumerator ResurrectionState()
     {
+        isChangeTransform = true;
         yield return new WaitForSeconds(0.7f);
         if (isInStreet)
         {
@@ -54,9 +55,9 @@ public class StoryGameControl_Girl : MonoBehaviour
             player.transform.position = forestPoint.position;
         }
         isRenewTemperature = true;
-        StoryThermometerControl_Girl._matchQuantity += 10;
         StoryThermometerControl_Girl.isDead = false;
-        yield return new WaitForSeconds(0.3f);
+        StoryThermometerControl_Girl._matchQuantity += 10;
+        yield return new WaitForSeconds(0.5f);
         isChangeTransform = false;
     }
 }

@@ -131,7 +131,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             case 10:
                 BlackScreenControl.isOpenBlackScreen = true;
                 StoryGameControl_Girl.isResurrection = true;
-                StoryGameControl_Girl.isChangeTransform = true;
                 break;
 
             case 11:
