@@ -159,9 +159,8 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         if (_temperature <= 35.0f)
         {
             _temperature = 35.0f;
-            if (isOnce)
+            if (!isDead)
             {
-                isOnce = false;
                 isDead = true;
                 StoryUIControl_Girl.isDialogue = true;
                 StoryDialogueControl_Girl._textCount = 10;
