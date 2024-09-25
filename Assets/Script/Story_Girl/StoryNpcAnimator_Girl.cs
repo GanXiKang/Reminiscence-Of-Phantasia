@@ -87,6 +87,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
 
             case 11:
                 anim.SetBool("isScared", isScared);
+                anim.SetBool("isRunAway", isRunAway);
                 break;
         }
     }
