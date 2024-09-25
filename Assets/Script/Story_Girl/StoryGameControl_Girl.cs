@@ -17,6 +17,7 @@ public class StoryGameControl_Girl : MonoBehaviour
     [Header("Resurrection")]
     public Transform streetPoint;
     public Transform forestPoint;
+    public static bool isInStreet = true;
     //public static bool isResurrection;
 
     void Start()
@@ -43,6 +44,14 @@ public class StoryGameControl_Girl : MonoBehaviour
     }
     void ResurrectionState()
     {
-        
+        if (isInStreet)
+        {
+            player.transform.position = streetPoint.position;
+        }
+        else
+        {
+            player.transform.position = forestPoint.position;
+        }
+        StoryThermometerControl_Girl._matchQuantity += 10;
     }
 }
