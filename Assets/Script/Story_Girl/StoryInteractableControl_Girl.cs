@@ -320,7 +320,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         }
                         else 
                         {
-                            isTrashCanLid = true;
+                            //isTrashCanLid = true;
                         }
                         break;
 
