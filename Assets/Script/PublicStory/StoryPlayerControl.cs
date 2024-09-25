@@ -117,6 +117,7 @@ public class StoryPlayerControl : MonoBehaviour
         return StoryInteractableControl_Girl.isPlayerMove &&
                !StoryLoadingScene_Girl.isLoading &&
                !StoryUIControl_Girl.isDialogue &&
-               !StoryTeachControl.isTeachActive;
+               !StoryTeachControl.isTeachActive &&
+               !StoryThermometerControl_Girl.isDead;
     }
 }
