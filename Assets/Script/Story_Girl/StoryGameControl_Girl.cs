@@ -51,5 +51,6 @@ public class StoryGameControl_Girl : MonoBehaviour
             player.transform.position = forestPoint.position;
         }
         StoryThermometerControl_Girl._matchQuantity += 10;
+        StoryThermometerControl_Girl.isDead = false;
     }
 }
