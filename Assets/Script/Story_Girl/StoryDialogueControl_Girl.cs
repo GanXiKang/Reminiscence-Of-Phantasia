@@ -128,6 +128,11 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryInteractableControl_Girl._whoGive = 1;
                 break;
 
+            case 10:
+                BlackScreenControl.isOpenBlackScreen = true;
+                StoryGameControl_Girl.isResurrection = true;
+                break;
+
             case 11:
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 2;
