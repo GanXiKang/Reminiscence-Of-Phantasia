@@ -10,7 +10,7 @@ public class BlackScreenControl : MonoBehaviour
     public Image panel;
     Color currentColor;
     float _alpha = 0f;
-    public float _screenSpeed = 50f;
+    public float _screenSpeed = 3f;
     public static bool isCloseBlackScreen = false;
     public static bool isOpenBlackScreen = false;
 
