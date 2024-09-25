@@ -68,6 +68,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     //Npc_01Girl
     int _heldMatchboxesQuantity = 6;
     bool isTeach = false;
+    public static bool isFinallyMatch = false;
     public static bool isWearingLittleRedHood = false;
     public static bool isTrashCanLid = false;
     //Npc_03SantaClaus
@@ -796,7 +797,14 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 StoryTeachControl.isTeachActive = true;
             }
             StoryThermometerControl_Girl.isSkillActive = true;
-            StoryThermometerControl_Girl._matchQuantity = 20;
+            if (!isFinallyMatch)
+            {
+                StoryThermometerControl_Girl._matchQuantity = 20;
+            }
+            else 
+            {
+                StoryThermometerControl_Girl._matchQuantity = 40;
+            }
             isSkill = false;
         }
         isPickedUp = false;
