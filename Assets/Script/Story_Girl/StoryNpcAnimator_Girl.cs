@@ -24,6 +24,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static bool isNormal;
     //11Wolf
     public static bool isScared;
+    public static bool isRunAway;
 
     void Start()
     {
