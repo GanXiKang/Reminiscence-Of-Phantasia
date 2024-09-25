@@ -36,8 +36,8 @@ public class LoadingUIControl_House : MonoBehaviour
         b.fillAmount = value;
         c.fillAmount = value;
 
-        //CloseLoadingUI();
-        //OpenLoadingUI();
+        CloseLoadingUI();
+        OpenLoadingUI();
 
         //currentColor.a = _alpha;
         //panel.color = currentColor;
