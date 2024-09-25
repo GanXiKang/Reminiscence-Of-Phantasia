@@ -18,12 +18,11 @@ public class StoryGameControl_Girl : MonoBehaviour
     public Transform streetPoint;
     public Transform forestPoint;
     public static bool isInStreet = true;
-    //public static bool isResurrection;
+    public static bool isResurrection = false;
 
     void Start()
     {
         player = GameObject.Find("Player");
-        //isResurrection = false;
     }
 
     void Update()
@@ -36,10 +35,9 @@ public class StoryGameControl_Girl : MonoBehaviour
 
     void PlayerResurrection()
     {
-        if (!StoryThermometerControl_Girl.isDead) return;
+        if (!isResurrection) return;
 
-        StoryThermometerControl_Girl.isDead = false;
-        BlackScreenControl.isOpenBlackScreen = true;
+        isResurrection= false;
         Invoke("ResurrectionState", 3f);
     }
     void ResurrectionState()
