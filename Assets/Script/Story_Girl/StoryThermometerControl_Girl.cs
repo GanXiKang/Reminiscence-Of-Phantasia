@@ -57,9 +57,9 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         if (isDead) return;
 
         thermometerUI.SetActive(!StoryUIControl_Girl.isDialogue);
-        Vector3 worldPos = player.transform.position + new Vector3(-8f, -3f, 0f);
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-        thermometerUI.transform.position = screenPos;
+        //Vector3 worldPos = player.transform.position + new Vector3(-8f, -3f, 0f);
+        //Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        //thermometerUI.transform.position = screenPos;
 
         if (StoryLoadingScene_Girl.isLoading) return;
         if (StoryUIControl_Girl.isDialogue) return;
