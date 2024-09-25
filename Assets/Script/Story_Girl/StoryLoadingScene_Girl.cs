@@ -114,7 +114,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
             if (isOnce)
             {
                 isOnce = false;
-                StoryNpcAnimator_Girl.isDirection = true;
+                StoryNpcAnimator_Girl._direction = 0;
                 StoryUIControl_Girl.isDialogue = true;
                 StoryDialogueControl_Girl._isAboveWho1 = 1;
                 StoryDialogueControl_Girl._textCount = 26;
