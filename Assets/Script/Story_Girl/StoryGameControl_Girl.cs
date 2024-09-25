@@ -23,10 +23,11 @@ public class StoryGameControl_Girl : MonoBehaviour
     StoryPlayerControl playerControl;
 
     //Animation
-    public static float _direction_Irls;
+    public static float _direction_Irls = 0;
 
     void Start()
     {
+        _direction_Irls = 1;
         player = GameObject.Find("Player");
         playerControl = player.GetComponent<StoryPlayerControl>();
     }
