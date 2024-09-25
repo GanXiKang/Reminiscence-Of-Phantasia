@@ -38,7 +38,7 @@ public class StoryGameControl_Girl : MonoBehaviour
     {
         if (!StoryThermometerControl_Girl.isDead) return;
 
-        StoryThermometerControl_Girl.isDead = true;
+        StoryThermometerControl_Girl.isDead = false;
         BlackScreenControl.isOpenBlackScreen = true;
         Invoke("ResurrectionState", 3f);
     }
