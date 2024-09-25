@@ -44,7 +44,7 @@ public class StoryPileWood_Girl : MonoBehaviour
             {
                 BGM.PlayOneShot(fire);
                 isPlayAudio = true;
-                Invoke("isRenewPlayerAudio", 1f);
+                Invoke("isRenewPlayerAudio", 7f);
             }
         }
     }
