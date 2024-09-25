@@ -10,7 +10,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public int _who;
 
     //01Irls
-    public static float _direction = 0;
+    public static bool isDirection;
     public static bool isHappy_Irls;
     public static bool isSurprise;
     public static bool isLeaveStreet;
@@ -43,7 +43,14 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
         switch (_who)
         {
             case 1:
-                anim.SetFloat("Direction", _direction);
+                if (isDirection)
+                {
+                    anim.SetFloat("Direction", 0);
+                }
+                else
+                {
+                    anim.SetFloat("Direction", 1);
+                }
                 if (isHappy_Irls)
                 {
                     anim.SetBool("isHappy", true);
