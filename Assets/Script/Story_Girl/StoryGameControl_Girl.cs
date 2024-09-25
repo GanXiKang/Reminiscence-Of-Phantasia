@@ -8,7 +8,7 @@ public class StoryGameControl_Girl : MonoBehaviour
 
     [Header("TeachWall")]
     public GameObject teachWall;
-    public static bool isWallActive = false; //Test
+    public static bool isWallActive = true; 
 
     [Header("GarbageCan")]
     public GameObject trashcanLid;
