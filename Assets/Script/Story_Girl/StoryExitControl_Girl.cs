@@ -46,10 +46,12 @@ public class StoryExitControl_Girl : MonoBehaviour
                 {
                     case 1:
                         StoryLoadingScene_Girl.isLeftOpen = true;
+                        StoryGameControl_Girl.isInStreet = true;
                         break;
 
                     case 2:
                         StoryLoadingScene_Girl.isRightOpen = true;
+                        StoryGameControl_Girl.isInStreet = false;
                         break;
                 }
             }
