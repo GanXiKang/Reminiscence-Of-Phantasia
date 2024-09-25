@@ -58,7 +58,6 @@ public class StoryGameControl_Girl : MonoBehaviour
         isRenewTemperature = true;
         StoryThermometerControl_Girl._matchQuantity += 10;
         StoryThermometerControl_Girl.isDead = false;
-        isChangeTransform = false;
         yield return new WaitForSeconds(0.3f);
         isChangeTransform = false;
     }
