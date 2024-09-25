@@ -10,11 +10,11 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public int _who;
 
     //01Irls
+    public static float _direction = 1;
     public static bool isHappy_Irls;
     public static bool isSurprise;
     public static bool isLeaveStreet;
     public static bool isGoGrandmom;
-    float _direction = 1; 
     //02GarbageCan
     public static bool isOpen;
     //04Child_Yan
