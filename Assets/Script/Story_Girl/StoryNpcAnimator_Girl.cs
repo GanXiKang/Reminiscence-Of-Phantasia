@@ -100,11 +100,13 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            _direction = 0; 
+            _direction = 0;
+            print("0 : " + _direction);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _direction = 1;
+            print("1 : " + _direction);
         }
     }
 }
