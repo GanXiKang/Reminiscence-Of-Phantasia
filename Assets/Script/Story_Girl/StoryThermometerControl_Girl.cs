@@ -7,6 +7,10 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 {
     GameObject player;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip use;
+
     [Header("Value")]
     public static bool isThermometer = false;
     public static bool isStepOnSnow = false;
@@ -116,6 +120,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             if (_matchQuantity != 0)
             {
                 isUseMatches = true;
+                BGM.PlayOneShot(use);
                 _matchQuantity--;
                 _countUse++;
                 if (_countUse == 1)
