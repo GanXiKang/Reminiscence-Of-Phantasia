@@ -12,9 +12,15 @@ public class StoryGameControl_Girl : MonoBehaviour
     public GameObject trashcanLid;
     public static bool isTrashcanLidActice = true;
 
+    [Header("Resurrection")]
+    public Transform streetPoint;
+    public Transform forestPoint;
+
     void Update()
     {
         teachWall.SetActive(isWallActive);
         trashcanLid.SetActive(isTrashcanLidActice);
+
+
     }
 }
