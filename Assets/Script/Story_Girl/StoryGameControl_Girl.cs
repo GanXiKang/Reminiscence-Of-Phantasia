@@ -39,7 +39,7 @@ public class StoryGameControl_Girl : MonoBehaviour
         if (!isResurrection) return;
 
         isResurrection= false;
-        Invoke("ResurrectionState", 3f);
+        Invoke("ResurrectionState", 2f);
     }
     void ResurrectionState()
     {
