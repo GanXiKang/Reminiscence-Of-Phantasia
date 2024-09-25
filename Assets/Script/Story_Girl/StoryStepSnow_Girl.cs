@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class StoryStepSnow_Girl : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip step;
+
     public static bool isFirstStepSnow = true;
 
     private void OnTriggerEnter(Collider other)
@@ -16,6 +20,7 @@ public class StoryStepSnow_Girl : MonoBehaviour
                 StoryDialogueControl_Girl._textCount = 9;
                 isFirstStepSnow = false;
             }
+            BGM.PlayOneShot(step);
         }
     }
     private void OnTriggerStay(Collider other)
