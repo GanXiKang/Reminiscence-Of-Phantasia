@@ -13,20 +13,20 @@ public class LoadingUIControl_House : MonoBehaviour
     public static bool isCloseLoadingUI = false;
     public static bool isOpenLoadingUI = false;
 
-    [Header("BlackScreen")]
-    public GameObject blackScreen;
-    public Image panel;
-    Color currentColor;
-    float _alpha = 0f;
-    public float _screenSpeed = 50f;
-    public static bool isCloseBlackScreen = false;
-    public static bool isOpenBlackScreen = false;
+    //[Header("BlackScreen")]
+    //public GameObject blackScreen;
+    //public Image panel;
+    //Color currentColor;
+    //float _alpha = 0f;
+    //public float _screenSpeed = 50f;
+    //public static bool isCloseBlackScreen = false;
+    //public static bool isOpenBlackScreen = false;
 
     void Start()
     {
         isCloseLoadingUI = true;
 
-        currentColor = panel.color;
+        //currentColor = panel.color;
     }
 
     void Update()
@@ -35,13 +35,14 @@ public class LoadingUIControl_House : MonoBehaviour
         a.fillAmount = value;
         b.fillAmount = value;
         c.fillAmount = value;
-        CloseLoadingUI();
-        OpenLoadingUI();
 
-        currentColor.a = _alpha;
-        panel.color = currentColor;
-        OpenBlackScreen();
-        CloseBlackScreen();
+        //CloseLoadingUI();
+        //OpenLoadingUI();
+
+        //currentColor.a = _alpha;
+        //panel.color = currentColor;
+        //OpenBlackScreen();
+        //CloseBlackScreen();
     }
 
     void CloseLoadingUI()
@@ -72,37 +73,37 @@ public class LoadingUIControl_House : MonoBehaviour
             }
         }
     }
-    void CloseBlackScreen()
-    {
-        if (isCloseBlackScreen)
-        {
-            if (_alpha > 0)
-            {
-                _alpha -= _screenSpeed * Time.deltaTime;
-            }
-            else
-            {
-                isCloseBlackScreen = false;
-                blackScreen.SetActive(false);
-            }
-        }
-    }
-    void OpenBlackScreen()
-    {
-        if (isOpenBlackScreen)
-        {
-            blackScreen.SetActive(true);
-            if (_alpha < 1)
-            {
-                _alpha += _screenSpeed * Time.deltaTime;
-            }
-            else
-            {
-                isOpenBlackScreen = false;
-                Invoke("WaitCloseBlackSreen", 1f);
-            }
-        }
-    }
+    //void CloseBlackScreen()
+    //{
+    //    if (isCloseBlackScreen)
+    //    {
+    //        if (_alpha > 0)
+    //        {
+    //            _alpha -= _screenSpeed * Time.deltaTime;
+    //        }
+    //        else
+    //        {
+    //            isCloseBlackScreen = false;
+    //            blackScreen.SetActive(false);
+    //        }
+    //    }
+    //}
+    //void OpenBlackScreen()
+    //{
+    //    if (isOpenBlackScreen)
+    //    {
+    //        blackScreen.SetActive(true);
+    //        if (_alpha < 1)
+    //        {
+    //            _alpha += _screenSpeed * Time.deltaTime;
+    //        }
+    //        else
+    //        {
+    //            isOpenBlackScreen = false;
+    //            Invoke("WaitCloseBlackSreen", 1f);
+    //        }
+    //    }
+    //}
     void WaitCloseBlackSreen()
     {
         isCloseBlackScreen = true;
