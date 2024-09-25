@@ -157,8 +157,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 25:
-                print(StoryGameControl_Girl._direction_Irls);
-                StoryGameControl_Girl._direction_Irls = 1;
+                //StoryNpcAnimator_Girl._direction = 1;
                 StoryNpcAnimator_Girl.isLeaveStreet = true;
                 break;
 
