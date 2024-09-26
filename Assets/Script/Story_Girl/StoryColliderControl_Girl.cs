@@ -23,9 +23,12 @@ public class StoryColliderControl_Girl : MonoBehaviour
             }
             else 
             {
-                StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._isAboveWho1 = 1;
-                StoryDialogueControl_Girl._textCount = 31;
+                if (!StoryNpcAnimator_Girl.isShotRunAway && !StoryNpcAnimator_Girl.isFightRunAway)
+                {
+                    StoryUIControl_Girl.isDialogue = true;
+                    StoryDialogueControl_Girl._isAboveWho1 = 1;
+                    StoryDialogueControl_Girl._textCount = 31;
+                }
             }
         }
     }
