@@ -16,6 +16,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static bool isLeaveStreet;
     public static bool isGoGrandmom;
     public static bool isHide;
+    public static bool isFind;
     //02GarbageCan
     public static bool isOpen;
     //04Child_Yan
@@ -73,6 +74,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 anim.SetBool("isLeaveStreet", isLeaveStreet);
                 anim.SetBool("isGoGrandmom", isGoGrandmom);
                 anim.SetBool("isHide", isHide);
+                anim.SetBool("isFind", isFind);
                 break;
 
             case 2:
