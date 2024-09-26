@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class StoryStepSnow_Girl : MonoBehaviour
 {
+    GameObject player;
+    ColorLerpControl colorLerpControl;
+
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip step;
 
+    //Text
     public static bool isFirstStepSnow = true;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+        colorLerpControl = player.GetComponent<ColorLerpControl>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +32,7 @@ public class StoryStepSnow_Girl : MonoBehaviour
             }
             BGM.PlayOneShot(step);
             StoryPlayerAnimator_Girl.isCold = true;
+            colorLerpControl.enabled = true;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -37,6 +48,7 @@ public class StoryStepSnow_Girl : MonoBehaviour
         {
             StoryThermometerControl_Girl.isStepOnSnow = false;
             StoryPlayerAnimator_Girl.isCold = false;
+            colorLerpControl.enabled = false;
         }
     }
 }
