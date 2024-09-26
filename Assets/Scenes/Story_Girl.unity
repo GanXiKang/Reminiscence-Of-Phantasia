@@ -42038,6 +42038,7 @@ GameObject:
   - component: {fileID: 2070207995}
   - component: {fileID: 2070207996}
   - component: {fileID: 2070207998}
+  - component: {fileID: 2070207999}
   - component: {fileID: 2070207997}
   m_Layer: 0
   m_Name: Player
@@ -42216,6 +42217,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2963395d794ac664a94ed98a7218487c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2070207999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070207991}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83aea22ac54dfc34cada1687a8e07a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultColor: {r: 1, g: 1, b: 1, a: 1}
+  HighlightColor: {r: 0, g: 0, b: 1, a: 1}
+  _lerpSpeed: 1
 --- !u!1 &2084452733
 GameObject:
   m_ObjectHideFlags: 0
