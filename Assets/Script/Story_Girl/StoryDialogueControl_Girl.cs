@@ -180,8 +180,9 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isMoveSeeWolf = true;
                 break;
 
-            case 47:
-                //StoryEnd
+            case 46:
+                StoryNpcAnimator_Girl.isFind = true;
+                Invoke("StoryEnd", 1f);
                 break;
 
             case 50:
@@ -444,5 +445,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isShotRunAway = true;
                 break;
         }
+    }
+
+    void StoryEnd()
+    {
+        StoryBeginningEnding_Girl.isStoryEnding = true;
     }
 }
