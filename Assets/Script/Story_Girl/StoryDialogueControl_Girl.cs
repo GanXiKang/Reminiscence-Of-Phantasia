@@ -49,7 +49,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     //Event
     public static bool isDialogueEvent = false;
     public static bool isDialogueRotation = false;
-    int _eventNum;
 
     void Start()
     {
