@@ -17,6 +17,12 @@ public class ColorLerpControl : MonoBehaviour
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("SpriteRenderer not found on " + gameObject.name + " or its children.");
+            return;
+        }
+
         DefaultColor = spriteRenderer.color;
 
         StartCoroutine(UpdateColor());
@@ -40,6 +46,10 @@ public class ColorLerpControl : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        spriteRenderer.color = DefaultColor;
+        //spriteRenderer.color = DefaultColor;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = DefaultColor;
+        }
     }
 }
