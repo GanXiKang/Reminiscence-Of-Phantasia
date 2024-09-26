@@ -712,7 +712,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 break;
 
                             case 2:
-                                if (StoryBagControl.isItemNumber[_getItemNumber[6]])
+                                if (StoryBagControl.isItemNumber[6])
                                 {
                                     isTrashCanLid = true;
                                     StoryPlayerAnimator_Girl.isIronRod = true;
