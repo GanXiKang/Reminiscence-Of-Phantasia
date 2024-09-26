@@ -176,6 +176,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isMoveSeeWolf = true;
                 break;
 
+            case 50:
+                //hunter leave
+                break;
+
             case 47:
                 //StoryEnd
                 break;
@@ -426,6 +430,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case 49:
                 StoryNpcAnimator_Girl.isSurprise = true;
+                break;
+
+            case 50:
+                // bgm shot
+                StoryNpcAnimator_Girl.isScared = true;
+                // wolf leave
                 break;
         }
     }
