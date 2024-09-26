@@ -23,7 +23,7 @@ public class StoryColliderControl_Girl : MonoBehaviour
             }
             else 
             {
-                if (!StoryNpcAnimator_Girl.isShotRunAway && !StoryNpcAnimator_Girl.isFightRunAway)
+                if (!StoryNpcAnimator_Girl.isShotRunAway && !StoryNpcAnimator_Girl.isAttractWolf)
                 {
                     StoryUIControl_Girl.isDialogue = true;
                     StoryDialogueControl_Girl._isAboveWho1 = 1;
