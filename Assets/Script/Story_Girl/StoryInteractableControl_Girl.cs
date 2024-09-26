@@ -317,7 +317,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         if (!isWearingLittleRedHood)
                         {
                             isWearingLittleRedHood = true;
-                            StoryNpcAnimator_Girl.isHappy_Irls = true;
                         }
                         break;
 
