@@ -169,7 +169,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 30:
-                // Iris move
+                StoryNpcAnimator_Girl.isHide = true;
                 break;
 
             case 47:
@@ -426,6 +426,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                         StoryNpcAnimator_Girl.isScared = true;
                         break;
                 }
+                break;
+
+            case 49:
+                StoryNpcAnimator_Girl.isSurprise = true;
                 break;
         }
     }
