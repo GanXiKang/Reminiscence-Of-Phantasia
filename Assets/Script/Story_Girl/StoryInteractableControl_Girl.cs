@@ -649,6 +649,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                 case 11:
                     BGM.PlayOneShot(fight);
+                    StoryNpcAnimator_Girl.isScared = true;
+                    StoryNpcAnimator_Girl.isFightRunAway = true;
                     StoryUIControl_Girl.isDialogue = true;
                     StoryDialogueControl_Girl._isAboveWho1 = 1;
                     StoryDialogueControl_Girl._textCount = 51;
