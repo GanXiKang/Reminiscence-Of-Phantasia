@@ -394,7 +394,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             }
                             else
                             {
-                                if (!isCanKillWolf)
+                                if (!StoryNpcAnimator_Girl.isShotRunAway)
                                 {
                                     if (StoryNpcAnimator_Girl.isHide)
                                     {
