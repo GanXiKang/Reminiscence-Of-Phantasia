@@ -435,11 +435,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isScared = true;
                 StoryNpcAnimator_Girl.isShotRunAway = true;
                 break;
-
-            case 51:
-                StoryNpcAnimator_Girl.isScared = true;
-                StoryNpcAnimator_Girl.isFightRunAway = true;
-                break;
         }
     }
 
