@@ -9,7 +9,6 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     CanvasGroup canvasGroup;
 
     [Header("UI")]
-    public GameObject storyUI;
     public GameObject buttonLeft, buttonRight;
     public GameObject buttonStart, buttonLeave;
     public Text content;
@@ -25,7 +24,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
     void Start()
     {
-        canvasGroup = storyUI.GetComponent<CanvasGroup>();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     void OnEnable()
