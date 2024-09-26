@@ -25,6 +25,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static bool isHappy_Cri;
     //06Hunter
     public static bool isMoveSeeWolf;
+    public static bool isFinishLeave;
     //09Camping
     public static bool isNormal;
     //11Wolf
@@ -90,6 +91,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
             case 6:
                 anim.SetBool("isNormal", StoryInteractableControl_Girl.isCanKillWolf);
                 anim.SetBool("isMove", isMoveSeeWolf);
+                anim.SetBool("isFinish", isFinishLeave);
                 break;
 
             case 9:
