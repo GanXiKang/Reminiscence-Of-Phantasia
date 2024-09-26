@@ -362,6 +362,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (_textCount)
         {
             case 14:
+            case 44:
                 StoryPlayerControl.isSurprised = true;
                 break;
 
