@@ -172,6 +172,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isHide = true;
                 break;
 
+            case 45:
+                // hunterMove;
+                break;
+
             case 47:
                 //StoryEnd
                 break;
@@ -397,17 +401,9 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 45:
-                switch (_eventNum)
-                {
-                    case 0:
-                        StoryPlayerControl.isHappy = true;
-                        isDialogueRotation = true;
-                        _eventNum++;
-                        break;
-
-                    case 1:
-                        break;
-                }
+                StoryPlayerControl.isHappy = true;
+                isDialogueRotation = true;
+                _eventNum++;
                 break;
 
             case 47:
