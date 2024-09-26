@@ -216,7 +216,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
         background.fillAmount = 1;
     }
-
     IEnumerator CloseColdUI()
     {
         isCold = false;
@@ -233,5 +232,4 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         cold.GetComponent<CanvasGroup>().alpha = 0;
         cold.SetActive(false);
     }
-}
 }
