@@ -220,14 +220,32 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 else if (_chooseNum == 3)
                 {
                     JumpToSection("C");
+                    switch (_textCount)
+                    {
+                        case 16:
+                            StoryPlayerControl.isSad = true;
+                            break;
+                    }
                 }
                 else if (_chooseNum == 4)
                 {
                     JumpToSection("D");
+                    switch (_textCount)
+                    {
+                        case 16:
+                            StoryPlayerControl.isHappy = true;
+                            break;
+                    }
                 }
                 else if (_chooseNum == 5)
                 {
                     JumpToSection("E");
+                    switch (_textCount)
+                    {
+                        case 16:
+                            StoryPlayerControl.isSad = true;
+                            break;
+                    }
                 }
             }
         }
@@ -350,6 +368,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case 22:
             case 43:
+                StoryPlayerControl.isHappy = true;
                 isDialogueEvent = true;
                 isDialogueRotation = true;
                 break;
