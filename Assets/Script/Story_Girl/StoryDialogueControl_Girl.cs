@@ -361,8 +361,16 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 14:
+                StoryPlayerControl.isSurprised = true;
+                break;
+
             case 19:
+                isDialogueRotation = true;
+                break;
+
             case 25:
+                StoryPlayerControl.isHappy = true;
                 isDialogueRotation = true;
                 break;
 
