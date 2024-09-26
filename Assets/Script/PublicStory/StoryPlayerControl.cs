@@ -117,6 +117,15 @@ public class StoryPlayerControl : MonoBehaviour
         anim.SetBool("isSad", isSad);
         anim.SetBool("isHappy", isHappy);
         anim.SetBool("isSurprised", isSurprised);
+
+        if (isSad || isHappy || isSurprised)
+            Invoke("FalseAnimation", 0.3f);
+    }
+    void FalseAnimation()
+    {
+        isSad = false;
+        isHappy = false;
+        isSurprised = false;
     }
 
     bool isCanMove()
