@@ -71,6 +71,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public static bool isFinallyMatch = false;
     public static bool isWearingLittleRedHood = false;
     public static bool isTrashCanLid = false;
+    public static bool isNeedHelp = false;
     //Npc_03SantaClaus
     public static bool isGetGift = false;
     //Npc_05XiaoXin
@@ -397,6 +398,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 {
                                     if (StoryNpcAnimator_Girl.isHide)
                                     {
+                                        isNeedHelp = true;
                                         StoryNpcAnimator_Girl.isHide = false;
                                         StoryUIControl_Girl.isDialogue = true;
                                         StoryDialogueControl_Girl._isAboveWho1 = _who;
@@ -552,90 +554,96 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     break;
 
                 case 6:
-                    _countMouseDown++;
-                    switch (_countMouseDown)
+                    if (isNeedHelp)
                     {
-                        case 1:
-                            isInteractable = true;
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 33;
-                            break;
-
-                        default:
-                            if (!StoryNpcAnimator_Girl.isMoveSeeWolf)
-                            {
+                        _countMouseDown++;
+                        switch (_countMouseDown)
+                        {
+                            case 1:
+                                isInteractable = true;
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 34;
-                            }
-                            else
-                            {
-                                if (!StoryNpcAnimator_Girl.isShotRunAway)
+                                StoryDialogueControl_Girl._textCount = 33;
+                                break;
+
+                            default:
+                                if (!StoryNpcAnimator_Girl.isMoveSeeWolf)
                                 {
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                    StoryDialogueControl_Girl._isAboveWho2 = 1;
-                                    StoryDialogueControl_Girl._textCount = 50;
+                                    StoryDialogueControl_Girl._textCount = 34;
                                 }
-                            }
-                            break;
+                                else
+                                {
+                                    if (!StoryNpcAnimator_Girl.isShotRunAway)
+                                    {
+                                        StoryUIControl_Girl.isDialogue = true;
+                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                        StoryDialogueControl_Girl._isAboveWho2 = 1;
+                                        StoryDialogueControl_Girl._textCount = 50;
+                                    }
+                                }
+                                break;
+                        }
                     }
                     break;
 
                 case 9:
-                    _countMouseDown++;
-                    switch (_countMouseDown)
+                    if (isNeedHelp)
                     {
-                        case 1:
-                            isInteractable = true;
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 37;
-                            break;
-
-                        default:
-                            if (!isGetApple)
-                            {
+                        _countMouseDown++;
+                        switch (_countMouseDown)
+                        {
+                            case 1:
+                                isInteractable = true;
                                 StoryUIControl_Girl.isDialogue = true;
                                 StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 38;
-                            }
-                            else
-                            {
-                                if (!isGetKebab)
-                                {
-                                    if (isFirstAskFind)
-                                    {
-                                        isFirstAskFind = true;
-                                        StoryUIControl_Girl.isDialogue = true;
-                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                        StoryDialogueControl_Girl._textCount = 40;
-                                    }
-                                    else
-                                    {
-                                        if (!isAgreeFind)
-                                        {
-                                            StoryUIControl_Girl.isDialogue = true;
-                                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                            StoryDialogueControl_Girl._textCount = 41;
-                                        }
-                                        else
-                                        {
-                                            StoryUIControl_Girl.isDialogue = true;
-                                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                            StoryDialogueControl_Girl._textCount = 42;
-                                        }
-                                    }
-                                }
-                                else
+                                StoryDialogueControl_Girl._textCount = 37;
+                                break;
+
+                            default:
+                                if (!isGetApple)
                                 {
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                    StoryDialogueControl_Girl._textCount = 48;
+                                    StoryDialogueControl_Girl._textCount = 38;
                                 }
-                            }
-                            break;
+                                else
+                                {
+                                    if (!isGetKebab)
+                                    {
+                                        if (isFirstAskFind)
+                                        {
+                                            isFirstAskFind = true;
+                                            StoryUIControl_Girl.isDialogue = true;
+                                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                            StoryDialogueControl_Girl._textCount = 40;
+                                        }
+                                        else
+                                        {
+                                            if (!isAgreeFind)
+                                            {
+                                                StoryUIControl_Girl.isDialogue = true;
+                                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                                StoryDialogueControl_Girl._textCount = 41;
+                                            }
+                                            else
+                                            {
+                                                StoryUIControl_Girl.isDialogue = true;
+                                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                                StoryDialogueControl_Girl._textCount = 42;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        StoryUIControl_Girl.isDialogue = true;
+                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                        StoryDialogueControl_Girl._textCount = 48;
+                                    }
+                                }
+                                break;
+                        }
                     }
                     break;
             }
