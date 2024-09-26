@@ -179,6 +179,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 46:
+            case 51:
                 StoryNpcAnimator_Girl.isFind = true;
                 Invoke("StoryEnd", 1f);
                 break;
@@ -189,10 +190,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case 50:
                 StoryNpcAnimator_Girl.isFinishLeave = true;
-                break;
-
-            case 51:
-                StoryNpcAnimator_Girl.isFind = true;
                 break;
         }
     }
