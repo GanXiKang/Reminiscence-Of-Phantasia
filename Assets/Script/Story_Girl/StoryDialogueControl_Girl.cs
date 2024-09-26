@@ -183,8 +183,16 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 Invoke("StoryEnd", 1f);
                 break;
 
+            case 47:
+                //fightAnim
+                break;
+
             case 50:
                 StoryNpcAnimator_Girl.isFinishLeave = true;
+                break;
+
+            case 51:
+                StoryNpcAnimator_Girl.isFind = true;
                 break;
         }
     }
@@ -426,6 +434,11 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isSurprise = true;
                 StoryNpcAnimator_Girl.isScared = true;
                 StoryNpcAnimator_Girl.isShotRunAway = true;
+                break;
+
+            case 51:
+                StoryNpcAnimator_Girl.isScared = true;
+                StoryNpcAnimator_Girl.isFightRunAway = true;
                 break;
         }
     }
