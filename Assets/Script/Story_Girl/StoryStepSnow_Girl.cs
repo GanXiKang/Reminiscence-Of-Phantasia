@@ -21,6 +21,7 @@ public class StoryStepSnow_Girl : MonoBehaviour
                 isFirstStepSnow = false;
             }
             BGM.PlayOneShot(step);
+            StoryPlayerAnimator_Girl.isCold = true;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -35,6 +36,7 @@ public class StoryStepSnow_Girl : MonoBehaviour
         if (other.tag == "Player")
         {
             StoryThermometerControl_Girl.isStepOnSnow = false;
+            StoryPlayerAnimator_Girl.isCold = false;
         }
     }
 }
