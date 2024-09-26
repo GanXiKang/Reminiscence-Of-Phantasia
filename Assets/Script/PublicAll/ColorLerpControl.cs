@@ -14,8 +14,8 @@ public class ColorLerpControl : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        if (spriteRenderer == null)
-            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        //if (spriteRenderer == null)
+        //    spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         if (spriteRenderer == null)
         {
@@ -35,13 +35,13 @@ public class ColorLerpControl : MonoBehaviour
 
     IEnumerator UpdateColor()
     {
-        Color lerpedColor = Color.white;
+        //Color lerpedColor = Color.white;
         float currentTime = 0;
 
         while (this.enabled)
         {
             lerpedColor = Color.Lerp(DefaultColor, HighlightColor, Mathf.PingPong(currentTime += (Time.deltaTime * _lerpSpeed / 1), 1));
-            spriteRenderer.color = lerpedColor;
+            //spriteRenderer.color = lerpedColor;
 
             yield return new WaitForEndOfFrame();
         }
