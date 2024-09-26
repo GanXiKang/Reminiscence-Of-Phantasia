@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StoryBeginningEnding_Girl : MonoBehaviour
 {
@@ -112,7 +113,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     }
     public void Button_LeaveStory()
     {
-        StartCoroutine(StorySystemUIDisappear(canvasGroup));
+        SceneManager.LoadScene(1);
     }
 
     IEnumerator StorySystemUI()
