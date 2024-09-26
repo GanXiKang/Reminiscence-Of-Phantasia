@@ -64,8 +64,8 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 }
                 anim.SetBool("isTrashCanLid", StoryInteractableControl_Girl.isTrashCanLid);
                 anim.SetBool("isWearingRedHood", StoryInteractableControl_Girl.isWearingLittleRedHood);
-                anim.SetBool("isLeaveStreet", isLeaveStreet);
-                anim.SetBool("isGoGrandmom", isGoGrandmom);
+                //anim.SetBool("isLeaveStreet", isLeaveStreet);
+                //anim.SetBool("isGoGrandmom", isGoGrandmom);
                 break;
 
             case 2:
