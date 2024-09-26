@@ -646,6 +646,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         }
                     }
                     break;
+
+                case 11:
+                    StoryUIControl_Girl.isDialogue = true;
+                    StoryDialogueControl_Girl._isAboveWho1 = 1;
+                    StoryDialogueControl_Girl._textCount = 51;
+                    break;
             }
         }
         StoryBagControl.isOpenBag = false;
