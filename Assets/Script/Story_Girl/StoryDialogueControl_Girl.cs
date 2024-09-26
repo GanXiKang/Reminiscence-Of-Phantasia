@@ -384,6 +384,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case 39:
                 isDialogueEvent = true;
+                StoryPlayerControl.isHappy = true;
                 StoryPileWood_Girl.isFireActice = true;
                 break;
 
