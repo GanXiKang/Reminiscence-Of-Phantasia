@@ -675,6 +675,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 if (StoryBagControl.isItemNumber[_getItemNumber[6]])
                                 {
                                     isTrashCanLid = true;
+                                    StoryPlayerAnimator_Girl.isIronRod = true;
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
                                     StoryDialogueControl_Girl._textCount = 47;
