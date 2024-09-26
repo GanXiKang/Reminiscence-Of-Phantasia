@@ -16,6 +16,6 @@ public class StoryUIControl_Girl : MonoBehaviour
     void Update()
     {
         dialogueUI.SetActive(isDialogue);
-        storyUI.SetActive(isStory || isStoryEnding);
+        storyUI.SetActive(isStoryStart || isStoryEnding);
     }
 }
