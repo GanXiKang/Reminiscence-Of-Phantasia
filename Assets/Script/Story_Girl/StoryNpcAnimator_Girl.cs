@@ -26,7 +26,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static bool isNormal;
     //11Wolf
     public static bool isScared;
-    public static bool isRunAway;
 
     void Start()
     {
@@ -92,7 +91,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
 
             case 11:
                 anim.SetBool("isScared", isScared);
-                anim.SetBool("isRunAway", isRunAway);
                 break;
         }
     }
