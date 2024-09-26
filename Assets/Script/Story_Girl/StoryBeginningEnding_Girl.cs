@@ -80,6 +80,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         {
             case 0:
                 buttonLeft.SetActive(false);
+                buttonRight.SetActive(true);
                 buttonStart.SetActive(false);
                 buttonLeave.SetActive(false);
                 break;
@@ -92,6 +93,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
                 break;
 
             case 2:
+                buttonLeft.SetActive(true);
                 buttonRight.SetActive(false);
                 if (StoryUIControl_Girl.isStoryStart)
                 {
