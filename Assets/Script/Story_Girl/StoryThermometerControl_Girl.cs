@@ -119,6 +119,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             {
                 isUseMatches = true;
                 BGM.PlayOneShot(use);
+                StoryPlayerAnimator_Girl.isMatch = true;
                 _matchQuantity--;
                 _countUse++;
                 if (_countUse == 1)
@@ -138,6 +139,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     void FalseUseMatches()
     {
         isUseMatches = false;
+        StoryPlayerAnimator_Girl.isMatch = false;
     }
     void RenewTemperature()
     {
