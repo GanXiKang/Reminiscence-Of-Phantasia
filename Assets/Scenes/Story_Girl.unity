@@ -20077,6 +20077,7 @@ GameObject:
   - component: {fileID: 1178973548}
   - component: {fileID: 1178973551}
   - component: {fileID: 1178973550}
+  - component: {fileID: 1178973553}
   - component: {fileID: 1178973552}
   - component: {fileID: 1178973549}
   m_Layer: 0
@@ -20208,6 +20209,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _who: 11
+--- !u!114 &1178973553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178973547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b69aa088925614883c37db5978c53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 1264484142}
+  pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
+  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
+  get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
+  find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
+  song: {fileID: 8300000, guid: 2f340394d77b57f40bfb8c97734ba8aa, type: 3}
+  _snapDistance: 12
+  _scaleSpeed: 5
+  interactableUI: {fileID: 1500011181}
+  interactableName: {fileID: 319748889}
+  _who: 11
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 2028836014}
+  bagUIPosition: {fileID: 1968368687}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1180831946
 GameObject:
   m_ObjectHideFlags: 0
