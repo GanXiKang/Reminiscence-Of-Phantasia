@@ -5811,7 +5811,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353896313}
+      - m_Target: {fileID: 2012275662}
         m_TargetAssemblyTypeName: StoryBeginningEnding_Girl, Assembly-CSharp
         m_MethodName: Button_LeaveStory
         m_Mode: 1
@@ -9207,7 +9207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353896313}
+      - m_Target: {fileID: 2012275662}
         m_TargetAssemblyTypeName: StoryBeginningEnding_Girl, Assembly-CSharp
         m_MethodName: Button_StartGame
         m_Mode: 1
@@ -19040,7 +19040,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353896313}
+      - m_Target: {fileID: 2012275662}
         m_TargetAssemblyTypeName: StoryBeginningEnding_Girl, Assembly-CSharp
         m_MethodName: Button_Left
         m_Mode: 1
@@ -22080,7 +22080,6 @@ GameObject:
   - component: {fileID: 1353896309}
   - component: {fileID: 1353896310}
   - component: {fileID: 1353896312}
-  - component: {fileID: 1353896313}
   - component: {fileID: 1353896315}
   m_Layer: 5
   m_Name: UI
@@ -22240,25 +22239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 1013169811}
   storyUI: {fileID: 2012275659}
---- !u!114 &1353896313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353896305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40009e9e1ad1bc34b8148c60e0035965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonLeft: {fileID: 1134670531}
-  buttonRight: {fileID: 1759256443}
-  buttonStart: {fileID: 600481636}
-  buttonLeave: {fileID: 126407328}
-  content: {fileID: 125562571}
-  textStart: {fileID: 4900000, guid: e983839122c55fa4b8b2793ef9e98833, type: 3}
-  textEnding: {fileID: 4900000, guid: 3a2d6d6c5f60e584e8eb2f92ab6a5749, type: 3}
 --- !u!114 &1353896314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39164,7 +39144,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353896313}
+      - m_Target: {fileID: 2012275662}
         m_TargetAssemblyTypeName: StoryBeginningEnding_Girl, Assembly-CSharp
         m_MethodName: Button_Right
         m_Mode: 1
@@ -39581,7 +39561,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1811243865}
-  - component: {fileID: 1811243866}
   m_Layer: 5
   m_Name: Teach
   m_TagString: Untagged
@@ -39610,41 +39589,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1811243866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811243864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6dc4b0b0c7cb3d438737126b0214d17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTemperature: 1
-  isGoddess: 0
-  isChange: 0
-  isWind: 0
-  isPerformance: 0
-  isTime: 0
-  isSupplies: 0
-  teachContent:
-  - {fileID: 0}
-  - {fileID: 4900000, guid: 10281177a5fe268499841ee6aa0d7126, type: 3}
-  - {fileID: 4900000, guid: 3a0f81ad01e399e40a0aa9ebfb7e0383, type: 3}
-  - {fileID: 4900000, guid: b153d4ae9b12da5488b818cc51b13f51, type: 3}
-  - {fileID: 4900000, guid: ebcfb62c80f024a4ba5d5ec7e83f6c61, type: 3}
-  teachImage: []
-  teachUI: {fileID: 1811243864}
-  window: {fileID: 1764403399}
-  background: {fileID: 1238793403}
-  content: {fileID: 1909199564}
-  teachButton:
-  - {fileID: 831666647}
-  - {fileID: 857994542}
-  - {fileID: 690028289}
-  _openSpeed: 1
 --- !u!1 &1824746321
 GameObject:
   m_ObjectHideFlags: 0
@@ -41101,6 +41045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012275660}
   - component: {fileID: 2012275661}
+  - component: {fileID: 2012275662}
   m_Layer: 5
   m_Name: Story
   m_TagString: Untagged
@@ -41145,6 +41090,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2012275662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012275659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40009e9e1ad1bc34b8148c60e0035965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonLeft: {fileID: 1134670531}
+  buttonRight: {fileID: 1759256443}
+  buttonStart: {fileID: 600481636}
+  buttonLeave: {fileID: 126407328}
+  content: {fileID: 125562571}
+  textStart: {fileID: 4900000, guid: e983839122c55fa4b8b2793ef9e98833, type: 3}
+  textEnding: {fileID: 4900000, guid: 3a2d6d6c5f60e584e8eb2f92ab6a5749, type: 3}
 --- !u!1 &2015167376
 GameObject:
   m_ObjectHideFlags: 0
