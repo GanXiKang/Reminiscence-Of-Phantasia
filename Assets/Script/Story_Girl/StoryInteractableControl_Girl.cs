@@ -396,9 +396,19 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             {
                                 if (!isCanKillWolf)
                                 {
-                                    StoryUIControl_Girl.isDialogue = true;
-                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                    StoryDialogueControl_Girl._textCount = 32;
+                                    if (StoryNpcAnimator_Girl.isHide)
+                                    {
+                                        StoryNpcAnimator_Girl.isHide = false;
+                                        StoryUIControl_Girl.isDialogue = true;
+                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                        StoryDialogueControl_Girl._textCount = 49;
+                                    }
+                                    else
+                                    {
+                                        StoryUIControl_Girl.isDialogue = true;
+                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                        StoryDialogueControl_Girl._textCount = 32;
+                                    }
                                 }
                                 else
                                 {
