@@ -449,6 +449,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     void StoryEnd()
     {
-        StoryBeginningEnding_Girl.isStoryEnding = true;
+        StoryUIControl_Girl.isStoryEnding = true;
     }
 }
