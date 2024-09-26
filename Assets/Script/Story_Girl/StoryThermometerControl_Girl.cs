@@ -21,7 +21,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public static bool isFireBeside = false;
     public static bool isDead = false;
     bool isUseMatches = false;
-    bool isOnce = true;
 
     [Header("UI")]
     public GameObject thermometerUI;
