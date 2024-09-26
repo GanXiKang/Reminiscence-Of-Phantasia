@@ -416,21 +416,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 47:
-                switch (_eventNum)
-                {
-                    case 0:
-                        isDialogueRotation = true;
-                        _eventNum++;
-                        break;
-
-                    case 1:
-                        _eventNum++;
-                        break;
-
-                    case 2:
-                        StoryNpcAnimator_Girl.isScared = true;
-                        break;
-                }
+                isDialogueRotation = true;
                 break;
 
             case 49:
