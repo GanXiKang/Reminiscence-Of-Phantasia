@@ -140,6 +140,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     void UseMatch()
     {
         if (StoryUIControl_Girl.isDialogue) return;
+        if (StoryUIControl_Girl.isStoryEnding) return;
         if (!isSkillActive) return;
         if (isUseMatches) return;
         if (isDead) return;
