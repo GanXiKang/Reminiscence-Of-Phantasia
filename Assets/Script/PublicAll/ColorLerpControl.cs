@@ -1,42 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class ColorLerpControl : MonoBehaviour
 {
-    public Color DefaultColor = Color.white;
-    public Color HighlightColor = Color.blue;
-    public float _lerpSpeed = 1f;
+    public Color DefaultColor = Color.white;   
+    public Color HighlightColor = Color.blue;  
+    public float LerpSpeed = 1f;               
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;     // SpriteRenderer 組件
+    private Coroutine colorCoroutine;          // 保存 Coroutine 的引用
 
-    void Start()
+    void Awake()
     {
+        // 在 Awake 中獲取 SpriteRenderer 組件
         spriteRenderer = GetComponent<SpriteRenderer>();
-        DefaultColor = spriteRenderer.color;
 
-        StartCoroutine(UpdateColor());
+        // 檢查是否成功取得
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("SpriteRenderer not found on " + gameObject.name);
+        }
     }
 
     void OnEnable()
     {
-        StartCoroutine(UpdateColor());
+        // 開始變色 Coroutine
+        if (spriteRenderer != null)
+        {
+            colorCoroutine = StartCoroutine(LerpColor());
+        }
     }
 
-    IEnumerator UpdateColor()
+    void OnDisable()
     {
-        Color lerpedColor;
-        float currentTime = 0;
-
-        while (this.enabled)
+        // 當物件被禁用時，停止變色 Coroutine 並將顏色恢復為原來的樣子
+        if (colorCoroutine != null)
         {
-            lerpedColor = Color.Lerp(DefaultColor, HighlightColor, Mathf.PingPong(currentTime += (Time.deltaTime * _lerpSpeed / 1), 1));
-            print(lerpedColor);
-            //spriteRenderer.color = lerpedColor;
-
-            yield return new WaitForEndOfFrame();
+            StopCoroutine(colorCoroutine);
+            colorCoroutine = null;
         }
 
-        spriteRenderer.color = DefaultColor;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = DefaultColor;  // 恢復初始顏色
+        }
+    }
+
+    IEnumerator LerpColor()
+    {
+        float time = 0;
+
+        // 一直執行，直到物件被禁用
+        while (true)
+        {
+            // 使用 Mathf.PingPong 來回插值顏色
+            spriteRenderer.color = Color.Lerp(DefaultColor, HighlightColor, Mathf.PingPong(time, 1));
+
+            // 增加時間
+            time += Time.deltaTime * LerpSpeed;
+
+            // 等待下一幀
+            yield return null;
+        }
     }
 }
+
