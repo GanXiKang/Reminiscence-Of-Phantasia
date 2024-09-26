@@ -173,7 +173,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 45:
-                // hunterMove;
+                StoryNpcAnimator_Girl.isMoveSeeWolf = true;
                 break;
 
             case 47:
