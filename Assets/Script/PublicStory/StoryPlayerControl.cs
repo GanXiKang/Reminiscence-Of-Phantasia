@@ -9,6 +9,10 @@ public class StoryPlayerControl : MonoBehaviour
     PlayerInput playerInput;
     Animator anim;
 
+    public static bool isSad;
+    public static bool isHappy;
+    public static bool isSurprised;
+
     [Header("Movement")]
     public float _moveSpeed = 12f;
     public float _gravity = 20f;
@@ -110,6 +114,9 @@ public class StoryPlayerControl : MonoBehaviour
     void Animation()
     {
         anim.SetFloat("Direction", _direction);
+        anim.SetBool("isSad", isSad);
+        anim.SetBool("isHappy", isHappy);
+        anim.SetBool("isSurprised", isSurprised);
     }
 
     bool isCanMove()
