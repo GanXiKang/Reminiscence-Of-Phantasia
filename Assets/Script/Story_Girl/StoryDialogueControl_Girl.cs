@@ -382,6 +382,9 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 isDialogueRotation = true;
                 break;
 
+            case 30:
+                break;
+
             case 39:
                 isDialogueEvent = true;
                 StoryPlayerControl.isHappy = true;
