@@ -168,6 +168,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryInteractableControl_Girl._whoGive = 1;
                 break;
 
+            case 30:
+                // Iris move
+                break;
+
             case 47:
                 //StoryEnd
                 break;
@@ -383,6 +387,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 30:
+                StoryPlayerControl.isSurprised = true;
                 break;
 
             case 39:
