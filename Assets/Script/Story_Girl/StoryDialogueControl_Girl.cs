@@ -390,6 +390,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 switch (_eventNum)
                 {
                     case 0:
+                        StoryPlayerControl.isHappy = true;
                         isDialogueRotation = true;
                         _eventNum++;
                         break;
