@@ -21769,7 +21769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1288997542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22219,8 +22219,8 @@ MonoBehaviour:
   temperature: {fileID: 726384671}
   skill: {fileID: 364482920}
   quantity: {fileID: 2145889123}
-  cold: {fileID: 0}
-  background: {fileID: 0}
+  cold: {fileID: 1288997541}
+  background: {fileID: 1963182420}
 --- !u!114 &1353896312
 MonoBehaviour:
   m_ObjectHideFlags: 0
