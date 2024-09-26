@@ -35,6 +35,10 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     int _countUse = 0;
     bool isteach = false;
 
+    [Header("ColdUI")]
+    public GameObject cold;
+    public Image background;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -45,6 +49,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
         Thermometer();
         Teach();
         SkillUI();
+        ColdUI();
         UseMatch();
         RenewTemperature();
         Limit();   
@@ -105,6 +110,10 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     {
         skill.SetActive(isSkillActive);
         quantity.text = _matchQuantity.ToString();
+    }
+    void ColdUI()
+    {
+        
     }
     void UseMatch()
     {
