@@ -372,7 +372,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case 25:
                 StoryPlayerControl.isHappy = true;
-                StoryNpcAnimator_Girl.isHappy_Irls = true;
                 isDialogueRotation = true;
                 break;
 
