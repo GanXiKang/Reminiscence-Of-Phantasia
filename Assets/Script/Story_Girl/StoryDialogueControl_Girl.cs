@@ -154,6 +154,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case 19:
                 StoryNpcAnimator_Girl.isLeave= true;
+                StoryPlayerControl.isSurprised = true;
                 break;
 
             case 25:
