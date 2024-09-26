@@ -3,37 +3,26 @@ using System.Collections;
 
 public class ColorLerpControl : MonoBehaviour
 {
-    public Color DefaultColor = Color.white;   
-    public Color HighlightColor = Color.blue;  
-    public float LerpSpeed = 1f;               
+    public Color defaultColor = Color.white;   
+    public Color highlightColor = Color.blue;  
+    public float _lerpSpeed = 1f;               
 
-    private SpriteRenderer spriteRenderer;     // SpriteRenderer 組件
-    private Coroutine colorCoroutine;          // 保存 Coroutine 的引用
+    private SpriteRenderer spriteRenderer;
+    private Coroutine colorCoroutine;          
 
     void Awake()
     {
-        // 在 Awake 中獲取 SpriteRenderer 組件
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // 檢查是否成功取得
-        if (spriteRenderer == null)
-        {
-            Debug.LogError("SpriteRenderer not found on " + gameObject.name);
-        }
     }
-
     void OnEnable()
     {
-        // 開始變色 Coroutine
         if (spriteRenderer != null)
         {
             colorCoroutine = StartCoroutine(LerpColor());
         }
     }
-
     void OnDisable()
     {
-        // 當物件被禁用時，停止變色 Coroutine 並將顏色恢復為原來的樣子
         if (colorCoroutine != null)
         {
             StopCoroutine(colorCoroutine);
@@ -42,7 +31,7 @@ public class ColorLerpControl : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = DefaultColor;  // 恢復初始顏色
+            spriteRenderer.color = defaultColor;
         }
     }
 
@@ -50,16 +39,10 @@ public class ColorLerpControl : MonoBehaviour
     {
         float time = 0;
 
-        // 一直執行，直到物件被禁用
         while (true)
         {
-            // 使用 Mathf.PingPong 來回插值顏色
-            spriteRenderer.color = Color.Lerp(DefaultColor, HighlightColor, Mathf.PingPong(time, 1));
-
-            // 增加時間
-            time += Time.deltaTime * LerpSpeed;
-
-            // 等待下一幀
+            spriteRenderer.color = Color.Lerp(defaultColor, highlightColor, Mathf.PingPong(time, 1));
+            time += Time.deltaTime * _lerpSpeed;
             yield return null;
         }
     }
