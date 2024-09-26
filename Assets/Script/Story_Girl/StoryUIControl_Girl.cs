@@ -8,8 +8,14 @@ public class StoryUIControl_Girl : MonoBehaviour
     public GameObject dialogueUI;
     public static bool isDialogue;
 
+    [Header("TeachUI")]
+    public GameObject storyUI;
+    public static bool isStory = true;
+    public static bool isStoryEnding = false;
+
     void Update()
     {
         dialogueUI.SetActive(isDialogue);
+        storyUI.SetActive(isStory || isStoryEnding);
     }
 }
