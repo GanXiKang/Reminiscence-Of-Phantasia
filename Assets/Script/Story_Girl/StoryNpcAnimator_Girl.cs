@@ -34,7 +34,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public static bool isScared;
     public static bool isShotRunAway;
     public static bool isFightRunAway;
-    public static bool isAttract;
 
     void Start()
     {
@@ -107,7 +106,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 anim.SetBool("isScared", isScared);
                 anim.SetBool("isShotRunAway", isShotRunAway);
                 anim.SetBool("isFightRunAway", isFightRunAway);
-                anim.SetBool("isAttract", isAttract);
+                anim.SetBool("isAttract", isAttractWolf);
                 break;
         }
     }
