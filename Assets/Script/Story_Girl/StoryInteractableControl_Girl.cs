@@ -564,9 +564,18 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             break;
 
                         default:
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 34;
+                            if (!StoryNpcAnimator_Girl.isMoveSeeWolf)
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 34;
+                            }
+                            else
+                            {
+                                StoryUIControl_Girl.isDialogue = true;
+                                StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                StoryDialogueControl_Girl._textCount = 50;
+                            }
                             break;
                     }
                     break;
