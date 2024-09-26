@@ -59,7 +59,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     {
         GetTextFormFile(textFile[_textCount]);
         StartCoroutine(SetTextLabelIndexUI());
-        _eventNum = 0;
     }
 
     void Update()
@@ -411,7 +410,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             case 45:
                 StoryPlayerControl.isHappy = true;
                 isDialogueRotation = true;
-                _eventNum++;
                 break;
 
             case 47:
