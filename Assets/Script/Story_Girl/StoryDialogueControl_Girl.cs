@@ -7,6 +7,10 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 {
     GameObject player;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip gun;
+
     [Header("UITransform")]
     public Transform[] target;
     public static int _isAboveWho1 = 0;
@@ -176,12 +180,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StoryNpcAnimator_Girl.isMoveSeeWolf = true;
                 break;
 
-            case 50:
-                //hunter leave
-                break;
-
             case 47:
                 //StoryEnd
+                break;
+
+            case 50:
+                StoryNpcAnimator_Girl.isFinishLeave = true;
                 break;
         }
     }
@@ -433,9 +437,11 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 50:
-                // bgm shot
+                BGM.PlayOneShot(gun);
+                StoryPlayerControl.isSurprised = true;
+                StoryNpcAnimator_Girl.isSurprise = true;
                 StoryNpcAnimator_Girl.isScared = true;
-                // wolf leave
+                StoryNpcAnimator_Girl.isShotRunAway = true;
                 break;
         }
     }
