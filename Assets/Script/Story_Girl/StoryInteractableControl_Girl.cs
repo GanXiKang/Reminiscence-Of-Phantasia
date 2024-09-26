@@ -572,10 +572,13 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             }
                             else
                             {
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._isAboveWho2 = 1;
-                                StoryDialogueControl_Girl._textCount = 50;
+                                if (!StoryNpcAnimator_Girl.isShotRunAway)
+                                {
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._isAboveWho2 = 1;
+                                    StoryDialogueControl_Girl._textCount = 50;
+                                }
                             }
                             break;
                     }
