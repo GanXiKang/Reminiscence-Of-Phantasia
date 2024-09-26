@@ -184,7 +184,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 47:
-                //fightAnim
+                StoryNpcAnimator_Girl.isAttractWolf = true;
                 break;
 
             case 50:
