@@ -9,7 +9,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip gun;
+    public AudioClip gun, bingo, wrong;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -247,6 +247,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                     switch (_textCount)
                     {
                         case 16:
+                            BGM.PlayOneShot(wrong);
                             StoryPlayerControl.isSad = true;
                             break;
                     }
@@ -257,6 +258,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                     switch (_textCount)
                     {
                         case 16:
+                            BGM.PlayOneShot(bingo);
                             StoryPlayerControl.isHappy = true;
                             break;
                     }
@@ -267,6 +269,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                     switch (_textCount)
                     {
                         case 16:
+                            BGM.PlayOneShot(wrong);
                             StoryPlayerControl.isSad = true;
                             break;
                     }
