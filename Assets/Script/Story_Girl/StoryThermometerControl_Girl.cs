@@ -140,33 +140,9 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     }
     void UseMatch()
     {
-        if (StoryUIControl_Girl.isDialogue) return;
-        if (StoryUIControl_Girl.isStoryEnding) return;
-        if (!isSkillActive) return;
-        if (isUseMatches) return;
-        if (isDead) return;
-
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (_matchQuantity != 0)
-            {
-                isUseMatches = true;
-                BGM.PlayOneShot(use);
-                StoryPlayerAnimator_Girl.isMatch = true;
-                _matchQuantity--;
-                _countUse++;
-                if (_countUse == 1)
-                {
-                    StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._textCount = 4;
-                }
-                Invoke("FalseUseMatches", 2f);
-            }
-            else 
-            {
-                StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._textCount = 5;
-            }
+            Match_Button();
         }
     }
     void FalseUseMatches()
@@ -233,5 +209,34 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
         cold.GetComponent<CanvasGroup>().alpha = 0;
         cold.SetActive(false);
+    }
+
+    public void Match_Button()
+    {
+        if (StoryUIControl_Girl.isDialogue) return;
+        if (StoryUIControl_Girl.isStoryEnding) return;
+        if (!isSkillActive) return;
+        if (isUseMatches) return;
+        if (isDead) return;
+
+        if (_matchQuantity != 0)
+        {
+            isUseMatches = true;
+            BGM.PlayOneShot(use);
+            StoryPlayerAnimator_Girl.isMatch = true;
+            _matchQuantity--;
+            _countUse++;
+            if (_countUse == 1)
+            {
+                StoryUIControl_Girl.isDialogue = true;
+                StoryDialogueControl_Girl._textCount = 4;
+            }
+            Invoke("FalseUseMatches", 2f);
+        }
+        else
+        {
+            StoryUIControl_Girl.isDialogue = true;
+            StoryDialogueControl_Girl._textCount = 5;
+        }
     }
 }
