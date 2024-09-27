@@ -36,12 +36,11 @@ public class StoryLoadingScene_Girl : MonoBehaviour
 
     void SwitchSceneMusia()
     {
-        if (!isLeftOpen || !isRightOpen) return;
-        if (isPlayOnce)
-        {
-            BGM.PlayOneShot(switchScene);
-            isPlayOnce = false;
-        }
+        if (!isLeftOpen && !isRightOpen) return;
+        if (!isPlayOnce) return;
+
+        BGM.PlayOneShot(switchScene);
+        isPlayOnce = false;
     }
     void LeftRightSwitch()
     {
