@@ -399,6 +399,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                     if (StoryNpcAnimator_Girl.isHide)
                                     {
                                         isNeedHelp = true;
+                                        StoryNpcAnimator_Girl._direction = 0;
                                         StoryNpcAnimator_Girl.isHide = false;
                                         StoryUIControl_Girl.isDialogue = true;
                                         StoryDialogueControl_Girl._isAboveWho1 = _who;
@@ -684,7 +685,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
             {
                 isBagGetItem = false;
-                BGM.PlayOneShot(get);
                 StoryBagControl.isOpenBag = false;
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
                 StoryBagControl._howManyGrids--;
@@ -794,6 +794,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 break;
                         }
                         break;
+                }
+
+                if (!StoryBagControl.isItemNumber[_getItemNumber[i]])
+                {
+                    BGM.PlayOneShot(get);
                 }
             }
         }
