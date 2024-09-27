@@ -611,7 +611,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 {
                                     if (!isGetKebab)
                                     {
-                                        if (isFirstAskFind)
+                                        if (!isFirstAskFind)
                                         {
                                             isFirstAskFind = true;
                                             StoryUIControl_Girl.isDialogue = true;
