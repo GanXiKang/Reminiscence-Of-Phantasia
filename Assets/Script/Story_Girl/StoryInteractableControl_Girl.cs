@@ -730,8 +730,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                     case 4:
                         isRotation = true;
-                        StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
-                        StoryBagControl._howManyGrids++;
                         StoryUIControl_Girl.isDialogue = true;
                         StoryDialogueControl_Girl._isAboveWho1 = _who;
                         StoryDialogueControl_Girl._isAboveWho2 = 10;

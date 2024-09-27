@@ -155,6 +155,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 19:
+                StoryBagControl.isItemNumber[4] = true;
+                StoryBagControl._howManyGrids++;
                 StoryNpcAnimator_Girl.isLeave= true;
                 StoryPlayerControl.isSurprised = true;
                 break;
