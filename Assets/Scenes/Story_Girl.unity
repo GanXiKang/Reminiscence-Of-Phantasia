@@ -12844,6 +12844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   gun: {fileID: 8300000, guid: ba492ae52afa53f44a811c4e1ef669d3, type: 3}
+  bingo: {fileID: 0}
+  wrong: {fileID: 0}
   target:
   - {fileID: 0}
   - {fileID: 1618297078}
@@ -33367,7 +33369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1579847182
 Transform:
   m_ObjectHideFlags: 0
