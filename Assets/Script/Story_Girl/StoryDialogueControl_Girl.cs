@@ -175,6 +175,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
             case 45:
                 StoryNpcAnimator_Girl._direction = 1;
+                StoryNpcAnimator_Girl.isSurprise = false;
                 StoryNpcAnimator_Girl.isMoveSeeWolf = true;
                 break;
 
