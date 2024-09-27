@@ -33610,7 +33610,7 @@ MonoBehaviour:
   _exchangeItemNumber: 
   moveItemUI: {fileID: 2028836014}
   bagUIPosition: {fileID: 1968368687}
-  skillUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 1945756607}
   effects: {fileID: 0}
 --- !u!95 &1618297081
 Animator:
@@ -40449,7 +40449,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1945756609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1353896310}
+        m_TargetAssemblyTypeName: StoryThermometerControl_Girl, Assembly-CSharp
+        m_MethodName: Match_Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1945756609
 MonoBehaviour:
   m_ObjectHideFlags: 0
