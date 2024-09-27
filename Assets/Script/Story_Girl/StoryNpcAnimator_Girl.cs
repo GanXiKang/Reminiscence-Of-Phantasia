@@ -63,7 +63,10 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 if (isSurprise)
                 {
                     anim.SetBool("isSurprise", true);
-                    isSurprise = false;
+                    if (!isHide)
+                    {
+                        isSurprise = false;
+                    }
                 }
                 else
                 {
