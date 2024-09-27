@@ -13,7 +13,7 @@ public class StoryPileWood_Girl : MonoBehaviour
 
     [Header("Effects")]
     public GameObject fireEffect;
-    public static bool isFireActice = true;
+    public static bool isFireActice = false;
     float _snapDistance = 65f;
 
     void Start()
