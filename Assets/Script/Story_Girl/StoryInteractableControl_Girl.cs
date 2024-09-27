@@ -9,7 +9,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip pickUp, give, get, find, song, fight;
+    public AudioClip pickUp, give, get, find, fight;
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
@@ -450,7 +450,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
                 case 3:
                     _countMouseDown++;
-                    BGM.PlayOneShot(song);
                     switch (_countMouseDown)
                     {
                         case 1:
