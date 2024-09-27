@@ -32,20 +32,21 @@ public class StoryPileWood_Girl : MonoBehaviour
     {
         if (!isFireActice) return;
 
-        if (Vector3.Distance(transform.position, player.transform.position) >= _snapDistance)
-        {
-            StoryThermometerControl_Girl.isFireBeside = false;
-        }
-        else
+        print(Vector3.Distance(transform.position, player.transform.position));
+        if (Vector3.Distance(transform.position, player.transform.position) <= _snapDistance)
         {
             StoryThermometerControl_Girl.isFireBeside = true;
-            print("yes");
+
             if (!isPlayAudio)
             {
                 BGM.PlayOneShot(fire);
                 isPlayAudio = true;
                 Invoke("isRenewPlayerAudio", 7f);
             }
+        }
+        else
+        {
+            StoryThermometerControl_Girl.isFireBeside = false;       
         }
     }
 
