@@ -174,11 +174,13 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 45:
+                StoryNpcAnimator_Girl._direction = 1;
                 StoryNpcAnimator_Girl.isMoveSeeWolf = true;
                 break;
 
             case 46:
             case 51:
+                StoryNpcAnimator_Girl._direction = 0;
                 StoryNpcAnimator_Girl.isFind = true;
                 Invoke("StoryEnd", 1f);
                 break;
