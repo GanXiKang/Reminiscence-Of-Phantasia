@@ -14,7 +14,7 @@ public class StoryPileWood_Girl : MonoBehaviour
     [Header("Effects")]
     public GameObject fireEffect;
     public static bool isFireActice = true;
-    float _snapDistance = 120f;
+    float _snapDistance = 65f;
 
     void Start()
     {
@@ -32,7 +32,6 @@ public class StoryPileWood_Girl : MonoBehaviour
     {
         if (!isFireActice) return;
 
-        print(Vector3.Distance(transform.position, player.transform.position));
         if (Vector3.Distance(transform.position, player.transform.position) <= _snapDistance)
         {
             StoryThermometerControl_Girl.isFireBeside = true;
