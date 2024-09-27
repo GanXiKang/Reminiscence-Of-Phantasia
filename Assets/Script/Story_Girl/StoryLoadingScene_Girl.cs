@@ -9,6 +9,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     public AudioSource BGM;
     public AudioClip streetBGM, forestBGM;
     public AudioClip switchScene;
+    bool isPlayOnce = true;
 
     [Header("Scene")]
     public GameObject street;
@@ -29,9 +30,19 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     {
         loadingUI.SetActive(isLoading);
 
+        SwitchSceneMusia();
         LeftRightSwitch();
     }
 
+    void SwitchSceneMusia()
+    {
+        if (!isLeftOpen || !isRightOpen) return;
+        if (isPlayOnce)
+        {
+            BGM.PlayOneShot(switchScene);
+            isPlayOnce = false;
+        }
+    }
     void LeftRightSwitch()
     {
         if (isLeftOpen)
@@ -109,6 +120,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
 
         if (a.fillAmount == 0)
         {
+            isPlayOnce = true;
             isLeftClose = false;
             isLoading = false;
             if (isOnce)
@@ -136,7 +148,6 @@ public class StoryLoadingScene_Girl : MonoBehaviour
 
         if (c.fillAmount == 1)
         {
-            BGM.PlayOneShot(switchScene);
             isRightOpen = false;
             yield return new WaitForSeconds(0.5f);
             forest.SetActive(true);
@@ -161,6 +172,7 @@ public class StoryLoadingScene_Girl : MonoBehaviour
 
         if (a.fillAmount == 0)
         {
+            isPlayOnce = true;
             isRightClose = false;
             isLoading = false;
         }
