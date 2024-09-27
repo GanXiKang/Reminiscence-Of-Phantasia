@@ -34,7 +34,6 @@ public class StoryPileWood_Girl : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.transform.position) >= _snapDistance)
         {
-            print()
             StoryThermometerControl_Girl.isFireBeside = false;
         }
         else
