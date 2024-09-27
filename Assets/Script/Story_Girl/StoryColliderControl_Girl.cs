@@ -7,6 +7,17 @@ public class StoryColliderControl_Girl : MonoBehaviour
     public int _whatCollider;
     bool isOnce = true;
 
+    void Update()
+    {
+        if (_whatCollider == 2)
+        {
+            if (StoryInteractableControl_Girl.isNeedHelp)
+            {
+                gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
