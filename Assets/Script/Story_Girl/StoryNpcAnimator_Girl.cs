@@ -10,7 +10,7 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     public int _who;
 
     //01Irls
-    public static float _direction = 0;
+    public static float _directio = 0;
     public static bool isHappy_Irls;
     public static bool isSurprise;
     public static bool isLeaveStreet;
@@ -108,19 +108,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
                 anim.SetBool("isFightRunAway", isFightRunAway);
                 anim.SetBool("isAttract", isAttractWolf);
                 break;
-        }
-    }
-    void IrlsDirection()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            _direction = 0;
-            print("0 : " + _direction);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            _direction = 1;
-            print("1 : " + _direction);
         }
     }
 }
