@@ -3,7 +3,12 @@ guid: a2ed12786205f3342ad00f48eb059a8b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Road_Sign
+    second: {fileID: 2800000, guid: 52b6183208a6ca140b613cf09b481354, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
