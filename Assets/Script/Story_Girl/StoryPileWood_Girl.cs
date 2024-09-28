@@ -10,12 +10,17 @@ public class StoryPileWood_Girl : MonoBehaviour
     [Header("Effects")]
     public GameObject fireEffect;
     public static bool isFireActice = true;
-    float _snapDistance = 65f;
+    float _snapDistance = 20f;
 
     void Start()
     {
         player = GameObject.Find("Player");
         fire = GetComponent<AudioSource>();
+
+        if (fire == null)
+        {
+            print("NO");
+        }
     }
 
     void Update()
@@ -29,7 +34,7 @@ public class StoryPileWood_Girl : MonoBehaviour
     {
         if (!isFireActice) return;
 
-        if (Vector3.Distance(transform.position, player.transform.position) <= _snapDistance)
+        if (Vector3.Distance(fireEffect.transform.position, player.transform.position) <= _snapDistance)
         {
             StoryThermometerControl_Girl.isFireBeside = true;
             fire.Play();
@@ -40,13 +45,12 @@ public class StoryPileWood_Girl : MonoBehaviour
             StoryThermometerControl_Girl.isFireBeside = false;
             fire.Stop();
         }
-        print(StoryThermometerControl_Girl.isFireBeside);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
 
-        Gizmos.DrawWireSphere(transform.position, _snapDistance);
+        Gizmos.DrawWireSphere(fireEffect.transform.position, _snapDistance);
     }
 }
