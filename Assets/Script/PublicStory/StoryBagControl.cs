@@ -10,8 +10,10 @@ public class StoryBagControl : MonoBehaviour
 
     [Header("BagUI")]
     public Image background;
+    public Button bag;
     public static bool isOpenBag = false;
     public float _speed = 2f;
+    Sprite bagImage;
     float value = 0;
     bool isAnim = false;
 
@@ -36,6 +38,8 @@ public class StoryBagControl : MonoBehaviour
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
+        bagImage = bag.image.sprite;
+
         ItemNumber_Start();
     }
 
@@ -120,6 +124,7 @@ public class StoryBagControl : MonoBehaviour
 
         if (isOpenBag)
         {
+            bag.image.sprite = null;
             if (value < 1)
             {
                 value += _speed * Time.deltaTime;
@@ -129,9 +134,11 @@ public class StoryBagControl : MonoBehaviour
                 if (!isAnim) return;
                 currentCoroutine = StartCoroutine(BagItem());
             }
+           
         }
         else
         {
+            bag.image.sprite = bagImage;
             isItemFollow = false;
             if (value > 0)
             {
