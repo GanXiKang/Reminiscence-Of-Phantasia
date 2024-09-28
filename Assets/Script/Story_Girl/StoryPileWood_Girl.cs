@@ -16,11 +16,6 @@ public class StoryPileWood_Girl : MonoBehaviour
     {
         player = GameObject.Find("Player");
         fire = GetComponent<AudioSource>();
-
-        if (fire == null)
-        {
-            print("NO");
-        }
     }
 
     void Update()
