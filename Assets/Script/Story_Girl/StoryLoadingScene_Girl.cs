@@ -94,7 +94,6 @@ public class StoryLoadingScene_Girl : MonoBehaviour
 
         if (c.fillAmount == 1)
         {
-            BGM.PlayOneShot(switchScene);
             isLeftOpen = false;
             yield return new WaitForSeconds(0.5f);
             street.SetActive(true);
