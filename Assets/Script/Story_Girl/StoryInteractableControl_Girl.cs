@@ -719,6 +719,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                 if (StoryBagControl.isItemNumber[6])
                                 {
                                     isTrashCanLid = true;
+                                    StoryBagControl.isItemNumber[6] = false;
                                     StoryPlayerAnimator_Girl.isIronRod = true;
                                     StoryUIControl_Girl.isDialogue = true;
                                     StoryDialogueControl_Girl._isAboveWho1 = _who;
