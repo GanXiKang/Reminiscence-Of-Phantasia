@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StoryBagControl : MonoBehaviour
 {
     private Canvas canvas;
+    private Coroutine currentCoroutine;
 
     [Header("BagUI")]
     public Image background;
@@ -126,12 +127,13 @@ public class StoryBagControl : MonoBehaviour
             else
             {
                 if (!isAnim) return;
-                StartCoroutine(BagItem());
+                currentCoroutine = StartCoroutine(BagItem());
             }
         }
         else
         {
             isItemFollow = false;
+            StopCoroutine(currentCoroutine);
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
