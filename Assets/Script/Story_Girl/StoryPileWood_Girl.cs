@@ -5,20 +5,17 @@ using UnityEngine;
 public class StoryPileWood_Girl : MonoBehaviour
 {
     GameObject player;
-
-    [Header("Musia")]
-    public AudioSource BGM;
-    public AudioClip fire;
-    bool isPlayAudio = false;
+    AudioSource fire;
 
     [Header("Effects")]
     public GameObject fireEffect;
-    public static bool isFireActice = false;
+    public static bool isFireActice = true;
     float _snapDistance = 65f;
 
     void Start()
     {
         player = GameObject.Find("Player");
+        fire = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,22 +32,21 @@ public class StoryPileWood_Girl : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) <= _snapDistance)
         {
             StoryThermometerControl_Girl.isFireBeside = true;
-
-            if (!isPlayAudio)
-            {
-                BGM.PlayOneShot(fire);
-                isPlayAudio = true;
-                Invoke("isRenewPlayerAudio", 7f);
-            }
+            fire.Play();
+            fire.volume = SettingControl.volumeBGM;
         }
         else
         {
-            StoryThermometerControl_Girl.isFireBeside = false;       
+            StoryThermometerControl_Girl.isFireBeside = false;
+            fire.Stop();
         }
+        print(StoryThermometerControl_Girl.isFireBeside);
     }
 
-    void isRenewPlayerAudio()
+    private void OnDrawGizmos()
     {
-        isPlayAudio = false;
+        Gizmos.color = Color.green;
+
+        Gizmos.DrawWireSphere(transform.position, _snapDistance);
     }
 }
