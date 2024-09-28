@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoryPileWood_Girl : MonoBehaviour
 {
     GameObject player;
-    AudioSource fire;
+    AudioSource campfire;
 
     [Header("Effects")]
     public GameObject fireEffect;
@@ -15,12 +15,13 @@ public class StoryPileWood_Girl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        fire = GetComponent<AudioSource>();
+        campfire = fireEffect.GetComponent<AudioSource>();
     }
 
     void Update()
     {
         fireEffect.SetActive(isFireActice);
+        campfire.volume = SettingControl.volumeBGM;
 
         DistancePileWoodFire();
     }
@@ -32,13 +33,13 @@ public class StoryPileWood_Girl : MonoBehaviour
         if (Vector3.Distance(fireEffect.transform.position, player.transform.position) <= _snapDistance)
         {
             StoryThermometerControl_Girl.isFireBeside = true;
-            fire.Play();
-            fire.volume = SettingControl.volumeBGM;
+            //campfire.Play();
+            
         }
         else
         {
             StoryThermometerControl_Girl.isFireBeside = false;
-            fire.Stop();
+            //campfire.Stop();
         }
     }
 
