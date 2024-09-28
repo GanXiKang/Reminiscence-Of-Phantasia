@@ -140,6 +140,10 @@ public class StoryBagControl : MonoBehaviour
             {
                 value -= _speed * 2 * Time.deltaTime;
             }
+            else
+            {
+                bag.GetComponent<CanvasGroup>().alpha = 1;
+            }
             for (int i = 0; i < 5; i++)
             {
                 itemBG[i].SetActive(false);
@@ -149,7 +153,6 @@ public class StoryBagControl : MonoBehaviour
             {
                 StopCoroutine(currentCoroutine);
             }
-            bag.GetComponent<CanvasGroup>().alpha = 1;
         }
     }
     void ItemFollow()
