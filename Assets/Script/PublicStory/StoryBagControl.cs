@@ -133,7 +133,10 @@ public class StoryBagControl : MonoBehaviour
         else
         {
             isItemFollow = false;
-            StopCoroutine(currentCoroutine);
+            if (currentCoroutine != null)
+            {
+                StopCoroutine(currentCoroutine);
+            }
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
