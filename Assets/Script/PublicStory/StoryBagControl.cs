@@ -133,18 +133,18 @@ public class StoryBagControl : MonoBehaviour
         else
         {
             isItemFollow = false;
-            if (currentCoroutine != null)
-            {
-                StopCoroutine(currentCoroutine);
-            }
             if (value > 0)
             {
                 value -= _speed * 2 * Time.deltaTime;
-                for (int i = 0; i < 5; i++)
-                {
-                    itemBG[i].SetActive(false);
-                    itemButton[i].SetActive(false);
-                }
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                itemBG[i].SetActive(false);
+                itemButton[i].SetActive(false);
+            }
+            if (currentCoroutine != null)
+            {
+                StopCoroutine(currentCoroutine);
             }
         }
     }
