@@ -94,8 +94,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     void Update()
     {
-        interactableUI.SetActive(isInteractableUI);
-
         PickUpItem();
         InteractableUI();
         GivePlayerObject();
@@ -124,6 +122,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     }
     void InteractableUI()
     {
+        if (StoryUIControl_Girl.isDialogue)
+        {
+            isInteractableUI = false;
+        }
+        interactableUI.SetActive(isInteractableUI);
+
         if (!isInteractableUI) return;
 
         switch (_who)
