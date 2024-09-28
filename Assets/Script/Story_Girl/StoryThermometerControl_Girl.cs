@@ -170,6 +170,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
             if (!isDead)
             {
                 isDead = true;
+                StoryPlayerControl.isSad = true;
                 StoryUIControl_Girl.isDialogue = true;
                 StoryDialogueControl_Girl._textCount = 10;
             }
