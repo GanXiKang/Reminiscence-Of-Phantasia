@@ -33,13 +33,12 @@ public class StoryPileWood_Girl : MonoBehaviour
         if (Vector3.Distance(fireEffect.transform.position, player.transform.position) <= _snapDistance)
         {
             StoryThermometerControl_Girl.isFireBeside = true;
-            //campfire.Play();
-            
+            campfire.Play();
         }
         else
         {
             StoryThermometerControl_Girl.isFireBeside = false;
-            //campfire.Stop();
+            campfire.Stop();
         }
     }
 
