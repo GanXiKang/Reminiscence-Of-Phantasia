@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class StoryTeachControl : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip page, coroutine;
+
     [Header("Teach_Story1")]
     public bool isTemperature;
     int _teachTemperaturePage = 4;
@@ -275,10 +279,12 @@ public class StoryTeachControl : MonoBehaviour
 
     public void Button_ChangePage(int _change)
     {
+        BGM.PlayOneShot(page);
         _page += _change;
     }
     public void Button_Close()
     {
+        BGM.PlayOneShot(coroutine);
         isTeachActive = false;
         teachButton[0].interactable = false;
         CloseTeach();

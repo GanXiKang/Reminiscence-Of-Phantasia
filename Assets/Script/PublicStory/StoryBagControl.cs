@@ -8,6 +8,10 @@ public class StoryBagControl : MonoBehaviour
     private Canvas canvas;
     private Coroutine currentCoroutine;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip open;
+
     [Header("BagUI")]
     public Image background;
     public Button bag;
@@ -52,6 +56,7 @@ public class StoryBagControl : MonoBehaviour
 
     public void Bag_Button()
     {
+        BGM.PlayOneShot(open);
         isOpenBag = !isOpenBag;
         isAnim = true;
     }
