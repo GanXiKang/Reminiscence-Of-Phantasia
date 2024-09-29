@@ -12,24 +12,29 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     void Update()
     {
-        if (isFixed) return;
-
-        if (isDragging)
+        if (!isFixed)
         {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
-            transform.position = worldPosition;
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            isDragging = false;
-            if (Vector3.Distance(transform.position, targetPosition.position) <= snapDistance)
+            if (isDragging)
             {
-                transform.position = targetPosition.position;
-                isFixed = true;
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
+                transform.position = worldPosition;
             }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+                if (Vector3.Distance(transform.position, targetPosition.position) <= snapDistance)
+                {
+                    transform.position = targetPosition.position;
+                    isFixed = true;
+                }
+            }
+        }
+        else 
+        {
+            transform.position = targetPosition.position;
         }
     }
 
