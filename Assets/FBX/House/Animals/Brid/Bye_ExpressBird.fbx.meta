@@ -3,7 +3,12 @@ guid: 40682812a79bf3a46a2f10af5a08ef49
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Seagull_UV
+    second: {fileID: 2800000, guid: 3016f3fca7985bc4cb5ad8b7b7479ba7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
