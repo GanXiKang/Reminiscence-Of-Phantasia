@@ -8,6 +8,10 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 {
     CanvasGroup canvasGroup;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip page, coroutine;
+
     [Header("UI")]
     public GameObject buttonLeft, buttonRight;
     public GameObject buttonStart, buttonLeave;
@@ -112,6 +116,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         if (isTextFinish)
         {
             _page--;
+            BGM.PlayOneShot(page);
             ResetTextSpeed();
             StartCoroutine(StorySystemUI());
         }
@@ -121,16 +126,19 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         if (isTextFinish)
         {
             _page++;
+            BGM.PlayOneShot(page);
             ResetTextSpeed();
             StartCoroutine(StorySystemUI());
         }
     }
     public void Button_StartGame()
     {
+        BGM.PlayOneShot(coroutine);
         StartCoroutine(StorySystemUIDisappear(canvasGroup));
     }
     public void Button_LeaveStory()
     {
+        BGM.PlayOneShot(coroutine);
         SceneManager.LoadScene(1);
     }
 
