@@ -22347,6 +22347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46039bde8a3edbd429bb76787b8a8710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1264484142}
+  open: {fileID: 8300000, guid: beeaffd69891c5c4aa34e30a9dc5f255, type: 3}
   background: {fileID: 977074513}
   bag: {fileID: 1968368688}
   _speed: 2
@@ -22468,6 +22470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6dc4b0b0c7cb3d438737126b0214d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1264484142}
+  page: {fileID: 8300000, guid: 7c294b8232baa454394e1b9dcdfa16c7, type: 3}
+  coroutine: {fileID: 8300000, guid: 4c3665a567978cb478c4da0b7ebff0d3, type: 3}
   isTemperature: 1
   isGoddess: 0
   isChange: 0
@@ -41539,6 +41544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40009e9e1ad1bc34b8148c60e0035965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 1264484142}
+  page: {fileID: 8300000, guid: 7c294b8232baa454394e1b9dcdfa16c7, type: 3}
+  coroutine: {fileID: 8300000, guid: 4c3665a567978cb478c4da0b7ebff0d3, type: 3}
   buttonLeft: {fileID: 1134670531}
   buttonRight: {fileID: 1759256443}
   buttonStart: {fileID: 600481636}
