@@ -222,6 +222,16 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     interactableUI.transform.position = screenPos;
                 }
                 break;
+
+            case 11:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "¥Û“∞¿«";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
         }
     }
     void GivePlayerObject()
