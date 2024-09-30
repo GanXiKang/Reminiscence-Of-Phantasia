@@ -12,8 +12,8 @@ public class StoryExitControl_Girl : MonoBehaviour
     public GameObject exitUI;
     public Image bar;
     public Text sceneName;
+    public static bool isExit = false;
     float _barSpeed = 2f;
-    bool isExit = false;
 
     void Start()
     {
