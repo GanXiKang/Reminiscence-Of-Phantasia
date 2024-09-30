@@ -64,6 +64,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
         thermometerUI.SetActive(!StoryUIControl_Girl.isDialogue);
 
+        if (SettingControl.isSettingActive) return;
         if (StoryUIControl_Girl.isStoryEnding) return;
         if (StoryLoadingScene_Girl.isLoading) return;
         if (StoryUIControl_Girl.isDialogue) return;
