@@ -15,17 +15,21 @@ public class BedControl_House : MonoBehaviour
 
     void Update()
     {
-        GoStoryWorld();
+        StoryWorld();
         Leave();
     }
 
-    void GoStoryWorld()
+    void StoryWorld()
     {
         if (isGoStoryWorld)
         {
             isGoStoryWorld = false;
-            SceneManager.LoadScene(_storyNum);
+            Invoke("GoToStoryWorld", 2f);
         }
+    }
+    void GoToStoryWorld()
+    {
+        SceneManager.LoadScene(_storyNum);
     }
     void Leave()
     {
