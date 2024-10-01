@@ -40,9 +40,9 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step3")]
     public GameObject colorUI;
     public GameObject saveButton;
-    public Renderer objectRenderer;
+    public Renderer[] objectRenderer;
     public static bool isClickSaveButton = false;
-    Material initialMaterial;
+    Material[] initialMaterial;
 
     [Header("Step4")]
     public GameObject pointObject;
@@ -251,7 +251,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        //saveButton.SetActive(FinishedColoring());
+        saveButton.SetActive(FinishedColoring());
         if (isClickSaveButton)
         {
             isClickSaveButton = false;
@@ -260,17 +260,17 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void InitialMaterial()
     {
-        //print(objectRenderer[1].material);
-        //for (int i = 1; i < objectRenderer.Length; i++)
-        //{
-        initialMaterial = objectRenderer.material;
-        //}
+        initialMaterial = new Material[objectRenderer.Length];
+        for (int i = 1; i < objectRenderer.Length; i++)
+        {
+            initialMaterial[i] = objectRenderer[i].material;
+        }
     }
-    //bool FinishedColoring()
-    //{
-    //    //return objectRenderer[1].material != initialMaterial[1] &&
-    //    //       objectRenderer[2].material != initialMaterial[2];
-    //}
+    bool FinishedColoring()
+    {
+        return objectRenderer[1].material != initialMaterial[1] &&
+               objectRenderer[2].material != initialMaterial[2];
+    }
 
     void Step4_Install()
     {
