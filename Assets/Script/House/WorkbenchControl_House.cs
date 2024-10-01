@@ -31,6 +31,7 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotation = 0;
     bool isPaperRotation = false;
     public static bool isFinishCut = false;
+    public static int _cutPaperFinish = 0;
     //úy‘á
     public GameObject paper2a, paper2b;
     int _paper2Num = 1;
@@ -102,6 +103,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             case 1:
                 isAppaerPaper = true;
+                _cutPaperFinish = 0;
                 break;
 
             case 2:
