@@ -27,11 +27,12 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject scissors;
     public GameObject paper2;
     public GameObject[] paperOut;
+    public static bool isFinishCut = false;
+    bool isPaperRotation = false;
     float _rotationSpeed = 90f;
     float _rotation = 0;
-    bool isPaperRotation = false;
-    public static bool isFinishCut = false;
-    public static int _cutPaperFinish = 0;
+    int _cutPaperFinish = 0;
+   
     //úy‘á
     public GameObject paper2a, paper2b;
     int _paper2Num = 1;
@@ -103,7 +104,6 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             case 1:
                 isAppaerPaper = true;
-                _cutPaperFinish = 0;
                 break;
 
             case 2:
@@ -220,9 +220,10 @@ public class WorkbenchControl_House : MonoBehaviour
         if (!isFinishCut) return;
         if (ScissorsControl_Workbench._cutPoint == 0) return;
 
+        isFinishCut = false;
         if (_paper2Num == 1)
         {
-            print("OK");
+            _cutPaperFinish++;
             paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
             Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
         }
@@ -231,7 +232,12 @@ public class WorkbenchControl_House : MonoBehaviour
             paperOut[ScissorsControl_Workbench._cutPoint + 4].GetComponent<Rigidbody>().isKinematic = false;
             Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 4], 2f);
         }
-        isFinishCut = false;
+        if (_cutPaperFinish == 4)
+        {
+            _cutPaperFinish = 0;
+            _process = 3;
+            Process();
+        }
     }
 
     void Step3_Color()
