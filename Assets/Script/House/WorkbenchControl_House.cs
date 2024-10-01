@@ -43,7 +43,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Start()
     {
-        _process = 0;
+        _process = 1;
         clickButtonNumber = 0;
     }
 
