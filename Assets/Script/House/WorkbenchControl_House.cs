@@ -51,9 +51,9 @@ public class WorkbenchControl_House : MonoBehaviour
     void Start()
     {
         clickButtonNumber = 0;
-        _process = 0;
+        _process = 1;
 
-        NextProcess(1);
+        Process();
         InitialMaterial();
     }
 
