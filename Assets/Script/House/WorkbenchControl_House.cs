@@ -44,6 +44,7 @@ public class WorkbenchControl_House : MonoBehaviour
     void Start()
     {
         _process = 1;
+        Process();
         clickButtonNumber = 0;
     }
 
@@ -68,38 +69,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) 
         {
             _process++;
-            for (int i = 1; i < 5; i++)
-            {
-                if (i == _process)
-                {
-                    processObject[i].SetActive(true);
-                }
-                else 
-                {
-                    processObject[i].SetActive(false);
-                }
-            }
-            switch (_process)
-            {
-                case 1:
-                    isAppaerPaper = true;
-                    break;
-
-                case 2:
-                    isPaperRotation = true;
-                    isAppaerPaper = false;
-                    break;
-
-                case 3:
-                    colorUI.SetActive(true);
-                    isPaperRotation = false;
-                    break;
-
-                case 4:
-                    pointObject.SetActive(true);
-                    colorUI.SetActive(false);
-                    break;
-            }
+            Process();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -114,6 +84,41 @@ public class WorkbenchControl_House : MonoBehaviour
             _paper2Num = 2;
         }
         Leave();
+    }
+    void Process()
+    {
+        for (int i = 1; i < 5; i++)
+        {
+            if (i == _process)
+            {
+                processObject[i].SetActive(true);
+            }
+            else
+            {
+                processObject[i].SetActive(false);
+            }
+        }
+        switch (_process)
+        {
+            case 1:
+                isAppaerPaper = true;
+                break;
+
+            case 2:
+                isPaperRotation = true;
+                isAppaerPaper = false;
+                break;
+
+            case 3:
+                colorUI.SetActive(true);
+                isPaperRotation = false;
+                break;
+
+            case 4:
+                pointObject.SetActive(true);
+                colorUI.SetActive(false);
+                break;
+        }
     }
 
     void Step1_Choose()
