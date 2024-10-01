@@ -40,9 +40,11 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step3")]
     public GameObject colorUI;
     public GameObject saveButton;
+    public static bool isClickSaveButton = false;
 
     [Header("Step4")]
     public GameObject pointObject;
+    public static bool isFinishStoryBook = false;
 
     void Start()
     {
@@ -196,7 +198,6 @@ public class WorkbenchControl_House : MonoBehaviour
         isStampGo = true;
     }
     
-
     void Step2_Cut()
     {
         PaperRotation();
@@ -247,12 +248,20 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        
+        if (isClickSaveButton)
+        {
+            isClickSaveButton = false;
+            NextProcess();
+        }
     }
 
     void Step4_Install()
     {
-
+        if (isFinishStoryBook)
+        {
+            isFinishStoryBook = false;
+            _process = 0;
+        }
     }
 
     void Leave()
