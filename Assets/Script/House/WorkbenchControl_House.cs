@@ -256,6 +256,14 @@ public class WorkbenchControl_House : MonoBehaviour
             _process = 4;
             Process();
         }
+        if (paperColor[1].material.mainTexture == initialTexture)
+        {
+            print("Yes");
+        }
+        else 
+        {
+            print("NO");
+        }
     }
     bool FinishedColoring()
     {
