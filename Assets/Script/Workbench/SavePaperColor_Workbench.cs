@@ -15,11 +15,11 @@ public class SavePaperColor_Workbench : MonoBehaviour
 
     public void SaveTexture()
     {
+        WorkbenchControl_House.isClickSaveButton = true;
         if (!Directory.Exists(saveDirectory))
         {
             Directory.CreateDirectory(saveDirectory);
         }
-
         for (int i = 0; i < canvasRenderers.Length; i++)
         {
             Texture2D texture = (Texture2D)canvasRenderers[i].material.mainTexture;

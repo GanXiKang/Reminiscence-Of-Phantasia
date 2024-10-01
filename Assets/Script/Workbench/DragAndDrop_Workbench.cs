@@ -28,6 +28,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
                 if (Vector3.Distance(transform.position, targetPosition.position) <= snapDistance)
                 {
                     transform.position = targetPosition.position;
+                    WorkbenchControl_House.isFinishStoryBook = true;
                     isFixed = true;
                 }
             }
