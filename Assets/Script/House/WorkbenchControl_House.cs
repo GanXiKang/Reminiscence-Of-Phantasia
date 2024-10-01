@@ -132,6 +132,7 @@ public class WorkbenchControl_House : MonoBehaviour
     void NextProcess()
     {
         _process++;
+        print(_process);
         Process();
     }
 
