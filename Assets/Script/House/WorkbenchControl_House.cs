@@ -222,6 +222,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (_paper2Num == 1)
         {
+            print("OK");
             paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
             Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
         }
