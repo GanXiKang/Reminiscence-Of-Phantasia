@@ -42,7 +42,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject saveButton;
     public Renderer[] paperColor;
     public static bool isClickSaveButton = false;
-    Color initialColor;
+    Texture initialTexture;
 
 
     [Header("Step4")]
@@ -53,7 +53,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         clickButtonNumber = 0;
         _process = 1;
-        initialColor = paperColor[1].material.color;
+        initialTexture = paperColor[1].material.mainTexture;
 
         Process();
     }
@@ -259,8 +259,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     bool FinishedColoring()
     {
-        return paperColor[1].material.color != initialColor &&
-               paperColor[2].material.color != initialColor;
+        return paperColor[1].material.mainTexture != initialTexture &&
+               paperColor[2].material.mainTexture != initialTexture;
     }
 
     void Step4_Install()
