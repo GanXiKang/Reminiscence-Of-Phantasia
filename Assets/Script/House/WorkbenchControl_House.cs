@@ -234,10 +234,14 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (_cutPaperFinish == 4)
         {
-            _cutPaperFinish = 0;
-            _process = 3;
-            Process();
+            Invoke("NextProcess", 1f);
         }
+    }
+    void NextProcess()
+    {
+        _cutPaperFinish = 0;
+        _process = 3;
+        Process();
     }
 
     void Step3_Color()
