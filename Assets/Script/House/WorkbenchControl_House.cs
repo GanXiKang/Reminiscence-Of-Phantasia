@@ -40,9 +40,9 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step3")]
     public GameObject colorUI;
     public GameObject saveButton;
-    public Renderer[] objectRenderer;
+    public Renderer objectRenderer;
     public static bool isClickSaveButton = false;
-    Material[] initialMaterial;
+    Material initialMaterial;
 
     [Header("Step4")]
     public GameObject pointObject;
@@ -263,7 +263,7 @@ public class WorkbenchControl_House : MonoBehaviour
         print(objectRenderer[1].material);
         //for (int i = 1; i < objectRenderer.Length; i++)
         //{
-        initialMaterial[1] = objectRenderer[1].material;
+        initialMaterial = objectRenderer.material;
         //}
     }
     bool FinishedColoring()
