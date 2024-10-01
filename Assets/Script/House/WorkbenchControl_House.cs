@@ -53,7 +53,7 @@ public class WorkbenchControl_House : MonoBehaviour
         clickButtonNumber = 0;
         _process = 0;
 
-        NextProcess();
+        NextProcess(1);
         InitialMaterial();
     }
 
@@ -129,12 +129,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
         }
     }
-    void NextProcess()
-    {
-        _process++;
-        print(_process);
-        Process();
-    }
 
     void Step1_Choose()
     {
@@ -169,7 +163,8 @@ public class WorkbenchControl_House : MonoBehaviour
         if (stamp.transform.position == stampStartPos.position)
         {
             isAppaerStamp = false;
-            NextProcess();
+            _process = 2;
+            Process();
         }
     }
     public void Button_ChoosePattern(int num)
@@ -246,7 +241,8 @@ public class WorkbenchControl_House : MonoBehaviour
         if (_cutPaperFinish == 4)
         {
             _cutPaperFinish = 0;
-            Invoke("NextProcess", 1f);
+            _process = 3;
+            Invoke("Process", 1f);
         }
     }
 
@@ -256,7 +252,8 @@ public class WorkbenchControl_House : MonoBehaviour
         if (isClickSaveButton)
         {
             isClickSaveButton = false;
-            NextProcess();
+            _process = 4;
+            Process();
         }
     }
     void InitialMaterial()
