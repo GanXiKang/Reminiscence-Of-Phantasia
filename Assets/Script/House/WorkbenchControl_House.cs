@@ -260,10 +260,11 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void InitialMaterial()
     {
-        for (int i = 1; i < objectRenderer.Length; i++)
-        {
-            initialMaterial[i] = objectRenderer[i].material;
-        }
+        print(objectRenderer[1].material);
+        //for (int i = 1; i < objectRenderer.Length; i++)
+        //{
+        //    initialMaterial[i] = objectRenderer[i].material;
+        //}
     }
     bool FinishedColoring()
     {
