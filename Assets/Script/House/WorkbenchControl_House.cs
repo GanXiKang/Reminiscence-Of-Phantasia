@@ -156,6 +156,11 @@ public class WorkbenchControl_House : MonoBehaviour
             isAppaerStamp = false;
         }
     }
+    public void Button_ChoosePattern(int num)
+    {
+        clickButtonNumber = num;
+        StartCoroutine(DisappaerChooseUI());
+    }
     IEnumerator AppaerChooseUI()
     {
         yield return new WaitForSeconds(0.2f);
@@ -180,11 +185,7 @@ public class WorkbenchControl_House : MonoBehaviour
         isAppaerStamp = true;
         isStampGo = true;
     }
-    public void Button_ChoosePattern(int num)
-    {
-        clickButtonNumber = num;
-        StartCoroutine(DisappaerChooseUI());
-    }
+    
 
     void Step2_Cut()
     {
