@@ -248,6 +248,8 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
+        print(initialColor[1].material.color);
+        print(paperColor);
         saveButton.SetActive(FinishedColoring());
         if (isClickSaveButton)
         {
