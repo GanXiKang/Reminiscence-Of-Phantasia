@@ -39,15 +39,17 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step3")]
     public GameObject colorUI;
+    public GameObject saveButton;
 
     [Header("Step4")]
     public GameObject pointObject;
 
     void Start()
     {
-        _process = 1;
-        Process();
         clickButtonNumber = 0;
+        _process = 0;
+
+        NextProcess();
     }
 
     void Update()
@@ -122,6 +124,11 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
         }
     }
+    void NextProcess()
+    {
+        _process++;
+        Process();
+    }
 
     void Step1_Choose()
     {
@@ -156,8 +163,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (stamp.transform.position == stampStartPos.position)
         {
             isAppaerStamp = false;
-            _process = 2;
-            Process();
+            NextProcess();
         }
     }
     public void Button_ChoosePattern(int num)
@@ -234,14 +240,9 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (_cutPaperFinish == 4)
         {
+            _cutPaperFinish = 0;
             Invoke("NextProcess", 1f);
         }
-    }
-    void NextProcess()
-    {
-        _cutPaperFinish = 0;
-        _process = 3;
-        Process();
     }
 
     void Step3_Color()
