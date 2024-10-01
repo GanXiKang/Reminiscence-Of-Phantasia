@@ -10,7 +10,7 @@ public class StoryBagControl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip open;
+    public AudioClip open, item;
 
     [Header("BagUI")]
     public Image background;
@@ -62,6 +62,7 @@ public class StoryBagControl : MonoBehaviour
     }
     public void Item_Button(int _whichItem)
     {
+        BGM.PlayOneShot(item);
         isItemFollow = !isItemFollow;
         if (_whatItemButton != _whichItem)
         {
