@@ -85,36 +85,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
         Invoke("ClearLine", 0.2f);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (isUseScissors)
-    //    {
-    //        if (other.tag == "PaperOut")
-    //        {
-    //            if (other.gameObject.name == "Collider1")
-    //            {
-    //                isCollider[1] = true;
-    //            }
-    //            else if (other.gameObject.name == "Collider2")
-    //            {
-    //                isCollider[2] = true;
-    //            }
-    //            else if (other.gameObject.name == "Collider3")
-    //            {
-    //                isCollider[3] = true;
-    //            }
-    //            else if (other.gameObject.name == "Collider4")
-    //            {
-    //                isCollider[4] = true;
-    //            }
-    //        }
-    //        if (other.tag == "Paper")
-    //        {
-    //            isUseScissors = false;
-    //            Invoke("ClearLine", 0.2f);
-    //        }
-    //    }
-    //}
     private void OnTriggerStay(Collider other)
     {
         if (isUseScissors)
