@@ -154,6 +154,8 @@ public class WorkbenchControl_House : MonoBehaviour
         if (stamp.transform.position == stampEndPos.position)
         {
             isAppaerStamp = false;
+            _process = 2;
+            Process();
         }
     }
     public void Button_ChoosePattern(int num)
