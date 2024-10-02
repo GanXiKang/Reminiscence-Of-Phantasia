@@ -217,7 +217,7 @@ public class WorkbenchControl_House : MonoBehaviour
         for (int v = 0; v <= 7; v++)
         {
             panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.03f);
         }
         contentImage[0].SetActive(true);
     }
@@ -227,7 +227,7 @@ public class WorkbenchControl_House : MonoBehaviour
         for (int v = 7; v <= 1; v--)
         {
             panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
-            yield return new WaitForSeconds(0.12f);
+            yield return new WaitForSeconds(0.02f);
         }
         chooseUI.SetActive(false);
         yield return new WaitForSeconds(0.2f);
