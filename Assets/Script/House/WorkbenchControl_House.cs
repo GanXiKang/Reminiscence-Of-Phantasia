@@ -7,6 +7,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("ProcessObject")]
     public GameObject[] processObject;
     public static int _process;
+    public static int _storyBookNum = 0;
 
     [Header("Paper")]
     public GameObject[] paper;
@@ -18,6 +19,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] contentImage;
+    public Sprite[] contentSprite;
     public Transform paperEndPos;
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
@@ -153,6 +155,7 @@ public class WorkbenchControl_House : MonoBehaviour
             if (stamp.transform.position == stampEndPos.position)
             {
                 isStampGo = false;
+                _paperNum = clickButtonNumber;
                 Paper();
                 blankPaper.SetActive(false);
                 Invoke("StampStay", 1f);
