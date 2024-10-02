@@ -265,7 +265,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 return false;
         }
     }
-    public void SaveTexture_Button()
+    public void Button_SaveTexture()
     {
         isClickSaveButton = true;
         SavePaperColor_Workbench.isSave = true;
