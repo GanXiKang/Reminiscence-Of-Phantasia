@@ -93,6 +93,8 @@ public class WorkbenchControl_House : MonoBehaviour
             paper2b.SetActive(true);
             _paper2Num = 2;
         }
+        print(paperColor[1].material.mainTexture);
+        print(initialTexture);
         Leave();
     }
     void Process()
