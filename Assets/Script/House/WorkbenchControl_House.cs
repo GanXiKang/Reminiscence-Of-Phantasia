@@ -23,7 +23,6 @@ public class WorkbenchControl_House : MonoBehaviour
     public Sprite[] contentSprite;
     public Transform paperEndPos;
     public Transform stampStartPos, stampEndPos;
-    Quaternion targetRotation = Quaternion.Euler(90f, 0f, 0f);
     float _speed = 12f;
     float _rotateSpeed = 6f;
     bool isAppaerPaper = false;
@@ -102,7 +101,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 2:
-                _cutPaperFinish = 0;
                 isPaperRotation = true;
                 isAppaerPaper = false;
                 break;
@@ -335,8 +333,9 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (_cutPaperFinish == 4)
         {
+            _cutPaperFinish = 0;
             _process = 3;
-            paper[_paperNum].transform.rotation = Quaternion.Lerp(paper[_paperNum].transform.rotation, targetRotation, Time.deltaTime * 1f);
+            paper[_paperNum].transform.rotation = Quaternion.Euler(90f, 0f, 0f);
             Invoke("Process", 1f);
         }
     }
