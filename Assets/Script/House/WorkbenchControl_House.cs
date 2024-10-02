@@ -7,6 +7,9 @@ public class WorkbenchControl_House : MonoBehaviour
     public static int _process;
     public GameObject[] processObject;
 
+    [Header("Paper")]
+    public GameObject[] paper;
+
     [Header("Step1")]
     public GameObject chooseUI;
     public GameObject panel;
@@ -32,10 +35,6 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotationSpeed = 90f;
     float _rotation = 0;
     int _cutPaperFinish = 0;
-   
-    //úy‘á
-    public GameObject paper2a, paper2b;
-    int _paper2Num = 1;
 
     [Header("Step3")]
     public GameObject colorUI;
@@ -77,18 +76,6 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _process++;
             Process();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            paper2a.SetActive(true);
-            paper2b.SetActive(false);
-            _paper2Num = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            paper2a.SetActive(false);
-            paper2b.SetActive(true);
-            _paper2Num = 2;
         }
         Leave();
     }
