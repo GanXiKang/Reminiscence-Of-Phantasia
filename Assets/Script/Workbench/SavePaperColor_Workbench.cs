@@ -7,15 +7,18 @@ public class SavePaperColor_Workbench : MonoBehaviour
 {
     public Renderer[] canvasRenderers;
     public string saveDirectory;
+    public static bool isSave = false;
 
     void Start()
     {
         saveDirectory = Application.persistentDataPath + "/Artwork.png";
     }
 
-    public void SaveTexture()
+    void Update()
     {
-        WorkbenchControl_House.isClickSaveButton = true;
+        if (!isSave) return;
+
+        isSave = false;
         if (!Directory.Exists(saveDirectory))
         {
             Directory.CreateDirectory(saveDirectory);
