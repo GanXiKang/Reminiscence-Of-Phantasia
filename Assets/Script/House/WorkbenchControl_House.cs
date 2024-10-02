@@ -155,7 +155,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 isStampGo = false;
                 Paper();
                 blankPaper.SetActive(false);
-                Invoke("StampStay", 1f);
+                Invoke("StampStay", 0.8f);
             }
         }
 
