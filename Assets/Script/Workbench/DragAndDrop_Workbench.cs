@@ -12,8 +12,6 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     void Update()
     {
-        if (WorkbenchControl_House._process != 4) return;
-
         if (!isFixed)
         {
             if (isDragging)
