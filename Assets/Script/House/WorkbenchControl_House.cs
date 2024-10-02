@@ -279,12 +279,12 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     IEnumerator DisappaerChooseUI()
     {
-        contentImage[0].SetActive(false);
         for (int v = 7; v <= 1; v--)
         {
             panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
             yield return new WaitForSeconds(0.02f);
         }
+        contentImage[0].SetActive(false);
         chooseUI.SetActive(false);
         yield return new WaitForSeconds(0.2f);
         isAppaerStamp = true;
