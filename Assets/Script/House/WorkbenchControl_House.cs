@@ -31,7 +31,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step2")]
     public GameObject scissors;
-    public GameObject paper2;
     public GameObject[] paperOut;
     public static bool isFinishCut = false;
     bool isPaperRotation = false;
@@ -308,7 +307,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (_rotation != 0)
             {
-                paper2.transform.Rotate(0, 0, _rotation);
+                paper[_paperNum].transform.Rotate(0, 0, _rotation);
             }
         }
     }
