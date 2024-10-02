@@ -26,6 +26,8 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
     void Update()
     {
+        if (WorkbenchControl_House._process != 3) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
