@@ -335,6 +335,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _cutPaperFinish = 0;
             _process = 3;
+            paper[_paperNum].transform.rotation = new Quaternion(90f, 0f, 0f, 0f);
             Invoke("Process", 1f);
         }
     }
