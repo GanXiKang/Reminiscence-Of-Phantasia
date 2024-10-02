@@ -265,6 +265,11 @@ public class WorkbenchControl_House : MonoBehaviour
                 return false;
         }
     }
+    public void SaveTexture_Button()
+    {
+        isClickSaveButton = true;
+        SavePaperColor_Workbench.isSave = true;
+    }
 
     void Step4_Install()
     {
