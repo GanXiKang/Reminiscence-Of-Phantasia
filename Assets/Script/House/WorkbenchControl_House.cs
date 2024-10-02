@@ -73,6 +73,9 @@ public class WorkbenchControl_House : MonoBehaviour
                 Step4_Install();
                 break;
         }
+
+        Paper();
+
         //úy‘á
         if (Input.GetKeyDown(KeyCode.C)) 
         {
