@@ -28,7 +28,6 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
     bool isStampGo = false;
-    int clickButtonNumber;
 
     [Header("Step2")]
     public GameObject scissors;
@@ -156,7 +155,6 @@ public class WorkbenchControl_House : MonoBehaviour
             if (stamp.transform.position == stampEndPos.position)
             {
                 isStampGo = false;
-                _paperNum = clickButtonNumber;
                 Paper();
                 blankPaper.SetActive(false);
                 Invoke("StampStay", 1f);
