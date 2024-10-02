@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
@@ -160,6 +161,37 @@ public class WorkbenchControl_House : MonoBehaviour
                 blankPaper.SetActive(false);
                 Invoke("StampStay", 1f);
             }
+        }
+
+        ChooseButtonUI();
+    }
+    void ChooseButtonUI()
+    {
+        switch (_storyBookNum)
+        {
+            case 0:
+                contentImage[1].GetComponent<Image>().sprite = contentSprite[12];
+                contentImage[2].GetComponent<Image>().sprite = contentSprite[13];
+                contentImage[3].GetComponent<Image>().sprite = contentSprite[14];
+                break;
+
+            case 1:
+                contentImage[1].GetComponent<Image>().sprite = contentSprite[1];
+                contentImage[2].GetComponent<Image>().sprite = contentSprite[2];
+                contentImage[3].GetComponent<Image>().sprite = contentSprite[3];
+                break;
+
+            case 2:
+                contentImage[1].GetComponent<Image>().sprite = contentSprite[4];
+                contentImage[2].GetComponent<Image>().sprite = contentSprite[5];
+                contentImage[3].GetComponent<Image>().sprite = contentSprite[6];
+                break;
+
+            case 3:
+                contentImage[1].GetComponent<Image>().sprite = contentSprite[7];
+                contentImage[2].GetComponent<Image>().sprite = contentSprite[8];
+                contentImage[3].GetComponent<Image>().sprite = contentSprite[9];
+                break;
         }
     }
     void StampStay()
