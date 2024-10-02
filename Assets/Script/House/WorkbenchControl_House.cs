@@ -18,7 +18,6 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] contentImage;
-    public Sprite[] pattern;
     public Transform paperEndPos;
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
@@ -73,8 +72,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 Step4_Install();
                 break;
         }
-
-        Paper();
 
         //úy‘á
         if (Input.GetKeyDown(KeyCode.C)) 
@@ -139,8 +136,8 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (isAppaerPaper) 
         {
-            paper1.transform.position = Vector3.MoveTowards(paper1.transform.position, paperEndPos.position, _speed * Time.deltaTime);
-            if (paper1.transform.position == paperEndPos.position)
+            blankPaper.transform.position = Vector3.MoveTowards(blankPaper.transform.position, paperEndPos.position, _speed * Time.deltaTime);
+            if (blankPaper.transform.position == paperEndPos.position)
             {
                 isAppaerPaper = false;
                 StartCoroutine(AppaerChooseUI());
@@ -156,7 +153,8 @@ public class WorkbenchControl_House : MonoBehaviour
             if (stamp.transform.position == stampEndPos.position)
             {
                 isStampGo = false;
-                paper1.GetComponent<SpriteRenderer>().sprite = pattern[clickButtonNumber];
+                Paper();
+                blankPaper.SetActive(false);
                 Invoke("StampStay", 1f);
             }
         }
