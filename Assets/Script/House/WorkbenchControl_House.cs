@@ -207,7 +207,63 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     public void Button_ChoosePattern(int num)
     {
-        clickButtonNumber = num;
+        switch (_storyBookNum)
+        {
+            case 0:
+                _paperNum = 0;
+                break;
+
+            case 1:
+                switch (num)
+                {
+                    case 1:
+                        _paperNum = 1;
+                        break;
+
+                    case 2:
+                        _paperNum = 2;
+                        break;
+
+                    case 3:
+                        _paperNum = 3;
+                        break;
+                }
+                break;
+
+            case 2:
+                switch (num)
+                {
+                    case 1:
+                        _paperNum = 4;
+                        break;
+
+                    case 2:
+                        _paperNum = 5;
+                        break;
+
+                    case 3:
+                        _paperNum = 6;
+                        break;
+                }
+                break;
+
+            case 3:
+                switch (num)
+                {
+                    case 1:
+                        _paperNum = 7;
+                        break;
+
+                    case 2:
+                        _paperNum = 8;
+                        break;
+
+                    case 3:
+                        _paperNum = 9;
+                        break;
+                }
+                break;
+        }
         StartCoroutine(DisappaerChooseUI());
     }
     IEnumerator AppaerChooseUI()
