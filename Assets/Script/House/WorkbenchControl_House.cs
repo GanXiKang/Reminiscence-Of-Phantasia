@@ -54,9 +54,6 @@ public class WorkbenchControl_House : MonoBehaviour
         _process = 1;
 
         Process();
-
-        //test
-        _paperNum = 1;
     }
 
     void Update()
@@ -86,7 +83,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void Process()
     {
-        for (int i = 1; i < 5; i++)
+        for (int i = 1; i < processObject.Length; i++)
         {
             if (i == _process)
             {
@@ -117,6 +114,20 @@ public class WorkbenchControl_House : MonoBehaviour
                 pointObject.SetActive(true);
                 colorUI.SetActive(false);
                 break;
+        }
+    }
+    void Paper()
+    {
+        for (int i = 0; i < paper.Length; i++)
+        {
+            if (i == _paperNum)
+            {
+                paper[i].SetActive(true);
+            }
+            else
+            {
+                paper[i].SetActive(false);
+            }
         }
     }
 
