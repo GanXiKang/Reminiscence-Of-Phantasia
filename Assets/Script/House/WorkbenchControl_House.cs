@@ -150,7 +150,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampEndPos.position, _speed * Time.deltaTime);
                 stamp.transform.rotation = Quaternion.Lerp(stamp.transform.rotation, stampEndPos.rotation, _rotateSpeed * Time.deltaTime);
             }
-            if (stamp.transform.position == stampEndPos.position)
+            if (Vector3.Distance(stamp.transform.position, stampEndPos.position) < 0.01f)
             {
                 isStampGo = false;
                 Paper();
@@ -195,7 +195,7 @@ public class WorkbenchControl_House : MonoBehaviour
         stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
         stamp.transform.rotation = Quaternion.Lerp(stamp.transform.rotation, stampStartPos.rotation, _rotateSpeed * Time.deltaTime);
 
-        if (stamp.transform.position == stampStartPos.position)
+        if (Vector3.Distance(stamp.transform.position, stampStartPos.position) < 0.01f)
         {
             print("YES");
             isAppaerStamp = false;
