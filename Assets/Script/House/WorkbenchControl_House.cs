@@ -317,16 +317,19 @@ public class WorkbenchControl_House : MonoBehaviour
         if (ScissorsControl_Workbench._cutPoint == 0) return;
 
         isFinishCut = false;
-        if (_paperNum == 1)
+        switch(_paperNum)
         {
-            _cutPaperFinish++;
-            paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
-            Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
-        }
-        else
-        {
-            paperOut[ScissorsControl_Workbench._cutPoint + 4].GetComponent<Rigidbody>().isKinematic = false;
-            Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 4], 2f);
+            case 0:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint], 2f);
+                break;
+
+            case 1:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 4].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 4], 2f);
+                break;
         }
         if (_cutPaperFinish == 4)
         {
