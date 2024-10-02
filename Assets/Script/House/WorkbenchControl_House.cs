@@ -15,7 +15,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step1")]
     public GameObject chooseUI;
     public GameObject panel;
-    public GameObject[] content;
+    public GameObject[] contentImage;
     public GameObject paper1;
     public Sprite[] pattern;
     public Transform paperEndPos;
@@ -171,11 +171,11 @@ public class WorkbenchControl_House : MonoBehaviour
             panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
             yield return new WaitForSeconds(0.04f);
         }
-        content[0].SetActive(true);
+        contentImage[0].SetActive(true);
     }
     IEnumerator DisappaerChooseUI()
     {
-        content[0].SetActive(false);
+        contentImage[0].SetActive(false);
         for (int v = 7; v <= 1; v--)
         {
             panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
