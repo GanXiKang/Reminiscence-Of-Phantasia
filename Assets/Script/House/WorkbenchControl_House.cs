@@ -198,8 +198,10 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
         stamp.transform.rotation = Quaternion.Lerp(stamp.transform.rotation, stampStartPos.rotation, _rotateSpeed * Time.deltaTime);
+
         if (stamp.transform.position == stampStartPos.position)
         {
+            print("YES");
             isAppaerStamp = false;
             _process = 2;
             Process();
