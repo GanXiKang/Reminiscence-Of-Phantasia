@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
-    public static int _process;
+    [Header("ProcessObject")]
     public GameObject[] processObject;
+    public static int _process;
 
     [Header("Paper")]
     public GameObject[] paper;
