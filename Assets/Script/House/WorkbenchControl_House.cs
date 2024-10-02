@@ -197,7 +197,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (Vector3.Distance(stamp.transform.position, stampStartPos.position) < 0.01f)
         {
-            print("Yes");
             isAppaerStamp = false;
             _process = 2;
             Process();
