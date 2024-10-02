@@ -13,13 +13,13 @@ public class WorkbenchControl_House : MonoBehaviour
     int _paperNum = 0;
 
     [Header("Step1")]
+    public GameObject blankPaper;
+    public GameObject stamp;
     public GameObject chooseUI;
     public GameObject panel;
     public GameObject[] contentImage;
-    public GameObject paper1;
     public Sprite[] pattern;
     public Transform paperEndPos;
-    public GameObject stamp;
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
     float _rotateSpeed = 6f;
