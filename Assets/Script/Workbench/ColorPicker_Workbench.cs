@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ColorPicker_Workbench : MonoBehaviour
 {
-    public Color selectedColor = Color.red; 
+    public Color selectedColor = Color.black; 
 
     public void SetColor(Image colorImage)
     {
