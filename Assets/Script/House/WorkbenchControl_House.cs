@@ -336,7 +336,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _cutPaperFinish = 0;
             _process = 3;
-            paper[_paperNum].transform.rotation = Quaternion.Slerp(paper[_paperNum].transform.rotation, targetRotation, Time.deltaTime * 0.5f);
+            paper[_paperNum].transform.rotation = Quaternion.Lerp(paper[_paperNum].transform.rotation, targetRotation, Time.deltaTime * 1f);
             Invoke("Process", 1f);
         }
     }
