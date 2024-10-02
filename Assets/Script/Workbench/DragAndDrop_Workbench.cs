@@ -12,6 +12,8 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     void Update()
     {
+        if (WorkbenchControl_House._process != 4) return;
+
         if (!isFixed)
         {
             if (isDragging)
@@ -41,6 +43,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (WorkbenchControl_House._process != 4) return;
         if (isFixed) return;
 
         if (Input.GetMouseButtonDown(0))
