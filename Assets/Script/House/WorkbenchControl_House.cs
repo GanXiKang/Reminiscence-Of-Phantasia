@@ -84,6 +84,7 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         Leave();
     }
+
     void Process()
     {
         for (int i = 1; i < processObject.Length; i++)
