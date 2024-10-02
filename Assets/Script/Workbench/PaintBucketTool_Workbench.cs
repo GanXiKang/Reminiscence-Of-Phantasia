@@ -39,7 +39,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
                     Color targetColor = texture.GetPixel(x, y);
                     Color replacementColor = colorPicker.selectedColor;
-                    IsTextureColorChanged();
+                    WorkbenchControl_House.isChangeColor[_number] = true;
 
                     FloodFill(texture, x, y, targetColor, replacementColor);
                 }
@@ -73,24 +73,5 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         }
 
         texture.Apply();
-    }
-
-    void IsTextureColorChanged()
-    {
-        for (int y = 0; y < texture.height; y++)
-        {
-            for (int x = 0; x < texture.width; x++)
-            {
-                if (texture.GetPixel(x, y) != initialTexture.GetPixel(x, y))
-                {
-                    WorkbenchControl_House.isChangeColor[_number] = true;
-                }
-                else
-                {
-                    WorkbenchControl_House.isChangeColor[_number] = false;
-                }
-            }
-        }
-        print(WorkbenchControl_House.isChangeColor[_number]);
     }
 }
