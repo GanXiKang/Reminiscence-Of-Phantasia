@@ -5,8 +5,10 @@ using UnityEngine;
 public class PaintBucketTool_Workbench : MonoBehaviour
 {
     Renderer canvasRenderer;
+    public int _number = 0;
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
+    private Texture2D initialTexture;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         texture.SetPixels(originalTexture.GetPixels());
         texture.Apply();
         canvasRenderer.material.mainTexture = texture;
+        initialTexture = Instantiate(texture);
     }
 
     void Update()
@@ -36,6 +39,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
                     Color targetColor = texture.GetPixel(x, y);
                     Color replacementColor = colorPicker.selectedColor;
+                    IsTextureColorChanged();
 
                     FloodFill(texture, x, y, targetColor, replacementColor);
                 }
@@ -69,5 +73,24 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         }
 
         texture.Apply();
+    }
+
+    void IsTextureColorChanged()
+    {
+        for (int y = 0; y < texture.height; y++)
+        {
+            for (int x = 0; x < texture.width; x++)
+            {
+                if (texture.GetPixel(x, y) != initialTexture.GetPixel(x, y))
+                {
+                    WorkbenchControl_House.isChangeColor[_number] = true;
+                }
+                else
+                {
+                    WorkbenchControl_House.isChangeColor[_number] = false;
+                }
+            }
+        }
+        print(WorkbenchControl_House.isChangeColor[_number]);
     }
 }
