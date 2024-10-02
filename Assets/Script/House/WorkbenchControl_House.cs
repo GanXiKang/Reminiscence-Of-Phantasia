@@ -10,6 +10,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Paper")]
     public GameObject[] paper;
+    int _paperNum = 0;
 
     [Header("Step1")]
     public GameObject chooseUI;
@@ -53,6 +54,9 @@ public class WorkbenchControl_House : MonoBehaviour
         _process = 1;
 
         Process();
+
+        //test
+        _paperNum = 1;
     }
 
     void Update()
@@ -213,7 +217,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (ScissorsControl_Workbench._cutPoint == 0) return;
 
         isFinishCut = false;
-        if (_paper2Num == 1)
+        if (_paperNum == 1)
         {
             _cutPaperFinish++;
             paperOut[ScissorsControl_Workbench._cutPoint].GetComponent<Rigidbody>().isKinematic = false;
