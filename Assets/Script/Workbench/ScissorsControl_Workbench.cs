@@ -33,7 +33,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
     {
         if (WorkbenchControl_House._process == 2)
         {
-            print("Yes");
             ScissorsMove();
 
             Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -0.5f);
