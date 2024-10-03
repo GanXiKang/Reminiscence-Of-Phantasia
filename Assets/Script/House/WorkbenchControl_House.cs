@@ -44,6 +44,9 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool isClickSaveButton = false;
     public static bool[] isChangeColor = new bool[5];
 
+    //Step4
+    public static bool isFinishStoryBook = false;
+
     void Start()
     {
         Process();
@@ -82,11 +85,11 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             if (i == _process)
             {
-                processObject[_process].SetActive(true);
+                processObject[i].SetActive(true);
             }
             else
             {
-                processObject[_process].SetActive(false);
+                processObject[i].SetActive(false);
             }
         }
         switch (_process)
@@ -114,7 +117,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 4:
-                pointObject.SetActive(true);
                 colorUI.SetActive(false);
                 break;
         }
