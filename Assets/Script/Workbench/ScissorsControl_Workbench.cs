@@ -24,10 +24,12 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
     [Header("Paper")]
     public Transform paper;
-    GameObject[] paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
+    public GameObject[] paperOutEffects;
 
     void Start()
     {
+        print("ok");
+        paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
         ClearColliderBool();
     }
     void Update()
