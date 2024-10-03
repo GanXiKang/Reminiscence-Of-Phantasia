@@ -428,10 +428,15 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     bool FinishedColoring()
     {
-        return isChangeColor[1] &&
-               isChangeColor[2] &&
-               isChangeColor[3] &&
-               isChangeColor[4];
+        switch (_paperNum)
+        {
+            case 1:
+                return isChangeColor[1] &&isChangeColor[2] &&isChangeColor[3] &&isChangeColor[4];
+
+            default:
+                return false;
+        }
+
     }
     public void Button_SaveTexture()
     {
