@@ -24,11 +24,12 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
     [Header("Paper")]
     public Transform paper;
+    public GameObject[] paperOut;
     public GameObject[] paperOutEffects;
 
     void Start()
     {
-        PaperOutEffects();
+        PaperOut();
         ClearColliderBool();
     }
     void Update()
@@ -36,6 +37,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
         if (WorkbenchControl_House._process == 2)
         {
             ScissorsMove();
+            PaperOutEffects();
 
             Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -0.5f);
             if (Input.GetMouseButtonDown(0))
@@ -56,8 +58,9 @@ public class ScissorsControl_Workbench : MonoBehaviour
         }
     }
 
-    void PaperOutEffects()
+    void PaperOut()
     {
+        paperOut = GameObject.FindGameObjectsWithTag("PaperOut");
         paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
         for (int i = 0; i < paperOutEffects.Length; i++)
         {
@@ -93,6 +96,20 @@ public class ScissorsControl_Workbench : MonoBehaviour
         WorkbenchControl_House.isFinishCut = true;
         isUseScissors = false;
         Invoke("ClearLine", 0.2f);
+    }
+    void PaperOutEffects()
+    {
+        CheckEffect(paperOut[0], paperOut[1], paperOutEffects[0]);
+        CheckEffect(paperOut[1], paperOut[2], paperOutEffects[1]);
+        CheckEffect(paperOut[2], paperOut[3], paperOutEffects[2]);
+        CheckEffect(paperOut[3], paperOut[0], paperOutEffects[3]);
+    }
+    void CheckEffect(GameObject obj1, GameObject obj2, GameObject effect)
+    {
+        if (obj1 == null && obj2 == null)
+        {
+            Destroy(effect);
+        }
     }
 
     private void OnTriggerStay(Collider other)
