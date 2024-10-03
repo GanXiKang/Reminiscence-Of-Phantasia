@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class DragAndDrop_Workbench : MonoBehaviour
 {
+    BoxCollider boxC;
+
     private Vector3 offset;
     private bool isDragging = false;
     private bool isFixed = false;
     public Transform targetPosition;
     public float snapDistance = 1.0f;
+
+    void Start()
+    {
+        boxC.GetComponent<BoxCollider>();
+    }
 
     void Update()
     {
@@ -41,7 +48,6 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (WorkbenchControl_House._process != 4) return;
         if (isFixed) return;
 
         if (Input.GetMouseButtonDown(0))
