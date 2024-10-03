@@ -10,7 +10,7 @@ public class LoadPaperColor_Workbench : MonoBehaviour
 
     void Start()
     {
-        loadDirectory = Application.persistentDataPath + "/Artwork.png";
+        loadDirectory = Path.Combine(Application.persistentDataPath, loadDirectory);
         LoadTexture();
     }
 
