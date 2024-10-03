@@ -28,7 +28,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
     void Start()
     {
-        print("ok");
         paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
         ClearColliderBool();
     }
