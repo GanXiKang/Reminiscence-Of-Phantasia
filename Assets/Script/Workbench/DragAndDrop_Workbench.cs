@@ -14,10 +14,27 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     void Start()
     {
-        boxC.GetComponent<BoxCollider>();
+        boxC = GetComponent<BoxCollider>();
     }
 
     void Update()
+    {
+        BoxColliderEnable();
+        Fixed();
+    }
+
+    void BoxColliderEnable()
+    {
+        if (WorkbenchControl_House._process == 4)
+        {
+            boxC.enabled = true;
+        }
+        else
+        {
+            boxC.enabled = false;
+        }
+    }
+    void Fixed()
     {
         if (!isFixed)
         {
@@ -40,7 +57,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
                 }
             }
         }
-        else 
+        else
         {
             transform.position = targetPosition.position;
         }
