@@ -334,6 +334,60 @@ public class WorkbenchControl_House : MonoBehaviour
                 paperOut[ScissorsControl_Workbench._cutPoint + 4].GetComponent<Rigidbody>().isKinematic = false;
                 Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 4], 2f);
                 break;
+
+            case 2:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 8].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 8], 2f);
+                break;
+
+            case 3:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 12].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 12], 2f);
+                break;
+
+            case 4:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 16].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 16], 2f);
+                break;
+
+            case 5:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 20].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 20], 2f);
+                break;
+
+            case 6:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 24].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 24], 2f);
+                break;
+
+            case 7:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 28].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 28], 2f);
+                break;
+
+            case 8:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 32].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 32], 2f);
+                break;
+
+            case 9:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 36].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 36], 2f);
+                break;
+
+            case 10:
+                _cutPaperFinish++;
+                paperOut[ScissorsControl_Workbench._cutPoint + 40].GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(paperOut[ScissorsControl_Workbench._cutPoint + 40], 2f);
+                break;
         }
         if (_cutPaperFinish == 4)
         {
