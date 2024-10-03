@@ -42,7 +42,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject colorUI;
     public GameObject saveButton;
     public static bool isClickSaveButton = false;
-    public static bool[] isChangeColor = new bool[10];
+    public static bool[] isChangeColor = new bool[5];
 
     [Header("Step4")]
     public GameObject pointObject;
@@ -342,7 +342,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        saveButton.SetActive(FinishedColoring(1));
+        saveButton.SetActive(FinishedColoring()));
         if (isClickSaveButton)
         {
             isClickSaveButton = false;
@@ -350,16 +350,12 @@ public class WorkbenchControl_House : MonoBehaviour
             Process();
         }
     }
-    bool FinishedColoring(int num)
+    bool FinishedColoring()
     {
-        switch (num)
-        {
-            case 1:
-                return isChangeColor[1] && isChangeColor[2];
-
-            default:
-                return false;
-        }
+        return isChangeColor[1] &&
+               isChangeColor[2] &&
+               isChangeColor[3] &&
+               isChangeColor[4];
     }
     public void Button_SaveTexture()
     {
