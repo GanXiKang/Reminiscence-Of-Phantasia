@@ -116,7 +116,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     {
         if (isUseScissors)
         {
-            if (other.tag == "PaperOut")
+            if (other.tag == "PaperOutCollider")
             {
                 if (other.gameObject.name == "Collider1")
                 {
@@ -146,7 +146,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     {
         if (isUseScissors)
         {
-            if (other.tag == "PaperOut")
+            if (other.tag == "PaperOutCollider")
             {
                 if (other.gameObject.name == "Collider1")
                 {
