@@ -24,6 +24,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
     [Header("Paper")]
     public Transform paper;
+    GameObject[] paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
 
     void Start()
     {
