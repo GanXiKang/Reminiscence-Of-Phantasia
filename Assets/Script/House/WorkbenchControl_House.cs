@@ -44,7 +44,8 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool isClickSaveButton = false;
     public static bool[] isChangeColor = new bool[5];
 
-    //Step4
+    [Header("Step4")]
+    public Animator testStoryBook;
     public static bool isFinishStoryBook = false;
 
     void Start()
