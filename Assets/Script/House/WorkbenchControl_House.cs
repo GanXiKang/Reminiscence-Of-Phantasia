@@ -441,6 +441,11 @@ public class WorkbenchControl_House : MonoBehaviour
                 return isChangeColor[1] && isChangeColor[2] && isChangeColor[3] && isChangeColor[4]
                     && isChangeColor[5];
 
+            case 3:
+                return isChangeColor[1] && isChangeColor[2] && isChangeColor[3] && isChangeColor[4]
+                    && isChangeColor[5] && isChangeColor[6] && isChangeColor[7] && isChangeColor[8]
+                    && isChangeColor[9] && isChangeColor[10] && isChangeColor[11] && isChangeColor[12];
+
             default:
                 return false;
         }
