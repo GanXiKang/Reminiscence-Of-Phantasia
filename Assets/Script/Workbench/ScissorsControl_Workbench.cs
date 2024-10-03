@@ -28,7 +28,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
     void Start()
     {
-        paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
+        PaperOutEffects();
         ClearColliderBool();
     }
     void Update()
@@ -56,6 +56,14 @@ public class ScissorsControl_Workbench : MonoBehaviour
         }
     }
 
+    void PaperOutEffects()
+    {
+        paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
+        for (int i = 0; i < paperOutEffects.Length; i++)
+        {
+            paperOutEffects[i].SetActive(true);
+        }
+    }
     void ScissorsMove()
     {
         mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
