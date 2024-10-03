@@ -220,7 +220,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             isAppaerStamp = false;
             _process = 2;
-            Process();
+            Invoke("Process()",1f);
         }
     }
     public void Button_ChoosePattern(int num)
