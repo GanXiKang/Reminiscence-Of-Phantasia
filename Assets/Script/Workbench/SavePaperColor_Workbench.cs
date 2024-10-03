@@ -11,7 +11,8 @@ public class SavePaperColor_Workbench : MonoBehaviour
 
     void Start()
     {
-        saveDirectory = Application.persistentDataPath + saveDirectory + "/Artwork.png";
+        //saveDirectory = Application.persistentDataPath + saveDirectory + "/Artwork.png";
+        saveDirectory = Path.Combine(Path.Combine(Application.persistentDataPath, saveDirectory), "Artwork.png");
     }
 
     void Update()
