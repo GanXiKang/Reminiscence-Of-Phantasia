@@ -430,7 +430,7 @@ public class WorkbenchControl_House : MonoBehaviour
             isFinishStoryBook = false;
             testStoryBook.SetBool("isOpenTest", false);
             _process = 0;
-            Invoke("PaperClosebyBook", 0.5f);
+            Invoke("PaperClosebyBook", 1f);
         }
     }
     void PaperClosebyBook()
