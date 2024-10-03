@@ -95,7 +95,6 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (_process)
         {
             case 0:
-                _process = 1;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
                     isChangeColor[c] = false;
