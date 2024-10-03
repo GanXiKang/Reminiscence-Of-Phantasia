@@ -42,7 +42,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject colorUI;
     public GameObject saveButton;
     public static bool isClickSaveButton = false;
-    public static bool[] isChangeColor = new bool[9];
+    public static bool[] isChangeColor = new bool[13];
 
     [Header("Step4")]
     public Animator testStoryBook;
@@ -433,10 +433,12 @@ public class WorkbenchControl_House : MonoBehaviour
             case 0:
             case 5:
             case 8:
+            case 9:
                 return isChangeColor[1] &&isChangeColor[2] &&isChangeColor[3] &&isChangeColor[4];
 
             case 1:
             case 6:
+            case 10:
                 return isChangeColor[1] && isChangeColor[2] && isChangeColor[3] && isChangeColor[4]
                     && isChangeColor[5] && isChangeColor[6] && isChangeColor[7] && isChangeColor[8];
 
