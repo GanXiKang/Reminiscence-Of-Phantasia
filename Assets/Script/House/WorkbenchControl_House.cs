@@ -46,7 +46,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Start()
     {
-        _process = 1;
         Process();
     }
 
@@ -83,15 +82,22 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             if (i == _process)
             {
-                processObject[i].SetActive(true);
+                processObject[_process].SetActive(true);
             }
             else
             {
-                processObject[i].SetActive(false);
+                processObject[_process].SetActive(false);
             }
         }
         switch (_process)
         {
+            case 0:
+                _process = 1;
+                for (int c = 1; c < isChangeColor.Length; c++)
+                {
+                    isChangeColor[c] = false;
+                }
+                break;
             case 1:
                 isAppaerPaper = true;
                 break;
@@ -99,10 +105,7 @@ public class WorkbenchControl_House : MonoBehaviour
             case 2:
                 isPaperRotation = true;
                 isAppaerPaper = false;
-                for (int c = 1; c < isChangeColor.Length; c++)
-                {
-                    isChangeColor[c] = false;
-                }
+                
                 break;
 
             case 3:
