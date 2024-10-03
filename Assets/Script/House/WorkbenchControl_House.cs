@@ -103,6 +103,10 @@ public class WorkbenchControl_House : MonoBehaviour
             case 2:
                 isPaperRotation = true;
                 isAppaerPaper = false;
+                for (int c = 1; c < isChangeColor.Length; c++)
+                {
+                    isChangeColor[c] = false;
+                }
                 break;
 
             case 3:
@@ -342,7 +346,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        saveButton.SetActive(FinishedColoring()));
+        saveButton.SetActive(FinishedColoring());
         if (isClickSaveButton)
         {
             isClickSaveButton = false;
