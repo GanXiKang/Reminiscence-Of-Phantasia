@@ -11,7 +11,7 @@ public class SavePaperColor_Workbench : MonoBehaviour
 
     void Start()
     {
-        saveDirectory = Application.persistentDataPath + "/Artwork.png";
+        saveDirectory = Application.persistentDataPath + saveDirectory + "/Artwork.png";
     }
 
     void Update()
