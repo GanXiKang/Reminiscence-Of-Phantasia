@@ -431,17 +431,22 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (_paperNum)
         {
             case 0:
+            case 5:
+            case 8:
                 return isChangeColor[1] &&isChangeColor[2] &&isChangeColor[3] &&isChangeColor[4];
 
             case 1:
+            case 6:
                 return isChangeColor[1] && isChangeColor[2] && isChangeColor[3] && isChangeColor[4]
                     && isChangeColor[5] && isChangeColor[6] && isChangeColor[7] && isChangeColor[8];
 
             case 2:
+            case 4:
                 return isChangeColor[1] && isChangeColor[2] && isChangeColor[3] && isChangeColor[4]
                     && isChangeColor[5];
 
             case 3:
+            case 7:
                 return isChangeColor[1] && isChangeColor[2] && isChangeColor[3] && isChangeColor[4]
                     && isChangeColor[5] && isChangeColor[6] && isChangeColor[7] && isChangeColor[8]
                     && isChangeColor[9] && isChangeColor[10] && isChangeColor[11] && isChangeColor[12];
