@@ -44,10 +44,6 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool isClickSaveButton = false;
     public static bool[] isChangeColor = new bool[5];
 
-    [Header("Step4")]
-    public GameObject pointObject;
-    public static bool isFinishStoryBook = false;
-
     void Start()
     {
         _process = 1;
