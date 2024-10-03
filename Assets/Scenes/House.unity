@@ -915,7 +915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d6858eb55e668c40a29c6cc7a2c0354, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5ccb0672952d6440b3835374d9613d5, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5755,7 +5755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d6858eb55e668c40a29c6cc7a2c0354, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c57fada67aba7f4b9d00876da1515a5, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10461,22 +10461,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   processObject: []
+  paper: []
+  blankPaper: {fileID: 0}
+  stamp: {fileID: 0}
   chooseUI: {fileID: 0}
   panel: {fileID: 0}
-  content: []
-  paper1: {fileID: 0}
-  pattern: []
+  contentImage: []
+  contentSprite: []
   paperEndPos: {fileID: 0}
-  stamp: {fileID: 0}
   stampStartPos: {fileID: 0}
   stampEndPos: {fileID: 0}
   scissors: {fileID: 0}
-  paper2: {fileID: 0}
   paperOut: []
-  paper2a: {fileID: 0}
-  paper2b: {fileID: 0}
   colorUI: {fileID: 0}
-  pointObject: {fileID: 0}
+  saveButton: {fileID: 0}
+  testStoryBook: {fileID: 0}
 --- !u!114 &1275040581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12746,7 +12745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92867b589c8f03745a594c23303bb56d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7efe96709dcd464ea22f7c07526510a, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
