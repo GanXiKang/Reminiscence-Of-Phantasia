@@ -117,6 +117,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 4:
+                testStoryBook.SetBool("isOpenTest", true);
                 colorUI.SetActive(false);
                 break;
         }
@@ -427,8 +428,14 @@ public class WorkbenchControl_House : MonoBehaviour
         if (isFinishStoryBook)
         {
             isFinishStoryBook = false;
+            testStoryBook.SetBool("isOpenTest", false);
             _process = 0;
+            Invoke("PaperClosebyBook", 0.5f);
         }
+    }
+    void PaperClosebyBook()
+    {
+        paper[_paperNum].SetActive(false);
     }
 
     void Leave()
