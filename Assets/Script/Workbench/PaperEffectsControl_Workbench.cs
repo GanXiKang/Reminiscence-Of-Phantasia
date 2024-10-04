@@ -19,8 +19,6 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
 
     void PaperOut()
     {
-        paperOut = GameObject.FindGameObjectsWithTag("PaperOut");
-        paperOutEffects = GameObject.FindGameObjectsWithTag("PaperOutEffects");
         for (int i = 0; i < paperOutEffects.Length; i++)
         {
             paperOutEffects[i].SetActive(true);
