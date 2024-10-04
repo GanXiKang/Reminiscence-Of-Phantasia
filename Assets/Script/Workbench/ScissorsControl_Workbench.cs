@@ -18,9 +18,12 @@ public class ScissorsControl_Workbench : MonoBehaviour
     //collider
     bool[] isCollider = new bool[5];
 
-    [Header("Line")]
-    public GameObject scissorsLine;
-    List<GameObject> line = new List<GameObject>(0);
+    //[Header("Line")]
+    //public GameObject scissorsLine;
+    //List<GameObject> line = new List<GameObject>(0);
+
+    [Header("Effects")]
+    public GameObject effects;
 
     [Header("Paper")]
     public Transform paper;
@@ -40,17 +43,18 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
-                line.Add(Instantiate(scissorsLine, scissorsPos, paper.rotation, paper));
+                //line.Add(Instantiate(scissorsLine, scissorsPos, paper.rotation, paper));
             }
             if (Input.GetMouseButtonUp(0))
             {
                 isUseScissors = false;
-                Invoke("ClearLine", 0.2f);
+                ClearColliderBool();
+                //Invoke("ClearLine", 0.2f);
             }
             if (isUseScissors)
             {
-                line[line.Count - 1].transform.position = scissorsPos;
-                line[line.Count - 1].transform.rotation = paper.rotation;
+                //line[line.Count - 1].transform.position = scissorsPos;
+                //line[line.Count - 1].transform.rotation = paper.rotation;
             }
         }
     }
@@ -62,16 +66,18 @@ public class ScissorsControl_Workbench : MonoBehaviour
         newZ = Mathf.Clamp(transform.position.z + mouseY, minZ, maxZ);
         newX = Mathf.Clamp(transform.position.x + mouseX, minX, maxX);
         transform.position = new Vector3(newX, transform.position.y, newZ);
+
+        effects.SetActive(isUseScissors);
     }
-    void ClearLine()
-    {
-        for (int i = 0; i < line.Count; i++)
-        {
-            Destroy(line[i]);
-        }
-        line.Clear();
-        ClearColliderBool();
-    }
+    //void ClearLine()
+    //{
+    //    for (int i = 0; i < line.Count; i++)
+    //    {
+    //        Destroy(line[i]);
+    //    }
+    //    line.Clear();
+    //    ClearColliderBool();
+    //}
     void ClearColliderBool()
     {
         for (int i = 1; i < isCollider.Length; i++)
@@ -112,7 +118,8 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (other.tag == "Paper")
             {
                 isUseScissors = false;
-                Invoke("ClearLine", 0.2f);
+                ClearColliderBool();
+                //Invoke("ClearLine", 0.2f);
             }
         }
     }
