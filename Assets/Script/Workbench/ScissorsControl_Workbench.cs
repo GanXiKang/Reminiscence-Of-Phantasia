@@ -18,10 +18,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
     //collider
     bool[] isCollider = new bool[5];
 
-    //[Header("Line")]
-    //public GameObject scissorsLine;
-    //List<GameObject> line = new List<GameObject>(0);
-
     [Header("Effects")]
     public GameObject effects;
 
@@ -43,18 +39,11 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
-                //line.Add(Instantiate(scissorsLine, scissorsPos, paper.rotation, paper));
             }
             if (Input.GetMouseButtonUp(0))
             {
                 isUseScissors = false;
                 ClearColliderBool();
-                //Invoke("ClearLine", 0.2f);
-            }
-            if (isUseScissors)
-            {
-                //line[line.Count - 1].transform.position = scissorsPos;
-                //line[line.Count - 1].transform.rotation = paper.rotation;
             }
         }
     }
@@ -69,15 +58,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
 
         effects.SetActive(isUseScissors);
     }
-    //void ClearLine()
-    //{
-    //    for (int i = 0; i < line.Count; i++)
-    //    {
-    //        Destroy(line[i]);
-    //    }
-    //    line.Clear();
-    //    ClearColliderBool();
-    //}
     void ClearColliderBool()
     {
         for (int i = 1; i < isCollider.Length; i++)
@@ -89,7 +69,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     {
         WorkbenchControl_House.isFinishCut = true;
         isUseScissors = false;
-        Invoke("ClearLine", 0.2f);
+        ClearColliderBool();
     }
 
     private void OnTriggerStay(Collider other)
@@ -119,7 +99,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
             {
                 isUseScissors = false;
                 ClearColliderBool();
-                //Invoke("ClearLine", 0.2f);
             }
         }
     }
