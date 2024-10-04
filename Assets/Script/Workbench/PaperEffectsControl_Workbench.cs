@@ -9,7 +9,7 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
 
     void Start()
     {
-        Invoke("PaperOut()", 2f);
+        PaperOut();
     }
 
     void Update()
