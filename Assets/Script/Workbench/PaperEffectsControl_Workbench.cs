@@ -6,25 +6,26 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
 {
     public GameObject[] paperOut;
     public GameObject[] paperOutEffects;
-
-    void Start()
-    {
-        PaperOut();
-    }
+    bool isOnce = true;
 
     void Update()
     {
-        PaperOutEffects();
+        PaperOutEffectsStart();
+        PaperOutEffectsActive();
     }
 
-    void PaperOut()
+    void PaperOutEffectsStart()
     {
+        if (WorkbenchControl_House._process != 2) return;
+        if (!isOnce) return;
+
+        isOnce = false;
         for (int i = 0; i < paperOutEffects.Length; i++)
         {
             paperOutEffects[i].SetActive(true);
         }
     }
-    void PaperOutEffects()
+    void PaperOutEffectsActive()
     {
         CheckEffect(paperOut[0], paperOut[1], paperOutEffects[0]);
         CheckEffect(paperOut[1], paperOut[2], paperOutEffects[1]);
