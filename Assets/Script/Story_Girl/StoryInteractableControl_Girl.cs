@@ -713,9 +713,17 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                StoryUIControl_Girl.isDialogue = true;
-                                StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                StoryDialogueControl_Girl._textCount = 14;
+                                if (!isWearingLittleRedHood)
+                                {
+                                    StoryUIControl_Girl.isDialogue = true;
+                                    StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                    StoryDialogueControl_Girl._textCount = 14;
+                                }
+                                else
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
+                                }
                                 break;
 
                             case 1:
