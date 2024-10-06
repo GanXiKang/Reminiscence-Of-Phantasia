@@ -68,12 +68,12 @@ public class SettingControl : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 0f;
+                //Time.timeScale = 0f;
             }
         }
         else 
         {
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             settingUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
         }
     }
