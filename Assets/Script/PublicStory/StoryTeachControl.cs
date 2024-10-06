@@ -75,7 +75,7 @@ public class StoryTeachControl : MonoBehaviour
             {
                 if (i == _page)
                 {
-                    //background.sprite = teachImage[i];
+                    background.sprite = teachImage[i];
                     content.text = teachContent[i].ToString();
                 }
             }
