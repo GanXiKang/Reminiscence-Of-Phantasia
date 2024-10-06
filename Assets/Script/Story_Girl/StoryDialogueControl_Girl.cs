@@ -82,6 +82,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     }
     void TextController()
     {
+        if (SettingControl.isSettingActive) return;
+
         if (isTextFinish)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
