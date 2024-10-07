@@ -15,7 +15,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     [Header("UI")]
     public GameObject interactable;
     public GameObject buttonLeft, buttonRight;
-    public GameObject buttonStart, buttonLeave;
+    public GameObject buttonCoroutine;
     public Text content;
     public Image background;
     public Sprite[] pageImages;
@@ -94,15 +94,13 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             case 0:
                 buttonLeft.SetActive(false);
                 buttonRight.SetActive(true);
-                buttonStart.SetActive(false);
-                buttonLeave.SetActive(false);
+                buttonCoroutine.SetActive(false);
                 break;
 
             case 1:
                 buttonLeft.SetActive(true);
                 buttonRight.SetActive(true);
-                buttonStart.SetActive(false);
-                buttonLeave.SetActive(false);
+                buttonCoroutine.SetActive(false);
                 break;
 
             case 2:
@@ -110,11 +108,11 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
                 buttonRight.SetActive(false);
                 if (StoryUIControl_Girl.isStoryStart)
                 {
-                    buttonStart.SetActive(true);
+                    buttonCoroutine.SetActive(true);
                 }
                 else if (StoryUIControl_Girl.isStoryEnding)
                 {
-                    buttonLeave.SetActive(true);
+                    buttonCoroutine.SetActive(true);
                 }
                 break;
         }
