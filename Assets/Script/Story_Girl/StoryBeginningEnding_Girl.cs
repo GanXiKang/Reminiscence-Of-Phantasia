@@ -166,26 +166,6 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         }
     }
 
-    IEnumerator StorySystemUI()
-    {
-        isTextFinish = false;
-        content.text = "";
-        for (int i = 0; i < textList[_page].Length; i++)
-        {
-            if (textList[_page][i] == '\\' && i + 1 < textList[_page].Length && textList[_page][i + 1] == 'n')
-            {
-                content.text += "\n";
-                i++;
-            }
-            else
-            {
-                content.text += textList[_page][i]; 
-            }
-
-            yield return new WaitForSeconds(_textSpend);
-        }
-        isTextFinish = true;
-    }
     IEnumerator StorySystemUIDisappear(CanvasGroup canvasGroup)
     {
         float duration = 1f;
@@ -247,6 +227,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         isAnim = false;
         isChangePageLeft = false;
         StartCoroutine(StorySystemUI());
+        StartCoroutine(StoryFillImage());
     }
     IEnumerator BackgroundChangePageRight()
     {
@@ -263,6 +244,27 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         isAnim = false;
         isChangePageRight = false;
         StartCoroutine(StorySystemUI());
+        StartCoroutine(StoryFillImage());
+    }
+    IEnumerator StorySystemUI()
+    {
+        isTextFinish = false;
+        content.text = "";
+        for (int i = 0; i < textList[_page].Length; i++)
+        {
+            if (textList[_page][i] == '\\' && i + 1 < textList[_page].Length && textList[_page][i + 1] == 'n')
+            {
+                content.text += "\n";
+                i++;
+            }
+            else
+            {
+                content.text += textList[_page][i];
+            }
+
+            yield return new WaitForSeconds(_textSpend);
+        }
+        isTextFinish = true;
     }
     IEnumerator StoryFillImage()
     {
@@ -270,6 +272,14 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         float fillDuration = 1f;
 
         image.fillAmount = 0;
+        if (StoryUIControl_Girl.isStoryStart)
+        {
+            image.sprite = storyImages[_page];
+        }
+        else if (StoryUIControl_Girl.isStoryEnding)
+        {
+            image.sprite = storyImages[_page + 3];
+        }
 
         while (elapsedTime < fillDuration)
         {
