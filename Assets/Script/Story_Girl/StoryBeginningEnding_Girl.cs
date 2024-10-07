@@ -13,6 +13,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     public AudioClip page, coroutine;
 
     [Header("UI")]
+    public GameObject interactable;
     public GameObject buttonLeft, buttonRight;
     public GameObject buttonStart, buttonLeave;
     public Text content;
@@ -20,6 +21,9 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     public Sprite[] pageImages;
     public Image image;
     public Sprite[] storyImages;
+    bool isChangePageLeft = false;
+    bool isChangePageRight = false;
+    bool isAnim = false;
 
     [Header("TextFile")]
     public TextAsset textStart;
@@ -53,6 +57,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     {
         TextController();
         ButtonActive();
+        ChangePage();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -114,6 +119,21 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
                 break;
         }
     }
+    void ChangePage()
+    {
+        interactable.SetActive(!isAnim);
+
+        if (isChangePageLeft && !isAnim)
+        {
+            isAnim = true;
+            StartCoroutine(BackgroundChangePageLeft());
+        }
+        if (isChangePageRight && !isAnim)
+        {
+            isAnim = true;
+            StartCoroutine(BackgroundChangePageRight());
+        }
+    }
 
     public void Button_Left()
     {
@@ -121,8 +141,9 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         {
             _page--;
             BGM.PlayOneShot(page);
+            isChangePageLeft = true;
             ResetTextSpeed();
-            StartCoroutine(StorySystemUI());
+            
         }
     }
     public void Button_Right()
@@ -131,8 +152,8 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         {
             _page++;
             BGM.PlayOneShot(page);
+            isChangePageRight = true;
             ResetTextSpeed();
-            StartCoroutine(StorySystemUI());
         }
     }
     public void Button_StartGame()
@@ -212,23 +233,44 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         canvasGroup.alpha = targetAlpha;
         StartCoroutine(StorySystemUI());
     }
-    //IEnumerator BackgroundChangePage()
-    //{
-    //    int index = 0;
+    IEnumerator BackgroundChangePageLeft()
+    {
+        int index = 0;
 
-    //    while (index <= 6)
-    //    {
-    //        background.sprite = pageImages[index];
-    //        index++;
+        while (index < 7)
+        {
+            background.sprite = pageImages[index];
+            index++;
 
-    //        if (index >= 6)
-    //        {
-    //            index = 0;
-    //        }
-    //        yield return new WaitForSeconds(0.2f);
-    //    }
+            if (index >= 7)
+            {
+                index = 0;
+            }
+            yield return new WaitForSeconds(0.2f);
+        }
 
-    //    //isAnimating = false;  
-    //    //startAnimation = false;
-    //}
+        isAnim = false;
+        isChangePageLeft = false;
+        StartCoroutine(StorySystemUI());
+    }
+    IEnumerator BackgroundChangePageRight()
+    {
+        int index = 7;
+
+        while (index < 13)
+        {
+            background.sprite = pageImages[index];
+            index++;
+
+            if (index >= 13)
+            {
+                index = 0;
+            }
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        isAnim = false;
+        isChangePageLeft = false;
+        StartCoroutine(StorySystemUI());
+    }
 }
