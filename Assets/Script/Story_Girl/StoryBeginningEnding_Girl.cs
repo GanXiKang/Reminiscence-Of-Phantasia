@@ -17,9 +17,9 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     public GameObject buttonStart, buttonLeave;
     public Text content;
     public Image background;
-    public Sprite[] pageImage;
+    public Sprite[] pageImages;
     public Image image;
-    public Sprite[] storyImage;
+    public Sprite[] storyImages;
 
     [Header("TextFile")]
     public TextAsset textStart;
@@ -212,4 +212,23 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         canvasGroup.alpha = targetAlpha;
         StartCoroutine(StorySystemUI());
     }
+    //IEnumerator BackgroundChangePage()
+    //{
+    //    int index = 0;
+
+    //    while (index <= 6)
+    //    {
+    //        background.sprite = pageImages[index];
+    //        index++;
+
+    //        if (index >= 6)
+    //        {
+    //            index = 0;
+    //        }
+    //        yield return new WaitForSeconds(0.2f);
+    //    }
+
+    //    //isAnimating = false;  
+    //    //startAnimation = false;
+    //}
 }
