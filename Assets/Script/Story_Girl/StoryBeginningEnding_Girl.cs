@@ -16,6 +16,10 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     public GameObject buttonLeft, buttonRight;
     public GameObject buttonStart, buttonLeave;
     public Text content;
+    public Image background;
+    public Sprite[] pageImage;
+    public Image image;
+    public Sprite[] storyImage;
 
     [Header("TextFile")]
     public TextAsset textStart;
