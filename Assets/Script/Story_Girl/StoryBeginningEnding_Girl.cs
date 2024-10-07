@@ -128,7 +128,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             isAnim = true;
             StartCoroutine(BackgroundChangePageLeft());
         }
-        if (isChangePageRight && !isAnim)
+        else if (isChangePageRight && !isAnim)
         {
             isAnim = true;
             StartCoroutine(BackgroundChangePageRight());
@@ -141,9 +141,8 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         {
             _page--;
             BGM.PlayOneShot(page);
-            isChangePageLeft = true;
+            isChangePageRight = true;
             ResetTextSpeed();
-            
         }
     }
     public void Button_Right()
@@ -152,7 +151,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         {
             _page++;
             BGM.PlayOneShot(page);
-            isChangePageRight = true;
+            isChangePageLeft = true;
             ResetTextSpeed();
         }
     }
@@ -270,7 +269,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         }
 
         isAnim = false;
-        isChangePageLeft = false;
+        isChangePageRight = false;
         StartCoroutine(StorySystemUI());
     }
 }
