@@ -19328,7 +19328,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -41671,10 +41671,30 @@ MonoBehaviour:
   buttonStart: {fileID: 600481636}
   buttonLeave: {fileID: 126407328}
   content: {fileID: 125562571}
-  background: {fileID: 0}
-  pageImage: []
-  image: {fileID: 0}
-  storyImage: []
+  background: {fileID: 1824746323}
+  pageImage:
+  - {fileID: 21300000, guid: ddad385e18fc3424ca5899be2abb869f, type: 3}
+  - {fileID: 21300000, guid: 51cbb42ae5de91e40a0034a9921af389, type: 3}
+  - {fileID: 21300000, guid: 247e975863e63314fa88c8f04a595949, type: 3}
+  - {fileID: 21300000, guid: 233a24f77b0a4f3479d562a7b416defe, type: 3}
+  - {fileID: 21300000, guid: 84948e6d283ae1a4892a7e0be39089da, type: 3}
+  - {fileID: 21300000, guid: 3f769356072bb894dbde94b68f26a83b, type: 3}
+  - {fileID: 21300000, guid: ca7878f69e4d9f343a306f6cb640e1f9, type: 3}
+  - {fileID: 21300000, guid: d7260dd9b886a9c42bf3dd684fd85225, type: 3}
+  - {fileID: 21300000, guid: a1117417190759f4994c3e17767f50fc, type: 3}
+  - {fileID: 21300000, guid: 1780c83ca8f13da4795dddeaf3bfb30a, type: 3}
+  - {fileID: 21300000, guid: 62868fe7d6059c349b43ae46f4d2a9a9, type: 3}
+  - {fileID: 21300000, guid: 0d85fc98c64b20346bcd1206dda48511, type: 3}
+  - {fileID: 21300000, guid: 15a80e2112bfe7747b145ef10b94ab5b, type: 3}
+  image: {fileID: 1136790350}
+  storyImage:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 78d7aafe94cc8414592100b8b5bab39e, type: 3}
+  - {fileID: 21300000, guid: 5414d1c301ea3aa479df38886e9d718e, type: 3}
+  - {fileID: 21300000, guid: ac6bf07b5a9daaa4fa7b6c059003768e, type: 3}
+  - {fileID: 21300000, guid: cd105f6c6fe02fb47b5af00bce2a90c3, type: 3}
+  - {fileID: 21300000, guid: c6e98666ceff09e4db3988627f5ee830, type: 3}
+  - {fileID: 21300000, guid: 34e73cc7f0b92a940b4fff666adb9e14, type: 3}
   textStart: {fileID: 4900000, guid: e983839122c55fa4b8b2793ef9e98833, type: 3}
   textEnding: {fileID: 4900000, guid: 3a2d6d6c5f60e584e8eb2f92ab6a5749, type: 3}
 --- !u!1 &2015167376
