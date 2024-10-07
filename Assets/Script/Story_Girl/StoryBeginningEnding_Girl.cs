@@ -155,15 +155,17 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             ResetTextSpeed();
         }
     }
-    public void Button_StartGame()
+    public void Button_Coroutine()
     {
         BGM.PlayOneShot(coroutine);
-        StartCoroutine(StorySystemUIDisappear(canvasGroup));
-    }
-    public void Button_LeaveStory()
-    {
-        BGM.PlayOneShot(coroutine);
-        SceneManager.LoadScene(1);
+        if (StoryUIControl_Girl.isStoryStart)
+        {
+            StartCoroutine(StorySystemUIDisappear(canvasGroup));
+        }
+        else if (StoryUIControl_Girl.isStoryEnding)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     IEnumerator StorySystemUI()
@@ -263,5 +265,21 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         isAnim = false;
         isChangePageRight = false;
         StartCoroutine(StorySystemUI());
+    }
+    IEnumerator StoryFillImage()
+    {
+        float elapsedTime = 0f;
+        float fillDuration = 1f;
+
+        image.fillAmount = 0;
+
+        while (elapsedTime < fillDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            image.fillAmount = Mathf.Clamp01(elapsedTime / fillDuration);
+            yield return null;
+        }
+
+        image.fillAmount = 1;
     }
 }
