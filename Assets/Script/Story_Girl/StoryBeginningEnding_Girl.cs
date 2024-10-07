@@ -236,18 +236,14 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     {
         int index = 0;
 
-        while (index < 7)
+        while (index < 6)
         {
-            background.sprite = pageImages[index];
             index++;
-
-            if (index >= 7)
-            {
-                index = 0;
-            }
-            yield return new WaitForSeconds(0.2f);
+            background.sprite = pageImages[index];
+            yield return new WaitForSeconds(0.15f);
         }
 
+        background.sprite = pageImages[0];
         isAnim = false;
         isChangePageLeft = false;
         StartCoroutine(StorySystemUI());
@@ -256,18 +252,14 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     {
         int index = 7;
 
-        while (index < 13)
+        while (index < 12)
         {
-            background.sprite = pageImages[index];
             index++;
-
-            if (index >= 13)
-            {
-                index = 0;
-            }
-            yield return new WaitForSeconds(0.2f);
+            background.sprite = pageImages[index];
+            yield return new WaitForSeconds(0.15f);
         }
 
+        background.sprite = pageImages[0];
         isAnim = false;
         isChangePageRight = false;
         StartCoroutine(StorySystemUI());
