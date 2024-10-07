@@ -45,6 +45,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         {
             GetTextFormFile(textStart);
             StartCoroutine(StorySystemUI());
+            StartCoroutine(StoryFillImage());
         }
         else if (StoryUIControl_Girl.isStoryEnding)
         {
@@ -211,6 +212,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
         canvasGroup.alpha = targetAlpha;
         StartCoroutine(StorySystemUI());
+        StartCoroutine(StoryFillImage());
     }
     IEnumerator BackgroundChangePageLeft()
     {
@@ -269,7 +271,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     IEnumerator StoryFillImage()
     {
         float elapsedTime = 0f;
-        float fillDuration = 1f;
+        float fillDuration = 0.5f;
 
         image.fillAmount = 0;
         if (StoryUIControl_Girl.isStoryStart)
