@@ -118,6 +118,15 @@ public class StoryPlayerControl : MonoBehaviour
         anim.SetBool("isHappy", isHappy);
         anim.SetBool("isSurprised", isSurprised);
 
+        if (_storyMoveInput != Vector3.zero)
+        {
+            anim.SetBool("isWalk", true);
+        }
+        else
+        {
+            anim.SetBool("isWalk", false);
+        }
+
         if (isSad || isHappy || isSurprised)
             Invoke("FalseAnimation", 0.3f);
     }
