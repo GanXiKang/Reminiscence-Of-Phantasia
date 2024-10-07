@@ -40,6 +40,10 @@ public class StoryColliderControl_Girl : MonoBehaviour
                     StoryDialogueControl_Girl._isAboveWho1 = 1;
                     StoryDialogueControl_Girl._textCount = 31;
                 }
+                else 
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
