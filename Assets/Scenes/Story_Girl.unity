@@ -9238,7 +9238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &600481637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41671,6 +41671,10 @@ MonoBehaviour:
   buttonStart: {fileID: 600481636}
   buttonLeave: {fileID: 126407328}
   content: {fileID: 125562571}
+  background: {fileID: 0}
+  pageImage: []
+  image: {fileID: 0}
+  storyImage: []
   textStart: {fileID: 4900000, guid: e983839122c55fa4b8b2793ef9e98833, type: 3}
   textEnding: {fileID: 4900000, guid: 3a2d6d6c5f60e584e8eb2f92ab6a5749, type: 3}
 --- !u!1 &2015167376
