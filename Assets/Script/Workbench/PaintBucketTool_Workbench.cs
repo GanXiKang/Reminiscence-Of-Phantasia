@@ -101,11 +101,8 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
         texture.Apply();
 
-        if (progressBar.value = 1f)
-        {
-            progressBar.value = 1f;
+        if (progressBar.value == 1f)
             progressBar.gameObject.SetActive(false);
-        }
     }
 
     IEnumerator FloodFillWithProgress(Texture2D texture, int x, int y, Color targetColor, Color replacementColor)
