@@ -10,8 +10,8 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
 
-    public GameObject progressBar;
     public Canvas canvas;
+    public GameObject progressBar;
 
     void Start()
     {
