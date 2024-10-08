@@ -70,6 +70,9 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         Queue<Vector2Int> pixels = new Queue<Vector2Int>();
         pixels.Enqueue(new Vector2Int(x, y));
 
+        int totalPixels = texture.width * texture.height;
+        int filledPixels = 0;
+
         while (pixels.Count > 0)
         {
             Vector2Int currentPixel = pixels.Dequeue();
@@ -84,10 +87,25 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                 if (px < texture.width - 1) pixels.Enqueue(new Vector2Int(px + 1, py));
                 if (py > 0) pixels.Enqueue(new Vector2Int(px, py - 1));
                 if (py < texture.height - 1) pixels.Enqueue(new Vector2Int(px, py + 1));
+
+                if (filledPixels % 100 == 0)
+                {
+                    float progress = (float)filledPixels / totalPixels;
+                    if (progressBar != null)
+                    {
+                        progressBar.value = progress;
+                    }
+                }
             }
         }
 
         texture.Apply();
+
+        if (progressBar.value = 1f)
+        {
+            progressBar.value = 1f;
+            progressBar.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator FloodFillWithProgress(Texture2D texture, int x, int y, Color targetColor, Color replacementColor)
