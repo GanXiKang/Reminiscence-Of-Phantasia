@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PaintBucketTool_Workbench : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     public int _number = 0;
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
+
+    public Slider progressBar;
 
     void Start()
     {
