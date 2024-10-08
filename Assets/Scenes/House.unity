@@ -1996,6 +1996,11 @@ MonoBehaviour:
   bookcasePos: {fileID: 1611748570}
   showcasePos: {fileID: 937808342}
   _moveTime: 5
+  minDistance: 1
+  maxDistance: 4
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &311362476
 GameObject:
   m_ObjectHideFlags: 0
@@ -13757,9 +13762,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1807970279642858887, guid: d0df00fc7eda9404292dee8324f6af33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d0df00fc7eda9404292dee8324f6af33, type: 3}
       propertyPath: m_Name
       value: house
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326670240530895714, guid: d0df00fc7eda9404292dee8324f6af33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3774608951414501026, guid: d0df00fc7eda9404292dee8324f6af33, type: 3}
       propertyPath: m_LocalRotation.w
