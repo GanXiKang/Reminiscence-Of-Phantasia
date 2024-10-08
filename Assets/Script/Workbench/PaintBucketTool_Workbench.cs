@@ -23,11 +23,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         texture.SetPixels(originalTexture.GetPixels());
         texture.Apply();
         canvasRenderer.material.mainTexture = texture;
-
-        if (progressBar != null)
-        {
-            progressBar.gameObject.SetActive(false);
-        }
     }
 
     void Update()
