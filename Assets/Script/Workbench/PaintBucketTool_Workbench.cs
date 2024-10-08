@@ -49,14 +49,14 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                     Color replacementColor = colorPicker.selectedColor;
                     WorkbenchControl_House.isChangeColor[_number] = true;
 
-                    FloodFill(texture, x, y, targetColor, replacementColor);
+                    //FloodFill(texture, x, y, targetColor, replacementColor);
 
-                    //if (progressBar != null)
-                    //{
-                    //    progressBar.gameObject.SetActive(true);
-                    //}
+                    if (progressBar != null)
+                    {
+                        progressBar.gameObject.SetActive(true);
+                    }
 
-                    //StartCoroutine(FloodFillWithProgress(texture, x, y, targetColor, replacementColor));
+                    StartCoroutine(FloodFillWithProgress(texture, x, y, targetColor, replacementColor));
                 }
             }
         }
@@ -117,7 +117,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                 if (py > 0) pixels.Enqueue(new Vector2Int(px, py - 1));
                 if (py < texture.height - 1) pixels.Enqueue(new Vector2Int(px, py + 1));
 
-                if (filledPixels % 500 == 0)
+                if (filledPixels % 2500 == 0)
                 {
                     float progress = (float)filledPixels / totalPixels;
                     if (progressBar != null)
