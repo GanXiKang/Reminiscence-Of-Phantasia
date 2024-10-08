@@ -10,7 +10,8 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
 
-    public Image progressBar;
+    public GameObject progressBar;
+    public Canvas canvas;
 
     void Start()
     {
@@ -26,6 +27,12 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     }
 
     void Update()
+    {
+        Paint();
+        Bar();
+    }
+
+    void Paint()
     {
         if (WorkbenchControl_House._process != 3) return;
 
@@ -48,7 +55,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
                     if (progressBar != null)
                     {
-                        progressBar.gameObject.SetActive(true);
+                        progressBar.SetActive(true);
                     }
 
                     StartCoroutine(FloodFillWithProgress(texture, x, y, targetColor, replacementColor));
@@ -56,7 +63,15 @@ public class PaintBucketTool_Workbench : MonoBehaviour
             }
         }
     }
+    void Bar()
+    {
+        Vector2 mousePosition = Input.mousePosition;
 
+        Vector2 worldPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, mousePosition, canvas.worldCamera, out worldPoint);
+
+        progressBar.GetComponent<RectTransform>().localPosition = worldPoint;
+    }
     void FloodFill(Texture2D texture, int x, int y, Color targetColor, Color replacementColor)
     {
         if (targetColor == replacementColor) return;
@@ -112,12 +127,12 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                 if (py > 0) pixels.Enqueue(new Vector2Int(px, py - 1));
                 if (py < texture.height - 1) pixels.Enqueue(new Vector2Int(px, py + 1));
 
-                if (filledPixels % 3600 == 0)
+                if (filledPixels % 5000 == 0)
                 {
                     float progress = (float)filledPixels / totalPixels;
                     if (progressBar != null)
                     {
-                        progressBar.fillAmount = progress;
+                        progressBar.GetComponent<Image>().fillAmount = progress;
                     }
                     yield return null;
                 }
@@ -128,8 +143,8 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
         if (progressBar != null)
         {
-            progressBar.fillAmount = 1f;
-            progressBar.gameObject.SetActive(false);
+            progressBar.GetComponent<Image>().fillAmount = 1f;
+            progressBar.SetActive(false);
         }
     }
 }
