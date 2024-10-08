@@ -51,8 +51,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                     Color replacementColor = colorPicker.selectedColor;
                     WorkbenchControl_House.isChangeColor[_number] = true;
 
-                    //FloodFill(texture, x, y, targetColor, replacementColor);
-
                     if (progressBar != null)
                     {
                         progressBar.SetActive(true);
@@ -71,33 +69,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, mousePosition, canvas.worldCamera, out worldPoint);
 
         progressBar.GetComponent<RectTransform>().localPosition = worldPoint;
-    }
-    void FloodFill(Texture2D texture, int x, int y, Color targetColor, Color replacementColor)
-    {
-        if (targetColor == replacementColor) return;
-        if (texture.GetPixel(x, y) != targetColor) return;
-
-        Queue<Vector2Int> pixels = new Queue<Vector2Int>();
-        pixels.Enqueue(new Vector2Int(x, y));
-
-        while (pixels.Count > 0)
-        {
-            Vector2Int currentPixel = pixels.Dequeue();
-            int px = currentPixel.x;
-            int py = currentPixel.y;
-
-            if (texture.GetPixel(px, py) == targetColor)
-            {
-                texture.SetPixel(px, py, replacementColor);
-
-                if (px > 0) pixels.Enqueue(new Vector2Int(px - 1, py));
-                if (px < texture.width - 1) pixels.Enqueue(new Vector2Int(px + 1, py));
-                if (py > 0) pixels.Enqueue(new Vector2Int(px, py - 1));
-                if (py < texture.height - 1) pixels.Enqueue(new Vector2Int(px, py + 1));
-            }
-        }
-
-        texture.Apply();
     }
 
     IEnumerator FloodFillWithProgress(Texture2D texture, int x, int y, Color targetColor, Color replacementColor)
