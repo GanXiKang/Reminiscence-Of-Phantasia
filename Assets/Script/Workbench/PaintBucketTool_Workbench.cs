@@ -10,7 +10,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
 
-    public Slider progressBar;
+    public Image progressBar;
 
     void Start()
     {
@@ -122,7 +122,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                     float progress = (float)filledPixels / totalPixels;
                     if (progressBar != null)
                     {
-                        progressBar.value = progress;
+                        progressBar.fillAmount = progress;
                     }
                     yield return null;
                 }
@@ -133,7 +133,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
         if (progressBar != null)
         {
-            progressBar.value = 1f;
+            progressBar.fillAmount = 1f;
             progressBar.gameObject.SetActive(false);
         }
     }
