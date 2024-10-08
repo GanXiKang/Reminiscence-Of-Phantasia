@@ -8,7 +8,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     public int _number = 0;
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
-    private Texture2D initialTexture;
 
     void Start()
     {
@@ -21,7 +20,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         texture.SetPixels(originalTexture.GetPixels());
         texture.Apply();
         canvasRenderer.material.mainTexture = texture;
-        initialTexture = Instantiate(texture);
     }
 
     void Update()
