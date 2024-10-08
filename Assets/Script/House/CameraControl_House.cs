@@ -26,7 +26,6 @@ public class CameraControl_House : MonoBehaviour
     public float _moveTime = 5f;
 
     [Header("CameraCollider")]
-    public Transform target;
     public float minDistance = 1f;
     public float maxDistance = 4f;
     public LayerMask collisionMask;
@@ -87,10 +86,10 @@ public class CameraControl_House : MonoBehaviour
     }
     void CameraCollider()
     {
-        desiredPosition = target.position - transform.forward * maxDistance;
+        desiredPosition = player.transform.position - transform.forward * maxDistance;
 
         RaycastHit hit;
-        if (Physics.Raycast(target.position, -transform.forward, out hit, maxDistance, collisionMask))
+        if (Physics.Raycast(player.transform.position, -transform.forward, out hit, maxDistance, collisionMask))
         {
             currentDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
         }
@@ -99,7 +98,7 @@ public class CameraControl_House : MonoBehaviour
             currentDistance = maxDistance;
         }
 
-        transform.position = Vector3.Lerp(transform.position, target.position - transform.forward * currentDistance, Time.deltaTime * 5f);
+        transform.position = Vector3.Lerp(transform.position, player.transform.position - transform.forward * currentDistance, Time.deltaTime * 5f);
     }
 
     bool isFreeLookCamera()
