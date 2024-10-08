@@ -8,6 +8,7 @@ public class StoryPlayerControl : MonoBehaviour
     CharacterController cc;
     PlayerInput playerInput;
     Animator anim;
+    AudioSource walk;
 
     public static bool isSad;
     public static bool isHappy;
@@ -25,11 +26,13 @@ public class StoryPlayerControl : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         anim = GetComponent<Animator>();
+        walk = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         playerInput.enabled = isCanMove();
+        walk.volume = SettingControl.volumeBGM;
 
         StoryPlayerMove();
         StoryPlayerOnTheGround();
@@ -121,10 +124,12 @@ public class StoryPlayerControl : MonoBehaviour
         if (_storyMoveInput != Vector3.zero)
         {
             anim.SetBool("isWalk", true);
+            walk.Play();
         }
         else
         {
             anim.SetBool("isWalk", false);
+            walk.Stop();
         }
 
         if (isSad || isHappy || isSurprised)
