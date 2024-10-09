@@ -40,14 +40,16 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
     void MoveObjectWithMouse()
     {
-        // 取得滑鼠當前位置
         Vector3 mousePosition = Input.mousePosition;
 
         // 將滑鼠位置轉換為世界座標，並指定Z軸距離
-        mousePosition.z = Camera.main.nearClipPlane + 5f;  // 這裡設定Z軸距離，根據場景需要調整
+        mousePosition.z = Camera.main.nearClipPlane + 5f;  // Z軸距離，根據需要調整
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        // 將3D物件移動到滑鼠的世界座標位置
-        objectToMove.transform.position = worldPosition;
+        // 保留物件的原始Y軸位置，只更新X軸和Z軸
+        Vector3 newPosition = new Vector3(worldPosition.x, objectToMove.transform.position.y, worldPosition.z);
+
+        // 將3D物件移動到新的位置
+        objectToMove.transform.position = newPosition;
     }
 }
