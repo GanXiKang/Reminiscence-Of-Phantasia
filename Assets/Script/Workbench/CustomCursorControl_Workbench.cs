@@ -38,11 +38,24 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
     void MoveObjectWithMouse()
     {
+        //Vector3 mousePosition = Input.mousePosition;
+
+        //mousePosition.z = Camera.main.nearClipPlane + 5f;
+        //Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        //objectToMove.transform.position = worldPosition;
+
         Vector3 mousePosition = Input.mousePosition;
 
-        mousePosition.z = Camera.main.nearClipPlane + 5f;
+        // 使用物體的 Z 值來設定 Z 軸距離
+        mousePosition.z = Camera.main.WorldToScreenPoint(objectToMove.transform.position).z;
+
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        objectToMove.transform.position = worldPosition;
+        // 只跟隨 X 和 Z，不影響 Y 軸
+        Vector3 newPosition = new Vector3(worldPosition.x, objectToMove.transform.position.y, worldPosition.z);
+
+        // 平滑移動
+        objectToMove.transform.position = Vector3.Lerp(objectToMove.transform.position, newPosition, Time.deltaTime * 10f);
     }
 }
