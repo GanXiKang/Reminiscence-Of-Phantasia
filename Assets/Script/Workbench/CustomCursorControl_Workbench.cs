@@ -12,6 +12,8 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
     void Update()
     {
+        if (WorkbenchControl_House._process != 2) return;
+
         float screenHalfWidth = Screen.width / 2;
 
         if (Input.mousePosition.x > screenHalfWidth)
