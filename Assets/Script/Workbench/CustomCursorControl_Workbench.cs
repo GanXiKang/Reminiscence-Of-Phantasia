@@ -9,12 +9,6 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     private bool isCursorChanged = false;  // 標記是否已更換光標
 
     public GameObject objectToMove;
-    Rigidbody rb;
-
-    void Start()
-    {
-        rb = objectToMove.GetComponent<Rigidbody>();
-    }
 
     void Update()
     {
@@ -47,13 +41,12 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     void MoveObjectWithMouse()
     {
         Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = Camera.main.nearClipPlane + 5f;
+
+        // 將滑鼠位置轉換為世界座標，並指定Z軸距離
+        mousePosition.z = Camera.main.nearClipPlane + 5f;  // 這裡設定Z軸距離，根據場景需要調整
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        // 保持 Y 軸位置不變
-        Vector3 newPosition = new Vector3(worldPosition.x, objectToMove.transform.position.y, worldPosition.z);
-
-        // 使用 Rigidbody 的 MovePosition 方法
-        rb.MovePosition(newPosition);
+        // 將3D物件移動到滑鼠的世界座標位置
+        objectToMove.transform.position = worldPosition;
     }
 }
