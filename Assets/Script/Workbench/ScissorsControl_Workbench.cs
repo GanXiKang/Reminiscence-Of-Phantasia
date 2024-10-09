@@ -34,9 +34,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
         if (WorkbenchControl_House._process == 2)
         {
             effects.SetActive(isUseScissors);
-            //ScissorsMove();
 
-            //Vector3 scissorsPos = transform.position + new Vector3(0f, 0f, -0.5f);
             if (Input.GetMouseButtonDown(0))
             {
                 isUseScissors = true;
@@ -49,14 +47,6 @@ public class ScissorsControl_Workbench : MonoBehaviour
         }
     }
 
-    //void ScissorsMove()
-    //{
-    //    mouseY = Input.GetAxis("Mouse Y") * _moveSpeed * Time.deltaTime;
-    //    mouseX = Input.GetAxis("Mouse X") * _moveSpeed * Time.deltaTime;
-    //    newZ = Mathf.Clamp(transform.position.z + mouseY, minZ, maxZ);
-    //    newX = Mathf.Clamp(transform.position.x + mouseX, minX, maxX);
-    //    transform.position = new Vector3(newX, transform.position.y, newZ);
-    //}
     void ClearColliderBool()
     {
         for (int i = 1; i < isCollider.Length; i++)
