@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class CustomCursorControl_Workbench : MonoBehaviour
 {
-    public Texture2D cursorTexture;
-    public Vector2 hotSpot = Vector2.zero; 
+    public Texture2D customCursorTexture;  // 自定義光標圖像
+    public Vector2 hotSpot = Vector2.zero; // 自定義光標的熱點
+    private bool isCursorChanged = false;  // 標記是否已更換光標
 
-    void Start()
+    void Update()
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
-    }
+        // 取得螢幕寬度的一半
+        float screenHalfWidth = Screen.width / 2;
 
-    void OnDisable()
-    {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        // 判斷滑鼠是否在右半邊
+        if (Input.mousePosition.x > screenHalfWidth)
+        {
+            // 如果滑鼠位於右半邊且光標未被更換，則更換為自定義光標
+            if (!isCursorChanged)
+            {
+                Cursor.SetCursor(customCursorTexture, hotSpot, CursorMode.Auto);
+                isCursorChanged = true;
+            }
+        }
+        else
+        {
+            // 如果滑鼠位於左半邊且光標已被更換，則還原為默認光標
+            if (isCursorChanged)
+            {
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                isCursorChanged = false;
+            }
+        }
     }
 }
