@@ -25,17 +25,9 @@ public class CameraControl_House : MonoBehaviour
     [Header("CameraMovement")]
     public float _moveTime = 5f;
 
-    [Header("CameraCollider")]
-    public float minDistance = 1f;
-    public float maxDistance = 4f;
-    public LayerMask collisionMask;
-    private float currentDistance;
-    private Vector3 desiredPosition;
-
     void Start()
     {
         player = GameObject.Find("Player");
-        currentDistance = maxDistance;
 
         Invoke("StartFreeLookCamera", 1.5f);
     }
@@ -46,10 +38,6 @@ public class CameraControl_House : MonoBehaviour
         freeLookCamera.SetActive(isFreeLookCamera());
         
         CameraLooking();
-    }
-    void LateUpdate()
-    {
-        CameraCollider();
     }
 
     void StartFreeLookCamera()
@@ -84,23 +72,7 @@ public class CameraControl_House : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
         }
     }
-    void CameraCollider()
-    {
-        desiredPosition = player.transform.position - transform.forward * maxDistance;
-
-        RaycastHit hit;
-        if (Physics.Raycast(player.transform.position, -transform.forward, out hit, maxDistance, collisionMask))
-        {
-            currentDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
-        }
-        else
-        {
-            currentDistance = maxDistance;
-        }
-
-        transform.position = Vector3.Lerp(transform.position, player.transform.position - transform.forward * currentDistance, Time.deltaTime * 5f);
-    }
-
+   
     bool isFreeLookCamera()
     {
         return isFreeLook &&
