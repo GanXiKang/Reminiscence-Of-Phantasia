@@ -47,6 +47,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step4")]
     public Animator testStoryBook;
     public static bool isFinishStoryBook = false;
+    bool isPaperAdjustScale;
 
     void Start()
     {
@@ -112,11 +113,13 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (_process)
         {
             case 0:
+                isPaperAdjustScale = false;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
                     isChangeColor[c] = false;
                 }
                 break;
+
             case 1:
                 isAppaerPaper = true;
                 break;
@@ -124,7 +127,6 @@ public class WorkbenchControl_House : MonoBehaviour
             case 2:
                 isPaperRotation = true;
                 isAppaerPaper = false;
-                
                 break;
 
             case 3:
@@ -468,13 +470,19 @@ public class WorkbenchControl_House : MonoBehaviour
         if (isFinishStoryBook)
         {
             isFinishStoryBook = false;
-            testStoryBook.SetBool("isOpenTest", false);
             _process = 0;
-            Invoke("PaperClosebyBook", 1f);
+            StartCoroutine(PaperClosebyBook());
+        }
+        if (!isPaperAdjustScale)
+        {
+            paper
         }
     }
-    void PaperClosebyBook()
+    IEnumerator PaperClosebyBook()
     {
+        yield return new WaitForSeconds(0.5f);
+        testStoryBook.SetBool("isOpenTest", false);
+        yield return new WaitForSeconds(0.5f);
         paper[_paperNum].SetActive(false);
     }
 
