@@ -107,7 +107,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             case 2:
                 buttonLeft.SetActive(true);
                 buttonRight.SetActive(false);
-                Invoke("ButtonCoroutineActive", 2f);
+                Invoke("ButtonCoroutineActive", 2.5f);
                 break;
         }
     }
