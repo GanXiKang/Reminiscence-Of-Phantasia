@@ -476,14 +476,13 @@ public class WorkbenchControl_House : MonoBehaviour
         if (!isPaperAdjustScale)
         {
             isPaperAdjustScale = true;
+            testStoryBook.SetBool("isOpenTest", false);
             paper[_paperNum].transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            Invoke("PaperClosebyBook", 2f);
         }
     }
-    IEnumerator PaperClosebyBook()
+    void PaperClosebyBook()
     {
-        yield return new WaitForSeconds(0.1f);
-        testStoryBook.SetBool("isOpenTest", false);
-        yield return new WaitForSeconds(1.8f);
         paper[_paperNum].SetActive(false);
     }
 
