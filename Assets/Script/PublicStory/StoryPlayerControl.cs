@@ -30,7 +30,6 @@ public class StoryPlayerControl : MonoBehaviour
     void Update()
     {
         playerInput.enabled = isCanMove();
-        walk.volume = SettingControl.volumeBGM;
 
         StoryPlayerMove();
         StoryPlayerOnTheGround();
