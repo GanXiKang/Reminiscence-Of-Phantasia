@@ -176,8 +176,7 @@ public class WorkbenchControl_House : MonoBehaviour
             if (Vector3.Distance(stamp.transform.position, stampEndPos.position) < 0.01f)
             {
                 isStampGo = false;
-                //Paper();
-                paper[_paperNum].SetActive(true);
+                Paper();
                 blankPaper.SetActive(false);
                 Invoke("StampStay", 1f);
             }
@@ -476,7 +475,8 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (!isPaperAdjustScale)
         {
-            //paper[_paperNum]
+            isPaperAdjustScale = true;
+            paper[_paperNum].transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
     }
     IEnumerator PaperClosebyBook()
