@@ -12,27 +12,32 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
     void Update()
     {
-        if (WorkbenchControl_House._process != 2) return;
-
-        float screenHalfWidth = Screen.width / 2;
-
-        if (Input.mousePosition.x > screenHalfWidth)
+        if (WorkbenchControl_House._process == 2)
         {
-            if (!isCursorChanged)
-            {
-                Cursor.SetCursor(customCursorTexture, hotSpot, CursorMode.Auto);
-                isCursorChanged = true;
-            }
+            float screenHalfWidth = Screen.width / 2;
 
-            MoveObjectWithMouse();
+            if (Input.mousePosition.x > screenHalfWidth)
+            {
+                if (!isCursorChanged)
+                {
+                    Cursor.SetCursor(customCursorTexture, hotSpot, CursorMode.Auto);
+                    isCursorChanged = true;
+                }
+
+                MoveObjectWithMouse();
+            }
+            else
+            {
+                if (isCursorChanged)
+                {
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    isCursorChanged = false;
+                }
+            }
         }
         else
         {
-            if (isCursorChanged)
-            {
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                isCursorChanged = false;
-            }
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
 
