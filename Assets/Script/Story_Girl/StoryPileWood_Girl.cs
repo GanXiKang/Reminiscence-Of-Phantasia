@@ -15,7 +15,7 @@ public class StoryPileWood_Girl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        campfire = fireEffect.GetComponent<AudioSource>();
+        campfire = GetComponent<AudioSource>();
     }
 
     void Update()
