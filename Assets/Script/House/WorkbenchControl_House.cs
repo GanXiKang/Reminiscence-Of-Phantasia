@@ -469,16 +469,15 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (isFinishStoryBook)
         {
-            isFinishStoryBook = false;
             _process = 0;
-            StartCoroutine(PaperClosebyBook());
+            isFinishStoryBook = false;
+            testStoryBook.SetBool("isOpenTest", false);
+            Invoke("PaperClosebyBook", 2f);
         }
         if (!isPaperAdjustScale)
         {
             isPaperAdjustScale = true;
-            testStoryBook.SetBool("isOpenTest", false);
             paper[_paperNum].transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            Invoke("PaperClosebyBook", 2f);
         }
     }
     void PaperClosebyBook()
