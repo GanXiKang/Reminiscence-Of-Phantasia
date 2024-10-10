@@ -476,7 +476,7 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (!isPaperAdjustScale)
         {
-            paper
+            //paper[_paperNum]
         }
     }
     IEnumerator PaperClosebyBook()
