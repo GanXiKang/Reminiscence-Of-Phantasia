@@ -481,9 +481,9 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     IEnumerator PaperClosebyBook()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         testStoryBook.SetBool("isOpenTest", false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.8f);
         paper[_paperNum].SetActive(false);
     }
 
