@@ -6,15 +6,19 @@ public class DragAndDrop_Workbench : MonoBehaviour
 {
     BoxCollider boxC;
 
+    [Header("Target")]
+    public Transform targetPosition;
+    public float snapDistance = 1.0f;
+
+    private Vector3 originalPos;
     private Vector3 offset;
     private bool isDragging = false;
     private bool isFixed = false;
-    public Transform targetPosition;
-    public float snapDistance = 1.0f;
 
     void Start()
     {
         boxC = GetComponent<BoxCollider>();
+        originalPos = transform.position;
     }
 
     void Update()
@@ -44,6 +48,10 @@ public class DragAndDrop_Workbench : MonoBehaviour
                 mousePosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
                 transform.position = worldPosition;
+            }
+            else
+            {
+                transform.position = originalPos;
             }
 
             if (Input.GetMouseButtonUp(0))
