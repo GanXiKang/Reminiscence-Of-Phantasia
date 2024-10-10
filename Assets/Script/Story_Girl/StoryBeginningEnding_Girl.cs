@@ -107,14 +107,6 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             case 2:
                 buttonLeft.SetActive(true);
                 buttonRight.SetActive(false);
-                if (StoryUIControl_Girl.isStoryStart)
-                {
-                    buttonCoroutine.SetActive(true);
-                }
-                else if (StoryUIControl_Girl.isStoryEnding)
-                {
-                    buttonCoroutine.SetActive(true);
-                }
                 break;
         }
     }
@@ -253,6 +245,20 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     {
         isTextFinish = false;
         content.text = "";
+
+        switch (textList[_page].Trim())
+        {
+            case "End":
+                if (StoryUIControl_Girl.isStoryStart)
+                {
+                    buttonCoroutine.SetActive(true);
+                }
+                else if (StoryUIControl_Girl.isStoryEnding)
+                {
+                    buttonCoroutine.SetActive(true);
+                }
+                break;
+        }
         for (int i = 0; i < textList[_page].Length; i++)
         {
             if (textList[_page][i] == '\\' && i + 1 < textList[_page].Length && textList[_page][i + 1] == 'n')
@@ -275,6 +281,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         float fillDuration = 0.5f;
 
         image.fillAmount = 0;
+
         if (StoryUIControl_Girl.isStoryStart)
         {
             image.sprite = storyImages[_page];
