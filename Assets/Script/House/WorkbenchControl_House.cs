@@ -176,7 +176,8 @@ public class WorkbenchControl_House : MonoBehaviour
             if (Vector3.Distance(stamp.transform.position, stampEndPos.position) < 0.01f)
             {
                 isStampGo = false;
-                Paper();
+                //Paper();
+                paper[_paperNum].SetActive(true);
                 blankPaper.SetActive(false);
                 Invoke("StampStay", 1f);
             }
