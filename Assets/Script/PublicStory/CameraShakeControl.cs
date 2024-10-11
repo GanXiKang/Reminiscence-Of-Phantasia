@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraShakeControl : MonoBehaviour
 {
     public Transform cameraTransform;
-    //public float shakeDuration = 0.5f;
-    public float shakeAmount = 10f;
+    public float shakeDuration = 0.5f;
+    public float shakeAmount = 0.1f;
     public float decreaseFactor = 1.0f;
 
     private Vector3 originalPos;
