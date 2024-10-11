@@ -94,6 +94,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     void Update()
     {
+        BGM.PlayOneShot(give);
         PickUpItem();
         InteractableUI();
         GivePlayerObject();
