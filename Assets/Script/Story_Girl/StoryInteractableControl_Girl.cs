@@ -282,14 +282,17 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         break;
 
                     case 3:
-                        isGetGift = true;
-                        isPickedUp = true;
-                        StoryBagControl.isGet = true;
-                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                        StoryBagControl._whichItem = _giveItemNumber[0];
-                        if (StoryBagControl.isOpenBag)
+                        if (!isGetGift)
                         {
-                            StoryBagControl.isOpenBag = false;
+                            isGetGift = true;
+                            isPickedUp = true;
+                            StoryBagControl.isGet = true;
+                            StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                            StoryBagControl._whichItem = _giveItemNumber[0];
+                            if (StoryBagControl.isOpenBag)
+                            {
+                                StoryBagControl.isOpenBag = false;
+                            }
                         }
                         break;
                 }
