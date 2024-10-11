@@ -15,6 +15,8 @@ public class CameraShakeControl : MonoBehaviour
     void Start()
     {
         originalPos = cameraTransform.localPosition;
+
+        TriggerShake(0.5f);
     }
 
     void Update()
