@@ -14,8 +14,6 @@ public class StoryCameraControl : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         isFollow = true;
-
-        FindObjectOfType<CameraShake>().TriggerShake(0.5f);
     }
 
     void LateUpdate()
