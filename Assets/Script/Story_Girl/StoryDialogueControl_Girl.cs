@@ -9,7 +9,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip gun, bingo, wrong;
+    public AudioClip gun, bingo, wrong, give;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -128,6 +128,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         {
             case 2:
             case 7:
+                BGM.PlayOneShot(give);
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 1;
                 break;
@@ -138,11 +139,13 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 11:
+                BGM.PlayOneShot(give);
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 2;
                 break;
 
             case 13:
+                BGM.PlayOneShot(give);
                 StoryGameControl_Girl.isTrashcanLidActice = false;
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 2;
@@ -168,6 +171,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
 
             case 26:
+                BGM.PlayOneShot(give);
                 StoryInteractableControl_Girl.isFinallyMatch = true;
                 StoryInteractableControl_Girl.isGiveItem = true;
                 StoryInteractableControl_Girl._whoGive = 1;
