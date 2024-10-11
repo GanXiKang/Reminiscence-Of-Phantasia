@@ -16,7 +16,7 @@ public class CameraShakeControl : MonoBehaviour
     {
         originalPos = cameraTransform.localPosition;
 
-        TriggerShake(0.5f);
+        
     }
 
     void Update()
@@ -32,9 +32,14 @@ public class CameraShakeControl : MonoBehaviour
             currentShakeDuration = 0f;
             cameraTransform.localPosition = originalPos;
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            TriggerShake(0.5f);
+        }
     }
 
-    public void TriggerShake(float duration)
+    void TriggerShake(float duration)
     {
         currentShakeDuration = duration;
     }
