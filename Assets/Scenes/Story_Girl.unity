@@ -5780,7 +5780,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -8011,7 +8010,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -8794,7 +8792,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -18805,7 +18802,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -20302,7 +20298,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -21681,21 +21676,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1264484141
-Transform:
+--- !u!224 &1264484141
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264484140}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.66751385, y: 3.7194896, z: -0.56717503}
+  m_LocalPosition: {x: 0, y: 0, z: -0.56717503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.66751385, y: 3.7194896}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1264484142
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32695,7 +32694,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -33313,7 +33311,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -33602,7 +33599,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -33863,7 +33859,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   get: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
@@ -41093,7 +41088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1264484142}
   pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  give: {fileID: 8300000, guid: 43ccf64a0a0258f409188c24df98a12a, type: 3}
   get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
   find: {fileID: 8300000, guid: 4cf89ef11adaade4fab8a5feb2ab091b, type: 3}
   fight: {fileID: 8300000, guid: 364446d17947e334392ef470c5e43085, type: 3}
