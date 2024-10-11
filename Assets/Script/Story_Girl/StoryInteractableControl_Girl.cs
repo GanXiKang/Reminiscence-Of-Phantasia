@@ -94,7 +94,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     void Update()
     {
-        BGM.PlayOneShot(give);
         PickUpItem();
         InteractableUI();
         GivePlayerObject();
@@ -244,12 +243,10 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             if (_whoGive == _who)
             {
                 isGiveItem = false;
-                print("OK");
                 BGM.PlayOneShot(give);
                 switch (_who)
                 {
                     case 1:
-                        print("1");
                         isPickedUp = true;
                         isSkill = true;
                         StoryBagControl._whichItem = _giveItemNumber[0];
@@ -262,7 +259,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     case 2:
                         if (_countMouseDown == 1)
                         {
-                            print("2");
                             isPickedUp = true;
                             StoryBagControl.isGet = true;
                             StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
