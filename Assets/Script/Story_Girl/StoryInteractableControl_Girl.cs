@@ -291,7 +291,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         }
                         break;
                 }
-                BGM.PlayOneShot(give);
+                //BGM.PlayOneShot(give);
                 isGiveItem = false;
             }
         }
