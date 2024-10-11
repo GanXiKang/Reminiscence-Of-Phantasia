@@ -9,7 +9,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip pickUp, give, get, find, fight;
+    public AudioClip pickUp, get, find, fight;
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
@@ -83,8 +83,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     bool isGetKebab = false;
     public static bool isFirstAskFind = false;
     public static bool isAgreeFind = false;
-
-    bool isTest = true;
 
     void Start()
     {
@@ -245,11 +243,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             if (_whoGive == _who)
             {
                 isGiveItem = false;
-                if (isTest)
-                {
-                    BGM.PlayOneShot(give);
-                    isTest = false;
-                }
                 switch (_who)
                 {
                     case 1:
