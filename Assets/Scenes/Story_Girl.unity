@@ -6665,7 +6665,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1618297078}
   - {fileID: 1632911799}
   - {fileID: 1477972832}
   - {fileID: 126904055}
@@ -33565,7 +33564,7 @@ Transform:
   m_LocalScale: {x: 0.9, y: 0.8999998, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 190728114}
+  m_Father: {fileID: 1756193621}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
 --- !u!65 &1618297079
 BoxCollider:
@@ -39224,6 +39223,7 @@ Transform:
   - {fileID: 406371090}
   - {fileID: 190728114}
   - {fileID: 1579847182}
+  - {fileID: 1618297078}
   - {fileID: 27316982}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
