@@ -84,6 +84,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public static bool isFirstAskFind = false;
     public static bool isAgreeFind = false;
 
+    bool isTest = true;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -243,7 +245,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             if (_whoGive == _who)
             {
                 isGiveItem = false;
-                BGM.PlayOneShot(give);
+                if (isTest)
+                {
+                    BGM.PlayOneShot(give);
+                    isTest = false;
+                }
                 switch (_who)
                 {
                     case 1:
