@@ -242,6 +242,8 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         {
             if (_whoGive == _who)
             {
+                isGiveItem = false;
+                BGM.PlayOneShot(give);
                 switch (_who)
                 {
                     case 1:
@@ -291,8 +293,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                         }
                         break;
                 }
-                BGM.PlayOneShot(give);
-                isGiveItem = false;
             }
         }
     }
