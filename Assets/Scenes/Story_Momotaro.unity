@@ -643,9 +643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33e915be9f77404b85eea59bdeadc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScale: {x: 350, y: 200, z: 1}
-  targetScale: {x: 19.5, y: 11, z: 1}
+  bigScale: {x: 350, y: 200, z: 1}
+  smallScale: {x: 19.5, y: 11, z: 1}
   animationDuration: 0.8
+  isAnimStart: 1
 --- !u!1 &216335395
 GameObject:
   m_ObjectHideFlags: 0
