@@ -107,22 +107,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             case 2:
                 buttonLeft.SetActive(true);
                 buttonRight.SetActive(false);
-                Invoke("ButtonCoroutineActive", 2.2f);
                 break;
-        }
-    }
-    void ButtonCoroutineActive()
-    {
-        if (_page != 2) return;
-        {
-            if (StoryUIControl_Girl.isStoryStart)
-            {
-                buttonCoroutine.SetActive(true);
-            }
-            else if (StoryUIControl_Girl.isStoryEnding)
-            {
-                buttonCoroutine.SetActive(true);
-            }
         }
     }
     void ChangePage()
@@ -159,6 +144,10 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             BGM.PlayOneShot(page);
             isChangePageLeft = true;
             ResetTextSpeed();
+            if (_page == 2)
+            {
+                Invoke("ButtonCoroutineActive", 2.2f);
+            }
         }
     }
     public void Button_Coroutine()
@@ -177,6 +166,20 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         }
     }
 
+    void ButtonCoroutineActive()
+    {
+        if (_page != 2) return;
+        {
+            if (StoryUIControl_Girl.isStoryStart)
+            {
+                buttonCoroutine.SetActive(true);
+            }
+            else if (StoryUIControl_Girl.isStoryEnding)
+            {
+                buttonCoroutine.SetActive(true);
+            }
+        }
+    }
     void GoToHouse()
     {
         SceneManager.LoadScene(1);
