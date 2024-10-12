@@ -7,7 +7,7 @@ public class TransitionUIControl : MonoBehaviour
     [Header("Scale")]
     public Vector3 startScale = new Vector3(350f, 200f, 1f);
     public Vector3 targetScale = new Vector3(19.5f, 11f, 1f);
-    public float animationDuration = 1f;
+    public float animationDuration = 0.8f;
     public static  bool isTransitionUIAnim_In = false;
     public static bool isTransitionUIAnim_Out = false;
     float animationTime = 0f;
