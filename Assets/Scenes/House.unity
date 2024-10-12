@@ -6178,22 +6178,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   workbench: {fileID: 1052442712}
-  workbenchHint: {fileID: 645830663}
   workbenchOffset: {x: 0, y: 6, z: 0}
   door: {fileID: 381688776}
-  doorHint: {fileID: 0}
   doorOffset: {x: 0, y: 6, z: -6}
   bed: {fileID: 373083822}
-  bedHint: {fileID: 0}
   bedOffset: {x: 0, y: 6, z: 0}
   bookcase: {fileID: 580126509}
-  bookcaseHint: {fileID: 0}
   bookcaseOffset: {x: 0, y: 6, z: 3}
   showcase: {fileID: 1465837302}
-  showcaseHint: {fileID: 0}
   showcaseOffset: {x: 0, y: 6, z: 0}
-  hint: {fileID: 0}
-  hintName: {fileID: 0}
+  hint: {fileID: 645830663}
+  hintName: {fileID: 1645000476}
   dialogBox: {fileID: 1599682742}
   dialogText: {fileID: 683017293}
   animals: {fileID: 967062357}
@@ -11600,7 +11595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5DE5\u4F5C\u53F0"
+  m_Text: XX
 --- !u!222 &1645000477
 CanvasRenderer:
   m_ObjectHideFlags: 0
