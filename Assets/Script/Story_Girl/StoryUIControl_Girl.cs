@@ -13,9 +13,14 @@ public class StoryUIControl_Girl : MonoBehaviour
     public static bool isStoryStart = true;
     public static bool isStoryEnding = false;
 
+    [Header("TransitionUI")]
+    public GameObject transitionUI;
+    public static bool isTransition = true;
+
     void Update()
     {
         dialogueUI.SetActive(isDialogue);
         storyUI.SetActive(isStoryStart || isStoryEnding);
+        transitionUI.SetActive(isTransition);
     }
 }
