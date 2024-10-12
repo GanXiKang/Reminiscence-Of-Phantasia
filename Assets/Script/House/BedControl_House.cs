@@ -8,11 +8,6 @@ public class BedControl_House : MonoBehaviour
     public static bool isGoStoryWorld = false;
     public static int _storyNum = 0;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         StoryWorld();
