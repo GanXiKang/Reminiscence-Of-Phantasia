@@ -113,13 +113,16 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     }
     void ButtonCoroutineActive()
     {
-        if (StoryUIControl_Girl.isStoryStart)
+        if (_page != 2) return;
         {
-            buttonCoroutine.SetActive(true);
-        }
-        else if (StoryUIControl_Girl.isStoryEnding)
-        {
-            buttonCoroutine.SetActive(true);
+            if (StoryUIControl_Girl.isStoryStart)
+            {
+                buttonCoroutine.SetActive(true);
+            }
+            else if (StoryUIControl_Girl.isStoryEnding)
+            {
+                buttonCoroutine.SetActive(true);
+            }
         }
     }
     void ChangePage()
