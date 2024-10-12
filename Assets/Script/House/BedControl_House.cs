@@ -24,6 +24,7 @@ public class BedControl_House : MonoBehaviour
         if (isGoStoryWorld)
         {
             isGoStoryWorld = false;
+            TransitionUIControl.isTransitionUIAnim_In = true;
             Invoke("GoToStoryWorld", 2f);
         }
     }
