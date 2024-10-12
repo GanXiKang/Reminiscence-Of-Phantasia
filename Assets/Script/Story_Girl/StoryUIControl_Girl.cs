@@ -15,12 +15,11 @@ public class StoryUIControl_Girl : MonoBehaviour
 
     [Header("TransitionUI")]
     public GameObject transitionUI;
-    public static bool isTransition;
 
     void Update()
     {
         dialogueUI.SetActive(isDialogue);
         storyUI.SetActive(isStoryStart || isStoryEnding);
-        transitionUI.SetActive(isTransition);
+        transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
     }
 }

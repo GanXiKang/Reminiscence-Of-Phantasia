@@ -35,7 +35,6 @@ public class TransitionUIControl : MonoBehaviour
             if (animationTime >= animationDuration)
             {
                 isTransitionUIAnim_In = false;
-                StoryUIControl_Girl.isTransition = false;
                 animationTime = 0f;
             }
         }
@@ -49,7 +48,6 @@ public class TransitionUIControl : MonoBehaviour
             if (animationTime >= animationDuration)
             {
                 isTransitionUIAnim_Out = false;
-                StoryUIControl_Girl.isTransition = false;
                 animationTime = 0f;
             }
         }
