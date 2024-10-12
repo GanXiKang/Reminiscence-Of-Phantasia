@@ -4,41 +4,47 @@ using UnityEngine;
 
 public class TransitionUIControl : MonoBehaviour
 {
+    [Header("Scale")]
     public Vector3 startScale = new Vector3(350f, 200f, 1f);
     public Vector3 targetScale = new Vector3(19.5f, 11f, 1f);
     public float animationDuration = 1f;
-    private bool isAnimating = false;
-    private float animationTime = 0f;
+    public static  bool isTransitionUIAnim_In = false;
+    public static bool isTransitionUIAnim_Out = false;
+    float animationTime = 0f;
 
     void Start()
     {
-        transform.localScale = startScale;
+        transform.localScale = targetScale;
+        isTransitionUIAnim_Out = true;
     }
 
     void Update()
     {
-        // 檢查是否應該啟動動畫
-        if (isAnimating)
+        if (isTransitionUIAnim_In)
         {
-            // 增加時間，並確保時間不會超過動畫持續時間
             animationTime += Time.deltaTime;
             float t = animationTime / animationDuration;
 
-            // 使用 Lerp 將物件的縮放從 startScale 漸變到 targetScale
             transform.localScale = Vector3.Lerp(startScale, targetScale, t);
 
-            // 當動畫結束時，停止動畫
             if (animationTime >= animationDuration)
             {
-                isAnimating = false;
+                isTransitionUIAnim_In = false;
+                animationTime = 0f;
             }
         }
-    }
+        if (isTransitionUIAnim_Out)
+        {
+            animationTime += Time.deltaTime;
+            float t = animationTime / animationDuration;
 
-    // 調用此方法以啟動動畫
-    public void StartScalingAnimation()
-    {
-        isAnimating = true;
-        animationTime = 0f; // 重置動畫時間
+            transform.localScale = Vector3.Lerp(targetScale, startScale, t);
+
+            if (animationTime >= animationDuration)
+            {
+                isTransitionUIAnim_Out = false;
+                animationTime = 0f;
+            }
+        }
     }
 }
