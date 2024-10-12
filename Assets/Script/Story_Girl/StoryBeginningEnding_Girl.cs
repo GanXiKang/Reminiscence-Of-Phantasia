@@ -168,8 +168,13 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         else if (StoryUIControl_Girl.isStoryEnding)
         {
             TransitionUIControl.isTransitionUIAnim_In = true;
-            SceneManager.LoadScene(1);
+            Invoke("GotoHouse", 1f);
         }
+    }
+
+    void GoToHouse()
+    {
+        SceneManager.LoadScene(1);
     }
 
     IEnumerator StorySystemUIDisappear(CanvasGroup canvasGroup)
