@@ -13,6 +13,9 @@ public class UIControl_House : MonoBehaviour
     public static bool isCloseLoadingUI = false;
     public static bool isOpenLoadingUI = false;
 
+    [Header("TransitionUI")]
+    public GameObject transitionUI;
+
     void Start()
     {
         isCloseLoadingUI = true;
@@ -20,6 +23,8 @@ public class UIControl_House : MonoBehaviour
 
     void Update()
     {
+        transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
+
         LoadingUI();
         CloseLoadingUI();
         OpenLoadingUI();
