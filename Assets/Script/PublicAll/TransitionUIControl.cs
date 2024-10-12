@@ -14,8 +14,8 @@ public class TransitionUIControl : MonoBehaviour
 
     void Start()
     {
-        transform.localScale = targetScale;
-        isTransitionUIAnim_Out = true;
+        //transform.localScale = targetScale;
+        //isTransitionUIAnim_Out = true;
     }
 
     void Update()
