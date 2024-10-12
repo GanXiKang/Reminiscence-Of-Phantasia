@@ -7,28 +7,27 @@ public class UIAboveObject_House : MonoBehaviour
 {
     [Header("Workbench")]
     public Transform workbench;
-    public RectTransform workbenchHint;
     public Vector3 workbenchOffset;
 
     [Header("Door")]
     public Transform door;
-    public RectTransform doorHint;
     public Vector3 doorOffset;
 
     [Header("Bed")]
     public Transform bed;
-    public RectTransform bedHint;
     public Vector3 bedOffset;
 
     [Header("Bookcase")]
     public Transform bookcase;
-    public RectTransform bookcaseHint;
     public Vector3 bookcaseOffset;
 
     [Header("Showcase")]
     public Transform showcase;
-    public RectTransform showcaseHint;
     public Vector3 showcaseOffset;
+
+    [Header("Hint")]
+    public RectTransform hint;
+    public Text hintName;
 
     [Header("DialogBox")]
     public GameObject dialogBox;
@@ -46,20 +45,20 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Hint()
     {
-        Vector3 workbenchPos = workbench.position + workbenchOffset;
-        workbenchHint.position = workbenchPos;
+        //Vector3 workbenchPos = workbench.position + workbenchOffset;
+        //workbenchHint.position = workbenchPos;
 
-        Vector3 doorPos = door.position + doorOffset;
-        doorHint.position = doorPos;
+        //Vector3 doorPos = door.position + doorOffset;
+        //doorHint.position = doorPos;
 
-        Vector3 bedPos = bed.position + bedOffset;
-        bedHint.position = bedPos;
+        //Vector3 bedPos = bed.position + bedOffset;
+        //bedHint.position = bedPos;
 
-        Vector3 bookcasePos = bookcase.position + bookcaseOffset;
-        bookcaseHint.position = bookcasePos;
+        //Vector3 bookcasePos = bookcase.position + bookcaseOffset;
+        //bookcaseHint.position = bookcasePos;
 
-        Vector3 showcasePos = showcase.position + showcaseOffset;
-        showcaseHint.position = showcasePos;
+        //Vector3 showcasePos = showcase.position + showcaseOffset;
+        //showcaseHint.position = showcasePos;
     }
     void Dialog()
     {
