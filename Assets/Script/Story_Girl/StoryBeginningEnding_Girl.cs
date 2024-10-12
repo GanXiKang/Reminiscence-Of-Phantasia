@@ -167,6 +167,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         }
         else if (StoryUIControl_Girl.isStoryEnding)
         {
+            TransitionUIControl.isTransitionUIAnim_In = true;
             SceneManager.LoadScene(1);
         }
     }
