@@ -5,17 +5,22 @@ using UnityEngine;
 public class TransitionUIControl : MonoBehaviour
 {
     [Header("Scale")]
-    public Vector3 startScale = new Vector3(350f, 200f, 1f);
-    public Vector3 targetScale = new Vector3(19.5f, 11f, 1f);
+    public Vector3 bigScale = new Vector3(350f, 200f, 1f);
+    public Vector3 smallScale = new Vector3(19.5f, 11f, 1f);
     public float animationDuration = 0.8f;
     public static  bool isTransitionUIAnim_In = false;
     public static bool isTransitionUIAnim_Out = false;
     float animationTime = 0f;
 
+    public bool isAnimStart;
+
     void Start()
     {
-        //transform.localScale = targetScale;
-        //isTransitionUIAnim_Out = true;
+        if (isAnimStart)
+        {
+            transform.localScale = smallScale;
+            isTransitionUIAnim_Out = true;
+        }
     }
 
     void Update()
@@ -25,7 +30,7 @@ public class TransitionUIControl : MonoBehaviour
             animationTime += Time.deltaTime;
             float t = animationTime / animationDuration;
 
-            transform.localScale = Vector3.Lerp(startScale, targetScale, t);
+            transform.localScale = Vector3.Lerp(bigScale, smallScale, t);
 
             if (animationTime >= animationDuration)
             {
@@ -38,7 +43,7 @@ public class TransitionUIControl : MonoBehaviour
             animationTime += Time.deltaTime;
             float t = animationTime / animationDuration;
 
-            transform.localScale = Vector3.Lerp(targetScale, startScale, t);
+            transform.localScale = Vector3.Lerp(smallScale, bigScale, t);
 
             if (animationTime >= animationDuration)
             {
