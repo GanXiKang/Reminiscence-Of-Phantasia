@@ -15,7 +15,7 @@ public class StoryUIControl_Girl : MonoBehaviour
 
     [Header("TransitionUI")]
     public GameObject transitionUI;
-    public static bool isTransition = true;
+    public static bool isTransition;
 
     void Update()
     {
