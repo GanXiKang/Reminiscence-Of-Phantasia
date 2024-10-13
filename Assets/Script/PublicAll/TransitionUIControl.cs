@@ -15,7 +15,7 @@ public class TransitionUIControl : MonoBehaviour
     void Start()
     {
         transform.localScale = smallScale;
-        isTransitionUIAnim_In = false
+        isTransitionUIAnim_In = false;
         isTransitionUIAnim_Out = true;
     }
 
