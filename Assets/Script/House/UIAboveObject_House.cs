@@ -47,6 +47,7 @@ public class UIAboveObject_House : MonoBehaviour
     {
         Vector3 workbenchPos = workbench.position + workbenchOffset;
         hint.position = workbenchPos;
+        hintName.text = "นคื๗ล_";
 
         //Vector3 doorPos = door.position + doorOffset;
         //doorHint.position = doorPos;
