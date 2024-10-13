@@ -8,19 +8,15 @@ public class TransitionUIControl : MonoBehaviour
     public Vector3 bigScale = new Vector3(350f, 200f, 1f);
     public Vector3 smallScale = new Vector3(19.5f, 11f, 1f);
     public float animationDuration = 1f;
-    public static  bool isTransitionUIAnim_In = false;
-    public static bool isTransitionUIAnim_Out = false;
+    public static  bool isTransitionUIAnim_In;
+    public static bool isTransitionUIAnim_Out;
     float animationTime = 0f;
-
-    public bool isAnimStart;
 
     void Start()
     {
-        if (isAnimStart)
-        {
-            transform.localScale = smallScale;
-            isTransitionUIAnim_Out = true;
-        }
+        transform.localScale = smallScale;
+        isTransitionUIAnim_In = false
+        isTransitionUIAnim_Out = true;
     }
 
     void Update()
