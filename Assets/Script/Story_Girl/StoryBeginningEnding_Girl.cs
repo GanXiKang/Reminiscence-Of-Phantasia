@@ -10,6 +10,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
+    public AudioClip streetBGM;
     public AudioClip page, coroutine;
 
     [Header("UI")]
@@ -155,6 +156,9 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         BGM.PlayOneShot(coroutine);
         if (StoryUIControl_Girl.isStoryStart)
         {
+            BGM.Stop();
+            BGM.clip = streetBGM;
+            BGM.Play();
             StartCoroutine(StorySystemUIDisappear(canvasGroup));
         }
         else if (StoryUIControl_Girl.isStoryEnding)
