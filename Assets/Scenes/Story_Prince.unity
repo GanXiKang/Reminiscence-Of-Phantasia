@@ -1651,8 +1651,6 @@ GameObject:
   - component: {fileID: 284429027}
   - component: {fileID: 284429026}
   - component: {fileID: 284429025}
-  - component: {fileID: 284429024}
-  - component: {fileID: 284429023}
   - component: {fileID: 284429022}
   m_Layer: 0
   m_Name: Player
@@ -1682,33 +1680,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &284429023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284429021}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83aea22ac54dfc34cada1687a8e07a7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 0, g: 0.85656834, b: 1, a: 1}
-  _lerpSpeed: 1
---- !u!114 &284429024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284429021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2963395d794ac664a94ed98a7218487c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &284429025
 MonoBehaviour:
   m_ObjectHideFlags: 0
