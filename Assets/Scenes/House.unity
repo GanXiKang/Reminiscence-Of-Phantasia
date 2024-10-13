@@ -1998,7 +1998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290596003}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000000025989022, y: 0.99705917, z: -0.07663595, w: 0.000000033812587}
+  m_LocalRotation: {x: -0.0000000025989022, y: 0.99705917, z: -0.07663595, w: -0.000000033812587}
   m_LocalPosition: {x: -19.7, y: 3.3400002, z: 7.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3949,7 +3949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531467955}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000007450581, y: -0.000000047710323, z: 0.000000007377806, w: 1}
+  m_LocalRotation: {x: -0.000000007450581, y: 0.000000047710323, z: -0.000000007377806, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5164,7 +5164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721745899}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.02864103, y: -0.000000008117924, z: 0.0000000010182228, w: 0.9995898}
+  m_LocalRotation: {x: -0.02864103, y: 0.000000008117924, z: -0.0000000010182228, w: 0.9995898}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8341,6 +8341,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4288532161449683280, guid: 6e4f9e87922641544b29bf5b2306ab35, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24bb821b7ea7ef1439c746c1c61b02ff, type: 2}
+    - target: {fileID: -4126378259571453917, guid: 6e4f9e87922641544b29bf5b2306ab35, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24bb821b7ea7ef1439c746c1c61b02ff, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e4f9e87922641544b29bf5b2306ab35, type: 3}
       propertyPath: m_Name
       value: Momotaro
@@ -8633,7 +8641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122881270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.028831515, y: -0.000000033749483, z: 0.0000000062201333, w: 0.99958426}
+  m_LocalRotation: {x: 0.028831515, y: 0.000000033749483, z: -0.0000000062201333, w: 0.99958426}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
