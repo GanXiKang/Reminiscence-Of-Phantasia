@@ -3463,6 +3463,7 @@ GameObject:
   - component: {fileID: 598106283}
   - component: {fileID: 598106282}
   - component: {fileID: 598106281}
+  - component: {fileID: 598106284}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -3556,6 +3557,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598106278}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &598106284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598106278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4921d80281764404d8d8eeece8017dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goToThatScene: 2
+  exitUI: {fileID: 422457572}
+  bar: {fileID: 875073299}
+  sceneName: {fileID: 1896846465}
 --- !u!1 &620416227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,6 +4155,7 @@ GameObject:
   - component: {fileID: 650476551}
   - component: {fileID: 650476550}
   - component: {fileID: 650476549}
+  - component: {fileID: 650476552}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -4231,6 +4249,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650476546}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &650476552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650476546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4921d80281764404d8d8eeece8017dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goToThatScene: 2
+  exitUI: {fileID: 0}
+  bar: {fileID: 0}
+  sceneName: {fileID: 0}
 --- !u!1 &655433312
 GameObject:
   m_ObjectHideFlags: 0
@@ -7638,6 +7672,7 @@ GameObject:
   - component: {fileID: 1241297322}
   - component: {fileID: 1241297321}
   - component: {fileID: 1241297320}
+  - component: {fileID: 1241297323}
   m_Layer: 0
   m_Name: Exit_Mountain
   m_TagString: Untagged
@@ -7731,6 +7766,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241297317}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1241297323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241297317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4921d80281764404d8d8eeece8017dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goToThatScene: 3
+  exitUI: {fileID: 422457572}
+  bar: {fileID: 875073299}
+  sceneName: {fileID: 1896846465}
 --- !u!1 &1241639816
 GameObject:
   m_ObjectHideFlags: 0
@@ -9050,6 +9101,7 @@ GameObject:
   - component: {fileID: 1373203109}
   - component: {fileID: 1373203108}
   - component: {fileID: 1373203107}
+  - component: {fileID: 1373203110}
   m_Layer: 0
   m_Name: Exit_RiverSide
   m_TagString: Untagged
@@ -9143,6 +9195,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373203104}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1373203110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373203104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4921d80281764404d8d8eeece8017dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goToThatScene: 1
+  exitUI: {fileID: 422457572}
+  bar: {fileID: 875073299}
+  sceneName: {fileID: 1896846465}
 --- !u!1 &1373643737
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,8 +10399,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 265347550}
-  - {fileID: 598106279}
   - {fileID: 766910541}
+  - {fileID: 598106279}
   m_Father: {fileID: 52675480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1489430583
@@ -10452,6 +10520,7 @@ GameObject:
   - component: {fileID: 1491601998}
   - component: {fileID: 1491601997}
   - component: {fileID: 1491601996}
+  - component: {fileID: 1491601999}
   m_Layer: 0
   m_Name: Exit_Plaza
   m_TagString: Untagged
@@ -10545,6 +10614,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491601993}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1491601999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491601993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4921d80281764404d8d8eeece8017dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goToThatScene: 4
+  exitUI: {fileID: 422457572}
+  bar: {fileID: 875073299}
+  sceneName: {fileID: 1896846465}
 --- !u!1 &1493192471
 GameObject:
   m_ObjectHideFlags: 0
@@ -11425,12 +11510,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1483636351}
-  - {fileID: 650476547}
   - {fileID: 1982125727}
   - {fileID: 719484014}
   - {fileID: 1226380806}
   - {fileID: 895021466}
   - {fileID: 1299328275}
+  - {fileID: 650476547}
   m_Father: {fileID: 52675480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614474191
@@ -12120,8 +12205,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 69418664}
-  - {fileID: 1899247805}
   - {fileID: 918279278}
+  - {fileID: 1899247805}
   m_Father: {fileID: 52675480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889250576
@@ -12383,6 +12468,7 @@ GameObject:
   - component: {fileID: 1899247809}
   - component: {fileID: 1899247808}
   - component: {fileID: 1899247807}
+  - component: {fileID: 1899247810}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -12476,6 +12562,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899247804}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1899247810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899247804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4921d80281764404d8d8eeece8017dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goToThatScene: 2
+  exitUI: {fileID: 0}
+  bar: {fileID: 0}
+  sceneName: {fileID: 0}
 --- !u!1 &1906421672
 GameObject:
   m_ObjectHideFlags: 0
