@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class StoryExitControl_Momotaro : MonoBehaviour
 {
     GameObject player;
+
+    [Header("Value")]
     public int _goToThatScene;
+    public static int _changeSceneNum;
+    bool isGoScene2 = true;
 
     [Header("ExitUI")]
     public GameObject exitUI;
@@ -45,13 +49,30 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                 switch (_goToThatScene)
                 {
                     case 1:
-                        StoryLoadingScene_Girl.isLeftOpen = true;
-                        StoryGameControl_Girl.isInStreet = true;
+                        isGoScene2 = true;
+                        StoryLoadingScene_Momotaro.isLeftOpen = true;
+                        //StoryGameControl_Girl.isInStreet = true;
                         break;
 
                     case 2:
+                        if (isGoScene2)
+                        {
+                            StoryLoadingScene_Girl.isRightOpen = true;
+                            isGoScene2 = false;
+                        }
+                        else
+                        {
+                            StoryLoadingScene_Momotaro.isLeftOpen = true;
+                        }
+                        //StoryGameControl_Girl.isInStreet = false;
+                        break;
+
+                    case 3:
                         StoryLoadingScene_Girl.isRightOpen = true;
-                        StoryGameControl_Girl.isInStreet = false;
+                        break;
+
+                    case 4:
+                        StoryLoadingScene_Girl.isRightOpen = true;
                         break;
                 }
             }
@@ -66,24 +87,24 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (!StoryInteractableControl_Girl.isWearingLittleRedHood)
+            isExit = true;
+            switch (_goToThatScene)
             {
-                StoryUIControl_Girl.isDialogue = true;
-                StoryDialogueControl_Girl._textCount = 24;
-            }
-            else
-            {
-                isExit = true;
-                switch (_goToThatScene)
-                {
-                    case 1:
-                        sceneName.text = "街道";
-                        break;
+                case 1:
+                    sceneName.text = "河邊";
+                    break;
 
-                    case 2:
-                        sceneName.text = "森林";
-                        break;
-                }
+                case 2:
+                    sceneName.text = "森林";
+                    break;
+
+                case 3:
+                    sceneName.text = "山脚";
+                    break;
+
+                case 4:
+                    sceneName.text = "廣場";
+                    break;
             }
         }
     }
