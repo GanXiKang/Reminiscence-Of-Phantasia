@@ -172,35 +172,35 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
 
     void ChangeScene()
     {
+        riverSide.SetActive(false);
+        forest.SetActive(false);
+        mountain.SetActive(false);
+        plaza.SetActive(false);
         switch (StoryExitControl_Momotaro._changeSceneNum)
         {
             case 1:
                 riverSide.SetActive(true);
-                forest.SetActive(false);
-                mountain.SetActive(false);
-                plaza.SetActive(false);
                 BGM.Stop();
                 BGM.clip = riverSideBGM;
                 BGM.Play();
                 break;
 
             case 2:
-                riverSide.SetActive(false);
                 forest.SetActive(true);
-                mountain.SetActive(false);
-                plaza.SetActive(false);
                 BGM.Stop();
                 BGM.clip = forestBGM;
                 BGM.Play();
                 break;
 
             case 3:
+                mountain.SetActive(true);
                 BGM.Stop();
                 BGM.clip = mountainBGM;
                 BGM.Play();
                 break;
 
             case 4:
+                plaza.SetActive(true);
                 BGM.Stop();
                 BGM.clip = plazaBGM;
                 BGM.Play();
