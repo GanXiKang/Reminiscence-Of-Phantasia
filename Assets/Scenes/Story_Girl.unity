@@ -10675,7 +10675,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -17930,7 +17930,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -42744,7 +42744,6 @@ MonoBehaviour:
   bigScale: {x: 350, y: 200, z: 1}
   smallScale: {x: 19.5, y: 11, z: 1}
   animationDuration: 1
-  isAnimStart: 1
 --- !u!114 &2114196005
 MonoBehaviour:
   m_ObjectHideFlags: 0
