@@ -6582,6 +6582,7 @@ GameObject:
   - component: {fileID: 1631694435}
   - component: {fileID: 1631694437}
   - component: {fileID: 1631694436}
+  - component: {fileID: 1631694438}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -6714,6 +6715,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41c23709f1aa6b44dbe52ace2710622d, type: 3}
   - {fileID: 21300000, guid: c56f50ff12502244b9fb6bbaf578cfea, type: 3}
   getMoveItem: {fileID: 1236206429}
+--- !u!114 &1631694438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631694434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26a3a94242036144acd7dc9b82a5684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introduce: {fileID: 1722445372}
+  panel: {fileID: 397647358}
+  content: {fileID: 1230029261}
+  buttonTransform: []
 --- !u!1 &1640057674
 GameObject:
   m_ObjectHideFlags: 0
