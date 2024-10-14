@@ -98,11 +98,36 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
         {
             isLeftOpen = false;
             yield return new WaitForSeconds(0.5f);
-            //street.SetActive(true);
-            //forest.SetActive(false);
-            //BGM.Stop();
-            //BGM.clip = streetBGM;
-            //BGM.Play();
+            switch (StoryExitControl_Momotaro._changeSceneNum)
+            {
+                case 1:
+                    riverSide.SetActive(true);
+                    forest.SetActive(false);
+                    mountain.SetActive(false);
+                    plaza.SetActive(false);
+                    BGM.Stop();
+                    BGM.clip = riverSideBGM;
+                    BGM.Play();
+                    break;
+
+                case 2:
+                    BGM.Stop();
+                    BGM.clip = forestBGM;
+                    BGM.Play();
+                    break;
+
+                case 3:
+                    BGM.Stop();
+                    BGM.clip = mountainBGM;
+                    BGM.Play();
+                    break;
+
+                case 4:
+                    BGM.Stop();
+                    BGM.clip = plazaBGM;
+                    BGM.Play();
+                    break;
+            }    
             isRightClose = true;
         }
     }
