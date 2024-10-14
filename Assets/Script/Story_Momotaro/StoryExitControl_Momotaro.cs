@@ -55,15 +55,15 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                         break;
 
                     case 2:
-                        if (isGoScene2)
-                        {
-                            isGoScene2 = false;
+                        //if (isGoScene2)
+                        //{
+                        //    isGoScene2 = false;
                             StoryLoadingScene_Girl.isRightOpen = true;
-                        }
-                        else
-                        {
-                            StoryLoadingScene_Momotaro.isLeftOpen = true;
-                        }
+                        //}
+                        //else
+                        //{
+                        //    StoryLoadingScene_Momotaro.isLeftOpen = true;
+                        //}
                         break;
 
                     case 3:
