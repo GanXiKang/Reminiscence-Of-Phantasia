@@ -64,7 +64,6 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                         {
                             StoryLoadingScene_Momotaro.isLeftOpen = true;
                         }
-                        //StoryGameControl_Girl.isInStreet = false;
                         break;
 
                     case 3:
