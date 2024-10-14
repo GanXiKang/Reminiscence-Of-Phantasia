@@ -6632,22 +6632,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 1836693494}
-  page: {fileID: 0}
-  coroutine: {fileID: 0}
+  page: {fileID: 8300000, guid: 7c294b8232baa454394e1b9dcdfa16c7, type: 3}
+  coroutine: {fileID: 8300000, guid: 4c3665a567978cb478c4da0b7ebff0d3, type: 3}
   isTemperature: 0
   isGoddess: 0
   isChange: 0
   isWind: 0
   isPerformance: 0
-  isTime: 0
-  isSupplies: 0
-  teachContent: []
-  teachImage: []
-  teachUI: {fileID: 0}
-  window: {fileID: 0}
-  background: {fileID: 0}
-  content: {fileID: 0}
-  teachButton: []
+  isTime: 1
+  isSupplies: 1
+  teachContent:
+  - {fileID: 0}
+  - {fileID: 4900000, guid: b5897b401621c85418500ab868f39080, type: 3}
+  - {fileID: 4900000, guid: 466998e2e3e7b2b479bbff26a47de475, type: 3}
+  - {fileID: 4900000, guid: 869f3681ef31c5c4b8881a1b899ef1ad, type: 3}
+  - {fileID: 4900000, guid: d92a0140804386b439be64719ed9d248, type: 3}
+  - {fileID: 4900000, guid: 44e94451822e4c5449cb9dae02defe3c, type: 3}
+  - {fileID: 4900000, guid: 05883824750d2bb4bbdbebd65506b487, type: 3}
+  - {fileID: 4900000, guid: 2b68c276e3ca9a740bd219a596271997, type: 3}
+  teachImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  teachUI: {fileID: 1890963397}
+  window: {fileID: 830165487}
+  background: {fileID: 408569481}
+  content: {fileID: 998913527}
+  teachButton:
+  - {fileID: 2127279894}
+  - {fileID: 296174013}
+  - {fileID: 1982588033}
   _openSpeed: 1
 --- !u!114 &1631694437
 MonoBehaviour:
@@ -6662,15 +6681,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 1836693494}
-  open: {fileID: 0}
-  item: {fileID: 0}
-  background: {fileID: 0}
-  bag: {fileID: 0}
+  open: {fileID: 8300000, guid: beeaffd69891c5c4aa34e30a9dc5f255, type: 3}
+  item: {fileID: 8300000, guid: 6360b5731e28529498d3754351125ddc, type: 3}
+  background: {fileID: 769774030}
+  bag: {fileID: 2001287594}
   _speed: 2
-  itemButton: []
-  itemBG: []
-  itemSprite: []
-  getMoveItem: {fileID: 0}
+  itemButton:
+  - {fileID: 1744516201}
+  - {fileID: 575326684}
+  - {fileID: 279483704}
+  - {fileID: 15391621}
+  - {fileID: 1143743654}
+  itemBG:
+  - {fileID: 1139075539}
+  - {fileID: 858682977}
+  - {fileID: 1948914223}
+  - {fileID: 889490986}
+  - {fileID: 188611441}
+  itemSprite:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 70bfbaac0a4e0da4bb05d372c9e98222, type: 3}
+  - {fileID: 21300000, guid: a6f5ec487a5197249a69921e17fd3003, type: 3}
+  - {fileID: 21300000, guid: 09026da81ed021f489feaa53a0453f0e, type: 3}
+  - {fileID: 21300000, guid: 95ec298a4190f1242ac4652d812d6e88, type: 3}
+  - {fileID: 21300000, guid: cbd403d142bc9d140a78124923545eb4, type: 3}
+  - {fileID: 21300000, guid: a42e677b54b9d4043b92280ac7dc4281, type: 3}
+  - {fileID: 21300000, guid: e54877b7fe8f6c94caa092e61042be87, type: 3}
+  - {fileID: 21300000, guid: aaad5879e65511740b84ba2500f7d27f, type: 3}
+  - {fileID: 21300000, guid: c8d3abfa0a4df7d48a99a668069bc955, type: 3}
+  - {fileID: 21300000, guid: fe9586fedc4600e4e96d019d3387f804, type: 3}
+  - {fileID: 21300000, guid: 296211e938b3f354597c922e64dcecb6, type: 3}
+  - {fileID: 21300000, guid: 41c23709f1aa6b44dbe52ace2710622d, type: 3}
+  - {fileID: 21300000, guid: c56f50ff12502244b9fb6bbaf578cfea, type: 3}
+  getMoveItem: {fileID: 1236206429}
 --- !u!1 &1640057674
 GameObject:
   m_ObjectHideFlags: 0
