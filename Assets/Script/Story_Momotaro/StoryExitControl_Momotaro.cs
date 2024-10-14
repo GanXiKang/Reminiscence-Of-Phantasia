@@ -39,9 +39,11 @@ public class StoryExitControl_Momotaro : MonoBehaviour
         exitUI.transform.position = screenPos;
     }
     void Bar()
-    {
+    { 
         if (isExit)
         {
+            if (_goToThatScene != _changeSceneNum) return;
+
             bar.fillAmount += _barSpeed * Time.deltaTime / 2;
             if (bar.fillAmount == 1)
             {
@@ -73,7 +75,6 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                         StoryLoadingScene_Momotaro.isRightOpen = true;
                         break;
                 }
-                _changeSceneNum = _goToThatScene;
             }
         }
         else
@@ -105,6 +106,7 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                     sceneName.text = "èVàˆ";
                     break;
             }
+            _changeSceneNum = _goToThatScene;
         }
     }
     private void OnTriggerExit(Collider other)
