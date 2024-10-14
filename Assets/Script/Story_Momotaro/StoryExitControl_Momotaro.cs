@@ -88,6 +88,7 @@ public class StoryExitControl_Momotaro : MonoBehaviour
         if (other.tag == "Player")
         {
             isExit = true;
+            _changeSceneNum = _goToThatScene;
             switch (_goToThatScene)
             {
                 case 1:
