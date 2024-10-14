@@ -3463,7 +3463,6 @@ GameObject:
   - component: {fileID: 598106283}
   - component: {fileID: 598106282}
   - component: {fileID: 598106281}
-  - component: {fileID: 598106280}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -3486,22 +3485,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1487504410}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &598106280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598106278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 422457572}
-  bar: {fileID: 875073299}
-  sceneName: {fileID: 1896846465}
 --- !u!65 &598106281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4106,7 +4089,6 @@ GameObject:
   - component: {fileID: 650476551}
   - component: {fileID: 650476550}
   - component: {fileID: 650476549}
-  - component: {fileID: 650476548}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -4129,22 +4111,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1597263628}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &650476548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650476546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 0}
-  bar: {fileID: 0}
-  sceneName: {fileID: 0}
 --- !u!65 &650476549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7623,7 +7589,6 @@ GameObject:
   - component: {fileID: 1241297322}
   - component: {fileID: 1241297321}
   - component: {fileID: 1241297320}
-  - component: {fileID: 1241297319}
   m_Layer: 0
   m_Name: Exit_Mountain
   m_TagString: Untagged
@@ -7646,22 +7611,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1666230236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1241297319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241297317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 0}
-  bar: {fileID: 0}
-  sceneName: {fileID: 0}
 --- !u!65 &1241297320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9052,7 +9001,6 @@ GameObject:
   - component: {fileID: 1373203109}
   - component: {fileID: 1373203108}
   - component: {fileID: 1373203107}
-  - component: {fileID: 1373203106}
   m_Layer: 0
   m_Name: Exit_RiverSide
   m_TagString: Untagged
@@ -9075,22 +9023,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1666230236}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1373203106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373203104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 0}
-  bar: {fileID: 0}
-  sceneName: {fileID: 0}
 --- !u!65 &1373203107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10471,7 +10403,6 @@ GameObject:
   - component: {fileID: 1491601998}
   - component: {fileID: 1491601997}
   - component: {fileID: 1491601996}
-  - component: {fileID: 1491601995}
   m_Layer: 0
   m_Name: Exit_Plaza
   m_TagString: Untagged
@@ -10494,22 +10425,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1666230236}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1491601995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491601993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 0}
-  bar: {fileID: 0}
-  sceneName: {fileID: 0}
 --- !u!65 &1491601996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12419,7 +12334,6 @@ GameObject:
   - component: {fileID: 1899247809}
   - component: {fileID: 1899247808}
   - component: {fileID: 1899247807}
-  - component: {fileID: 1899247806}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -12442,22 +12356,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1867473636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1899247806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899247804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 0}
-  bar: {fileID: 0}
-  sceneName: {fileID: 0}
 --- !u!65 &1899247807
 BoxCollider:
   m_ObjectHideFlags: 0
