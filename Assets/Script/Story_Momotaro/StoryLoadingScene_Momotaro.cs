@@ -98,36 +98,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
         {
             isLeftOpen = false;
             yield return new WaitForSeconds(0.5f);
-            switch (StoryExitControl_Momotaro._changeSceneNum)
-            {
-                case 1:
-                    riverSide.SetActive(true);
-                    forest.SetActive(false);
-                    mountain.SetActive(false);
-                    plaza.SetActive(false);
-                    BGM.Stop();
-                    BGM.clip = riverSideBGM;
-                    BGM.Play();
-                    break;
-
-                case 2:
-                    BGM.Stop();
-                    BGM.clip = forestBGM;
-                    BGM.Play();
-                    break;
-
-                case 3:
-                    BGM.Stop();
-                    BGM.clip = mountainBGM;
-                    BGM.Play();
-                    break;
-
-                case 4:
-                    BGM.Stop();
-                    BGM.clip = plazaBGM;
-                    BGM.Play();
-                    break;
-            }    
+            ChangeScene();
             isRightClose = true;
         }
     }
@@ -175,11 +146,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
         {
             isRightOpen = false;
             yield return new WaitForSeconds(0.5f);
-            //forest.SetActive(true);
-            //street.SetActive(false);
-            //BGM.Stop();
-            //BGM.clip = forestBGM;
-            //BGM.Play();
+            ChangeScene();
             isLeftClose = true;
         }
     }
@@ -200,6 +167,44 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
             isPlayOnce = true;
             isRightClose = false;
             isLoading = false;
+        }
+    }
+
+    void ChangeScene()
+    {
+        switch (StoryExitControl_Momotaro._changeSceneNum)
+        {
+            case 1:
+                riverSide.SetActive(true);
+                forest.SetActive(false);
+                mountain.SetActive(false);
+                plaza.SetActive(false);
+                BGM.Stop();
+                BGM.clip = riverSideBGM;
+                BGM.Play();
+                break;
+
+            case 2:
+                riverSide.SetActive(false);
+                forest.SetActive(true);
+                mountain.SetActive(false);
+                plaza.SetActive(false);
+                BGM.Stop();
+                BGM.clip = forestBGM;
+                BGM.Play();
+                break;
+
+            case 3:
+                BGM.Stop();
+                BGM.clip = mountainBGM;
+                BGM.Play();
+                break;
+
+            case 4:
+                BGM.Stop();
+                BGM.clip = plazaBGM;
+                BGM.Play();
+                break;
         }
     }
 }
