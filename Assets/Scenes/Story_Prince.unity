@@ -6580,6 +6580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1631694435}
+  - component: {fileID: 1631694437}
   - component: {fileID: 1631694436}
   m_Layer: 5
   m_Name: UI
@@ -6627,27 +6628,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 1631694434}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6dc4b0b0c7cb3d438737126b0214d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 1836693494}
+  page: {fileID: 0}
+  coroutine: {fileID: 0}
+  isTemperature: 0
+  isGoddess: 0
+  isChange: 0
+  isWind: 0
+  isPerformance: 0
+  isTime: 0
+  isSupplies: 0
+  teachContent: []
+  teachImage: []
+  teachUI: {fileID: 0}
+  window: {fileID: 0}
+  background: {fileID: 0}
+  content: {fileID: 0}
+  teachButton: []
+  _openSpeed: 1
+--- !u!114 &1631694437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631694434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46039bde8a3edbd429bb76787b8a8710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: {fileID: 0}
+  BGM: {fileID: 1836693494}
   open: {fileID: 0}
   item: {fileID: 0}
   background: {fileID: 0}
   bag: {fileID: 0}
   _speed: 2
-  itemButton:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  itemBG:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  itemButton: []
+  itemBG: []
   itemSprite: []
   getMoveItem: {fileID: 0}
 --- !u!1 &1640057674
