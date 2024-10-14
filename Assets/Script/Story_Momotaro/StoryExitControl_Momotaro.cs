@@ -55,23 +55,23 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                         break;
 
                     case 2:
-                        //if (isGoScene2)
-                        //{
-                        //    isGoScene2 = false;
-                            StoryLoadingScene_Girl.isRightOpen = true;
-                        //}
-                        //else
-                        //{
-                        //    StoryLoadingScene_Momotaro.isLeftOpen = true;
-                        //}
+                        if (isGoScene2)
+                        {
+                            isGoScene2 = false;
+                            StoryLoadingScene_Momotaro.isRightOpen = true;
+                        }
+                        else
+                        {
+                            StoryLoadingScene_Momotaro.isLeftOpen = true;
+                        }
                         break;
 
                     case 3:
-                        StoryLoadingScene_Girl.isRightOpen = true;
+                        StoryLoadingScene_Momotaro.isRightOpen = true;
                         break;
 
                     case 4:
-                        StoryLoadingScene_Girl.isRightOpen = true;
+                        StoryLoadingScene_Momotaro.isRightOpen = true;
                         break;
                 }
                 _changeSceneNum = _goToThatScene;
