@@ -40,14 +40,18 @@ public class StoryItemIntroduce_Prince : MonoBehaviour
 
     void ItemIntroduceContent()
     {
-        introduceItem[1] = "\n";
-        introduceItem[2] = "\n";
-        introduceItem[3] = "\n";
-        introduceItem[4] = "\n";
-        introduceItem[5] = "\n";
-        introduceItem[6] = "\n";
-        introduceItem[7] = "\n";
-        introduceItem[8] = "\n";
-        introduceItem[9] = "\n";
+        introduceItem[1] = "玉米\n新鮮的玉米";
+        introduceItem[2] = "小麥\n還沒加工過的小麥";
+        introduceItem[3] = "奶油\n一整塊的奶油";
+        introduceItem[4] = "醬油\n瓶裝醬油";
+        introduceItem[5] = "番茄醬\n瓶裝番茄醬";
+        introduceItem[6] = "小蛋糕\n看起來很好吃";
+        introduceItem[7] = "物資箱\n拿回現在的時間吧";
+        introduceItem[8] = "寶石\n王子雕像身上的寶石";
+        introduceItem[9] = "繩索\n能夠用來抓住東西";
+        introduceItem[10] = "木板\n凹凹凸凸的";
+        introduceItem[11] = "葡萄籽\n裝有葡萄籽的紙袋";
+        introduceItem[12] = "櫻桃籽\n裝有櫻桃籽的紙袋";
+        introduceItem[13] = "美乃滋\n瓶裝美乃滋";
     }
 }
