@@ -57,8 +57,8 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                     case 2:
                         if (isGoScene2)
                         {
-                            StoryLoadingScene_Girl.isRightOpen = true;
                             isGoScene2 = false;
+                            StoryLoadingScene_Girl.isRightOpen = true;
                         }
                         else
                         {
@@ -74,6 +74,7 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                         StoryLoadingScene_Girl.isRightOpen = true;
                         break;
                 }
+                _changeSceneNum = _goToThatScene;
             }
         }
         else
@@ -87,7 +88,6 @@ public class StoryExitControl_Momotaro : MonoBehaviour
         if (other.tag == "Player")
         {
             isExit = true;
-            _changeSceneNum = _goToThatScene;
             switch (_goToThatScene)
             {
                 case 1:
