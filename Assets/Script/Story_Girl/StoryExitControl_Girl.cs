@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class StoryExitControl_Girl : MonoBehaviour
 {
     GameObject player;
+
+    [Header("Value")]
     public int _goToThatScene;
 
     [Header("ExitUI")]
