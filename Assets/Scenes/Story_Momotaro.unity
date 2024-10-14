@@ -3948,6 +3948,7 @@ GameObject:
   - component: {fileID: 638759656}
   - component: {fileID: 638759657}
   - component: {fileID: 638759658}
+  - component: {fileID: 638759659}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -4099,6 +4100,32 @@ MonoBehaviour:
   - {fileID: 158709113}
   - {fileID: 630278972}
   - {fileID: 1363022433}
+--- !u!114 &638759659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638759653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f07443f33cbae04eb659c32f32a1a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 391252026}
+  riverSideBGM: {fileID: 8300000, guid: 340f97938dcf146408bec002a95bf47f, type: 3}
+  forestBGM: {fileID: 8300000, guid: eeff5ad22071b5b42afd7ecdbaaa065c, type: 3}
+  mountainBGM: {fileID: 8300000, guid: c28d0e1310136e04ca4f8fe08bfbdce2, type: 3}
+  plazaBGM: {fileID: 8300000, guid: 3fbfa1eaebddf3c4ea460b3eeb7e4d27, type: 3}
+  switchScene: {fileID: 8300000, guid: 2ec8dd438657a574dbd4763eed0e0c4c, type: 3}
+  riverSide: {fileID: 1487504409}
+  forest: {fileID: 1666230235}
+  mountain: {fileID: 1867473635}
+  plaza: {fileID: 1597263627}
+  loadingUI: {fileID: 572892621}
+  a: {fileID: 490274958}
+  b: {fileID: 1996456439}
+  c: {fileID: 1523454541}
 --- !u!1 &650476546
 GameObject:
   m_ObjectHideFlags: 0
