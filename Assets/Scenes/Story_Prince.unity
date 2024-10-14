@@ -4144,7 +4144,6 @@ GameObject:
   - component: {fileID: 859357900}
   - component: {fileID: 859357899}
   - component: {fileID: 859357898}
-  - component: {fileID: 859357897}
   m_Layer: 0
   m_Name: Exit_Forest
   m_TagString: Untagged
@@ -4167,22 +4166,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 296686966}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &859357897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859357895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ce94a3295f62f4fa5590edea74eefd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _goToThatScene: 2
-  exitUI: {fileID: 0}
-  bar: {fileID: 0}
-  sceneName: {fileID: 0}
 --- !u!65 &859357898
 BoxCollider:
   m_ObjectHideFlags: 0
