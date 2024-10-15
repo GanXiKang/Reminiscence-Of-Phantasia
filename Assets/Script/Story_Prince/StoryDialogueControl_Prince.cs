@@ -9,7 +9,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip gun, bingo, wrong, give;
+    public AudioClip give;
 
     [Header("UITransform")]
     public Transform[] target;
