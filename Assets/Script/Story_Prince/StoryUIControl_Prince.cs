@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class StoryUIControl_Prince : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("DialogueUI")]
+    public GameObject dialogueUI;
+    public static bool isDialogue;
 
-    // Update is called once per frame
+    [Header("StoryUI")]
+    public GameObject storyUI;
+    public static bool isStoryStart = true;
+    public static bool isStoryEnding = false;
+
+    [Header("TransitionUI")]
+    public GameObject transitionUI;
+
     void Update()
     {
-        
+        dialogueUI.SetActive(isDialogue);
+        storyUI.SetActive(isStoryStart || isStoryEnding);
+        transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
     }
 }
