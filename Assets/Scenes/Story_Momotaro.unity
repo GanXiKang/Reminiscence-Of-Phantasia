@@ -3966,6 +3966,8 @@ GameObject:
   - component: {fileID: 638759657}
   - component: {fileID: 638759658}
   - component: {fileID: 638759659}
+  - component: {fileID: 638759661}
+  - component: {fileID: 638759660}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -4143,6 +4145,36 @@ MonoBehaviour:
   a: {fileID: 490274958}
   b: {fileID: 1996456439}
   c: {fileID: 1523454541}
+--- !u!114 &638759660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638759653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35850b460dcbfd4090f6fe79778cb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackScreen: {fileID: 1894241112}
+  panel: {fileID: 1414395605}
+  _screenSpeed: 3
+--- !u!114 &638759661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638759653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b1ee2a3ce51f449a61ee6d0292f612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 1840775778}
+  storyUI: {fileID: 839194242}
+  transitionUI: {fileID: 211033710}
 --- !u!1 &650476546
 GameObject:
   m_ObjectHideFlags: 0
