@@ -10,7 +10,7 @@ public class StoryUIControl_Momotaro : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart = true; 
+    public static bool isStoryStart = false; //·½±ãˆÌÐÐ
     public static bool isStoryEnding = false;
 
     [Header("TransitionUI")]

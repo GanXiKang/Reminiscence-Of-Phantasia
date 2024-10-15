@@ -10,7 +10,7 @@ public class StoryUIControl_Prince : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart = false;
+    public static bool isStoryStart = false; //·½±ãˆÌÐÐ
     public static bool isStoryEnding = false;
 
     [Header("TransitionUI")]
