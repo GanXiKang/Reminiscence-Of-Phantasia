@@ -244,7 +244,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case "End":
                 DialogurEnd();
-                StoryUIControl_Momotaro.isDialogue = false;
+                StoryUIControl_Prince.isDialogue = false;
                 yield break;
 
             case "Choose2":
@@ -286,18 +286,20 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     {
         switch (_textCount)
         {
-
+            case 1:
+                break;
         }
     }
     void DialogurEnd()
     {
         switch (_textCount)
         {
-
+            case 1:
+                break;
         }
     }
     void StoryEnd()
     {
-        StoryUIControl_Momotaro.isStoryEnding = true;
+        StoryUIControl_Prince.isStoryEnding = true;
     }
 }
