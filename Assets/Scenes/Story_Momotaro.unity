@@ -5721,21 +5721,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 391252026}
-  riverSideBGM: {fileID: 0}
-  EndingBGM: {fileID: 0}
-  page: {fileID: 0}
-  coroutine: {fileID: 0}
-  interactable: {fileID: 0}
-  buttonLeft: {fileID: 0}
-  buttonRight: {fileID: 0}
-  buttonCoroutine: {fileID: 0}
-  content: {fileID: 0}
-  background: {fileID: 0}
-  pageImages: []
-  image: {fileID: 0}
+  riverSideBGM: {fileID: 8300000, guid: 340f97938dcf146408bec002a95bf47f, type: 3}
+  EndingBGM: {fileID: 8300000, guid: 0c2e7189e45870449b785219c0713226, type: 3}
+  page: {fileID: 8300000, guid: 7c294b8232baa454394e1b9dcdfa16c7, type: 3}
+  coroutine: {fileID: 8300000, guid: 4c3665a567978cb478c4da0b7ebff0d3, type: 3}
+  interactable: {fileID: 1734415057}
+  buttonLeft: {fileID: 1051254088}
+  buttonRight: {fileID: 1889250576}
+  buttonCoroutine: {fileID: 1272656342}
+  content: {fileID: 1073645418}
+  background: {fileID: 1254084610}
+  pageImages:
+  - {fileID: 21300000, guid: ddad385e18fc3424ca5899be2abb869f, type: 3}
+  - {fileID: 21300000, guid: 51cbb42ae5de91e40a0034a9921af389, type: 3}
+  - {fileID: 21300000, guid: 247e975863e63314fa88c8f04a595949, type: 3}
+  - {fileID: 21300000, guid: 233a24f77b0a4f3479d562a7b416defe, type: 3}
+  - {fileID: 21300000, guid: 84948e6d283ae1a4892a7e0be39089da, type: 3}
+  - {fileID: 21300000, guid: 3f769356072bb894dbde94b68f26a83b, type: 3}
+  - {fileID: 21300000, guid: ca7878f69e4d9f343a306f6cb640e1f9, type: 3}
+  - {fileID: 21300000, guid: d7260dd9b886a9c42bf3dd684fd85225, type: 3}
+  - {fileID: 21300000, guid: a1117417190759f4994c3e17767f50fc, type: 3}
+  - {fileID: 21300000, guid: 1780c83ca8f13da4795dddeaf3bfb30a, type: 3}
+  - {fileID: 21300000, guid: 62868fe7d6059c349b43ae46f4d2a9a9, type: 3}
+  - {fileID: 21300000, guid: 0d85fc98c64b20346bcd1206dda48511, type: 3}
+  - {fileID: 21300000, guid: 15a80e2112bfe7747b145ef10b94ab5b, type: 3}
+  image: {fileID: 1973864500}
   storyImages: []
-  textStart: {fileID: 0}
-  textEnding: {fileID: 0}
+  textStart: {fileID: 4900000, guid: 84456c87f8879464f828f9d40d2d47a7, type: 3}
+  textEnding: {fileID: 4900000, guid: 2b4eff09d300b084ea7e63853249cc16, type: 3}
 --- !u!1 &851774196
 GameObject:
   m_ObjectHideFlags: 0
