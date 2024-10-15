@@ -5946,22 +5946,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8341b2b76ead346ba181261473287b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: {fileID: 0}
-  plazaNowBGM: {fileID: 0}
-  EndingBGM: {fileID: 0}
-  page: {fileID: 0}
-  coroutine: {fileID: 0}
-  interactable: {fileID: 0}
-  buttonLeft: {fileID: 0}
-  buttonRight: {fileID: 0}
-  buttonCoroutine: {fileID: 0}
-  content: {fileID: 0}
-  background: {fileID: 0}
-  pageImages: []
-  image: {fileID: 0}
-  storyImages: []
-  textStart: {fileID: 0}
-  textEnding: {fileID: 0}
+  BGM: {fileID: 1836693494}
+  plazaNowBGM: {fileID: 8300000, guid: 2813d049f533f434a8a8c92a386562b5, type: 3}
+  EndingBGM: {fileID: 8300000, guid: 5d243970b746eb34da70648be0a80ccf, type: 3}
+  page: {fileID: 8300000, guid: 7c294b8232baa454394e1b9dcdfa16c7, type: 3}
+  coroutine: {fileID: 8300000, guid: 4c3665a567978cb478c4da0b7ebff0d3, type: 3}
+  interactable: {fileID: 1825346710}
+  buttonLeft: {fileID: 337200291}
+  buttonRight: {fileID: 23895307}
+  buttonCoroutine: {fileID: 638268398}
+  content: {fileID: 2123310803}
+  background: {fileID: 153995459}
+  pageImages:
+  - {fileID: 21300000, guid: ddad385e18fc3424ca5899be2abb869f, type: 3}
+  - {fileID: 21300000, guid: 51cbb42ae5de91e40a0034a9921af389, type: 3}
+  - {fileID: 21300000, guid: 247e975863e63314fa88c8f04a595949, type: 3}
+  - {fileID: 21300000, guid: 233a24f77b0a4f3479d562a7b416defe, type: 3}
+  - {fileID: 21300000, guid: 84948e6d283ae1a4892a7e0be39089da, type: 3}
+  - {fileID: 21300000, guid: 3f769356072bb894dbde94b68f26a83b, type: 3}
+  - {fileID: 21300000, guid: ca7878f69e4d9f343a306f6cb640e1f9, type: 3}
+  - {fileID: 21300000, guid: d7260dd9b886a9c42bf3dd684fd85225, type: 3}
+  - {fileID: 21300000, guid: a1117417190759f4994c3e17767f50fc, type: 3}
+  - {fileID: 21300000, guid: 1780c83ca8f13da4795dddeaf3bfb30a, type: 3}
+  - {fileID: 21300000, guid: 62868fe7d6059c349b43ae46f4d2a9a9, type: 3}
+  - {fileID: 21300000, guid: 0d85fc98c64b20346bcd1206dda48511, type: 3}
+  - {fileID: 21300000, guid: 15a80e2112bfe7747b145ef10b94ab5b, type: 3}
+  image: {fileID: 321343841}
+  storyImages:
+  - {fileID: 21300000, guid: 78d7aafe94cc8414592100b8b5bab39e, type: 3}
+  - {fileID: 21300000, guid: 5414d1c301ea3aa479df38886e9d718e, type: 3}
+  - {fileID: 21300000, guid: ac6bf07b5a9daaa4fa7b6c059003768e, type: 3}
+  - {fileID: 21300000, guid: cd105f6c6fe02fb47b5af00bce2a90c3, type: 3}
+  - {fileID: 21300000, guid: c6e98666ceff09e4db3988627f5ee830, type: 3}
+  - {fileID: 21300000, guid: 34e73cc7f0b92a940b4fff666adb9e14, type: 3}
+  textStart: {fileID: 4900000, guid: 84456c87f8879464f828f9d40d2d47a7, type: 3}
+  textEnding: {fileID: 4900000, guid: 2b4eff09d300b084ea7e63853249cc16, type: 3}
 --- !u!1 &1531494448
 GameObject:
   m_ObjectHideFlags: 0
