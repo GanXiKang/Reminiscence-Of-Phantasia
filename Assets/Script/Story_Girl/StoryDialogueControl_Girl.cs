@@ -122,87 +122,21 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             }
         }
     }
-    void DialogurEnd()
+
+    public void ChooseButton(int _chooseButton)
     {
-        switch (_textCount)
+        _chooseNum = _chooseButton;
+        isChooseUI_Back = true;
+        if (_chooseButton <= 2)
         {
-            case 2:
-            case 7:
-                BGM.PlayOneShot(give);
-                StoryInteractableControl_Girl.isGiveItem = true;
-                StoryInteractableControl_Girl._whoGive = 1;
-                break;
-
-            case 10:
-                BlackScreenControl.isOpenBlackScreen = true;
-                StoryGameControl_Girl.isResurrection = true;
-                break;
-
-            case 11:
-                BGM.PlayOneShot(give);
-                StoryInteractableControl_Girl.isGiveItem = true;
-                StoryInteractableControl_Girl._whoGive = 2;
-                break;
-
-            case 13:
-                BGM.PlayOneShot(give);
-                StoryGameControl_Girl.isTrashcanLidActice = false;
-                StoryInteractableControl_Girl.isGiveItem = true;
-                StoryInteractableControl_Girl._whoGive = 2;
-                break;
-
-            case 16:
-                if (_chooseNum == 4)
-                {
-                    StoryInteractableControl_Girl.isGiveItem = true;
-                    StoryInteractableControl_Girl._whoGive = 3;
-                }
-                break;
-
-            case 19:
-                StoryBagControl.isItemNumber[4] = true;
-                StoryBagControl._howManyGrids++;
-                StoryNpcAnimator_Girl.isLeave= true;
-                StoryPlayerControl.isSurprised = true;
-                break;
-
-            case 25:
-                StoryNpcAnimator_Girl.isLeaveStreet = true;
-                break;
-
-            case 26:
-                BGM.PlayOneShot(give);
-                StoryInteractableControl_Girl.isFinallyMatch = true;
-                StoryInteractableControl_Girl.isGiveItem = true;
-                StoryInteractableControl_Girl._whoGive = 1;
-                break;
-
-            case 30:
-                StoryNpcAnimator_Girl.isHide = true;
-                break;
-
-            case 45:
-                StoryNpcAnimator_Girl._direction = 1;
-                StoryNpcAnimator_Girl.isSurprise = false;
-                StoryNpcAnimator_Girl.isMoveSeeWolf = true;
-                break;
-
-            case 46:
-            case 51:
-                StoryNpcAnimator_Girl._direction = 0;
-                StoryNpcAnimator_Girl.isFind = true;
-                Invoke("StoryEnd", 1f);
-                break;
-
-            case 47:
-                StoryNpcAnimator_Girl.isAttractWolf = true;
-                break;
-
-            case 50:
-                StoryNpcAnimator_Girl.isFinishLeave = true;
-                break;
+            button2UI.SetActive(false);
+        }
+        else
+        {
+            button3UI.SetActive(false);
         }
     }
+
     void ChooseUI()
     {
         chooseUI.SetActive(isChoose);
@@ -219,7 +153,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 {
                     button2UI.SetActive(true);
                 }
-                else 
+                else
                 {
                     button3UI.SetActive(true);
                 }
@@ -294,20 +228,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 StartCoroutine(SetTextLabelIndexUI());
                 return;
             }
-        }
-    }
-
-    public void ChooseButton(int _chooseButton)
-    {
-        _chooseNum = _chooseButton;
-        isChooseUI_Back = true;
-        if (_chooseButton <= 2)
-        {
-            button2UI.SetActive(false);
-        }
-        else
-        {
-            button3UI.SetActive(false);
         }
     }
 
@@ -447,7 +367,87 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 break;
         }
     }
+    void DialogurEnd()
+    {
+        switch (_textCount)
+        {
+            case 2:
+            case 7:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 1;
+                break;
 
+            case 10:
+                BlackScreenControl.isOpenBlackScreen = true;
+                StoryGameControl_Girl.isResurrection = true;
+                break;
+
+            case 11:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 2;
+                break;
+
+            case 13:
+                BGM.PlayOneShot(give);
+                StoryGameControl_Girl.isTrashcanLidActice = false;
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 2;
+                break;
+
+            case 16:
+                if (_chooseNum == 4)
+                {
+                    StoryInteractableControl_Girl.isGiveItem = true;
+                    StoryInteractableControl_Girl._whoGive = 3;
+                }
+                break;
+
+            case 19:
+                StoryBagControl.isItemNumber[4] = true;
+                StoryBagControl._howManyGrids++;
+                StoryNpcAnimator_Girl.isLeave = true;
+                StoryPlayerControl.isSurprised = true;
+                break;
+
+            case 25:
+                StoryNpcAnimator_Girl.isLeaveStreet = true;
+                break;
+
+            case 26:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Girl.isFinallyMatch = true;
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 1;
+                break;
+
+            case 30:
+                StoryNpcAnimator_Girl.isHide = true;
+                break;
+
+            case 45:
+                StoryNpcAnimator_Girl._direction = 1;
+                StoryNpcAnimator_Girl.isSurprise = false;
+                StoryNpcAnimator_Girl.isMoveSeeWolf = true;
+                break;
+
+            case 46:
+            case 51:
+                StoryNpcAnimator_Girl._direction = 0;
+                StoryNpcAnimator_Girl.isFind = true;
+                Invoke("StoryEnd", 1f);
+                break;
+
+            case 47:
+                StoryNpcAnimator_Girl.isAttractWolf = true;
+                break;
+
+            case 50:
+                StoryNpcAnimator_Girl.isFinishLeave = true;
+                break;
+        }
+    }
     void StoryEnd()
     {
         StoryUIControl_Girl.isStoryEnding = true;
