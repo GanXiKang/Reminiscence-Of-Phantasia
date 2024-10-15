@@ -5893,6 +5893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473231132}
   - component: {fileID: 1473231133}
+  - component: {fileID: 1473231134}
   m_Layer: 5
   m_Name: Story
   m_TagString: Untagged
@@ -5933,6 +5934,34 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1473231134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473231131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8341b2b76ead346ba181261473287b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  plazaNowBGM: {fileID: 0}
+  EndingBGM: {fileID: 0}
+  page: {fileID: 0}
+  coroutine: {fileID: 0}
+  interactable: {fileID: 0}
+  buttonLeft: {fileID: 0}
+  buttonRight: {fileID: 0}
+  buttonCoroutine: {fileID: 0}
+  content: {fileID: 0}
+  background: {fileID: 0}
+  pageImages: []
+  image: {fileID: 0}
+  storyImages: []
+  textStart: {fileID: 0}
+  textEnding: {fileID: 0}
 --- !u!1 &1531494448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6583,6 +6612,8 @@ GameObject:
   - component: {fileID: 1631694437}
   - component: {fileID: 1631694436}
   - component: {fileID: 1631694438}
+  - component: {fileID: 1631694440}
+  - component: {fileID: 1631694439}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -6736,6 +6767,36 @@ MonoBehaviour:
   - {fileID: 279483705}
   - {fileID: 15391622}
   - {fileID: 1143743655}
+--- !u!114 &1631694439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631694434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35850b460dcbfd4090f6fe79778cb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackScreen: {fileID: 1604933948}
+  panel: {fileID: 328637136}
+  _screenSpeed: 3
+--- !u!114 &1631694440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631694434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8083fdfc88bd71240b7330b25f124ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 2117618732}
+  storyUI: {fileID: 1473231131}
+  transitionUI: {fileID: 1627665712}
 --- !u!1 &1640057674
 GameObject:
   m_ObjectHideFlags: 0
