@@ -10,7 +10,7 @@ public class StoryUIControl_Momotaro : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart = false; //œyÔ‡
+    public static bool isStoryStart = true; 
     public static bool isStoryEnding = false;
 
     [Header("TransitionUI")]
@@ -19,7 +19,7 @@ public class StoryUIControl_Momotaro : MonoBehaviour
     void Update()
     {
         dialogueUI.SetActive(isDialogue);
-        storyUI.SetActive(isStoryStart || isStoryEnding);
+        //storyUI.SetActive(isStoryStart || isStoryEnding); ·½±ãˆÌÐÐ
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
     }
 }
