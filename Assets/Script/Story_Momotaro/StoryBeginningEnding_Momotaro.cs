@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StoryBeginningEnding_Momotaro : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip streetBGM, EndingBGM;
+    public AudioClip riverSideBGM, EndingBGM;
     public AudioClip page, coroutine;
 
     [Header("UI")]
@@ -40,13 +42,13 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
 
     void OnEnable()
     {
-        if (StoryUIControl_Girl.isStoryStart)
+        if (StoryUIControl_Momotaro.isStoryStart)
         {
             GetTextFormFile(textStart);
             StartCoroutine(StorySystemUI());
             StartCoroutine(StoryFillImage());
         }
-        else if (StoryUIControl_Girl.isStoryEnding)
+        else if (StoryUIControl_Momotaro.isStoryEnding)
         {
             GetTextFormFile(textEnding);
             StartCoroutine(StorySystemUIAppear(canvasGroup));
@@ -155,14 +157,14 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
     public void Button_Coroutine()
     {
         BGM.PlayOneShot(coroutine);
-        if (StoryUIControl_Girl.isStoryStart)
+        if (StoryUIControl_Momotaro.isStoryStart)
         {
             BGM.Stop();
-            BGM.clip = streetBGM;
+            BGM.clip = riverSideBGM;
             BGM.Play();
             StartCoroutine(StorySystemUIDisappear(canvasGroup));
         }
-        else if (StoryUIControl_Girl.isStoryEnding)
+        else if (StoryUIControl_Momotaro.isStoryEnding)
         {
             TransitionUIControl.isTransitionUIAnim_In = true;
             Invoke("GoToHouse", 1f);
@@ -173,11 +175,11 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
     {
         if (_page != 2) return;
         {
-            if (StoryUIControl_Girl.isStoryStart)
+            if (StoryUIControl_Momotaro.isStoryStart)
             {
                 buttonCoroutine.SetActive(true);
             }
-            else if (StoryUIControl_Girl.isStoryEnding)
+            else if (StoryUIControl_Momotaro.isStoryEnding)
             {
                 buttonCoroutine.SetActive(true);
             }
@@ -209,9 +211,7 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
 
         canvasGroup.alpha = targetAlpha;
         image.fillAmount = 0;
-        StoryUIControl_Girl.isStoryStart = false;
-        StoryUIControl_Girl.isDialogue = true;
-        StoryDialogueControl_Girl._textCount = 1;
+        StoryUIControl_Momotaro.isStoryStart = false;
     }
     IEnumerator StorySystemUIAppear(CanvasGroup canvasGroup)
     {
@@ -298,11 +298,11 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
 
         image.fillAmount = 0;
 
-        if (StoryUIControl_Girl.isStoryStart)
+        if (StoryUIControl_Momotaro.isStoryStart)
         {
             image.sprite = storyImages[_page];
         }
-        else if (StoryUIControl_Girl.isStoryEnding)
+        else if (StoryUIControl_Momotaro.isStoryEnding)
         {
             image.sprite = storyImages[_page + 3];
         }
