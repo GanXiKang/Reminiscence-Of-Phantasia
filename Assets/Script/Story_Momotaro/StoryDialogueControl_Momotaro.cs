@@ -286,14 +286,16 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     {
         switch (_textCount)
         {
-            
+            case 1:
+                break;
         }
     }
     void DialogurEnd()
     {
         switch (_textCount)
         {
-
+            case 1:
+                break;
         }
     }
     void StoryEnd()
