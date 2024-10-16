@@ -270,10 +270,10 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MatchWalk
+  m_Name: RodWalk
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ae54ba2601d49624da9658c2104f65b2, type: 2}
+    m_Motion: {fileID: 7400000, guid: a4328b2a61ad37c42a9977c6b9571302, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -281,7 +281,7 @@ BlendTree:
     m_DirectBlendParameter: Direction
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b16075bddaa1e614ba0602d5770514af, type: 2}
+    m_Motion: {fileID: 7400000, guid: efa3d09a72ddcda47bd8abb35e6dc034, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
