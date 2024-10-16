@@ -105,7 +105,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     {
         interactableUI.SetActive(isInteractableUI);
 
-        if (StoryUIControl_Momotaro.isDialogue)
+        if (StoryUIControl_Prince.isDialogue)
         {
             isInteractableUI = false;
         }
@@ -127,7 +127,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     }
     void GivePlayerObject()
     {
-        if (StoryUIControl_Momotaro.isDialogue) return;
+        if (StoryUIControl_Prince.isDialogue) return;
 
         if (isGiveItem)
         {
@@ -147,9 +147,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     {
         if (!isExchange) return;
         if (!isExchangeItem) return;
-        if (!StoryDialogueControl_Momotaro.isDialogueEvent) return;
+        if (!StoryDialogueControl_Prince.isDialogueEvent) return;
 
-        StoryDialogueControl_Momotaro.isDialogueEvent = false;
+        StoryDialogueControl_Prince.isDialogueEvent = false;
         isExchangeItem = false;
         isPickedUp = true;
         StoryBagControl.isGet = true;
@@ -162,7 +162,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     }
     void RotationSprite()
     {
-        if (!StoryDialogueControl_Momotaro.isDialogueRotation) return;
+        if (!StoryDialogueControl_Prince.isDialogueRotation) return;
         if (!isRotation) return;
 
         float rotationThisFrame = _speed * Time.deltaTime;
@@ -184,7 +184,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         }
         else
         {
-            StoryDialogueControl_Momotaro.isDialogueRotation = false;
+            StoryDialogueControl_Prince.isDialogueRotation = false;
             isRotation = false;
             totalRotation = 0f;
             transform.rotation = initialRotation;
@@ -194,7 +194,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     void OnMouseDown()
     {
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
-        if (StoryUIControl_Momotaro.isDialogue) return;
+        if (StoryUIControl_Prince.isDialogue) return;
 
         if (isGive)
         {
@@ -225,7 +225,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             StopCoroutine(currentCoroutine);
         }
         currentCoroutine = StartCoroutine(ScaleObject(scaledSize));
-        if (!StoryUIControl_Momotaro.isDialogue)
+        if (!StoryUIControl_Prince.isDialogue)
         {
             isInteractableUI = true;
         }
@@ -235,7 +235,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         if (!isBagGetItem) return;
         if (isGetItem) return;
         if (!isInteractable) return;
-        if (StoryUIControl_Momotaro.isDialogue) return;
+        if (StoryUIControl_Prince.isDialogue) return;
 
         for (int i = 0; i < _getItemNumber.Length; i++)
         {
@@ -246,7 +246,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
                 StoryBagControl._howManyGrids--;
                 StoryBagControl.isRenewBag = true;
-                StoryItemIntroduce_Momotaro.isIntroduce = true;
+                StoryItemIntroduce_Prince.isIntroduce = true;
                 _exchangeDifferentItemRecord = i;
 
                 switch (_who)
