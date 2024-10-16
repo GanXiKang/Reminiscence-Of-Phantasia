@@ -307,4 +307,3 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         isPlayerMove = true;
     }
 }
-}
