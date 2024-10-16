@@ -4310,6 +4310,7 @@ GameObject:
   - component: {fileID: 655433318}
   - component: {fileID: 655433317}
   - component: {fileID: 655433316}
+  - component: {fileID: 655433321}
   - component: {fileID: 655433313}
   m_Layer: 0
   m_Name: Player
@@ -4476,6 +4477,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
+--- !u!114 &655433321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655433312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee11b348ea32ea9499e1c877ec6fbe99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658084500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,6 +4783,8 @@ GameObject:
   - component: {fileID: 719484017}
   - component: {fileID: 719484016}
   - component: {fileID: 719484015}
+  - component: {fileID: 719484019}
+  - component: {fileID: 719484018}
   m_Layer: 0
   m_Name: Npc (1)
   m_TagString: Untagged
@@ -4886,6 +4901,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &719484018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719484013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &719484019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719484013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &732274463
 GameObject:
   m_ObjectHideFlags: 0
@@ -5149,6 +5208,8 @@ GameObject:
   - component: {fileID: 766910546}
   - component: {fileID: 766910545}
   - component: {fileID: 766910542}
+  - component: {fileID: 766910548}
+  - component: {fileID: 766910547}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -5265,6 +5326,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &766910547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766910540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &766910548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766910540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &770690091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6041,6 +6146,8 @@ GameObject:
   - component: {fileID: 868060874}
   - component: {fileID: 868060873}
   - component: {fileID: 868060872}
+  - component: {fileID: 868060876}
+  - component: {fileID: 868060875}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -6157,6 +6264,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &868060875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868060870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &868060876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868060870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &875073297
 GameObject:
   m_ObjectHideFlags: 0
@@ -6244,6 +6395,8 @@ GameObject:
   - component: {fileID: 895021469}
   - component: {fileID: 895021468}
   - component: {fileID: 895021467}
+  - component: {fileID: 895021471}
+  - component: {fileID: 895021470}
   m_Layer: 0
   m_Name: Npc (3)
   m_TagString: Untagged
@@ -6360,6 +6513,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &895021470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895021465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &895021471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895021465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &904592266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6447,6 +6644,8 @@ GameObject:
   - component: {fileID: 918279281}
   - component: {fileID: 918279280}
   - component: {fileID: 918279279}
+  - component: {fileID: 918279283}
+  - component: {fileID: 918279282}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -6563,6 +6762,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &918279282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918279277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &918279283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918279277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &935946853
 GameObject:
   m_ObjectHideFlags: 0
@@ -7545,6 +7788,8 @@ GameObject:
   - component: {fileID: 1226380809}
   - component: {fileID: 1226380808}
   - component: {fileID: 1226380807}
+  - component: {fileID: 1226380811}
+  - component: {fileID: 1226380810}
   m_Layer: 0
   m_Name: Npc (2)
   m_TagString: Untagged
@@ -7661,6 +7906,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1226380810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226380805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &1226380811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226380805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1232535169
 GameObject:
   m_ObjectHideFlags: 0
@@ -8558,6 +8847,8 @@ GameObject:
   - component: {fileID: 1299328278}
   - component: {fileID: 1299328277}
   - component: {fileID: 1299328276}
+  - component: {fileID: 1299328280}
+  - component: {fileID: 1299328279}
   m_Layer: 0
   m_Name: Npc (4)
   m_TagString: Untagged
@@ -8674,6 +8965,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1299328279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299328274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &1299328280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299328274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1311399652
 GameObject:
   m_ObjectHideFlags: 0
@@ -11186,6 +11521,8 @@ GameObject:
   - component: {fileID: 1545059352}
   - component: {fileID: 1545059351}
   - component: {fileID: 1545059350}
+  - component: {fileID: 1545059354}
+  - component: {fileID: 1545059353}
   m_Layer: 0
   m_Name: Npc (2)
   m_TagString: Untagged
@@ -11302,6 +11639,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1545059353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545059348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &1545059354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545059348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1578547132
 GameObject:
   m_ObjectHideFlags: 0
@@ -12167,6 +12548,8 @@ GameObject:
   - component: {fileID: 1861456303}
   - component: {fileID: 1861456302}
   - component: {fileID: 1861456301}
+  - component: {fileID: 1861456305}
+  - component: {fileID: 1861456304}
   m_Layer: 0
   m_Name: Npc (1)
   m_TagString: Untagged
@@ -12283,6 +12666,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1861456304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861456299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &1861456305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861456299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1867473635
 GameObject:
   m_ObjectHideFlags: 0
@@ -13010,6 +13437,8 @@ GameObject:
   - component: {fileID: 1982125730}
   - component: {fileID: 1982125729}
   - component: {fileID: 1982125728}
+  - component: {fileID: 1982125732}
+  - component: {fileID: 1982125731}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -13126,6 +13555,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1982125731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982125726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 0
+--- !u!114 &1982125732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982125726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34849827fa7e8b844851a4f1d90c6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  pickUp: {fileID: 0}
+  get: {fileID: 0}
+  find: {fileID: 0}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 0}
+  interactableName: {fileID: 0}
+  _who: 0
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 0}
+  bagUIPosition: {fileID: 0}
+  skillUIPosition: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &1996456437
 GameObject:
   m_ObjectHideFlags: 0
