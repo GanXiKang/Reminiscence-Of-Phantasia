@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class StoryNpcAnimator_Momotaro : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Animator anim;
+
+    [Header("Npc")]
+    public int _who;
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Animation();
+    }
+
+    void Animation()
+    {
+        switch (_who)
+        {
+            case 1:
+                break;
+        }
     }
 }
