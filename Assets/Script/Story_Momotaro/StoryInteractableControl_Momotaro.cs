@@ -320,18 +320,24 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             isInteractableUI = true;
         }
         _aboveWho = _who;
+        print("1");
 
         if (!isGet) return;
+        print("2");
         if (!isBagGetItem) return;
+        print("3");
         if (isGetItem) return;
+        print("4");
         if (!isInteractable) return;
+        print("5");
         if (StoryUIControl_Momotaro.isDialogue) return;
+        print("6");
 
-        print(StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton]);
         for (int i = 0; i < _getItemNumber.Length; i++)
         {
             if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
             {
+                print("7");
                 isBagGetItem = false;
                 StoryBagControl.isOpenBag = false;
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
@@ -366,6 +372,19 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 3:
+
+                                break;
+                        }
+                        break;
+
+                    case 4:
+                        switch (i)
+                        {
+                            case 0:
+                                
+                                break;
+
+                            case 1:
 
                                 break;
                         }
