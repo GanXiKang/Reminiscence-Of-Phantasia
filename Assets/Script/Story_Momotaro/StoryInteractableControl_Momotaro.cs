@@ -332,7 +332,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         {
             if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
             {
-                print("7");
                 isBagGetItem = false;
                 StoryBagControl.isOpenBag = false;
                 StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
