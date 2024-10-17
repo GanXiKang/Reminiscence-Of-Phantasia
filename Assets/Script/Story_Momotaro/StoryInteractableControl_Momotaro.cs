@@ -24,7 +24,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public int _who;
     public static int _aboveWho = 0;
     public static bool isInteractableUI = false;
-    bool isInteractable = false;
+    bool isInteractable = true;  //測試更改  用於先對話后互動
     int _countMouseDown;
 
     [Header("Item_Give")]
@@ -323,11 +323,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
         if (!isGet) return;
         if (!isBagGetItem) return;
-        print("3");
         if (isGetItem) return;
-        print("4");
         if (!isInteractable) return;
-        print("5");
         if (StoryUIControl_Momotaro.isDialogue) return;
         print("6");
 
@@ -351,7 +348,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         {
                             case 0:
                                 isPickedUp = true;
-                                //isSkill = true;
+                                isSkill = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_getItemNumber[0]] = true;
                                 StoryBagControl._whichItem = 12;
