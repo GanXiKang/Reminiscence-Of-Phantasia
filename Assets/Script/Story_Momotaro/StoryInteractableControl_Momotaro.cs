@@ -348,7 +348,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 isPickedUp = true;
                                 //isSkill = true;
                                 StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                                StoryBagControl.isItemNumber[_getItemNumber[0]] = true;
                                 StoryBagControl._whichItem = 12;
                                 if (StoryBagControl.isOpenBag)
                                 {
