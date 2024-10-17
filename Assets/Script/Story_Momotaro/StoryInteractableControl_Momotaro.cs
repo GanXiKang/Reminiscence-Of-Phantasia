@@ -322,7 +322,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         _aboveWho = _who;
 
         if (!isGet) return;
-        print("2");
         if (!isBagGetItem) return;
         print("3");
         if (isGetItem) return;
