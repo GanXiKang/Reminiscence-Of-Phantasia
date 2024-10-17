@@ -350,8 +350,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 isPickedUp = true;
                                 isSkill = true;
                                 StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[_getItemNumber[0]] = true;
-                                StoryBagControl._whichItem = 12;
+                                StoryBagControl.isItemNumber[2] = true;
+                                StoryBagControl._whichItem = _getItemNumber[i];
                                 if (StoryBagControl.isOpenBag)
                                 {
                                     StoryBagControl.isOpenBag = false;
@@ -359,15 +359,37 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
-                                
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[5] = true;
+                                StoryBagControl.isItemNumber[6] = true;
+                                StoryBagControl._whichItem = _getItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
                                 break;
 
                             case 2:
-                                
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _getItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
                                 break;
 
                             case 3:
-
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[10] = true;
+                                StoryBagControl.isItemNumber[11] = true;
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
                                 break;
                         }
                         break;
