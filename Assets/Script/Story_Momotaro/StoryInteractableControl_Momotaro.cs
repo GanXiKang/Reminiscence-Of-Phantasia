@@ -346,7 +346,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         {
                             case 0:
                                 isPickedUp = true;
-                                isSkill = true;
+                                //isSkill = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
                                 StoryBagControl._whichItem = 12;
@@ -414,7 +414,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         itemUI.SetActive(false);
         if (isSkill)
         {
-            
             isSkill = false;
         }
         isPickedUp = false;
