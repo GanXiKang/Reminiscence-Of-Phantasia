@@ -341,8 +341,33 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
                 switch (_who)
                 {
-                    case 1:
-                        
+                    case 2:
+                        switch (i)
+                        {
+                            case 0:
+                                isPickedUp = true;
+                                isSkill = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                                StoryBagControl._whichItem = 12;
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 1:
+                                
+                                break;
+
+                            case 2:
+                                
+                                break;
+
+                            case 3:
+
+                                break;
+                        }
                         break;
                 }
 
