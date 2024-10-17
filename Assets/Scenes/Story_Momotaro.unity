@@ -5210,7 +5210,7 @@ GameObject:
   - component: {fileID: 766910548}
   - component: {fileID: 766910547}
   m_Layer: 0
-  m_Name: Npc
+  m_Name: 01Momotaro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5337,7 +5337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87456cfd12aa0174fa1f24415acf5cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _who: 0
+  _who: 1
 --- !u!114 &766910548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5357,7 +5357,7 @@ MonoBehaviour:
   _scaleSpeed: 20
   interactableUI: {fileID: 36273998}
   interactableName: {fileID: 148092810}
-  _who: 0
+  _who: 1
   isGive: 0
   _giveItemNumber: 
   isGet: 0
