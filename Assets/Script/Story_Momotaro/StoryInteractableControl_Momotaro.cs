@@ -320,7 +320,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             isInteractableUI = true;
         }
         _aboveWho = _who;
-        print("1");
 
         if (!isGet) return;
         print("2");
