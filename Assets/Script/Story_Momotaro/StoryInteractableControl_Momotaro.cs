@@ -327,6 +327,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         if (!isInteractable) return;
         if (StoryUIControl_Momotaro.isDialogue) return;
 
+        print(StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton]);
         for (int i = 0; i < _getItemNumber.Length; i++)
         {
             if (_getItemNumber[i] == StoryBagControl._gridsItemNumber[StoryBagControl._whatItemButton])
