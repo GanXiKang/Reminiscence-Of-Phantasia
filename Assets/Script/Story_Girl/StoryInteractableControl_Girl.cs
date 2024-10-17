@@ -247,7 +247,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                 {
                     case 1:
                         isPickedUp = true;
-                        isSkill = true;
+                        //isSkill = true;
                         StoryBagControl._whichItem = _giveItemNumber[0];
                         if (StoryBagControl.isOpenBag)
                         {
