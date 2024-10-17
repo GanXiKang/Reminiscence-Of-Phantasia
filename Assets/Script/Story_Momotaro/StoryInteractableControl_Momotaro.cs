@@ -117,7 +117,87 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 1:
                 if (_aboveWho == _who)
                 {
-                    //interactableName.text = "Ð¡Å®º¢";
+                    interactableName.text = "ÌÒÌ«ÀÉ";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 2:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "ºþ²´";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 3:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "ßÔßÔ";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 4:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "¿ÕÖú";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 5:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "ßä×Ó";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 6:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "ºàÌ­";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 7:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "¶¹Íè";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 8:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "¼ªÌ«";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 9:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "Ð¡ÅÁ";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
