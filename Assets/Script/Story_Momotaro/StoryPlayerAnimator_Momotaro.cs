@@ -17,6 +17,8 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 
     void Update()
     {
-        
+        anim.SetBool("isDonkey", isDonkey);
+        anim.SetBool("isRaccoon", isRaccoon);
+        anim.SetBool("isParrot", isParrot);
     }
 }
