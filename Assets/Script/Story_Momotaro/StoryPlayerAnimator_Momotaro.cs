@@ -6,6 +6,10 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 {
     Animator anim;
 
+    public static bool isDonkey = false;
+    public static bool isRaccoon = false;
+    public static bool isParrot = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
