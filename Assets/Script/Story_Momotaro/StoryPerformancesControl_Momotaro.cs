@@ -7,10 +7,12 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 {
     [Header("Performances")]
     public Text test; //測試版
-    private int _randomDanceNum;
-    private float timeLimit = 2f; //2秒內按下按鈕
-    private float timer;
-    private bool isPerformances = false;
+
+    int _randomDanceNum;
+    float timeLimit = 2f; //2秒內按下按鈕
+    float timer;
+    bool isTiming = false;
+    bool isPerformances = false;
 
     void OnEnable()
     {
@@ -27,15 +29,18 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         _randomDanceNum = Random.Range(1, 6);
         test.text = _randomDanceNum.ToString();
         timer = timeLimit;
+        isTiming = true;
         isPerformances = true;
     }
     void PerformancesTimeOut()
     {
         if (!isPerformances) return;
+        if (!isTiming) return;
 
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            isTiming = false;
             test.text = "TimeOut!";
             float randomTime = Random.Range(0.3f, 1.2f);
             Invoke("StartNewRound", randomTime);
