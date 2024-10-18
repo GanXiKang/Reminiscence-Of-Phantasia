@@ -14,6 +14,9 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public GameObject skill;
     public static bool isSkillActive;
 
+    [Header("Performances")]
+    public Text test; //úy‘á∞Ê
+
     public static int _whoEatGoldRice;
 
     void Start()
