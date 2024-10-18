@@ -393,6 +393,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
                             case 4:
                             case 5:
+                                if (!StoryBagControl.isItemNumber[5] && !StoryBagControl.isItemNumber[6]) return;
+
                                 isPickedUp = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[5] = false;
@@ -418,6 +420,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
                             case 7:
                             case 8:
+                                if (!StoryBagControl.isItemNumber[10] && !StoryBagControl.isItemNumber[11]) return;
+
                                 isPickedUp = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[10] = false;
