@@ -451,6 +451,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         if (isSkill)
         {
             isSkill = false;
+            StoryRiceDumpling_Momotaro.isSkillActive = true;
         }
         isPickedUp = false;
         isAnim = false;
