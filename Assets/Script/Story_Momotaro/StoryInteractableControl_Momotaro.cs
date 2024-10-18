@@ -393,17 +393,80 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         }
                         break;
 
+                    case 3:
+                        switch (i)
+                        {
+                            case 0:
+                            case 1:
+                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                StoryBagControl._howManyGrids++;
+                                break;
+
+                            case 2:
+
+                                break;
+                        }
+                        break;
+
                     case 4:
                         switch (i)
                         {
                             case 0:
-                                
+                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                StoryBagControl._howManyGrids++;
                                 break;
 
                             case 1:
 
                                 break;
                         }
+                        break;
+
+                    case 6:
+                        switch (i)
+                        {
+                            case 0:
+                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                StoryBagControl._howManyGrids++;
+                                break;
+
+                            case 1:
+
+                                break;
+                        }
+                        break;
+
+                    case 7:
+                        switch (i)
+                        {
+                            case 0:
+                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                StoryBagControl._howManyGrids++;
+                                break;
+
+                            case 1:
+
+                                break;
+                        }
+                        break;
+
+                    case 8:
+                        switch (i)
+                        {
+                            case 0:
+                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                StoryBagControl._howManyGrids++;
+                                break;
+
+                            case 1:
+
+                                break;
+                        }
+                        break;
+
+                    case 8:
+                        StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                        StoryBagControl._howManyGrids++;
                         break;
                 }
 
