@@ -141,10 +141,12 @@ public class StoryPlayerControl : MonoBehaviour
     {
         return !SettingControl.isSettingActive &&
                !StoryTeachControl.isTeachActive &&
+
                StoryInteractableControl_Girl.isPlayerMove &&
                !StoryThermometerControl_Girl.isDead &&
                !StoryLoadingScene_Girl.isLoading &&
-               !StoryUIControl_Girl.isDialogue;
-               
+               !StoryUIControl_Girl.isDialogue &&
+
+               !StoryPlayerAnimator_Momotaro.isRaccoonStone;
     }
 }
