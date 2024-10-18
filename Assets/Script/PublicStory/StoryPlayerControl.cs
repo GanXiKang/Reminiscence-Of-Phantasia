@@ -147,6 +147,7 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryLoadingScene_Girl.isLoading &&
                !StoryUIControl_Girl.isDialogue &&
 
-               !StoryPlayerAnimator_Momotaro.isRaccoonStone;
+               !StoryPlayerAnimator_Momotaro.isRaccoonStone &&
+               !StoryUIControl_Momotaro.isPerformances;
     }
 }
