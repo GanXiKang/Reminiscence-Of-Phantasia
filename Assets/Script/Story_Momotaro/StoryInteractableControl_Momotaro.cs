@@ -390,6 +390,45 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     StoryBagControl.isOpenBag = false;
                                 }
                                 break;
+
+                            case 4:
+                            case 5:
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[5] = false;
+                                StoryBagControl.isItemNumber[6] = false;
+                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 6:
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 7:
+                            case 8:
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[10] = false;
+                                StoryBagControl.isItemNumber[11] = false;
+                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
                         }
                         break;
 
