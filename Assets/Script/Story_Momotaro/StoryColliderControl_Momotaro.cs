@@ -14,6 +14,10 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
             switch (_whatCollider)
             {
                 case 1:
+                    if (StoryPlayerAnimator_Momotaro.isRaccoon)
+                    { 
+
+                    }
                     break;
             }
         }
