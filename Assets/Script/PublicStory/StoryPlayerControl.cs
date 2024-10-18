@@ -140,10 +140,11 @@ public class StoryPlayerControl : MonoBehaviour
     bool isCanMove()
     {
         return !SettingControl.isSettingActive &&
+               !StoryTeachControl.isTeachActive &&
                StoryInteractableControl_Girl.isPlayerMove &&
                !StoryThermometerControl_Girl.isDead &&
                !StoryLoadingScene_Girl.isLoading &&
-               !StoryUIControl_Girl.isDialogue &&
-               !StoryTeachControl.isTeachActive;
+               !StoryUIControl_Girl.isDialogue;
+               
     }
 }
