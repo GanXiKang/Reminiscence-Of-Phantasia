@@ -403,7 +403,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 2:
-
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
                                 break;
                         }
                         break;
