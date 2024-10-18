@@ -11,6 +11,10 @@ public class StoryUIControl_Momotaro : MonoBehaviour
     public GameObject dialogueUI;
     public static bool isDialogue;
 
+    [Header("PerformancesUI")]
+    public GameObject performancuesUI;
+    public static bool isPerformances = false;
+
     [Header("StoryUI")]
     public GameObject storyUI;
     public static bool isStoryStart = false; //·½±ãˆÌÐÐ
@@ -23,6 +27,7 @@ public class StoryUIControl_Momotaro : MonoBehaviour
     {
         bagUI.SetActive(isBagUIActive());
         dialogueUI.SetActive(isDialogue);
+        performancuesUI.SetActive(isPerformances);
         storyUI.SetActive(isStoryStart || isStoryEnding);
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
     }
