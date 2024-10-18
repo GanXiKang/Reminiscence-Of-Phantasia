@@ -25,6 +25,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         skill.SetActive(isSkillActive);
 
         RaccoonSkill();
+        ParrotPerformances();
     }
 
     void RaccoonSkill()
@@ -35,6 +36,10 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         {
             StoryPlayerAnimator_Momotaro.isRaccoonStone = !StoryPlayerAnimator_Momotaro.isRaccoonStone;
         }
+    }
+    void ParrotPerformances()
+    {
+        
     }
 
     public void RiceDumpling_Button()
