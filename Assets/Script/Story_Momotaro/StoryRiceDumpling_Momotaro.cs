@@ -30,15 +30,15 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         switch (_whoEatGoldRice)
         {
             case 3:
-                print("×ƒ³ÉóH£¡");
+                StoryPlayerAnimator_Momotaro.isDonkey = !StoryPlayerAnimator_Momotaro.isDonkey;
                 break;
 
             case 6:
-                print("×ƒ³ÉÀêØˆ£¡");
+                StoryPlayerAnimator_Momotaro.isRaccoon = !StoryPlayerAnimator_Momotaro.isRaccoon;
                 break;
 
             case 9:
-                print("×ƒ³ÉûWù^£¡");
+                StoryPlayerAnimator_Momotaro.isParrot = !StoryPlayerAnimator_Momotaro.isParrot;
                 break;
         }
     }
