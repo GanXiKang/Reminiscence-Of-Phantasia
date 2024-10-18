@@ -39,7 +39,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     }
     void ParrotPerformances()
     {
-        
+        if (!StoryPlayerAnimator_Momotaro.isParrot) return;
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            StoryPlayerAnimator_Momotaro.isRaccoonStone = !StoryPlayerAnimator_Momotaro.isRaccoonStone;
+        }
     }
 
     public void RiceDumpling_Button()
