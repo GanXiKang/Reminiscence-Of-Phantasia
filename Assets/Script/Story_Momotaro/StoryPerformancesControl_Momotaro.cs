@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class StoryPerformancesControl_Momotaro : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip performancesBGM, plazaBGM;
+
     [Header("Performances")]
     public Text test; //úy‘á∞Ê
 
@@ -17,6 +21,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void OnEnable()
     {
         Invoke("StartNewRound", 1);
+        BGM.Stop();
+        BGM.clip = performancesBGM;
+        BGM.Play();
     }
 
     void Update()
@@ -66,5 +73,8 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void OnDisable()
     {
         isPerformances = false;
+        BGM.Stop();
+        BGM.clip = plazaBGM;
+        BGM.Play();
     }
 }
