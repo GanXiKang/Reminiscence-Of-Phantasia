@@ -14,6 +14,8 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public GameObject skill;
     public static bool isSkillActive;
 
+    public static int _whoEatGoldRice;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -25,6 +27,19 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     public void RiceDumpling_Button()
     {
+        switch (_whoEatGoldRice)
+        {
+            case 3:
+                print("×ƒ³ÉóH£¡");
+                break;
 
+            case 6:
+                print("×ƒ³ÉÀêØˆ£¡");
+                break;
+
+            case 9:
+                print("×ƒ³ÉûWù^£¡");
+                break;
+        }
     }
 }
