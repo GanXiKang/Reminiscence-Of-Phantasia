@@ -29,7 +29,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     void RaccoonSkill()
     {
-        
+        if (!StoryPlayerAnimator_Momotaro.isRaccoon) return;
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            StoryPlayerAnimator_Momotaro.isRaccoonStone = !StoryPlayerAnimator_Momotaro.isRaccoonStone;
+        }
     }
 
     public void RiceDumpling_Button()
