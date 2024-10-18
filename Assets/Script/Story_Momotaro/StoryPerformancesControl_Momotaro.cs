@@ -8,7 +8,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("Performances")]
     public Text test; //測試版
     private int _randomDanceNum;
-    private float timeLimit = 1f; //1秒內按下按鈕
+    private float timeLimit = 2f; //2秒內按下按鈕
     private float timer;
     private bool isPerformances = false;
 
