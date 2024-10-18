@@ -426,7 +426,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
                             case 7:
                             case 8:
-                                if (!StoryBagControl.isItemNumber[10] && !StoryBagControl.isItemNumber[11]) return;
+                                if (!StoryBagControl.isItemNumber[10] && !StoryBagControl.isItemNumber[11])
                                 {
                                     StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
                                     StoryBagControl._howManyGrids++;
@@ -452,6 +452,11 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         switch (i)
                         {
                             case 0:
+                                StoryRiceDumpling_Momotaro._whoEatGoldRice = _who;
+                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                StoryBagControl._howManyGrids++;
+                                break;
+
                             case 1:
                                 StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                                 StoryBagControl._howManyGrids++;
@@ -488,6 +493,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         switch (i)
                         {
                             case 0:
+                                StoryRiceDumpling_Momotaro._whoEatGoldRice = _who;
                                 StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                                 StoryBagControl._howManyGrids++;
                                 break;
@@ -527,6 +533,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         break;
 
                     case 9:
+                        StoryRiceDumpling_Momotaro._whoEatGoldRice = _who;
                         StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                         StoryBagControl._howManyGrids++;
                         break;
