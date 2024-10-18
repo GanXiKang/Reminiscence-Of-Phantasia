@@ -464,7 +464,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         }
                         break;
 
-                    case 8:
+                    case 9:
                         StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                         StoryBagControl._howManyGrids++;
                         break;
