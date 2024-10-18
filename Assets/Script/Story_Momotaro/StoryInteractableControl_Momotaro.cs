@@ -326,7 +326,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         if (isGetItem) return;
         if (!isInteractable) return;
         if (StoryUIControl_Momotaro.isDialogue) return;
-        print("6");
 
         for (int i = 0; i < _getItemNumber.Length; i++)
         {
