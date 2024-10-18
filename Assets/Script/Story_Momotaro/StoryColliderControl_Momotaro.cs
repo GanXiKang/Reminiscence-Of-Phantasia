@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class StoryColliderControl_Momotaro : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    public int _whatCollider;
+    bool isOnce = true;
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            switch (_whatCollider)
+            {
+                case 1:
+                    break;
+            }
+        }
     }
 }
