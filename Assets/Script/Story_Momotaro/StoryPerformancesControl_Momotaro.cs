@@ -61,13 +61,14 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (num == _randomDanceNum)
         {
             test.text = "Correct!";
-            float randomTime = Random.Range(0.3f, 1.2f);
-            Invoke("StartNewRound", randomTime);
         }
         else
         {
             test.text = "Incorrect!";
         }
+        isTiming = false;
+        float randomTime = Random.Range(0.3f, 1.2f);
+        Invoke("StartNewRound", randomTime);
     }
 
     void OnDisable()
