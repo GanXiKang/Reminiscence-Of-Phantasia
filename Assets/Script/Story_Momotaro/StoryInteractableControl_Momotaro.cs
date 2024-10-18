@@ -349,7 +349,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 isSkill = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[2] = true;
-                                StoryBagControl._whichItem = _getItemNumber[i];
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
                                 if (StoryBagControl.isOpenBag)
                                 {
                                     StoryBagControl.isOpenBag = false;
@@ -361,7 +361,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[5] = true;
                                 StoryBagControl.isItemNumber[6] = true;
-                                StoryBagControl._whichItem = _getItemNumber[i];
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
                                 if (StoryBagControl.isOpenBag)
                                 {
                                     StoryBagControl.isOpenBag = false;
@@ -371,8 +371,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 2:
                                 isPickedUp = true;
                                 StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
-                                StoryBagControl._whichItem = _getItemNumber[i];
+                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
                                 if (StoryBagControl.isOpenBag)
                                 {
                                     StoryBagControl.isOpenBag = false;
@@ -384,6 +384,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[10] = true;
                                 StoryBagControl.isItemNumber[11] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
                                 if (StoryBagControl.isOpenBag)
                                 {
                                     StoryBagControl.isOpenBag = false;
