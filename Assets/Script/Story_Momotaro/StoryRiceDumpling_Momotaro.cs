@@ -15,6 +15,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public static bool isSkillActive;
 
     public static int _whoEatGoldRice;
+    public static bool isEat = false;
 
     void Start()
     {
@@ -49,6 +50,8 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     public void RiceDumpling_Button()
     {
+        isEat = true;
+        Invoke("EatFinish", 0.3f);
         switch (_whoEatGoldRice)
         {
             case 3:
@@ -63,5 +66,10 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
                 StoryPlayerAnimator_Momotaro.isParrot = !StoryPlayerAnimator_Momotaro.isParrot;
                 break;
         }
+    }
+
+    void EatFinish()
+    {
+        isEat = false;
     }
 }
