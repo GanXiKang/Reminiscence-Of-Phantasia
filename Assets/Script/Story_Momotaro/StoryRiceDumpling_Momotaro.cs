@@ -23,6 +23,13 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     void Update()
     {
         skill.SetActive(isSkillActive);
+
+        RaccoonSkill();
+    }
+
+    void RaccoonSkill()
+    {
+        
     }
 
     public void RiceDumpling_Button()
