@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryPerformancesControl_Momotaro : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Performances")]
+    public Text test; //úy‘á∞Ê
+
+    void OnEnable()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
