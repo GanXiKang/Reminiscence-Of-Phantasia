@@ -14,7 +14,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
     void OnEnable()
     {
-        StartNewRound();
+        Invoke("StartNewRound", 1);
     }
 
     void Update()
@@ -37,7 +37,8 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (timer <= 0)
         {
             test.text = "TimeOut!";
-            StartNewRound();
+            float randomTime = Random.Range(0.3f, 1.2f);
+            Invoke("StartNewRound", randomTime);
         }
     }
 
@@ -48,11 +49,17 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (num == _randomDanceNum)
         {
             test.text = "Correct!";
-            StartNewRound();
+            float randomTime = Random.Range(0.3f, 1.2f);
+            Invoke("StartNewRound", randomTime);
         }
         else
         {
             test.text = "Incorrect!";
         }
+    }
+
+    void OnDisable()
+    {
+        isPerformances = false;
     }
 }
