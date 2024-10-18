@@ -15,11 +15,11 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                 case 1:
                     if (StoryPlayerAnimator_Momotaro.isRaccoon)
                     {
-                        print("IN");
+                        
                     }
                     else
                     {
-                        print("NO");
+                       
                     }
                     break;
             }
