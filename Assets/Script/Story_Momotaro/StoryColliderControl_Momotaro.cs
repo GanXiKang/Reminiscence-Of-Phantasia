@@ -5,7 +5,6 @@ using UnityEngine;
 public class StoryColliderControl_Momotaro : MonoBehaviour
 {
     public int _whatCollider;
-    bool isOnce = true;
 
     private void OnTriggerEnter(Collider other)
     {
