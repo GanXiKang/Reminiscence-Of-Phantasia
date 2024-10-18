@@ -9,7 +9,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip use;
 
     [Header("SkillUI")]
     public GameObject skill;
