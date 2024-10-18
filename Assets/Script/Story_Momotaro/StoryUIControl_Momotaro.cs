@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StoryUIControl_Momotaro : MonoBehaviour
 {
+    [Header("BagUI")]
+    public GameObject bagUI;
+
     [Header("DialogueUI")]
     public GameObject dialogueUI;
     public static bool isDialogue;
@@ -18,8 +21,16 @@ public class StoryUIControl_Momotaro : MonoBehaviour
 
     void Update()
     {
+        bagUI.SetActive(isBagUIActive());
         dialogueUI.SetActive(isDialogue);
         storyUI.SetActive(isStoryStart || isStoryEnding);
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
+    }
+
+    bool isBagUIActive()
+    {
+        return !StoryPlayerAnimator_Momotaro.isDonkey &&
+               !StoryPlayerAnimator_Momotaro.isRaccoon &&
+               !StoryPlayerAnimator_Momotaro.isParrot;
     }
 }
