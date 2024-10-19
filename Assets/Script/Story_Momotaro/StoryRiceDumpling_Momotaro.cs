@@ -24,7 +24,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     void Update()
     {
-        skill.SetActive(isSkillActive);
+        skill.SetActive(isSkillActive && !StoryUIControl_Momotaro.isPerformances);
 
         RaccoonSkill();
         ParrotPerformances();
