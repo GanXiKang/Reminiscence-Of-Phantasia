@@ -421,9 +421,12 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                     }
                                     else
                                     {
-                                        StoryUIControl_Girl.isDialogue = true;
-                                        StoryDialogueControl_Girl._isAboveWho1 = _who;
-                                        StoryDialogueControl_Girl._textCount = 32;
+                                        if (!StoryLoadingScene_Girl.isLeftClose)
+                                        {
+                                            StoryUIControl_Girl.isDialogue = true;
+                                            StoryDialogueControl_Girl._isAboveWho1 = _who;
+                                            StoryDialogueControl_Girl._textCount = 32;
+                                        }
                                     }
                                 }
                                 else
