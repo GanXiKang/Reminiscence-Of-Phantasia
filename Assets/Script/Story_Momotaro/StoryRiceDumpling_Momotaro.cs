@@ -21,6 +21,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     {
         player = GameObject.Find("Player");
     }
+
     void Update()
     {
         skill.SetActive(isSkillActive);
