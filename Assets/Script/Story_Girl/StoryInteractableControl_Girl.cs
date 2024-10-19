@@ -421,7 +421,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                                     }
                                     else
                                     {
-                                        if (!StoryLoadingScene_Girl.isLeftClose)
+                                        if (isNeedHelp)
                                         {
                                             StoryUIControl_Girl.isDialogue = true;
                                             StoryDialogueControl_Girl._isAboveWho1 = _who;
