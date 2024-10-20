@@ -6,9 +6,6 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 {
     GameObject player;
 
-    [Header("StrongWind")]
-    public BoxCollider inCollider;
-
     void Start()
     {
         player = GameObject.Find("Player");
@@ -16,11 +13,6 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 
     void Update()
     {
-        StrongWind();
-    }
-
-    void StrongWind()
-    {
-        inCollider.isTrigger = StoryPlayerAnimator_Momotaro.isRaccoon;
+        
     }
 }
