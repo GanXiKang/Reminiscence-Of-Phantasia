@@ -27,7 +27,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            print("Yes");
             isInsideTrigger = true;
             playerTransform = other.transform;
 
