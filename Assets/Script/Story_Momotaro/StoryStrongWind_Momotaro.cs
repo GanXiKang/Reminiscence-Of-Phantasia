@@ -5,9 +5,10 @@ using UnityEngine;
 public class StoryStrongWind_Momotaro : MonoBehaviour
 {
     public float pushSpeed = 5f; // 玩家被推开速度
-    private bool isInsideTrigger = false;
     private Transform playerTransform;
     private Vector3 pushDirection;
+
+    public static bool isBlownAway = false;
 
     void Start()
     {
@@ -16,7 +17,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
     void Update()
     {
-        if (isInsideTrigger && playerTransform != null)
+        if (isBlownAway && playerTransform != null)
         {
             // 持续推动玩家离开物体
             playerTransform.position = Vector3.MoveTowards(playerTransform.position, playerTransform.position + pushDirection, pushSpeed * Time.deltaTime);
@@ -27,7 +28,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            isInsideTrigger = true;
+            isBlownAway = true;
             playerTransform = other.transform;
 
             // 计算玩家相对于触发器的推开方向
@@ -38,7 +39,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            isInsideTrigger = false;
+            iisBlownAway = false;
         }
     }
 }
