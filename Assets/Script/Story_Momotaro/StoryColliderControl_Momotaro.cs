@@ -10,19 +10,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            switch (_whatCollider)
-            {
-                case 1:
-                    if (StoryPlayerAnimator_Momotaro.isRaccoon)
-                    {
-                        
-                    }
-                    else
-                    {
-                       
-                    }
-                    break;
-            }
+            
         }
     }
 }
