@@ -149,6 +149,7 @@ public class StoryPlayerControl : MonoBehaviour
 
                !StoryRiceDumpling_Momotaro.isEat &&
                !StoryPlayerAnimator_Momotaro.isRaccoonStone &&
-               !StoryUIControl_Momotaro.isPerformances;
+               !StoryUIControl_Momotaro.isPerformances && 
+               !StoryStrongWind_Momotaro.isBlownAway;
     }
 }
