@@ -11,6 +11,23 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
     void Update()
     {
-        
+
     }
+
+    if (other.tag == "Player")
+        {
+            switch (_whatCollider)
+            {
+                case 1:
+                    if (StoryPlayerAnimator_Momotaro.isRaccoon)
+                    {
+                        
+                    }
+                    else
+{
+
+}
+break;
+            }
+        }
 }
