@@ -27,6 +27,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            print("Yes");
             isInsideTrigger = true;
             playerTransform = other.transform;
 
@@ -36,7 +37,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
             isInsideTrigger = false;
         }
