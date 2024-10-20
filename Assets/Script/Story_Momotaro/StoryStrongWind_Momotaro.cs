@@ -39,7 +39,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            iisBlownAway = false;
+            isBlownAway = false;
         }
     }
 }
