@@ -14,6 +14,10 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject[] paper;
     int _paperNum = 0;
 
+    [Header("WorkbenchUI")]
+    public GameObject workbenchUI;
+    public GameObject nextImage;
+
     [Header("Step1")]
     public GameObject blankPaper;
     public GameObject stamp;
