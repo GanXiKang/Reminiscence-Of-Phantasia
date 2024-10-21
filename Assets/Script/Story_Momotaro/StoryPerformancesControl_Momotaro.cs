@@ -71,8 +71,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 isStopBGM = false;
             }
         }
-
-        
     }
 
     public void Dance_Button(int num)
