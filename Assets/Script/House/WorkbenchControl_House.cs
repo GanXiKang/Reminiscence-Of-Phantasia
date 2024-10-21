@@ -22,6 +22,12 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isNext = false;
     bool isFinish = false;
 
+    [Header("ToolBox")]
+    public Transform openPoint, closePoint;
+    public GameObject toolBoxBG;
+    public GameObject up, down;
+    bool isOpenBox = false;
+
     [Header("Step1")]
     public GameObject blankPaper;
     public GameObject stamp;
@@ -219,6 +225,23 @@ public class WorkbenchControl_House : MonoBehaviour
             storyBook[_storyBookNum].SetActive(false);
             StartCoroutine(LeaveWorkbench());
         }
+
+        if (isOpenBox)
+        {
+            up.SetActive(false);
+            down.SetActive(true);
+            toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, openPoint.position, 1f);
+        }
+        else
+        {
+            up.SetActive(true);
+            down.SetActive(false);
+            toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, closePoint.position, 1f);
+        }
+    }
+    public void Button_ToolBox()
+    {
+        isOpenBox = !isOpenBox;
     }
 
     void Step1_Choose()
