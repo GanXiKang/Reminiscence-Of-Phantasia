@@ -52,7 +52,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool[] isChangeColor = new bool[13];
 
     [Header("Step4")]
-    public Animator testStoryBook;
+    //public Animator testStoryBook;
     public static bool isFinishStoryBook = false;
     bool isPaperAdjustScale;
 
@@ -146,7 +146,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 4:
-                testStoryBook.SetBool("isOpenTest", true);
+                //testStoryBook.SetBool("isOpenTest", true);
                 colorUI.SetActive(false);
                 break;
         }
@@ -487,7 +487,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _process = 0;
             isFinishStoryBook = false;
-            testStoryBook.SetBool("isOpenTest", false);
+            //testStoryBook.SetBool("isOpenTest", false);
             Invoke("PaperClosebyBook", 1.2f);
         }
         if (!isPaperAdjustScale)
