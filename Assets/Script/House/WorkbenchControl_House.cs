@@ -17,6 +17,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("WorkbenchUI")]
     public GameObject workbenchUI;
     public GameObject nextImage;
+    public GameObject[] processNum;
 
     [Header("Step1")]
     public GameObject blankPaper;
