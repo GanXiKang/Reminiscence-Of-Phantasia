@@ -56,7 +56,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool[] isChangeColor = new bool[13];
 
     [Header("Step4")]
-    //public Animator testStoryBook;
+    public GameObject[] storyBook;
     public static bool isFinishStoryBook = false;
     bool isPaperAdjustScale;
 
