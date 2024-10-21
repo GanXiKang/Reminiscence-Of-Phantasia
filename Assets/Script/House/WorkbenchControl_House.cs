@@ -83,11 +83,6 @@ public class WorkbenchControl_House : MonoBehaviour
         }
 
         //úy‘á
-        //if (Input.GetKeyDown(KeyCode.C)) 
-        //{
-        //    _process++;
-        //    Process();
-        //}
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             _storyBookNum = 0;
