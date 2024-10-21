@@ -273,7 +273,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Vector3.Distance(stamp.transform.position, stampStartPos.position) < 0.01f)
         {
             isAppaerStamp = false;
-            _process++;
+            _process = 2;
             Process();
         }
     }
@@ -359,6 +359,7 @@ public class WorkbenchControl_House : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
         contentImage[0].SetActive(false);
+        selectImage.SetActive(false); 
         chooseUI.SetActive(false);
 
         yield return new WaitForSeconds(0.2f);
