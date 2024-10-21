@@ -16,9 +16,11 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("WorkbenchUI")]
     public GameObject workbenchUI;
-    public GameObject nextImage;
     public GameObject[] processNum;
+    public GameObject nextImage;
+    public GameObject FinishImage;
     bool isNext = false;
+    bool isFinish = false;
 
     [Header("Step1")]
     public GameObject blankPaper;
@@ -64,6 +66,7 @@ public class WorkbenchControl_House : MonoBehaviour
     void Update()
     {
         nextImage.SetActive(isNext);
+        FinishImage.SetActive(isFinish);
 
         switch (_process)
         {
