@@ -24,7 +24,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     isCursorChanged = true;
                 }
 
-                MoveObjectWithMouse();
+                //MoveObjectWithMouse();
             }
             else
             {
