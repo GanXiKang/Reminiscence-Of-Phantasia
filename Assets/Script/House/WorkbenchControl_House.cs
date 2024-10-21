@@ -40,9 +40,8 @@ public class WorkbenchControl_House : MonoBehaviour
     float _rotation = 0;
     int _cutPaperFinish = 0;
 
-    [Header("Step3")]
+    [Header("ColorUI")]
     public GameObject colorUI;
-    public GameObject saveButton;
     public static bool isClickSaveButton = false;
     public static bool[] isChangeColor = new bool[13];
 
@@ -422,7 +421,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        saveButton.SetActive(FinishedColoring());
         if (isClickSaveButton)
         {
             isClickSaveButton = false;
