@@ -18,16 +18,4 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
        
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        print("yes");
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            isBlownAway = false;
-        }
-    }
 }
