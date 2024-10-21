@@ -13,7 +13,11 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
             switch (_whatCollider)
             {
                 case 1:
-                    print("Yes");
+                    if (!StoryPlayerAnimator_Momotaro.isRaccoonStone)
+                    {
+                        StoryStrongWind_Momotaro.isBlownAway = true;
+                        BlackScreenControl.isOpenBlackScreen = true;
+                    }
                     break;
             }
         }
