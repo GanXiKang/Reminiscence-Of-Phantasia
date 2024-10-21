@@ -90,7 +90,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
         }
 
-
         //úy‘á
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
@@ -151,7 +150,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
             case 3:
                 colorUI.SetActive(true);
-                isPaperRotation = false;
                 break;
 
             case 4:
@@ -197,6 +195,16 @@ public class WorkbenchControl_House : MonoBehaviour
             {
                 case 1:
                     StartCoroutine(DisappaerChooseUI());
+                    break;
+
+                case 2:
+                    _process = 3;
+                    Process();
+                    break;
+
+                case 3:
+                    _process = 4;
+                    Process();
                     break;
             }
         }
@@ -467,10 +475,10 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (_cutPaperFinish == 4)
         {
+            isNext = true;
+            isPaperRotation = false;
             _cutPaperFinish = 0;
-            _process = 3;
             paper[_paperNum].transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-            Invoke("Process", 1f);
         }
     }
 
