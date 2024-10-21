@@ -111,6 +111,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void StartProcess()
     {
+        workbenchUI.SetActive(true);
         _process = 1;
         Process();
     }
@@ -210,7 +211,6 @@ public class WorkbenchControl_House : MonoBehaviour
             {
                 isAppaerPaper = false;
                 StartCoroutine(AppaerChooseUI());
-                print("ok");
             }
         }
         if (isAppaerStamp)
