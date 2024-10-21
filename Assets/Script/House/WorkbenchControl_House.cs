@@ -104,7 +104,6 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _storyBookNum = 3;
         }
-        Leave();
     }
 
     void Process()
@@ -184,6 +183,10 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _process++;
             Process();
+        }
+        if (Input.GetKeyDown(KeyCode.T) && isFinish)
+        {
+            StartCoroutine(LeaveWorkbench());
         }
     }
 
@@ -515,16 +518,6 @@ public class WorkbenchControl_House : MonoBehaviour
         paper[_paperNum].SetActive(false);
     }
 
-    void Leave()
-    {
-        if (CameraControl_House.isLookWorkbench)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                StartCoroutine(LeaveWorkbench());
-            }
-        }
-    }
     IEnumerator LeaveWorkbench()
     {
         BlackScreenControl.isOpenBlackScreen = true;
