@@ -17,10 +17,6 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step1")]
     public GameObject blankPaper;
     public GameObject stamp;
-    public GameObject chooseUI;
-    public GameObject panel;
-    public GameObject[] contentImage;
-    public Sprite[] contentSprite;
     public Transform paperEndPos;
     public Transform stampStartPos, stampEndPos;
     float _speed = 12f;
@@ -29,6 +25,12 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isAppaerStamp = false;
     bool isStampGo = false;
 
+    [Header("ChooseUI")]
+    public GameObject chooseUI;
+    public GameObject panel;
+    public GameObject[] contentImage;
+    public Sprite[] contentSprite;
+    
     [Header("Step2")]
     public GameObject scissors;
     public GameObject[] paperOut;
