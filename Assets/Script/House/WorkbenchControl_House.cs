@@ -65,9 +65,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Update()
     {
-        nextImage.SetActive(isNext);
-        FinishImage.SetActive(isFinish);
-
+        WorkbenchUI();
         switch (_process)
         {
             case 1:
@@ -83,8 +81,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 Step4_Install();
                 break;
         }
-
-        Next();
 
         //úy‘á
         //if (Input.GetKeyDown(KeyCode.C)) 
@@ -168,12 +164,16 @@ public class WorkbenchControl_House : MonoBehaviour
             }
         }
     }
-    void Next()
+    void WorkbenchUI()
     {
-        if (!isNext) return;
+        nextImage.SetActive(isNext);
+        FinishImage.SetActive(isFinish);
 
-        _process++;
-        Process();
+        if (Input.GetKeyDown(KeyCode.Y) && isNext)
+        {
+            _process++;
+            Process();
+        }
     }
 
     void Step1_Choose()
