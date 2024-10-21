@@ -27,7 +27,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("ChooseUI")]
     public GameObject chooseUI;
-    public GameObject panel;
+    public GameObject chooseBG;
     public GameObject[] contentImage;
     public Sprite[] contentSprite;
     
@@ -294,7 +294,7 @@ public class WorkbenchControl_House : MonoBehaviour
         chooseUI.SetActive(true);
         for (int v = 0; v <= 7; v++)
         {
-            panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
+            chooseBG.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
             yield return new WaitForSeconds(0.03f);
         }
         contentImage[0].SetActive(true);
@@ -303,7 +303,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         for (int v = 7; v <= 1; v--)
         {
-            panel.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
+            chooseBG.GetComponent<RectTransform>().localScale = new Vector3(20f, v, 1f);
             yield return new WaitForSeconds(0.02f);
         }
         contentImage[0].SetActive(false);
