@@ -28,7 +28,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject stamp;
     public Transform paperEndPos;
     public Transform stampStartPos, stampEndPos;
-    float _speed = 5f;
+    float _speed = 15f;
     float _rotateSpeed = 6f;
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
@@ -211,7 +211,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (isAppaerPaper) 
         {
-            blankPaper.transform.position = Vector3.MoveTowards(blankPaper.transform.position, paperEndPos.position, _speed * Time.deltaTime);
+            blankPaper.transform.position = Vector3.MoveTowards(blankPaper.transform.position, paperEndPos.position, _speed/10 * Time.deltaTime);
             if (blankPaper.transform.position == paperEndPos.position)
             {
                 isAppaerPaper = false;
