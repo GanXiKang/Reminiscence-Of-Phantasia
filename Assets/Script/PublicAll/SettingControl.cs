@@ -53,7 +53,7 @@ public class SettingControl : MonoBehaviour
 
     bool isCanUseSetting()
     {
-        return true;
+        return !StoryUIControl_Momotaro.isPerformances;
     }
 
     void OpenUI()
