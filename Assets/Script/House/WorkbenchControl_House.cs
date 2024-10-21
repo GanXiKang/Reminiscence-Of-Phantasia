@@ -181,11 +181,13 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Y) && isNext)
         {
+            isNext = false;
             _process++;
             Process();
         }
         if (Input.GetKeyDown(KeyCode.T) && isFinish)
         {
+            isFinish = false;
             StartCoroutine(LeaveWorkbench());
         }
     }
