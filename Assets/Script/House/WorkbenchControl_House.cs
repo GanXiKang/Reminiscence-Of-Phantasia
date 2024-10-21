@@ -213,6 +213,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T) && isFinish)
         {
             isFinish = false;
+            paper[_paperNum].SetActive(false);
             storyBook[_storyBookNum].SetActive(false);
             StartCoroutine(LeaveWorkbench());
         }
@@ -536,8 +537,8 @@ public class WorkbenchControl_House : MonoBehaviour
         if (!isPaperAdjustScale)
         {
             isPaperAdjustScale = true;
-            paper[_paperNum].transform.Translate(-5f, 0f, 0f);
-            paper[_paperNum].transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            paper[_paperNum].transform.Translate(-50f, 0f, 0f);
+            //paper[_paperNum].transform.localScale = new Vector3(0f, 0.5f, 0.5f);
         }
     }
 
