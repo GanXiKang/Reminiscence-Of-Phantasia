@@ -55,6 +55,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool[] isChangeColor = new bool[13];
 
     [Header("Step4")]
+    public Transform storyBookPoint;
     public GameObject[] storyBook;
     public static int _storyBookNum = 0;
     public static bool isFinishStoryBook = false;
@@ -212,6 +213,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T) && isFinish)
         {
             isFinish = false;
+            storyBook[_storyBookNum].SetActive(false);
             StartCoroutine(LeaveWorkbench());
         }
     }
@@ -396,7 +398,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (_rotation != 0)
             {
-                paper[_paperNum].transform.Rotate(0, 0, _rotation);
+                paper[_paperNum].transform.Rotate(0f, 0f, _rotation);
             }
         }
     }
@@ -521,22 +523,22 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step4_Install()
     {
+        storyBook[_storyBookNum].SetActive(true);
+        storyBook[_storyBookNum].transform.position = storyBookPoint.position;
+        storyBook[_storyBookNum].transform.rotation = storyBookPoint.rotation;
+
         if (isFinishStoryBook)
         {
-            _process = 0;
             isFinishStoryBook = false;
-            //testStoryBook.SetBool("isOpenTest", false);
-            Invoke("PaperClosebyBook", 1.2f);
+            isFinish = true;
+            _process = 0;
         }
         if (!isPaperAdjustScale)
         {
             isPaperAdjustScale = true;
+            paper[_paperNum].transform.Translate(-5f, 0f, 0f);
             paper[_paperNum].transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
-    }
-    void PaperClosebyBook()
-    {
-        paper[_paperNum].SetActive(false);
     }
 
     IEnumerator LeaveWorkbench()
