@@ -50,7 +50,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
             }
             else
             {
-                transform.position = paperDropPoint;
+                transform.position = paperDropPoint.position;
             }
 
             if (Input.GetMouseButtonUp(0))
