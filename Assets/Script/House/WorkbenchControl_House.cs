@@ -203,6 +203,7 @@ public class WorkbenchControl_House : MonoBehaviour
                     break;
 
                 case 3:
+                    SavePaperColor_Workbench.isSave = true;
                     _process = 4;
                     Process();
                     break;
@@ -484,12 +485,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        if (isClickSaveButton)
-        {
-            isClickSaveButton = false;
-            _process = 4;
-            Process();
-        }
+        isNext = FinishedColoring();
     }
     bool FinishedColoring()
     {
@@ -521,11 +517,6 @@ public class WorkbenchControl_House : MonoBehaviour
             default:
                 return false;
         }
-    }
-    public void Button_SaveTexture()
-    {
-        isClickSaveButton = true;
-        SavePaperColor_Workbench.isSave = true;
     }
 
     void Step4_Install()
