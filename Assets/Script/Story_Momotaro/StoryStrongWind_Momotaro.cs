@@ -26,11 +26,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         StartCoroutine(WindCycle());
     }
 
-    void Update()
-    {
-        wind.SetActive(isWindActive);
-    }
-
     IEnumerator WindCycle()
     {
         while (true)
@@ -42,6 +37,13 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             isWindActive = false; // 大风结束
             Debug.Log("大风结束！");
         }
+    }
+
+    void Update()
+    {
+        wind.SetActive(isWindActive);
+
+        BlownAway();
     }
 
     void BlownAway()
