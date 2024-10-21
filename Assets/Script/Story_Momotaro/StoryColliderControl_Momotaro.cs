@@ -13,6 +13,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
             switch (_whatCollider)
             {
                 case 1:
+                    print("Yes");
                     break;
             }
         }
