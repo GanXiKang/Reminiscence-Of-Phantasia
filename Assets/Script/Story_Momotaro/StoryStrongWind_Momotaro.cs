@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StoryStrongWind_Momotaro : MonoBehaviour
 {
+    GameObject player;
+
     [Header("Wind")]
     public GameObject wind;
     public float windCooldown = 3f; // 大风间隔时间
@@ -13,6 +15,11 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     [Header("BlownAway")]
     public Transform originalPoint;
     public static bool isBlownAway = false;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     void OnEnable()
     {
@@ -35,6 +42,18 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             isWindActive = false; // 大风结束
             Debug.Log("大风结束！");
         }
+    }
+
+    void BlownAway()
+    {
+        if (!isBlownAway) return;
+
+        isBlownAway = false;
+        Invoke("RenewPosition", 0.9f);
+    }
+    void RenewPosition()
+    {
+        player.transform.position = originalPoint.position;
     }
 
     void OnDisable()
