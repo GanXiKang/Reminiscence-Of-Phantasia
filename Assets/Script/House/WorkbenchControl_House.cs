@@ -527,6 +527,7 @@ public class WorkbenchControl_House : MonoBehaviour
         storyBook[_storyBookNum].SetActive(true);
         storyBook[_storyBookNum].transform.position = storyBookPoint.position;
         storyBook[_storyBookNum].transform.rotation = storyBookPoint.rotation;
+        storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", true);
 
         if (isFinishStoryBook)
         {
