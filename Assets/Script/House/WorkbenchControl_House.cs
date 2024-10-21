@@ -478,7 +478,7 @@ public class WorkbenchControl_House : MonoBehaviour
             isNext = true;
             isPaperRotation = false;
             _cutPaperFinish = 0;
-            paper[_paperNum].transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            paper[_paperNum].transform.rotation = Quaternion.Euler(90f, 0f, 90f);
         }
     }
 
