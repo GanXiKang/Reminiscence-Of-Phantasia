@@ -15,16 +15,11 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                 case 1:
                     if (!StoryPlayerAnimator_Momotaro.isRaccoonStone)
                     {
-                        Invoke("BlownAwayRenewPos",0.9f);
+                        StoryStrongWind_Momotaro.isBlownAway = true;
                         BlackScreenControl.isOpenBlackScreen = true;
                     }
                     break;
             }
         }
-    }
-
-    void BlownAwayRenewPos()
-    {
-        StoryStrongWind_Momotaro.isBlownAway = true;
     }
 }
