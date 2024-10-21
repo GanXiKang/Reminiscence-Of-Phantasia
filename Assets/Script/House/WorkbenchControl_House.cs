@@ -18,6 +18,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject workbenchUI;
     public GameObject nextImage;
     public GameObject[] processNum;
+    bool isNext = false;
 
     [Header("Step1")]
     public GameObject blankPaper;
@@ -62,6 +63,8 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Update()
     {
+        nextImage.SetActive(isNext);
+
         switch (_process)
         {
             case 1:
@@ -78,12 +81,14 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
         }
 
+        Next();
+
         //úy‘á
-        if (Input.GetKeyDown(KeyCode.C)) 
-        {
-            _process++;
-            Process();
-        }
+        //if (Input.GetKeyDown(KeyCode.C)) 
+        //{
+        //    _process++;
+        //    Process();
+        //}
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             _storyBookNum = 0;
@@ -160,6 +165,13 @@ public class WorkbenchControl_House : MonoBehaviour
             }
         }
     }
+    void Next()
+    {
+        if (!isNext) return;
+
+        _process++;
+        Process();
+    }
 
     void Step1_Choose()
     {
@@ -226,9 +238,8 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (Vector3.Distance(stamp.transform.position, stampStartPos.position) < 0.01f)
         {
+            isNext = true;
             isAppaerStamp = false;
-            _process = 2;
-            Process();
         }
     }
     public void Button_ChoosePattern(int num)
