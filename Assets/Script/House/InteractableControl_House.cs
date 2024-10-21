@@ -51,7 +51,8 @@ public class InteractableControl_House : MonoBehaviour
                 isInteractable = false;
                 switch (ColliderControl_House._nowNumber)
                 {
-                    case 1:         
+                    case 1:
+                        WorkbenchControl_House._process = 1;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookWorkbench = true;
                         break;  //¹¤×÷Ì¨
