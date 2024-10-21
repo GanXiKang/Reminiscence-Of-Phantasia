@@ -133,6 +133,7 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (_process)
         {
             case 0:
+                print("0");
                 isPaperAdjustScale = false;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
@@ -141,20 +142,33 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 1:
+                print("1");
                 isAppaerPaper = true;
                 break;
 
             case 2:
+                print("2");
                 isPaperRotation = true;
                 isAppaerPaper = false;
                 break;
 
             case 3:
+                print("3");
                 colorUI.SetActive(true);
                 break;
 
             case 4:
-                //testStoryBook.SetBool("isOpenTest", true);
+                print("4");
+                storyBook[_storyBookNum].SetActive(true);
+                storyBook[_storyBookNum].transform.position = storyBookPoint.position;
+                storyBook[_storyBookNum].transform.rotation = storyBookPoint.rotation;
+                storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", true);
+                if (!isPaperAdjustScale)
+                {
+                    isPaperAdjustScale = true;
+                    paper[_paperNum].transform.Translate(-8f, 0f, 0f);
+                    paper[_paperNum].transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                }
                 colorUI.SetActive(false);
                 break;
         }
@@ -524,22 +538,11 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step4_Install()
     {
-        storyBook[_storyBookNum].SetActive(true);
-        storyBook[_storyBookNum].transform.position = storyBookPoint.position;
-        storyBook[_storyBookNum].transform.rotation = storyBookPoint.rotation;
-        storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", true);
-
         if (isFinishStoryBook)
         {
             isFinishStoryBook = false;
             isFinish = true;
             _process = 0;
-        }
-        if (!isPaperAdjustScale)
-        {
-            isPaperAdjustScale = true;
-            paper[_paperNum].transform.Translate(-8f, 0f, 0f);
-            paper[_paperNum].transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
     }
 
