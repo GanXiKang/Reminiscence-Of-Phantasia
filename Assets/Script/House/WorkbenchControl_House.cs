@@ -8,7 +8,6 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("ProcessObject")]
     public GameObject[] processObject;
     public static int _process;
-    public static int _storyBookNum = 0;
     bool isStartProcess = true;
 
     [Header("Paper")]
@@ -57,6 +56,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step4")]
     public GameObject[] storyBook;
+    public static int _storyBookNum = 0;
     public static bool isFinishStoryBook = false;
     bool isPaperAdjustScale;
 
