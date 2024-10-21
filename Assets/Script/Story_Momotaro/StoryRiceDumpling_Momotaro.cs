@@ -9,6 +9,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
+    public AudioClip plazaBGM;
 
     [Header("SkillUI")]
     public GameObject skill;
@@ -46,6 +47,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             StoryUIControl_Momotaro.isPerformances = !StoryUIControl_Momotaro.isPerformances;
+            if (!StoryUIControl_Momotaro.isPerformances)
+            {
+                BGM.Stop();
+                BGM.clip = plazaBGM;
+                BGM.Play();
+            }
         }
     }
 
