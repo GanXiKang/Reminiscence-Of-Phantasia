@@ -14,8 +14,21 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     public Transform originalPoint;
     public static bool isBlownAway = false;
 
-    void Update()
+    void Start()
     {
-       
+        StartCoroutine(WindCycle());
+    }
+
+    IEnumerator WindCycle()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(windCooldown);
+            isWindActive = true; // 大风开始
+            Debug.Log("大风开始！");
+            yield return new WaitForSeconds(windDuration);
+            isWindActive = false; // 大风结束
+            Debug.Log("大风结束！");
+        }
     }
 }
