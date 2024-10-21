@@ -36,4 +36,9 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             Debug.Log("´ó·ç½áÊø£¡");
         }
     }
+
+    void OnDisable()
+    {
+        StopCoroutine(WindCycle());
+    }
 }
