@@ -37,6 +37,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("ChooseUI")]
     public GameObject chooseUI;
     public GameObject chooseBG;
+    public GameObject selectImage;
     public GameObject[] contentImage;
     public Sprite[] contentSprite;
     
@@ -192,8 +193,12 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y) && isNext)
         {
             isNext = false;
-            _process++;
-            Process();
+            switch (_process)
+            {
+                case 1:
+                    StartCoroutine(DisappaerChooseUI());
+                    break;
+            }
         }
         if (Input.GetKeyDown(KeyCode.T) && isFinish)
         {
@@ -267,12 +272,16 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (Vector3.Distance(stamp.transform.position, stampStartPos.position) < 0.01f)
         {
-            isNext = true;
             isAppaerStamp = false;
+            _process++;
+            Process();
         }
     }
     public void Button_ChoosePattern(int num)
     {
+        isNext = true;
+        selectImage.SetActive(true);
+        selectImage.transform.position = contentImage[num].transform.position;
         switch (_storyBookNum)
         {
             case 0:
@@ -330,7 +339,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 }
                 break;
         }
-        StartCoroutine(DisappaerChooseUI());
     }
     IEnumerator AppaerChooseUI()
     {
@@ -352,6 +360,7 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         contentImage[0].SetActive(false);
         chooseUI.SetActive(false);
+
         yield return new WaitForSeconds(0.2f);
         isAppaerStamp = true;
         isStampGo = true;
