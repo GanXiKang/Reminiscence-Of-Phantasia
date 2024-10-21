@@ -50,12 +50,8 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         if (!isBlownAway) return;
 
-        isBlownAway = false;
-        Invoke("RenewPosition", 0.9f);
-    }
-    void RenewPosition()
-    {
         player.transform.position = originalPoint.position;
+        isBlownAway = false;
     }
 
     void OnDisable()
