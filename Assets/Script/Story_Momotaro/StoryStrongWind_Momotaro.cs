@@ -15,10 +15,12 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     [Header("BlownAway")]
     public Transform originalPoint;
     public static bool isBlownAway = false;
+    StoryPlayerControl playerControl;
 
     void Start()
     {
         player = GameObject.Find("Player");
+        playerControl = player.GetComponent<StoryPlayerControl>();
     }
 
     void OnEnable()
