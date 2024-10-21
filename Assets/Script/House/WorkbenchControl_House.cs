@@ -169,6 +169,17 @@ public class WorkbenchControl_House : MonoBehaviour
         nextImage.SetActive(isNext);
         FinishImage.SetActive(isFinish);
 
+        for (int p = 1; p < processNum.Length; p++)
+        {
+            if (p == _process)
+            {
+                processNum[p].transform.localScale = new Vector3(0.9f, 0.9f, 1f);
+            } else
+            {
+                processNum[p].transform.localScale = new Vector3(0.7f, 0.7f, 1f);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Y) && isNext)
         {
             _process++;
