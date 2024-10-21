@@ -6,8 +6,8 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 {
     [Header("Wind")]
     public GameObject wind;
-    public float windDuration = 3f; // 大风持续时间
-    public float windCooldown = 5f; // 大风间隔时间
+    public float windCooldown = 3f; // 大风间隔时间
+    public float windDuration = 2f; // 大风持续时间
     bool isWindActive = false;
 
     [Header("BlownAway")]
