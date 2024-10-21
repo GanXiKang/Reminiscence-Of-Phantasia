@@ -56,6 +56,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step4")]
     public Transform storyBookPoint;
+    public Transform paperDropPoint;
     public GameObject[] storyBook;
     public static int _storyBookNum = 0;
     public static bool isFinishStoryBook = false;
@@ -160,7 +161,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 if (!isPaperAdjustScale)
                 {
                     isPaperAdjustScale = true;
-                    paper[_paperNum].transform.Translate(-8f, 0f, 0f);
+                    paper[_paperNum].transform.position = paperDropPoint.position;
                     paper[_paperNum].transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 }
                 colorUI.SetActive(false);
