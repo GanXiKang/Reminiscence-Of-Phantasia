@@ -14,9 +14,14 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     public Transform originalPoint;
     public static bool isBlownAway = false;
 
-    void Start()
+    void OnEnable()
     {
         StartCoroutine(WindCycle());
+    }
+
+    void Update()
+    {
+        wind.SetActive(isWindActive);
     }
 
     IEnumerator WindCycle()
