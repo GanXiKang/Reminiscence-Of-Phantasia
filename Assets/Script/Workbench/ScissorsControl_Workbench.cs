@@ -4,25 +4,11 @@ using UnityEngine;
 
 public class ScissorsControl_Workbench : MonoBehaviour
 {
-    //Mouse
-    float mouseY, mouseX;
-    float _moveSpeed = 200f;
-    float newZ, newX;
-    float minZ = 1f, maxZ = 11f;
-    float minX = 1f, maxX = 7f;
-
-    //Point
+    public Transform paper;
+    public GameObject effects;
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
-
-    //collider
     bool[] isCollider = new bool[5];
-
-    [Header("Effects")]
-    public GameObject effects;
-
-    [Header("Paper")]
-    public Transform paper;
 
     void Start()
     {
