@@ -23,7 +23,8 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isFinish = false;
 
     [Header("ToolBox")]
-    public Transform openPoint, closePoint;
+    public Transform openPoint;
+    public Transform closePoint;
     public GameObject toolBoxBG;
     public GameObject up, down;
     bool isOpenBox = false;
