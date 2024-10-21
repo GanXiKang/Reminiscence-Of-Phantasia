@@ -51,12 +51,10 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         if (!isBlownAway) return;
 
         isBlownAway = false;
-        print("YES1");
         Invoke("RenewPosition", 0.9f);
     }
     void RenewPosition()
     {
-        print("2");
         player.transform.position = originalPoint.position;
     }
 
