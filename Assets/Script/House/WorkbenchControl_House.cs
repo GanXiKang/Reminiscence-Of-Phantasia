@@ -28,7 +28,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject stamp;
     public Transform paperEndPos;
     public Transform stampStartPos, stampEndPos;
-    float _speed = 12f;
+    float _speed = 15f;
     float _rotateSpeed = 6f;
     bool isAppaerPaper = false;
     bool isAppaerStamp = false;
@@ -69,7 +69,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (CameraControl_House.isLookWorkbench && isStartProcess)
         {
             isStartProcess = false;
-            Invoke("StartProcess", 1f);
+            Invoke("StartProcess", 0.8f);
         }
 
         WorkbenchUI();
@@ -210,6 +210,7 @@ public class WorkbenchControl_House : MonoBehaviour
             {
                 isAppaerPaper = false;
                 StartCoroutine(AppaerChooseUI());
+                print("ok");
             }
         }
         if (isAppaerStamp)
