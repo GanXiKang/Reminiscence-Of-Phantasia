@@ -8,9 +8,9 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     [Header("Target")]
     public Transform targetPosition;
+    public Transform paperDropPoint;
     public float snapDistance = 1.0f;
 
-    private Vector3 originalPos;
     private Vector3 offset;
     private bool isDragging = false;
     private bool isFixed = false;
@@ -18,7 +18,6 @@ public class DragAndDrop_Workbench : MonoBehaviour
     void Start()
     {
         boxC = GetComponent<BoxCollider>();
-        originalPos = transform.position;
     }
 
     void Update()
@@ -51,7 +50,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
             }
             else
             {
-                transform.position = originalPos;
+                transform.position = paperDropPoint;
             }
 
             if (Input.GetMouseButtonUp(0))
