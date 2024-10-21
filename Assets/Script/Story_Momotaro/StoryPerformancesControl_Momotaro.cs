@@ -7,7 +7,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip performancesBGM, plazaBGM;
+    public AudioClip performancesBGM;
 
     [Header("Performances")]
     public Text test; //úy‘á∞Ê
@@ -74,8 +74,5 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void OnDisable()
     {
         isPerformances = false;
-        BGM.Stop();
-        BGM.clip = plazaBGM;
-        BGM.Play();
     }
 }
