@@ -8,6 +8,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip performancesBGM;
+    bool isStopBGM = false;
 
     [Header("Performances")]
     public Text test; //úy‘á∞Ê
@@ -29,6 +30,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void Update()
     {
         PerformancesTimeOut();
+        BGMisSettingActive();
     }
 
     void StartNewRound()
@@ -41,6 +43,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     }
     void PerformancesTimeOut()
     {
+        if (SettingControl.isSettingActive) return;
         if (!isPerformances) return;
         if (!isTiming) return;
 
@@ -53,9 +56,28 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             Invoke("StartNewRound", randomTime);
         }
     }
+    void BGMisSettingActive()
+    {
+        if (SettingControl.isSettingActive)
+        {
+            BGM.Stop();
+            isStopBGM = true;
+        }
+        else
+        {
+            if (isStopBGM)
+            {
+                BGM.Play();
+                isStopBGM = false;
+            }
+        }
+
+        
+    }
 
     public void Dance_Button(int num)
     {
+        if (SettingControl.isSettingActive) return;
         if (!isPerformances) return;
 
         if (num == _randomDanceNum)
