@@ -9,6 +9,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject[] processObject;
     public static int _process;
     public static int _storyBookNum = 0;
+    bool isStartProcess = true;
 
     [Header("Paper")]
     public GameObject[] paper;
@@ -65,6 +66,12 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Update()
     {
+        if (CameraControl_House.isLookWorkbench && isStartProcess)
+        {
+            isStartProcess = false;
+            Invoke("StartProcess", 1f);
+        }
+
         WorkbenchUI();
         switch (_process)
         {
@@ -81,6 +88,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 Step4_Install();
                 break;
         }
+
 
         //úy‘á
         if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -99,6 +107,12 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             _storyBookNum = 3;
         }
+    }
+
+    void StartProcess()
+    {
+        _process = 1;
+        Process();
     }
 
     void Process()
