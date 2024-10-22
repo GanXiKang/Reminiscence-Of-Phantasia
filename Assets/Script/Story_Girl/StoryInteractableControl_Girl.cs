@@ -875,11 +875,11 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             StoryThermometerControl_Girl.isSkillActive = true;
             if (!isFinallyMatch)
             {
-                StoryThermometerControl_Girl._matchQuantity = 20;
+                StoryThermometerControl_Girl._matchQuantity = 15;
             }
             else 
             {
-                StoryThermometerControl_Girl._matchQuantity += 40;
+                StoryThermometerControl_Girl._matchQuantity += 30;
                 StoryNpcAnimator_Girl._direction = 1;
                 StoryNpcAnimator_Girl.isGoGrandmom = true;
             }
