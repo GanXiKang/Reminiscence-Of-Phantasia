@@ -31,7 +31,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public GameObject skill;
     public Text quantity;
     public static bool isSkillActive;
-    public static int _matchQuantit = 0;
+    public static int _matchQuantity = 0;
     int _countUse = 0;
     bool isteach = false;
 
