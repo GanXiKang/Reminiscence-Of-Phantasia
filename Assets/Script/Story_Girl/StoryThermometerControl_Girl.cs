@@ -13,9 +13,9 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
     [Header("Value")]
     public float _temperature = 36.5f;
-    public float _decline = 0.1f;
+    public float _decline = 0.08f;
     public float _snow = 0.2f;
-    public float _rise = 0.15f;
+    public float _rise = 0.14f;
     public static bool isThermometer = false;
     public static bool isStepOnSnow = false;
     public static bool isFireBeside = false;
@@ -31,7 +31,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public GameObject skill;
     public Text quantity;
     public static bool isSkillActive;
-    public static int _matchQuantity = 0;
+    public static int _matchQuantit = 0;
     int _countUse = 0;
     bool isteach = false;
 
