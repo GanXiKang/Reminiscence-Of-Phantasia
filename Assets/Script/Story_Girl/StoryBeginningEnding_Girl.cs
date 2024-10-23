@@ -159,13 +159,10 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         BGM.PlayOneShot(coroutine);
         if (StoryUIControl_Girl.isStoryStart)
         {
-            TransitionUIControl.isHouse = true;
-            TransitionUIControl.isTransitionUIAnim_In = true;
-            Invoke("GoToHouse", 1f);
-            //BGM.Stop();
-            //BGM.clip = streetBGM;
-            //BGM.Play();
-            //StartCoroutine(StorySystemUIDisappear(canvasGroup));
+            BGM.Stop();
+            BGM.clip = streetBGM;
+            BGM.Play();
+            StartCoroutine(StorySystemUIDisappear(canvasGroup));
         }
         else if (StoryUIControl_Girl.isStoryEnding)
         {
