@@ -9,6 +9,7 @@ public class DialogueControl_House : MonoBehaviour
     public GameObject[] whoDialogue;
     public Text[] whoContent;
     public static int _whoDialogue;
+    public static bool isBird;
 
     [Header("Position")]
     public Transform[] dialoguePos;
@@ -24,7 +25,8 @@ public class DialogueControl_House : MonoBehaviour
 
     void Start()
     {
-        
+        UIControl_House.isDialogue = true;
+        isBird = false;
     }
 
     void OnEnable()
@@ -81,13 +83,19 @@ public class DialogueControl_House : MonoBehaviour
                 _index++;
                 break;
 
-            case "Bird":
-                _whoDialogue = 2;
+            case "Target":
+                if (isBird)
+                {
+                    _whoDialogue = 2;
+                }
+                else
+                {
+                    _whoDialogue = 3;
+                }
                 _index++;
                 break;
 
-            case "Cat":
-                _whoDialogue = 3;
+            case "Event":
                 _index++;
                 break;
         }
