@@ -70,6 +70,7 @@ public class DialogueControl_House : MonoBehaviour
                 _textSpend = 0f;
             }
         }
+        AvatarControl_House.isTalk = !isTextFinish;
     }
     void DialogueMove()
     {
