@@ -16,6 +16,7 @@ public class DialogueControl_House : MonoBehaviour
     float _moveSpeed = 300f;
     bool isMove;
     bool isPosA;
+    int PosANum;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
@@ -75,31 +76,20 @@ public class DialogueControl_House : MonoBehaviour
     {
         if (!isMove) return;
 
-        for (int w = 0; w < whoDialogue.Length; w++)
+        if (isPosA)
         {
-            if (whoDialogue[w].transform.position == dialoguePos[1].position)
-            {
-                isPosA = true;
-            }
-            if (isPosA)
-            {
-                if (whoDialogue[w].transform.position == dialoguePos[2].position)
-                {
-                    isPosA = false;
-                }
-                else
-                {
-                    whoDialogue[w].transform.position = Vector3.MoveTowards(whoDialogue[w].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
-                }
-            }
+            whoDialogue[PosANum].transform.position = Vector3.MoveTowards(whoDialogue[PosANum].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
         }
-        if (whoDialogue[_whoDia].transform.position == dialoguePos[1].position)
+
+        if (whoDialogue[_whoDia].transform.position != dialoguePos[1].position)
         {
-            isMove = false;
+            whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
         }
         else
         {
-            whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+            isMove = false;
+            isPosA = true;
+            PosANum = _whoDia;
         }
     }
 
@@ -137,6 +127,7 @@ public class DialogueControl_House : MonoBehaviour
 
             case "End":
                 UIControl_House.isDialogue = false;
+                isPosA = false;
                 for (int i = 0; i < whoDialogue.Length; i++)
                 {
                     whoDialogue[i].transform.position = dialoguePos[0].position;
