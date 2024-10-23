@@ -74,7 +74,21 @@ public class DialogueControl_House : MonoBehaviour
     {
         if (!isMove) return;
 
-        isMove = false
+        if (whoDialogue[_whoDia].transform.position == dialoguePos[1].position)
+        {
+            isMove = false;
+        }
+        else
+        {
+            whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+        }
+        for (int w = 0; w < dialoguePos.Length; w++)
+        {
+            if (whoDialogue[w].transform.position == dialoguePos[1].position)
+            {
+                whoDialogue[w].transform.position = Vector3.MoveTowards(whoDialogue[w].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
+            }
+        }
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -85,6 +99,7 @@ public class DialogueControl_House : MonoBehaviour
             case "Player":
                 _whoDia = 0;
                 isMove = true;
+                whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
                 _index++;
                 break;
 
@@ -93,11 +108,13 @@ public class DialogueControl_House : MonoBehaviour
                 {
                     _whoDia = 1;
                     isMove = true;
+                    whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
                 }
                 else
                 {
                     _whoDia = 2;
                     isMove = true;
+                    whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
                 }
                 _index++;
                 break;
