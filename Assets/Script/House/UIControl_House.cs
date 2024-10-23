@@ -19,7 +19,18 @@ public class UIControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            
+            isDialogue = true;
+            DialogueControl_House._textCount = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            isDialogue = true;
+            DialogueControl_House._textCount = 24;
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            isDialogue = true;
+            DialogueControl_House._textCount = 36;
         }
     }
 }
