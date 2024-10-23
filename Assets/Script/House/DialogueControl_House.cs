@@ -15,6 +15,7 @@ public class DialogueControl_House : MonoBehaviour
     public Transform[] dialoguePos;
     float _moveSpeed = 300f;
     bool isMove;
+    bool isPosA;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
@@ -74,6 +75,24 @@ public class DialogueControl_House : MonoBehaviour
     {
         if (!isMove) return;
 
+        for (int w = 0; w < whoDialogue.Length; w++)
+        {
+            if (whoDialogue[w].transform.position == dialoguePos[1].position)
+            {
+                isPosA = true;
+            }
+            if (isPosA)
+            {
+                if (whoDialogue[w].transform.position == dialoguePos[2].position)
+                {
+                    isPosA = false;
+                }
+                else
+                {
+                    whoDialogue[w].transform.position = Vector3.MoveTowards(whoDialogue[w].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
+                }
+            }
+        }
         if (whoDialogue[_whoDia].transform.position == dialoguePos[1].position)
         {
             isMove = false;
@@ -81,13 +100,6 @@ public class DialogueControl_House : MonoBehaviour
         else
         {
             whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
-            for (int w = 0; w < dialoguePos.Length; w++)
-            {
-                if (whoDialogue[w].transform.position == dialoguePos[1].position)
-                {
-                    whoDialogue[w].transform.position = Vector3.MoveTowards(whoDialogue[w].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
-                }
-            }
         }
     }
 
