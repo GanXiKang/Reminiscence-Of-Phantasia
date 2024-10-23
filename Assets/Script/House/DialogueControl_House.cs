@@ -27,13 +27,12 @@ public class DialogueControl_House : MonoBehaviour
     {
         GetTextFormFile(textFile[_textCount]);
         StartCoroutine(SetTextLabelIndexUI());
-
-        StartCoroutine(UIMoveToPosition(whoDialogue[0].transform.position, dialoguePos[1].position));
     }
 
     void Update()
     {
         TextController();
+        DialogueMove();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -67,6 +66,10 @@ public class DialogueControl_House : MonoBehaviour
                 _textSpend = 0f;
             }
         }
+    }
+    void DialogueMove()
+    {
+        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, 5 * Time.deltaTime);
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -103,20 +106,5 @@ public class DialogueControl_House : MonoBehaviour
         }
         isTextFinish = true;
         _index++;
-    }
-    IEnumerator UIMoveToPosition(Vector3 message,Vector3 targetPos)
-    {
-        Vector3 startPos = message;
-        float time = 0f;
-        float duration = 1f;
-
-        while (time < duration)
-        {
-            message = Vector2.Lerp(startPos, targetPos, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        message = targetPos;
     }
 }
