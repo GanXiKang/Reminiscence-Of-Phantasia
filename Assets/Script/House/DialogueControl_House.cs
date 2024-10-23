@@ -27,6 +27,7 @@ public class DialogueControl_House : MonoBehaviour
     {
         GetTextFormFile(textFile[_textCount]);
         //StartCoroutine(SetTextLabelIndexUI());
+        StartCoroutine(UIMoveToPosition(whoDialogue[1], dialoguePos[1].anchoredPosition));
     }
 
     void Update()
