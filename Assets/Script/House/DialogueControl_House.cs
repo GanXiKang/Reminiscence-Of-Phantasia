@@ -14,6 +14,10 @@ public class DialogueControl_House : MonoBehaviour
     [Header("Position")]
     public Transform[] dialoguePos;
     float _moveSpeed = 300f;
+    bool isPosA = false;
+    bool isPosB = false;
+    bool isMove;
+    int _mode;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
@@ -33,6 +37,7 @@ public class DialogueControl_House : MonoBehaviour
     void Update()
     {
         TextController();
+        DialogueMove();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -69,7 +74,37 @@ public class DialogueControl_House : MonoBehaviour
     }
     void DialogueMove()
     {
-        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+        if (!isMove) return;
+
+        switch (_mode)
+        {
+            case 1:
+                if(!isPos[0])
+                if (whoDialogue[0].transform.position != dialoguePos[1].position)
+                {
+                    whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    isMove = false;
+                }
+                break;
+
+            case 2:
+                if (whoDialogue[0].transform.position != dialoguePos[1].position)
+                {
+                    whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    isMove = false;
+                }
+                break;
+
+            case 3:
+                
+                break;
+        }
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -79,7 +114,6 @@ public class DialogueControl_House : MonoBehaviour
         {
             case "Player":
                 _whoDia = 0;
-                DialogueMove();
                 _index++;
                 break;
 
@@ -101,6 +135,12 @@ public class DialogueControl_House : MonoBehaviour
 
             case "End":
                 UIControl_House.isDialogue = false;
+                isPosA = false;
+                isPosB = false;
+                for (int i = 0; i < whoDialogue.Length; i++)
+                {
+                    whoDialogue[i].transform.position = dialoguePos[0].position;
+                }
                 break;
         }
         whoContent[_whoDia].text = "";
