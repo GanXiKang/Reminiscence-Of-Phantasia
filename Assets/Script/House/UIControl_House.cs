@@ -21,7 +21,7 @@ public class UIControl_House : MonoBehaviour
         {
             isDialogue = true;
             DialogueControl_House._textCount = 1;
-            DialogueControl_House._whoDialogue = 1;
+            DialogueControl_House._whoDia = 1;
         }
     }
 }

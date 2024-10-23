@@ -94,10 +94,10 @@ public class DialogueControl_House : MonoBehaviour
                 _index++;
                 break;
         }
-        whoContent[_whoDialogue].text = "";
+        whoContent[_whoDia].text = "";
         for (int i = 0; i < textList[_index].Length; i++)
         {
-            whoContent[_whoDialogue].text += textList[_index][i];
+            whoContent[_whoDia].text += textList[_index][i];
             yield return new WaitForSeconds(_textSpend);
         }
         isTextFinish = true;

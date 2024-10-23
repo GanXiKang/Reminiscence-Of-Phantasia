@@ -22,7 +22,7 @@ public class AvatarControl_House : MonoBehaviour
     {
         if (!UIControl_House.isDialogue) return;
 
-        if (_who == DialogueControl_House._whoDialogue && !isAnim)
+        if (_who == DialogueControl_House._whoDia && !isAnim)
         {
             StartCoroutine(SwitchAvatar());
         }
