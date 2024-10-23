@@ -11,7 +11,6 @@ public class AvatarControl_House : MonoBehaviour
     public Sprite normal;
     public Sprite mouth;
     public int _who;
-    public static int _whoDialogue = 0;
     bool isAnim = false;
 
     void Start()
@@ -23,7 +22,7 @@ public class AvatarControl_House : MonoBehaviour
     {
         if (!UIControl_House.isDialogue) return;
 
-        if (_who == _whoDialogue && !isAnim)
+        if (_who == DialogueControl_House._whoDialogue && !isAnim)
         {
             StartCoroutine(SwitchAvatar());
         }
