@@ -26,7 +26,7 @@ public class DialogueControl_House : MonoBehaviour
     void OnEnable()
     {
         GetTextFormFile(textFile[_textCount]);
-        StartCoroutine(SetTextLabelIndexUI());
+        //StartCoroutine(SetTextLabelIndexUI());
     }
 
     void Update()
