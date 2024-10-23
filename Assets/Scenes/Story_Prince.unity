@@ -6517,9 +6517,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33e915be9f77404b85eea59bdeadc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigScale: {x: 350, y: 200, z: 1}
-  smallScale: {x: 19.5, y: 11, z: 1}
+  bigScale: {x: 1200, y: 600, z: 1}
+  smallScale: {x: 20, y: 12, z: 1}
   animationDuration: 1
+  book: {fileID: 21300000, guid: 63e2c1d6b905507419f3ee79b395d057, type: 3}
+  house: {fileID: 21300000, guid: b51390057c3074641851326912d13c44, type: 3}
 --- !u!114 &1627665715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6540,7 +6542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4bc568ccb349af848a6c2119ce7e3b25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63e2c1d6b905507419f3ee79b395d057, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
