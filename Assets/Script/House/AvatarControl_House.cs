@@ -35,10 +35,10 @@ public class AvatarControl_House : MonoBehaviour
         while (isSwitchActive)
         {
             avatar.sprite = mouth;
-            yield return new WaitForSeconds(0.5f); // 切換到mouth並等待0.5秒
+            yield return new WaitForSeconds(0.5f);
 
             avatar.sprite = normal;
-            yield return new WaitForSeconds(0.5f); // 切換到normal並等待0.5秒
+            yield return new WaitForSeconds(0.5f);
         }
 
         isSwitching = false;
