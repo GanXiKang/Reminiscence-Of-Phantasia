@@ -26,11 +26,13 @@ public class UIControl_House : MonoBehaviour
         {
             isDialogue = true;
             DialogueControl_House._textCount = 24;
+            DialogueControl_House.isBird = true;
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
             isDialogue = true;
             DialogueControl_House._textCount = 36;
+            DialogueControl_House.isBird = false;
         }
     }
 }
