@@ -14,8 +14,6 @@ public class DialogueControl_House : MonoBehaviour
     [Header("Position")]
     public Transform[] dialoguePos;
     float _moveSpeed = 300f;
-    bool isPosA = false;
-    bool isPosB = false;
     bool isMove;
 
     [Header("TextFile")]
@@ -76,47 +74,7 @@ public class DialogueControl_House : MonoBehaviour
     {
         if (!isMove) return;
 
-        switch (_whoDia)
-        {
-            case 0:
-                if (!isPosA)
-                {
-                    if (whoDialogue[0].transform.position != dialoguePos[1].position)
-                    {
-                        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
-                    }
-                    else
-                    {
-                        isMove = false;
-                        isPosA = true;
-                    }
-                }
-                else if (!isPosB)
-                {
-                    if (whoDialogue[0].transform.position != dialoguePos[1].position)
-                    {
-                        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
-                    }
-                    else
-                    {
-                        isMove = false;
-                        isPosB = true;
-                    }
-                }
-                else
-                {
-                    
-                }
-                break;
-
-            case 1:
-                
-                break;
-
-            case 2:
-                
-                break;
-        }
+        isMove = false
     }
 
     IEnumerator SetTextLabelIndexUI()
