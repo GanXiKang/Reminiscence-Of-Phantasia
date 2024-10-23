@@ -10,7 +10,7 @@ public class UIControl_House : MonoBehaviour
 
     [Header("DialogueUI")]
     public GameObject dialogueUI;
-    public static bool isDialogue = false;
+    public static bool isDialogue = true;
 
     void Update()
     {
