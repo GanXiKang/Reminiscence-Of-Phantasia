@@ -73,8 +73,8 @@ public class DialogueControl_House : MonoBehaviour
         switch (textList[_index].Trim())
         {
             case "Player":
+                //_whoDialogue = 1;
                 //StartCoroutine(UIMoveToPosition(whoDialogue[1], dialoguePos[1].anchoredPosition));
-                _whoDialogue = 1;
                 _index++;
                 break;
 
