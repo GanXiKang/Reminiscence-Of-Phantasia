@@ -7,14 +7,14 @@ public class AvatarControl_House : MonoBehaviour
     [Header("Sprite")]
     public Sprite normal;
     public Sprite mouth;
-
-    void Start()
-    {
-        
-    }
+    public int _who;
+    public static int _whoDialogue;
 
     void Update()
     {
+        if (_who == _whoDialogue) return;
+
         
     }
+
 }
