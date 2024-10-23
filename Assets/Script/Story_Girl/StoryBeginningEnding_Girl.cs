@@ -166,6 +166,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
         }
         else if (StoryUIControl_Girl.isStoryEnding)
         {
+            TransitionUIControl.isHouse = true;
             TransitionUIControl.isTransitionUIAnim_In = true;
             Invoke("GoToHouse", 1f);
         }
