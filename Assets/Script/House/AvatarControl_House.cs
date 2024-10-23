@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class AvatarControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Sprite")]
+    public Sprite normal;
+    public Sprite mouth;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
