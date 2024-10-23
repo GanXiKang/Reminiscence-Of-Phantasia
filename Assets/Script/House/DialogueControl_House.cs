@@ -125,8 +125,6 @@ public class DialogueControl_House : MonoBehaviour
 
             case "End":
                 UIControl_House.isDialogue = false;
-                isPosA = false;
-                isPosB = false;
                 for (int i = 0; i < whoDialogue.Length; i++)
                 {
                     whoDialogue[i].transform.position = dialoguePos[0].position;
