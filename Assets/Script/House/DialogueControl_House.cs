@@ -26,6 +26,7 @@ public class DialogueControl_House : MonoBehaviour
     void Start()
     {
         UIControl_House.isDialogue = true;
+        _textCount = 1;
         isBird = false;
     }
 
@@ -107,5 +108,20 @@ public class DialogueControl_House : MonoBehaviour
         }
         isTextFinish = true;
         _index++;
+    }
+    IEnumerator UIMoveToPosition(RectTransform message, Vector2 targetPos)
+    {
+        Vector2 startPos = message.anchoredPosition;
+        float time = 0f;
+        float duration = 1f;
+
+        while (time < duration)
+        {
+            message.anchoredPosition = Vector2.Lerp(startPos, targetPos, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        message.anchoredPosition = targetPos;
     }
 }
