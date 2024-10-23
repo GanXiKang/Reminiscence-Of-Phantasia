@@ -8,7 +8,7 @@ public class DialogueControl_House : MonoBehaviour
     [Header("UI")]
     public RectTransform[] whoDialogue;
     public Text[] whoContent;
-    public static int _whoDialogue;
+    public static int _whoDialogue = 1;
     public static bool isBird = false;
 
     [Header("Position")]
