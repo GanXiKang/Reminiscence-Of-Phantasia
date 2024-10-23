@@ -10,18 +10,11 @@ public class UIControl_House : MonoBehaviour
 
     [Header("DialogueUI")]
     public GameObject dialogueUI;
-    public static bool isDialogue = false;
+    public static bool isDialogue = true; //test
 
     void Update()
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
         dialogueUI.SetActive(isDialogue);
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            isDialogue = true;
-            DialogueControl_House._textCount = 1;
-            DialogueControl_House._whoDia = 1;
-        }
     }
 }
