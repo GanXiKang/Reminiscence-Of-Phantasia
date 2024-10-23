@@ -69,7 +69,7 @@ public class DialogueControl_House : MonoBehaviour
     }
     void DialogueMove()
     {
-        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, 1 * Time.deltaTime);
+        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, 300f * Time.deltaTime);
     }
 
     IEnumerator SetTextLabelIndexUI()
