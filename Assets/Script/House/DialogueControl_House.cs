@@ -9,7 +9,7 @@ public class DialogueControl_House : MonoBehaviour
     public RectTransform[] whoDialogue;
     public Text[] whoContent;
     public static int _whoDialogue;
-    public static bool isBird;
+    public static bool isBird = false;
 
     [Header("Position")]
     public RectTransform[] dialoguePos;
@@ -22,13 +22,6 @@ public class DialogueControl_House : MonoBehaviour
     bool isTextFinish;
 
     List<string> textList = new List<string>();
-
-    void Start()
-    {
-        UIControl_House.isDialogue = true;
-        _textCount = 1;
-        isBird = false;
-    }
 
     void OnEnable()
     {
