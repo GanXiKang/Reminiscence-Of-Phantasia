@@ -17,7 +17,6 @@ public class DialogueControl_House : MonoBehaviour
     bool isPosA = false;
     bool isPosB = false;
     bool isMove;
-    int _mode;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
@@ -76,32 +75,44 @@ public class DialogueControl_House : MonoBehaviour
     {
         if (!isMove) return;
 
-        switch (_mode)
+        switch (_whoDia)
         {
-            case 1:
-                if(!isPos[0])
-                if (whoDialogue[0].transform.position != dialoguePos[1].position)
+            case 0:
+                if (!isPosA)
                 {
-                    whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+                    if (whoDialogue[0].transform.position != dialoguePos[1].position)
+                    {
+                        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        isMove = false;
+                        isPosA = true;
+                    }
+                }
+                else if (!isPosB)
+                {
+                    if (whoDialogue[0].transform.position != dialoguePos[1].position)
+                    {
+                        whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        isMove = false;
+                        isPosB = true;
+                    }
                 }
                 else
                 {
-                    isMove = false;
+                    
                 }
+                break;
+
+            case 1:
+                
                 break;
 
             case 2:
-                if (whoDialogue[0].transform.position != dialoguePos[1].position)
-                {
-                    whoDialogue[0].transform.position = Vector3.MoveTowards(whoDialogue[0].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    isMove = false;
-                }
-                break;
-
-            case 3:
                 
                 break;
         }
@@ -114,6 +125,7 @@ public class DialogueControl_House : MonoBehaviour
         {
             case "Player":
                 _whoDia = 0;
+                isMove = true;
                 _index++;
                 break;
 
@@ -121,10 +133,12 @@ public class DialogueControl_House : MonoBehaviour
                 if (isBird)
                 {
                     _whoDia = 1;
+                    isMove = true;
                 }
                 else
                 {
                     _whoDia = 2;
+                    isMove = true;
                 }
                 _index++;
                 break;
