@@ -11,9 +11,8 @@ public class AvatarControl_House : MonoBehaviour
     public Sprite normal;
     public Sprite mouth;
     public int _who;
-    public static int _whoDialogue = 2;
-    bool isSwitching = false;
-    bool isSwitchActive = true;
+    public static int _whoDialogue = 0;
+    bool isAnim = false;
 
     void Start()
     {
@@ -22,7 +21,9 @@ public class AvatarControl_House : MonoBehaviour
 
     void Update()
     {
-        if (_who == _whoDialogue && isSwitchActive && !isSwitching)
+        if (!DialogueControl_House.isDialogue) return;
+
+        if (_who == _whoDialogue && !isAnim)
         {
             StartCoroutine(SwitchAvatar());
         }
@@ -30,9 +31,9 @@ public class AvatarControl_House : MonoBehaviour
 
     IEnumerator SwitchAvatar()
     {
-        isSwitching = true;
+        isAnim = true;
 
-        while (isSwitchActive)
+        while (DialogueControl_House.isDialogue)
         {
             avatar.sprite = mouth;
             yield return new WaitForSeconds(0.5f);
@@ -41,6 +42,6 @@ public class AvatarControl_House : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
-        isSwitching = false;
+        isAnim = false;
     }
 }
