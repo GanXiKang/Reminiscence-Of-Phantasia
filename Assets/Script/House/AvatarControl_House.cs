@@ -11,7 +11,7 @@ public class AvatarControl_House : MonoBehaviour
     public Sprite normal;
     public Sprite mouth;
     public int _who;
-    public static int _whoDialogue = 1;
+    public static int _whoDialogue = 2;
     bool isSwitching = false;
     bool isSwitchActive = true;
 
