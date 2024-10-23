@@ -67,7 +67,10 @@ public class DialogueControl_House : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
-                _textSpend = 0f;
+                if (!isMove)
+                {
+                    _textSpend = 0f;
+                }
             }
         }
         AvatarControl_House.isTalk = !isTextFinish;
