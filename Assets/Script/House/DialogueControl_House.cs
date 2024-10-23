@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class DialogueControl_House : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject[] whoDialogue;
+    public RectTransform[] whoDialogue;
     public Text[] whoContent;
     public static int _whoDialogue;
     public static bool isBird;
 
     [Header("Position")]
-    public Transform[] dialoguePos;
+    public RectTransform[] dialoguePos;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
