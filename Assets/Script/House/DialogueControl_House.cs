@@ -6,12 +6,13 @@ public class DialogueControl_House : MonoBehaviour
 {
     [Header("UI")]
     public GameObject[] whoDialogue;
+    public GameObject[] whoContent;
 
     [Header("Position")]
     public Transform[] dialoguePos;
 
-    [Header("Text")]
-    public GameObject[] whoContent;
+    //[Header("Text")]
+    
 
     void Start()
     {
