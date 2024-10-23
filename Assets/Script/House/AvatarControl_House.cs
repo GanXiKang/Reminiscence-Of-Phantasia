@@ -21,7 +21,7 @@ public class AvatarControl_House : MonoBehaviour
 
     void Update()
     {
-        if (!DialogueControl_House.isDialogue) return;
+        if (!UIControl_House.isDialogue) return;
 
         if (_who == _whoDialogue && !isAnim)
         {
@@ -33,7 +33,7 @@ public class AvatarControl_House : MonoBehaviour
     {
         isAnim = true;
 
-        while (DialogueControl_House.isDialogue)
+        while (UIControl_House.isDialogue)
         {
             avatar.sprite = mouth;
             yield return new WaitForSeconds(0.5f);
