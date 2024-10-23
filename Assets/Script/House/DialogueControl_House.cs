@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class DialogueControl_House : MonoBehaviour
 {
     [Header("UI")]
-    public RectTransform[] whoDialogue;
+    public GameObject[] whoDialogue;
     public Text[] whoContent;
     public static int _whoDia;
     public static bool isBird = false;
 
     [Header("Position")]
-    public RectTransform[] dialoguePos;
+    public Transform[] dialoguePos;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
@@ -27,6 +27,8 @@ public class DialogueControl_House : MonoBehaviour
     {
         GetTextFormFile(textFile[_textCount]);
         StartCoroutine(SetTextLabelIndexUI());
+
+        StartCoroutine(UIMoveToPosition(whoDialogue[0].transform.position, dialoguePos[1].position));
     }
 
     void Update()
@@ -73,21 +75,18 @@ public class DialogueControl_House : MonoBehaviour
         switch (textList[_index].Trim())
         {
             case "Player":
-                print(_whoDia);
-                _whoDia = 1;
-                //StartCoroutine(UIMoveToPosition(whoDialogue[1], dialoguePos[1].anchoredPosition));
-                print(_whoDia);
+                _whoDia = 0;
                 _index++;
                 break;
 
             case "Target":
                 if (isBird)
                 {
-                    _whoDia = 2;
+                    _whoDia = 1;
                 }
                 else
                 {
-                    _whoDia = 3;
+                    _whoDia = 2;
                 }
                 _index++;
                 break;
@@ -105,19 +104,19 @@ public class DialogueControl_House : MonoBehaviour
         isTextFinish = true;
         _index++;
     }
-    IEnumerator UIMoveToPosition(RectTransform message, Vector2 targetPos)
+    IEnumerator UIMoveToPosition(Vector3 message,Vector3 targetPos)
     {
-        Vector2 startPos = message.anchoredPosition;
+        Vector3 startPos = message;
         float time = 0f;
         float duration = 1f;
 
         while (time < duration)
         {
-            message.anchoredPosition = Vector2.Lerp(startPos, targetPos, time / duration);
+            message = Vector2.Lerp(startPos, targetPos, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
 
-        message.anchoredPosition = targetPos;
+        message = targetPos;
     }
 }
