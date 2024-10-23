@@ -19,7 +19,6 @@ public class BedControl_House : MonoBehaviour
         if (isGoStoryWorld)
         {
             isGoStoryWorld = false;
-            CameraControl_House.isLookBed = false;
             TransitionUIControl.isHouse = false;
             TransitionUIControl.isTransitionUIAnim_In = true;
             Invoke("GoToStoryWorld", 1f);
@@ -28,6 +27,7 @@ public class BedControl_House : MonoBehaviour
     void GoToStoryWorld()
     {
         SceneManager.LoadScene(_storyNum);
+        CameraControl_House.isLookBed = false;
     }
     void Leave()
     {
