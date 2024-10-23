@@ -1,22 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TransitionUIControl : MonoBehaviour
 {
     [Header("Scale")]
-    public Vector3 bigScale = new Vector3(350f, 200f, 1f);
-    public Vector3 smallScale = new Vector3(19.5f, 11f, 1f);
+    public Vector3 bigScale = new Vector3(1200f, 600f, 1f);
+    public Vector3 smallScale = new Vector3(20f, 12f, 1f);
     public float animationDuration = 1f;
     public static  bool isTransitionUIAnim_In;
     public static bool isTransitionUIAnim_Out;
     float animationTime = 0f;
 
+    [Header("UI")]
+    public Sprite book;
+    public Sprite house;
+    public static bool isHouse = true;
+
     void Start()
     {
         transform.localScale = smallScale;
         isTransitionUIAnim_In = false;
-        isTransitionUIAnim_Out = true;
+        isTransitionUIAnim_Out = true; 
+    }
+
+    void OnEnable()
+    {
+        if (isHouse)
+        {
+            gameObject.GetComponent<Image>().sprite = house;
+        }
+        else
+        {
+            gameObject.GetComponent<Image>().sprite = book;
+        }
     }
 
     void Update()
