@@ -8,7 +8,7 @@ public class DialogueControl_House : MonoBehaviour
     [Header("UI")]
     public RectTransform[] whoDialogue;
     public Text[] whoContent;
-    public static int _whoDialogue = 1;
+    public static int _whoDia = 1;
     public static bool isBird = false;
 
     [Header("Position")]
@@ -26,8 +26,7 @@ public class DialogueControl_House : MonoBehaviour
     void OnEnable()
     {
         GetTextFormFile(textFile[_textCount]);
-        //StartCoroutine(SetTextLabelIndexUI());
-        StartCoroutine(UIMoveToPosition(whoDialogue[1], dialoguePos[1].anchoredPosition));
+        StartCoroutine(SetTextLabelIndexUI());
     }
 
     void Update()
@@ -74,7 +73,7 @@ public class DialogueControl_House : MonoBehaviour
         switch (textList[_index].Trim())
         {
             case "Player":
-                //_whoDialogue = 1;
+                _whoDia = 1;
                 //StartCoroutine(UIMoveToPosition(whoDialogue[1], dialoguePos[1].anchoredPosition));
                 _index++;
                 break;
@@ -82,11 +81,11 @@ public class DialogueControl_House : MonoBehaviour
             case "Target":
                 if (isBird)
                 {
-                    _whoDialogue = 2;
+                    _whoDia = 2;
                 }
                 else
                 {
-                    _whoDialogue = 3;
+                    _whoDia = 3;
                 }
                 _index++;
                 break;
