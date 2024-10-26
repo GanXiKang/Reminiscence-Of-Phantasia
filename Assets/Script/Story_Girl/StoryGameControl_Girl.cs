@@ -48,8 +48,7 @@ public class StoryGameControl_Girl : MonoBehaviour
 
         Invoke("Mist", 9f);
         mistLeft.transform.Translate(0f, 0f, 1f);
-        mistLeft.transform.Translate(0f, 0f, -1f);
-
+        mistRight.transform.Translate(0f, 0f, -1f);
     }
     void Mist()
     {
