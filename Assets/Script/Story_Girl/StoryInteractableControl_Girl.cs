@@ -377,7 +377,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     {
                         case 1:
                             isInteractable = true;
-                            StoryGameControl_Girl.isWallActive = false;
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 2;

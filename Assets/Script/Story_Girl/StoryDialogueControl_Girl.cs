@@ -372,6 +372,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         switch (_textCount)
         {
             case 2:
+                BGM.PlayOneShot(give);
+                StoryGameControl_Girl.isWallActive = false;
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 1;
+                break;
+
             case 7:
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Girl.isGiveItem = true;
