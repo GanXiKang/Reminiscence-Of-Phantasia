@@ -8,6 +8,8 @@ public class StoryGameControl_Girl : MonoBehaviour
 
     [Header("TeachWall")]
     public GameObject teachWall;
+    public GameObject mistLeft;
+    public GameObject mistRight;
     public static bool isWallActive = true; 
 
     [Header("GarbageCan")]
@@ -30,10 +32,22 @@ public class StoryGameControl_Girl : MonoBehaviour
 
     void Update()
     {
-        teachWall.SetActive(isWallActive);
         trashcanLid.SetActive(isTrashcanLidActice);
 
+        TeachWall();
         PlayerResurrection();
+    }
+
+    void TeachWall()
+    {
+        teachWall.SetActive(isWallActive);
+
+        if (isWallActive) return;
+
+        mistLeft.transform.Translate(0f, 0f, 1f);
+        mistLeft.transform.Translate(0f, 0f, -1f);
+        Destroy(mistLeft, 10f);
+        Destroy(mistRight, 10f);
     }
 
     void PlayerResurrection()
