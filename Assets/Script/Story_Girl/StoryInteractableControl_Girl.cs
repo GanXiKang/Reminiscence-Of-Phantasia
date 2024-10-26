@@ -456,14 +456,14 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 13;
+                            effects.SetActive(false);
+                            Destroy(effects, 1f);
                             break;
 
                         default:
                             StoryUIControl_Girl.isDialogue = true;
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 12;
-                            effects.SetActive(false);
-                            Destroy(effects, 1f);
                             break;
                     }
                     break;
