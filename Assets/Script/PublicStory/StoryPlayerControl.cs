@@ -20,6 +20,10 @@ public class StoryPlayerControl : MonoBehaviour
     private Vector3 _storyVelocity;
     float _direction = 1;
 
+    [Header("WalkEffects")]
+    public GameObject walkEffects;
+    bool isWalkEffects;
+
     void Start()
     {
         cc = GetComponent<CharacterController>();
@@ -43,11 +47,16 @@ public class StoryPlayerControl : MonoBehaviour
 
         if (input.x != 0)
         {
+            isWalkEffects = true;
             _direction = input.x;
             if (_direction < 0f)
             {
                 _direction = 0f;
             }
+        }
+        else
+        {
+            isWalkEffects = false;
         }
 
         if (_storyMoveInput.x == 0 && _storyMoveInput.z > 0) // ½ö°´ÏÂ W ¼ü
@@ -98,6 +107,7 @@ public class StoryPlayerControl : MonoBehaviour
             }
         }
 
+        walkEffects.SetActive(isWalkEffects);
         cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.deltaTime);
     }
     void StoryPlayerOnTheGround()
