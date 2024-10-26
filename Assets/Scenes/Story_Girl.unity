@@ -6671,8 +6671,8 @@ Transform:
   - {fileID: 752926197}
   - {fileID: 2050857224}
   - {fileID: 1100789548}
-  - {fileID: 1453829645}
   - {fileID: 1857795615}
+  - {fileID: 1453829645}
   - {fileID: 674633970}
   m_Father: {fileID: 1756193621}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42853,7 +42853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1453829645
 Transform:
   m_ObjectHideFlags: 0
@@ -60104,6 +60104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teachWall: {fileID: 1100789546}
+  mistLeft: {fileID: 1857795614}
+  mistRight: {fileID: 1453829644}
   trashcanLid: {fileID: 837005898}
   streetPoint: {fileID: 317680447}
   forestPoint: {fileID: 1518858712}
@@ -60124,7 +60126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1857795615
 Transform:
   m_ObjectHideFlags: 0
