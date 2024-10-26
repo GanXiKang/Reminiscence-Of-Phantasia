@@ -46,7 +46,7 @@ public class StoryGameControl_Girl : MonoBehaviour
         if (isWallActive) return;
         if (!isMistEffects) return;
 
-        Invoke("Mist", 9f);
+        Invoke("Mist", 5f);
         mistLeft.transform.Translate(0f, 0.05f, 0f);
         mistRight.transform.Translate(0f, -0.05f, 0f);
     }
