@@ -463,6 +463,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                             StoryDialogueControl_Girl._isAboveWho1 = _who;
                             StoryDialogueControl_Girl._textCount = 12;
                             effects.SetActive(false);
+                            Destroy(effects, 1f);
                             break;
                     }
                     break;
