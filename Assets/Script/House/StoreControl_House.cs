@@ -44,8 +44,9 @@ public class StoreControl_House : MonoBehaviour
     }
     void LeaveState()
     {
-        //UIAboveObject_House.isDialogBoxActive = false;
         DoorControl_House.isLeave = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 7;
         isHomePageActive = false;
         isContentActive = false;
         storeUI[1].GetComponent<CanvasGroup>().interactable = true;
@@ -71,12 +72,16 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Buy()
     {
         CatControl_House.isHappy = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 4;
     }
     public void Button_Back()
     {
         isHomePageActive = true;
         isContentActive = false;
         CatControl_House.isBag_On = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 5;
         StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f, false));
         StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, false));
         StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, false));
@@ -86,8 +91,8 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Leave()
     {
         CatControl_House.isBye = true;
-        //UIAboveObject_House.isDialogBoxActive = true;
-        //UIAboveObject_House._whichDialog = 4;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 6;
         storeUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 1f);
     }
