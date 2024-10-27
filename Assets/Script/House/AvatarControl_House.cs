@@ -23,12 +23,23 @@ public class AvatarControl_House : MonoBehaviour
     {
         if (!UIControl_House.isDialogue) return;
 
-        if (_who == DialogueControl_House._whoDia && isTalk && !isAnim)
+        if (_who == DialogueControl_House._whoDia)
         {
-            StartCoroutine(SwitchAvatar());
+            if (isTalk)
+            {
+                if (!isAnim)
+                {
+                    StartCoroutine(SwitchAvatar());
+                }
+            }
+            else
+            {
+                StopCoroutine(SwitchAvatar());
+                avatar.sprite = normal;
+                isAnim = false;
+            }
         }
     }
-
     IEnumerator SwitchAvatar()
     {
         isAnim = true;
