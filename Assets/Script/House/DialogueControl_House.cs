@@ -85,15 +85,29 @@ public class DialogueControl_House : MonoBehaviour
             whoDialogue[PosANum].transform.position = Vector3.MoveTowards(whoDialogue[PosANum].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
         }
 
-        if (whoDialogue[_whoDia].transform.position != dialoguePos[1].position)
+        if (!DoorControl_House.isBird || !DoorControl_House.isCat)
         {
-            whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+            if (whoDialogue[_whoDia].transform.position != dialoguePos[1].position)
+            {
+                whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[1].position, _moveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                isMove = false;
+                isPosA = true;
+                PosANum = _whoDia;
+            }
         }
         else
         {
-            isMove = false;
-            isPosA = true;
-            PosANum = _whoDia;
+            if (whoDialogue[_whoDia].transform.position != dialoguePos[4].position)
+            {
+                whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[4].position, _moveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                isMove = false;
+            }
         }
     }
 
