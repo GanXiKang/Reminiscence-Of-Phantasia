@@ -44,7 +44,7 @@ public class StoreControl_House : MonoBehaviour
     }
     void LeaveState()
     {
-        UIAboveObject_House.isDialogBoxActive = false;
+        //UIAboveObject_House.isDialogBoxActive = false;
         DoorControl_House.isLeave = true;
         isHomePageActive = false;
         isContentActive = false;
@@ -86,8 +86,8 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Leave()
     {
         CatControl_House.isBye = true;
-        UIAboveObject_House.isDialogBoxActive = true;
-        UIAboveObject_House._whichDialog = 4;
+        //UIAboveObject_House.isDialogBoxActive = true;
+        //UIAboveObject_House._whichDialog = 4;
         storeUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 1f);
     }

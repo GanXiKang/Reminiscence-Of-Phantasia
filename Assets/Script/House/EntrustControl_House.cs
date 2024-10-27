@@ -58,7 +58,7 @@ public class EntrustControl_House : MonoBehaviour
     }
     void LeaveState()
     {
-        UIAboveObject_House.isDialogBoxActive = false;
+        //UIAboveObject_House.isDialogBoxActive = false;
         DoorControl_House.isLeave = true;
         isEntrustActive = false;
         isDeliverActive = false;
@@ -116,8 +116,8 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
-        UIAboveObject_House.isDialogBoxActive = true;
-        UIAboveObject_House._whichDialog = 3;
+        //UIAboveObject_House.isDialogBoxActive = true;
+        //UIAboveObject_House._whichDialog = 3;
         BirdControl_House.isBye = true;
         entrustUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 1f);
