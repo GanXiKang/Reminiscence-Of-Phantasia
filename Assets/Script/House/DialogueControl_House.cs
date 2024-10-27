@@ -10,7 +10,6 @@ public class DialogueControl_House : MonoBehaviour
     public Text[] whoContent;
     public static int _whoDia;
     public static bool isBird = false;
-    public static bool isAutoNext = false;
 
     [Header("Position")]
     public Transform[] dialoguePos;
@@ -27,6 +26,10 @@ public class DialogueControl_House : MonoBehaviour
     bool isTextFinish;
     
     List<string> textList = new List<string>();
+
+    //Entrust and Store
+    public static int _paragraph = 0;
+    public static bool isAutoNext = false;
 
     void OnEnable()
     {
@@ -117,6 +120,7 @@ public class DialogueControl_House : MonoBehaviour
         if (isAutoNext)
         {
             isAutoNext = false;
+            _index = _paragraph;
             StartCoroutine(SetTextLabelIndexUI());
             AvatarControl_House.isTalk = !isTextFinish;
         }
