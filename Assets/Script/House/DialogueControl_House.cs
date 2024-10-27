@@ -105,7 +105,7 @@ public class DialogueControl_House : MonoBehaviour
             case "Player":
                 _whoDia = 0;
                 isMove = true;
-                whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
+                DialoguePoint();
                 _index++;
                 break;
 
@@ -114,13 +114,13 @@ public class DialogueControl_House : MonoBehaviour
                 {
                     _whoDia = 1;
                     isMove = true;
-                    whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
+                    DialoguePoint();
                 }
                 else
                 {
                     _whoDia = 2;
                     isMove = true;
-                    whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
+                    DialoguePoint();
                 }
                 _index++;
                 break;
@@ -146,5 +146,17 @@ public class DialogueControl_House : MonoBehaviour
         }
         isTextFinish = true;
         _index++;
+    }
+
+    void DialoguePoint()
+    {
+        if (!DoorControl_House.isBird || !DoorControl_House.isCat)
+        {
+            whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
+        }
+        else
+        {
+            whoDialogue[_whoDia].transform.position = dialoguePos[3].position;
+        }
     }
 }
