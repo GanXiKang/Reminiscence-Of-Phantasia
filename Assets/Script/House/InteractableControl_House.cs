@@ -95,10 +95,13 @@ public class InteractableControl_House : MonoBehaviour
         if (DoorControl_House.isBird)
         {
             bird.SetActive(true);
+
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBird = true;
             DialogueControl_House._textCount = 35;
+
             yield return new WaitForSeconds(2f);
+
             BirdControl_House.isIdle = true;
             BirdControl_House.isDeliver = true;
             EntrustControl_House.isEntrustActive = true;
@@ -108,10 +111,13 @@ public class InteractableControl_House : MonoBehaviour
         {
             cat.SetActive(true);
             CatControl_House.isWave = true;
+
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBird = false;
             DialogueControl_House._textCount = 42;
+
             yield return new WaitForSeconds(2f);
+
             CatControl_House.isWave = false;
             StoreControl_House.isStoreActive = true;
             //UIAboveObject_House.isDialogBoxActive = false;
