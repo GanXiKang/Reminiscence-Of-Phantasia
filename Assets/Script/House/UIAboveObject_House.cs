@@ -29,18 +29,9 @@ public class UIAboveObject_House : MonoBehaviour
     public RectTransform hint;
     public Text hintName;
 
-    //[Header("DialogBox")]
-    //public GameObject dialogBox;
-    //public Text dialogText;
-    //public Transform animals;
-    //public Vector3 animalsOffset;
-    //public static bool isDialogBoxActive;
-    //public static int _whichDialog = 0;
-
     void Update()
     {
         Hint();
-        //Dialog();
     }
 
     void Hint()
@@ -61,31 +52,4 @@ public class UIAboveObject_House : MonoBehaviour
         //Vector3 showcasePos = showcase.position + showcaseOffset;
         //showcaseHint.position = showcasePos;
     }
-    //void Dialog()
-    //{
-    //    dialogBox.SetActive(isDialogBoxActive);
-
-    //    if (!isDialogBoxActive) return;
-
-    //    Vector3 catPos = animals.position + animalsOffset;
-    //    dialogBox.transform.position = catPos;
-    //    switch (_whichDialog)
-    //        {
-    //            case 1:
-    //                dialogText.text = "有信件！有信件！";
-    //                break;
-
-    //            case 2:
-    //                dialogText.text = "我帶了好東西喵！";
-    //                break;
-
-    //            case 3:
-    //                dialogText.text = "再見！再見！";
-    //                break;
-
-    //            case 4:
-    //                dialogText.text = "謝謝惠顧喵！";
-    //                break;
-    //        }
-    //}
 }
