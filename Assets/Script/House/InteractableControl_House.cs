@@ -96,6 +96,7 @@ public class InteractableControl_House : MonoBehaviour
         {
             bird.SetActive(true);
             UIControl_House.isDialogue = true;
+            DialogueControl_House.isBird = true;
             DialogueControl_House._textCount = 35;
             yield return new WaitForSeconds(2f);
             BirdControl_House.isIdle = true;
@@ -108,6 +109,7 @@ public class InteractableControl_House : MonoBehaviour
             cat.SetActive(true);
             CatControl_House.isWave = true;
             UIControl_House.isDialogue = true;
+            DialogueControl_House.isBird = false;
             DialogueControl_House._textCount = 42;
             yield return new WaitForSeconds(2f);
             CatControl_House.isWave = false;
