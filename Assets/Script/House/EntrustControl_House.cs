@@ -58,8 +58,9 @@ public class EntrustControl_House : MonoBehaviour
     }
     void LeaveState()
     {
-        //UIAboveObject_House.isDialogBoxActive = false;
         DoorControl_House.isLeave = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 6;
         isEntrustActive = false;
         isDeliverActive = false;
         isReceiveActive = false;
@@ -82,6 +83,8 @@ public class EntrustControl_House : MonoBehaviour
         isReceiveActive = false;
         isDeliverActive = true;
         BirdControl_House.isHappy = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 3;
         StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
@@ -116,9 +119,9 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
-        //UIAboveObject_House.isDialogBoxActive = true;
-        //UIAboveObject_House._whichDialog = 3;
         BirdControl_House.isBye = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 5;
         entrustUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 1f);
     }
