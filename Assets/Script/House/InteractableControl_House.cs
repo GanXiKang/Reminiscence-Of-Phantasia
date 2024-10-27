@@ -104,8 +104,10 @@ public class InteractableControl_House : MonoBehaviour
 
             BirdControl_House.isIdle = true;
             BirdControl_House.isDeliver = true;
+
             EntrustControl_House.isEntrustActive = true;
             DialogueControl_House.isAutoNext = true;
+            DialogueControl_House._paragraph = 2;
         }
         else if (DoorControl_House.isCat)
         {
@@ -119,8 +121,10 @@ public class InteractableControl_House : MonoBehaviour
             yield return new WaitForSeconds(2f);
 
             CatControl_House.isWave = false;
+
             StoreControl_House.isStoreActive = true;
             DialogueControl_House.isAutoNext = true;
+            DialogueControl_House._paragraph = 2;
         }
     }
 }
