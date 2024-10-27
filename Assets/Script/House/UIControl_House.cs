@@ -17,7 +17,7 @@ public class UIControl_House : MonoBehaviour
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
         dialogueUI.SetActive(isDialogue);
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)) //úy‘á
         {
             isDialogue = true;
             DialogueControl_House._textCount = 1;
