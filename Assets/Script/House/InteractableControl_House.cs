@@ -95,24 +95,24 @@ public class InteractableControl_House : MonoBehaviour
         if (DoorControl_House.isBird)
         {
             bird.SetActive(true);
-            UIAboveObject_House.isDialogBoxActive = true;
-            UIAboveObject_House._whichDialog = 1;
+            //UIAboveObject_House.isDialogBoxActive = true;
+            //UIAboveObject_House._whichDialog = 1;
             yield return new WaitForSeconds(2f);
             BirdControl_House.isIdle = true;
             BirdControl_House.isDeliver = true;
             EntrustControl_House.isEntrustActive = true;
-            UIAboveObject_House.isDialogBoxActive = false;
+            //UIAboveObject_House.isDialogBoxActive = false;
         }
         else if (DoorControl_House.isCat)
         {
             cat.SetActive(true);
             CatControl_House.isWave = true;
-            UIAboveObject_House.isDialogBoxActive = true;
-            UIAboveObject_House._whichDialog = 2;
+            //UIAboveObject_House.isDialogBoxActive = true;
+            //UIAboveObject_House._whichDialog = 2;
             yield return new WaitForSeconds(2f);
             CatControl_House.isWave = false;
             StoreControl_House.isStoreActive = true;
-            UIAboveObject_House.isDialogBoxActive = false;
+            //UIAboveObject_House.isDialogBoxActive = false;
         }
     }
 }
