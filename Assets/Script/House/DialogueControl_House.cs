@@ -10,6 +10,7 @@ public class DialogueControl_House : MonoBehaviour
     public Text[] whoContent;
     public static int _whoDia;
     public static bool isBird = false;
+    public static bool isAutoNext = false;
 
     [Header("Position")]
     public Transform[] dialoguePos;
@@ -24,7 +25,7 @@ public class DialogueControl_House : MonoBehaviour
     public float _textSpend;
     public static int _textCount = 1;
     bool isTextFinish;
-
+    
     List<string> textList = new List<string>();
 
     void OnEnable()
@@ -37,6 +38,7 @@ public class DialogueControl_House : MonoBehaviour
     {
         TextController();
         DialogueMove();
+        AutoNext();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -108,6 +110,15 @@ public class DialogueControl_House : MonoBehaviour
             {
                 isMove = false;
             }
+        }
+    }
+    void AutoNext()
+    {
+        if (isAutoNext)
+        {
+            isAutoNext = false;
+            StartCoroutine(SetTextLabelIndexUI());
+            AvatarControl_House.isTalk = !isTextFinish;
         }
     }
 
