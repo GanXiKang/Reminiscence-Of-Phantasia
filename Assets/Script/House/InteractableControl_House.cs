@@ -105,7 +105,7 @@ public class InteractableControl_House : MonoBehaviour
             BirdControl_House.isIdle = true;
             BirdControl_House.isDeliver = true;
             EntrustControl_House.isEntrustActive = true;
-            //UIAboveObject_House.isDialogBoxActive = false;
+            DialogueControl_House.isAutoNext = true;
         }
         else if (DoorControl_House.isCat)
         {
@@ -120,7 +120,7 @@ public class InteractableControl_House : MonoBehaviour
 
             CatControl_House.isWave = false;
             StoreControl_House.isStoreActive = true;
-            //UIAboveObject_House.isDialogBoxActive = false;
+            DialogueControl_House.isAutoNext = true;
         }
     }
 }
