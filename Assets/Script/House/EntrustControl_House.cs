@@ -97,6 +97,8 @@ public class EntrustControl_House : MonoBehaviour
             isReceiveActive = false;
             isDeliverActive = true;
             BirdControl_House.isDeliver = true;
+            DialogueControl_House.isAutoNext = true;
+            DialogueControl_House._paragraph = 4;
             StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
             StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
             StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
