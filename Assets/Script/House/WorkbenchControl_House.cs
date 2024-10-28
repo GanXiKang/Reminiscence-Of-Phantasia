@@ -223,9 +223,6 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T) && isFinish)
         {
             isFinish = false;
-            
-            paper[_paperNum].SetActive(false);
-            storyBook[_storyBookNum].SetActive(false);
             StartCoroutine(LeaveWorkbench());
         }
 
@@ -580,5 +577,6 @@ public class WorkbenchControl_House : MonoBehaviour
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
+        storyBook[_storyBookNum].SetActive(false);
     }
 }
