@@ -222,6 +222,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T) && isFinish)
         {
             isFinish = false;
+            CameraControl_House.isLookStorkBook = false;
             paper[_paperNum].SetActive(false);
             storyBook[_storyBookNum].SetActive(false);
             StartCoroutine(LeaveWorkbench());
