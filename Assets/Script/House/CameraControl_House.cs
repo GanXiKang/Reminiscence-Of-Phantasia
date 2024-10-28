@@ -36,7 +36,7 @@ public class CameraControl_House : MonoBehaviour
 
     void Update()
     {
-        player.SetActive(!isLookDoor);
+        player.SetActive(isFreeLookCamera());
         freeLookCamera.SetActive(isFreeLookCamera());
         
         CameraLooking();
