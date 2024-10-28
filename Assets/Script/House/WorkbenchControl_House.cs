@@ -160,7 +160,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 4:
-                storyBook[_storyBookNum].SetActive(true);
                 storyBook[_storyBookNum].transform.position = storyBookPoint.position;
                 storyBook[_storyBookNum].transform.rotation = storyBookPoint.rotation;
                 storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", true);
