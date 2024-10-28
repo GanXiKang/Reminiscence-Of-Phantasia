@@ -48,7 +48,7 @@ public class CameraControl_House : MonoBehaviour
     {
         if (isLookWorkbench)
         {
-            transform.position = Vector3.Lerp(transform.position, workbenchPos.position, _moveTime * Time.deltaTime); ;
+            transform.position = Vector3.Lerp(transform.position, workbenchPos.position, _moveTime * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, workbenchPos.rotation, _moveTime * Time.deltaTime);
         }
         else if (isLookDoor)
