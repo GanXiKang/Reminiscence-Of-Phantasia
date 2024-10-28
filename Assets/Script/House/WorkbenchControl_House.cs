@@ -553,7 +553,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (!isPaperAdjustScale)
         {
             isPaperAdjustScale = true;
-            paper[_paperNum].transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            paper[_paperNum].transform.localScale = new Vector3(0.06f, 0.06f, 0.06f);
         }
         if (isFinishStoryBook)
         {
