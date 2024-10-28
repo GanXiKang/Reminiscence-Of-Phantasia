@@ -192,7 +192,8 @@ public class WorkbenchControl_House : MonoBehaviour
             if (p == _process)
             {
                 processNum[p].transform.localScale = new Vector3(0.9f, 0.9f, 1f);
-            } else
+            } 
+            else
             {
                 processNum[p].transform.localScale = new Vector3(0.7f, 0.7f, 1f);
             }
@@ -558,9 +559,13 @@ public class WorkbenchControl_House : MonoBehaviour
         if (isFinishStoryBook)
         {
             isFinishStoryBook = false;
-            isFinish = true;
-            _process = 0;
+            CameraControl_House.isLookStorkBook = true;
+            Invoke("FinishpPocess", 1.5f);
         }
+    }
+    void FinishpPocess()
+    {
+        isFinish = true;
     }
 
     IEnumerator LeaveWorkbench()
@@ -569,6 +574,7 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
+        _process = 0;
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
