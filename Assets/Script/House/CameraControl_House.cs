@@ -63,22 +63,22 @@ public class CameraControl_House : MonoBehaviour
         }
         else if (isLookDoor)
         {
-            transform.position = Vector3.Lerp(transform.position, doorPos.position, _moveTime * Time.deltaTime); ;
+            transform.position = Vector3.Lerp(transform.position, doorPos.position, _moveTime * Time.deltaTime); 
             transform.rotation = Quaternion.Lerp(transform.rotation, doorPos.rotation, _moveTime * Time.deltaTime);
         }
         else if (isLookBed)
         {
-            transform.position = Vector3.Lerp(transform.position, bedPos.position, _moveTime * Time.deltaTime); ;
+            transform.position = Vector3.Lerp(transform.position, bedPos.position, _moveTime * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, bedPos.rotation, _moveTime * Time.deltaTime);
         }
         else if (isLookBookcase)
         {
-            transform.position = Vector3.Lerp(transform.position, bookcasePos.position, _moveTime * Time.deltaTime); ;
+            transform.position = Vector3.Lerp(transform.position, bookcasePos.position, _moveTime * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, bookcasePos.rotation, _moveTime * Time.deltaTime);
         }
         else if (isLookShowcase)
         {
-            transform.position = Vector3.Lerp(transform.position, showcasePos.position, _moveTime * Time.deltaTime); ;
+            transform.position = Vector3.Lerp(transform.position, showcasePos.position, _moveTime * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
         }
     }
