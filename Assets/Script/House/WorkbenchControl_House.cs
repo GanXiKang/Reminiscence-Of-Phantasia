@@ -222,7 +222,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T) && isFinish)
         {
             isFinish = false;
-            CameraControl_House.isLookStorkBook = false;
+            
             paper[_paperNum].SetActive(false);
             storyBook[_storyBookNum].SetActive(false);
             StartCoroutine(LeaveWorkbench());
@@ -565,9 +565,14 @@ public class WorkbenchControl_House : MonoBehaviour
 
     IEnumerator LeaveWorkbench()
     {
+        storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isClose", true);
+        yield return new WaitForSeconds(0.7f);
+        paper[_paperNum].SetActive(false);
+        yield return new WaitForSeconds(0.3f);
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
+        CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
     }
 }
