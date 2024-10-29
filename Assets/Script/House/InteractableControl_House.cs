@@ -90,7 +90,7 @@ public class InteractableControl_House : MonoBehaviour
 
     IEnumerator WhoIsVisit()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         DoorControl_House.isLoading = false;
         if (DoorControl_House.isBird)
         {
