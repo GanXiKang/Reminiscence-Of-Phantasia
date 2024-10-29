@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class EntrustControl_House : MonoBehaviour
 {
     [Header("UI")]
+    public GameObject background;
     public GameObject[] entrustUI;
-    public Button[] deliverButton;
+    public Sprite normalBG, darkBG;
     public static bool isEntrustActive = false;
     bool isDeliverActive = false;
     bool isReceiveActive = false;
     bool isContentActive = false;
+
+    [Header("Deliver")]
+    public Button[] deliverButton;
 
     void Start()
     {
@@ -19,11 +23,7 @@ public class EntrustControl_House : MonoBehaviour
     }
     void Update()
     {
-        entrustUI[0].SetActive(isEntrustActive);
-        entrustUI[1].SetActive(isDeliverActive);
-        entrustUI[2].SetActive(isReceiveActive);
-        entrustUI[3].SetActive(isContentActive);
-
+        EntrustUI();
         OpenUI();
     }
 
@@ -35,6 +35,15 @@ public class EntrustControl_House : MonoBehaviour
             RectTransform rect = deliverButton[i].GetComponent<RectTransform>();
             rect.anchoredPosition = new Vector2(6f, rect.anchoredPosition.y);
         }
+    }
+    private void EntrustUI()
+    {
+        entrustUI[0].SetActive(isEntrustActive);
+        entrustUI[1].SetActive(isDeliverActive);
+        entrustUI[2].SetActive(isReceiveActive);
+        entrustUI[3].SetActive(isContentActive);
+
+
     }
     void OpenUI()
     {
@@ -56,20 +65,7 @@ public class EntrustControl_House : MonoBehaviour
             }
         }
     }
-    void LeaveState()
-    {
-        DoorControl_House.isLeave = true;
-        DialogueControl_House.isAutoNext = true;
-        DialogueControl_House._paragraph = 6;
-        isEntrustActive = false;
-        isDeliverActive = false;
-        isReceiveActive = false;
-        isContentActive = false;
-        entrustUI[1].GetComponent<CanvasGroup>().interactable = true;
-        entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
-        DeliverButtonInitialState();
-    }
-
+    
     public void Button_Deliver(int _letter)
     {
         BirdControl_House.isDeliver_Close = true;
@@ -115,10 +111,6 @@ public class EntrustControl_House : MonoBehaviour
         isContentActive = true;
         isReceiveActive = false;
     }
-    public void Button_Open()
-    {
-        
-    }
     public void Button_Leave()
     {
         BirdControl_House.isBye = true;
@@ -126,6 +118,20 @@ public class EntrustControl_House : MonoBehaviour
         DialogueControl_House._paragraph = 5;
         entrustUI[1].GetComponent<CanvasGroup>().interactable = false;
         Invoke("LeaveState", 1f);
+    }
+
+    void LeaveState()
+    {
+        DoorControl_House.isLeave = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 6;
+        isEntrustActive = false;
+        isDeliverActive = false;
+        isReceiveActive = false;
+        isContentActive = false;
+        entrustUI[1].GetComponent<CanvasGroup>().interactable = true;
+        entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+        DeliverButtonInitialState();
     }
 
     IEnumerator AnimateButtonAppear(Button button, float delay, bool isShouldMove)
