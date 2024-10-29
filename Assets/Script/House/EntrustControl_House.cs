@@ -7,15 +7,23 @@ public class EntrustControl_House : MonoBehaviour
 {
     [Header("UI")]
     public GameObject[] entrustUI;
-    public GameObject background;
+    public Image background;
     public Sprite normalBG, darkBG;
     public static bool isEntrustActive = false;
     bool isDeliverActive = false;
     bool isReceiveActive = false;
     bool isContentActive = false;
 
-    [Header("Deliver")]
+    [Header("LetterDeliver")]
     public Button[] deliverButton;
+
+    [Header("LetterReceive")]
+    public Image receiveImage;
+    public Sprite[] receiveSprite;
+
+    [Header("LetterContent")]
+    public Image contentImage;
+    public Sprite[] contentSprite;
 
     void Start()
     {
@@ -45,11 +53,11 @@ public class EntrustControl_House : MonoBehaviour
 
         if (isDeliverActive)
         {
-            background.GetComponent<Image>().sprite = normalBG;
+            background.sprite = normalBG;
         }
         else
         {
-            background.GetComponent<Image>().sprite = darkBG;
+            background.sprite = darkBG;
         }
     }
     void OpenUI()
