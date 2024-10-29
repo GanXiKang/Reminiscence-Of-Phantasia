@@ -23,10 +23,11 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isFinish = false;
 
     [Header("ToolBox")]
-    public Transform openPoint;
-    public Transform closePoint;
+    public GameObject toolBoxUI;
     public GameObject toolBoxBG;
+    public GameObject buttonUI;
     public GameObject up, down;
+    public Transform openPoint, closePoint;
     bool isOpenBox = false;
 
     [Header("Step1")]
@@ -140,6 +141,8 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (_process)
         {
             case 0:
+                toolBoxBG.SetActive(true);
+                buttonUI.SetActive(true);
                 isPaperAdjustScale = false;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
@@ -554,6 +557,8 @@ public class WorkbenchControl_House : MonoBehaviour
         }
         if (isFinishStoryBook)
         {
+            toolBoxBG.SetActive(false);
+            buttonUI.SetActive(false);
             isFinishStoryBook = false;
             CameraControl_House.isLookStorkBook = true;
             Invoke("FinishpPocess", 1.5f);
@@ -570,12 +575,13 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
-        _process = 0;
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
+        _process = 0;
+        workbenchUI.SetActive(false);
+        storyBook[_storyBookNum].SetActive(false);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
-        storyBook[_storyBookNum].SetActive(false);
     }
 }
