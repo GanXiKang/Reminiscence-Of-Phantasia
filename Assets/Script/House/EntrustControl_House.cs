@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class EntrustControl_House : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject background;
     public GameObject[] entrustUI;
+    public GameObject background;
     public Sprite normalBG, darkBG;
     public static bool isEntrustActive = false;
     bool isDeliverActive = false;
