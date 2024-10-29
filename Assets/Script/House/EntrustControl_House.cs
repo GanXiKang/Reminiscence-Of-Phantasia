@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EntrustControl_House : MonoBehaviour
 {
-    [Header("UI")]
+    [Header("EntrustUI")]
     public GameObject[] entrustUI;
     public Image background;
     public Sprite normalBG, darkBG;
