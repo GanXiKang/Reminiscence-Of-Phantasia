@@ -10,6 +10,8 @@ public class DoorControl_House : MonoBehaviour
 
     [Header("LoadingVideo")]
     public GameObject loadingUI;
+    public GameObject entrustVideo;
+    public GameObject storeVideo;
     public static bool isLoading = false;
 
     [Header("Animals")]
@@ -21,6 +23,8 @@ public class DoorControl_House : MonoBehaviour
     void Update()
     {
         loadingUI.SetActive(isLoading);
+        entrustVideo.SetActive(isBird);
+        storeVideo.SetActive(isCat);
         
         Leave();
 
