@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class StorySkillControl_Prince : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject pointer;
+    public float rotationSpeed = 10f;
+    public bool isRotating = false;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isRotating)
+        {
+            pointer.transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isRotating = !isRotating;
+        }
     }
 }
