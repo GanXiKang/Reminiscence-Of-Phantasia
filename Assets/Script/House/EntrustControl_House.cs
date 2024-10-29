@@ -84,6 +84,7 @@ public class EntrustControl_House : MonoBehaviour
             }
         }
     }
+    void 
     void LetterReceiveAndContent()
     {
         if (_entrustNum == 0) return;
@@ -105,6 +106,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         isReceiveActive = false;
         isDeliverActive = true;
+        alreadyReceived[_entrustNum].SetActive(true);
         BirdControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
@@ -156,6 +158,10 @@ public class EntrustControl_House : MonoBehaviour
         isDeliverActive = false;
         isReceiveActive = false;
         isContentActive = false;
+        for (int i = 1; i < alreadyReceived.Length; i++)
+        {
+            alreadyReceived[i].SetActive(false);
+        }
         entrustUI[1].GetComponent<CanvasGroup>().interactable = true;
         entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
         DeliverButtonInitialState();
