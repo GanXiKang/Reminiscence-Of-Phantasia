@@ -43,7 +43,7 @@ public class EntrustControl_House : MonoBehaviour
         entrustUI[2].SetActive(isReceiveActive);
         entrustUI[3].SetActive(isContentActive);
 
-        if (isEntrustActive)
+        if (isDeliverActive)
         {
             background.GetComponent<Image>().sprite = normalBG;
         }
