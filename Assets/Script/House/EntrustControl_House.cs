@@ -84,7 +84,6 @@ public class EntrustControl_House : MonoBehaviour
             }
         }
     }
-    void 
     void LetterReceiveAndContent()
     {
         if (_entrustNum == 0) return;
