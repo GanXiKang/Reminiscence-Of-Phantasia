@@ -17,6 +17,7 @@ public class EntrustControl_House : MonoBehaviour
 
     [Header("LetterDeliver")]
     public Button[] deliverButton;
+    public Sprite normalButton, disabledButton;
 
     [Header("LetterReceive")]
     public Image receiveImage;
