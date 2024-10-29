@@ -151,7 +151,7 @@ public class EntrustControl_House : MonoBehaviour
         float _duration = 1f;
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
-        Vector2 endPosition = new Vector2(0f, startPosition.y);
+        Vector2 endPosition = new Vector2(7f, startPosition.y);
 
         while (_timeElapsed < _duration)
         {
@@ -183,7 +183,7 @@ public class EntrustControl_House : MonoBehaviour
         float _duration = 0.5f;
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
-        Vector2 endPosition = new Vector2(6f, startPosition.y);
+        Vector2 endPosition = new Vector2(24f, startPosition.y);
         button.GetComponent<CanvasGroup>().interactable = false;
 
         while (_timeElapsed < _duration)
