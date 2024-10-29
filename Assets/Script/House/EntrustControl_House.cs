@@ -10,6 +10,7 @@ public class EntrustControl_House : MonoBehaviour
     public Image background;
     public Sprite normalBG, darkBG;
     public static bool isEntrustActive = false;
+    public static int _entrustNum = 0;
     bool isDeliverActive = false;
     bool isReceiveActive = false;
     bool isContentActive = false;
@@ -33,6 +34,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         EntrustUI();
         OpenUI();
+        LetterReceiveAndContent();
     }
 
     void DeliverButtonInitialState()
@@ -80,9 +82,17 @@ public class EntrustControl_House : MonoBehaviour
             }
         }
     }
+    void LetterReceiveAndContent()
+    {
+        if (_entrustNum == 0) return;
+
+        receiveImage.sprite = receiveSprite[_entrustNum];
+        contentImage.sprite = contentSprite[_entrustNum];
+    }
     
     public void Button_Deliver(int _letter)
     {
+        _entrustNum = _letter;
         BirdControl_House.isDeliver_Close = true;
         StartCoroutine(AnimateButtonDisappear(deliverButton[0], 0f, false));
         StartCoroutine(AnimateButtonDisappear(deliverButton[3], 0f, true));
