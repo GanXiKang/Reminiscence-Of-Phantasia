@@ -36,7 +36,7 @@ public class EntrustControl_House : MonoBehaviour
             rect.anchoredPosition = new Vector2(24f, rect.anchoredPosition.y);
         }
     }
-    private void EntrustUI()
+    void EntrustUI()
     {
         entrustUI[0].SetActive(isEntrustActive);
         entrustUI[1].SetActive(isDeliverActive);
