@@ -33,7 +33,7 @@ public class EntrustControl_House : MonoBehaviour
         {
             deliverButton[i].GetComponent<CanvasGroup>().alpha = 0;
             RectTransform rect = deliverButton[i].GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(6f, rect.anchoredPosition.y);
+            rect.anchoredPosition = new Vector2(24f, rect.anchoredPosition.y);
         }
     }
     private void EntrustUI()
