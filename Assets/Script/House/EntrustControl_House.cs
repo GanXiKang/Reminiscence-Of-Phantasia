@@ -18,6 +18,7 @@ public class EntrustControl_House : MonoBehaviour
     [Header("LetterDeliver")]
     public GameObject[] deliverButton;
     public GameObject[] alreadyReceived;
+    public Text[] letterText;
     public Sprite normalButton, disabledButton;
     public static int _round = 1;
 
@@ -92,7 +93,9 @@ public class EntrustControl_House : MonoBehaviour
         {
             case 1:
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
+                letterText[1].text = "和奶奶的回憶...";
                 deliverButton[2].GetComponent<Image>().sprite = normalButton;
+                letterText[2].text = "友情的記憶...";
                 deliverButton[3].GetComponent<Image>().sprite = disabledButton;
                 deliverButton[3].GetComponent<Button>().interactable = false;
                 break;
