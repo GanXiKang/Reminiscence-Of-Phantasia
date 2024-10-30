@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingControl : MonoBehaviour
 {
@@ -135,7 +136,8 @@ public class SettingControl : MonoBehaviour
     public void ExitGame_Button()
     {
         BGM.PlayOneShot(leave);
-        Application.Quit();
+        //Application.Quit();
+        
     }
     public void Volume_BGM()
     {
@@ -146,6 +148,11 @@ public class SettingControl : MonoBehaviour
     {
         Screen.fullScreen = isFullScreen;
         isFullS = isFullScreen;
+    }
+
+    void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator TurnPageLeft()
