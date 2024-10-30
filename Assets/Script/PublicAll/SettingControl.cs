@@ -136,8 +136,8 @@ public class SettingControl : MonoBehaviour
     public void ExitGame_Button()
     {
         BGM.PlayOneShot(leave);
-        //Application.Quit();
-        
+        TransitionUIControl.isTransitionUIAnim_In = true;
+        Invoke("GoToMenu", 1f);
     }
     public void Volume_BGM()
     {
