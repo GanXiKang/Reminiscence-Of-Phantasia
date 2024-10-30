@@ -101,10 +101,10 @@ public class CustomCursorControl_Workbench : MonoBehaviour
         while (isCursorChanged && ScissorsControl_Workbench.isUseScissors)
         {
             Cursor.SetCursor(scissors1, hotSpot, CursorMode.Auto);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.4f);
 
             Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.4f);
         }
 
         isAnim = false;
