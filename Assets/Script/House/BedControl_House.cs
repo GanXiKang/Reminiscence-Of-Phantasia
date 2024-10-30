@@ -6,12 +6,25 @@ using UnityEngine.SceneManagement;
 public class BedControl_House : MonoBehaviour
 {
     public static bool isGoStoryWorld = false;
-    public static int _storyNum = 0;
+    public static int _storyNum;
 
     void Update()
     {
         StoryWorld();
         Leave();
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) //úy‘á
+        {
+            _storyNum = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) //úy‘á
+        {
+            _storyNum = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) //úy‘á
+        {
+            _storyNum = 4;
+        }
     }
 
     void StoryWorld()
