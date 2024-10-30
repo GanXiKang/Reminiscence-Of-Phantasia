@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class CustomCursorControl_Workbench : MonoBehaviour
 {
+    [Header("Texture")]
     public Texture2D scissors1, scissors2;
     public Texture2D pencil1, pencil2;
     public Vector2 hotSpot = Vector2.zero; 
-    private bool isCursorChanged = false;  
+    private bool isCursorChanged = false;
+    bool isUsePencil = false;
 
+    [Header("Object")]
     public GameObject objectToMove;
 
     void Update()
@@ -39,13 +42,19 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 break;
 
             case 3:
-                if (Input.GetMouseButtonDown(0))
+                if (isUsePencil)
                 {
                     Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
                 }
                 else
                 {
                     Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isUsePencil = true;
+                    Invoke("FalseisUsePencil", 0.5f);
                 }
                 break;
 
@@ -63,5 +72,9 @@ public class CustomCursorControl_Workbench : MonoBehaviour
         Vector3 newPosition = new Vector3(worldPosition.x, objectToMove.transform.position.y, worldPosition.z);
 
         objectToMove.transform.position = Vector3.Lerp(objectToMove.transform.position, newPosition, Time.deltaTime * 10f);
+    }
+    void FalseisUsePencil()
+    {
+        isUsePencil = false;
     }
 }
