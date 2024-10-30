@@ -48,7 +48,7 @@ public class EntrustControl_House : MonoBehaviour
         {
             deliverButton[i].GetComponent<CanvasGroup>().alpha = 0;
             RectTransform rect = deliverButton[i].GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(24f, rect.anchoredPosition.y);
+            rect.anchoredPosition = new Vector2(20f, rect.anchoredPosition.y);
         }
     }
     void EntrustUI()
@@ -193,7 +193,7 @@ public class EntrustControl_House : MonoBehaviour
         float _duration = 1f;
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
-        Vector2 endPosition = new Vector2(7f, startPosition.y);
+        Vector2 endPosition = new Vector2(9f, startPosition.y);
 
         while (_timeElapsed < _duration)
         {
@@ -225,7 +225,7 @@ public class EntrustControl_House : MonoBehaviour
         float _duration = 0.5f;
         float _timeElapsed = 0f;
         Vector2 startPosition = rect.anchoredPosition;
-        Vector2 endPosition = new Vector2(24f, startPosition.y);
+        Vector2 endPosition = new Vector2(20f, startPosition.y);
         button.GetComponent<CanvasGroup>().interactable = false;
 
         while (_timeElapsed < _duration)
