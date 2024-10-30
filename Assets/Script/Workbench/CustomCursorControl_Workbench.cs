@@ -10,6 +10,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero; 
     private bool isCursorChanged = false;
     bool isUsePencil = false;
+    bool isAnim = false;
 
     [Header("Object")]
     public GameObject objectToMove;
@@ -25,8 +26,21 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 {
                     if (!isCursorChanged)
                     {
-                        Cursor.SetCursor(scissors1, hotSpot, CursorMode.Auto);
+                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
                         isCursorChanged = true;
+                    }
+                    if (ScissorsControl_Workbench.isUseScissors)
+                    {
+                        if (!isAnim)
+                        {
+                            StartCoroutine(ScissorsAnimation());
+                        }
+                    }
+                    else
+                    {
+                        StopCoroutine(ScissorsAnimation());
+                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                        isAnim = false;
                     }
 
                     MoveObjectWithMouse();
@@ -76,5 +90,21 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     void FalseisUsePencil()
     {
         isUsePencil = false;
+    }
+
+    IEnumerator ScissorsAnimation()
+    {
+        isAnim = true;
+
+        while (isCursorChanged && ScissorsControl_Workbench.isUseScissors)
+        {
+            Cursor.SetCursor(scissors1, hotSpot, CursorMode.Auto);
+            yield return new WaitForSeconds(0.5f);
+
+            Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        isAnim = false;
     }
 }
