@@ -13,15 +13,16 @@ public class BedControl_House : MonoBehaviour
         StoryWorld();
         Leave();
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) //úy‘á
+        if (Input.GetKeyDown(KeyCode.Alpha7)) //úy‘á
         {
             _storyNum = 2;
+            print(_storyNum);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) //úy‘á
+        if (Input.GetKeyDown(KeyCode.Alpha8)) //úy‘á
         {
             _storyNum = 3;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3)) //úy‘á
+        if (Input.GetKeyDown(KeyCode.Alpha9)) //úy‘á
         {
             _storyNum = 4;
         }
