@@ -20,28 +20,34 @@ public class UIControl_Menu : MonoBehaviour
 
     void Start()
     {
-        
+        sliderBGM.value = volumeBGM;
+        BGM.volume = volumeBGM;
+        fullScreen.isOn = Screen.fullScreen;
     }
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            FullScreen(!isFullS);
+        }
     }
 
     public void Button_Start()
     {
-        
+        BGM.PlayOneShot(onClick);
     }
     public void Button_Continue()
     {
-
+        BGM.PlayOneShot(onClick);
     }
     public void Button_Setting()
     {
-
+        BGM.PlayOneShot(onClick);
     }
     public void Button_Quit()
     {
+        BGM.PlayOneShot(onClick);
         Application.Quit();
     }
     public void Volume_BGM()
