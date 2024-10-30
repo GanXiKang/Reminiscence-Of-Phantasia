@@ -39,6 +39,14 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 break;
 
             case 3:
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
+                }
+                else
+                {
+                    Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
+                }
                 break;
 
             default:
