@@ -16,9 +16,10 @@ public class EntrustControl_House : MonoBehaviour
     bool isContentActive = false;
 
     [Header("LetterDeliver")]
-    public Button[] deliverButton;
+    public GameObject[] deliverButton;
     public GameObject[] alreadyReceived;
     public Sprite normalButton, disabledButton;
+    public static int _round = 1;
 
     [Header("LetterReceive")]
     public Image receiveImage;
@@ -36,6 +37,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         EntrustUI();
         OpenUI();
+        LetterDeliver();
         LetterReceiveAndContent();
     }
 
@@ -77,11 +79,23 @@ public class EntrustControl_House : MonoBehaviour
             if (!isDeliverActive && !isReceiveActive && !isContentActive)
             {
                 isDeliverActive = true;
-                StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
-                StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
-                StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
-                StartCoroutine(AnimateButtonAppear(deliverButton[0], 1f, false));
+                StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
             }
+        }
+    }
+    void LetterDeliver()
+    {
+        switch (_round)
+        {
+            case 1:
+                deliverButton[1].GetComponent<Image>().sprite = normalButton;
+                deliverButton[2].GetComponent<Image>().sprite = normalButton;
+                deliverButton[3].GetComponent<Image>().sprite = disabledButton;
+                deliverButton[3].GetComponent<Button>().interactable = false;
+                break;
         }
     }
     void LetterReceiveAndContent()
@@ -96,10 +110,10 @@ public class EntrustControl_House : MonoBehaviour
     {
         _entrustNum = _letter;
         BirdControl_House.isDeliver_Close = true;
-        StartCoroutine(AnimateButtonDisappear(deliverButton[0], 0f, false));
-        StartCoroutine(AnimateButtonDisappear(deliverButton[3], 0f, true));
-        StartCoroutine(AnimateButtonDisappear(deliverButton[2], 0.4f, true));
-        StartCoroutine(AnimateButtonDisappear(deliverButton[1], 0.8f, true));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[0].GetComponent<Button>(), 0f, false));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[3].GetComponent<Button>(), 0f, true));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+        StartCoroutine(AnimateButtonDisappear(deliverButton[1].GetComponent<Button>(), 0.8f, true));
     }
     public void Button_Receive()
     {
@@ -109,10 +123,10 @@ public class EntrustControl_House : MonoBehaviour
         BirdControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
-        StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
-        StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
-        StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
-        StartCoroutine(AnimateButtonAppear(deliverButton[0], 1f, false));
+        StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
     }
     public void Button_Back()
     {
@@ -123,10 +137,10 @@ public class EntrustControl_House : MonoBehaviour
             BirdControl_House.isDeliver = true;
             DialogueControl_House.isAutoNext = true;
             DialogueControl_House._paragraph = 4;
-            StartCoroutine(AnimateButtonAppear(deliverButton[1], 0f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[2], 0.4f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[3], 0.8f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[0], 1f, false));
+            StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
         }
         else if (isContentActive)
         {
