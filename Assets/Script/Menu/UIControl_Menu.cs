@@ -14,9 +14,9 @@ public class UIControl_Menu : MonoBehaviour
     public GameObject[] menuUI;
     public Slider sliderBGM;
     public Toggle fullScreen;
-
     public static float volumeBGM = 0.7f;
     public static bool isFullS;
+    bool isstaff = false;
 
     void Start()
     {
@@ -36,6 +36,8 @@ public class UIControl_Menu : MonoBehaviour
     public void Button_Start()
     {
         BGM.PlayOneShot(onClick);
+        TransitionUIControl.isTransitionUIAnim_In = true;
+        Invoke("GoToMenu", 1f);
     }
     public void Button_Continue()
     {
@@ -44,6 +46,28 @@ public class UIControl_Menu : MonoBehaviour
     public void Button_Setting()
     {
         BGM.PlayOneShot(onClick);
+        menuUI[1].SetActive(false);
+        menuUI[2].SetActive(true);
+    }
+    public void Button_Back()
+    {
+        if (!isstaff)
+        {
+            menuUI[1].SetActive(true);
+            menuUI[2].SetActive(false);
+        }
+        else
+        {
+            isstaff = false;
+            menuUI[2].SetActive(true);
+            menuUI[3].SetActive(false);
+        }
+    }
+    public void Button_Staff()
+    {
+        isstaff = true;
+        menuUI[2].SetActive(false);
+        menuUI[3].SetActive(true);
     }
     public void Button_Quit()
     {
@@ -59,5 +83,10 @@ public class UIControl_Menu : MonoBehaviour
     {
         Screen.fullScreen = isFullScreen;
         isFullS = isFullScreen;
+    }
+
+    void GoToHouse()
+    {
+        SceneManager.LoadScene(1);
     }
 }
