@@ -18,6 +18,9 @@ public class UIControl_Menu : MonoBehaviour
     public static bool isFullS;
     bool isstaff = false;
 
+    [Header("TransitionUI")]
+    public GameObject transitionUI;
+
     void Start()
     {
         sliderBGM.value = volumeBGM;
@@ -27,6 +30,8 @@ public class UIControl_Menu : MonoBehaviour
 
     void Update()
     {
+        transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
+
         if (Input.GetKeyDown(KeyCode.F11))
         {
             FullScreen(!isFullS);
