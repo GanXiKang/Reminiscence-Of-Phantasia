@@ -37,7 +37,7 @@ public class UIControl_Menu : MonoBehaviour
     {
         BGM.PlayOneShot(onClick);
         TransitionUIControl.isTransitionUIAnim_In = true;
-        Invoke("GoToMenu", 1f);
+        Invoke("GoToHouse", 1f);
     }
     public void Button_Continue()
     {
