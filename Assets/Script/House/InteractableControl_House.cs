@@ -67,7 +67,6 @@ public class InteractableControl_House : MonoBehaviour
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBed = true;
                         BedControl_House.isGoStoryWorld = true;
-                        BedControl_House._storyNum = 0; //現在故事一是0 
                         break;  //床
 
                     case 4:
