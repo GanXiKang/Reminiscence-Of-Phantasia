@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 136318359}
-  onClick: {fileID: 0}
+  onClick: {fileID: 8300000, guid: be2afbaf654b3304093e068dc2c937c1, type: 3}
   menuUI:
   - {fileID: 1431207224}
   - {fileID: 757205739}
@@ -185,6 +185,7 @@ MonoBehaviour:
   - {fileID: 1377035522}
   sliderBGM: {fileID: 1680321539}
   fullScreen: {fileID: 1542885865}
+  transitionUI: {fileID: 475498895}
 --- !u!1 &32656667
 GameObject:
   m_ObjectHideFlags: 0
