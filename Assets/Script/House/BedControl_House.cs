@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BedControl_House : MonoBehaviour
 {
     public static bool isGoStoryWorld = false;
-    public static int _storyNum = 2;
+    public static int _storyNum;
 
     void Update()
     {
@@ -16,7 +16,6 @@ public class BedControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha7)) //úy‘á
         {
             _storyNum = 2;
-            print(_storyNum);
         }
         if (Input.GetKeyDown(KeyCode.Alpha8)) //úy‘á
         {
