@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CustomCursorControl_Workbench : MonoBehaviour
 {
-    public Texture2D customCursorTexture; 
+    public Texture2D scissors1, scissors2;
+    public Texture2D pencil1, pencil2;
     public Vector2 hotSpot = Vector2.zero; 
     private bool isCursorChanged = false;  
 
@@ -12,32 +13,37 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
     void Update()
     {
-        if (WorkbenchControl_House._process == 2)
+        switch (WorkbenchControl_House._process)
         {
-            float screenHalfWidth = Screen.width / 2;
+            case 2:
+                float screenHalfWidth = Screen.width / 2;
 
-            if (Input.mousePosition.x > screenHalfWidth)
-            {
-                if (!isCursorChanged)
+                if (Input.mousePosition.x > screenHalfWidth)
                 {
-                    Cursor.SetCursor(customCursorTexture, hotSpot, CursorMode.Auto);
-                    isCursorChanged = true;
-                }
+                    if (!isCursorChanged)
+                    {
+                        Cursor.SetCursor(scissors1, hotSpot, CursorMode.Auto);
+                        isCursorChanged = true;
+                    }
 
-                MoveObjectWithMouse();
-            }
-            else
-            {
-                if (isCursorChanged)
-                {
-                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                    isCursorChanged = false;
+                    MoveObjectWithMouse();
                 }
-            }
-        }
-        else
-        {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                else
+                {
+                    if (isCursorChanged)
+                    {
+                        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                        isCursorChanged = false;
+                    }
+                }
+                break;
+
+            case 3:
+                break;
+
+            default:
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                break;
         }
     }
 
