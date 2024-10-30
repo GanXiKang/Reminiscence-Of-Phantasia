@@ -5,8 +5,10 @@ using UnityEngine;
 public class CustomCursorControl_Workbench : MonoBehaviour
 {
     [Header("Texture")]
-    public Texture2D scissors1, scissors2;
-    public Texture2D pencil1, pencil2;
+    public Texture2D scissors1;
+    public Texture2D scissors2;
+    public Texture2D pencil1;
+    public Texture2D pencil2;
     public Vector2 hotSpot = Vector2.zero; 
     private bool isCursorChanged = false;
     bool isUsePencil = false;
