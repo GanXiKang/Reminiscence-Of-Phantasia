@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BedControl_House : MonoBehaviour
 {
     public static bool isGoStoryWorld = false;
-    public static int _storyNum;
+    public static int _storyNum = 2;
 
     void Update()
     {
