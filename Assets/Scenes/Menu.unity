@@ -176,6 +176,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475ebd894242e4641a1322e77778adb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 136318359}
+  onClick: {fileID: 0}
+  menuUI:
+  - {fileID: 1431207224}
+  - {fileID: 757205739}
+  - {fileID: 2061844703}
+  - {fileID: 1377035522}
+  sliderBGM: {fileID: 1680321539}
+  fullScreen: {fileID: 1542885865}
 --- !u!1 &32656667
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 443179931}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6130738}
+        m_TargetAssemblyTypeName: UIControl_Menu, Assembly-CSharp
+        m_MethodName: Button_Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &443179931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +952,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 509007552}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6130738}
+        m_TargetAssemblyTypeName: UIControl_Menu, Assembly-CSharp
+        m_MethodName: Button_Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &509007552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,7 +1018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &757205740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1295,7 +1328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1129150752}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6130738}
+        m_TargetAssemblyTypeName: UIControl_Menu, Assembly-CSharp
+        m_MethodName: Button_Setting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1129150752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2375,8 +2420,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
+      - m_Target: {fileID: 6130738}
+        m_TargetAssemblyTypeName: UIControl_Menu, Assembly-CSharp
         m_MethodName: FullScreen
         m_Mode: 0
         m_Arguments:
@@ -2608,8 +2653,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
+      - m_Target: {fileID: 6130738}
+        m_TargetAssemblyTypeName: UIControl_Menu, Assembly-CSharp
         m_MethodName: Volume_BGM
         m_Mode: 1
         m_Arguments:
@@ -2864,7 +2909,7 @@ GameObject:
   - component: {fileID: 2030295093}
   - component: {fileID: 2030295092}
   m_Layer: 5
-  m_Name: Button_New
+  m_Name: Button_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2933,7 +2978,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2030295093}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6130738}
+        m_TargetAssemblyTypeName: UIControl_Menu, Assembly-CSharp
+        m_MethodName: Button_Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2030295093
 MonoBehaviour:
   m_ObjectHideFlags: 0
