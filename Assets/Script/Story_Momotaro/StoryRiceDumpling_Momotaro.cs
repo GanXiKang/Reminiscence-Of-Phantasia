@@ -14,6 +14,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     [Header("SkillUI")]
     public GameObject skillUI;
     public static bool isSkillActive = false;
+    public static bool isChangeRoles = false;
 
     [Header("RoleUI")]
     public GameObject roleUI;
@@ -84,7 +85,16 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     public void Button_RiceDumpling()
     {
-        isRoleActive = !isRoleActive;
+        if (!isChangeRoles)
+        {
+            isRoleActive = !isRoleActive;
+        }
+        else
+        {
+            StoryPlayerAnimator_Momotaro.isDonkey = false;
+            StoryPlayerAnimator_Momotaro.isRaccoon = false;
+            StoryPlayerAnimator_Momotaro.isParrot = false;
+        }
     }
     public void Button_Role(int role)
     {
@@ -95,15 +105,15 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         switch (role)
         {
             case 1:
-                StoryPlayerAnimator_Momotaro.isDonkey = !StoryPlayerAnimator_Momotaro.isDonkey;
+                StoryPlayerAnimator_Momotaro.isDonkey = true;
                 break;
 
             case 2:
-                StoryPlayerAnimator_Momotaro.isRaccoon = !StoryPlayerAnimator_Momotaro.isRaccoon;
+                StoryPlayerAnimator_Momotaro.isRaccoon = true;
                 break;
 
             case 3:
-                StoryPlayerAnimator_Momotaro.isParrot = !StoryPlayerAnimator_Momotaro.isParrot;
+                StoryPlayerAnimator_Momotaro.isParrot = true;
                 break;
         }
     }
