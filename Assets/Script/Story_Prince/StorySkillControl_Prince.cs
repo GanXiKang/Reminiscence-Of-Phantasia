@@ -9,7 +9,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public GameObject pointer;
     bool isClockActice = true;
     bool isRotating = false;
-    float _rotationSpeed = 30f;
+    float _rotationSpeed = 90f;
 
 
     void Update()
