@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Showcase_House : MonoBehaviour
 {
+    [Header("StoryBook")]
+    public GameObject[] storyBook;
+    public Transform showPoint;
+    public Transform originalPoint;
+    int _showNum = 0;
+
     void Start()
     {
         
