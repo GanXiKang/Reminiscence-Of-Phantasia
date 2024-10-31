@@ -7,9 +7,9 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("ClockUI")]
     public GameObject clockUI;
     public GameObject pointer;
-    bool isClockActice = false;
+    bool isClockActice = true;
     bool isRotating = false;
-    float _rotationSpeed = 10f;
+    float _rotationSpeed = 30f;
 
 
     void Update()
@@ -23,7 +23,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (isRotating)
         {
-            pointer.transform.Rotate(0, 0, -_rotationSpeed * Time.deltaTime);
+            pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
