@@ -42,16 +42,19 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         switch (_whoEatGoldRice)
         {
             case 3:
-                StoryPlayerAnimator_Momotaro.isDonkey = !StoryPlayerAnimator_Momotaro.isDonkey;
+                roleButton[1].SetActive(true);
                 break;
 
             case 6:
-                StoryPlayerAnimator_Momotaro.isRaccoon = !StoryPlayerAnimator_Momotaro.isRaccoon;
+                roleButton[2].SetActive(true);
                 break;
 
             case 9:
-                StoryPlayerAnimator_Momotaro.isParrot = !StoryPlayerAnimator_Momotaro.isParrot;
+                roleButton[3].SetActive(true);
                 break;
+
+            default:
+                return;
         }
     }
     void RaccoonSkill()
@@ -79,7 +82,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         }
     }
 
-    public void Button_RiceDumpling_()
+    public void Button_RiceDumpling()
     {
         isRoleActive = !isRoleActive;
     }
@@ -89,6 +92,20 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         Invoke("EatFinish", 0.3f);
 
         isRoleActive = false;
+        switch (role)
+        {
+            case 1:
+                StoryPlayerAnimator_Momotaro.isDonkey = !StoryPlayerAnimator_Momotaro.isDonkey;
+                break;
+
+            case 2:
+                StoryPlayerAnimator_Momotaro.isRaccoon = !StoryPlayerAnimator_Momotaro.isRaccoon;
+                break;
+
+            case 3:
+                StoryPlayerAnimator_Momotaro.isParrot = !StoryPlayerAnimator_Momotaro.isParrot;
+                break;
+        }
     }
 
     void EatFinish()
