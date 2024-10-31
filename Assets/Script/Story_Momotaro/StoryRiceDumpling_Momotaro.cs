@@ -14,8 +14,11 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     [Header("SkillUI")]
     public GameObject skillUI;
     public GameObject roleUI;
-    public static bool isSkillActive;
+    public static bool isSkillActive = false;
+    public static bool isRoleActive = false;
 
+    [Header("RoleUI")]
+    public GameObject[] roleButton;
     public static int _whoEatGoldRice;
     public static bool isEat = false;
 
@@ -27,11 +30,17 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     void Update()
     {
         skillUI.SetActive(isSkillActive && !StoryUIControl_Momotaro.isPerformances);
+        roleUI.SetActive(isRoleActive);
 
+        RoleUI();
         RaccoonSkill();
         ParrotPerformances();
     }
 
+    void RoleUI()
+    {
+        
+    }
     void RaccoonSkill()
     {
         if (!StoryPlayerAnimator_Momotaro.isRaccoon) return;
@@ -57,7 +66,11 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         }
     }
 
-    public void RiceDumpling_Button()
+    public void Button_RiceDumpling_()
+    {
+        isRoleActive = !isRoleActive;
+    }
+    public void Button_Role(int role)
     {
         isEat = true;
         Invoke("EatFinish", 0.3f);
