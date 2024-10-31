@@ -17467,8 +17467,7 @@ GameObject:
   - component: {fileID: 1798176894}
   - component: {fileID: 1798176893}
   - component: {fileID: 1798176892}
-  - component: {fileID: 1798176891}
-  - component: {fileID: 1798176890}
+  - component: {fileID: 1798176897}
   - component: {fileID: 1798176889}
   m_Layer: 0
   m_Name: Player
@@ -17498,33 +17497,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1798176890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798176888}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83aea22ac54dfc34cada1687a8e07a7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 0, g: 0.85656834, b: 1, a: 1}
-  _lerpSpeed: 1
---- !u!114 &1798176891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798176888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2963395d794ac664a94ed98a7218487c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1798176892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17664,6 +17636,18 @@ Transform:
   - {fileID: 1170783271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
+--- !u!114 &1798176897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798176888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f109a4658fd85f146a737e4f3e1301af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1825346710
 GameObject:
   m_ObjectHideFlags: 0
