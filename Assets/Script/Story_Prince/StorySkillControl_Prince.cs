@@ -12,7 +12,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (isRotating)
         {
-            pointer.transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+            pointer.transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -25,9 +25,6 @@ public class StorySkillControl_Prince : MonoBehaviour
     private void CheckCurrentZone()
     {
         float zRotation = pointer.transform.eulerAngles.z % 360;
-
-        zRotation = (zRotation + 90) % 360;
-
         int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
         Debug.Log("Ö¸á˜Í£ÔÚµÚ " + zone + " …^Óò");
     }
