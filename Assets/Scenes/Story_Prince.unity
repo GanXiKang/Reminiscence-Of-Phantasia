@@ -14574,7 +14574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1187902723
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15541,7 +15541,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1631694442}
         m_TargetAssemblyTypeName: StorySkillControl_Prince, Assembly-CSharp
-        m_MethodName: Button_ClockActive
+        m_MethodName: Button_Time
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
