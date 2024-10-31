@@ -7,10 +7,9 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("ClockUI")]
     public GameObject clockUI;
     public GameObject pointer;
-    bool isClockActice = true;
+    bool isClockActice = false;
     bool isRotating = false;
     float _rotationSpeed = 90f;
-
 
     void Update()
     {
