@@ -20,6 +20,8 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     void ClockRotating()
     {
+        if (!isClockActice) return;
+
         if (isRotating)
         {
             pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
@@ -28,7 +30,9 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isRotating = !isRotating;
-            CheckCurrentZone();
+
+            if (!isRotating)
+                CheckCurrentZone();
         }
     }
     void CheckCurrentZone()
@@ -40,6 +44,6 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     public void Button_ClockActive()
     {
-       isClockActice = !isClockActice;
+       isClockActice = true;
     }
 }
