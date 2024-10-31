@@ -13,12 +13,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     [Header("SkillUI")]
     public GameObject skillUI;
-    public GameObject roleUI;
     public static bool isSkillActive = false;
-    public static bool isRoleActive = false;
 
     [Header("RoleUI")]
+    public GameObject roleUI;
     public GameObject[] roleButton;
+    public static bool isRoleActive = false;
     public static int _whoEatGoldRice;
     public static bool isEat = false;
 
