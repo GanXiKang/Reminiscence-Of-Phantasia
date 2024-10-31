@@ -24,12 +24,11 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     private void CheckCurrentZone()
     {
-        // 獲取 Z 軸旋轉角度，並限制在 0 到 360 度範圍內
         float zRotation = pointer.transform.eulerAngles.z % 360;
 
-        // 計算所屬的區域（每個區域為 30 度）
-        int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
+        zRotation = (zRotation + 90) % 360;
 
+        int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
         Debug.Log("指針停在第 " + zone + " 區域");
     }
 }
