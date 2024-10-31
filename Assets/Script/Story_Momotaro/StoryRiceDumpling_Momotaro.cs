@@ -91,6 +91,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         }
         else
         {
+            isChangeRoles = false;
             StoryPlayerAnimator_Momotaro.isDonkey = false;
             StoryPlayerAnimator_Momotaro.isRaccoon = false;
             StoryPlayerAnimator_Momotaro.isParrot = false;
@@ -101,6 +102,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         isEat = true;
         Invoke("EatFinish", 0.3f);
 
+        isChangeRoles = true;
         isRoleActive = false;
         switch (role)
         {
