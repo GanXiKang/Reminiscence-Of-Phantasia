@@ -15,6 +15,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     void Update()
     {
         clockUI.SetActive(isClockActice);
+
         ClockRotating();
     }
 
