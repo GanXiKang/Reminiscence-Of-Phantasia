@@ -12,7 +12,8 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public AudioClip plazaBGM;
 
     [Header("SkillUI")]
-    public GameObject skill;
+    public GameObject skillUI;
+    public GameObject roleUI;
     public static bool isSkillActive;
 
     public static int _whoEatGoldRice;
@@ -25,7 +26,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     void Update()
     {
-        skill.SetActive(isSkillActive && !StoryUIControl_Momotaro.isPerformances);
+        skillUI.SetActive(isSkillActive && !StoryUIControl_Momotaro.isPerformances);
 
         RaccoonSkill();
         ParrotPerformances();
