@@ -26,14 +26,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         {
             pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isRotating = !isRotating;
-
-            if (!isRotating)
-                CheckCurrentZone();
-        }
     }
     void CheckCurrentZone()
     {
@@ -42,8 +34,15 @@ public class StorySkillControl_Prince : MonoBehaviour
         Debug.Log("Ö¸á˜Í£ÔÚµÚ " + zone + " …^Óò");
     }
 
+    public void Button_Time()
+    {
+        isRotating = !isRotating;
+
+        if (!isRotating)
+            CheckCurrentZone();
+    }
     public void Button_ClockActive()
     {
-       isClockActice = true;
+       isClockActice = !isClockActice;
     }
 }
