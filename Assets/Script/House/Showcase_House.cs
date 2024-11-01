@@ -36,7 +36,6 @@ public class Showcase_House : MonoBehaviour
                 storyBook[i].transform.position = originalPoint.position;
                 storyBook[i].transform.rotation = originalPoint.rotation;
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", false);
-                storyBook[i].GetComponent<Animator>().SetBool("isClose", true);
             }
         }
     }
