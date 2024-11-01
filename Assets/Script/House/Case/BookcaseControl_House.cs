@@ -10,7 +10,7 @@ public class BookcaseControl_House : MonoBehaviour
     public Transform originalPoint;
     public static int _bookNum = 0;
     bool isOpen = false;
-    bool isMove = false;
+    bool isNext = false;
     bool isBack = false;
     float _moveSpeed = 1f;
     
@@ -45,22 +45,21 @@ public class BookcaseControl_House : MonoBehaviour
     void NextStoryBook()
     {
         if (!CameraControl_House.isLookBookcase) return;
-        if (isMove || isBack) return;
+        if (isNext || isBack) return;
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.D)) //下一本
         {
             if (_bookNum != 0)
             {
-                print("a");
-                _bookNum--;
-                isMove = true;
+                _bookNum++;
+                isNext = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.A)) //上一本
         {
             if (_bookNum < book.Length - 1)
             {
-                _bookNum++;
+                _bookNum--;
                 isBack = true;
             }
         }
@@ -69,14 +68,14 @@ public class BookcaseControl_House : MonoBehaviour
     {
         if (!CameraControl_House.isLookBookcase) return;
 
-        if (isMove)
+        if (isNext)
         {
             book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
             book[_bookNum - 1].transform.position = Vector3.Lerp(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
 
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
-                isMove = false;
+                isNext = false;
             }
         }
         else if (isBack)
