@@ -10,6 +10,5 @@ public class ColorPicker_Workbench : MonoBehaviour
     public void SetColor(Image colorImage)
     {
         selectedColor = colorImage.color;
-        print(selectedColor);
     }
 }
