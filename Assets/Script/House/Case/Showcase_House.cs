@@ -23,6 +23,8 @@ public class Showcase_House : MonoBehaviour
         _storyBookPaperNum[0] = 0;
         _storyBookPaperNum[1] = 1;
         _storyBookPaperNum[2] = 4;
+        _storyBookPaperNum[3] = 7;
+        _storyBookPaperNum[4] = 8;
     }
 
     void Update()
@@ -51,6 +53,11 @@ public class Showcase_House : MonoBehaviour
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", true);
                 paper[_storyBookPaperNum[_showNum]].transform.position = storyBookPoint[i].transform.position;
                 paper[_storyBookPaperNum[_showNum]].transform.rotation = storyBookPoint[i].transform.rotation;
+                if (_showNum == 4)
+                {
+                    paper[_storyBookPaperNum[_showNum + 1]].transform.position = storyBookPoint[i + 1].transform.position;
+                    paper[_storyBookPaperNum[_showNum + 1]].transform.rotation = storyBookPoint[i + 1].transform.rotation;
+                }
                 Invoke("WaitOpenBookPaper", 0.8f);
             }
             else
@@ -93,10 +100,14 @@ public class Showcase_House : MonoBehaviour
     void WaitOpenBookPaper()
     {
         paper[_storyBookPaperNum[_showNum]].SetActive(true);
+        if (_showNum == 4)
+        {
+            paper[_storyBookPaperNum[_showNum + 1]].SetActive(true);
+        }
     }
     void WaitCloseBookPaper()
     {
-        for (int i = 0; i < storyBook.Length; i++)
+        for (int i = 0; i < storyBookPoint.Length; i++)
         {
             paper[_storyBookPaperNum[i]].SetActive(false);
         }
