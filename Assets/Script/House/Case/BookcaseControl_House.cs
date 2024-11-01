@@ -45,18 +45,20 @@ public class BookcaseControl_House : MonoBehaviour
     void NextStoryBook()
     {
         if (!CameraControl_House.isLookBookcase) return;
+        if (isMove || isBack) return;
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (_bookNum != 0 && !isMove)
+            if (_bookNum != 0)
             {
+                print("a");
                 _bookNum--;
                 isMove = true;
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (_bookNum < book.Length - 1 && !isMove)
+            if (_bookNum < book.Length - 1)
             {
                 _bookNum++;
                 isBack = true;
