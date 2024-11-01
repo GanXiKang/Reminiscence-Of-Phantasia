@@ -8,7 +8,7 @@ public class Showcase_House : MonoBehaviour
     public GameObject[] storyBook;
     public Transform showPoint;
     public Transform originalPoint;
-    int _showNum = 0;
+    public static int _showNum = 0;
     bool isShow = false;
 
     [Header("StoryBookPoint")]
