@@ -378,6 +378,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 }
                 break;
         }
+        Showcase_House._storyBookPaperNum[_storyBookNum] = _paperNum;
     }
     IEnumerator AppaerChooseUI()
     {
