@@ -6,7 +6,7 @@ public class BookcaseControl_House : MonoBehaviour
 {
     [Header("Book")]
     public GameObject[] book;
-    public Transform[] bookPos;
+    public Transform[] bookMovePos;
     bool isOpenBookcaseOnce = false;
     int _bookNum = 0;
 
