@@ -12,7 +12,7 @@ public class BookcaseControl_House : MonoBehaviour
     bool isOpen = false;
     bool isNext = false;
     bool isBack = false;
-    float _moveSpeed = 1f;
+    float _moveSpeed = 10f;
     
     void Update()
     {
@@ -49,7 +49,7 @@ public class BookcaseControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D)) //下一本
         {
-            if (_bookNum != 0)
+            if (_bookNum < book.Length - 1)
             {
                 _bookNum++;
                 isNext = true;
@@ -57,7 +57,7 @@ public class BookcaseControl_House : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A)) //上一本
         {
-            if (_bookNum < book.Length - 1)
+            if (_bookNum != 0)
             {
                 _bookNum--;
                 isBack = true;
