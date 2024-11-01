@@ -36,7 +36,7 @@ public class CameraControl_House : MonoBehaviour
 
     void Update()
     {
-        player.SetActive(!isLookDoor);
+        player.SetActive(isPlayerActive());
         freeLookCamera.SetActive(isFreeLookCamera());
         
         CameraLooking();
@@ -82,7 +82,12 @@ public class CameraControl_House : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, showcasePos.rotation, _moveTime * Time.deltaTime);
         }
     }
-   
+
+    bool isPlayerActive()
+    {
+        return !isLookDoor &&
+               !isLookBookcase;
+    }
     bool isFreeLookCamera()
     {
         return isFreeLook &&
