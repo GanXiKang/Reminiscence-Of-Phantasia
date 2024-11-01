@@ -18,6 +18,13 @@ public class Showcase_House : MonoBehaviour
     [Header("Paper")]
     public GameObject[] paper;
 
+    void Start()
+    {
+        _storyBookPaperNum[0] = 0;
+        _storyBookPaperNum[1] = 1;
+        _storyBookPaperNum[2] = 4;
+    }
+
     void Update()
     {
         FirstShowcase();
