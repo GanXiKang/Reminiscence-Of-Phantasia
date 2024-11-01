@@ -17,6 +17,7 @@ public class BookcaseControl_House : MonoBehaviour
     {
         OpenBookcase();
         NextStoryBook();
+        MoveStoryBook();
         Leave();
     }
 
@@ -40,19 +41,6 @@ public class BookcaseControl_House : MonoBehaviour
             }
         }
     }
-    void MoveStoryBook()
-    {
-        if (!CameraControl_House.isLookBookcase) return;
-        if (!isMove) return;
-
-        book[_bookNum].transform.position = Vector3.Lerp(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
-        book[_bookNum - 1].transform.position = Vector3.Lerp(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
-
-        if (book[_bookNum - 1].transform.position == bookMovePos[2].transform.position)
-        {
-            isMove = false;
-        }
-    }
     void NextStoryBook()
     {
         if (!CameraControl_House.isLookBookcase) return;
@@ -74,6 +62,20 @@ public class BookcaseControl_House : MonoBehaviour
             }
         }
     }
+    void MoveStoryBook()
+    {
+        if (!CameraControl_House.isLookBookcase) return;
+        if (!isMove) return;
+
+        book[_bookNum].transform.position = Vector3.Lerp(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
+        book[_bookNum - 1].transform.position = Vector3.Lerp(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
+
+        if (book[_bookNum - 1].transform.position == bookMovePos[2].transform.position)
+        {
+            isMove = false;
+        }
+    }
+   
     void Leave()
     {
         if (CameraControl_House.isLookBookcase)
