@@ -9,6 +9,8 @@ public class BookcaseControl_House : MonoBehaviour
     public Transform[] bookMovePos;
     public static int _bookNum = 0;
     bool isOpen = false;
+    bool isMove = false;
+    float _moveSpeed = 2f;
     
     void Update()
     {
@@ -22,13 +24,33 @@ public class BookcaseControl_House : MonoBehaviour
         if (!CameraControl_House.isLookBookcase) return;
         if (isOpen) return;
 
-        if()
-        book[_bookNum].transform.position = bookMovePos[1].transform.position;
-        book[_bookNum].transform.rotation = bookMovePos[1].transform.rotation;
+        isOpen = true;
+        for (int b = 0; b < book.Length; b++)
+        {
+            if (b == _bookNum)
+            {
+                book[_bookNum].transform.position = bookMovePos[1].transform.position;
+                book[_bookNum].transform.rotation = bookMovePos[1].transform.rotation;
+            }
+            else
+            {
+                book[_bookNum].transform.position = bookMovePos[0].transform.position;
+                book[_bookNum].transform.rotation = bookMovePos[0].transform.rotation;
+            }
+        }
     }
     void MoveStoryBook()
     {
-        
+        if (!CameraControl_House.isLookBookcase) return;
+        if (!isMove) return;
+
+        book[_bookNum].transform.position = Vector3.Lerp(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
+        book[_bookNum - 1].transform.position = Vector3.Lerp(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
+
+        if (book[_bookNum - 1].transform.position == bookMovePos[2].transform.position)
+        {
+            isMove = false;
+        }
     }
     void NextStoryBook()
     {
@@ -36,29 +58,21 @@ public class BookcaseControl_House : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _bookNum--;
-            MoveStoryBook();
-            Limit();
+            if (_bookNum != 0 && !isMove)
+            {
+                _bookNum--;
+                isMove = true;
+            }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            _bookNum++;
-            MoveStoryBook();
-            Limit();
+            if (_bookNum < book.Length - 1 && !isMove)
+            {
+                _bookNum++;
+                isMove = true;
+            }
         }
     }
-    void Limit()
-    {
-        if (_bookNum < 0)
-        {
-            _bookNum = 0;
-        }
-        if (_bookNum >= book.Length)
-        {
-            _bookNum = book.Length - 1;
-        }
-    }
-
     void Leave()
     {
         if (CameraControl_House.isLookBookcase)
@@ -75,5 +89,6 @@ public class BookcaseControl_House : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookBookcase = false;
+        isOpen = false;
     }
 }
