@@ -7,6 +7,8 @@ public class BookcaseControl_House : MonoBehaviour
     [Header("Book")]
     public GameObject[] book;
     public Transform[] bookPos;
+    bool isOpenBookcaseOnce = false;
+    int _bookNum = 0;
 
     void Start()
     {
@@ -15,7 +17,35 @@ public class BookcaseControl_House : MonoBehaviour
 
     void Update()
     {
+        MoveStoryBook();
         Leave();
+    }
+
+    void MoveStoryBook()
+    {
+        if (!CameraControl_House.isLookBookcase) return;
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            _bookNum--;
+            Limit();
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            _bookNum++;
+            Limit();
+        }
+    }
+    void Limit()
+    {
+        if (_bookNum < 0)
+        {
+            _bookNum = 0;
+        }
+        if (_bookNum >= book.Length)
+        {
+            _bookNum = book.Length - 1;
+        }
     }
 
     void Leave()
