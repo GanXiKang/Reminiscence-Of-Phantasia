@@ -56,7 +56,7 @@ public class BookcaseControl_House : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (_bookNum < book.Length - 1 && !isBack)
+            if (_bookNum < book.Length - 1 && !isMove)
             {
                 _bookNum++;
                 isBack = true;
@@ -69,9 +69,8 @@ public class BookcaseControl_House : MonoBehaviour
 
         if (isMove)
         {
-            book[_bookNum - 1].transform.position = Vector3.MoveTowards(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
             book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
-            
+            book[_bookNum - 1].transform.position = Vector3.Lerp(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
 
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
@@ -81,7 +80,7 @@ public class BookcaseControl_House : MonoBehaviour
         else if (isBack)
         {
             book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
-            book[_bookNum + 1].transform.position = Vector3.MoveTowards(book[_bookNum + 1].transform.position, bookMovePos[0].transform.position, _moveSpeed * Time.deltaTime);
+            book[_bookNum + 1].transform.position = Vector3.Lerp(book[_bookNum + 1].transform.position, bookMovePos[0].transform.position, _moveSpeed * Time.deltaTime);
 
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
