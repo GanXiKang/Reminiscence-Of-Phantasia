@@ -7,6 +7,7 @@ public class BookcaseControl_House : MonoBehaviour
     [Header("Book")]
     public GameObject[] book;
     public Transform[] bookMovePos;
+    public Transform originalPoint;
     public static int _bookNum = 0;
     bool isOpen = false;
     bool isMove = false;
@@ -29,13 +30,13 @@ public class BookcaseControl_House : MonoBehaviour
         {
             if (b == _bookNum)
             {
-                book[_bookNum].transform.position = bookMovePos[1].transform.position;
-                book[_bookNum].transform.rotation = bookMovePos[1].transform.rotation;
+                book[b].transform.position = bookMovePos[1].transform.position;
+                book[b].transform.rotation = bookMovePos[1].transform.rotation;
             }
             else
             {
-                book[_bookNum].transform.position = bookMovePos[0].transform.position;
-                book[_bookNum].transform.rotation = bookMovePos[0].transform.rotation;
+                book[b].transform.position = bookMovePos[0].transform.position;
+                book[b].transform.rotation = bookMovePos[0].transform.rotation;
             }
         }
     }
@@ -90,5 +91,10 @@ public class BookcaseControl_House : MonoBehaviour
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookBookcase = false;
         isOpen = false;
+        for (int k = 0; k < book.Length; k++)
+        {
+            book[k].transform.position = originalPoint.transform.position;
+            book[k].transform.rotation = originalPoint.transform.rotation;
+        }
     }
 }
