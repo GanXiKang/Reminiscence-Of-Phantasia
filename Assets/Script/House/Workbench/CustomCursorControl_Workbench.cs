@@ -17,11 +17,6 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     [Header("Object")]
     public GameObject objectToMove;
 
-    void Start()
-    {
-        //Texture2D scissors2 = Resources.Load<Texture2D>("scissors2");
-    }
-
     void Update()
     {
         switch (WorkbenchControl_House._process)
@@ -33,7 +28,6 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 {
                     if (!isCursorChanged)
                     {
-                        Texture2D scissors2 = Resources.Load<Texture2D>("scissors2");
                         Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
                         isCursorChanged = true;
                     }
