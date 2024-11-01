@@ -57,7 +57,6 @@ public class Showcase_House : MonoBehaviour
     }
     void Limit()
     {
-        print(_showNum);
         if (_showNum < 0)
         {
             _showNum = 0;
@@ -66,6 +65,7 @@ public class Showcase_House : MonoBehaviour
         {
             _showNum = storyBook.Length - 1;
         }
+        print(_showNum);
     }
 
     void Leave()
