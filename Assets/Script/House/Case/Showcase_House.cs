@@ -58,7 +58,7 @@ public class Showcase_House : MonoBehaviour
                 storyBook[i].transform.position = originalPoint.position;
                 storyBook[i].transform.rotation = originalPoint.rotation;
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", false);
-                Invoke("WaitOpenClosePaper", 0.1f);
+                Invoke("WaitCloseBookPaper", 0.1f);
             }
         }
     }
