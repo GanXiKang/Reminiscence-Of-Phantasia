@@ -114,7 +114,6 @@ public class Showcase_House : MonoBehaviour
         }
     }
 
-
     void Leave()
     {
         if (CameraControl_House.isLookShowcase)
