@@ -12,7 +12,7 @@ public class BookcaseControl_House : MonoBehaviour
     bool isOpen = false;
     bool isMove = false;
     bool isBack = false;
-    float _moveSpeed = 2f;
+    float _moveSpeed = 1f;
     
     void Update()
     {
