@@ -11,17 +11,21 @@ public class Showcase_House : MonoBehaviour
     int _showNum = 0;
     bool isShow = false;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
+        FirstShowcase();
         ChangeStoryBook();
         Leave();
     }
 
+    void FirstShowcase()
+    {
+        if (!CameraControl_House.isLookShowcase) return;
+        if (isShow) return;
+
+        StoryBookShow();
+        isShow = true;
+    }
     void StoryBookShow()
     {
         for (int i = 0; i < storyBook.Length; i++)
