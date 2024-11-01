@@ -61,7 +61,7 @@ public class Showcase_House : MonoBehaviour
         {
             _showNum = 0;
         }
-        if (_showNum > storyBook.Length)
+        if (_showNum >= storyBook.Length)
         {
             _showNum = storyBook.Length - 1;
         }
