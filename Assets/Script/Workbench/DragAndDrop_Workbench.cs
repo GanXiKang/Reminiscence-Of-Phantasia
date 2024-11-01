@@ -67,10 +67,6 @@ public class DragAndDrop_Workbench : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            transform.position = targetPosition.position;
-        }
     }
 
     void OnMouseDown()
