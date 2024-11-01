@@ -11,6 +11,7 @@ public class BookcaseControl_House : MonoBehaviour
     public static int _bookNum = 0;
     bool isOpen = false;
     bool isMove = false;
+    bool isBack = false;
     float _moveSpeed = 2f;
     
     void Update()
@@ -58,24 +59,33 @@ public class BookcaseControl_House : MonoBehaviour
             if (_bookNum < book.Length - 1 && !isMove)
             {
                 _bookNum++;
-                isMove = true;
+                isBack = true;
             }
         }
     }
     void MoveStoryBook()
     {
         if (!CameraControl_House.isLookBookcase) return;
-        if (!isMove) return;
 
-        book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
-        //book[_bookNum].transform.position = Vector3.Lerp(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
-        book[_bookNum - 1].transform.position = Vector3.Lerp(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
-
-        float dis = Vector3.Distance(book[_bookNum].transform.position, bookMovePos[1].transform.position);
-        if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
+        if (isMove)
         {
-            isMove = false;
-            book[_bookNum - 1].transform.position = bookMovePos[0].transform.position;
+            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
+            book[_bookNum - 1].transform.position = Vector3.MoveTowards(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
+
+            if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
+            {
+                isMove = false;
+            }
+        }
+        else if (isBack)
+        {
+            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
+            book[_bookNum + 1].transform.position = Vector3.MoveTowards(book[_bookNum + 1].transform.position, bookMovePos[0].transform.position, _moveSpeed * Time.deltaTime);
+
+            if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
+            {
+                isBack = false;
+            }
         }
     }
    
