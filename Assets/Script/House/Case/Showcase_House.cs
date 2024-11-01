@@ -44,10 +44,8 @@ public class Showcase_House : MonoBehaviour
     {
         for (int i = 0; i < storyBook.Length; i++)
         {
-            print("in");
             if (i == _showNum)
             {
-                print("1");
                 storyBook[i].transform.position = showPoint.position;
                 storyBook[i].transform.rotation = showPoint.rotation;
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", true);
@@ -57,7 +55,6 @@ public class Showcase_House : MonoBehaviour
             }
             else
             {
-                print("2");
                 storyBook[i].transform.position = originalPoint.position;
                 storyBook[i].transform.rotation = originalPoint.rotation;
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", false);
