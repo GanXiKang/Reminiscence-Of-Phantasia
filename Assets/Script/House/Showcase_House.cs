@@ -42,6 +42,8 @@ public class Showcase_House : MonoBehaviour
     }
     void ChangeStoryBook()
     {
+        if (!CameraControl_House.isLookShowcase) return;
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             _showNum--;
