@@ -71,7 +71,7 @@ public class BookcaseControl_House : MonoBehaviour
         book[_bookNum - 1].transform.position = Vector3.Lerp(book[_bookNum - 1].transform.position, bookMovePos[2].transform.position, _moveSpeed * Time.deltaTime);
 
         float dis = Vector3.Distance(book[_bookNum].transform.position, bookMovePos[1].transform.position);
-        if (dis < 0.05f)
+        if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
         {
             isMove = false;
             book[_bookNum - 1].transform.position = bookMovePos[0].transform.position;
