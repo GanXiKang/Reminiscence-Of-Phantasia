@@ -571,7 +571,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     IEnumerator LeaveWorkbench()
     {
-        storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isClose", true);
+        storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", false);
         yield return new WaitForSeconds(0.7f);
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
