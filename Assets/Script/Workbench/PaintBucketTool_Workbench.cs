@@ -114,8 +114,8 @@ public class PaintBucketTool_Workbench : MonoBehaviour
 
         if (progressBar != null)
         {
-            progressBar.GetComponent<Image>().fillAmount = 1f;
             progressBar.SetActive(false);
+            progressBar.GetComponent<Image>().fillAmount = 0f;
         }
     }
 }
