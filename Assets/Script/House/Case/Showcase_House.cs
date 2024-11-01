@@ -11,6 +11,13 @@ public class Showcase_House : MonoBehaviour
     int _showNum = 0;
     bool isShow = false;
 
+    [Header("Paper")]
+    public GameObject[] paper;
+
+    [Header("StoryBook")]
+    public GameObject[] storyBookPoint;
+    public static int[] _storyBookNum;
+
     void Update()
     {
         FirstShowcase();
@@ -72,6 +79,11 @@ public class Showcase_House : MonoBehaviour
             _showNum = storyBook.Length - 1;
         }
         print(_showNum);
+    }
+    void PaperFollow()
+    {
+        paper[_storyBookNum[0]].transform.position = storyBookPoint[0].transform.position;
+        paper[_storyBookNum[0]].transform.rotation = storyBookPoint[0].transform.rotation;
     }
 
     void Leave()
