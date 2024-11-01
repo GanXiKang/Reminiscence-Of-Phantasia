@@ -53,7 +53,7 @@ public class Showcase_House : MonoBehaviour
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", true);
                 paper[_storyBookPaperNum[_showNum]].transform.position = storyBookPoint[i].transform.position;
                 paper[_storyBookPaperNum[_showNum]].transform.rotation = storyBookPoint[i].transform.rotation;
-                if (_showNum == 4)
+                if (i == 3)
                 {
                     paper[_storyBookPaperNum[_showNum + 1]].transform.position = storyBookPoint[i + 1].transform.position;
                     paper[_storyBookPaperNum[_showNum + 1]].transform.rotation = storyBookPoint[i + 1].transform.rotation;
@@ -100,7 +100,7 @@ public class Showcase_House : MonoBehaviour
     void WaitOpenBookPaper()
     {
         paper[_storyBookPaperNum[_showNum]].SetActive(true);
-        if (_showNum == 4)
+        if (_showNum == 3)
         {
             paper[_storyBookPaperNum[_showNum + 1]].SetActive(true);
         }
