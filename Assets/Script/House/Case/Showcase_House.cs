@@ -20,6 +20,7 @@ public class Showcase_House : MonoBehaviour
 
     void Start()
     {
+        //úy‘á
         _storyBookPaperNum[0] = 0;
         _storyBookPaperNum[1] = 1;
         _storyBookPaperNum[2] = 4;
