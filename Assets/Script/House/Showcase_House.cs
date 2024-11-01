@@ -7,7 +7,7 @@ public class Showcase_House : MonoBehaviour
     [Header("StoryBook")]
     public GameObject[] storyBook;
     public Transform showPoint;
-    Transform originalPoint;
+    public Transform originalPoint;
     int _showNum = 0;
     bool isShow = false;
 
@@ -23,22 +23,21 @@ public class Showcase_House : MonoBehaviour
 
     void StoryBookShow()
     {
-        switch (_showNum)
+        for (int i = 0; i < storyBook.Length; i++)
         {
-            case 0:
-                originalPoint = storyBook[0].transform;
-                storyBook[0].transform.position = showPoint.position;
-                storyBook[0].transform.rotation = showPoint.rotation;
-                break;
-
-            case 1:
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
+            if (i == _showNum)
+            {
+                storyBook[i].transform.position = showPoint.position;
+                storyBook[i].transform.rotation = showPoint.rotation;
+                storyBook[i].GetComponent<Animator>().SetBool("isOpen", true);
+            }
+            else
+            {
+                storyBook[i].transform.position = originalPoint.position;
+                storyBook[i].transform.rotation = originalPoint.rotation;
+                storyBook[i].GetComponent<Animator>().SetBool("isOpen", false);
+                storyBook[i].GetComponent<Animator>().SetBool("isClose", true);
+            }
         }
     }
 
