@@ -579,7 +579,6 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _process = 0;
         workbenchUI.SetActive(false);
-        storyBook[_storyBookNum].SetActive(false);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
