@@ -18,6 +18,7 @@ public class Showcase_House : MonoBehaviour
 
     void Update()
     {
+        ChangeStoryBook();
         Leave();
     }
 
@@ -37,6 +38,33 @@ public class Showcase_House : MonoBehaviour
                 storyBook[i].transform.rotation = originalPoint.rotation;
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", false);
             }
+        }
+    }
+    void ChangeStoryBook()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            _showNum--;
+            Limit();
+            StoryBookShow();
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            _showNum++;
+            Limit();
+            StoryBookShow();
+        }
+    }
+    void Limit()
+    {
+        print(_showNum);
+        if (_showNum < 0)
+        {
+            _showNum = 0;
+        }
+        if (_showNum > storyBook.Length)
+        {
+            _showNum = storyBook.Length - 1;
         }
     }
 
