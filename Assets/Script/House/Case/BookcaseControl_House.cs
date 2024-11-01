@@ -37,8 +37,16 @@ public class BookcaseControl_House : MonoBehaviour
             }
             else
             {
-                book[b].transform.position = bookMovePos[0].transform.position;
-                book[b].transform.rotation = bookMovePos[0].transform.rotation;
+                if (b > _bookNum)
+                {
+                    book[b].transform.position = bookMovePos[0].transform.position;
+                    book[b].transform.rotation = bookMovePos[0].transform.rotation;
+                }
+                else
+                {
+                    book[b].transform.position = bookMovePos[2].transform.position;
+                    book[b].transform.rotation = bookMovePos[2].transform.rotation;
+                }
             }
         }
     }
