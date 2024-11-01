@@ -11,12 +11,12 @@ public class Showcase_House : MonoBehaviour
     int _showNum = 0;
     bool isShow = false;
 
-    [Header("Paper")]
-    public GameObject[] paper;
-
-    [Header("StoryBook")]
+    [Header("StoryBookPoint")]
     public GameObject[] storyBookPoint;
     public static int[] _storyBookNum;
+
+    [Header("Paper")]
+    public GameObject[] paper;
 
     void Update()
     {
