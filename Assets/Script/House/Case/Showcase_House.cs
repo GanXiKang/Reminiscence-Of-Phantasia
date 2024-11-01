@@ -13,7 +13,7 @@ public class Showcase_House : MonoBehaviour
 
     [Header("StoryBookPoint")]
     public GameObject[] storyBookPoint;
-    public static int[] _storyBookPaperNum;
+    public static int[] _storyBookPaperNum = new int[5];
 
     [Header("Paper")]
     public GameObject[] paper;
@@ -42,6 +42,8 @@ public class Showcase_House : MonoBehaviour
                 storyBook[i].transform.position = showPoint.position;
                 storyBook[i].transform.rotation = showPoint.rotation;
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", true);
+                paper[_storyBookPaperNum[_showNum]].transform.position = storyBookPoint[i].transform.position;
+                paper[_storyBookPaperNum[_showNum]].transform.rotation = storyBookPoint[i].transform.rotation;
                 Invoke("WaitOpenBook", 0.5f);
             }
             else
@@ -49,6 +51,7 @@ public class Showcase_House : MonoBehaviour
                 storyBook[i].transform.position = originalPoint.position;
                 storyBook[i].transform.rotation = originalPoint.rotation;
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", false);
+                paper[_storyBookPaperNum[_showNum]].SetActive(false);
             }
         }
     }
