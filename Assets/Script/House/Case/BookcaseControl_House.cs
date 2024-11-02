@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BookcaseControl_House : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class BookcaseControl_House : MonoBehaviour
     bool isNext = false;
     bool isBack = false;
     float _moveSpeed = 10f;
+
+    [Header("UI")]
+    public GameObject bookUI;
+    public GameObject bookButton;
+    public GameObject bookContent;
+    public Image image;
+    public Sprite[] letter;
     
     void Update()
     {
@@ -97,7 +105,24 @@ public class BookcaseControl_House : MonoBehaviour
             }
         }
     }
-   
+
+    public void Button_Book()
+    {
+        
+    }
+    public void Button_Content()
+    {
+        
+    }
+    public void Button_Entrust()
+    {
+
+    }
+    public void Button_Feedback()
+    {
+
+    }
+
     void Leave()
     {
         if (CameraControl_House.isLookBookcase)
