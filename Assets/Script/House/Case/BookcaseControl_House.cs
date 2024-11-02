@@ -10,9 +10,13 @@ public class BookcaseControl_House : MonoBehaviour
     public Transform[] bookMovePos;
     public Transform originalPoint;
     public static int _bookNum = 0;
+
+    //Move
     bool isOpen = false;
     bool isNext = false;
     bool isBack = false;
+    bool isforward = false;
+    bool isbackward = false;
     float _moveSpeed = 10f;
 
     [Header("UI")]
@@ -61,7 +65,7 @@ public class BookcaseControl_House : MonoBehaviour
     void NextStoryBook()
     {
         if (!CameraControl_House.isLookBookcase) return;
-        if (isNext || isBack) return;
+        if (isNext || isBack || isforward) return;
 
         if (Input.GetKeyDown(KeyCode.D)) //ÏÂÒ»±¾
         {
@@ -104,11 +108,22 @@ public class BookcaseControl_House : MonoBehaviour
                 isBack = false;
             }
         }
+        else if (isforward)
+        {
+            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[3].transform.position, _moveSpeed * Time.deltaTime);
+            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[3].transform.rotation, _moveSpeed * Time.deltaTime);
+
+            if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
+            {
+                isforward = false;
+            }
+        }
     }
 
     public void Button_Book()
     {
-        
+        isforward = true;
+        bookButton.SetActive(false);
     }
     public void Button_Content(int letterNum)
     {
