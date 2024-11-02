@@ -15310,6 +15310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207414326}
   - component: {fileID: 1207414325}
+  - component: {fileID: 1207414327}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -15369,6 +15370,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1207414327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207414324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff85f3da7b783542af36c618169d05b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 1836693494}
+  nowBGM: {fileID: 8300000, guid: 2813d049f533f434a8a8c92a386562b5, type: 3}
+  pastBGM: {fileID: 8300000, guid: 301161fa7b4970745abe1a9cac682ddb, type: 3}
+  futureBGM: {fileID: 8300000, guid: 752e3196be85c4f4ca5bf49490390ad8, type: 3}
+  now: {fileID: 296686965}
+  past: {fileID: 474405247}
+  future: {fileID: 597276440}
+  clockUI: {fileID: 1187902722}
+  pointer: {fileID: 1704723678}
 --- !u!1 &1230029259
 GameObject:
   m_ObjectHideFlags: 0
@@ -15758,7 +15780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631694442}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StorySkillControl_Prince, Assembly-CSharp
         m_MethodName: Button_ClockActive
         m_Mode: 1
@@ -16239,7 +16261,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631694442}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StorySkillControl_Prince, Assembly-CSharp
         m_MethodName: Button_Time
         m_Mode: 1
@@ -16617,7 +16639,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631694442}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StorySkillControl_Prince, Assembly-CSharp
         m_MethodName: Button_ClockActive
         m_Mode: 1
@@ -17047,7 +17069,6 @@ GameObject:
   - component: {fileID: 1631694441}
   - component: {fileID: 1631694440}
   - component: {fileID: 1631694439}
-  - component: {fileID: 1631694442}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -17231,20 +17252,6 @@ MonoBehaviour:
   - {fileID: 279483705}
   - {fileID: 15391622}
   - {fileID: 1143743655}
---- !u!114 &1631694442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631694434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff85f3da7b783542af36c618169d05b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clockUI: {fileID: 1187902722}
-  pointer: {fileID: 1704723678}
 --- !u!1 &1640057674
 GameObject:
   m_ObjectHideFlags: 0
