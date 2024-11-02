@@ -28,6 +28,8 @@ public class BookcaseControl_House : MonoBehaviour
     
     void Update()
     {
+        bookUI.SetActive(CameraControl_House.isLookBookcase);
+
         OpenBookcase();
         NextStoryBook();
         MoveStoryBook();
