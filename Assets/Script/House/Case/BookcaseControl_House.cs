@@ -131,7 +131,7 @@ public class BookcaseControl_House : MonoBehaviour
             book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
             book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[1].transform.rotation, _moveSpeed * Time.deltaTime);
 
-            if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
+            if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
                 isBackward = false;
                 bookButton.SetActive(true);
