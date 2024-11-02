@@ -124,6 +124,7 @@ public class BookcaseControl_House : MonoBehaviour
             {
                 isForward = false;
                 bookContent.SetActive(true);
+                Button_ImageContent(1);
             }
         }
         else if (isBackward)
