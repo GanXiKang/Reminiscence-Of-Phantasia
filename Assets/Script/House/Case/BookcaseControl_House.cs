@@ -15,8 +15,8 @@ public class BookcaseControl_House : MonoBehaviour
     bool isOpen = false;
     bool isNext = false;
     bool isBack = false;
-    bool isforward = false;
-    bool isbackward = false;
+    bool isForward = false;
+    bool isBackward = false;
     float _moveSpeed = 10f;
 
     [Header("UI")]
@@ -108,38 +108,43 @@ public class BookcaseControl_House : MonoBehaviour
                 isBack = false;
             }
         }
-        else if (isforward)
+        else if (isForward)
         {
             book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[3].transform.position, _moveSpeed * Time.deltaTime);
             book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[3].transform.rotation, _moveSpeed * Time.deltaTime);
 
             if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
             {
-                isforward = false;
+                isForward = false;
+            }
+        }
+        else if (isBackward)
+        {
+            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed * Time.deltaTime);
+            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[1].transform.rotation, _moveSpeed * Time.deltaTime);
+
+            if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
+            {
+                isBackward = false;
             }
         }
     }
 
     public void Button_Book()
     {
-        isforward = true;
+        isForward = true;
         bookButton.SetActive(false);
+        bookContent.SetActive(true);
     }
-    public void Button_Content(int letterNum)
+    public void Button_ImageContent(int letterNum)
     {
-        
-    }
-    public void Button_Entrust(int letterNum)
-    {
-
-    }
-    public void Button_Feedback(int letterNum)
-    {
-
+        image.sprite = letter[letterNum];
     }
     public void Button_Back()
     {
-        
+        isBackward = true;
+        bookButton.SetActive(true);
+        bookContent.SetActive(false);
     }
 
     void Leave()
