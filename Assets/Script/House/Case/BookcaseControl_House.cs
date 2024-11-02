@@ -110,17 +110,21 @@ public class BookcaseControl_House : MonoBehaviour
     {
         
     }
-    public void Button_Content()
+    public void Button_Content(int letterNum)
     {
         
     }
-    public void Button_Entrust()
+    public void Button_Entrust(int letterNum)
     {
 
     }
-    public void Button_Feedback()
+    public void Button_Feedback(int letterNum)
     {
 
+    }
+    public void Button_Back()
+    {
+        
     }
 
     void Leave()
