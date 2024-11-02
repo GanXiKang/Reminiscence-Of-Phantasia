@@ -62,6 +62,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     isNowScene = true;
                     isPastScene = false;
                     isFutureScene = false;
+                    isClockActice = false;
                     print("¨Fåç");
                 }
                 break;
@@ -75,6 +76,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     isNowScene = false;
                     isPastScene = false;
                     isFutureScene = true;
+                    isClockActice = false;
                     print("Œ¥ÅÌ");
                 }
                 break;
@@ -88,6 +90,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     isNowScene = false;
                     isPastScene = true;
                     isFutureScene = false;
+                    isClockActice = false;
                     print("ﬂ^»•");
                 }
                 break;
