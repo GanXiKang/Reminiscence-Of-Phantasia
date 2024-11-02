@@ -144,7 +144,24 @@ public class BookcaseControl_House : MonoBehaviour
     }
     public void Button_ImageContent(int letterNum)
     {
-        image.sprite = letter[letterNum];
+        switch (_bookNum)
+        {
+            case 0:
+                image.sprite = letter[letterNum];
+                break;
+
+            case 1:
+                image.sprite = letter[letterNum + 3];
+                break;
+
+            case 2:
+                image.sprite = letter[letterNum + 6];
+                break;
+
+            case 3:
+                image.sprite = letter[letterNum + 9];
+                break;
+        }
     }
     public void Button_Back()
     {
