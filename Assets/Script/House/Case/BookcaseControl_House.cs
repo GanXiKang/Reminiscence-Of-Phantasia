@@ -40,6 +40,7 @@ public class BookcaseControl_House : MonoBehaviour
         if (isOpen) return;
 
         isOpen = true;
+        bookButton.SetActive(true);
         for (int b = 0; b < book.Length; b++)
         {
             if (b == _bookNum)
@@ -65,7 +66,7 @@ public class BookcaseControl_House : MonoBehaviour
     void NextStoryBook()
     {
         if (!CameraControl_House.isLookBookcase) return;
-        if (isNext || isBack || isforward) return;
+        if (isNext || isBack || isForward || isBackward) return;
 
         if (Input.GetKeyDown(KeyCode.D)) //下一本
         {
@@ -73,6 +74,7 @@ public class BookcaseControl_House : MonoBehaviour
             {
                 _bookNum++;
                 isNext = true;
+                bookButton.SetActive(false);
             }
         }
         if (Input.GetKeyDown(KeyCode.A)) //上一本
@@ -81,6 +83,7 @@ public class BookcaseControl_House : MonoBehaviour
             {
                 _bookNum--;
                 isBack = true;
+                bookButton.SetActive(false);
             }
         }
     }
@@ -96,6 +99,7 @@ public class BookcaseControl_House : MonoBehaviour
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
                 isNext = false;
+                bookButton.SetActive(true);
             }
         }
         else if (isBack)
@@ -106,6 +110,7 @@ public class BookcaseControl_House : MonoBehaviour
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
                 isBack = false;
+                bookButton.SetActive(true);
             }
         }
         else if (isForward)
@@ -116,6 +121,7 @@ public class BookcaseControl_House : MonoBehaviour
             if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
             {
                 isForward = false;
+                bookContent.SetActive(true);
             }
         }
         else if (isBackward)
@@ -126,6 +132,7 @@ public class BookcaseControl_House : MonoBehaviour
             if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
             {
                 isBackward = false;
+                bookButton.SetActive(true);
             }
         }
     }
@@ -134,7 +141,6 @@ public class BookcaseControl_House : MonoBehaviour
     {
         isForward = true;
         bookButton.SetActive(false);
-        bookContent.SetActive(true);
     }
     public void Button_ImageContent(int letterNum)
     {
@@ -143,7 +149,6 @@ public class BookcaseControl_House : MonoBehaviour
     public void Button_Back()
     {
         isBackward = true;
-        bookButton.SetActive(true);
         bookContent.SetActive(false);
     }
 
