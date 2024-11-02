@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class StorySkillControl_Prince : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip nowBGM, pastBGM, futureBGM;
+
+    [Header("Scene")]
+    public GameObject now;
+    public GameObject past;
+    public GameObject future;
+
     [Header("ClockUI")]
     public GameObject clockUI;
     public GameObject pointer;
