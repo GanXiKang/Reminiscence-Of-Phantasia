@@ -252,6 +252,8 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     public void Button_Time()
     {
+        //print(isIncreasing);
+        print(isReducing);
         if (isIncreasing || isReducing) return;
 
         isRotating = !isRotating;
