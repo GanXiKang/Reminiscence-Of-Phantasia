@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class StoryThermometerControl_Girl : MonoBehaviour
 {
-    GameObject player;
-
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip use;
@@ -41,11 +39,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     private Coroutine currentCoroutine;
     float _animDuration = 1f;
     bool isCold = false;
-
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
 
     void Update()
     {    
