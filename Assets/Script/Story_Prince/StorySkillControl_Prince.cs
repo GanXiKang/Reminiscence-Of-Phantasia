@@ -92,6 +92,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             if (_currentTime >= _duration)
             {
                 _currentTime = _duration;
+                isReducing = false;
             }
         }
         float _rotationSpeed = Mathf.Lerp(_maxRotationSpeed, 0f, _currentTime / _duration);
@@ -224,7 +225,6 @@ public class StorySkillControl_Prince : MonoBehaviour
     void FalseByisCheckConsume()
     {
         isEnergyConsume = false;
-        isReducing = false;
         if (isChange)
         {
             isClockActice = false;
@@ -237,19 +237,19 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isIncreasing || isReducing) return;
 
         isRotating = !isRotating;
-        isIncreasing = true;
         _currentTime = 0f;
-
-        if (!isRotating)
+        if (isRotating)
+        {
+            isIncreasing = true;
+        }
+        else
         {
             isCheckZone = true;
             isReducing = true;
-            _currentTime = 0f;
         }
     }
     public void Button_ClockActive()
     {
        isClockActice = !isClockActice;
-       print(isReducing);
     }
 }
