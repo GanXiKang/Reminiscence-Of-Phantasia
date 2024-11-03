@@ -29,6 +29,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public float _rotation = 0.05f;
     public float _smallArea = 0.1f;
     public float _largeArea = 0.15f;
+    bool isCheckConsume = false;
 
     void Update()
     {
@@ -36,6 +37,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         Scene();
         ClockRotating();
+        Energy();
     }
 
     void Scene()
@@ -103,13 +105,29 @@ public class StorySkillControl_Prince : MonoBehaviour
                 break;
         }
     }
+    void Energy()
+    {
+        if (!isClockActice) return;
+
+        if (isRotating)
+        {
+            _energyValue -= _rotation * Time.deltaTime;
+        }
+        if (isCheckConsume)
+        {
+            
+        }
+    }
 
     public void Button_Time()
     {
         isRotating = !isRotating;
 
         if (!isRotating)
+        {
             CheckCurrentZone();
+            isCheckConsume = true;
+        }
     }
     public void Button_ClockActive()
     {
