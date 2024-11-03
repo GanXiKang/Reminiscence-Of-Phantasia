@@ -16,6 +16,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public static bool isNowScene = true;
     public static bool isPastScene = false;
     public static bool isFutureScene = false;
+    bool isChange = false;
 
     [Header("ClockUI")]
     public GameObject clockUI;
@@ -108,7 +109,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                         isNowScene = true;
                         isPastScene = false;
                         isFutureScene = false;
-                        isClockActice = false;
+                        isChange = true;
                         print("¨Fåç");
                     }
                     break;
@@ -122,7 +123,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                         isNowScene = false;
                         isPastScene = false;
                         isFutureScene = true;
-                        isClockActice = false;
+                        isChange = true;
                         print("Œ¥ÅÌ");
                     }
                     break;
@@ -136,7 +137,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                         isNowScene = false;
                         isPastScene = true;
                         isFutureScene = false;
-                        isClockActice = false;
+                        isChange = true;
                         print("ﬂ^»•");
                     }
                     break;
@@ -242,6 +243,11 @@ public class StorySkillControl_Prince : MonoBehaviour
     void FalseByisCheckConsume()
     {
         isCheckConsume = false;
+        if (isChange)
+        {
+            isClockActice = false;
+            isChange = false;
+        }
     }
 
     public void Button_Time()
