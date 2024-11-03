@@ -123,7 +123,10 @@ public class EntrustControl_House : MonoBehaviour
     {
         isReceiveActive = false;
         isDeliverActive = true;
-        isAlready = true;
+        if (!alreadyReceived[_entrustNum].activeSelf)
+        {
+            isAlready = true;
+        }
         BirdControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
