@@ -225,6 +225,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         isEnergyConsume = false;
         isReducing = false;
+        print(isReducing);
         if (isChange)
         {
             isClockActice = false;
