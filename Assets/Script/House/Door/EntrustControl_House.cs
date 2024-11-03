@@ -218,6 +218,7 @@ public class EntrustControl_House : MonoBehaviour
         if (isAlready)
         {
             alreadyReceived[_entrustNum].SetActive(true);
+            StartCoroutine(AnimateAlreadyReceived());
             isAlready = false;
         }
     }
