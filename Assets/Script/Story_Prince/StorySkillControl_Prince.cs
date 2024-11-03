@@ -43,20 +43,28 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     void Update()
     {
-        clockUI.SetActive(isClockActice);
-
-        Scene();
+        ObjectActive();
         ClockRotating();
         CheckCurrentZone();
         Energy();
     }
 
-    void Scene()
+    void ObjectActive()
     {
+        clockUI.SetActive(isClockActice);
         now.SetActive(isNowScene);
         past.SetActive(isPastScene);
         future.SetActive(isFutureScene);
+
+        time.interactable = ButtonTimeInteractable();
     }
+    bool ButtonTimeInteractable()
+    {
+        return !isIncreasing &&
+               !isReducing &&
+               energyBar.fillAmount > 0;
+    }
+
     void ClockRotating()
     {
         if (!isRotating) return;
@@ -97,51 +105,6 @@ public class StorySkillControl_Prince : MonoBehaviour
             isCheckZone = false;
             isCheckConsume = true;
             _checkZoneNum = zone;
-
-            switch (zone)
-            {
-                case 1:
-                case 2:
-                case 3:
-                case 12:
-                    if (!isNowScene)
-                    {
-                        isNowScene = true;
-                        isPastScene = false;
-                        isFutureScene = false;
-                        isChange = true;
-                        print("¨Fåç");
-                    }
-                    break;
-
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                    if (!isFutureScene)
-                    {
-                        isNowScene = false;
-                        isPastScene = false;
-                        isFutureScene = true;
-                        isChange = true;
-                        print("Œ¥ÅÌ");
-                    }
-                    break;
-
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                    if (!isPastScene)
-                    {
-                        isNowScene = false;
-                        isPastScene = true;
-                        isFutureScene = false;
-                        isChange = true;
-                        print("ﬂ^»•");
-                    }
-                    break;
-            }
         }
     }
     void Energy()
@@ -150,16 +113,11 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         if (energyBar.fillAmount <= 0)
         {
-            time.interactable = false;
             if (isRotating)
             {
                 isRotating = false;
                 CheckCurrentZone();
             }
-        }
-        else
-        {
-            time.interactable = true;
         }
 
         if (!isCheckConsume) return;
@@ -172,6 +130,10 @@ public class StorySkillControl_Prince : MonoBehaviour
                 if (!isNowScene)
                 {
                     _energyValue -= _largeArea * Time.deltaTime;
+                    isNowScene = true;
+                    isPastScene = false;
+                    isFutureScene = false;
+                    isChange = true;
                 }
                 else
                 {
@@ -183,6 +145,10 @@ public class StorySkillControl_Prince : MonoBehaviour
                 if (!isNowScene)
                 {
                     _energyValue -= _smallArea * Time.deltaTime;
+                    isNowScene = true;
+                    isPastScene = false;
+                    isFutureScene = false;
+                    isChange = true;
                 }
                 else
                 {
@@ -196,6 +162,10 @@ public class StorySkillControl_Prince : MonoBehaviour
                 if (!isFutureScene)
                 {
                     _energyValue -= _largeArea * Time.deltaTime;
+                    isNowScene = false;
+                    isPastScene = false;
+                    isFutureScene = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -207,6 +177,10 @@ public class StorySkillControl_Prince : MonoBehaviour
                 if (!isFutureScene)
                 {
                     _energyValue -= _smallArea * Time.deltaTime;
+                    isNowScene = false;
+                    isPastScene = false;
+                    isFutureScene = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -220,6 +194,10 @@ public class StorySkillControl_Prince : MonoBehaviour
                 if (!isPastScene)
                 {
                     _energyValue -= _largeArea * Time.deltaTime;
+                    isNowScene = false;
+                    isPastScene = true;
+                    isFutureScene = false;
+                    isChange = true;
                 }
                 else
                 {
@@ -231,6 +209,10 @@ public class StorySkillControl_Prince : MonoBehaviour
                 if (!isPastScene)
                 {
                     _energyValue -= _smallArea * Time.deltaTime;
+                    isNowScene = false;
+                    isPastScene = true;
+                    isFutureScene = false;
+                    isChange = true;
                 }
                 else
                 {
@@ -252,8 +234,6 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     public void Button_Time()
     {
-        //print(isIncreasing);
-        print(isReducing);
         if (isIncreasing || isReducing) return;
 
         isRotating = !isRotating;
