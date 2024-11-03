@@ -27,11 +27,11 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     [Header("EnergyUI")]
     public Image energyBar;
-    public float _energyValue = 0.7f;
-    public float _rotation = 0.01f;
-    public float _smallArea = 0.1f;
-    public float _largeArea = 0.15f;
-    public float _nowArea = 0.05f;
+    float _energyValue = 0.7f;
+    float _rotation = 0.01f;
+    float _smallArea = 0.1f;
+    float _largeArea = 0.15f;
+    float _nowArea = 0.05f;
     bool isCheckConsume = false;
     int _checkZoneNum;
 
