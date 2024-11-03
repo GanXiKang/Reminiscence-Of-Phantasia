@@ -23,6 +23,7 @@ public class BookcaseControl_House : MonoBehaviour
     public GameObject bookUI;
     public GameObject bookButton;
     public GameObject bookContent;
+    public GameObject contentInteractable;
     public Image image;
     public Sprite[] letter;
     
@@ -125,6 +126,7 @@ public class BookcaseControl_House : MonoBehaviour
                 isForward = false;
                 bookContent.SetActive(true);
                 Button_ImageContent(1);
+                StartCoroutine(AnimateReceiveAppear());
             }
         }
         else if (isBackward)
@@ -170,6 +172,33 @@ public class BookcaseControl_House : MonoBehaviour
     {
         isBackward = true;
         bookContent.SetActive(false);
+    }
+
+    IEnumerator AnimateReceiveAppear()
+    {
+        CanvasGroup canvasGroup = contentInteractable.GetComponent<CanvasGroup>();
+        RectTransform rect = contentInteractable.GetComponent<RectTransform>();
+
+        Vector3 startScale = new Vector3(0.7f, 0.7f, 1f);
+        Vector3 targetScale = new Vector3(1f, 1f, 1f);
+
+        float _duration = 0.6f;
+        float _timeElapsed = 0f;
+        canvasGroup.alpha = 0;
+        rect.localScale = startScale;
+
+        while (_timeElapsed < _duration)
+        {
+            _timeElapsed += Time.deltaTime;
+            float t = _timeElapsed / _duration;
+            rect.localScale = Vector3.Lerp(startScale, targetScale, t);
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
+
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1;
+        rect.localScale = targetScale;
     }
 
     void Leave()
