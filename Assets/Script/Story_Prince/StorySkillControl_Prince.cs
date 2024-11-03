@@ -60,17 +60,16 @@ public class StorySkillControl_Prince : MonoBehaviour
         {
             if (isIncreasing)
             {
-                _currentTime += Time.deltaTime; // 增加时间
+                _currentTime += Time.deltaTime;
                 if (_currentTime >= 2f)
                 {
-                    _currentTime = 2f; // 确保不超过最大时间
-                    isIncreasing = false; // 开始减少速度
+                    _currentTime = 2f;
+                    isIncreasing = false;
                 }
             }
-            float _rotationSpeed = Mathf.Lerp(30f, 90f, _currentTime/2f);
+            float _rotationSpeed = Mathf.Lerp(30f, 360f, _currentTime/2f);
 
             pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
-            print(_rotationSpeed);
             _energyValue -= _rotation * Time.deltaTime;
         }
     }
