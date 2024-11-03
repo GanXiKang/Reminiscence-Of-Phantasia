@@ -38,7 +38,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     float _smallArea = 0.1f;
     float _largeArea = 0.15f;
     float _nowArea = 0.05f;
-    bool isCheckConsume = false;
+    bool isEnergyConsume = false;
     int _checkZoneNum;
 
     void Update()
@@ -92,7 +92,6 @@ public class StorySkillControl_Prince : MonoBehaviour
             if (_currentTime >= _duration)
             {
                 _currentTime = _duration;
-                isReducing = false;
             }
         }
         float _rotationSpeed = Mathf.Lerp(_maxRotationSpeed, 0f, _currentTime / _duration);
@@ -103,8 +102,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             float zRotation = pointer.transform.eulerAngles.z % 360;
             int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
             isCheckZone = false;
-            isReducing = false;
-            isCheckConsume = true;
+            isEnergyConsume = true;
             _checkZoneNum = zone;
         }
     }
@@ -121,7 +119,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             }
         }
 
-        if (!isCheckConsume) return;
+        if (!isEnergyConsume) return;
 
         switch (_checkZoneNum)
         {
@@ -225,7 +223,8 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void FalseByisCheckConsume()
     {
-        isCheckConsume = false;
+        isEnergyConsume = false;
+        isReducing = false;
         if (isChange)
         {
             isClockActice = false;
