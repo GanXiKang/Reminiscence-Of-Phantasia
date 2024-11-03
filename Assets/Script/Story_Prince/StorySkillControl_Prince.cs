@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StorySkillControl_Prince : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     float _rotationSpeed = 90f;
 
     [Header("EnergyUI")]
-    public GameObject energyBar;
+    public Image energyBar;
     public float _energyValue = 0.7f;
     public float _rotation = 0.05f;
     public float _smallArea = 0.1f;
@@ -110,6 +111,8 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void Energy()
     {
+        energyBar.fillAmount = _energyValue;
+
         if (!isCheckConsume) return;
 
         switch (_checkZoneNum)
