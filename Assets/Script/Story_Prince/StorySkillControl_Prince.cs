@@ -30,6 +30,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public float _rotation = 0.01f;
     public float _smallArea = 0.1f;
     public float _largeArea = 0.15f;
+    public float _nowArea = 0.05f;
     bool isCheckConsume = false;
     int _checkZoneNum;
 
@@ -120,19 +121,73 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 1:
             case 2:
             case 12:
-            case 4:
-            case 5:
-            case 6:
-            case 8:
-            case 9:
-            case 10:
-                _energyValue -= _largeArea * Time.deltaTime;
+                if (!isNowScene)
+                {
+                    _energyValue -= _largeArea * Time.deltaTime;
+                }
+                else
+                {
+                    _energyValue -= _nowArea * Time.deltaTime;
+                }
                 break;
 
             case 3:
+                if (!isNowScene)
+                {
+                    _energyValue -= _smallArea * Time.deltaTime;
+                }
+                else
+                {
+                    _energyValue -= _nowArea * Time.deltaTime;
+                }
+                break;
+
+            case 4:
+            case 5:
+            case 6:
+                if (!isFutureScene)
+                {
+                    _energyValue -= _largeArea * Time.deltaTime;
+                }
+                else
+                {
+                    _energyValue -= _nowArea * Time.deltaTime;
+                }
+                break;
+
             case 7:
+                if (!isFutureScene)
+                {
+                    _energyValue -= _smallArea * Time.deltaTime;
+                }
+                else
+                {
+                    _energyValue -= _nowArea * Time.deltaTime;
+                }
+                break;
+
+            case 8:
+            case 9:
+            case 10:
+                if (!isPastScene)
+                {
+                    _energyValue -= _largeArea * Time.deltaTime;
+                }
+                else
+                {
+                    _energyValue -= _nowArea * Time.deltaTime;
+                }
+                break;
+
             case 11:
-                _energyValue -= _smallArea * Time.deltaTime;
+                if (!isPastScene)
+                {
+                    _energyValue -= _smallArea * Time.deltaTime;
+                }
+                else
+                {
+                    _energyValue -= _nowArea * Time.deltaTime;
+                }
                 break;
         }
         Invoke("FalseByisCheckConsume", 1f);
