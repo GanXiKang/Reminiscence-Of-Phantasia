@@ -117,9 +117,16 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         if (energyBar.fillAmount <= 0)
         {
-
+            time.interactable = false;
             if (isRotating)
+            {
                 isRotating = false;
+                CheckCurrentZone();
+            }
+        }
+        else
+        {
+            time.interactable = true;
         }
 
         if (!isCheckConsume) return;
