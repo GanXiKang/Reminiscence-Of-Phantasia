@@ -56,8 +56,9 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         if (isRotating)
         {
-            float _rotationSpeed = Mathf.Lerp(30f, 90f, Time.deltaTime);
+            float _rotationSpeed = Mathf.Lerp(30f, 90f, 2);
             pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
+            print(_rotationSpeed);
             _energyValue -= _rotation * Time.deltaTime;
         }
     }
