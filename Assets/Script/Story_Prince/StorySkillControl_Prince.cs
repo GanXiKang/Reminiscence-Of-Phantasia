@@ -25,7 +25,10 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     [Header("EnergyUI")]
     public GameObject energyBar;
-    public static float _energyValue = 0.7f;
+    public float _energyValue = 0.7f;
+    public float _rotation = 0.05f;
+    public float _smallArea = 0.1f;
+    public float _largeArea = 0.15f;
 
     void Update()
     {
