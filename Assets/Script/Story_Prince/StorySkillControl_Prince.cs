@@ -27,7 +27,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     bool isIncreasing = false;
     bool isReducing = false;
     float _currentTime = 0f;
-    float _duration = 2f;
+    float _duration = 5f;
     float _maxRotationSpeed = 360f;
 
     [Header("EnergyUI")]
@@ -94,6 +94,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
             isCheckConsume = true;
             _checkZoneNum = zone;
+
             switch (zone)
             {
                 case 1:
@@ -243,6 +244,8 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     public void Button_Time()
     {
+        if (!isIncreasing && !isReducing) return;
+
         isRotating = !isRotating;
         isIncreasing = true;
         _currentTime = 0f;
