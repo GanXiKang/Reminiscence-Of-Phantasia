@@ -46,6 +46,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         Scene();
         ClockRotating();
+        CheckCurrentZone();
         Energy();
     }
 
