@@ -30,6 +30,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public float _smallArea = 0.1f;
     public float _largeArea = 0.15f;
     bool isCheckConsume = false;
+    int _checkZoneNum;
 
     void Update()
     {
@@ -53,12 +54,14 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isRotating)
         {
             pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
+            _energyValue -= _rotation * Time.deltaTime;
         }
     }
     void CheckCurrentZone()
     {
         float zRotation = pointer.transform.eulerAngles.z % 360;
         int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
+        _checkZoneNum = zone;
 
         switch (zone)
         {
@@ -107,16 +110,33 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void Energy()
     {
-        if (!isClockActice) return;
+        if (!isCheckConsume) return;
 
-        if (isRotating)
+        switch (_checkZoneNum)
         {
-            _energyValue -= _rotation * Time.deltaTime;
+            case 1:
+            case 2:
+            case 12:
+            case 4:
+            case 5:
+            case 6:
+            case 8:
+            case 9:
+            case 10:
+                _energyValue -= _largeArea * Time.deltaTime;
+                break;
+
+            case 3:
+            case 7:
+            case 11:
+                _energyValue -= _smallArea * Time.deltaTime;
+                break;
         }
-        if (isCheckConsume)
-        {
-            
-        }
+        Invoke("FalseByisCheckConsume", 1f);
+    }
+    void FalseByisCheckConsume()
+    {
+        isCheckConsume = false;
     }
 
     public void Button_Time()
