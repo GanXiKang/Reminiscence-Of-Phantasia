@@ -225,7 +225,6 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         isEnergyConsume = false;
         isReducing = false;
-        print(isReducing);
         if (isChange)
         {
             isClockActice = false;
@@ -251,5 +250,6 @@ public class StorySkillControl_Prince : MonoBehaviour
     public void Button_ClockActive()
     {
        isClockActice = !isClockActice;
+       print(isReducing);
     }
 }
