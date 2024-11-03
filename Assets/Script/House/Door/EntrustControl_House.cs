@@ -21,6 +21,7 @@ public class EntrustControl_House : MonoBehaviour
     public Text[] letterText;
     public Sprite normalButton, disabledButton;
     public static int _round = 1;
+    bool isAlready = false;
 
     [Header("LetterReceive")]
     public Image receiveImage;
@@ -122,7 +123,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         isReceiveActive = false;
         isDeliverActive = true;
-        alreadyReceived[_entrustNum].SetActive(true);
+        isAlready = true;
         BirdControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
@@ -213,6 +214,11 @@ public class EntrustControl_House : MonoBehaviour
         if (isShouldMove)
         {
             rect.anchoredPosition = endPosition;
+        }
+        if (isAlready)
+        {
+            alreadyReceived[_entrustNum].SetActive(true);
+            isAlready = false;
         }
     }
     IEnumerator AnimateButtonDisappear(Button button, float delay, bool isShouldMove)
