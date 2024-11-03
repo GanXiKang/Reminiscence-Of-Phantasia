@@ -23,7 +23,9 @@ public class StorySkillControl_Prince : MonoBehaviour
     public Button time;
     bool isClockActice = false;
     bool isRotating = false;
+    bool isIncreasing = false;
     float _rotationSpeed = 90f;
+    float _currentTime = 0f;
 
     [Header("EnergyUI")]
     public Image energyBar;
@@ -56,7 +58,17 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         if (isRotating)
         {
-            float _rotationSpeed = Mathf.Lerp(30f, 90f, Time.deltaTime);
+            if (isIncreasing)
+            {
+                _currentTime += Time.deltaTime; // 增加时间
+                if (_currentTime >= 2f)
+                {
+                    _currentTime = 2f; // 确保不超过最大时间
+                    isIncreasing = false; // 开始减少速度
+                }
+            }
+            float _rotationSpeed = Mathf.Lerp(30f, 90f, _currentTime/2f);
+
             pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
             print(_rotationSpeed);
             _energyValue -= _rotation * Time.deltaTime;
