@@ -22,10 +22,13 @@ public class StorySkillControl_Prince : MonoBehaviour
     public GameObject pointer;
     public Button time;
     bool isClockActice = false;
+    bool isCheckZone = false;
     bool isRotating = false;
     bool isIncreasing = false;
-    float _rotationSpeed = 90f;
+    bool isReducing = false;
     float _currentTime = 0f;
+    float _duration = 2f;
+    float _maxRotationSpeed = 360f;
 
     [Header("EnergyUI")]
     public Image energyBar;
@@ -54,74 +57,87 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void ClockRotating()
     {
-        if (!isClockActice) return;
+        if (!isRotating) return;
 
-        if (isRotating)
+        if (isIncreasing)
         {
-            if (isIncreasing)
+            _currentTime += Time.deltaTime;
+            if (_currentTime >= _duration)
             {
-                _currentTime += Time.deltaTime;
-                if (_currentTime >= 2f)
-                {
-                    _currentTime = 2f;
-                    isIncreasing = false;
-                }
+                _currentTime = _duration;
+                isIncreasing = false;
             }
-            float _rotationSpeed = Mathf.Lerp(30f, 360f, _currentTime/2f);
-
-            pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
-            _energyValue -= _rotation * Time.deltaTime;
         }
+        float _rotationSpeed = Mathf.Lerp(0f, _maxRotationSpeed, _currentTime / _duration);
+        pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
+        _energyValue -= _rotation * Time.deltaTime;
     }
     void CheckCurrentZone()
     {
-        float zRotation = pointer.transform.eulerAngles.z % 360;
-        int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
-        _checkZoneNum = zone;
+        if (!isCheckZone) return;
 
-        switch (zone)
+        if (isReducing)
         {
-            case 1:
-            case 2:
-            case 3:
-            case 12:
-                if (!isNowScene)
-                {
-                    isNowScene = true;
-                    isPastScene = false;
-                    isFutureScene = false;
-                    isClockActice = false;
-                    print("¨Fåç");
-                }
-                break;
+            _currentTime += Time.deltaTime;
+            if (_currentTime >= _duration)
+            {
+                _currentTime = _duration;
+                isReducing = false;
+            }
+        }
+        float _rotationSpeed = Mathf.Lerp(_maxRotationSpeed, 0f, _currentTime / _duration);
+        pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
 
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-                if (!isFutureScene)
-                {
-                    isNowScene = false;
-                    isPastScene = false;
-                    isFutureScene = true;
-                    isClockActice = false;
-                    print("Œ¥ÅÌ");
-                }
-                break;
+        if (_rotationSpeed <= 0)
+        {
+            float zRotation = pointer.transform.eulerAngles.z % 360;
+            int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
+            isCheckConsume = true;
+            _checkZoneNum = zone;
+            switch (zone)
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 12:
+                    if (!isNowScene)
+                    {
+                        isNowScene = true;
+                        isPastScene = false;
+                        isFutureScene = false;
+                        isClockActice = false;
+                        print("¨Fåç");
+                    }
+                    break;
 
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-                if (!isPastScene)
-                {
-                    isNowScene = false;
-                    isPastScene = true;
-                    isFutureScene = false;
-                    isClockActice = false;
-                    print("ﬂ^»•");
-                }
-                break;
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    if (!isFutureScene)
+                    {
+                        isNowScene = false;
+                        isPastScene = false;
+                        isFutureScene = true;
+                        isClockActice = false;
+                        print("Œ¥ÅÌ");
+                    }
+                    break;
+
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                    if (!isPastScene)
+                    {
+                        isNowScene = false;
+                        isPastScene = true;
+                        isFutureScene = false;
+                        isClockActice = false;
+                        print("ﬂ^»•");
+                    }
+                    break;
+            }
         }
     }
     void Energy()
@@ -229,11 +245,13 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         isRotating = !isRotating;
         isIncreasing = true;
+        _currentTime = 0f;
 
         if (!isRotating)
         {
-            CheckCurrentZone();
-            isCheckConsume = true;
+            isCheckZone = true;
+            isReducing = true;
+            _currentTime = 0f;
         }
     }
     public void Button_ClockActive()
