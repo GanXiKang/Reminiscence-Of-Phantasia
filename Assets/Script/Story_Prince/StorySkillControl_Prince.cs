@@ -20,6 +20,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("ClockUI")]
     public GameObject clockUI;
     public GameObject pointer;
+    public Button time;
     bool isClockActice = false;
     bool isRotating = false;
     float _rotationSpeed = 90f;
@@ -113,6 +114,13 @@ public class StorySkillControl_Prince : MonoBehaviour
     void Energy()
     {
         energyBar.fillAmount = _energyValue;
+
+        if (energyBar.fillAmount <= 0)
+        {
+
+            if (isRotating)
+                isRotating = false;
+        }
 
         if (!isCheckConsume) return;
 
