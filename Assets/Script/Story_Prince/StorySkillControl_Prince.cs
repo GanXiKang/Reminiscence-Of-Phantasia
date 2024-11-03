@@ -103,6 +103,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             float zRotation = pointer.transform.eulerAngles.z % 360;
             int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
             isCheckZone = false;
+            isReducing = false;
             isCheckConsume = true;
             _checkZoneNum = zone;
         }
