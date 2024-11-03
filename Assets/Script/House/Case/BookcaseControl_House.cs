@@ -118,8 +118,8 @@ public class BookcaseControl_House : MonoBehaviour
         }
         else if (isForward)
         {
-            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[3].transform.position, _moveSpeed * Time.deltaTime);
-            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[3].transform.rotation, _moveSpeed * Time.deltaTime);
+            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[3].transform.position, _moveSpeed/2 * Time.deltaTime);
+            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[3].transform.rotation, _moveSpeed/2 * Time.deltaTime);
 
             if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
             {
