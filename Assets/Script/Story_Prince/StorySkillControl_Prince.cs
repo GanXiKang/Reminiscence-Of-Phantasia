@@ -39,7 +39,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     float _largeArea = 0.15f;
     float _nowArea = 0.05f;
     bool isEnergyConsume = false;
-    int _checkZoneNum;
+    int _zoneNum;
 
     void Update()
     {
@@ -103,7 +103,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
             isCheckZone = false;
             isEnergyConsume = true;
-            _checkZoneNum = zone;
+            _zoneNum = zone;
         }
     }
     void Energy()
@@ -121,7 +121,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         if (!isEnergyConsume) return;
 
-        switch (_checkZoneNum)
+        switch (_zoneNum)
         {
             case 1:
             case 2:
