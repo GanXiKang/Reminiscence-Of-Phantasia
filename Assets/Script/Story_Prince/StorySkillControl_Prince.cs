@@ -28,7 +28,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     bool isIncreasing = false;
     bool isReducing = false;
     float _currentTime = 0f;
-    float _duration = 5f;
+    float _duration = 3f;
     float _maxRotationSpeed = 360f;
 
     [Header("EnergyUI")]
