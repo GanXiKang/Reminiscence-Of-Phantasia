@@ -295,7 +295,7 @@ public class EntrustControl_House : MonoBehaviour
         Vector3 startScale = new Vector3(1.4f, 0.5f, 1f);
         Vector3 targetScale = new Vector3(0.6f, 0.2f, 1f);
 
-        float _duration = 0.6f;
+        float _duration = 0.3f;
         float _timeElapsed = 0f;
         canvasGroup.alpha = 0;
         rect.localScale = startScale;
