@@ -23,6 +23,10 @@ public class StorySkillControl_Prince : MonoBehaviour
     bool isRotating = false;
     float _rotationSpeed = 90f;
 
+    [Header("EnergyUI")]
+    public GameObject energyBar;
+    public static float _energyValue = 0.7f;
+
     void Update()
     {
         clockUI.SetActive(isClockActice);
