@@ -88,11 +88,13 @@ public class StorySkillControl_Prince : MonoBehaviour
         }
         float _rotationSpeed = Mathf.Lerp(_maxRotationSpeed, 0f, _currentTime / _duration);
         pointer.transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
+        print(_rotationSpeed);
 
         if (_rotationSpeed <= 0)
         {
             float zRotation = pointer.transform.eulerAngles.z % 360;
             int zone = Mathf.FloorToInt(zRotation / 30f) + 1;
+            isCheckZone = false;
             isCheckConsume = true;
             _checkZoneNum = zone;
 
