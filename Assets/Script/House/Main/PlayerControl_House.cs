@@ -7,6 +7,7 @@ public class PlayerControl_House : MonoBehaviour
 {
     CharacterController cc;
     PlayerInput playerInput;
+    Animator anim;
 
     [Header("Camera")]
     public Camera playerCamera;
@@ -17,11 +18,11 @@ public class PlayerControl_House : MonoBehaviour
     private Vector3 _moveInput;
     private Vector3 _velocity;
 
-
     void Start()
     {
         cc = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -47,6 +48,11 @@ public class PlayerControl_House : MonoBehaviour
         if (movement != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(movement);
+            anim.SetBool("isWalk", true);
+        }
+        else
+        {
+            anim.SetBool("isWalk", false);
         }
         cc.Move((_velocity + movement * _moveSpeed) * Time.deltaTime);
     }
