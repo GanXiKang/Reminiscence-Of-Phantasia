@@ -71,7 +71,7 @@ public class UIControl_Menu : MonoBehaviour
     }
     public void Button_Staff()
     {
-        isstaff = true;
+        isStaff = true;
         menuUI[2].SetActive(false);
         menuUI[3].SetActive(true);
     }
