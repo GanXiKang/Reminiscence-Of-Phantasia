@@ -85,7 +85,7 @@ public class Showcase_House : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (_showNum == storyBook.Length - 1)
+            if (_showNum != storyBook.Length - 1)
             {
                 _showNum++;
                 Limit();
