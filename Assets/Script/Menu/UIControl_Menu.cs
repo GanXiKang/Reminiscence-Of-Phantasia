@@ -53,28 +53,28 @@ public class UIControl_Menu : MonoBehaviour
     public void Button_Setting()
     {
         BGM.PlayOneShot(onClick);
-        menuUI[1].SetActive(false);
-        menuUI[2].SetActive(true);
+        menuUI[0].SetActive(false);
+        menuUI[1].SetActive(true);
     }
     public void Button_Back()
     {
         if (!isStaff)
         {
-            menuUI[1].SetActive(true);
-            menuUI[2].SetActive(false);
+            menuUI[0].SetActive(true);
+            menuUI[1].SetActive(false);
         }
         else
         {
             isStaff = false;
-            menuUI[2].SetActive(true);
-            menuUI[3].SetActive(false);
+            menuUI[1].SetActive(true);
+            menuUI[2].SetActive(false);
         }
     }
     public void Button_Staff()
     {
         isStaff = true;
-        menuUI[2].SetActive(false);
-        menuUI[3].SetActive(true);
+        menuUI[1].SetActive(false);
+        menuUI[2].SetActive(true);
     }
     public void Button_Quit()
     {
