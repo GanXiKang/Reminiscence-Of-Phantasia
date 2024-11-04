@@ -295,8 +295,8 @@ public class EntrustControl_House : MonoBehaviour
         CanvasGroup canvasGroup = alreadyReceived[_entrustNum].GetComponent<CanvasGroup>();
         RectTransform rect = alreadyReceived[_entrustNum].GetComponent<RectTransform>();
 
-        Vector3 startScale = new Vector3(1.4f, 0.5f, 1f);
-        Vector3 targetScale = new Vector3(0.6f, 0.2f, 1f);
+        Vector3 startScale = new Vector3(1.4f, 0.4f, 1f);
+        Vector3 targetScale = new Vector3(0.6f, 0.18f, 1f);
 
         float _duration = 0.3f;
         float _timeElapsed = 0f;
