@@ -12,7 +12,8 @@ public class UIControl_Menu : MonoBehaviour
 
     [Header("UI")]
     public GameObject[] menuUI;
-    public Sprite[] bgSprite; 
+    public Sprite[] bgSprite;
+    public Image background;
     public Slider sliderBGM;
     public Toggle fullScreen;
     public static float volumeBGM = 0.7f;
@@ -91,6 +92,16 @@ public class UIControl_Menu : MonoBehaviour
         isFullS = isFullScreen;
     }
 
+    void BackgroundSprite()
+    {
+        for (int i = 0; i < menuUI.Length; i++)
+        {
+            if (menuUI[i].activeSelf)
+            {
+                background.sprite = bgSprite[i];
+            }
+        }
+    }
     void GoToHouse()
     {
         SceneManager.LoadScene(1);
