@@ -12,6 +12,7 @@ public class UIControl_Menu : MonoBehaviour
 
     [Header("UI")]
     public GameObject[] menuUI;
+    public Sprite[] bgSprite; 
     public Slider sliderBGM;
     public Toggle fullScreen;
     public static float volumeBGM = 0.7f;
