@@ -70,6 +70,7 @@ public class BookcaseControl_House : MonoBehaviour
     {
         if (!CameraControl_House.isLookBookcase) return;
         if (isNext || isBack || isForward || isBackward) return;
+        if (bookContent.activeSelf) return;
 
         if (Input.GetKeyDown(KeyCode.D)) //ÏÂÒ»±¾
         {
