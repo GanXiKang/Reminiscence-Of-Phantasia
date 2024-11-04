@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class PlayerExpression_House : MonoBehaviour
 {
-    // Start is called before the first frame update
+    SkinnedMeshRenderer smr;
+
+    [Header("Material")]
+    public Material openEyes;
+    public Material closeEyes;
+    bool isBlink = true;
+
     void Start()
     {
-        
+        smr = GetComponent<SkinnedMeshRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isBlink)
+        {
+            int r = Random.Range(1, 3);
+            StartCoroutine(Blink(r));
+        }
+    }
+
+    IEnumerator Blink(int wait)
+    {
+        isBlink = false;
+        smr.material = closeEyes;
+        yield return new WaitForSeconds(0.1f);
+        smr.material = openEyes;
+        yield return new WaitForSeconds(wait);
+        isBlink = true;
     }
 }
