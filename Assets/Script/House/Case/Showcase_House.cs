@@ -73,19 +73,24 @@ public class Showcase_House : MonoBehaviour
     void ChangeStoryBook()
     {
         if (!CameraControl_House.isLookShowcase) return;
-        if (_showNum == 0 || _showNum == storyBook.Length - 1) return;
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _showNum--;
-            Limit();
-            StoryBookShow();
+            if (_showNum != 0)
+            {
+                _showNum--;
+                Limit();
+                StoryBookShow();
+            }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            _showNum++;
-            Limit();
-            StoryBookShow();
+            if (_showNum == storyBook.Length - 1)
+            {
+                _showNum++;
+                Limit();
+                StoryBookShow();
+            }
         }
     }
     void Limit()
