@@ -34,7 +34,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("EnergyUI")]
     public Image energyBar;
     float _energyValue = 0.7f;
-    float _rotation = 0.01f;
+    float _rotation = 0.005f;
     float _smallArea = 0.1f;
     float _largeArea = 0.15f;
     float _nowArea = 0.05f;
