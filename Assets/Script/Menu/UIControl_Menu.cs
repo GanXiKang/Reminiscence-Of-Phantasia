@@ -53,14 +53,13 @@ public class UIControl_Menu : MonoBehaviour
     public void Button_Setting()
     {
         BGM.PlayOneShot(onClick);
-        BackgroundSprite();
         menuUI[0].SetActive(false);
         menuUI[1].SetActive(true);
+        BackgroundSprite();
     }
     public void Button_Back()
     {
         BGM.PlayOneShot(onClick);
-        BackgroundSprite();
         if (!isStaff)
         {
             menuUI[0].SetActive(true);
@@ -72,14 +71,15 @@ public class UIControl_Menu : MonoBehaviour
             menuUI[1].SetActive(true);
             menuUI[2].SetActive(false);
         }
+        BackgroundSprite();
     }
     public void Button_Staff()
     {
         BGM.PlayOneShot(onClick);
         isStaff = true;
-        BackgroundSprite();
         menuUI[1].SetActive(false);
         menuUI[2].SetActive(true);
+        BackgroundSprite();
     }
     public void Button_Quit()
     {
