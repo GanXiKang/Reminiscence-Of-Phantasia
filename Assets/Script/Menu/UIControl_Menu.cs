@@ -16,7 +16,7 @@ public class UIControl_Menu : MonoBehaviour
     public Toggle fullScreen;
     public static float volumeBGM = 0.7f;
     public static bool isFullS;
-    bool isstaff = false;
+    bool isStaff = false;
 
     [Header("TransitionUI")]
     public GameObject transitionUI;
@@ -56,14 +56,14 @@ public class UIControl_Menu : MonoBehaviour
     }
     public void Button_Back()
     {
-        if (!isstaff)
+        if (!isStaff)
         {
             menuUI[1].SetActive(true);
             menuUI[2].SetActive(false);
         }
         else
         {
-            isstaff = false;
+            isStaff = false;
             menuUI[2].SetActive(true);
             menuUI[3].SetActive(false);
         }
