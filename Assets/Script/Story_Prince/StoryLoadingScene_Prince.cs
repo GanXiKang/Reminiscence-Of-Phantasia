@@ -18,7 +18,6 @@ public class StoryLoadingScene_Prince : MonoBehaviour
     public static bool isNowScene = true;
     public static bool isPastScene = false;
     public static bool isFutureScene = false;
-    public static bool isChange = false;
 
     [Header("LoadingUI")]
     public GameObject loadingUI;
@@ -53,6 +52,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
             else if (a.fillAmount == 1)
             {
                 isOpen = false;
+                StorySkillControl_Prince.isClockActice = false;
                 Invoke("WaitCloseLoading", 0.5f);
             }
         }
