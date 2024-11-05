@@ -19,12 +19,10 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
 
     [Header("LoadingUI")]
     public GameObject loadingUI;
-    public Image a, b, c;
+    public Image a, b;
     public static bool isLoading = false;
-    public static bool isLeftOpen = false;     //ªÿ»•
-    public static bool isLeftClose = false;
-    public static bool isRightOpen = false;    //«∞ﬂM
-    public static bool isRightClose = false;
+    public static bool isOpen = false; 
+    public static bool isClose = false;
     float _loadingSpeed = 1.5f;
     bool isOnce = true;
 
@@ -38,7 +36,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
 
     void SwitchSceneMusia()
     {
-        if (!isLeftOpen && !isRightOpen) return;
+        if (!isOpen) return;
         if (!isPlayOnce) return;
 
         BGM.PlayOneShot(switchScene);
@@ -46,21 +44,30 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     }
     void LeftRightSwitch()
     {
-        if (isLeftOpen)
+        if (isOpen)
         {
-            StartCoroutine(LeftSwitchScene_Open());
+            isLoading = true;
+
+            BarValue(a, true);
+            BarValue(b, true);
+
+            if (a.fillAmount == 1)
+            {
+                isOpen = false;
+                Invoke("WaitCloseLoading", 0.5f);
+            }
         }
-        if (isLeftClose)
+        if (isClose)
         {
-            StartCoroutine(LeftSwitchScene_Close());
-        }
-        if (isRightOpen)
-        {
-            StartCoroutine(RightSwitchScene_Open());
-        }
-        if (isRightClose)
-        {
-            StartCoroutine(RightSwitchScene_Close());
+            BarValue(a, false);
+            BarValue(b, false);
+
+            if (a.fillAmount == 0)
+            {
+                isPlayOnce = true;
+                isClose = false;
+                isLoading = false;
+            }
         }
     }
     void BarValue(Image bar, bool isAdd)
@@ -80,88 +87,11 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
             }
         }
     }
-
-    IEnumerator LeftSwitchScene_Open()
+    void WaitCloseLoading()
     {
-        isLoading = true;
-        a.fillOrigin = 0;
-        b.fillOrigin = 0;
-        c.fillOrigin = 0;
-
-        BarValue(a, true);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(b, true);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(c, true);
-
-        if (c.fillAmount == 1)
-        {
-            isLeftOpen = false;
-            yield return new WaitForSeconds(0.5f);
-            ChangeScene();
-            isRightClose = true;
-        }
+        ChangeScene();
+        isClose = true;
     }
-    IEnumerator LeftSwitchScene_Close()
-    {
-        a.fillOrigin = 0;
-        b.fillOrigin = 0;
-        c.fillOrigin = 0;
-
-        BarValue(c, false);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(b, false);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(a, false);
-
-        if (a.fillAmount == 0)
-        {
-            isPlayOnce = true;
-            isLeftClose = false;
-            isLoading = false;
-        }
-    }
-    IEnumerator RightSwitchScene_Open()
-    {
-        isLoading = true;
-        a.fillOrigin = 1;
-        b.fillOrigin = 1;
-        c.fillOrigin = 1;
-
-        BarValue(a, true);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(b, true);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(c, true);
-
-        if (c.fillAmount == 1)
-        {
-            isRightOpen = false;
-            yield return new WaitForSeconds(0.5f);
-            ChangeScene();
-            isLeftClose = true;
-        }
-    }
-    IEnumerator RightSwitchScene_Close()
-    {
-        a.fillOrigin = 1;
-        b.fillOrigin = 1;
-        c.fillOrigin = 1;
-
-        BarValue(c, false);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(b, false);
-        yield return new WaitForSeconds(0.2f);
-        BarValue(a, false);
-
-        if (a.fillAmount == 0)
-        {
-            isPlayOnce = true;
-            isRightClose = false;
-            isLoading = false;
-        }
-    }
-
     void ChangeScene()
     {
         riverSide.SetActive(false);
