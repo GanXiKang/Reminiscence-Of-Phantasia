@@ -9,11 +9,12 @@ public class StorySkillControl_Prince : MonoBehaviour
     public GameObject clockUI;
     public GameObject pointer;
     public Button time;
-    bool isClockActice = false;
+    public static bool isClockActice = false;
     bool isCheckZone = false;
     bool isRotating = false;
     bool isIncreasing = false;
     bool isReducing = false;
+    bool isChange = false;
     float _currentTime = 0f;
     float _duration = 3f;
     float _maxRotationSpeed = 270f;
@@ -117,7 +118,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isNowScene = true;
                     StoryLoadingScene_Prince.isPastScene = false;
                     StoryLoadingScene_Prince.isFutureScene = false;
-                    StoryLoadingScene_Prince.isChange = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -132,7 +133,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isNowScene = true;
                     StoryLoadingScene_Prince.isPastScene = false;
                     StoryLoadingScene_Prince.isFutureScene = false;
-                    StoryLoadingScene_Prince.isChange = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -149,7 +150,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isNowScene = false;
                     StoryLoadingScene_Prince.isPastScene = false;
                     StoryLoadingScene_Prince.isFutureScene = true;
-                    StoryLoadingScene_Prince.isChange = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -164,7 +165,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isNowScene = false;
                     StoryLoadingScene_Prince.isPastScene = false;
                     StoryLoadingScene_Prince.isFutureScene = true;
-                    StoryLoadingScene_Prince.isChange = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -181,7 +182,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isNowScene = false;
                     StoryLoadingScene_Prince.isPastScene = true;
                     StoryLoadingScene_Prince.isFutureScene = false;
-                    StoryLoadingScene_Prince.isChange = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -196,7 +197,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isNowScene = false;
                     StoryLoadingScene_Prince.isPastScene = true;
                     StoryLoadingScene_Prince.isFutureScene = false;
-                    StoryLoadingScene_Prince.isChange = true;
+                    isChange = true;
                 }
                 else
                 {
@@ -209,11 +210,10 @@ public class StorySkillControl_Prince : MonoBehaviour
     void FalseByisCheckConsume()
     {
         isEnergyConsume = false;
-        StoryLoadingScene_Prince.isOpen = true;
-        if (StoryLoadingScene_Prince.isChange)
+        if (isChange)
         {
-            isClockActice = false;
-            StoryLoadingScene_Prince.isChange = false;
+            StoryLoadingScene_Prince.isOpen = true;
+            isChange = false;
         }
     }
 
