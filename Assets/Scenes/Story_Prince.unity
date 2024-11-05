@@ -15382,13 +15382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff85f3da7b783542af36c618169d05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: {fileID: 1836693494}
-  nowBGM: {fileID: 8300000, guid: 2813d049f533f434a8a8c92a386562b5, type: 3}
-  pastBGM: {fileID: 8300000, guid: 301161fa7b4970745abe1a9cac682ddb, type: 3}
-  futureBGM: {fileID: 8300000, guid: 752e3196be85c4f4ca5bf49490390ad8, type: 3}
-  now: {fileID: 296686965}
-  past: {fileID: 474405247}
-  future: {fileID: 597276440}
   clockUI: {fileID: 1187902722}
   pointer: {fileID: 1704723678}
   time: {fileID: 1530813625}
@@ -17267,15 +17260,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff64c626aa732104cbf5d1d10fb3ef86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: {fileID: 0}
-  nowBGM: {fileID: 0}
-  pastBGM: {fileID: 0}
-  futureBGM: {fileID: 0}
-  now: {fileID: 0}
-  past: {fileID: 0}
-  future: {fileID: 0}
-  loadingUI: {fileID: 0}
-  a: {fileID: 0}
+  BGM: {fileID: 1836693494}
+  nowBGM: {fileID: 8300000, guid: 2813d049f533f434a8a8c92a386562b5, type: 3}
+  pastBGM: {fileID: 8300000, guid: 301161fa7b4970745abe1a9cac682ddb, type: 3}
+  futureBGM: {fileID: 8300000, guid: 752e3196be85c4f4ca5bf49490390ad8, type: 3}
+  switchScene: {fileID: 8300000, guid: 2ec8dd438657a574dbd4763eed0e0c4c, type: 3}
+  now: {fileID: 296686965}
+  past: {fileID: 474405247}
+  future: {fileID: 597276440}
+  loadingUI: {fileID: 1175394104}
+  a: {fileID: 404371483}
 --- !u!1 &1640057674
 GameObject:
   m_ObjectHideFlags: 0
