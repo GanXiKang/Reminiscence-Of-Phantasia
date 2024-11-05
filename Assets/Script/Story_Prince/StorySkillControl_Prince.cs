@@ -5,19 +5,6 @@ using UnityEngine.UI;
 
 public class StorySkillControl_Prince : MonoBehaviour
 {
-    //[Header("Musia")]
-    //public AudioSource BGM;
-    //public AudioClip nowBGM, pastBGM, futureBGM;
-
-    //[Header("Scene")]
-    //public GameObject now;
-    //public GameObject past;
-    //public GameObject future;
-    //public static bool isNowScene = true;
-    //public static bool isPastScene = false;
-    //public static bool isFutureScene = false;
-    //bool isChange = false;
-
     [Header("ClockUI")]
     public GameObject clockUI;
     public GameObject pointer;
@@ -124,13 +111,13 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 1:
             case 2:
             case 12:
-                if (!isNowScene)
+                if (!StoryLoadingScene_Prince.isNowScene)
                 {
                     _energyValue -= _largeArea * Time.deltaTime;
-                    isNowScene = true;
-                    isPastScene = false;
-                    isFutureScene = false;
-                    isChange = true;
+                    StoryLoadingScene_Prince.isNowScene = true;
+                    StoryLoadingScene_Prince.isPastScene = false;
+                    StoryLoadingScene_Prince.isFutureScene = false;
+                    StoryLoadingScene_Prince.isChange = true;
                 }
                 else
                 {
@@ -139,13 +126,13 @@ public class StorySkillControl_Prince : MonoBehaviour
                 break;
 
             case 3:
-                if (!isNowScene)
+                if (!StoryLoadingScene_Prince.isNowScene)
                 {
                     _energyValue -= _smallArea * Time.deltaTime;
-                    isNowScene = true;
-                    isPastScene = false;
-                    isFutureScene = false;
-                    isChange = true;
+                    StoryLoadingScene_Prince.isNowScene = true;
+                    StoryLoadingScene_Prince.isPastScene = false;
+                    StoryLoadingScene_Prince.isFutureScene = false;
+                    StoryLoadingScene_Prince.isChange = true;
                 }
                 else
                 {
@@ -156,13 +143,13 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 4:
             case 5:
             case 6:
-                if (!isFutureScene)
+                if (!StoryLoadingScene_Prince.isFutureScene)
                 {
                     _energyValue -= _largeArea * Time.deltaTime;
-                    isNowScene = false;
-                    isPastScene = false;
-                    isFutureScene = true;
-                    isChange = true;
+                    StoryLoadingScene_Prince.isNowScene = false;
+                    StoryLoadingScene_Prince.isPastScene = false;
+                    StoryLoadingScene_Prince.isFutureScene = true;
+                    StoryLoadingScene_Prince.isChange = true;
                 }
                 else
                 {
@@ -171,13 +158,13 @@ public class StorySkillControl_Prince : MonoBehaviour
                 break;
 
             case 7:
-                if (!isFutureScene)
+                if (!StoryLoadingScene_Prince.isFutureScene)
                 {
                     _energyValue -= _smallArea * Time.deltaTime;
-                    isNowScene = false;
-                    isPastScene = false;
-                    isFutureScene = true;
-                    isChange = true;
+                    StoryLoadingScene_Prince.isNowScene = false;
+                    StoryLoadingScene_Prince.isPastScene = false;
+                    StoryLoadingScene_Prince.isFutureScene = true;
+                    StoryLoadingScene_Prince.isChange = true;
                 }
                 else
                 {
@@ -188,13 +175,13 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 8:
             case 9:
             case 10:
-                if (!isPastScene)
+                if (!StoryLoadingScene_Prince.isPastScene)
                 {
                     _energyValue -= _largeArea * Time.deltaTime;
-                    isNowScene = false;
-                    isPastScene = true;
-                    isFutureScene = false;
-                    isChange = true;
+                    StoryLoadingScene_Prince.isNowScene = false;
+                    StoryLoadingScene_Prince.isPastScene = true;
+                    StoryLoadingScene_Prince.isFutureScene = false;
+                    StoryLoadingScene_Prince.isChange = true;
                 }
                 else
                 {
@@ -203,13 +190,13 @@ public class StorySkillControl_Prince : MonoBehaviour
                 break;
 
             case 11:
-                if (!isPastScene)
+                if (!StoryLoadingScene_Prince.isPastScene)
                 {
                     _energyValue -= _smallArea * Time.deltaTime;
-                    isNowScene = false;
-                    isPastScene = true;
-                    isFutureScene = false;
-                    isChange = true;
+                    StoryLoadingScene_Prince.isNowScene = false;
+                    StoryLoadingScene_Prince.isPastScene = true;
+                    StoryLoadingScene_Prince.isFutureScene = false;
+                    StoryLoadingScene_Prince.isChange = true;
                 }
                 else
                 {
@@ -222,10 +209,11 @@ public class StorySkillControl_Prince : MonoBehaviour
     void FalseByisCheckConsume()
     {
         isEnergyConsume = false;
-        if (isChange)
+        StoryLoadingScene_Prince.isOpen = true;
+        if (StoryLoadingScene_Prince.isChange)
         {
             isClockActice = false;
-            isChange = false;
+            StoryLoadingScene_Prince.isChange = false;
         }
     }
 
