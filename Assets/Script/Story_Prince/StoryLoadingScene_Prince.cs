@@ -21,15 +21,39 @@ public class StoryLoadingScene_Prince : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a;
+    public static bool isLoading = false;
+    public static bool isOpen = false;
+    public static bool isClose = false;
+    float _loadingSpeed = 1.5f;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        SceneActive();
+    }
+
+    void SceneActive()
+    {
+        loadingUI.SetActive(isLoading);
+
+        now.SetActive(isNowScene);
+        past.SetActive(isPastScene);
+        future.SetActive(isFutureScene);
+    }
+    void BarValue(Image bar, bool isAdd)
+    {
+        if (isAdd)
+        {
+            if (bar.fillAmount < 1)
+            {
+                bar.fillAmount += _loadingSpeed * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (bar.fillAmount > 0)
+            {
+                bar.fillAmount -= _loadingSpeed * Time.deltaTime;
+            }
+        }
     }
 }
