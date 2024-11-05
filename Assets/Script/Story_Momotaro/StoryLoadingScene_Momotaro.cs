@@ -59,7 +59,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
 
             if (a.fillAmount == 0)
             {
-                isPlayOnce = true;
+                isPlayMusiaOnce = true;
                 isClose = false;
                 isLoading = false;
             }
