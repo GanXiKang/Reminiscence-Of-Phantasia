@@ -24,7 +24,6 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     public static bool isOpen = false; 
     public static bool isClose = false;
     float _loadingSpeed = 1.5f;
-    bool isOnce = true;
 
     void Update()
     {
