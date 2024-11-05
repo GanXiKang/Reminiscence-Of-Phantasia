@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class StorySkillControl_Prince : MonoBehaviour
 {
-    [Header("Musia")]
-    public AudioSource BGM;
-    public AudioClip nowBGM, pastBGM, futureBGM;
+    //[Header("Musia")]
+    //public AudioSource BGM;
+    //public AudioClip nowBGM, pastBGM, futureBGM;
 
-    [Header("Scene")]
-    public GameObject now;
-    public GameObject past;
-    public GameObject future;
-    public static bool isNowScene = true;
-    public static bool isPastScene = false;
-    public static bool isFutureScene = false;
-    bool isChange = false;
+    //[Header("Scene")]
+    //public GameObject now;
+    //public GameObject past;
+    //public GameObject future;
+    //public static bool isNowScene = true;
+    //public static bool isPastScene = false;
+    //public static bool isFutureScene = false;
+    //bool isChange = false;
 
     [Header("ClockUI")]
     public GameObject clockUI;
@@ -33,13 +33,13 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     [Header("EnergyUI")]
     public Image energyBar;
+    public static int _zoneNum;
     float _energyValue = 0.7f;
     float _rotation = 0.005f;
     float _smallArea = 0.1f;
     float _largeArea = 0.15f;
     float _nowArea = 0.05f;
     bool isEnergyConsume = false;
-    int _zoneNum;
 
     void Update()
     {
@@ -52,9 +52,6 @@ public class StorySkillControl_Prince : MonoBehaviour
     void ObjectActive()
     {
         clockUI.SetActive(isClockActice);
-        now.SetActive(isNowScene);
-        past.SetActive(isPastScene);
-        future.SetActive(isFutureScene);
 
         time.interactable = ButtonTimeInteractable();
     }
