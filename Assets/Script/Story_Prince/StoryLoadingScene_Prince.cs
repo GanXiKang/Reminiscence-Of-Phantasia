@@ -8,6 +8,8 @@ public class StoryLoadingScene_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip nowBGM, pastBGM, futureBGM;
+    public AudioClip switchScene;
+    bool isPlayMusiaOnce = true;
 
     [Header("Scene")]
     public GameObject now;
@@ -23,37 +25,60 @@ public class StoryLoadingScene_Prince : MonoBehaviour
     public Image a;
     public static bool isLoading = false;
     public static bool isOpen = false;
-    public static bool isClose = false;
+    bool isClose = false;
     float _loadingSpeed = 1.5f;
 
     void Update()
     {
-        SceneActive();
-    }
-
-    void SceneActive()
-    {
         loadingUI.SetActive(isLoading);
 
+        SwitchScene();
+    }
+
+    void SwitchScene()
+    {
+        if (isOpen)
+        {
+            isLoading = true;
+            if (isPlayMusiaOnce)
+            {
+                BGM.PlayOneShot(switchScene);
+                isPlayMusiaOnce = false;
+            }
+
+            if (a.fillAmount < 1)
+            {
+                a.fillAmount += _loadingSpeed * Time.deltaTime;
+            }
+            else if (a.fillAmount == 1)
+            {
+                isOpen = false;
+                Invoke("WaitCloseLoading", 0.5f);
+            }
+        }
+        if (isClose)
+        {
+            if (a.fillAmount > 0)
+            {
+                a.fillAmount -= _loadingSpeed * Time.deltaTime;
+            }
+            else if (a.fillAmount == 0)
+            {
+                isPlayMusiaOnce = true;
+                isClose = false;
+                isLoading = false;
+            }
+        }
+    }
+    void WaitCloseLoading()
+    {
+        ChangeScene();
+        isClose = true;
+    }
+    void ChangeScene() 
+    {
         now.SetActive(isNowScene);
         past.SetActive(isPastScene);
         future.SetActive(isFutureScene);
-    }
-    void BarValue(Image bar, bool isAdd)
-    {
-        if (isAdd)
-        {
-            if (bar.fillAmount < 1)
-            {
-                bar.fillAmount += _loadingSpeed * Time.deltaTime;
-            }
-        }
-        else
-        {
-            if (bar.fillAmount > 0)
-            {
-                bar.fillAmount -= _loadingSpeed * Time.deltaTime;
-            }
-        }
     }
 }
