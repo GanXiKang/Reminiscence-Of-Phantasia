@@ -30,7 +30,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
         loadingUI.SetActive(isLoading);
 
         SwitchSceneMusia();
-        LeftRightSwitch();
+        SwitchScene();
     }
 
     void SwitchSceneMusia()
@@ -41,7 +41,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
         BGM.PlayOneShot(switchScene);
         isPlayOnce = false;
     }
-    void LeftRightSwitch()
+    void SwitchScene()
     {
         if (isOpen)
         {
