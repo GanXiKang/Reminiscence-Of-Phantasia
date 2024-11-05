@@ -16,8 +16,6 @@ public class UIControl_Menu : MonoBehaviour
     public Image background;
     public Slider sliderBGM;
     public Toggle fullScreen;
-    public static float volumeBGM = 0.7f;
-    public static bool isFullS;
     bool isStaff = false;
 
     [Header("TransitionUI")]
@@ -25,8 +23,8 @@ public class UIControl_Menu : MonoBehaviour
 
     void Start()
     {
-        sliderBGM.value = volumeBGM;
-        BGM.volume = volumeBGM;
+        sliderBGM.value = SettingControl.volumeBGM;
+        BGM.volume = SettingControl.volumeBGM;
         fullScreen.isOn = Screen.fullScreen;
     }
 
@@ -36,7 +34,7 @@ public class UIControl_Menu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F11))
         {
-            FullScreen(!isFullS);
+            FullScreen(!SettingControl.isFullS);
         }
     }
 
@@ -88,13 +86,13 @@ public class UIControl_Menu : MonoBehaviour
     }
     public void Volume_BGM()
     {
-        volumeBGM = sliderBGM.value;
-        BGM.volume = volumeBGM;
+        SettingControl.volumeBGM = sliderBGM.value;
+        BGM.volume = SettingControl.volumeBGM;
     }
     public void FullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
-        isFullS = isFullScreen;
+        SettingControl.isFullS = isFullScreen;
     }
 
     void BackgroundSprite()
