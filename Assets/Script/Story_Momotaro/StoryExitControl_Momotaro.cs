@@ -48,31 +48,16 @@ public class StoryExitControl_Momotaro : MonoBehaviour
             if (bar.fillAmount == 1)
             {
                 isExit = false;
+                StoryLoadingScene_Momotaro.isOpen = true;
                 switch (_goToThatScene)
                 {
                     case 1:
                         isGoScene2 = true;
-                        StoryLoadingScene_Momotaro.isLeftOpen = true;
                         break;
 
                     case 2:
                         if (isGoScene2)
-                        {
                             isGoScene2 = false;
-                            StoryLoadingScene_Momotaro.isRightOpen = true;
-                        }
-                        else
-                        {
-                            StoryLoadingScene_Momotaro.isLeftOpen = true;
-                        }
-                        break;
-
-                    case 3:
-                        StoryLoadingScene_Momotaro.isRightOpen = true;
-                        break;
-
-                    case 4:
-                        StoryLoadingScene_Momotaro.isRightOpen = true;
                         break;
                 }
             }
