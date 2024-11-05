@@ -9,7 +9,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     public AudioSource BGM;
     public AudioClip riverSideBGM, forestBGM, mountainBGM, plazaBGM;
     public AudioClip switchScene;
-    bool isPlayOnce = true;
+    bool isPlayMusiaOnce = true;
 
     [Header("Scene")]
     public GameObject riverSide;
@@ -29,23 +29,19 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     {
         loadingUI.SetActive(isLoading);
 
-        SwitchSceneMusia();
         SwitchScene();
     }
 
-    void SwitchSceneMusia()
-    {
-        if (!isOpen) return;
-        if (!isPlayOnce) return;
-
-        BGM.PlayOneShot(switchScene);
-        isPlayOnce = false;
-    }
     void SwitchScene()
     {
         if (isOpen)
         {
             isLoading = true;
+            if (isPlayMusiaOnce)
+            {
+                BGM.PlayOneShot(switchScene);
+                isPlayMusiaOnce = false;
+            }
 
             BarValue(a, true);
             BarValue(b, true);
