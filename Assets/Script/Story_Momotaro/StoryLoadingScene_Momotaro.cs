@@ -22,7 +22,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     public Image a, b;
     public static bool isLoading = false;
     public static bool isOpen = false; 
-    public static bool isClose = false;
+    bool isClose = false;
     float _loadingSpeed = 1.5f;
 
     void Update()
