@@ -152,15 +152,23 @@ public class BookcaseControl_House : MonoBehaviour
     {
         if (key == "d")
         {
-            _bookNum++;
-            isNext = true;
+            if (_bookNum < book.Length - 1)
+            {
+                _bookNum++;
+                isNext = true;
+                bookButton.SetActive(false);
+            }
         }
         else if (key == "a")
         {
-            _bookNum--;
-            isBack = true;
+            if (_bookNum != 0)
+            {
+                _bookNum--;
+                isBack = true;
+                bookButton.SetActive(false);
+            }
         }
-        bookButton.SetActive(false);
+       
     }
     public void Button_ImageContent(int letterNum)
     {
