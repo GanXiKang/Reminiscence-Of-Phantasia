@@ -120,6 +120,22 @@ public class Showcase_House : MonoBehaviour
         }
     }
 
+    public void Button_Page(string key)
+    {
+        if (key == "a")
+        {
+            _showNum--;
+            Limit();
+            StoryBookShow();
+        }
+        else if (key == "d")
+        {
+            _showNum++;
+            Limit();
+            StoryBookShow();
+        }
+    }
+
     void Leave()
     {
         if (CameraControl_House.isLookShowcase)
