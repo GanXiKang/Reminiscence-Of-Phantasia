@@ -53,11 +53,11 @@ public class Showcase_House : MonoBehaviour
         }
         if (_showNum == storyBook.Length - 1)
         {
-            buttonA.SetActive(false);
+            buttonD.SetActive(false);
         }
         else
         {
-            buttonA.SetActive(true);
+            buttonD.SetActive(true);
         }
     }
     void FirstShowcase()
