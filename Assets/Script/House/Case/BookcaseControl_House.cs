@@ -22,7 +22,7 @@ public class BookcaseControl_House : MonoBehaviour
     [Header("UI")]
     public GameObject bookUI;
     public GameObject bookButton;
-    public GameObject buttonA, buttonB;
+    public GameObject buttonA, buttonD;
     public GameObject bookContent;
     public GameObject contentInteractable;
     public Image image;
