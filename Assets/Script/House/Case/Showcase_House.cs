@@ -124,15 +124,21 @@ public class Showcase_House : MonoBehaviour
     {
         if (key == "a")
         {
-            _showNum--;
-            Limit();
-            StoryBookShow();
+            if (_showNum != 0)
+            {
+                _showNum--;
+                Limit();
+                StoryBookShow();
+            }
         }
         else if (key == "d")
         {
-            _showNum++;
-            Limit();
-            StoryBookShow();
+            if (_showNum != storyBook.Length - 1)
+            {
+                _showNum++;
+                Limit();
+                StoryBookShow();
+            }
         }
     }
 
