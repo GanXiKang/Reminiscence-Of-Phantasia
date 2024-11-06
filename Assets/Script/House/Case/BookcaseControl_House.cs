@@ -148,6 +148,20 @@ public class BookcaseControl_House : MonoBehaviour
         isForward = true;
         bookButton.SetActive(false);
     }
+    public void Button_Page(string key)
+    {
+        if (key == "d")
+        {
+            _bookNum++;
+            isNext = true;
+        }
+        else if (key == "a")
+        {
+            _bookNum--;
+            isBack = true;
+        }
+        bookButton.SetActive(false);
+    }
     public void Button_ImageContent(int letterNum)
     {
         switch (_bookNum)
