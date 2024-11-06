@@ -44,6 +44,7 @@ public class BookcaseControl_House : MonoBehaviour
 
         isOpen = true;
         bookButton[0].SetActive(true);
+        bookContent.SetActive(false);
         for (int b = 0; b < book.Length; b++)
         {
             if (b == _bookNum)
