@@ -83,11 +83,11 @@ public class BookcaseControl_House : MonoBehaviour
         }
         if (_bookNum == book.Length - 1)
         {
-            buttonD.SetActive(true);
+            buttonD.SetActive(false);
         }
         else
         {
-            buttonD.SetActive(false);
+            buttonD.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.A)) //…œ“ª±æ
