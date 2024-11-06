@@ -167,6 +167,8 @@ public class BookcaseControl_House : MonoBehaviour
     }
     public void Button_Page(string key)
     {
+        if (isNext || isBack || isForward || isBackward) return;
+
         if (key == "a")
         {
             if (_bookNum != 0)
