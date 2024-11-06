@@ -18,6 +18,10 @@ public class Showcase_House : MonoBehaviour
     [Header("Paper")]
     public GameObject[] paper;
 
+    [Header("UI")]
+    public GameObject showcaseUI;
+    public GameObject buttonA, buttonD;
+
     void Start()
     {
         //úy‘á
@@ -30,11 +34,32 @@ public class Showcase_House : MonoBehaviour
 
     void Update()
     {
+        UIActive();
         FirstShowcase();
         ChangeStoryBook();
         Leave();
     }
 
+    void UIActive()
+    {
+        showcaseUI.SetActive(CameraControl_House.isLookShowcase);
+        if (_showNum == 0)
+        {
+            buttonA.SetActive(false);
+        }
+        else
+        {
+            buttonA.SetActive(true);
+        }
+        if (_showNum == storyBook.Length - 1)
+        {
+            buttonA.SetActive(false);
+        }
+        else
+        {
+            buttonA.SetActive(true);
+        }
+    }
     void FirstShowcase()
     {
         if (!CameraControl_House.isLookShowcase) return;
