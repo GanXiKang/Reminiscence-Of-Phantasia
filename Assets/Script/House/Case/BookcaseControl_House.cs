@@ -73,21 +73,38 @@ public class BookcaseControl_House : MonoBehaviour
         if (isNext || isBack || isForward || isBackward) return;
         if (bookContent.activeSelf) return;
 
-        if (Input.GetKeyDown(KeyCode.D)) //下一本
+        if (_bookNum == 0)
         {
-            if (_bookNum < book.Length - 1)
-            {
-                _bookNum++;
-                isNext = true;
-                bookButton.SetActive(false);
-            }
+            buttonA.SetActive(false);
         }
+        else
+        {
+            buttonA.SetActive(true);
+        }
+        if (_bookNum == book.Length - 1)
+        {
+            buttonD.SetActive(true);
+        }
+        else
+        {
+            buttonD.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.A)) //上一本
         {
             if (_bookNum != 0)
             {
                 _bookNum--;
                 isBack = true;
+                bookButton.SetActive(false);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.D)) //下一本
+        {
+            if (_bookNum < book.Length - 1)
+            {
+                _bookNum++;
+                isNext = true;
                 bookButton.SetActive(false);
             }
         }
@@ -151,16 +168,7 @@ public class BookcaseControl_House : MonoBehaviour
     }
     public void Button_Page(string key)
     {
-        if (key == "d")
-        {
-            if (_bookNum < book.Length - 1)
-            {
-                _bookNum++;
-                isNext = true;
-                bookButton.SetActive(false);
-            }
-        }
-        else if (key == "a")
+        if (key == "a")
         {
             if (_bookNum != 0)
             {
@@ -169,7 +177,15 @@ public class BookcaseControl_House : MonoBehaviour
                 bookButton.SetActive(false);
             }
         }
-       
+        else if (key == "d")
+        {
+            if (_bookNum < book.Length - 1)
+            {
+                _bookNum++;
+                isNext = true;
+                bookButton.SetActive(false);
+            }
+        }
     }
     public void Button_ImageContent(int letterNum)
     {
