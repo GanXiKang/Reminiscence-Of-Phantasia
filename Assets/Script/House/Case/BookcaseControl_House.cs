@@ -21,8 +21,7 @@ public class BookcaseControl_House : MonoBehaviour
 
     [Header("UI")]
     public GameObject bookUI;
-    public GameObject bookButton;
-    public GameObject buttonA, buttonD;
+    public GameObject[] bookButton;
     public GameObject bookContent;
     public GameObject contentInteractable;
     public Image image;
@@ -44,7 +43,7 @@ public class BookcaseControl_House : MonoBehaviour
         if (isOpen) return;
 
         isOpen = true;
-        bookButton.SetActive(true);
+        bookButton[0].SetActive(true);
         for (int b = 0; b < book.Length; b++)
         {
             if (b == _bookNum)
@@ -75,19 +74,19 @@ public class BookcaseControl_House : MonoBehaviour
 
         if (_bookNum == 0)
         {
-            buttonA.SetActive(false);
+            bookButton[2].SetActive(false);
         }
         else
         {
-            buttonA.SetActive(true);
+            bookButton[2].SetActive(true);
         }
         if (_bookNum == book.Length - 1)
         {
-            buttonD.SetActive(false);
+            bookButton[3].SetActive(false);
         }
         else
         {
-            buttonD.SetActive(true);
+            bookButton[3].SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.A)) //上一本
@@ -96,7 +95,7 @@ public class BookcaseControl_House : MonoBehaviour
             {
                 _bookNum--;
                 isBack = true;
-                bookButton.SetActive(false);
+                bookButton[1].SetActive(false);
             }
         }
         if (Input.GetKeyDown(KeyCode.D)) //下一本
@@ -105,7 +104,7 @@ public class BookcaseControl_House : MonoBehaviour
             {
                 _bookNum++;
                 isNext = true;
-                bookButton.SetActive(false);
+                bookButton[1].SetActive(false);
             }
         }
     }
@@ -121,7 +120,7 @@ public class BookcaseControl_House : MonoBehaviour
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
                 isNext = false;
-                bookButton.SetActive(true);
+                bookButton[1].SetActive(true);
             }
         }
         else if (isBack)
@@ -132,7 +131,7 @@ public class BookcaseControl_House : MonoBehaviour
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
                 isBack = false;
-                bookButton.SetActive(true);
+                bookButton[1].SetActive(true);
             }
         }
         else if (isForward)
@@ -156,7 +155,7 @@ public class BookcaseControl_House : MonoBehaviour
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
                 isBackward = false;
-                bookButton.SetActive(true);
+                bookButton[0].SetActive(true);
             }
         }
     }
@@ -164,7 +163,7 @@ public class BookcaseControl_House : MonoBehaviour
     public void Button_Book()
     {
         isForward = true;
-        bookButton.SetActive(false);
+        bookButton[0].SetActive(false);
     }
     public void Button_Page(string key)
     {
@@ -174,7 +173,7 @@ public class BookcaseControl_House : MonoBehaviour
             {
                 _bookNum--;
                 isBack = true;
-                bookButton.SetActive(false);
+                bookButton[1].SetActive(false);
             }
         }
         else if (key == "d")
@@ -183,7 +182,7 @@ public class BookcaseControl_House : MonoBehaviour
             {
                 _bookNum++;
                 isNext = true;
-                bookButton.SetActive(false);
+                bookButton[1].SetActive(false);
             }
         }
     }
