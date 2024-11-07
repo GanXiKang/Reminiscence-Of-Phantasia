@@ -116,6 +116,7 @@ public class EntrustControl_House : MonoBehaviour
     
     public void Button_Deliver(int _letter)
     {
+        BGM.PlayOneShot(turn);
         _entrustNum = _letter;
         BirdControl_House.isDeliver_Close = true;
         StartCoroutine(AnimateButtonDisappear(deliverButton[0].GetComponent<Button>(), 0f, false));
@@ -125,6 +126,7 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Receive()
     {
+        BGM.PlayOneShot(receive);
         isReceiveActive = false;
         isDeliverActive = true;
         if (!alreadyReceived[_entrustNum].activeSelf)
@@ -141,6 +143,7 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Back()
     {
+        BGM.PlayOneShot(onClick);
         if (isReceiveActive)
         {
             isReceiveActive = false;
@@ -161,11 +164,13 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Letter()
     {
+        BGM.PlayOneShot(open);
         isContentActive = true;
         isReceiveActive = false;
     }
     public void Button_Leave()
     {
+        BGM.PlayOneShot(onClick);
         BirdControl_House.isBye = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 5;
