@@ -7,7 +7,7 @@ public class WorkbenchControl_House : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip stick, choose, open, finish;
+    public AudioClip use, stick, choose, open, finish;
     bool isOnce;
 
     [Header("ProcessObject")]
@@ -83,6 +83,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         if (CameraControl_House.isLookWorkbench && isStartProcess)
         {
+            BGM.PlayOneShot(use);
             isStartProcess = false;
             Invoke("StartProcess", 0.8f);
         }
@@ -123,12 +124,12 @@ public class WorkbenchControl_House : MonoBehaviour
         }
     }
 
-    //void StartProcess()
-    //{
-    //    workbenchUI.SetActive(true);
-    //    _process = 1;
-    //    Process();
-    //}
+    void StartProcess()
+    {
+        workbenchUI.SetActive(true);
+        _process = 1;
+        Process();
+    }
 
     void Process()
     {
