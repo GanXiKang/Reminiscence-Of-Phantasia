@@ -7,7 +7,8 @@ public class WorkbenchControl_House : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip use, stick, choose, open, finish;
+    public AudioClip stick, choose, open, finish;
+    bool isOnce;
 
     [Header("ProcessObject")]
     public GameObject[] processObject;
@@ -148,6 +149,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 toolBoxBG.SetActive(true);
                 buttonUI.SetActive(true);
                 isPaperAdjustScale = false;
+                isOnce = true;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
                     isChangeColor[c] = false;
@@ -226,12 +228,20 @@ public class WorkbenchControl_House : MonoBehaviour
                     break;
             }
         }
-        if (Input.GetKeyDown(KeyCode.T) && isFinish)
+        if (isFinish)
         {
-            isFinish = false;
-            StartCoroutine(LeaveWorkbench());
+            if (isOnce)
+            {
+                BGM.PlayOneShot(finish);
+                isOnce = false;
+            }
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                isFinish = false;
+                StartCoroutine(LeaveWorkbench());
+            }
         }
-
+        
         if (isOpenBox)
         {
             up.SetActive(false);
@@ -247,6 +257,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     public void Button_ToolBox()
     {
+        BGM.PlayOneShot(open);
         isOpenBox = !isOpenBox;
     }
 
