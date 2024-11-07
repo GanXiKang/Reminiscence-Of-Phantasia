@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class InteractableControl_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip interact;
+
     [Header("InteractableUI")]
     public GameObject interactableUI;
     public Image hintF;
@@ -48,6 +52,7 @@ public class InteractableControl_House : MonoBehaviour
             AppearInteractableHint();
             if (Input.GetKeyDown(KeyCode.F))
             {
+                BGM.PlayOneShot(interact);
                 isInteractable = false;
                 switch (ColliderControl_House._nowNumber)
                 {
