@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class BookcaseControl_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip onClick, putOut, putBack, display;
+
     [Header("Book")]
     public GameObject[] book;
     public Transform[] bookMovePos;
@@ -94,6 +98,7 @@ public class BookcaseControl_House : MonoBehaviour
         {
             if (_bookNum != 0)
             {
+                BGM.PlayOneShot(onClick);
                 _bookNum--;
                 isBack = true;
                 bookButton[1].SetActive(false);
@@ -103,6 +108,7 @@ public class BookcaseControl_House : MonoBehaviour
         {
             if (_bookNum < book.Length - 1)
             {
+                BGM.PlayOneShot(onClick);
                 _bookNum++;
                 isNext = true;
                 bookButton[1].SetActive(false);
@@ -163,6 +169,7 @@ public class BookcaseControl_House : MonoBehaviour
 
     public void Button_Book()
     {
+        BGM.PlayOneShot(putOut);
         isForward = true;
         bookButton[0].SetActive(false);
     }
@@ -174,6 +181,7 @@ public class BookcaseControl_House : MonoBehaviour
         {
             if (_bookNum != 0)
             {
+                BGM.PlayOneShot(onClick);
                 _bookNum--;
                 isBack = true;
                 bookButton[1].SetActive(false);
@@ -183,6 +191,7 @@ public class BookcaseControl_House : MonoBehaviour
         {
             if (_bookNum < book.Length - 1)
             {
+                BGM.PlayOneShot(onClick);
                 _bookNum++;
                 isNext = true;
                 bookButton[1].SetActive(false);
@@ -191,6 +200,7 @@ public class BookcaseControl_House : MonoBehaviour
     }
     public void Button_ImageContent(int letterNum)
     {
+        BGM.PlayOneShot(display);
         switch (_bookNum)
         {
             case 0:
@@ -212,6 +222,7 @@ public class BookcaseControl_House : MonoBehaviour
     }
     public void Button_Back()
     {
+        BGM.PlayOneShot(putBack);
         isBackward = true;
         bookContent.SetActive(false);
     }
@@ -249,6 +260,7 @@ public class BookcaseControl_House : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                BGM.PlayOneShot(onClick);
                 StartCoroutine(LeaveBookcase());
             }
         }
