@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ScissorsControl_Workbench : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip cut;
+
+    [Header("Paper")]
     public Transform paper;
     public GameObject effects;
     public static bool isUseScissors = false;
@@ -42,6 +47,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
     }
     void Cut()
     {
+        BGM.PlayOneShot(cut);
         WorkbenchControl_House.isFinishCut = true;
         isUseScissors = false;
         ClearColliderBool();
