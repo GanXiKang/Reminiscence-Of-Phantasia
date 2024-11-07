@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class WorkbenchControl_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip use, stamp, choose, finish;
+
     [Header("ProcessObject")]
     public GameObject[] processObject;
     public static int _process;
