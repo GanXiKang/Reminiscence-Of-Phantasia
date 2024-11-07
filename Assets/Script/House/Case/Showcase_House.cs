@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Showcase_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip onClick;
+
     [Header("StoryBook")]
     public GameObject[] storyBook;
     public Transform showPoint;
@@ -103,6 +107,7 @@ public class Showcase_House : MonoBehaviour
         {
             if (_showNum != 0)
             {
+                BGM.PlayOneShot(onClick);
                 _showNum--;
                 Limit();
                 StoryBookShow();
@@ -112,6 +117,7 @@ public class Showcase_House : MonoBehaviour
         {
             if (_showNum != storyBook.Length - 1)
             {
+                BGM.PlayOneShot(onClick);
                 _showNum++;
                 Limit();
                 StoryBookShow();
@@ -151,6 +157,7 @@ public class Showcase_House : MonoBehaviour
         {
             if (_showNum != 0)
             {
+                BGM.PlayOneShot(onClick);
                 _showNum--;
                 Limit();
                 StoryBookShow();
@@ -160,6 +167,7 @@ public class Showcase_House : MonoBehaviour
         {
             if (_showNum != storyBook.Length - 1)
             {
+                BGM.PlayOneShot(onClick);
                 _showNum++;
                 Limit();
                 StoryBookShow();
@@ -173,6 +181,7 @@ public class Showcase_House : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                BGM.PlayOneShot(onClick);
                 StartCoroutine(LeaveShowcase());
             }
         }
