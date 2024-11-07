@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class EntrustControl_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip onClick, receive, open, turn;
+
     [Header("EntrustUI")]
     public GameObject[] entrustUI;
     public Image background;
