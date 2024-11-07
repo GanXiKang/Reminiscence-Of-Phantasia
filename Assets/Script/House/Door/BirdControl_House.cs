@@ -14,7 +14,7 @@ public class BirdControl_House : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip bye, happy;
+    public AudioClip bye, call;
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class BirdControl_House : MonoBehaviour
         }
         if (isHappy)
         {
-            BGM.PlayOneShot(happy);
+            BGM.PlayOneShot(call);
             anim.SetBool("isHappy", true);
             Invoke("FalseByAnimationisHappy", 0.2f);
             isHappy = false;
