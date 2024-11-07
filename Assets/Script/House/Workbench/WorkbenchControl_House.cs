@@ -288,7 +288,6 @@ public class WorkbenchControl_House : MonoBehaviour
                     BGM.PlayOneShot(stick);
                     isOnce = false;
                 }
-                print("In");
                 isStampGo = false;
                 Paper();
                 blankPaper.SetActive(false);
