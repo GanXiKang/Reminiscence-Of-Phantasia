@@ -7,7 +7,7 @@ public class WorkbenchControl_House : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip use, stick, choose, finish;
+    public AudioClip use, stick, choose, open, finish;
 
     [Header("ProcessObject")]
     public GameObject[] processObject;
@@ -122,12 +122,12 @@ public class WorkbenchControl_House : MonoBehaviour
         }
     }
 
-    void StartProcess()
-    {
-        workbenchUI.SetActive(true);
-        _process = 1;
-        Process();
-    }
+    //void StartProcess()
+    //{
+    //    workbenchUI.SetActive(true);
+    //    _process = 1;
+    //    Process();
+    //}
 
     void Process()
     {
@@ -270,6 +270,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (Vector3.Distance(stamp.transform.position, stampEndPos.position) < 0.01f)
             {
+                BGM.PlayOneShot(stick);
                 isStampGo = false;
                 Paper();
                 blankPaper.SetActive(false);
@@ -322,6 +323,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     public void Button_ChoosePattern(int num)
     {
+        BGM.PlayOneShot(choose);
         isNext = true;
         selectImage.SetActive(true);
         selectImage.transform.position = contentImage[num].transform.position;
