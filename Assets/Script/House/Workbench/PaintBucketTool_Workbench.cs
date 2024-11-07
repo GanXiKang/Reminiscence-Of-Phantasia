@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PaintBucketTool_Workbench : MonoBehaviour
 {
+    Renderer canvasRenderer;
+
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip draw;
 
     [Header("PaperIn")]
-    Renderer canvasRenderer;
     public int _number = 0;
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
