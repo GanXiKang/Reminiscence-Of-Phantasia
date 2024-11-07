@@ -12,6 +12,10 @@ public class BirdControl_House : MonoBehaviour
     public static bool isHappy = false;
     public static bool isBye = false;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip bye, happy;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -43,12 +47,14 @@ public class BirdControl_House : MonoBehaviour
         }
         if (isHappy)
         {
+            BGM.PlayOneShot(happy);
             anim.SetBool("isHappy", true);
             Invoke("FalseByAnimationisHappy", 0.2f);
             isHappy = false;
         }
         if (isBye)
         {
+            BGM.PlayOneShot(bye);
             anim.SetBool("isBye", true);
             anim.SetBool("isIdle_Out", true);
             anim.SetBool("isIdle", false);
