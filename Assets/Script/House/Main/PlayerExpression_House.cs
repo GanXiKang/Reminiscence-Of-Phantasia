@@ -9,6 +9,7 @@ public class PlayerExpression_House : MonoBehaviour
     [Header("Material")]
     public Material openEyes;
     public Material closeEyes;
+    public Material happy;
     bool isBlink = true;
 
     void Start()
