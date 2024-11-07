@@ -150,7 +150,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 toolBoxBG.SetActive(true);
                 buttonUI.SetActive(true);
                 isPaperAdjustScale = false;
-                isOnce = true;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
                     isChangeColor[c] = false;
@@ -158,6 +157,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 1:
+                isOnce = true;
                 isAppaerPaper = true;
                 break;
 
@@ -170,6 +170,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 4:
+                isOnce = true;
                 storyBook[_storyBookNum].transform.position = storyBookPoint.position;
                 storyBook[_storyBookNum].transform.rotation = storyBookPoint.rotation;
                 storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", true);
@@ -282,7 +283,11 @@ public class WorkbenchControl_House : MonoBehaviour
             }
             if (Vector3.Distance(stamp.transform.position, stampEndPos.position) < 0.01f)
             {
-                BGM.PlayOneShot(stick);
+                if (isOnce)
+                {
+                    BGM.PlayOneShot(stick);
+                    isOnce = false;
+                }
                 isStampGo = false;
                 Paper();
                 blankPaper.SetActive(false);
