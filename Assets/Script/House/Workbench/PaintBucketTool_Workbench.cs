@@ -49,6 +49,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
             {
                 if (hit.transform == canvasRenderer.transform)
                 {
+                    BGM.PlayOneShot(draw);
                     Vector2 uv = hit.textureCoord;
                     int x = Mathf.FloorToInt(uv.x * texture.width);
                     int y = Mathf.FloorToInt(uv.y * texture.height);
