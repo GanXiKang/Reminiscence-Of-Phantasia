@@ -7,7 +7,7 @@ public class WorkbenchControl_House : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip use, stamp, choose, finish;
+    public AudioClip use, stick, choose, finish;
 
     [Header("ProcessObject")]
     public GameObject[] processObject;
