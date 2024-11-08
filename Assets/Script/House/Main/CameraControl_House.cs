@@ -13,12 +13,14 @@ public class CameraControl_House : MonoBehaviour
     [Header("CameraPosition")]
     public Transform workbenchPos;
     public Transform storyBookPos;
+    public Transform playerPos;
     public Transform doorPos;
     public Transform bedPos;
     public Transform bookcasePos;
     public Transform showcasePos;
     public static bool isLookWorkbench = false;
     public static bool isLookStorkBook = false;
+    public static bool isLookPlayer = false;
     public static bool isLookDoor = false;
     public static bool isLookBed = false;
     public static bool isLookBookcase = false;
@@ -57,8 +59,16 @@ public class CameraControl_House : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.Lerp(transform.position, storyBookPos.position, _moveTime * Time.deltaTime);
-                transform.rotation = Quaternion.Lerp(transform.rotation, storyBookPos.rotation, _moveTime * Time.deltaTime);
+                if (!isLookPlayer)
+                {
+                    transform.position = Vector3.Lerp(transform.position, storyBookPos.position, _moveTime * Time.deltaTime);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, storyBookPos.rotation, _moveTime * Time.deltaTime);
+                }
+                else
+                {
+                    transform.position = playerPos.position;
+                    transform.rotation = playerPos.rotation;
+                }
             }
         }
         else if (isLookDoor)
