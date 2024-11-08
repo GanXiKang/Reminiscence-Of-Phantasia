@@ -11,8 +11,8 @@ public class PlayerExpression_House : MonoBehaviour
     public Material closeEyes;
     public Material happy;
     public Material Sad;
+    public static bool isHappy = false;
     bool isBlink = true;
-    bool isHappy = false;
 
     void Start()
     {
@@ -21,11 +21,25 @@ public class PlayerExpression_House : MonoBehaviour
 
     void Update()
     {
+        if (isHappy)
+        {
+            isHappy = false;
+            isBlink = false;
+            StopCoroutine(Blink(0));
+            smr.material = happy;
+            Invoke(" HappyFinish", 3.5f);
+        }
         if (isBlink)
         {
             int r = Random.Range(1, 3);
             StartCoroutine(Blink(r));
         }
+    }
+
+    void HappyFinish()
+    {
+        isBlink = true;
+        smr.material = openEyes;
     }
 
     IEnumerator Blink(int wait)
