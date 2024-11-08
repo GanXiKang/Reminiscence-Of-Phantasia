@@ -600,6 +600,7 @@ public class WorkbenchControl_House : MonoBehaviour
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
         CameraControl_House.isLookPlayer = true;
+        PlayerControl_House.isHappy = true;
         PlayerExpression_House.isHappy = true;
         yield return new WaitForSeconds(3.5f);
         BlackScreenControl.isOpenBlackScreen = true;
@@ -610,5 +611,6 @@ public class WorkbenchControl_House : MonoBehaviour
         CameraControl_House.isLookPlayer = false;
         CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
+        PlayerControl_House.isHappy = false;
     }
 }
