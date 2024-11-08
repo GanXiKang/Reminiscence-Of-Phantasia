@@ -66,6 +66,7 @@ public class CameraControl_House : MonoBehaviour
                 }
                 else
                 {
+                    print("Yes");
                     transform.position = playerPos.position;
                     transform.rotation = playerPos.rotation;
                 }
