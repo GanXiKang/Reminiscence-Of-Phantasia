@@ -601,7 +601,6 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         CameraControl_House.isLookPlayer = true;
         PlayerControl_House.isHappy = true;
-        PlayerExpression_House.isHappy = true;
         yield return new WaitForSeconds(3.5f);
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
