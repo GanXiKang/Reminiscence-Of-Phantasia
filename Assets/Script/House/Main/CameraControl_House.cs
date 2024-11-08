@@ -66,7 +66,6 @@ public class CameraControl_House : MonoBehaviour
                 }
                 else
                 {
-
                     transform.position = Vector3.Lerp(transform.position, playerPos.position, _moveTime * 3 * Time.deltaTime);
                     transform.rotation = Quaternion.Lerp(transform.rotation, playerPos.rotation, _moveTime * 3 * Time.deltaTime);
                 }
