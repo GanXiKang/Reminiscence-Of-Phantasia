@@ -27,7 +27,7 @@ public class PlayerExpression_House : MonoBehaviour
             isBlink = false;
             StopCoroutine(Blink(0));
             smr.material = happy;
-            Invoke(" HappyFinish", 3.5f);
+            Invoke("HappyFinish", 3.5f);
         }
         if (isBlink)
         {
