@@ -599,11 +599,15 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
+        CameraControl_House.isLookPlayer = true;
+        PlayerExpression_House.isHappy = true;
+        yield return new WaitForSeconds(3.5f);
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         _process = 0;
         workbenchUI.SetActive(false);
         CameraControl_House.isFreeLook = true;
+        CameraControl_House.isLookPlayer = false;
         CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
     }
