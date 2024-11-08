@@ -21,10 +21,18 @@ public class PlayerExpression_House : MonoBehaviour
 
     void Update()
     {
-        Happy();
         Blink();
+        Happy();
     }
 
+    void Blink()
+    {
+        if (isBlink)
+        {
+            int r = Random.Range(1, 3);
+            StartCoroutine(Blink(r));
+        }
+    }
     void Happy()
     {
         if (PlayerControl_House.isHappy)
@@ -45,14 +53,6 @@ public class PlayerExpression_House : MonoBehaviour
                 smr.material = openEyes;
             }
 
-        }
-    }
-    void Blink()
-    {
-        if (isBlink)
-        {
-            int r = Random.Range(1, 3);
-            StartCoroutine(Blink(r));
         }
     }
 
