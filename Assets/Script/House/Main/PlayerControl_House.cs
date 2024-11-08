@@ -18,6 +18,9 @@ public class PlayerControl_House : MonoBehaviour
     private Vector3 _moveInput;
     private Vector3 _velocity;
 
+    //Animation
+    public static bool isHappy = false;
+
     void Start()
     {
         cc = GetComponent<CharacterController>();
@@ -31,6 +34,7 @@ public class PlayerControl_House : MonoBehaviour
 
         PlayerMove();
         PlayerOnTheGround();
+        Animation();
     }
 
     void OnMove(InputValue value)
@@ -66,6 +70,10 @@ public class PlayerControl_House : MonoBehaviour
         {
             _velocity.y = 0;
         }
+    }
+    void Animation()
+    {
+        anim.SetBool("isHappy", isHappy);
     }
 
     bool isCanMove()
