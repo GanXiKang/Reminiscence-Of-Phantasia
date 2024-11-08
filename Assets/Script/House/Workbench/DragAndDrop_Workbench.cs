@@ -9,7 +9,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
     [Header("Target")]
     public Transform targetPosition;
     public Transform paperDropPoint;
-    public float snapDistance = 0.5f;
+    public float snapDistance = 0.1f;
 
     private Vector3 offset;
     private bool isDragging = false;
