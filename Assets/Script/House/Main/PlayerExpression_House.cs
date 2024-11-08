@@ -12,6 +12,7 @@ public class PlayerExpression_House : MonoBehaviour
     public Material happy;
     public Material Sad;
     bool isBlink = true;
+    bool isHappy = false;
 
     void Start()
     {
