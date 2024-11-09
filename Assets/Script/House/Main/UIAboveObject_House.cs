@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UIAboveObject_House : MonoBehaviour
 {
+    GameObject player;
+
     [Header("Workbench")]
     public Transform workbench;
     public Vector3 workbenchOffset;
@@ -18,7 +20,7 @@ public class UIAboveObject_House : MonoBehaviour
     [Header("Bed")]
     public Transform bed;
     public Vector3 bedOffset;
-    public static bool isAboveBed = true;
+    public static bool isAboveBed = false;
 
     [Header("Bookcase")]
     public Transform bookcase;
@@ -34,9 +36,17 @@ public class UIAboveObject_House : MonoBehaviour
     public RectTransform hint;
     public Text hintName;
 
+    void Start()
+    {
+        player = GameObject.Find("Player");
+
+        isAboveBed = true;
+    }
+
     void Update()
     {
         Hint();
+        hint.LookAt(player.transform);
     }
 
     void Hint()
