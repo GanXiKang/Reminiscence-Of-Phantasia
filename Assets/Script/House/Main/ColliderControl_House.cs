@@ -4,14 +4,34 @@ using UnityEngine;
 
 public class ColliderControl_House : MonoBehaviour
 {
+    GameObject player;
     public int _serialNumber;
     public static int _nowNumber;
+    float _forwardValue = 0.5f;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+    }
+
+    bool IsFacingObject(Transform playerTransform)
+    {
+        Vector3 playerForward = playerTransform.forward;
+        Vector3 directionToObject = (transform.position - playerTransform.position).normalized;
+
+        float dotProduct = Vector3.Dot(playerForward, directionToObject);
+
+        return dotProduct > _forwardValue;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            InteractableControl_House.isInteractable = true;
+            if (IsFacingObject(other.transform))
+            {
+                InteractableControl_House.isInteractable = true;
+            }
         }
     }
 
@@ -19,7 +39,15 @@ public class ColliderControl_House : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            _nowNumber = _serialNumber;
+            if (IsFacingObject(other.transform))
+            {
+                _nowNumber = _serialNumber;
+                InteractableControl_House.isInteractable = true;
+            }
+            else
+            {
+                InteractableControl_House.isInteractable = false;
+            }
         }
     }
 
