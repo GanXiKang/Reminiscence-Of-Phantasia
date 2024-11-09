@@ -59,30 +59,30 @@ public class InteractableControl_House : MonoBehaviour
                     case 1:
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookWorkbench = true;
-                        break;  //工作台
+                        break;
 
                     case 2:
                         DoorControl_House.isLoading = true;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookDoor = true;
                         StartCoroutine(WhoIsVisit());
-                        break;  //門
+                        break;
 
                     case 3:
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBed = true;
                         BedControl_House.isGoStoryWorld = true;
-                        break;  //床
+                        break; 
 
                     case 4:
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBookcase = true;
-                        break;  //書櫃
+                        break;
 
                     case 5:
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookShowcase = true;
-                        break;  //展示櫃
+                        break;
                 }
             }
         }
