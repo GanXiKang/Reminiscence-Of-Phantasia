@@ -72,13 +72,12 @@ public class PlayerExpression_House : MonoBehaviour
         }
         else
         {
-            if (isSleepExp)
-            {
-                isSleepExp = false;
-                isBlink = true;
-                smr.material = openEyes;
-            }
-
+            //if (isSleepExp)
+            //{
+            //    isSleepExp = false;
+            //    isBlink = true;
+            //    smr.material = openEyes;
+            //}
         }
     }
 
