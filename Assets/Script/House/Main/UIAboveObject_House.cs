@@ -8,22 +8,27 @@ public class UIAboveObject_House : MonoBehaviour
     [Header("Workbench")]
     public Transform workbench;
     public Vector3 workbenchOffset;
+    public static bool isAboveWorkbench = false;
 
     [Header("Door")]
     public Transform door;
     public Vector3 doorOffset;
+    public static bool isAboveDoor = false;
 
     [Header("Bed")]
     public Transform bed;
     public Vector3 bedOffset;
+    public static bool isAboveBed = true;
 
     [Header("Bookcase")]
     public Transform bookcase;
     public Vector3 bookcaseOffset;
+    public static bool isAboveBookcase = false;
 
     [Header("Showcase")]
     public Transform showcase;
     public Vector3 showcaseOffset;
+    public static bool isAboveShowcase = false;
 
     [Header("Hint")]
     public RectTransform hint;
@@ -36,20 +41,36 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Hint()
     {
-        Vector3 workbenchPos = workbench.position + workbenchOffset;
-        hint.position = workbenchPos;
-        hintName.text = "工作臺";
+        if (isAboveWorkbench)
+        {
+            Vector3 workbenchPos = workbench.position + workbenchOffset;
+            hint.position = workbenchPos;
+            hintName.text = "工作臺";
+        }
+        else if (isAboveDoor)
+        {
+            Vector3 doorPos = door.position + doorOffset;
+            hint.position = doorPos;
+            hintName.text = "大門";
+        }
+        else if (isAboveBed)
+        {
+            Vector3 bedPos = bed.position + bedOffset;
+            hint.position = bedPos;
+            hintName.text = "睡床";
+        }
+        else if (isAboveBookcase)
+        {
+            Vector3 bookcasePos = bookcase.position + bookcaseOffset;
+            hint.position = bookcasePos;
+            hintName.text = "書架";
+        }
+        else if (isAboveShowcase)
+        {
+            Vector3 showcasePos = showcase.position + showcaseOffset;
+            hint.position = showcasePos;
+            hintName.text = "展示臺";
+        }
 
-        //Vector3 doorPos = door.position + doorOffset;
-        //doorHint.position = doorPos;
-
-        //Vector3 bedPos = bed.position + bedOffset;
-        //bedHint.position = bedPos;
-
-        //Vector3 bookcasePos = bookcase.position + bookcaseOffset;
-        //bookcaseHint.position = bookcasePos;
-
-        //Vector3 showcasePos = showcase.position + showcaseOffset;
-        //showcaseHint.position = showcasePos;
     }
 }
