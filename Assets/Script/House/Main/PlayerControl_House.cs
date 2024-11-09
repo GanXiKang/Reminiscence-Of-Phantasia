@@ -20,6 +20,7 @@ public class PlayerControl_House : MonoBehaviour
 
     //Animation
     public static bool isHappy = false;
+    public static bool isSleep = false;
 
     void Start()
     {
@@ -74,6 +75,7 @@ public class PlayerControl_House : MonoBehaviour
     void Animation()
     {
         anim.SetBool("isHappy", isHappy);
+        anim.SetBool("isSleep", isSleep);
     }
 
     bool isCanMove()
