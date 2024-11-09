@@ -8,7 +8,7 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 
     public static bool isDonkey = false;
     public static bool isRaccoon = false;
-    public static bool isRaccoonStone = false;
+    public static bool isStone = false;
     public static bool isParrot = false;
 
     void Start()
@@ -20,7 +20,7 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
     {
         anim.SetBool("isDonkey", isDonkey);
         anim.SetBool("isRaccoon", isRaccoon);
-        anim.SetBool("isRaccoonStone", isRaccoonStone);
+        anim.SetBool("isStone", isStone);
         anim.SetBool("isParrot", isParrot);
     }
 }
