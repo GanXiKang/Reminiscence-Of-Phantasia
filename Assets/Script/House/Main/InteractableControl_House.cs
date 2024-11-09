@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InteractableControl_House : MonoBehaviour
 {
+    GameObject player;
+
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip interact;
@@ -17,12 +19,16 @@ public class InteractableControl_House : MonoBehaviour
     public float _screenSpeed = 3f;
     public static bool isInteractable = false;
 
+    [Header("Point")]
+    public Transform sleepPoint;
+
     [Header("Animals")]
     public GameObject bird;
     public GameObject cat;
 
     void Start()
     {
+        player = GameObject.Find("Player");
         currentColor = hintF.color;
     }
 
@@ -72,6 +78,8 @@ public class InteractableControl_House : MonoBehaviour
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBed = true;
                         BedControl_House.isGoStoryWorld = true;
+                        PlayerControl_House.isSleep = true;
+                        player.transform.position = sleepPoint.position;
                         break; 
 
                     case 4:
