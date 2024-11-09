@@ -19,9 +19,6 @@ public class InteractableControl_House : MonoBehaviour
     public float _screenSpeed = 3f;
     public static bool isInteractable = false;
 
-    [Header("Point")]
-    public Transform sleepPoint;
-
     [Header("Animals")]
     public GameObject bird;
     public GameObject cat;
@@ -79,7 +76,6 @@ public class InteractableControl_House : MonoBehaviour
                         CameraControl_House.isLookBed = true;
                         BedControl_House.isGoStoryWorld = true;
                         PlayerControl_House.isSleep = true;
-                        player.transform.position = sleepPoint.position;
                         break; 
 
                     case 4:
