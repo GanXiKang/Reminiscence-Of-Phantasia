@@ -13,6 +13,7 @@ public class PlayerExpression_House : MonoBehaviour
     public Material Sad;
     bool isBlink = true;
     bool isHappyExp = false;
+    bool isSleepExp = false;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerExpression_House : MonoBehaviour
     {
         Blink();
         Happy();
+        Sleep();
     }
 
     void Blink()
@@ -39,16 +41,40 @@ public class PlayerExpression_House : MonoBehaviour
         {
             if (!isHappyExp)
             {
+                isHappyExp = true;
                 isBlink = false;
                 StopCoroutine(Blink(0));
                 smr.material = happy;
             }
-
         }
         else
         {
             if (isHappyExp)
             {
+                isHappyExp = false;
+                isBlink = true;
+                smr.material = openEyes;
+            }
+
+        }
+    }
+    void Sleep()
+    {
+        if (PlayerControl_House.isSleep)
+        {
+            if (!isSleepExp)
+            {
+                isSleepExp = true;
+                isBlink = false;
+                StopCoroutine(Blink(0));
+                smr.material = closeEyes;
+            }
+        }
+        else
+        {
+            if (isSleepExp)
+            {
+                isSleepExp = false;
                 isBlink = true;
                 smr.material = openEyes;
             }
