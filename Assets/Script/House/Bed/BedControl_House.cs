@@ -41,6 +41,7 @@ public class BedControl_House : MonoBehaviour
     {
         SceneManager.LoadScene(_storyNum);
         CameraControl_House.isLookBed = false;
+        PlayerControl_House.isSleep = false;
     }
     void Leave()
     {
