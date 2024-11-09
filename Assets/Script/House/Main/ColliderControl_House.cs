@@ -30,17 +30,24 @@ public class ColliderControl_House : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (CameraControl_House.isFreeLook)
         {
-            if (IsFacingObject(other.transform))
+            if (other.tag == "Player")
             {
-                _nowNumber = _serialNumber;
-                InteractableControl_House.isInteractable = true;
+                if (IsFacingObject(other.transform))
+                {
+                    _nowNumber = _serialNumber;
+                    InteractableControl_House.isInteractable = true;
+                }
+                else
+                {
+                    InteractableControl_House.isInteractable = false;
+                }
             }
-            else
-            {
-                InteractableControl_House.isInteractable = false;
-            }
+        }
+        else
+        {
+            InteractableControl_House.isInteractable = false;
         }
     }
     private void OnTriggerExit(Collider other)
