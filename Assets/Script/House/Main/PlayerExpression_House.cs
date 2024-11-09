@@ -11,7 +11,7 @@ public class PlayerExpression_House : MonoBehaviour
     public Material closeEyes;
     public Material happy;
     public Material Sad;
-    bool isBlink = false;
+    bool isBlink = true;
     bool isHappyExp = false;
     bool isSleepExp = false;
 
@@ -29,6 +29,9 @@ public class PlayerExpression_House : MonoBehaviour
 
     void Blink()
     {
+        if (PlayerControl_House.isHappy) return;
+        if (PlayerControl_House.isSleep) return;
+
         if (isBlink)
         {
             int r = Random.Range(1, 3);
@@ -55,7 +58,6 @@ public class PlayerExpression_House : MonoBehaviour
                 isBlink = true;
                 smr.material = openEyes;
             }
-
         }
     }
     void Sleep()
@@ -69,15 +71,6 @@ public class PlayerExpression_House : MonoBehaviour
                 StopCoroutine(Blink(0));
                 smr.material = closeEyes;
             }
-        }
-        else
-        {
-            //if (isSleepExp)
-            //{
-            //    isSleepExp = false;
-            //    isBlink = true;
-            //    smr.material = openEyes;
-            //}
         }
     }
 
