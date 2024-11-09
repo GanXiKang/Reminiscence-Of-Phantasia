@@ -64,6 +64,7 @@ public class PlayerExpression_House : MonoBehaviour
         {
             if (!isSleepExp)
             {
+                print("Yes");
                 isSleepExp = true;
                 isBlink = false;
                 StopCoroutine(Blink(0));
