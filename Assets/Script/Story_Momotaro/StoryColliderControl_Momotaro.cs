@@ -13,7 +13,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
             switch (_whatCollider)
             {
                 case 1:
-                    if (!StoryPlayerAnimator_Momotaro.isRaccoonStone)
+                    if (!StoryPlayerAnimator_Momotaro.isStone)
                     {
                         StoryStrongWind_Momotaro.isBlownAway = true;
                         BlackScreenControl.isOpenBlackScreen = true;

@@ -64,7 +64,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            StoryPlayerAnimator_Momotaro.isRaccoonStone = !StoryPlayerAnimator_Momotaro.isRaccoonStone;
+            StoryPlayerAnimator_Momotaro.isStone = !StoryPlayerAnimator_Momotaro.isStone;
         }
     }
     void ParrotPerformances()

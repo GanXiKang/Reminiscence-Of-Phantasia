@@ -158,7 +158,7 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryUIControl_Girl.isDialogue &&
 
                !StoryRiceDumpling_Momotaro.isEat &&
-               !StoryPlayerAnimator_Momotaro.isRaccoonStone &&
+               !StoryPlayerAnimator_Momotaro.isStone &&
                !StoryUIControl_Momotaro.isPerformances && 
                !StoryStrongWind_Momotaro.isBlownAway;
     }
