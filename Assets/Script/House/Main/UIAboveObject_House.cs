@@ -45,8 +45,9 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Update()
     {
-        Hint();
         hint.LookAt(player.transform);
+
+        Hint();
     }
 
     void Hint()
