@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class ColliderControl_House : MonoBehaviour
 {
-    GameObject player;
     public int _serialNumber;
     public static int _nowNumber;
     float _forwardValue = 0.5f;
-
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
 
     bool IsFacingObject(Transform playerTransform)
     {
@@ -34,7 +28,6 @@ public class ColliderControl_House : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
@@ -50,7 +43,6 @@ public class ColliderControl_House : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
