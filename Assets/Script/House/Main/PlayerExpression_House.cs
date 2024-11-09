@@ -11,7 +11,7 @@ public class PlayerExpression_House : MonoBehaviour
     public Material closeEyes;
     public Material happy;
     public Material Sad;
-    bool isBlink = true;
+    bool isBlink = false;
     bool isHappyExp = false;
     bool isSleepExp = false;
 
