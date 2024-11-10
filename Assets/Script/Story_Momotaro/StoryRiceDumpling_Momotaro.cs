@@ -36,6 +36,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         RoleUI();
         RaccoonSkill();
         ParrotPerformances();
+
+        if (Input.GetKeyDown(KeyCode.E) && skillUI.activeSelf)
+        {
+            print("1");
+            Button_RiceDumpling();
+        }
     }
 
     void RoleUI()
