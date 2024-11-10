@@ -39,7 +39,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && skillUI.activeSelf)
         {
-            print("1");
             Button_RiceDumpling();
         }
     }
