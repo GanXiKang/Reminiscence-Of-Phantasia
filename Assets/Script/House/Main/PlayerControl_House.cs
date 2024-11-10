@@ -75,7 +75,7 @@ public class PlayerControl_House : MonoBehaviour
     void Animation()
     {
         anim.SetBool("isHappy", isHappy);
-        //anim.SetBool("isSleep", isSleep);
+        anim.SetBool("isSleep", isSleep);
     }
 
     bool isCanMove()
