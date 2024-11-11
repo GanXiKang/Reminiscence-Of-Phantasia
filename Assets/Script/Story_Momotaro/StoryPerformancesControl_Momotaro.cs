@@ -16,21 +16,24 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public static int _danceNum = 0;
 
     int _randomDanceNum;
+    float _score;
     float timeLimit = 2f; //2ÃëƒÈ°´ÏÂ°´âo
     float timer;
     bool isTiming = false;
     bool isPerformances = false;
+    bool isSpace = false;
 
     void OnEnable()
     {
-        Invoke("StartNewRound", 1);
-        BGM.Stop();
-        BGM.clip = performancesBGM;
-        BGM.Play();
+        StartCoroutine(StartPerformance());
     }
 
     IEnumerator StartPerformance()
     {
+        _score = 0;
+        BGM.Stop();
+        BGM.clip = performancesBGM;
+        BGM.Play();
         test.text = "3";
         yield return new WaitForSeconds(1f);
         test.text = "2";
@@ -42,13 +45,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         test.text = "Go!!!";
         yield return new WaitForSeconds(0.5f);
         StartNewRound();
-    }
-
-    void Update()
-    {
-        PerformancesTimeOut();
-        BGMisSettingActive();
-        KeyBroad();
     }
 
     void StartNewRound()
@@ -78,6 +74,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 break;
 
             case 3:
+                isSpace = false;
                 _danceNum = 3;
                 test.text = "Space";
                 break;
@@ -95,6 +92,14 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 break;
         }
     }
+
+    void Update()
+    {
+        PerformancesTimeOut();
+        BGMisSettingActive();
+        KeyBroad();
+    }
+
     void PerformancesTimeOut()
     {
         if (SettingControl.isSettingActive) return;
@@ -104,10 +109,32 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            isTiming = false;
-            test.text = "TimeOut!";
-            float randomTime = Random.Range(0.3f, 1.2f);
-            Invoke("StartNewRound", randomTime);
+            if (_danceNum != 3)
+            {
+                isTiming = false;
+                test.text = "TimeOut!";
+                _score -= 2;
+                float randomTime = Random.Range(0.8f, 2f);
+                Invoke("StartNewRound", randomTime);
+            }
+            else
+            {
+                if (isSpace)
+                {
+                    isTiming = false;
+                    test.text = "Good!";
+                    float randomTime = Random.Range(0.8f, 2f);
+                    Invoke("StartNewRound", randomTime);
+                }
+                else
+                {
+                    isTiming = false;
+                    test.text = "Miss!";
+                    _score -= 2;
+                    float randomTime = Random.Range(0.8f, 2f);
+                    Invoke("StartNewRound", randomTime);
+                }
+            }
         }
     }
     void BGMisSettingActive()
@@ -155,21 +182,35 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (SettingControl.isSettingActive) return;
         if (!isPerformances) return;
 
-        if (num == _randomDanceNum)
+        if (num == _danceNum)
         {
-            test.text = "Correct!";
+            if (_danceNum != 3)
+            {
+                test.text = "Correct!";
+                _score++;
+                isTiming = false;
+                float randomTime = Random.Range(0.8f, 2f);
+                Invoke("StartNewRound", randomTime);
+            }
+            else
+            {
+                isSpace = true;
+                _score -= 0.2f;
+            }
         }
         else
         {
             test.text = "Incorrect!";
+            _score--;
+            isTiming = false;
+            float randomTime = Random.Range(0.8f, 2f);
+            Invoke("StartNewRound", randomTime);
         }
-        isTiming = false;
-        float randomTime = Random.Range(0.3f, 1.2f);
-        Invoke("StartNewRound", randomTime);
     }
 
     void OnDisable()
     {
         isPerformances = false;
+        _danceNum = 0;
     }
 }
