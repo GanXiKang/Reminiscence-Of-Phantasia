@@ -55,8 +55,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             StartCoroutine(CloseWindUI());
             isMove = false;
             isWindActive = false;
-            _windCooldown = Random.Range(2, 4);
-            print(_windCooldown);
+            _windCooldown = Random.Range(1, 4);
         }
     }
     IEnumerator OpenWindUI()
@@ -80,10 +79,10 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < _animDuration)
+        while (elapsedTime < 0.5f)
         {
             elapsedTime += Time.deltaTime;
-            hintUI.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _animDuration);
+            hintUI.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / 0.5f);
             yield return null;
         }
 
