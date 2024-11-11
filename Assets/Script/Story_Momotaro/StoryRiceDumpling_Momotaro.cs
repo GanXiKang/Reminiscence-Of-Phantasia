@@ -109,6 +109,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
             riceOpenButton.SetActive(false);
             StoryPlayerAnimator_Momotaro.isDonkey = false;
             StoryPlayerAnimator_Momotaro.isRaccoon = false;
+            StoryPlayerAnimator_Momotaro.isStone = false;
             StoryPlayerAnimator_Momotaro.isParrot = false;
         }
     }
