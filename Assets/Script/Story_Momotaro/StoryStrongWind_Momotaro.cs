@@ -7,13 +7,15 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     GameObject player;
 
     [Header("Wind")]
-    public GameObject wind;
+    public GameObject windA;
+    public GameObject windB;
     public float windCooldown; // 大风间隔时间
     public float windDuration; // 大风持续时间
     bool isWindActive = false;
 
     [Header("BlownAway")]
-    public Transform respawnPointA, respawnPointB;
+    public Transform respawnPointA;
+    public Transform respawnPointB;
     public static int _respawnNum;
     public static bool isBlownAway = false;
     StoryPlayerControl playerControl;
@@ -47,7 +49,8 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
     void Update()
     {
-        wind.SetActive(isWindActive);
+        windA.SetActive(isWindActive);
+        windB.SetActive(isWindActive);
 
         BlownAway();
     }
