@@ -13,8 +13,10 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
             switch (_whatCollider)
             {
                 case 1:
+                case 2:
                     if (!StoryPlayerAnimator_Momotaro.isStone)
                     {
+                        StoryStrongWind_Momotaro._respawnNum = _whatCollider;
                         StoryStrongWind_Momotaro.isBlownAway = true;
                         BlackScreenControl.isOpenBlackScreen = true;
                     }
