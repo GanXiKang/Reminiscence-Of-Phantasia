@@ -27,8 +27,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     public RectTransform topPos;
     bool isMove = false;
     float _animDuration = 0.8f;
-    float _speed = 300f;
-    float _resetPositionX = 500f;
+    float _speed = 360f;
 
     void Start()
     {
