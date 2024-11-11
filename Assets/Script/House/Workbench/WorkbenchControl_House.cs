@@ -147,8 +147,8 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (_process)
         {
             case 0:
-                toolBoxBG.SetActive(true);
-                buttonUI.SetActive(true);
+                toolBoxBG.SetActive(false);
+                buttonUI.SetActive(false);
                 isPaperAdjustScale = false;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
@@ -163,6 +163,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
             case 2:
                 toolBoxBG.SetActive(true);
+                buttonUI.SetActive(true);
                 isPaperRotation = true;
                 break;
 
