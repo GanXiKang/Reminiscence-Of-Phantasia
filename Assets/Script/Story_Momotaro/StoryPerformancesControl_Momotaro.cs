@@ -31,6 +31,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     {
         PerformancesTimeOut();
         BGMisSettingActive();
+        KeyBroad();
     }
 
     void StartNewRound()
@@ -70,6 +71,29 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 BGM.Play();
                 isStopBGM = false;
             }
+        }
+    }
+    void KeyBroad()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Dance_Button(1);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Dance_Button(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Dance_Button(3);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Dance_Button(4);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Dance_Button(5);
         }
     }
 
