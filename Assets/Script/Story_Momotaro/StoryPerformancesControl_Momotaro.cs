@@ -13,6 +13,8 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("Performances")]
     public Text test; //úy‘á∞Ê
 
+    public static int _danceNum;
+
     int _randomDanceNum;
     float timeLimit = 2f; //2√ÎÉ»∞¥œ¬∞¥‚o
     float timer;
@@ -59,6 +61,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 test.text = "D";
                 break;
         }
+        _danceNum = _randomDanceNum;
         timer = timeLimit;
         isTiming = true;
         isPerformances = true;
