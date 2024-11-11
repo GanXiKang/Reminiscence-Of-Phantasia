@@ -39,9 +39,12 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(windCooldown);
+            hintUI.SetActive(true);
+            yield return new WaitForSeconds(1f);
             isWindActive = true; // 大风开始
             Debug.Log("大风开始！");
             yield return new WaitForSeconds(windDuration);
+            hintUI.SetActive(false);
             isWindActive = false; // 大风结束
             Debug.Log("大风结束！");
         }
