@@ -24,6 +24,10 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public static int _whoEatGoldRice;
     public static bool isEat = false;
 
+    [Header("RaccoonSkillUI")]
+    public GameObject raccoonSkillUI;
+    public GameObject stoneButton, notStoneButton;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -70,7 +74,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            StoryPlayerAnimator_Momotaro.isStone = !StoryPlayerAnimator_Momotaro.isStone;
+            Button_RaccoonSkill();
         }
     }
     void ParrotPerformances()
@@ -128,6 +132,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
                 StoryPlayerAnimator_Momotaro.isParrot = true;
                 break;
         }
+    }
+    public void Button_RaccoonSkill()
+    {
+        StoryPlayerAnimator_Momotaro.isStone = !StoryPlayerAnimator_Momotaro.isStone;
+        stoneButton.SetActive(!StoryPlayerAnimator_Momotaro.isStone);
+        notStoneButton.SetActive(StoryPlayerAnimator_Momotaro.isStone);
     }
 
     void EatFinish()
