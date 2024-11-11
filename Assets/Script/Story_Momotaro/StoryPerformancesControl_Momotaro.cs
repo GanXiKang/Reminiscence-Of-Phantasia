@@ -136,6 +136,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 }
             }
         }
+        _danceNum = 0;
         print(_score);
     }
     void BGMisSettingActive()
@@ -209,6 +210,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             float randomTime = Random.Range(0.8f, 2f);
             Invoke("StartNewRound", randomTime);
         }
+        _danceNum = 0;
         print(_score);
     }
 
