@@ -37,6 +37,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     {
         skillUI.SetActive(isSkillActive && !StoryUIControl_Momotaro.isPerformances);
         roleUI.SetActive(isRoleActive);
+        raccoonSkillUI.SetActive(StoryPlayerAnimator_Momotaro.isRaccoon);
 
         RoleUI();
         RaccoonSkill();
