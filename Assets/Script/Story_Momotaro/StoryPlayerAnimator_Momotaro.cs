@@ -22,5 +22,6 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
         anim.SetBool("isRaccoon", isRaccoon);
         anim.SetBool("isStone", isStone);
         anim.SetBool("isParrot", isParrot);
+        anim.SetInteger("isDance", StoryPerformancesControl_Momotaro._danceNum);
     }
 }
