@@ -5231,7 +5231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &621707678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19821,7 +19821,9 @@ MonoBehaviour:
   respawnPointB: {fileID: 569472637}
   hintUI: {fileID: 621707677}
   top: {fileID: 1203906015}
+  bottom: {fileID: 0}
   topPos: {fileID: 584781063}
+  bottomPos: {fileID: 0}
 --- !u!1 &1225596498
 GameObject:
   m_ObjectHideFlags: 0
