@@ -162,6 +162,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 2:
+                toolBoxBG.SetActive(true);
                 isPaperRotation = true;
                 break;
 
@@ -248,13 +249,13 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             up.SetActive(false);
             down.SetActive(true);
-            toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, openPoint.position, 1f);
+            toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, openPoint.position, 8f);
         }
         else
         {
             up.SetActive(true);
             down.SetActive(false);
-            toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, closePoint.position, 1f);
+            toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, closePoint.position, 10f);
         }
     }
     public void Button_ToolBox()
