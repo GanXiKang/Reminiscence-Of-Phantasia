@@ -111,6 +111,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             if (_danceNum != 3)
             {
+                _danceNum = 0;
                 isTiming = false;
                 test.text = "TimeOut!";
                 _score -= 2;
@@ -121,6 +122,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             {
                 if (isSpace)
                 {
+                    _danceNum = 0;
                     isTiming = false;
                     test.text = "Perfect!";
                     float randomTime = Random.Range(1.5f, 2f);
@@ -128,6 +130,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 }
                 else
                 {
+                    _danceNum = 0;
                     isTiming = false;
                     test.text = "Miss!";
                     _score -= 2;
@@ -136,7 +139,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 }
             }
         }
-        _danceNum = 0;
         print(_score);
     }
     void BGMisSettingActive()
