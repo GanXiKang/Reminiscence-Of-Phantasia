@@ -2811,7 +2811,7 @@ GameObject:
   - component: {fileID: 406039521}
   - component: {fileID: 406039520}
   m_Layer: 0
-  m_Name: WindCollider
+  m_Name: WindColliderB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2826,11 +2826,11 @@ Transform:
   m_GameObject: {fileID: 406039518}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 50}
+  m_LocalPosition: {x: -35, y: -9.7, z: -8.5}
+  m_LocalScale: {x: 28.860464, y: 1, z: 57.19127}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2146126824}
+  m_Father: {fileID: 1219683844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &406039520
 MonoBehaviour:
@@ -4133,7 +4133,7 @@ GameObject:
   - component: {fileID: 526313090}
   - component: {fileID: 526313093}
   m_Layer: 0
-  m_Name: WindCollider
+  m_Name: WindColliderA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4148,11 +4148,11 @@ Transform:
   m_GameObject: {fileID: 526313088}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 50}
+  m_LocalPosition: {x: 14.099998, y: -9.7, z: 18.9}
+  m_LocalScale: {x: 70.06113, y: 1, z: 61.31008}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1653722069}
+  m_Father: {fileID: 1219683844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &526313090
 BoxCollider:
@@ -19628,6 +19628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219683844}
+  - component: {fileID: 1219683845}
   m_Layer: 0
   m_Name: StrongWind
   m_TagString: Untagged
@@ -19647,9 +19648,30 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 526313089}
+  - {fileID: 406039519}
   m_Father: {fileID: 1867473636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219683845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219683843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc3afea841ebdf47855337e9fd2bbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windA: {fileID: 526313088}
+  windB: {fileID: 406039518}
+  windCooldown: 3
+  windDuration: 2
+  respawnPointA: {fileID: 781010808}
+  respawnPointB: {fileID: 569472637}
+  hintUI: {fileID: 621707677}
 --- !u!1 &1225596498
 GameObject:
   m_ObjectHideFlags: 0
@@ -24129,57 +24151,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1653722068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1653722069}
-  - component: {fileID: 1653722070}
-  m_Layer: 0
-  m_Name: StrongWindA
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1653722069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653722068}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.1, y: -9.7, z: 18.9}
-  m_LocalScale: {x: 0.70061123, y: 1, z: 1.2262017}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 526313089}
-  m_Father: {fileID: 1867473636}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1653722070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653722068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc3afea841ebdf47855337e9fd2bbe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wind: {fileID: 526313088}
-  windCooldown: 4
-  windDuration: 3
-  respawnPointA: {fileID: 0}
-  respawnPointB: {fileID: 0}
-  hintUI: {fileID: 0}
 --- !u!1 &1666230235
 GameObject:
   m_ObjectHideFlags: 0
@@ -24958,7 +24929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1867473636
 Transform:
   m_ObjectHideFlags: 0
@@ -24976,8 +24947,6 @@ Transform:
   - {fileID: 781010808}
   - {fileID: 569472637}
   - {fileID: 1219683844}
-  - {fileID: 1653722069}
-  - {fileID: 2146126824}
   - {fileID: 1899247805}
   m_Father: {fileID: 52675480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26243,57 +26212,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2146126823
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2146126824}
-  - component: {fileID: 2146126825}
-  m_Layer: 0
-  m_Name: StrongWindB
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2146126824
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146126823}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35, y: -9.7, z: -8.5}
-  m_LocalScale: {x: 0.28860465, y: 1, z: 1.1438254}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 406039519}
-  m_Father: {fileID: 1867473636}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2146126825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146126823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc3afea841ebdf47855337e9fd2bbe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wind: {fileID: 406039518}
-  windCooldown: 3
-  windDuration: 2
-  respawnPointA: {fileID: 0}
-  respawnPointB: {fileID: 0}
-  hintUI: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
