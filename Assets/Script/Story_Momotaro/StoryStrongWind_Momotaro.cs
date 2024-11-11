@@ -55,6 +55,8 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             StartCoroutine(CloseWindUI());
             isMove = false;
             isWindActive = false;
+            _windCooldown = Random.Range(2, 4);
+            print(_windCooldown);
         }
     }
     IEnumerator OpenWindUI()
