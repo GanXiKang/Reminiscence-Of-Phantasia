@@ -23,8 +23,8 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
     [Header("HintUI")]
     public GameObject hintUI;
-    public Image top;
-    public RectTransform topPos;
+    public Image top, bottom;
+    public RectTransform topPos, bottomPos;
     bool isMove = false;
     float _animDuration = 0.5f;
     float _speed = 360f;
