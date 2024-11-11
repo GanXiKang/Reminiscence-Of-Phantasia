@@ -4358,7 +4358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &557269844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5595,6 +5595,8 @@ MonoBehaviour:
   BGM: {fileID: 391252026}
   plazaBGM: {fileID: 8300000, guid: 79fc8e3f8eb9671458d9b394d371314d, type: 3}
   skillUI: {fileID: 557269843}
+  riceButton: {fileID: 1360469607}
+  riceOpenButton: {fileID: 808968149}
   roleUI: {fileID: 604286937}
   roleButton:
   - {fileID: 0}
