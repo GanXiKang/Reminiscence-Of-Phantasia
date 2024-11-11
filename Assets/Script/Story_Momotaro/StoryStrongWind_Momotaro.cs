@@ -72,4 +72,39 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         StopCoroutine(WindCycle());
     }
+
+    //IEnumerator OpenColdUI()
+    //{
+    //    isCold = true;
+    //    cold.SetActive(true);
+    //    cold.GetComponent<CanvasGroup>().alpha = 1;
+    //    background.fillAmount = 0;
+
+    //    float elapsedTime = 0f;
+
+    //    while (elapsedTime < _animDuration)
+    //    {
+    //        elapsedTime += Time.deltaTime;
+    //        background.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
+    //        yield return null;
+    //    }
+
+    //    background.fillAmount = 1;
+    //}
+    //IEnumerator CloseColdUI()
+    //{
+    //    isCold = false;
+
+    //    float elapsedTime = 0f;
+
+    //    while (elapsedTime < _animDuration)
+    //    {
+    //        elapsedTime += Time.deltaTime;
+    //        cold.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _animDuration);
+    //        yield return null;
+    //    }
+
+    //    cold.GetComponent<CanvasGroup>().alpha = 0;
+    //    cold.SetActive(false);
+    //}
 }
