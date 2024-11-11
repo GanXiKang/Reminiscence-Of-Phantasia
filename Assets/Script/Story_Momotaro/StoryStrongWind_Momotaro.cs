@@ -25,7 +25,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     public GameObject hintUI;
     public Image top;
     float _animDuration = 0.8f;
-    float _speed = 20f;
+    float _speed = 200f;
     float _resetPositionX = 500f;
 
     void Start()
