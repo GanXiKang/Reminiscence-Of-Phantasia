@@ -24,6 +24,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     [Header("HintUI")]
     public GameObject hintUI;
     public Image top;
+    float _animDuration = 0.8f;
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             yield return new WaitForSeconds(_windCooldown);
             StartCoroutine(OpenWindUI());
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(_animDuration);
             isWindActive = true;
 
             yield return new WaitForSeconds(_windDuration);
@@ -97,10 +98,10 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
         float elapsedTime = 0f;
 
-        while (elapsedTime < _windDuration)
+        while (elapsedTime < _animDuration)
         {
             elapsedTime += Time.deltaTime;
-            top.fillAmount = Mathf.Clamp01(elapsedTime / _windDuration);
+            top.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
             yield return null;
         }
 
@@ -110,10 +111,10 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < _windDuration)
+        while (elapsedTime < _animDuration)
         {
             elapsedTime += Time.deltaTime;
-            hintUI.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _windDuration);
+            hintUI.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _animDuration);
             yield return null;
         }
 
