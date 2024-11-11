@@ -5079,6 +5079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621707678}
+  - component: {fileID: 621707679}
   m_Layer: 5
   m_Name: WindHint
   m_TagString: Untagged
@@ -5106,6 +5107,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &621707679
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621707677}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &622771731
 GameObject:
   m_ObjectHideFlags: 0
@@ -5426,11 +5439,11 @@ RectTransform:
   m_Children:
   - {fileID: 979984371}
   - {fileID: 557269844}
+  - {fileID: 621707678}
   - {fileID: 1770355699}
   - {fileID: 422457573}
   - {fileID: 1840775779}
   - {fileID: 36273999}
-  - {fileID: 621707678}
   - {fileID: 572892622}
   - {fileID: 1540132340}
   - {fileID: 839194243}
