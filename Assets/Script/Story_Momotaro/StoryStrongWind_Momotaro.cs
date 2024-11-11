@@ -24,8 +24,10 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     [Header("HintUI")]
     public GameObject hintUI;
     public Image top;
+    public RectTransform topPos;
+    bool isMove = false;
     float _animDuration = 0.8f;
-    float _speed = 200f;
+    float _speed = 300f;
     float _resetPositionX = 500f;
 
     void Start()
@@ -45,12 +47,14 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         {
             yield return new WaitForSeconds(_windCooldown);
             StartCoroutine(OpenWindUI());
+            isMove = true;
 
             yield return new WaitForSeconds(_animDuration);
             isWindActive = true;
 
             yield return new WaitForSeconds(_windDuration);
             StartCoroutine(CloseWindUI());
+            isMove = false;
             isWindActive = false;
         }
     }
@@ -66,13 +70,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             top.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
-
-            top.rectTransform.anchoredPosition += Vector2.left * _speed * Time.deltaTime;
-            if (top.rectTransform.anchoredPosition.x < -_resetPositionX)
-            {
-                top.rectTransform.anchoredPosition = new Vector2(_resetPositionX, top.rectTransform.anchoredPosition.y);
-            }
-
             yield return null;
         }
 
@@ -98,9 +95,21 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         windA.SetActive(isWindActive);
         windB.SetActive(isWindActive);
 
+        HintUIMove();
         BlownAway();
     }
 
+    void HintUIMove()
+    {
+        if (isMove)
+        {
+            top.rectTransform.anchoredPosition += Vector2.left * _speed * Time.deltaTime;
+        }
+        else
+        {
+            top.transform.position = topPos.position;
+        }
+    }
     void BlownAway()
     {
         if (!isBlownAway) return;
