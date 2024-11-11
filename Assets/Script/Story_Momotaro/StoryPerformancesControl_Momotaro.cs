@@ -13,7 +13,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("Performances")]
     public Text test; //úy‘á∞Ê
 
-    public static int _danceNum;
+    public static int _danceNum = 0;
 
     int _randomDanceNum;
     float timeLimit = 2f; //2√ÎÉ»∞¥œ¬∞¥‚o
@@ -29,6 +29,21 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         BGM.Play();
     }
 
+    IEnumerator StartPerformance()
+    {
+        test.text = "3";
+        yield return new WaitForSeconds(1f);
+        test.text = "2";
+        yield return new WaitForSeconds(1f);
+        test.text = "1";
+        yield return new WaitForSeconds(1f);
+        test.text = "Ready";
+        yield return new WaitForSeconds(1f);
+        test.text = "Go!!!";
+        yield return new WaitForSeconds(0.5f);
+        StartNewRound();
+    }
+
     void Update()
     {
         PerformancesTimeOut();
@@ -38,33 +53,47 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
     void StartNewRound()
     {
-        _randomDanceNum = Random.Range(1, 6);
+        RandomDance();
+
+        timer = timeLimit;
+        isTiming = true;
+        isPerformances = true;
+    }
+    void RandomDance()
+    {
+        _randomDanceNum = Random.Range(1, 9);
+
         switch (_randomDanceNum)
         {
             case 1:
+            case 6:
+                _danceNum = 1;
                 test.text = "W";
                 break;
 
             case 2:
+            case 7:
+                _danceNum = 2;
                 test.text = "S";
                 break;
 
             case 3:
+                _danceNum = 3;
                 test.text = "Space";
                 break;
 
             case 4:
+            case 8:
+                _danceNum = 4;
                 test.text = "A";
                 break;
 
             case 5:
+            case 9:
+                _danceNum = 5;
                 test.text = "D";
                 break;
         }
-        _danceNum = _randomDanceNum;
-        timer = timeLimit;
-        isTiming = true;
-        isPerformances = true;
     }
     void PerformancesTimeOut()
     {
