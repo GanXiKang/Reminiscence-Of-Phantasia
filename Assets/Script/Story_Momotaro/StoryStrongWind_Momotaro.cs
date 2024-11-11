@@ -25,6 +25,8 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     public GameObject hintUI;
     public Image top;
     float _animDuration = 0.8f;
+    float _speed = 20f;
+    float _resetPositionX = 500f;
 
     void Start()
     {
@@ -55,7 +57,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     IEnumerator OpenWindUI()
     {
         hintUI.SetActive(true);
-        top.GetComponent<CanvasGroup>().alpha = 1;
+        hintUI.GetComponent<CanvasGroup>().alpha = 1;
         top.fillAmount = 0;
 
         float elapsedTime = 0f;
@@ -64,6 +66,13 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             top.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
+
+            top.rectTransform.anchoredPosition += Vector2.left * _speed * Time.deltaTime;
+            if (top.rectTransform.anchoredPosition.x < -_resetPositionX)
+            {
+                top.rectTransform.anchoredPosition = new Vector2(_resetPositionX, top.rectTransform.anchoredPosition.y);
+            }
+
             yield return null;
         }
 
@@ -80,7 +89,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             yield return null;
         }
 
-        top.GetComponent<CanvasGroup>().alpha = 0;
+        hintUI.GetComponent<CanvasGroup>().alpha = 0;
         hintUI.SetActive(false);
     }
 
