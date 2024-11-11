@@ -13,7 +13,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     bool isWindActive = false;
 
     [Header("BlownAway")]
-    public Transform respawnPoint;
+    public Transform respawnPointA, respawnPointB;
     public static bool isBlownAway = false;
     StoryPlayerControl playerControl;
 
@@ -63,7 +63,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         playerControl.enabled = false;
         yield return new WaitForSeconds(0.8f);
-        player.transform.position = respawnPoint.position;
+        player.transform.position = respawnPointA.position;
         yield return new WaitForSeconds(0.2f);
         playerControl.enabled = true;
     }
