@@ -123,7 +123,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 {
                     isTiming = false;
                     test.text = "Perfect!";
-                    float randomTime = Random.Range(0.8f, 2f);
+                    float randomTime = Random.Range(1.5f, 2f);
                     Invoke("StartNewRound", randomTime);
                 }
                 else
@@ -182,6 +182,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     {
         if (SettingControl.isSettingActive) return;
         if (!isPerformances) return;
+        if (!isTiming) return; 
 
         if (num == _danceNum)
         {
