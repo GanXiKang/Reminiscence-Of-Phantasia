@@ -8,14 +8,17 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
     [Header("Wind")]
     public GameObject wind;
-    public float windCooldown = 3f; // 大风间隔时间
-    public float windDuration = 2f; // 大风持续时间
+    public float windCooldown; // 大风间隔时间
+    public float windDuration; // 大风持续时间
     bool isWindActive = false;
 
     [Header("BlownAway")]
-    public Transform originalPoint;
+    public Transform blownPoint;
     public static bool isBlownAway = false;
     StoryPlayerControl playerControl;
+
+    [Header("HintUI")]
+    public GameObject hintUI;
 
     void Start()
     {
@@ -60,10 +63,9 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         playerControl.enabled = false;
         yield return new WaitForSeconds(0.8f);
-        player.transform.position = originalPoint.position;
+        player.transform.position = blownPoint.position;
         yield return new WaitForSeconds(0.2f);
         playerControl.enabled = true;
-
     }
 
     void OnDisable()
