@@ -56,7 +56,6 @@ public class StoryGameControl_Girl : MonoBehaviour
         Destroy(mistLeft);
         Destroy(mistRight);
     }
-
     void PlayerResurrection()
     {
         if (!isResurrection) return;
@@ -64,6 +63,7 @@ public class StoryGameControl_Girl : MonoBehaviour
         isResurrection = false;
         StartCoroutine(ResurrectionState());
     }
+
     IEnumerator ResurrectionState()
     {
         playerControl.enabled = false;
@@ -78,7 +78,7 @@ public class StoryGameControl_Girl : MonoBehaviour
         }
         isRenewTemperature = true;
         StoryThermometerControl_Girl.isDead = false;
-        StoryThermometerControl_Girl._matchQuantity = 20;
+        StoryThermometerControl_Girl._matchQuantity = 10;
         yield return new WaitForSeconds(0.5f);
         playerControl.enabled = true;
     }
