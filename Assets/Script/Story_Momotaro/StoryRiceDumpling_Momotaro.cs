@@ -94,8 +94,8 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (!isChangeRoles)
         {
             isRoleActive = !isRoleActive;
-            riceButton.SetActive(false);
-            riceOpenButton.SetActive(true);
+            riceButton.SetActive(!isRoleActive);
+            riceOpenButton.SetActive(isRoleActive);
         }
         else
         {
