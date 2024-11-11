@@ -19667,11 +19667,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windA: {fileID: 526313088}
   windB: {fileID: 406039518}
-  windCooldown: 3
-  windDuration: 2
+  _windCooldown: 0
+  _windDuration: 0
   respawnPointA: {fileID: 781010808}
   respawnPointB: {fileID: 569472637}
   hintUI: {fileID: 621707677}
+  top: {fileID: 1203906015}
 --- !u!1 &1225596498
 GameObject:
   m_ObjectHideFlags: 0
