@@ -13,6 +13,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     [Header("SkillUI")]
     public GameObject skillUI;
+    public GameObject riceButton, riceOpenButton;
     public static bool isSkillActive = false;
     public static bool isChangeRoles = false;
 
@@ -93,10 +94,14 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (!isChangeRoles)
         {
             isRoleActive = !isRoleActive;
+            riceButton.SetActive(false);
+            riceOpenButton.SetActive(true);
         }
         else
         {
             isChangeRoles = false;
+            riceButton.SetActive(true);
+            riceOpenButton.SetActive(false);
             StoryPlayerAnimator_Momotaro.isDonkey = false;
             StoryPlayerAnimator_Momotaro.isRaccoon = false;
             StoryPlayerAnimator_Momotaro.isParrot = false;
