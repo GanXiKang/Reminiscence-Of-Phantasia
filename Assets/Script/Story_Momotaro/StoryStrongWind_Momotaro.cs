@@ -103,10 +103,12 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         if (isMove)
         {
             top.rectTransform.anchoredPosition += Vector2.left * _speed * Time.deltaTime;
+            bottom.rectTransform.anchoredPosition += Vector2.right * _speed * Time.deltaTime;
         }
         else
         {
             top.transform.position = topPos.position;
+            bottom.transform.position = bottomPos.position;
         }
     }
     void BlownAway()
