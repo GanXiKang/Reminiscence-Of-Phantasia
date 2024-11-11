@@ -37,7 +37,28 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void StartNewRound()
     {
         _randomDanceNum = Random.Range(1, 6);
-        test.text = _randomDanceNum.ToString();
+        switch (_randomDanceNum)
+        {
+            case 1:
+                test.text = "W";
+                break;
+
+            case 2:
+                test.text = "S";
+                break;
+
+            case 3:
+                test.text = "Space";
+                break;
+
+            case 4:
+                test.text = "A";
+                break;
+
+            case 5:
+                test.text = "D";
+                break;
+        }
         timer = timeLimit;
         isTiming = true;
         isPerformances = true;
