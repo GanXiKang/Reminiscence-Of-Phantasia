@@ -52,6 +52,37 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             isWindActive = false;
         }
     }
+    IEnumerator OpenWindUI()
+    {
+        hintUI.SetActive(true);
+        top.GetComponent<CanvasGroup>().alpha = 1;
+        top.fillAmount = 0;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < _animDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            top.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
+            yield return null;
+        }
+
+        top.fillAmount = 1;
+    }
+    IEnumerator CloseWindUI()
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < _animDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            hintUI.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _animDuration);
+            yield return null;
+        }
+
+        top.GetComponent<CanvasGroup>().alpha = 0;
+        hintUI.SetActive(false);
+    }
 
     void Update()
     {
@@ -88,37 +119,5 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     void OnDisable()
     {
         StopCoroutine(WindCycle());
-    }
-
-    IEnumerator OpenWindUI()
-    {
-        hintUI.SetActive(true);
-        top.GetComponent<CanvasGroup>().alpha = 1;
-        top.fillAmount = 0;
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < _animDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            top.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
-            yield return null;
-        }
-
-        top.fillAmount = 1;
-    }
-    IEnumerator CloseWindUI()
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < _animDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            hintUI.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _animDuration);
-            yield return null;
-        }
-
-        top.GetComponent<CanvasGroup>().alpha = 0;
-        hintUI.SetActive(false);
     }
 }
