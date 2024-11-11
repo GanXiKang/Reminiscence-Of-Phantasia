@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryStrongWind_Momotaro : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     [Header("Wind")]
     public GameObject windA;
     public GameObject windB;
-    public float windCooldown; // 大风间隔时间
-    public float windDuration; // 大风持续时间
+    public float _windCooldown; // 大风间隔时间
+    public float _windDuration; // 大风持续时间
     bool isWindActive = false;
 
     [Header("BlownAway")]
@@ -22,6 +23,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
     [Header("HintUI")]
     public GameObject hintUI;
+    public Image top;
 
     void Start()
     {
@@ -38,15 +40,15 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(windCooldown);
-            hintUI.SetActive(true);
-            yield return new WaitForSeconds(1f);
-            isWindActive = true; // 大风开始
-            Debug.Log("大风开始！");
-            yield return new WaitForSeconds(windDuration);
-            hintUI.SetActive(false);
-            isWindActive = false; // 大风结束
-            Debug.Log("大风结束！");
+            yield return new WaitForSeconds(_windCooldown);
+            StartCoroutine(OpenWindUI());
+
+            yield return new WaitForSeconds(0.5f);
+            isWindActive = true;
+
+            yield return new WaitForSeconds(_windDuration);
+            StartCoroutine(CloseWindUI());
+            isWindActive = false;
         }
     }
 
@@ -87,38 +89,35 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         StopCoroutine(WindCycle());
     }
 
-    //IEnumerator OpenColdUI()
-    //{
-    //    isCold = true;
-    //    cold.SetActive(true);
-    //    cold.GetComponent<CanvasGroup>().alpha = 1;
-    //    background.fillAmount = 0;
+    IEnumerator OpenWindUI()
+    {
+        hintUI.SetActive(true);
+        top.GetComponent<CanvasGroup>().alpha = 1;
+        top.fillAmount = 0;
 
-    //    float elapsedTime = 0f;
+        float elapsedTime = 0f;
 
-    //    while (elapsedTime < _animDuration)
-    //    {
-    //        elapsedTime += Time.deltaTime;
-    //        background.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
-    //        yield return null;
-    //    }
+        while (elapsedTime < _windDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            top.fillAmount = Mathf.Clamp01(elapsedTime / _windDuration);
+            yield return null;
+        }
 
-    //    background.fillAmount = 1;
-    //}
-    //IEnumerator CloseColdUI()
-    //{
-    //    isCold = false;
+        top.fillAmount = 1;
+    }
+    IEnumerator CloseWindUI()
+    {
+        float elapsedTime = 0f;
 
-    //    float elapsedTime = 0f;
+        while (elapsedTime < _windDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            hintUI.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _windDuration);
+            yield return null;
+        }
 
-    //    while (elapsedTime < _animDuration)
-    //    {
-    //        elapsedTime += Time.deltaTime;
-    //        cold.GetComponent<CanvasGroup>().alpha = Mathf.Clamp01(1 - elapsedTime / _animDuration);
-    //        yield return null;
-    //    }
-
-    //    cold.GetComponent<CanvasGroup>().alpha = 0;
-    //    cold.SetActive(false);
-    //}
+        top.GetComponent<CanvasGroup>().alpha = 0;
+        hintUI.SetActive(false);
+    }
 }
