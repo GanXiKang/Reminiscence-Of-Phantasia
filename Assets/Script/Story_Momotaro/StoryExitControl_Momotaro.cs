@@ -84,7 +84,7 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                     break;
 
                 case 3:
-                    sceneName.text = "É½½Å";
+                    sceneName.text = "É½Ä_";
                     break;
 
                 case 4:
