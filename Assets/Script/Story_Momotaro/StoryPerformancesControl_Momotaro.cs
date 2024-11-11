@@ -122,7 +122,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 if (isSpace)
                 {
                     isTiming = false;
-                    test.text = "Good!";
+                    test.text = "Perfect!";
                     float randomTime = Random.Range(0.8f, 2f);
                     Invoke("StartNewRound", randomTime);
                 }
@@ -195,6 +195,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             else
             {
                 isSpace = true;
+                test.text = "Good!";
                 _score -= 0.2f;
             }
         }
