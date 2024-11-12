@@ -9,6 +9,11 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     [Header("Npc")]
     public int _who;
 
+    //01Momotaro
+    public static float _direction = 1;
+    public static bool isHappy_Momo = false;
+    public static bool isSad_Momo = true;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -24,6 +29,16 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
         switch (_who)
         {
             case 1:
+                if (isHappy_Momo)
+                {
+                    anim.SetBool("isHappy", true);
+                    isHappy_Momo = false;
+                }
+                else
+                {
+                    anim.SetBool("isHappy", false);
+                }
+                anim.SetBool("isSad", isSad_Momo);
                 break;
         }
     }
