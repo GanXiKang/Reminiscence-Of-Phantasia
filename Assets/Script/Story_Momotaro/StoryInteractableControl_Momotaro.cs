@@ -56,9 +56,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public Transform skillUIPosition;
     bool isSkill = false;
 
-    [Header("Effects")]
-    public GameObject effects;
-
     //Rotation
     private float totalRotation = 0f;
     private Quaternion initialRotation;
