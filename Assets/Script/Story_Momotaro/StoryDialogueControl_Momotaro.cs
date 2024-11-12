@@ -17,6 +17,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     public static int _isAboveWho2 = 0;
     bool isPlayerTalk;
     int _targetNum = 0;
+    int _countEvent = 0;
 
     [Header("UIComponents")]
     public Transform dialogueUI;
@@ -286,7 +287,17 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     {
         switch (_textCount)
         {
-            case 1:
+            case 9:
+                if (_countEvent == 0)
+                {
+                    StoryPlayerControl.isHappy = true;
+                    _countEvent++;
+                }
+                else
+                {
+
+                    _countEvent = 0;
+                }
                 break;
         }
     }
@@ -294,7 +305,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     {
         switch (_textCount)
         {
-            case 1:
+            case 9:
                 break;
         }
     }
