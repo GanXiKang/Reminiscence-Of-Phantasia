@@ -13,10 +13,13 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("PerformancesUI")]
     public Text test; //úy‘á∞Ê
     public Image bar;
+    float _score;
 
+    //random
     public static int _danceNum = 0;
     int _randomDanceNum;
-    float _score;
+   
+    //control
     float timeLimit = 2f; //2√ÎÉ»∞¥œ¬∞¥‚o
     float timer;
     bool isTiming = false;
