@@ -10,11 +10,11 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public AudioClip performancesBGM;
     bool isStopBGM = false;
 
-    [Header("Performances")]
+    [Header("PerformancesUI")]
     public Text test; //úy‘á∞Ê
+    public Image bar;
 
     public static int _danceNum = 0;
-
     int _randomDanceNum;
     float _score;
     float timeLimit = 2f; //2√ÎÉ»∞¥œ¬∞¥‚o
@@ -98,6 +98,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         PerformancesTimeOut();
         BGMisSettingActive();
         KeyBroad();
+        Score();
     }
 
     void PerformancesTimeOut()
@@ -179,6 +180,10 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             Dance_Button(5);
         }
     }
+    void Score()
+    {
+        bar.fillAmount = _score / 30;
+    }
 
     public void Dance_Button(int num)
     {
@@ -201,7 +206,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             {
                 isSpace = true;
                 test.text = "Good!";
-                _score -= 0.2f;
+                _score += 0.5f;
             }
         }
         else
