@@ -12,7 +12,13 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     public static int _changeSceneNum;
     bool isGoScene2 = true;
 
-    [Header("ExitUI")]
+    [Header("Exit")]
+    public GameObject riverSide;
+    public GameObject mountain;
+    public static bool isRiverSideActive = false;
+    public static bool isMountainActive = false;
+
+    [Header("UI")]
     public GameObject exitUI;
     public Image bar;
     public Text sceneName;
@@ -26,10 +32,16 @@ public class StoryExitControl_Momotaro : MonoBehaviour
 
     void Update()
     {
+        ExitActive();
         ExitUI();
         Bar();
     }
 
+    void ExitActive()
+    {
+        riverSide.SetActive(isRiverSideActive);
+        mountain.SetActive(isMountainActive);
+    }
     void ExitUI()
     {
         exitUI.SetActive(isExit);
