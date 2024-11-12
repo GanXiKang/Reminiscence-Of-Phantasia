@@ -212,6 +212,8 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
         canvasGroup.alpha = targetAlpha;
         image.fillAmount = 0;
         StoryUIControl_Momotaro.isStoryStart = false;
+        StoryUIControl_Momotaro.isDialogue = true;
+        StoryDialogueControl_Momotaro._textCount = 1;
     }
     IEnumerator StorySystemUIAppear(CanvasGroup canvasGroup)
     {
