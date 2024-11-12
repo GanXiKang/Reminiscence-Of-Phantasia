@@ -63,6 +63,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         hintUI.SetActive(true);
         hintUI.GetComponent<CanvasGroup>().alpha = 1;
         top.fillAmount = 0;
+        bottom.fillAmount = 0;
 
         float elapsedTime = 0f;
 
@@ -70,10 +71,12 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             top.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
+            bottom.fillAmount = Mathf.Clamp01(elapsedTime / _animDuration);
             yield return null;
         }
 
         top.fillAmount = 1;
+        bottom.fillAmount = 1;
     }
     IEnumerator CloseWindUI()
     {
@@ -140,5 +143,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         StopCoroutine(WindCycle());
         hintUI.SetActive(false);
+        isMove = false;
     }
 }
