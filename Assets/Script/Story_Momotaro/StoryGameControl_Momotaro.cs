@@ -7,9 +7,9 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     GameObject player;
 
     [Header("Exit")]
-    public GameObject riverSide;
+    public GameObject forest;
     public GameObject mountain;
-    public static bool isRiverSideActive = false;
+    public static bool isForestActive = false;
     public static bool isMountainActive = false;
 
     void Start()
@@ -24,7 +24,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 
     void ExitActive()
     {
-        riverSide.SetActive(isRiverSideActive);
+        forest.SetActive(isForestActive);
         mountain.SetActive(isMountainActive);
     }
 }

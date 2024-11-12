@@ -308,8 +308,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
         {
             case 9:
                 BGM.PlayOneShot(give);
-                StoryInteractableControl_Girl.isGiveItem = true;
-                StoryInteractableControl_Girl._whoGive = 1;
+                StoryGameControl_Momotaro.isForestActive = true;
+                StoryInteractableControl_Momotaro.isGiveItem = true;
+                StoryInteractableControl_Momotaro._whoGive = 1;
                 break;
         }
     }
