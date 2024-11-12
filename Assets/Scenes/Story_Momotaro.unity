@@ -25886,7 +25886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1770355699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25925,6 +25925,7 @@ MonoBehaviour:
   BGM: {fileID: 391252026}
   performancesBGM: {fileID: 8300000, guid: 9c2fd3f5b0088ce49ba1d0fe77382481, type: 3}
   test: {fileID: 611339305}
+  bar: {fileID: 0}
 --- !u!1001 &1781324649
 PrefabInstance:
   m_ObjectHideFlags: 0
