@@ -17,7 +17,7 @@ public class StoryUIControl_Momotaro : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart = true; //方便執行
+    public static bool isStoryStart = false; //方便執行
     public static bool isStoryEnding = false;
 
     [Header("TransitionUI")]
