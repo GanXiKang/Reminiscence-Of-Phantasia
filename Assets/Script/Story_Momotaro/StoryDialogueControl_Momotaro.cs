@@ -295,7 +295,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 else
                 {
-
+                    StoryNpcAnimator_Momotaro.isSad_Momo = false;
+                    StoryNpcAnimator_Momotaro.isHappy_Momo = true;
                     _countEvent = 0;
                 }
                 break;
@@ -306,6 +307,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
         switch (_textCount)
         {
             case 9:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Girl.isGiveItem = true;
+                StoryInteractableControl_Girl._whoGive = 1;
                 break;
         }
     }
