@@ -182,6 +182,8 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     }
     void Score()
     {
+        if (!isPerformances) return;
+
         bar.fillAmount = _score / 30;
     }
 
