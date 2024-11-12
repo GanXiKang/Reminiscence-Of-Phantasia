@@ -139,5 +139,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     void OnDisable()
     {
         StopCoroutine(WindCycle());
+        hintUI.SetActive(false);
     }
 }
