@@ -14,6 +14,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public Text test; //œyÔ‡°æ
     public Image scoreBar;
     public Image timeBar;
+    public GameObject resultUI;
+    public Image gameResult;
+    public Sprite success, fail;
     float _score;
     float _countdownTime = 90f;
     float _remainingTime;
@@ -209,12 +212,28 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         }
         else
         {
-            StoryUIControl_Momotaro.isPerformances = false;
+            GameResult();
             isGameTiming = false;
             _remainingTime = 0f;
             timeBar.fillAmount = 0f;
+
+            StoryUIControl_Momotaro.isPerformances = false;
         }
     }
+    void GameResult()
+    {
+        resultUI.SetActive(true);
+
+        if (_score >= 80)
+        {
+            gameResult.sprite = success;
+        }
+        else
+        {
+            gameResult.sprite = fail;
+        }
+    }
+   
 
     public void Dance_Button(int num)
     {
