@@ -14,6 +14,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
             {
                 case 1:
                 case 2:
+                case 3:
                     if (!StoryPlayerAnimator_Momotaro.isStone)
                     {
                         StoryStrongWind_Momotaro._respawnNum = _whatCollider;
