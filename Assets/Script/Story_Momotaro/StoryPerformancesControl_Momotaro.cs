@@ -15,6 +15,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public Image scoreBar;
     public Image timeBar;
     float _score;
+    float _countdownTime = 90f;
+    float _remainingTime;
+    bool isGameTiming = false;
 
     //random
     public static int _danceNum = 0;
@@ -49,6 +52,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         test.text = "Go!!!";
         yield return new WaitForSeconds(0.5f);
         StartNewRound();
+        isGameTiming = true;
+        _remainingTime = _countdownTime;
+        timeBar.fillAmount = 1f;
     }
 
     void StartNewRound()
@@ -103,6 +109,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         BGMisSettingActive();
         KeyBroad();
         Score();
+        GameTime();
     }
 
     void PerformancesTimeOut()
@@ -189,6 +196,10 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (!isPerformances) return;
 
         scoreBar.fillAmount = _score / 100;
+    }
+    void GameTime()
+    {
+        if (!isGameTiming) return;
     }
 
     public void Dance_Button(int num)
