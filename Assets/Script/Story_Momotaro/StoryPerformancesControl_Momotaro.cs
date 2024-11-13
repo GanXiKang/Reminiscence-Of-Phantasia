@@ -209,6 +209,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         }
         else
         {
+            StoryUIControl_Momotaro.isPerformances = false;
             isGameTiming = false;
             _remainingTime = 0f;
             timeBar.fillAmount = 0f;
