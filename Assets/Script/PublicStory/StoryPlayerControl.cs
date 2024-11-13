@@ -153,10 +153,13 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryTeachControl.isTeachActive &&
 
                StoryInteractableControl_Girl.isPlayerMove &&
-               !StoryThermometerControl_Girl.isDead &&
                !StoryLoadingScene_Girl.isLoading &&
                !StoryUIControl_Girl.isDialogue &&
+               !StoryThermometerControl_Girl.isDead &&
 
+               StoryInteractableControl_Momotaro.isPlayerMove &&
+               !StoryLoadingScene_Momotaro.isLoading &&
+               !StoryUIControl_Momotaro.isDialogue &&
                !StoryRiceDumpling_Momotaro.isEat &&
                !StoryPlayerAnimator_Momotaro.isStone &&
                !StoryUIControl_Momotaro.isPerformances && 
