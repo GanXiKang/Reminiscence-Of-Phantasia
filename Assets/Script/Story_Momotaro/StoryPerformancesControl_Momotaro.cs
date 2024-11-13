@@ -71,7 +71,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void RandomDance()
     {
         _randomDanceNum = Random.Range(1, 9);
-        _danceNum = 0;
+
         switch (_randomDanceNum)
         {
             case 1:
@@ -128,6 +128,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             {
                 test.text = "Correct!";
                 _score += 3;
+                _danceNum = 0;
                 isTiming = false;
                 float randomTime = Random.Range(0.8f, 2f);
                 Invoke("StartNewRound", randomTime);
@@ -143,6 +144,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             test.text = "Incorrect!";
             _score -= 2;
+            _danceNum = 0;
             isTiming = false;
             float randomTime = Random.Range(0.8f, 2f);
             Invoke("StartNewRound", randomTime);
@@ -184,6 +186,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             if (_danceNum != 3)
             {
+                _danceNum = 0;
                 isTiming = false;
                 test.text = "TimeOut!";
                 _score -= 2;
@@ -194,6 +197,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             {
                 if (isSpace)
                 {
+                    _danceNum = 0;
                     isTiming = false;
                     test.text = "Perfect!";
                     float randomTime = Random.Range(1.5f, 2f);
@@ -201,6 +205,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 }
                 else
                 {
+                    _danceNum = 0;
                     isTiming = false;
                     test.text = "Miss!";
                     _score -= 2;
