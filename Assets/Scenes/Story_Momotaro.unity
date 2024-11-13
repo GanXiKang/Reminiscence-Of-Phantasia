@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3207547, g: 0.31409755, b: 0.31409755, a: 0.7882353}
+  m_Color: {r: 0.5698112, g: 0.5536845, b: 0.5536845, a: 0.7882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20631,7 +20631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a8f60b4b64ad4fa4eae5c4794078da1e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26148,6 +26148,10 @@ MonoBehaviour:
   test: {fileID: 611339305}
   scoreBar: {fileID: 1131655774}
   timeBar: {fileID: 1926733787}
+  resultUI: {fileID: 1702047363}
+  gameResult: {fileID: 1142970063}
+  success: {fileID: 21300000, guid: a8f60b4b64ad4fa4eae5c4794078da1e, type: 3}
+  fail: {fileID: 21300000, guid: 358e442d9aebe684e8c93731d82426ad, type: 3}
 --- !u!1001 &1781324649
 PrefabInstance:
   m_ObjectHideFlags: 0
