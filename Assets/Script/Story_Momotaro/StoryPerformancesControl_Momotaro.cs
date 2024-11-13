@@ -236,6 +236,15 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (!isPerformances) return;
 
         scoreBar.fillAmount = _score / 100;
+
+        if (_score < 0)
+        {
+            _score = 0;
+        }
+        if (_score > 100)
+        {
+            _score = 100;
+        }
     }
     void GameTime()
     {
