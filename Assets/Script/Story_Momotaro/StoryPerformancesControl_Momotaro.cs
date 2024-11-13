@@ -229,7 +229,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             if (isStopBGM)
             {
-                BGM.Play();
+                BGM.UnPause();
                 isStopBGM = false;
             }
         }
