@@ -12,7 +12,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
     [Header("PerformancesUI")]
     public Text test; //úy‘á∞Ê
-    public Image bar;
+    public Image scoreBar;
     float _score;
 
     //random
@@ -187,7 +187,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     {
         if (!isPerformances) return;
 
-        bar.fillAmount = _score / 100;
+        scoreBar.fillAmount = _score / 100;
     }
 
     public void Dance_Button(int num)
