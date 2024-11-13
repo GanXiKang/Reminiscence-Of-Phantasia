@@ -108,13 +108,71 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
     void Update()
     {
+        KeyBroad();
         PerformancesTimeOut();
         BGMisSettingActive();
-        KeyBroad();
         Score();
         GameTime();
     }
 
+    public void Dance_Button(int num)
+    {
+        if (SettingControl.isSettingActive) return;
+        if (!isPerformances) return;
+        if (!isTiming) return;
+
+        if (num == _danceNum)
+        {
+            if (_danceNum != 3)
+            {
+                test.text = "Correct!";
+                _score += 3;
+                _danceNum = 0;
+                isTiming = false;
+                float randomTime = Random.Range(0.8f, 2f);
+                Invoke("StartNewRound", randomTime);
+            }
+            else
+            {
+                isSpace = true;
+                test.text = "Good!";
+                _score++;
+            }
+        }
+        else
+        {
+            test.text = "Incorrect!";
+            _score -= 2;
+            _danceNum = 0;
+            isTiming = false;
+            float randomTime = Random.Range(0.8f, 2f);
+            Invoke("StartNewRound", randomTime);
+        }
+    }
+
+    void KeyBroad()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Dance_Button(1);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Dance_Button(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Dance_Button(3);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Dance_Button(4);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Dance_Button(5);
+        }
+    }
     void PerformancesTimeOut()
     {
         if (SettingControl.isSettingActive) return;
@@ -171,29 +229,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             }
         }
     }
-    void KeyBroad()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            Dance_Button(1);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Dance_Button(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Dance_Button(3);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Dance_Button(4);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Dance_Button(5);
-        }
-    }
     void Score()
     {
         if (!isPerformances) return;
@@ -216,8 +251,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             isGameTiming = false;
             _remainingTime = 0f;
             timeBar.fillAmount = 0f;
-
-            StoryUIControl_Momotaro.isPerformances = false;
         }
     }
     void GameResult()
@@ -232,42 +265,39 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             gameResult.sprite = fail;
         }
+
+        StartCoroutine(AnimateGameResult());
     }
-   
 
-    public void Dance_Button(int num)
+    IEnumerator AnimateGameResult()
     {
-        if (SettingControl.isSettingActive) return;
-        if (!isPerformances) return;
-        if (!isTiming) return; 
+        CanvasGroup canvasGroup = gameResult.GetComponent<CanvasGroup>();
+        RectTransform rect = gameResult.GetComponent<RectTransform>();
 
-        if (num == _danceNum)
+        Vector3 startScale = new Vector3(4f, 2f, 1f);
+        Vector3 targetScale = new Vector3(8f, 5f, 1f);
+
+        float _duration = 0.3f;
+        float _timeElapsed = 0f;
+        canvasGroup.alpha = 0;
+        rect.localScale = startScale;
+
+        while (_timeElapsed < _duration)
         {
-            if (_danceNum != 3)
-            {
-                test.text = "Correct!";
-                _score += 3;
-                _danceNum = 0;
-                isTiming = false;
-                float randomTime = Random.Range(0.8f, 2f);
-                Invoke("StartNewRound", randomTime);
-            }
-            else
-            {
-                isSpace = true;
-                test.text = "Good!";
-                _score++;
-            }
+            _timeElapsed += Time.deltaTime;
+            float t = _timeElapsed / _duration;
+            rect.localScale = Vector3.Lerp(startScale, targetScale, t);
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
+
+            yield return null;
         }
-        else
-        {
-            test.text = "Incorrect!";
-            _score -= 2;
-            _danceNum = 0;
-            isTiming = false;
-            float randomTime = Random.Range(0.8f, 2f);
-            Invoke("StartNewRound", randomTime);
-        }
+
+        canvasGroup.alpha = 1;
+        rect.localScale = targetScale;
+
+        yield return new WaitForSeconds(2f);
+        StoryUIControl_Momotaro.isPerformances = false;
+        resultUI.SetActive(false);
     }
 
     void OnDisable()
