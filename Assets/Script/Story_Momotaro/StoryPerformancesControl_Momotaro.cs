@@ -119,6 +119,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     {
         if (SettingControl.isSettingActive) return;
         if (!isPerformances) return;
+        if (!isGameTiming) return;
         if (!isTiming) return;
 
         if (num == _danceNum)
@@ -177,6 +178,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     {
         if (SettingControl.isSettingActive) return;
         if (!isPerformances) return;
+        if (!isGameTiming) return;
         if (!isTiming) return;
 
         timer -= Time.deltaTime;
