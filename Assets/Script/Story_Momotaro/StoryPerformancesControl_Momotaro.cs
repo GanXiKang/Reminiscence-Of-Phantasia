@@ -276,7 +276,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         CanvasGroup canvasGroup = gameResult.GetComponent<CanvasGroup>();
         RectTransform rect = gameResult.GetComponent<RectTransform>();
 
-        Vector3 startScale = new Vector3(4f, 2f, 1f);
+        Vector3 startScale = new Vector3(3f, 1f, 1f);
         Vector3 targetScale = new Vector3(8f, 5f, 1f);
 
         float _duration = 0.3f;
