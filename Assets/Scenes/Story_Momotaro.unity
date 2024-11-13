@@ -4311,7 +4311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486486733}
   m_Layer: 0
-  m_Name: PointB
+  m_Name: Point02
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5140,7 +5140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 569472637}
   m_Layer: 0
-  m_Name: PointC
+  m_Name: Point03
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -8310,7 +8310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 781010808}
   m_Layer: 0
-  m_Name: PointA
+  m_Name: Point01
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -21024,12 +21024,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc3afea841ebdf47855337e9fd2bbe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windA: {fileID: 526313088}
-  windB: {fileID: 406039518}
+  wind:
+  - {fileID: 526313088}
+  - {fileID: 556194471}
+  - {fileID: 406039518}
   _windCooldown: 3
   _windDuration: 2
-  respawnPointA: {fileID: 781010808}
-  respawnPointB: {fileID: 569472637}
+  respawnPoint:
+  - {fileID: 0}
+  - {fileID: 781010808}
+  - {fileID: 486486733}
+  - {fileID: 569472637}
   hintUI: {fileID: 621707677}
   top: {fileID: 1203906015}
   bottom: {fileID: 373410573}
