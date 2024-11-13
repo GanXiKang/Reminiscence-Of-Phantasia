@@ -13,6 +13,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("PerformancesUI")]
     public Text test; //úy‘á∞Ê
     public Image scoreBar;
+    public Image timeBar;
     float _score;
 
     //random
