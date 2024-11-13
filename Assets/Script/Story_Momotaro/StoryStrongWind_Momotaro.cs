@@ -93,13 +93,18 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 
     void Update()
     {
-        windA.SetActive(isWindActive);
-        windB.SetActive(isWindActive);
-
+        WindActive();
         HintUIMove();
         BlownAway();
     }
 
+    void WindActive()
+    {
+        for (int i = 0; i < wind.Length; i++)
+        {
+            wind[i].SetActive(isWindActive);
+        }
+    }
     void HintUIMove()
     {
         if (isMove)
@@ -125,14 +130,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         playerControl.enabled = false;
         yield return new WaitForSeconds(0.8f);
-        if (_respawnNum == 1)
-        {
-            player.transform.position = respawnPointA.position;
-        }
-        else
-        {
-            player.transform.position = respawnPointB.position;
-        }
+        player.transform.position = respawnPoint[_respawnNum].position;
         yield return new WaitForSeconds(0.2f);
         playerControl.enabled = true;
     }
