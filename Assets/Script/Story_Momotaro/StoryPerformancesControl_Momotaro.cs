@@ -219,7 +219,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     {
         if (SettingControl.isSettingActive)
         {
-            BGM.Stop();
+            BGM.Pause();
             isStopBGM = true;
         }
         else
