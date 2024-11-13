@@ -241,7 +241,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             _score = 0;
         }
-        if (_score > 100)
+        else if (_score > 100)
         {
             _score = 100;
         }
