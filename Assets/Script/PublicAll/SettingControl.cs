@@ -18,7 +18,7 @@ public class SettingControl : MonoBehaviour
     public Button[] labelColor;
     public Sprite[] turnPage;
 
-    public static float volumeBGM = 0.7f;
+    public static float volumeBGM = 0.2f;
     public static bool isFullS;
     public static bool isSettingActive = false;
     public static int _page = 1;
