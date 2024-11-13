@@ -200,6 +200,19 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void GameTime()
     {
         if (!isGameTiming) return;
+
+        if (_remainingTime > 0)
+        {
+            _remainingTime -= Time.deltaTime;
+            float fillAmount = _remainingTime / _countdownTime;
+            timeBar.fillAmount = fillAmount;
+        }
+        else
+        {
+            isGameTiming = false;
+            _remainingTime = 0f;
+            timeBar.fillAmount = 0f;
+        }
     }
 
     public void Dance_Button(int num)
