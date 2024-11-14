@@ -303,6 +303,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 24:
             case 33:
+            case 42:
                 StoryPlayerControl.isSurprised = true;
                 break;
 
