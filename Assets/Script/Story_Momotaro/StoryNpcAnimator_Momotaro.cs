@@ -22,6 +22,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isStone = false;
     //09Parrot
     public static bool isPerformance = false;
+    public static bool isExcited = false;
 
     void Start()
     {
@@ -95,6 +96,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 {
                     anim.SetBool("isPerformance", false);
                 }
+                anim.SetBool("isExcited", isExcited);
                 break;
         }
     }
