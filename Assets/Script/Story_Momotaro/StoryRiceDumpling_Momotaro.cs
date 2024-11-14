@@ -65,7 +65,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
                 roleButton[3].SetActive(true);
                 break;
         }
-        riceButton.SetActive(!isRoleActive);
+        riceButton.SetActive(!riceOpenButton.activeSelf);
         riceOpenButton.SetActive(isRoleActive || StoryPlayerAnimator_Momotaro.isDonkey || StoryPlayerAnimator_Momotaro.isRaccoon || StoryPlayerAnimator_Momotaro.isStone);
     }
     void RaccoonSkill()
