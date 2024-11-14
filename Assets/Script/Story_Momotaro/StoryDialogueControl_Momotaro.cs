@@ -302,6 +302,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 24:
+            case 33:
                 StoryPlayerControl.isSurprised = true;
                 break;
 
@@ -309,10 +310,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryPlayerAnimator_Momotaro.isDonkey = true;
                 StoryRiceDumpling_Momotaro.isChangeRoles = true;
                 StoryRiceDumpling_Momotaro.isRoleActive = false;
-                break;
-
-            case 33:
-                StoryPlayerControl.isSad = true;
                 break;
         }
     }
