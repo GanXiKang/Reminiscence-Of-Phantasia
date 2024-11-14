@@ -227,6 +227,17 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             StoryBagControl.isOpenBag = false;
                         }
                         break;
+
+                    case 7:
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
+                        break;
                 }
             }
         }
@@ -308,16 +319,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 7:
-                case 8:
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                    StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                    StoryDialogueControl_Momotaro._textCount = 56;
+                    break;
+
                 case 9:
-                    isPickedUp = true;
-                    StoryBagControl.isGet = true;
-                    StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                    StoryBagControl._whichItem = _giveItemNumber[0];
-                    if (StoryBagControl.isOpenBag)
-                    {
-                        StoryBagControl.isOpenBag = false;
-                    }
+
                     break;
             }
         }
@@ -433,6 +442,12 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             StoryDialogueControl_Momotaro._textCount = 46;
                         }
                     }
+                    break;
+
+                case 8:
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                    StoryDialogueControl_Momotaro._textCount = 64;
                     break;
             }
         }
