@@ -63,6 +63,9 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     bool isRotation = false;
     float _speed = 180f;
 
+    //06Raccoon
+    bool isFinishWork = false;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -368,18 +371,36 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 6:
-                    if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                    if (!isFinishWork)
                     {
-                        StoryUIControl_Momotaro.isDialogue = true;
-                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                        StoryDialogueControl_Momotaro._textCount = 42;
+                        if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                        {
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 42;
+                        }
+                        else
+                        {
+                            isInteractable = true;
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 43;
+                        }
                     }
                     else
                     {
-                        isInteractable = true;
-                        StoryUIControl_Momotaro.isDialogue = true;
-                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                        StoryDialogueControl_Momotaro._textCount = 43;
+                        if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                        {
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 45;
+                        }
+                        else
+                        {
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 46;
+                        }
                     }
                     break;
             }
@@ -585,13 +606,22 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                StoryRiceDumpling_Momotaro._whoEatGoldRice = _who;
-                                StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
-                                StoryBagControl._howManyGrids++;
+                                if (isFinishWork)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 45;
+                                    StoryRiceDumpling_Momotaro._whoEatGoldRice = _who;
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
+                                }
                                 break;
 
                             case 1:
-
+                                isFinishWork = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 44;
                                 break;
                         }
                         break;
