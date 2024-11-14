@@ -352,9 +352,12 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         default:
                             if (isAnswerCorrect)
                             {
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 69;
+                                if (!isEatGoldRice)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 69;
+                                }
                             }
                             else
                             {
@@ -745,6 +748,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         break;
 
                     case 9:
+                        isEatGoldRice = true;
+                        StoryUIControl_Momotaro.isDialogue = true;
+                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                        StoryDialogueControl_Momotaro._textCount = 70;
                         StoryRiceDumpling_Momotaro._whoEatGoldRice = _who;
                         StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                         StoryBagControl._howManyGrids++;
