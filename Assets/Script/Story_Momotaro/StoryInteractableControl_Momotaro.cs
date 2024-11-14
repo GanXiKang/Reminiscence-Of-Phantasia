@@ -65,6 +65,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
     //06Raccoon
     bool isFinishWork = false;
+    //09Parrot
+    public static bool isAnswerCorrect = false;
 
     void Start()
     {
@@ -238,6 +240,18 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             StoryBagControl.isOpenBag = false;
                         }
                         break;
+
+                    case 9:
+                        isInteractable = true;
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
+                        break;
                 }
             }
         }
@@ -326,9 +340,30 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 9:
-                    StoryUIControl_Momotaro.isDialogue = true;
-                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                    StoryDialogueControl_Momotaro._textCount = 68;
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 68;
+                            break;
+
+                        default:
+                            if (isAnswerCorrect)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 69;
+                            }
+                            else
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 71;
+                            }
+                            break;
+                    }
                     break;
             }
         }
