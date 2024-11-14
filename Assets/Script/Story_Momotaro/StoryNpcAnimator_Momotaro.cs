@@ -10,9 +10,13 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public int _who;
 
     //01Momotaro
-    public static float _direction = 1;
+    public static float _direction_Momo = 1;
     public static bool isHappy_Momo = false;
     public static bool isSad_Momo = true;
+
+    //06Raccoon
+    public static float _direction_Raccoon = 1;
+    public static bool isStone = false;
 
     void Start()
     {
@@ -29,6 +33,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
         switch (_who)
         {
             case 1:
+                anim.SetFloat("Direction", _direction_Momo);
                 if (isHappy_Momo)
                 {
                     anim.SetBool("isHappy", true);
@@ -39,6 +44,11 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                     anim.SetBool("isHappy", false);
                 }
                 anim.SetBool("isSad", isSad_Momo);
+                break;
+
+            case 6:
+                anim.SetFloat("Direction", _direction_Raccoon);
+                anim.SetBool("isStone", isStone);
                 break;
         }
     }
