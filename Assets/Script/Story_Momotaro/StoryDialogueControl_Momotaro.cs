@@ -173,7 +173,14 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 else if (_chooseNum == 2)
                 {
-                    JumpToSection("B");
+                    if (_textCount == 47)
+                    {
+                        JumpToSection("A");
+                    }
+                    else
+                    {
+                        JumpToSection("B");
+                    }
                 }
                 else if (_chooseNum == 3)
                 {
