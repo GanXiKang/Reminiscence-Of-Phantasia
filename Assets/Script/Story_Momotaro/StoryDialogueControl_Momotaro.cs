@@ -317,10 +317,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 if (_countEvent == 0)
                 {
                     _countEvent++;
+                    StoryNpcAnimator_Momotaro.isStone = true;
                 }
                 else
                 {
                     StoryPlayerControl.isSurprised = true;
+                    StoryNpcAnimator_Momotaro.isStone = false;
                     _countEvent = 0;
                 }
                 break;
