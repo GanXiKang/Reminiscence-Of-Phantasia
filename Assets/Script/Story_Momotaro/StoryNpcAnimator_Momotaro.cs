@@ -20,6 +20,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isControlled_Monkey = false;
     //06Raccoon
     public static bool isStone = false;
+    //09Parrot
+    public static bool isPerformance = false;
 
     void Start()
     {
@@ -81,6 +83,10 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
 
             case 6:
                 anim.SetBool("isStone", isStone);
+                break;
+
+            case 9:
+                anim.SetBool("isPerformance", isPerformance);
                 break;
         }
     }
