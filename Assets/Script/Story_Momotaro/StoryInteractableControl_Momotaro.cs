@@ -38,6 +38,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public int[] _getItemNumber;
     public static bool isBagGetItem = false;
     bool isGetItem = false;
+    bool isEatGoldRice = false;
 
     [Header("Item_Exchange")]
     public bool isExchange;
