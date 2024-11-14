@@ -193,6 +193,14 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 else if (_chooseNum == 5)
                 {
                     JumpToSection("E");
+                    switch (_textCount)
+                    {
+                        case 68:
+                        case 71:
+                            StoryInteractableControl_Momotaro.isAnswerCorrect = true;
+                            break;
+                    
+                    }
                 }
             }
         }
