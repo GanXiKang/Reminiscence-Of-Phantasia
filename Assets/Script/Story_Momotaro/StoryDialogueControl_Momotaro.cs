@@ -361,6 +361,20 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     _countEvent = 0;
                 }
                 break;
+
+            case 56:
+                if (_countEvent == 0)
+                {
+                    StoryNpcAnimator_Momotaro.isControlled_Monkey = true;
+                    _countEvent++;
+
+                }
+                else
+                {
+                    StoryPlayerControl.isSurprised = true;
+                    _countEvent = 0;
+                }
+                break;
         }
     }
     void DialogurEnd()
@@ -387,6 +401,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 50:
                 //壞結局 回到起點
                 StoryNpcAnimator_Momotaro.isControlled_Monkey = false;
+                break;
+
+            case 56:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Momotaro.isGiveItem = true;
+                StoryInteractableControl_Momotaro._whoGive = 7;
                 break;
         }
     }
