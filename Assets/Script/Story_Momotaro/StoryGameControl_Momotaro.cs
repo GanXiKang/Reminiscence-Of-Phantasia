@@ -10,7 +10,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject forest;
     public GameObject mountain;
     public static bool isForestActive = false;
-    public static bool isMountainActive = true; //∑Ω±„úy‘á
+    public static bool isMountainActive = false;
 
     void Start()
     {
