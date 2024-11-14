@@ -25,6 +25,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                     break;
 
                 case 4:
+                    //ÅÐ”àparrotÔÚˆöµÄ•rºò
                     if (isOnce)
                     {
                         isOnce = false;
