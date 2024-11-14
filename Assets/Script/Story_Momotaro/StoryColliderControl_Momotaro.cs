@@ -22,6 +22,13 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                         BlackScreenControl.isOpenBlackScreen = true;
                     }
                     break;
+
+                case 4:
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._isAboveWho1 = 10;
+                    StoryDialogueControl_Momotaro._textCount = 73;
+                    Destroy(gameObject);
+                    break;
             }
         }
     }
