@@ -345,6 +345,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryInteractableControl_Momotaro.isGiveItem = true;
                 StoryInteractableControl_Momotaro._whoGive = 1;
                 break;
+
+            case 47:
+                //ȥɽ
+                StoryGameControl_Momotaro.isMountainActive = true;
+                break;
         }
     }
     void StoryEnd()
