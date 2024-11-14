@@ -333,6 +333,32 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     _countEvent = 0;
                 }
                 break;
+
+            case 49:
+                if (_countEvent == 0)
+                {
+                    _countEvent++;
+                    StoryPlayerControl.isHappy = true;
+                }
+                else
+                {
+                    //離開山上
+                    _countEvent = 0;
+                }
+                break;
+
+            case 50:
+                if (_countEvent == 0)
+                {
+                    _countEvent++;
+                    
+                }
+                else
+                {
+                    StoryPlayerControl.isSurprised = true;
+                    _countEvent = 0;
+                }
+                break;
         }
     }
     void DialogurEnd()
@@ -349,6 +375,14 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 47:
                 //去山
                 StoryGameControl_Momotaro.isMountainActive = true;
+                break;
+
+            case 49:
+                //傳送下山
+                break;
+
+            case 50:
+                //壞結局
                 break;
         }
     }
