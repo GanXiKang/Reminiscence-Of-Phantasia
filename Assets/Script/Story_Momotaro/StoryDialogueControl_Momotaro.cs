@@ -381,6 +381,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 68:
+                StoryNpcAnimator_Momotaro.isPerformance = true;
+                StoryPlayerControl.isSurprised = true;
+                break;
         }
     }
     void DialogurEnd()
