@@ -354,19 +354,22 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 5:
-                    if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                    if (!isFinishWork)
                     {
-                        isInteractable = true;
-                        StoryUIControl_Momotaro.isDialogue = true;
-                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                        StoryDialogueControl_Momotaro._textCount = 33;
-                    }
-                    else
-                    {
-                        isInteractable = true;
-                        StoryUIControl_Momotaro.isDialogue = true;
-                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                        StoryDialogueControl_Momotaro._textCount = 34;
+                        if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                        {
+                            isInteractable = true;
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 33;
+                        }
+                        else
+                        {
+                            isInteractable = true;
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 34;
+                        }
                     }
                     break;
 
