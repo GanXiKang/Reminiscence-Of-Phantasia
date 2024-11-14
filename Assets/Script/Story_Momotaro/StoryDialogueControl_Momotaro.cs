@@ -391,6 +391,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 68:
+            case 71:
                 StoryNpcAnimator_Momotaro.isPerformance = true;
                 StoryPlayerControl.isSurprised = true;
                 break;
@@ -445,9 +446,13 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 68:
-                BGM.PlayOneShot(give);
-                StoryInteractableControl_Momotaro.isGiveItem = true;
-                StoryInteractableControl_Momotaro._whoGive = 9;
+            case 71:
+                if (StoryInteractableControl_Momotaro.isAnswerCorrect)
+                {
+                    BGM.PlayOneShot(give);
+                    StoryInteractableControl_Momotaro.isGiveItem = true;
+                    StoryInteractableControl_Momotaro._whoGive = 9;
+                }
                 break;
         }
     }
