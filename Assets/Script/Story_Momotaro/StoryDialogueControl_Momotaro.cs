@@ -419,6 +419,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryInteractableControl_Momotaro.isGiveItem = true;
                 StoryInteractableControl_Momotaro._whoGive = 7;
                 break;
+
+            case 68:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Momotaro.isGiveItem = true;
+                StoryInteractableControl_Momotaro._whoGive = 9;
+                break;
         }
     }
     void StoryEnd()
