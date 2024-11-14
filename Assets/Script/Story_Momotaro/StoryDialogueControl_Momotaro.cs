@@ -188,7 +188,18 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 else if (_chooseNum == 4)
                 {
-                    JumpToSection("D");
+                    switch (_textCount)
+                    {
+                        case 68:
+                        case 71:
+                            JumpToSection("C");
+                            break;
+
+                        default:
+                            JumpToSection("D");
+                            break;
+
+                    }
                 }
                 else if (_chooseNum == 5)
                 {
@@ -392,8 +403,23 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 68:
             case 71:
-                StoryNpcAnimator_Momotaro.isPerformance = true;
-                StoryPlayerControl.isSurprised = true;
+                if (_countEvent == 0)
+                {
+                    StoryNpcAnimator_Momotaro.isPerformance = true;
+                    StoryPlayerControl.isSurprised = true;
+                    _countEvent++;
+
+                }
+                else
+                {
+                    if (StoryInteractableControl_Momotaro.isAnswerCorrect)
+                    {
+                        BGM.PlayOneShot(give);
+                        StoryInteractableControl_Momotaro.isGiveItem = true;
+                        StoryInteractableControl_Momotaro._whoGive = 9;
+                    }
+                    _countEvent = 0;
+                }
                 break;
 
             case 70:
@@ -401,7 +427,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 {
                     StoryNpcAnimator_Momotaro.isExcited = true;
                     _countEvent++;
-
                 }
                 else
                 {
@@ -443,16 +468,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Momotaro.isGiveItem = true;
                 StoryInteractableControl_Momotaro._whoGive = 7;
-                break;
-
-            case 68:
-            case 71:
-                if (StoryInteractableControl_Momotaro.isAnswerCorrect)
-                {
-                    BGM.PlayOneShot(give);
-                    StoryInteractableControl_Momotaro.isGiveItem = true;
-                    StoryInteractableControl_Momotaro._whoGive = 9;
-                }
                 break;
         }
     }
