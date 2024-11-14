@@ -350,6 +350,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 50:
                 if (_countEvent == 0)
                 {
+                    StoryNpcAnimator_Momotaro.isControlled_Monkey = true;
                     _countEvent++;
                     
                 }
@@ -382,7 +383,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 50:
-                //壞結局
+                //壞結局 回到起點
+                StoryNpcAnimator_Momotaro.isControlled_Monkey = false;
                 break;
         }
     }
