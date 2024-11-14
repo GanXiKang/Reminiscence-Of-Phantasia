@@ -310,6 +310,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryRiceDumpling_Momotaro.isChangeRoles = true;
                 StoryRiceDumpling_Momotaro.isRoleActive = false;
                 break;
+
+            case 33:
+                StoryPlayerControl.isSad = true;
+                break;
         }
     }
     void DialogurEnd()
