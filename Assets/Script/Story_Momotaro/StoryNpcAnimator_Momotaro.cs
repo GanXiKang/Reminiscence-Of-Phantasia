@@ -49,21 +49,27 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 4:
-                if (isWalk_Monkey && isOnce)
+                if (isWalk_Monkey)
                 {
-                    isOnce = false;
-                    anim.SetBool("isWalk", true);
-                    Invoke("FalseWalkAnim", 1f);
+                    if (isOnce)
+                    {
+                        isOnce = false;
+                        anim.SetBool("isWalk", true);
+                        Invoke("FalseWalkAnim", 10f);
+                    }
                 }
                 else
                 {
                     anim.SetBool("isWalk", false);
                 }
-                if (isWalkGold_Monkey && isOnce)
+                if (isWalkGold_Monkey)
                 {
-                    isOnce = false;
-                    anim.SetBool("isWalkGold", true);
-                    Invoke("FalseWalkAnim", 1f);
+                    if (isOnce)
+                    {
+                        isOnce = false;
+                        anim.SetBool("isWalkGold", true);
+                        Invoke("FalseWalkAnim", 10f);
+                    }
                 }
                 else
                 {
