@@ -8,15 +8,16 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
 
     [Header("Npc")]
     public int _who;
+    bool isOnce = true;
 
     //01Momotaro
     public static bool isHappy_Momo = false;
     public static bool isSad_Momo = true;
-
     //04Monkey
+    public static bool isWalk_Monkey = false;
+    public static bool isWalkGold_Monkey = false;
     public static bool isGold_Monkey = false;
     public static bool isControlled_Monkey = false;
-
     //06Raccoon
     public static bool isStone = false;
 
@@ -48,6 +49,26 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 4:
+                if (isWalk_Monkey && isOnce)
+                {
+                    isOnce = false;
+                    anim.SetBool("isWalk", true);
+                    Invoke("FalseWalkAnim", 1f);
+                }
+                else
+                {
+                    anim.SetBool("isWalk", false);
+                }
+                if (isWalkGold_Monkey && isOnce)
+                {
+                    isOnce = false;
+                    anim.SetBool("isWalkGold", true);
+                    Invoke("FalseWalkAnim", 1f);
+                }
+                else
+                {
+                    anim.SetBool("isWalkGold", false);
+                }
                 anim.SetBool("isGold", isGold_Monkey);
                 anim.SetBool("isControlled", isControlled_Monkey);
                 break;
@@ -56,5 +77,12 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isStone", isStone);
                 break;
         }
+    }
+
+    void FalseWalkAnim()
+    {
+        isWalk_Monkey = false;
+        isWalkGold_Monkey = false;
+        isOnce = true;
     }
 }
