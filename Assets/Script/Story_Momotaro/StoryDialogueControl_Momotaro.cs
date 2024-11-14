@@ -363,16 +363,22 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 56:
-                if (_countEvent == 0)
+                switch(_countEvent)
                 {
-                    StoryNpcAnimator_Momotaro.isControlled_Monkey = true;
-                    _countEvent++;
+                    case 0:
+                        //chicken×ß¿¿½ü
+                        _countEvent++;
+                        break;
 
-                }
-                else
-                {
-                    StoryPlayerControl.isSurprised = true;
-                    _countEvent = 0;
+                    case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent++;
+                        break;
+
+                    case 2:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent = 0;
+                        break;
                 }
                 break;
         }
