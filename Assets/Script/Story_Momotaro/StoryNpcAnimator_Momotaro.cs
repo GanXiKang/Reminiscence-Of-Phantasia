@@ -86,7 +86,15 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 9:
-                anim.SetBool("isPerformance", isPerformance);
+                if (isPerformance)
+                {
+                    anim.SetBool("isPerformance", true);
+                    isPerformance = false;
+                }
+                else
+                {
+                    anim.SetBool("isPerformance", false);
+                }
                 break;
         }
     }
