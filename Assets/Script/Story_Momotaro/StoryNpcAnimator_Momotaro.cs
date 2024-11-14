@@ -103,6 +103,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 }
                 if (isPerformance)
                 {
+                    int d = Random.Range(1, 4);
+                    anim.SetInteger("Dance", d);
                     anim.SetBool("isPerformance", true);
                     isPerformance = false;
                 }
