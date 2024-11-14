@@ -413,9 +413,18 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     {
                         if (!StoryPlayerAnimator_Momotaro.isDonkey)
                         {
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 45;
+                            if (!isEatGoldRice)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 72;
+                            }
+                            else
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 45;
+                            }
                         }
                         else
                         {
@@ -636,6 +645,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 0:
                                 if (isFinishWork)
                                 {
+                                    isEatGoldRice = true;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 45;
