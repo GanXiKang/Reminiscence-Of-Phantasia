@@ -366,6 +366,22 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         StoryDialogueControl_Momotaro._textCount = 34;
                     }
                     break;
+
+                case 6:
+                    if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                    {
+                        StoryUIControl_Momotaro.isDialogue = true;
+                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                        StoryDialogueControl_Momotaro._textCount = 42;
+                    }
+                    else
+                    {
+                        isInteractable = true;
+                        StoryUIControl_Momotaro.isDialogue = true;
+                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                        StoryDialogueControl_Momotaro._textCount = 43;
+                    }
+                    break;
             }
         }
         StoryBagControl.isOpenBag = false;
