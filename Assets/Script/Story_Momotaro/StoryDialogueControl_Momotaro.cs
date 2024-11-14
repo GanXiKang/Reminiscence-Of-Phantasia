@@ -300,6 +300,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     _countEvent = 0;
                 }
                 break;
+
+            case 26:
+                StoryRiceDumpling_Momotaro.isChangeRoles = true;
+                StoryPlayerAnimator_Momotaro.isDonkey = true;
+                break;
         }
     }
     void DialogurEnd()
