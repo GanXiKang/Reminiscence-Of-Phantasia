@@ -306,8 +306,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 26:
-                StoryRiceDumpling_Momotaro.isChangeRoles = true;
                 StoryPlayerAnimator_Momotaro.isDonkey = true;
+                StoryRiceDumpling_Momotaro.isChangeRoles = true;
+                StoryRiceDumpling_Momotaro.isRoleActive = false;
                 break;
         }
     }
