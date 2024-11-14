@@ -343,6 +343,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 else
                 {
                     //離開山上
+                    StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
                     _countEvent = 0;
                 }
                 break;
@@ -374,7 +375,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 47:
-                //去山
+                //移動到山
+                StoryNpcAnimator_Momotaro.isWalk_Monkey = true;
                 StoryGameControl_Momotaro.isMountainActive = true;
                 break;
 
