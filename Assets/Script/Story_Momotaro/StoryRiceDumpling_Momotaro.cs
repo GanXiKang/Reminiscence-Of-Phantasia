@@ -64,10 +64,9 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
             case 9:
                 roleButton[3].SetActive(true);
                 break;
-
-            default:
-                return;
         }
+        riceButton.SetActive(!isRoleActive);
+        riceOpenButton.SetActive(isRoleActive);
     }
     void RaccoonSkill()
     {
@@ -99,8 +98,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (!isChangeRoles)
         {
             isRoleActive = !isRoleActive;
-            riceButton.SetActive(!isRoleActive);
-            riceOpenButton.SetActive(isRoleActive);
         }
         else
         {
