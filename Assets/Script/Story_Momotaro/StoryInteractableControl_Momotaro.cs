@@ -210,8 +210,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     }
     void GivePlayerObject()
     {
-        if (StoryUIControl_Momotaro.isDialogue) return;
-
         if (isGiveItem)
         {
             if (_whoGive == _who)
