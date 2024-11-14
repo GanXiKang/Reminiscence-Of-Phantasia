@@ -557,6 +557,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         }
                         break;
 
+                    case 5:
+                        StoryUIControl_Momotaro.isDialogue = true;
+                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                        StoryDialogueControl_Momotaro._textCount = 37;
+                        StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                        StoryBagControl._howManyGrids++;
+                        break;
+
                     case 6:
                         switch (i)
                         {
