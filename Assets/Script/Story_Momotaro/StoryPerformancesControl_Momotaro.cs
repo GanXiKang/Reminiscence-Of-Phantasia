@@ -7,7 +7,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip performancesBGM;
+    public AudioClip performancesBGM, plazaBGM;
     bool isStopBGM = false;
 
     [Header("PerformancesUI")]
@@ -270,6 +270,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void GameResult()
     {
         resultUI.SetActive(true);
+        BGM.Stop();
+        BGM.clip = plazaBGM;
+        BGM.Play();
 
         if (_score >= 80)
         {
