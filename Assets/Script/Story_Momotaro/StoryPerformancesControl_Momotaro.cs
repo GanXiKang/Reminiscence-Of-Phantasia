@@ -33,7 +33,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     float timeLimit = 2f; //2ÃëƒÈ°´ÏÂ°´âo
     float timer;
     bool isTiming = false;
-    bool isPerformances = false;
+    bool isGamePerformances = false;
     bool isSpace = false;
 
     void OnEnable()
@@ -43,6 +43,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
     IEnumerator StartPerformance()
     {
+        BlackScreenControl.isOpenBlackScreen = true;
+        yield return new WaitForSeconds(1f);
+        performancesCam.SetActive(true);
         _score = 0;
         BGM.Stop();
         BGM.clip = performancesBGM;
@@ -69,7 +72,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
         timer = timeLimit;
         isTiming = true;
-        isPerformances = true;
+        isGamePerformances = true;
     }
     void RandomDance()
     {
@@ -121,7 +124,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public void Dance_Button(int num)
     {
         if (SettingControl.isSettingActive) return;
-        if (!isPerformances) return;
+        if (!isGamePerformances) return;
         if (!isGameTiming) return;
         if (!isTiming) return;
 
@@ -180,7 +183,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void PerformancesTimeOut()
     {
         if (SettingControl.isSettingActive) return;
-        if (!isPerformances) return;
+        if (!isGamePerformances) return;
         if (!isGameTiming) return;
         if (!isTiming) return;
 
@@ -239,7 +242,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     }
     void Score()
     {
-        if (!isPerformances) return;
+        if (!isGamePerformances) return;
 
         scoreBar.fillAmount = _score / 100;
 
@@ -313,8 +316,10 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         rect.localScale = targetScale;
 
         yield return new WaitForSeconds(2f);
-        StoryUIControl_Momotaro.isPerformances = false;
         BlackScreenControl.isOpenBlackScreen = true;
+        yield return new WaitForSeconds(1f);
+        StoryUIControl_Momotaro.isPerformances = false;
+        performancesCam.SetActive(false);
         BGM.Stop();
         BGM.clip = plazaBGM;
         BGM.Play();
@@ -323,7 +328,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
     void OnDisable()
     {
-        isPerformances = false;
+        isGamePerformances = false;
         _danceNum = 0;
     }
 }
