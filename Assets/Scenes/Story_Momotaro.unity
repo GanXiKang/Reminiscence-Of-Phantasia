@@ -7106,8 +7106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde45b1742a5b804eb09b5de1b8cfba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: {fileID: 391252026}
-  plazaBGM: {fileID: 8300000, guid: 79fc8e3f8eb9671458d9b394d371314d, type: 3}
   skillUI: {fileID: 557269843}
   riceButton: {fileID: 1360469607}
   riceOpenButton: {fileID: 808968149}
@@ -21170,7 +21168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1076531922}
   - component: {fileID: 1076531921}
-  - component: {fileID: 1076531920}
   m_Layer: 0
   m_Name: PerformanceCamera
   m_TagString: Untagged
@@ -21178,14 +21175,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &1076531920
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076531919}
-  m_Enabled: 1
 --- !u!20 &1076531921
 Camera:
   m_ObjectHideFlags: 0
@@ -27246,6 +27235,7 @@ MonoBehaviour:
   BGM: {fileID: 391252026}
   performancesBGM: {fileID: 8300000, guid: 9c2fd3f5b0088ce49ba1d0fe77382481, type: 3}
   plazaBGM: {fileID: 8300000, guid: 79fc8e3f8eb9671458d9b394d371314d, type: 3}
+  performancesCam: {fileID: 0}
   test: {fileID: 611339305}
   scoreBar: {fileID: 1131655774}
   timeBar: {fileID: 1926733787}
