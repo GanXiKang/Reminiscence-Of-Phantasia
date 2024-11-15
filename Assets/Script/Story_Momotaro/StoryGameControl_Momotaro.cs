@@ -18,6 +18,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 
     [Header("Parrot")]
     public GameObject parrot;
+    public static bool isParrotActive = false;
 
     void Start()
     {
@@ -43,9 +44,6 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     }
     void ParrotActive()
     {
-        if (StoryNpcAnimator_Momotaro.isGold_Monkey)
-        {
-            parrot.SetActive(true);
-        }
+        parrot.SetActive(isParrotActive);
     }
 }
