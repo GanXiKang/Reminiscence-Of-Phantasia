@@ -16,6 +16,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public GameObject performancesCam;
 
     [Header("PerformancesUI")]
+    public GameObject all;
     public Text test; //úy‘á∞Ê
     public Image scoreBar;
     public Image timeBar;
