@@ -12,6 +12,10 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public static bool isForestActive = false;
     public static bool isMountainActive = false;
 
+    [Header("Statue")]
+    public GameObject catLow;
+    public GameObject catFinish;
+    
     void Start()
     {
         player = GameObject.Find("Player");
@@ -20,11 +24,17 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     void Update()
     {
         ExitActive();
+        StatueActive();
     }
 
     void ExitActive()
     {
         forest.SetActive(isForestActive);
         mountain.SetActive(isMountainActive);
+    }
+    void StatueActive()
+    {
+        catLow.SetActive(!StoryInteractableControl_Momotaro.isFinishWork);
+        catFinish.SetActive(StoryInteractableControl_Momotaro.isFinishWork);
     }
 }
