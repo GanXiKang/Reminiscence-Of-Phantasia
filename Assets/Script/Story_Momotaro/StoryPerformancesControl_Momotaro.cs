@@ -53,6 +53,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         performancesCam.SetActive(true);
+        player.transform.rotation = Quaternion.identity;
         _score = 0;
         BGM.Stop();
         BGM.clip = performancesBGM;
@@ -327,6 +328,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         yield return new WaitForSeconds(1f);
         StoryUIControl_Momotaro.isPerformances = false;
         performancesCam.SetActive(false);
+        player.transform.eulerAngles = new Vector3(30, -45, 0);
         BGM.Stop();
         BGM.clip = plazaBGM;
         BGM.Play();
