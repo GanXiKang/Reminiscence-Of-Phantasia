@@ -25,8 +25,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                     break;
 
                 case 4:
-                    //ÅÐ”àparrotÔÚˆöµÄ•rºò
-                    if (isOnce)
+                    if (!StoryGameControl_Momotaro.isParrotActive && isOnce)
                     {
                         isOnce = false;
                         StoryUIControl_Momotaro.isDialogue = true;
