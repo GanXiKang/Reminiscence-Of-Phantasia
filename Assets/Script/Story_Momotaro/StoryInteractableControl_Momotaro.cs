@@ -676,6 +676,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
+                                StoryGameControl_Momotaro.isParrotActive = true;
                                 StoryNpcAnimator_Momotaro.isGold_Monkey = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
