@@ -16,7 +16,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public GameObject performancesCam;
 
     [Header("PerformancesUI")]
-    public GameObject all;
+    public GameObject allUI;
     public Text test; //úy‘á∞Ê
     public Image scoreBar;
     public Image timeBar;
@@ -53,6 +53,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     {
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
+        allUI.SetActive(true);
         performancesCam.SetActive(true);
         player.transform.rotation = Quaternion.identity;
         _score = 0;
@@ -328,6 +329,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         StoryUIControl_Momotaro.isPerformances = false;
+        allUI.SetActive(false);
         performancesCam.SetActive(false);
         player.transform.eulerAngles = new Vector3(30, -45, 0);
         BGM.Stop();
