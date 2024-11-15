@@ -10,6 +10,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public AudioClip performancesBGM, plazaBGM;
     bool isStopBGM = false;
 
+    [Header("Camera")]
+    public GameObject performancesCam;
+
     [Header("PerformancesUI")]
     public Text test; //úy‘á∞Ê
     public Image scoreBar;
