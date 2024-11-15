@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StoryPerformancesControl_Momotaro : MonoBehaviour
 {
+    GameObject player;
+
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip performancesBGM, plazaBGM;
@@ -35,6 +37,11 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     bool isTiming = false;
     bool isGamePerformances = false;
     bool isSpace = false;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     void OnEnable()
     {
