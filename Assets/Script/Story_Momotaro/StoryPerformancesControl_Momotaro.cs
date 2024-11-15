@@ -270,9 +270,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     void GameResult()
     {
         resultUI.SetActive(true);
-        BGM.Stop();
-        BGM.clip = plazaBGM;
-        BGM.Play();
 
         if (_score >= 80)
         {
@@ -314,6 +311,10 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         StoryUIControl_Momotaro.isPerformances = false;
+        BlackScreenControl.isOpenBlackScreen = true;
+        BGM.Stop();
+        BGM.clip = plazaBGM;
+        BGM.Play();
         resultUI.SetActive(false);
     }
 

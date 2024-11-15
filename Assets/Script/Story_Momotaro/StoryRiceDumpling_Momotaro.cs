@@ -88,17 +88,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     void ParrotPerformances()
     {
         if (!StoryPlayerAnimator_Momotaro.isParrot) return;
+        if (StoryUIControl_Momotaro.isPerformances) return;
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            StoryUIControl_Momotaro.isPerformances = !StoryUIControl_Momotaro.isPerformances;
+            StoryUIControl_Momotaro.isPerformances = true;
             BlackScreenControl.isOpenBlackScreen = true;
-            if (!StoryUIControl_Momotaro.isPerformances)
-            {
-                BGM.Stop();
-                BGM.clip = plazaBGM;
-                BGM.Play();
-            }
         }
     }
 
