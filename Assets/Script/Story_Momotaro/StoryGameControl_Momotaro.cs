@@ -15,7 +15,10 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     [Header("Statue")]
     public GameObject catLow;
     public GameObject catFinish;
-    
+
+    [Header("Parrot")]
+    public GameObject parrot;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -25,6 +28,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     {
         ExitActive();
         StatueActive();
+        ParrotActive();
     }
 
     void ExitActive()
@@ -36,5 +40,12 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     {
         catLow.SetActive(!StoryInteractableControl_Momotaro.isFinishWork);
         catFinish.SetActive(StoryInteractableControl_Momotaro.isFinishWork);
+    }
+    void ParrotActive()
+    {
+        if (StoryNpcAnimator_Momotaro.isGold_Monkey)
+        {
+            parrot.SetActive(true);
+        }
     }
 }
