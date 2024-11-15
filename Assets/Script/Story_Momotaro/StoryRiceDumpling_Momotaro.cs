@@ -7,10 +7,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 {
     GameObject player;
 
-    [Header("Musia")]
-    public AudioSource BGM;
-    public AudioClip plazaBGM;
-
     [Header("SkillUI")]
     public GameObject skillUI;
     public GameObject riceButton, riceOpenButton;
