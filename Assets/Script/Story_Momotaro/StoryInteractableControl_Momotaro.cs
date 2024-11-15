@@ -64,7 +64,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     float _speed = 180f;
 
     //06Raccoon
-    bool isFinishWork = false;
+    public static bool isFinishWork = false;
     //09Parrot
     public static bool isAnswerCorrect = false;
 
