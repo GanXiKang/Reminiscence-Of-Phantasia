@@ -89,7 +89,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             StoryUIControl_Momotaro.isPerformances = true;
-            BlackScreenControl.isOpenBlackScreen = true;
         }
     }
 
