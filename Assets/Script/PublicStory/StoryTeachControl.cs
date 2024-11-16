@@ -19,7 +19,7 @@ public class StoryTeachControl : MonoBehaviour
     public bool isChange;
     int _teachChangePage = 2;
     public bool isWind;
-    int _teachWindPage = 1;
+    int _teachWindPage = 2;
     public bool isPerformance;
     int _teachPerformancePage = 2;
 
