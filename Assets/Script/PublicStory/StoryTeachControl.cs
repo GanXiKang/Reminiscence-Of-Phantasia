@@ -81,72 +81,94 @@ public class StoryTeachControl : MonoBehaviour
             }
         }
 
-        if (isGoddess && _isFinish == 0)
+        switch (_isFinish)
         {
-            for (int i = 1; i <= _teachGoddessPage; i++)
-            {
-                if (i == _page)
+            case 0:
+                if (isGoddess)
                 {
-                    //background.sprite = teachImage[i];
-                    content.text = teachContent[i].ToString();
+                    for (int i = 1; i <= _teachGoddessPage; i++)
+                    {
+                        if (i == _page)
+                        {
+                            //background.sprite = teachImage[i];
+                            content.text = teachContent[i].ToString();
+                        }
+                    }
                 }
-            }
-        }
-        else if (isChange && _isFinish == 1)
-        {
-            for (int i = 1; i <= _teachChangePage; i++)
-            {
-                if (i == _page)
+                break;
+
+            case 1:
+                if (isChange)
                 {
-                    //background.sprite = teachImage[i + _teachGoddessPage];
-                    content.text = teachContent[i + _teachGoddessPage].ToString();
+                    for (int i = 1; i <= _teachChangePage; i++)
+                    {
+                        if (i == _page)
+                        {
+                            //background.sprite = teachImage[i + _teachGoddessPage];
+                            content.text = teachContent[i + _teachGoddessPage].ToString();
+                        }
+                    }
                 }
-            }
-        }
-        else if (isWind && _isFinish == 2)
-        {
-            for (int i = 1; i <= _teachWindPage; i++)
-            {
-                if (i == _page)
+                break;
+
+            case 2:
+                if (isWind)
                 {
-                    //background.sprite = teachImage[i + _teachChangePage];
-                    content.text = teachContent[i + _teachChangePage].ToString();
+                    for (int i = 1; i <= _teachWindPage; i++)
+                    {
+                        if (i == _page)
+                        {
+                            //background.sprite = teachImage[i + _teachChangePage];
+                            content.text = teachContent[i + _teachChangePage].ToString();
+                        }
+                    }
                 }
-            }
-        }
-        else if (isPerformance && _isFinish == 3)
-        {
-            for (int i = 1; i <= _teachPerformancePage; i++)
-            {
-                if (i == _page)
+                break;
+
+            case 3:
+                if (isPerformance)
                 {
-                    //background.sprite = teachImage[i + _teachWindPage];
-                    content.text = teachContent[i + _teachWindPage].ToString();
+                    for (int i = 1; i <= _teachPerformancePage; i++)
+                    {
+                        if (i == _page)
+                        {
+                            //background.sprite = teachImage[i + _teachWindPage];
+                            content.text = teachContent[i + _teachWindPage].ToString();
+                        }
+                    }
                 }
-            }
+                break;
         }
 
-        if (isTime && _isFinish == 1)
+        switch (_isFinish)
         {
-            for (int i = 1; i <= _teachTimePage; i++)
-            {
-                if (i == _page)
+            case 0:
+                if (isTime)
                 {
-                    //background.sprite = teachImage[i];
-                    content.text = teachContent[i].ToString();
+                    for (int i = 1; i <= _teachTimePage; i++)
+                    {
+                        if (i == _page)
+                        {
+                            //background.sprite = teachImage[i];
+                            content.text = teachContent[i].ToString();
+                        }
+                    }
                 }
-            }
-        }
-        else if (isSupplies && _isFinish == 2)
-        {
-            for (int i = 1; i <= _teachSuppliesPage; i++)
-            {
-                if (i == _page)
+                break;
+
+            case 1:
+                if (isSupplies)
                 {
-                    //background.sprite = teachImage[i + _teachTimePage];
-                    content.text = teachContent[i + _teachTimePage].ToString();
+                    for (int i = 1; i <= _teachSuppliesPage; i++)
+                    {
+                        if (i == _page)
+                        {
+                            //background.sprite = teachImage[i + _teachTimePage];
+                            content.text = teachContent[i + _teachTimePage].ToString();
+                        }
+                    }
                 }
-            }
+                break;
         }
     }
     void ButtonActive()
