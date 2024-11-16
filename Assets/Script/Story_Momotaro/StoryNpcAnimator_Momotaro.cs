@@ -56,6 +56,20 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isSad", isSad_Momo);
                 break;
 
+            case 2:
+                anim.SetBool("isOut", isOutLake);
+                if (isBackLake && isOutLake)
+                {
+                    isOutLake = false;
+                    anim.SetBool("isBack", true);
+                }
+                else 
+                {
+                    isBackLake = false;
+                    anim.SetBool("isBack", false);
+                }
+                break;
+
             case 4:
                 if (isWalk_Monkey)
                 {
@@ -85,6 +99,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 }
                 anim.SetBool("isGold", isGold_Monkey);
                 anim.SetBool("isControlled", isControlled_Monkey);
+                anim.SetBool("isGoMountain", isGoMountain);
                 break;
 
             case 6:
