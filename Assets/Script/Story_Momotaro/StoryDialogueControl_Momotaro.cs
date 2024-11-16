@@ -450,7 +450,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 47:
-                //ÒÆ„Óµ½É½
+                StoryNpcAnimator_Momotaro.isGoMountain = true;
                 StoryNpcAnimator_Momotaro.isWalk_Monkey = true;
                 StoryGameControl_Momotaro.isMountainActive = true;
                 break;
