@@ -37,18 +37,6 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     void Update()
     {
         Animation();
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (!isOutLake)
-            {
-                isOutLake = true;
-            }
-            else
-            {
-                isBackLake = true;
-            }
-        }
     }
 
     void Animation()
