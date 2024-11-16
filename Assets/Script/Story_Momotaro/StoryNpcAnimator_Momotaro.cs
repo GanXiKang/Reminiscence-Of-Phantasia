@@ -18,6 +18,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isWalkGold_Monkey = false;
     public static bool isGold_Monkey = false;
     public static bool isControlled_Monkey = false;
+    public static bool isGoMountain = false;
     //06Raccoon
     public static bool isStone = false;
     //09Parrot
