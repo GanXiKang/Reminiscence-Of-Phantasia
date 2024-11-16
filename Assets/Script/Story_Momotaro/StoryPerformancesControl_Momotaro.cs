@@ -177,7 +177,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             Dance_Button(2);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Dance_Button(3);
         }
