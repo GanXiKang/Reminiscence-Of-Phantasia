@@ -236,37 +236,79 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         switch (_itemGoddess)
                         {
                             case 1:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[5] = true;
-                                StoryBagControl.isItemNumber[6] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[_itemGoddess];
-                                if (StoryBagControl.isOpenBag)
+                                if (!isAnswerLie)
                                 {
-                                    StoryBagControl.isOpenBag = false;
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[5] = true;
+                                    StoryBagControl.isItemNumber[6] = true;
+                                    StoryBagControl._whichItem = _exchangeItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
+                                }
+                                else
+                                {
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[4] = true;
+                                    StoryBagControl._whichItem = _getItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
                                 }
                                 break;
 
                             case 2:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[_exchangeItemNumber[_itemGoddess]] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[_itemGoddess];
-                                if (StoryBagControl.isOpenBag)
+                                if (isAnswerLie)
                                 {
-                                    StoryBagControl.isOpenBag = false;
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[_exchangeItemNumber[_itemGoddess]] = true;
+                                    StoryBagControl._whichItem = _exchangeItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
+                                }
+                                else
+                                {
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[7] = true;
+                                    StoryBagControl._whichItem = _getItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
                                 }
                                 break;
 
                             case 4:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[10] = true;
-                                StoryBagControl.isItemNumber[11] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[_itemGoddess];
-                                if (StoryBagControl.isOpenBag)
+                                if (!isAnswerLie)
                                 {
-                                    StoryBagControl.isOpenBag = false;
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[10] = true;
+                                    StoryBagControl.isItemNumber[11] = true;
+                                    StoryBagControl._whichItem = _exchangeItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
+                                }
+                                else
+                                {
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[9] = true;
+                                    StoryBagControl._whichItem = _getItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
                                 }
                                 break;
                         }
