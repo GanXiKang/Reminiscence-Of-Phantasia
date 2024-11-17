@@ -29,6 +29,7 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 
         if (isFall)
         {
+            anim.SetInteger("Direction", 0);
             anim.SetBool("isFall", true);
             isFall = false;
         }
