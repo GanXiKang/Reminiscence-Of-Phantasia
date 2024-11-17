@@ -358,6 +358,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 22:
                 if (StoryInteractableControl_Momotaro.isAnswerLie)
                 {
+                    StoryInteractableControl_Momotaro.isGiveItem = true;
+                    StoryInteractableControl_Momotaro._whoGive = 2;
                     StoryNpcAnimator_Momotaro.isAngry = true;
                 }
                 else
@@ -376,6 +378,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     {
                         if (_countEvent == 0)
                         {
+                            StoryInteractableControl_Momotaro.isGiveItem = true;
+                            StoryInteractableControl_Momotaro._whoGive = 2;
                             StoryNpcAnimator_Momotaro.isAngry = true;
                             _countEvent++;
                         }
