@@ -6,6 +6,7 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 {
     Animator anim;
 
+    public static int _direction;
     public static bool isDonkey = false;
     public static bool isRaccoon = false;
     public static bool isStone = false;
@@ -21,6 +22,7 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 
     void Update()
     {
+        anim.SetInteger("Direction", _direction);
         anim.SetBool("isDonkey", isDonkey);
         anim.SetBool("isRaccoon", isRaccoon);
         anim.SetBool("isStone", isStone);
@@ -29,7 +31,6 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 
         if (isFall)
         {
-            anim.SetInteger("Direction", 0);
             anim.SetBool("isFall", true);
             isFall = false;
         }
