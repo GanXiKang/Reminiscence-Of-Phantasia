@@ -423,21 +423,15 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        _countEvent++;
+                        StoryNpcAnimator_Momotaro.isStone = true;
                         break;
 
                     case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        StoryNpcAnimator_Momotaro.isStone = false;
+                        _countEvent = 0;
                         break;
-                }
-                if (_countEvent == 0)
-                {
-                    _countEvent++;
-                    StoryNpcAnimator_Momotaro.isStone = true;
-                }
-                else
-                {
-                    StoryPlayerControl.isSurprised = true;
-                    StoryNpcAnimator_Momotaro.isStone = false;
-                    _countEvent = 0;
                 }
                 break;
 
@@ -445,21 +439,15 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        _countEvent++;
+                        StoryPlayerControl.isHappy = true;
                         break;
 
                     case 1:
+                        //離開山上
+                        StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
+                        _countEvent = 0;
                         break;
-                }
-                if (_countEvent == 0)
-                {
-                    _countEvent++;
-                    StoryPlayerControl.isHappy = true;
-                }
-                else
-                {
-                    //離開山上
-                    StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
-                    _countEvent = 0;
                 }
                 break;
 
@@ -467,21 +455,14 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        StoryNpcAnimator_Momotaro.isControlled_Monkey = true;
+                        _countEvent++;
                         break;
 
                     case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent = 0;
                         break;
-                }
-                if (_countEvent == 0)
-                {
-                    StoryNpcAnimator_Momotaro.isControlled_Monkey = true;
-                    _countEvent++;
-                    
-                }
-                else
-                {
-                    StoryPlayerControl.isSurprised = true;
-                    _countEvent = 0;
                 }
                 break;
 
@@ -510,27 +491,20 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        StoryNpcAnimator_Momotaro.isPerformance = true;
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent++;
                         break;
 
                     case 1:
+                        if (StoryInteractableControl_Momotaro.isAnswerCorrect)
+                        {
+                            BGM.PlayOneShot(give);
+                            StoryInteractableControl_Momotaro.isGiveItem = true;
+                            StoryInteractableControl_Momotaro._whoGive = 9;
+                        }
+                        _countEvent = 0;
                         break;
-                }
-                if (_countEvent == 0)
-                {
-                    StoryNpcAnimator_Momotaro.isPerformance = true;
-                    StoryPlayerControl.isSurprised = true;
-                    _countEvent++;
-
-                }
-                else
-                {
-                    if (StoryInteractableControl_Momotaro.isAnswerCorrect)
-                    {
-                        BGM.PlayOneShot(give);
-                        StoryInteractableControl_Momotaro.isGiveItem = true;
-                        StoryInteractableControl_Momotaro._whoGive = 9;
-                    }
-                    _countEvent = 0;
                 }
                 break;
 
@@ -538,22 +512,16 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        StoryNpcAnimator_Momotaro.isExcited = true;
+                        _countEvent++;
                         break;
 
                     case 1:
+                        //離開廣場
+                        StoryNpcAnimator_Momotaro.isWalk_Parrot = true;
+                        StoryNpcAnimator_Momotaro.isExcited = false;
+                        _countEvent = 0;
                         break;
-                }
-                if (_countEvent == 0)
-                {
-                    StoryNpcAnimator_Momotaro.isExcited = true;
-                    _countEvent++;
-                }
-                else
-                {
-                    //離開廣場
-                    StoryNpcAnimator_Momotaro.isWalk_Parrot = true;
-                    StoryNpcAnimator_Momotaro.isExcited = false;
-                    _countEvent = 0;
                 }
                 break;
         }
