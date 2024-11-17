@@ -26,8 +26,10 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     //06Raccoon
     public static bool isStone = false;
     //07Dog
+    public static bool isSliver_Dog = false;
     public static bool isControlled_Dog = false;
     //08Chicken
+    public static bool isGold_Chicken = false;
     public static bool isControlled_Chicken = false;
     //09Parrot
     public static bool isWalk_Parrot = false;
@@ -113,10 +115,12 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 7:
+                anim.SetBool("isSliverFlute", isSliver_Dog);
                 anim.SetBool("isControlled", isControlled_Dog);
                 break;
 
             case 8:
+                anim.SetBool("isGoldFlute", isGold_Chicken);
                 anim.SetBool("isControlled", isControlled_Chicken);
                 break;
 
