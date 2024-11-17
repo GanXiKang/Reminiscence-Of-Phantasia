@@ -350,6 +350,17 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 19:
+                if (StoryInteractableControl_Momotaro.isAnswerLie)
+                {
+                    StoryNpcAnimator_Momotaro.
+                }
+                else
+                {
+                    
+                }
+                break;
+
             case 24:
             case 33:
             case 42:
@@ -476,6 +487,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 20:
             case 22:
                 StoryNpcAnimator_Momotaro.isBackLake = true;
+                if (StoryNpcAnimator_Momotaro.isAngry)
+                {
+                    Invoke("FalseGoddessAngry", 2f);
+                }
                 break;
 
             case 47:
@@ -503,5 +518,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     void StoryEnd()
     {
         StoryUIControl_Momotaro.isStoryEnding = true;
+    }
+
+    void FalseGoddessAngry()
+    {
+        StoryNpcAnimator_Momotaro.isAngry = false;
     }
 }
