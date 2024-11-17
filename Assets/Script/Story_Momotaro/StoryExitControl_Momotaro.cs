@@ -10,7 +10,6 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     [Header("Value")]
     public int _goToThatScene;
     public static int _changeSceneNum;
-    bool isGoScene2 = true;
 
     [Header("UI")]
     public GameObject exitUI;
@@ -18,6 +17,7 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     public Text sceneName;
     public static bool isExit = false;
     float _barSpeed = 2f;
+    bool isOnce = true;
 
     void Start()
     {
@@ -51,13 +51,12 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                 StoryLoadingScene_Momotaro.isOpen = true;
                 switch (_goToThatScene)
                 {
-                    case 1:
-                        isGoScene2 = true;
-                        break;
-
                     case 2:
-                        if (isGoScene2)
-                            isGoScene2 = false;
+                        if (isOnce)
+                        {
+                            isOnce = false;
+                            StoryLoadingScene_Momotaro.isFirstGoPlaza = true;
+                        }
                         break;
                 }
             }
