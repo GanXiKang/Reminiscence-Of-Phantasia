@@ -458,6 +458,19 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         {
             switch (_who)
             {
+                case 2:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            isInteractable = true;
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 17;
+                            break;
+                    }
+                    break;
+
                 case 3:
                     _countMouseDown++;
                     switch (_countMouseDown)
