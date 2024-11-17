@@ -490,10 +490,13 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 50:
+            case 58:
                 switch (_countEvent)
                 {
                     case 0:
                         StoryNpcAnimator_Momotaro.isControlled_Monkey = true;
+                        StoryNpcAnimator_Momotaro.isControlled_Dog = true;
+                        StoryNpcAnimator_Momotaro.isControlled_Chicken = true;
                         _countEvent++;
                         break;
 
@@ -523,6 +526,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
                 }
                 break;
+
+            
 
             case 68:
             case 71:
@@ -610,8 +615,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 50:
-                //壞結局 回到起點
-                StoryNpcAnimator_Momotaro.isControlled_Monkey = false;
+            case 58:
+                BlackScreenControl.isOpenBlackScreen = true;
+                Invoke("FalseControlled", 1f);
                 break;
 
             case 56:
@@ -629,5 +635,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     void FalseGoddessAngry()
     {
         StoryNpcAnimator_Momotaro.isAngry = false;
+    }
+    void FalseControlled()
+    {
+        StoryNpcAnimator_Momotaro.isControlled_Monkey = false;
+        StoryNpcAnimator_Momotaro.isControlled_Dog = false;
+        StoryNpcAnimator_Momotaro.isControlled_Chicken = false;
     }
 }
