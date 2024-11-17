@@ -136,12 +136,12 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         player.transform.position = respawnPoint[_respawnNum].position;
         yield return new WaitForSeconds(0.2f);
         playerControl.enabled = true;
-        if (isFirstBlown && !StoryPlayerAnimator_Momotaro.isRaccoon)
-        {
-            isFirstBlown = false;
-            StoryUIControl_Momotaro.isDialogue = true;
-            StoryDialogueControl_Momotaro._textCount = 5;
-        }
+        //if (isFirstBlown && !StoryPlayerAnimator_Momotaro.isRaccoon)
+        //{
+        //    isFirstBlown = false;
+        //    StoryUIControl_Momotaro.isDialogue = true;
+        //    StoryDialogueControl_Momotaro._textCount = 5;
+        //}
     }
 
     void OnDisable()
