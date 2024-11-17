@@ -170,16 +170,29 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 if (_chooseNum == 1)
                 {
                     JumpToSection("A");
+                    switch (_textCount)
+                    {
+                        case 20:
+                            StoryInteractableControl_Momotaro.isAnswerLie = false;
+                            break;
+                    }
                 }
                 else if (_chooseNum == 2)
                 {
-                    if (_textCount == 47)
+                    switch (_textCount)
                     {
-                        JumpToSection("A");
-                    }
-                    else
-                    {
-                        JumpToSection("B");
+                        case 20:
+                            StoryInteractableControl_Momotaro.isAnswerLie = true;
+                            JumpToSection("B");
+                            break;
+
+                        case 47:
+                            JumpToSection("A");
+                            break;
+
+                        default:
+                            JumpToSection("B");
+                            break;
                     }
                 }
                 else if (_chooseNum == 3)
