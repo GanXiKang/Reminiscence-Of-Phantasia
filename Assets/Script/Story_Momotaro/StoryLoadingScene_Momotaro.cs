@@ -69,7 +69,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 {
                     isFirstGoForest = false;
                     StoryPlayerAnimator_Momotaro.isFall = true;
-                    Invoke("PlayerFall", 0.5f);
+                    Invoke("PlayerFall", 0.75f);
                 }
             }
         }
