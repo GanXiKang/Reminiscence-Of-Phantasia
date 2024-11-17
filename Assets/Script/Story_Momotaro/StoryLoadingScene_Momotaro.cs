@@ -25,6 +25,9 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     bool isClose = false;
     float _loadingSpeed = 1.5f;
 
+    //value
+    bool isFirstGoForest = true;
+
     void Update()
     {
         loadingUI.SetActive(isLoading);
@@ -62,6 +65,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 isPlayMusiaOnce = true;
                 isClose = false;
                 isLoading = false;
+                FirstGoForest();
             }
         }
     }
@@ -123,5 +127,14 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 BGM.Play();
                 break;
         }
+    }
+
+    void FirstGoForest()
+    {
+        if (!isFirstGoForest) return;
+
+        isFirstGoForest = false;
+        StoryUIControl_Momotaro.isDialogue = true;
+        StoryDialogueControl_Momotaro._textCount = 2;
     }
 }
