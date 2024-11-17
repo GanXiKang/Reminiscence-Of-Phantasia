@@ -73,6 +73,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static bool isAnswerGold = false;
     //06Raccoon
     public static bool isFinishWork = false;
+    //07Dog & 08Chicken
+    public static bool isMeet = false;
     //09Parrot
     public static bool isAnswerCorrect = false;
 
@@ -448,10 +450,27 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 7:
-                    StoryUIControl_Momotaro.isDialogue = true;
-                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                    StoryDialogueControl_Momotaro._isAboveWho2 = 8;
-                    StoryDialogueControl_Momotaro._textCount = 56;
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            isMeet = true;
+                            isInteractable = true;
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                            StoryDialogueControl_Momotaro._textCount = 56;
+                            break;
+
+                        default:
+                            if (!StoryNpcAnimator_Momotaro.isSliver_Dog)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 54;
+                            }
+                            break;
+                    }
                     break;
 
                 case 9:
@@ -637,9 +656,21 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 8:
-                    StoryUIControl_Momotaro.isDialogue = true;
-                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                    StoryDialogueControl_Momotaro._textCount = 64;
+                    if (!StoryNpcAnimator_Momotaro.isGold_Chicken)
+                    {
+                        if (!isMeet)
+                        {
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 64;
+                        }
+                        else
+                        {
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 66;
+                        }
+                    }
                     break;
             }
         }
