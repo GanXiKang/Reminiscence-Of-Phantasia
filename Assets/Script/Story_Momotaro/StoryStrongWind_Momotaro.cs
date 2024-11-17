@@ -18,6 +18,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     public static int _respawnNum;
     public static bool isBlownAway = false;
     StoryPlayerControl playerControl;
+    Animator anim;
 
     [Header("HintUI")]
     public GameObject hintUI;
@@ -34,6 +35,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     {
         player = GameObject.Find("Player");
         playerControl = player.GetComponent<StoryPlayerControl>();
+        anim = player.GetComponent<Animator>();
     }
 
     void OnEnable()
@@ -132,6 +134,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     IEnumerator BlownAwayRenewPos()
     {
         playerControl.enabled = false;
+        anim.applyRootMotion = false;
         yield return new WaitForSeconds(0.8f);
         player.transform.position = respawnPoint[_respawnNum].position;
         if (isFirstBlown && !StoryPlayerAnimator_Momotaro.isRaccoon)
@@ -142,6 +145,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         playerControl.enabled = true;
+        anim.applyRootMotion = true;
     }
 
     void OnDisable()
