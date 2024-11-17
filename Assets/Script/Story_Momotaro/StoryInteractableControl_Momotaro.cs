@@ -63,6 +63,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     bool isRotation = false;
     float _speed = 180f;
 
+    //02Goddess
+    int _itemGoddess;
     //06Raccoon
     public static bool isFinishWork = false;
     //09Parrot
@@ -225,6 +227,125 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         if (StoryBagControl.isOpenBag)
                         {
                             StoryBagControl.isOpenBag = false;
+                        }
+                        break;
+
+                    case 2:
+                        switch (_itemGoddess)
+                        {
+                            case 0:
+                                isPickedUp = true;
+                                isSkill = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[2] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 1:
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 19;
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[5] = true;
+                                StoryBagControl.isItemNumber[6] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 2:
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 20;
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 3:
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 21;
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[10] = true;
+                                StoryBagControl.isItemNumber[11] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 4:
+                            case 5:
+                                if (!StoryBagControl.isItemNumber[5] && !StoryBagControl.isItemNumber[6])
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
+                                    StoryBagControl._howManyGrids++;
+                                }
+                                else
+                                {
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[5] = false;
+                                    StoryBagControl.isItemNumber[6] = false;
+                                    StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                    StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
+                                }
+                                break;
+
+                            case 6:
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 7:
+                            case 8:
+                                if (!StoryBagControl.isItemNumber[10] && !StoryBagControl.isItemNumber[11])
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
+                                    StoryBagControl._howManyGrids++;
+                                }
+                                else
+                                {
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[10] = false;
+                                    StoryBagControl.isItemNumber[11] = false;
+                                    StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
+                                    StoryBagControl._whichItem = _exchangeItemNumber[i];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
+                                }
+                                break;
                         }
                         break;
 
@@ -530,105 +651,42 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                isPickedUp = true;
-                                isSkill = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[2] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                if (StoryBagControl.isOpenBag)
-                                {
-                                    StoryBagControl.isOpenBag = false;
-                                }
+                               
                                 break;
 
                             case 1:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[5] = true;
-                                StoryBagControl.isItemNumber[6] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                if (StoryBagControl.isOpenBag)
-                                {
-                                    StoryBagControl.isOpenBag = false;
-                                }
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 19;
                                 break;
 
                             case 2:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                if (StoryBagControl.isOpenBag)
-                                {
-                                    StoryBagControl.isOpenBag = false;
-                                }
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 20;
                                 break;
 
                             case 3:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[10] = true;
-                                StoryBagControl.isItemNumber[11] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                if (StoryBagControl.isOpenBag)
-                                {
-                                    StoryBagControl.isOpenBag = false;
-                                }
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 21;
                                 break;
 
                             case 4:
                             case 5:
-                                if (!StoryBagControl.isItemNumber[5] && !StoryBagControl.isItemNumber[6])
-                                {
-                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
-                                    StoryBagControl._howManyGrids++;
-                                }
-                                else
-                                {
-                                    isPickedUp = true;
-                                    StoryBagControl.isGet = true;
-                                    StoryBagControl.isItemNumber[5] = false;
-                                    StoryBagControl.isItemNumber[6] = false;
-                                    StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
-                                    StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                    if (StoryBagControl.isOpenBag)
-                                    {
-                                        StoryBagControl.isOpenBag = false;
-                                    }
-                                }
+                               
                                 break;
 
                             case 6:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                if (StoryBagControl.isOpenBag)
-                                {
-                                    StoryBagControl.isOpenBag = false;
-                                }
+                                
                                 break;
 
                             case 7:
                             case 8:
-                                if (!StoryBagControl.isItemNumber[10] && !StoryBagControl.isItemNumber[11])
-                                {
-                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = false;
-                                    StoryBagControl._howManyGrids++;
-                                }
-                                else
-                                {
-                                    isPickedUp = true;
-                                    StoryBagControl.isGet = true;
-                                    StoryBagControl.isItemNumber[10] = false;
-                                    StoryBagControl.isItemNumber[11] = false;
-                                    StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
-                                    StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                    if (StoryBagControl.isOpenBag)
-                                    {
-                                        StoryBagControl.isOpenBag = false;
-                                    }
-                                }
+                               
                                 break;
                         }
                         break;
