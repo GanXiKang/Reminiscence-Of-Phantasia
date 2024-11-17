@@ -372,6 +372,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryPlayerControl.isSad = true;
                 break;
 
+            case 4:
+                StoryPlayerControl.isHappy = true;
+                break;
+
             case 9:
                 switch (_countEvent)
                 {
