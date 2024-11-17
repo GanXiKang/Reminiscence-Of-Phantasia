@@ -9,8 +9,11 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     [Header("Exit")]
     public GameObject forest;
     public GameObject mountain;
+    public GameObject plaza;
     public static bool isForestActive = false;
     public static bool isMountainActive = false;
+    public static bool isPlazaActive = false;
+    bool isOnce = true;
 
     [Header("Statue")]
     public GameObject catLow;
@@ -36,6 +39,14 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     {
         forest.SetActive(isForestActive);
         mountain.SetActive(isMountainActive);
+        plaza.SetActive(isPlazaActive);
+
+        if (isMountainActive && isPlazaActive && isOnce)
+        {
+            isOnce = false;
+            StoryUIControl_Momotaro.isDialogue = true;
+            StoryDialogueControl_Momotaro._textCount = 3;
+        }
     }
     void StatueActive()
     {
