@@ -64,7 +64,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     float _speed = 180f;
 
     //02Goddess
-    int _itemGoddess;
+    int _itemGoddess = 0;
     public static bool isAnswerLie = false;
     public static bool isAnswerGold = false;
     //06Raccoon
@@ -235,6 +235,32 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     case 2:
                         switch (_itemGoddess)
                         {
+                            case 0:
+                                if (!isAnswerLie)
+                                {
+                                    isPickedUp = true;
+                                    isSkill = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[2] = true;
+                                    StoryBagControl._whichItem = _exchangeItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
+                                }
+                                else
+                                {
+                                    isPickedUp = true;
+                                    StoryBagControl.isGet = true;
+                                    StoryBagControl.isItemNumber[1] = true;
+                                    StoryBagControl._whichItem = _getItemNumber[_itemGoddess];
+                                    if (StoryBagControl.isOpenBag)
+                                    {
+                                        StoryBagControl.isOpenBag = false;
+                                    }
+                                }
+                                break;
+
                             case 1:
                                 if (!isAnswerLie)
                                 {
@@ -464,6 +490,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     {
                         case 1:
                             isInteractable = true;
+                            StoryNpcAnimator_Momotaro.isOutLake = true;
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                             StoryDialogueControl_Momotaro._textCount = 17;
@@ -629,16 +656,11 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         _itemGoddess = i;
                         switch (i)
                         {
-                            case 0: //úy‘á”√
-                                isPickedUp = true;
-                                isSkill = true;
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[2] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[i];
-                                if (StoryBagControl.isOpenBag)
-                                {
-                                    StoryBagControl.isOpenBag = false;
-                                }
+                            case 0:
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 18;
                                 break;
 
                             case 1:
