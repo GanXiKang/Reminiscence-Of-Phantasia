@@ -229,6 +229,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                             StoryInteractableControl_Momotaro.isAnswerLie = false;
                             break;
 
+                        case 20:
+                            StoryInteractableControl_Momotaro.isAnswerGold = true;
+                            break;
+
                         case 68:
                         case 71:
                             StoryInteractableControl_Momotaro.isAnswerCorrect = true;
@@ -351,13 +355,38 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 19:
+            case 22:
                 if (StoryInteractableControl_Momotaro.isAnswerLie)
                 {
-                    StoryNpcAnimator_Momotaro.
+                    StoryNpcAnimator_Momotaro.isAngry = true;
                 }
                 else
                 {
-                    
+                    StoryPlayerControl.isHappy = true;
+                }
+                break;
+
+            case 20:
+                if (!StoryInteractableControl_Momotaro.isAnswerGold)
+                {
+                    if (StoryInteractableControl_Momotaro.isAnswerLie)
+                    {
+                        if (_countEvent == 0)
+                        {
+                            StoryNpcAnimator_Momotaro.isAngry = true;
+                            _countEvent++;
+                        }
+                        else
+                        {
+                            StoryPlayerControl.isHappy = true;
+                            _countEvent = 0;
+                        }
+                    }
+                }
+                else 
+                {
+                    StoryPlayerControl.isSurprised = true;
+                    StoryInteractableControl_Momotaro.isAnswerGold = false;
                 }
                 break;
 
