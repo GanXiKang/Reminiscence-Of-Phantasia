@@ -14,6 +14,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isHappy_Momo = false;
     public static bool isSad_Momo = true;
     //02Goddess
+    public static bool isAngry = false;
     public static bool isOutLake = false;
     public static bool isBackLake = false;
     //04Monkey
@@ -57,6 +58,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 2:
+                anim.SetBool("isAngry", isAngry);
                 anim.SetBool("isOut", isOutLake);
                 if (isBackLake && isOutLake)
                 {
