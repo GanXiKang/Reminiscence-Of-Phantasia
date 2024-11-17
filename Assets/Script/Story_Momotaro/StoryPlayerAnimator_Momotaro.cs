@@ -26,5 +26,15 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
         anim.SetBool("isStone", isStone);
         anim.SetBool("isParrot", isParrot);
         anim.SetInteger("isDance", StoryPerformancesControl_Momotaro._danceNum);
+
+        if (isFall)
+        {
+            anim.SetBool("isFall", true);
+            isFall = false;
+        }
+        else
+        {
+            anim.SetBool("isFall", false);
+        }
     }
 }
