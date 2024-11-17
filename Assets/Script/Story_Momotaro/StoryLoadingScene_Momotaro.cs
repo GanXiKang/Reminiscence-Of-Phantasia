@@ -65,7 +65,12 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 isPlayMusiaOnce = true;
                 isClose = false;
                 isLoading = false;
-                FirstGoForest();
+                if (isFirstGoForest)
+                {
+                    isFirstGoForest = false;
+                    StoryPlayerAnimator_Momotaro.isFall = true;
+                    Invoke("PlayerFall", 0.5f);
+                }
             }
         }
     }
@@ -129,11 +134,8 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
         }
     }
 
-    void FirstGoForest()
+    void PlayerFall()
     {
-        if (!isFirstGoForest) return;
-
-        isFirstGoForest = false;
         StoryUIControl_Momotaro.isDialogue = true;
         StoryDialogueControl_Momotaro._textCount = 2;
     }
