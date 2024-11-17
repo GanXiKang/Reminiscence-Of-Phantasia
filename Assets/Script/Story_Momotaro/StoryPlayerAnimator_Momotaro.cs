@@ -11,6 +11,9 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
     public static bool isStone = false;
     public static bool isParrot = false;
 
+    //Move
+    public static bool isFall = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
