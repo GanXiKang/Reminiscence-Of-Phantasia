@@ -388,6 +388,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 17:
+            case 18:
             case 19:
             case 22:
                 if (StoryInteractableControl_Momotaro.isAnswerLie)
@@ -569,6 +571,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryInteractableControl_Momotaro._whoGive = 1;
                 break;
 
+            case 17:
+            case 18:
             case 19:
             case 20:
             case 22:
