@@ -13,6 +13,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public static bool isForestActive = false;
     public static bool isMountainActive = false;
     public static bool isPlazaActive = false;
+    public static bool isBeenToPlaza = false;
     bool isOnce = true;
 
     [Header("Statue")]
@@ -41,7 +42,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         mountain.SetActive(isMountainActive);
         plaza.SetActive(isPlazaActive);
 
-        if (isMountainActive && isPlazaActive && isOnce)
+        if (isMountainActive && isPlazaActive && !isBeenToPlaza && isOnce)
         {
             isOnce = false;
             StoryUIControl_Momotaro.isDialogue = true;
