@@ -56,7 +56,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 Invoke("WaitCloseLoading", 0.5f);
                 if (isFirstGoForest)
                 {
-                    StoryPlayerAnimator_Momotaro._direction = 0;
+                    StoryPlayerControl._direction = 0;
                 }
             }
         }
