@@ -27,6 +27,9 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     float _animDuration = 0.7f;
     float _speed = 360f;
 
+    //value
+    bool isFirstBlown = true;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -133,6 +136,12 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         player.transform.position = respawnPoint[_respawnNum].position;
         yield return new WaitForSeconds(0.2f);
         playerControl.enabled = true;
+        if (isFirstBlown && !StoryPlayerAnimator_Momotaro.isRaccoon)
+        {
+            isFirstBlown = false;
+            StoryUIControl_Momotaro.isDialogue = true;
+            StoryDialogueControl_Momotaro._textCount = 5;
+        }
     }
 
     void OnDisable()
