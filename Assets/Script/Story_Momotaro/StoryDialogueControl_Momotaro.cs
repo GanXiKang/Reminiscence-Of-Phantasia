@@ -362,6 +362,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 else
                 {
+                    BGM.PlayOneShot(give);
+                    StoryInteractableControl_Momotaro.isGiveItem = true;
+                    StoryInteractableControl_Momotaro._whoGive = 2;
                     StoryPlayerControl.isHappy = true;
                 }
                 break;
@@ -378,6 +381,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         }
                         else
                         {
+                            BGM.PlayOneShot(give);
+                            StoryInteractableControl_Momotaro.isGiveItem = true;
+                            StoryInteractableControl_Momotaro._whoGive = 2;
                             StoryPlayerControl.isHappy = true;
                             _countEvent = 0;
                         }
