@@ -966,7 +966,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f84f735af65a7da4a9605dcf6344b783, type: 3}
-      insertIndex: 11
+      insertIndex: -1
       addedObject: {fileID: 1396925776}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f84f735af65a7da4a9605dcf6344b783, type: 3}
       insertIndex: -1
@@ -3439,6 +3439,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &419035363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5805360583503011449, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
+  m_PrefabInstance: {fileID: 1855249766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &422457572
 GameObject:
   m_ObjectHideFlags: 0
@@ -8024,6 +8029,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!65 &720386126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8415,6 +8421,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!1 &770690091
 GameObject:
   m_ObjectHideFlags: 0
@@ -9951,6 +9958,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 419035363}
 --- !u!1 &875073297
 GameObject:
   m_ObjectHideFlags: 0
@@ -10379,6 +10387,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!1 &904592266
 GameObject:
   m_ObjectHideFlags: 0
@@ -10626,6 +10635,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!65 &920244498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22143,6 +22153,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!1 &1232535169
 GameObject:
   m_ObjectHideFlags: 0
@@ -23305,6 +23316,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!1 &1311399652
 GameObject:
   m_ObjectHideFlags: 0
@@ -24636,7 +24648,7 @@ GameObject:
   - component: {fileID: 1396925778}
   - component: {fileID: 1396925777}
   m_Layer: 0
-  m_Name: rock02.003 (1)
+  m_Name: SmallRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26811,7 +26823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1666230236
 Transform:
   m_ObjectHideFlags: 0
@@ -27792,6 +27804,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!1 &1867473635
 GameObject:
   m_ObjectHideFlags: 0
@@ -29080,6 +29093,7 @@ MonoBehaviour:
   moveItemUI: {fileID: 983940799}
   bagUIPosition: {fileID: 1373980777}
   skillUIPosition: {fileID: 1360469608}
+  effects: {fileID: 0}
 --- !u!1 &1982281286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8869551876596732145, guid: f84f735af65a7da4a9605dcf6344b783, type: 3}
