@@ -201,16 +201,23 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 else if (_chooseNum == 3)
                 {
-                    JumpToSection("C");
                     switch (_textCount)
                     {
+                        case 17:
+                        case 18:
                         case 19:
                         case 22:
                             StoryInteractableControl_Momotaro.isAnswerLie = true;
+                            JumpToSection("D");
                             break;
 
                         case 20:
                             StoryInteractableControl_Momotaro.isAnswerLie = false;
+                            JumpToSection("C");
+                            break;
+
+                        default:
+                            JumpToSection("C");
                             break;
                     }
                 }
@@ -218,6 +225,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 {
                     switch (_textCount)
                     {
+                        case 17:
+                        case 18:
                         case 19:
                         case 20:
                         case 22:
@@ -241,6 +250,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     JumpToSection("E");
                     switch (_textCount)
                     {
+                        case 17:
+                        case 18:
                         case 19:
                         case 22:
                             StoryInteractableControl_Momotaro.isAnswerLie = false;
