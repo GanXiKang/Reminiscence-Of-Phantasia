@@ -68,6 +68,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
     //02Goddess
     int _itemGoddess = 0;
+    bool isGoddessGetSkill = false;
     public static bool isAnswerLie = false;
     public static bool isAnswerGold = false;
     //06Raccoon
@@ -241,6 +242,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 0:
                                 if (!isAnswerLie)
                                 {
+                                    isGoddessGetSkill = true;
                                     isPickedUp = true;
                                     isSkill = true;
                                     StoryBagControl.isGet = true;
@@ -504,49 +506,55 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 3:
-                    _countMouseDown++;
-                    switch (_countMouseDown)
+                    if (isGoddessGetSkill)
                     {
-                        case 1:
-                            isInteractable = true;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 24;
-                            break;
+                        _countMouseDown++;
+                        switch (_countMouseDown)
+                        {
+                            case 1:
+                                isInteractable = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 24;
+                                break;
 
-                        default:
-                            if (!isEatGoldRice)
-                            {
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 25;
-                            }
-                            else
-                            {
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 27;
-                            }
-                            break;
+                            default:
+                                if (!isEatGoldRice)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 25;
+                                }
+                                else
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 27;
+                                }
+                                break;
+                        }
                     }
                     break;
 
                 case 4:
-                    _countMouseDown++;
-                    switch (_countMouseDown)
+                    if (isGoddessGetSkill)
                     {
-                        case 1:
-                            isInteractable = true;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 47;
-                            break;
+                        _countMouseDown++;
+                        switch (_countMouseDown)
+                        {
+                            case 1:
+                                isInteractable = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 47;
+                                break;
 
-                        default:
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 48;
-                            break;
+                            default:
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 48;
+                                break;
+                        }
                     }
                     break;
 
