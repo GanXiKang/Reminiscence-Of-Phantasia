@@ -24,7 +24,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public int _who;
     public static int _aboveWho = 0;
     public static bool isInteractableUI = false;
-    bool isInteractable = true;  //測試更改  用於先對話后互動
+    bool isInteractable = false;
     int _countMouseDown;
 
     [Header("Item_Give")]
