@@ -378,8 +378,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     {
                         if (_countEvent == 0)
                         {
-                            StoryInteractableControl_Momotaro.isGiveItem = true;
-                            StoryInteractableControl_Momotaro._whoGive = 2;
                             StoryNpcAnimator_Momotaro.isAngry = true;
                             _countEvent++;
                         }
@@ -391,6 +389,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                             StoryPlayerControl.isHappy = true;
                             _countEvent = 0;
                         }
+                    }
+                    else
+                    {
+                        StoryInteractableControl_Momotaro.isGiveItem = true;
+                        StoryInteractableControl_Momotaro._whoGive = 2;
                     }
                 }
                 else 
