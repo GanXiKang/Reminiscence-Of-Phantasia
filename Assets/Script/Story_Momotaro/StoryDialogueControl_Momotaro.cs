@@ -591,6 +591,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 26:
+                StoryGameControl_Momotaro.isPlazaActive = true;
+                break;
+
             case 47:
                 StoryNpcAnimator_Momotaro.isGoMountain = true;
                 StoryNpcAnimator_Momotaro.isWalk_Monkey = true;
