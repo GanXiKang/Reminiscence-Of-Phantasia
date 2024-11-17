@@ -811,6 +811,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         switch (i)
                         {
                             case 0:
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = 8;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 58;
                                 StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                                 StoryBagControl._howManyGrids++;
                                 break;
@@ -825,6 +829,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         switch (i)
                         {
                             case 0:
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = 7;
+                                StoryDialogueControl_Momotaro._textCount = 58;
                                 StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                                 StoryBagControl._howManyGrids++;
                                 break;
