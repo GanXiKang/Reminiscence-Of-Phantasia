@@ -357,6 +357,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 2:
+                StoryPlayerControl.isSad = true;
+                break;
+
             case 9:
                 switch (_countEvent)
                 {
