@@ -51,7 +51,7 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                 StoryLoadingScene_Momotaro.isOpen = true;
                 switch (_goToThatScene)
                 {
-                    case 2:
+                    case 4:
                         if (isOnce)
                         {
                             isOnce = false;
