@@ -512,7 +512,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 56:
-                switch(_countEvent)
+                switch (_countEvent)
                 {
                     case 0:
                         //chicken×ß¿¿½ü
