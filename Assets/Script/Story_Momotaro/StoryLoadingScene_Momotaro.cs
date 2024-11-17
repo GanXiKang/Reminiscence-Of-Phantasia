@@ -54,6 +54,10 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
             {
                 isOpen = false;
                 Invoke("WaitCloseLoading", 0.5f);
+                if (isFirstGoForest)
+                {
+                    StoryPlayerAnimator_Momotaro._direction = 0;
+                }
             }
         }
         if (isClose)
@@ -69,6 +73,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 if (isFirstGoForest)
                 {
                     isFirstGoForest = false;
+                    isPlotAnimator = true;
                     StoryPlayerAnimator_Momotaro.isFall = true;
                     StoryBagControl.isOpenBag = false;
                     StoryBagControl.isItemNumber[1] = false;
@@ -141,6 +146,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
 
     void PlayerFall()
     {
+        isPlotAnimator = false;
         StoryUIControl_Momotaro.isDialogue = true;
         StoryDialogueControl_Momotaro._textCount = 2;
     }
