@@ -449,6 +449,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryInteractableControl_Momotaro._whoGive = 1;
                 break;
 
+            case 19:
+            case 20:
+            case 22:
+                StoryNpcAnimator_Momotaro.isBackLake = true;
+                break;
+
             case 47:
                 StoryNpcAnimator_Momotaro.isGoMountain = true;
                 StoryNpcAnimator_Momotaro.isWalk_Monkey = true;
