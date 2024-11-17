@@ -507,6 +507,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 55:
+                StoryNpcAnimator_Momotaro.isSliver_Dog = true;
+                break;
+
             case 56:
                 switch(_countEvent)
                 {
@@ -527,7 +531,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
-            
+            case 67:
+                StoryNpcAnimator_Momotaro.isGold_Chicken = true;
+                break;
 
             case 68:
             case 71:
