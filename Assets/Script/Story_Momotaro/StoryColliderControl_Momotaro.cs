@@ -5,7 +5,10 @@ using UnityEngine;
 public class StoryColliderControl_Momotaro : MonoBehaviour
 {
     public int _whatCollider;
-    bool isOnce = true;
+
+    //Once
+    bool isParrotOnce = true;
+    bool isStoneSuccess = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,12 +25,21 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                         StoryStrongWind_Momotaro.isBlownAway = true;
                         BlackScreenControl.isOpenBlackScreen = true;
                     }
+                    else
+                    {
+                        if (isStoneSuccess)
+                        {
+                            isStoneSuccess = false;
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._textCount = 8;
+                        }
+                    }
                     break;
 
                 case 4:
-                    if (!StoryGameControl_Momotaro.isParrotActive && isOnce)
+                    if (!StoryGameControl_Momotaro.isParrotActive && isParrotOnce)
                     {
-                        isOnce = false;
+                        isParrotOnce = false;
                         StoryUIControl_Momotaro.isDialogue = true;
                         StoryDialogueControl_Momotaro._isAboveWho1 = 10;
                         StoryDialogueControl_Momotaro._textCount = 73;
