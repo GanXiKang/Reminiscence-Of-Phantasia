@@ -189,10 +189,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     {
                         case 19:
                         case 22:
-
+                            StoryInteractableControl_Momotaro.isAnswerLie = true;
                             break;
 
                         case 20:
+                            StoryInteractableControl_Momotaro.isAnswerLie = false;
                             break;
                     }
                 }
@@ -201,11 +202,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     switch (_textCount)
                     {
                         case 19:
-                        case 22:
-
-                            break;
-
                         case 20:
+                        case 22:
+                            StoryInteractableControl_Momotaro.isAnswerLie = true;
+                            JumpToSection("D");
                             break;
 
                         case 68:
@@ -226,7 +226,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     {
                         case 19:
                         case 22:
-
+                            StoryInteractableControl_Momotaro.isAnswerLie = false;
                             break;
 
                         case 68:
