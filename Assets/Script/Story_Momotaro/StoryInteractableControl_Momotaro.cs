@@ -669,24 +669,16 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 3:
-                                StoryNpcAnimator_Momotaro.isOutLake = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 21;
                                 break;
 
                             case 4:
-                            case 5:
-                               
-                                break;
-
-                            case 6:
-                                
-                                break;
-
-                            case 7:
-                            case 8:
-                               
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 22;
                                 break;
                         }
                         break;
