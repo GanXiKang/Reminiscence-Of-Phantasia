@@ -564,6 +564,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 2:
+                StoryLoadingScene_Momotaro.isPlotAnimator = false;
+                break;
+
             case 9:
                 BGM.PlayOneShot(give);
                 StoryGameControl_Momotaro.isForestActive = true;
