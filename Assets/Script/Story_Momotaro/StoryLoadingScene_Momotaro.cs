@@ -69,6 +69,10 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 {
                     isFirstGoForest = false;
                     StoryPlayerAnimator_Momotaro.isFall = true;
+                    StoryBagControl.isOpenBag = false;
+                    StoryBagControl.isItemNumber[1] = false;
+                    StoryBagControl._howManyGrids--;
+                    StoryBagControl.isRenewBag = true;
                     Invoke("PlayerFall", 0.75f);
                 }
             }
