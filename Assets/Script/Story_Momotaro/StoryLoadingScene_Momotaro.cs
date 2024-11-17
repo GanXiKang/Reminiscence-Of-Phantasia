@@ -27,6 +27,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
 
     //value
     bool isFirstGoForest = true;
+    bool isFirstGoPlaza = true;
     public static bool isPlotAnimator = false;
 
     void Update()
