@@ -79,6 +79,12 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                     StoryBagControl.isRenewBag = true;
                     Invoke("PlayerFall", 0.75f);
                 }
+                if (isFirstGoPlaza)
+                {
+                    isFirstGoPlaza = false;
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._textCount = 4;
+                }
             }
         }
     }
