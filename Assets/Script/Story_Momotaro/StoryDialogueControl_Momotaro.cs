@@ -185,11 +185,29 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 else if (_chooseNum == 3)
                 {
                     JumpToSection("C");
+                    switch (_textCount)
+                    {
+                        case 19:
+                        case 22:
+
+                            break;
+
+                        case 20:
+                            break;
+                    }
                 }
                 else if (_chooseNum == 4)
                 {
                     switch (_textCount)
                     {
+                        case 19:
+                        case 22:
+
+                            break;
+
+                        case 20:
+                            break;
+
                         case 68:
                         case 71:
                             JumpToSection("C");
@@ -206,6 +224,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     JumpToSection("E");
                     switch (_textCount)
                     {
+                        case 19:
+                        case 22:
+
+                            break;
+
                         case 68:
                         case 71:
                             StoryInteractableControl_Momotaro.isAnswerCorrect = true;
