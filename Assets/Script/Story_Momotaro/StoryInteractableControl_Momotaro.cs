@@ -66,6 +66,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     //02Goddess
     int _itemGoddess;
     public static bool isAnswerLie = false;
+    public static bool isAnswerGold = false;
     //06Raccoon
     public static bool isFinishWork = false;
     //09Parrot
