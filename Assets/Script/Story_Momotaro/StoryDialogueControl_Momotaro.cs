@@ -569,7 +569,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
 
                     case 1:
-                        //ÎxÈ_èVàˆ
+                        StoryNpcAnimator_Momotaro.isLeave = true;
                         StoryNpcAnimator_Momotaro.isWalk_Parrot = true;
                         StoryNpcAnimator_Momotaro.isExcited = false;
                         _countEvent = 0;
