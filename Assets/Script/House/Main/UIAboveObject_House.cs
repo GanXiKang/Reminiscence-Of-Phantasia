@@ -45,7 +45,8 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Update()
     {
-        hint.LookAt(player.transform);
+        Vector3 targetPosition = new Vector3(player.transform.position.x, hint.transform.position.y, player.transform.position.z);
+        hint.LookAt(targetPosition);
 
         Hint();
     }
