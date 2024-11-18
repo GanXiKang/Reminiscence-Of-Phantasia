@@ -17,6 +17,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     public Transform[] respawnPoint;
     public static int _respawnNum;
     public static bool isBlownAway = false;
+    public static bool isFirstBlown = true;
     StoryPlayerControl playerControl;
     Animator anim;
 
@@ -27,9 +28,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     bool isMove = false;
     float _animDuration = 0.7f;
     float _speed = 360f;
-
-    //value
-    bool isFirstBlown = true;
 
     void Start()
     {
