@@ -9,6 +9,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
+    public AudioClip normalMusia, spikedMusia;
     public AudioClip give;
 
     [Header("UITransform")]
@@ -210,11 +211,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
         {
             case "Normal":
                 dialogueBG.sprite = normal;
+                BGM.PlayOneShot(normalMusia);
                 _index++;
                 break;
 
             case "Spiked":
                 dialogueBG.sprite = spiked;
+                BGM.PlayOneShot(spikedMusia);
                 _index++;
                 break;
 
