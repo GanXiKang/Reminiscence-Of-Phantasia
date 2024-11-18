@@ -40,7 +40,7 @@ public class UIAboveObject_House : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
-        isAboveBed = true;
+        isAboveShowcase = true;
     }
 
     void Update()
