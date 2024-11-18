@@ -35,6 +35,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isWalk_Parrot = false;
     public static bool isPerformance = false;
     public static bool isExcited = false;
+    public static bool isLeave = false;
 
     void Start()
     {
@@ -150,6 +151,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                     anim.SetBool("isPerformance", false);
                 }
                 anim.SetBool("isExcited", isExcited);
+                anim.SetBool("isLeave", isLeave);
                 break;
         }
     }
