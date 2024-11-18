@@ -23,6 +23,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isGold_Monkey = false;
     public static bool isControlled_Monkey = false;
     public static bool isGoMountain = false;
+    public static bool isLeave_Monkey = false;
     //06Raccoon
     public static bool isStone = false;
     //07Dog
@@ -35,7 +36,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isWalk_Parrot = false;
     public static bool isPerformance = false;
     public static bool isExcited = false;
-    public static bool isLeave = false;
+    public static bool isLeave_Parrot = false;
 
     void Start()
     {
@@ -109,6 +110,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isGold", isGold_Monkey);
                 anim.SetBool("isControlled", isControlled_Monkey);
                 anim.SetBool("isGoMountain", isGoMountain);
+                anim.SetBool("isLeave", isLeave_Monkey);
                 break;
 
             case 6:
@@ -151,7 +153,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                     anim.SetBool("isPerformance", false);
                 }
                 anim.SetBool("isExcited", isExcited);
-                anim.SetBool("isLeave", isLeave);
+                anim.SetBool("isLeave", isLeave_Parrot);
                 break;
         }
     }
