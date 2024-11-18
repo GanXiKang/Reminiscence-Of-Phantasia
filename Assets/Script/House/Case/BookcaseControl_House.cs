@@ -12,7 +12,7 @@ public class BookcaseControl_House : MonoBehaviour
     [Header("Book")]
     public GameObject[] book;
     public Transform[] bookMovePos;
-    public Transform originalPoint;
+    public Transform[] originalPoint;
     public static int _bookNum = 0;
 
     //Move
@@ -274,8 +274,8 @@ public class BookcaseControl_House : MonoBehaviour
         isOpen = false;
         for (int k = 0; k < book.Length; k++)
         {
-            book[k].transform.position = originalPoint.transform.position;
-            book[k].transform.rotation = originalPoint.transform.rotation;
+            book[k].transform.position = originalPoint[k].transform.position;
+            book[k].transform.rotation = originalPoint[k].transform.rotation;
         }
     }
 }
