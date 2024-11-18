@@ -8,7 +8,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
 
     //Once
     bool isParrotOnce = true;
-    bool isStoneSuccess = true;
+    public static bool isStoneSuccess = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -43,6 +43,25 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                         StoryUIControl_Momotaro.isDialogue = true;
                         StoryDialogueControl_Momotaro._isAboveWho1 = 10;
                         StoryDialogueControl_Momotaro._textCount = 73;
+                    }
+                    break;
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            switch (_whatCollider)
+            {
+                case 1:
+                case 2:
+                case 3:
+                    if (!StoryPlayerAnimator_Momotaro.isStone)
+                    {
+                        StoryStrongWind_Momotaro._respawnNum = _whatCollider;
+                        StoryStrongWind_Momotaro.isBlownAway = true;
+                        BlackScreenControl.isOpenBlackScreen = true;
                     }
                     break;
             }
