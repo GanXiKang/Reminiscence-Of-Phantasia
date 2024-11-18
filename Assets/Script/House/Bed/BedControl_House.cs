@@ -46,7 +46,7 @@ public class BedControl_House : MonoBehaviour
 
         if (PlayerControl_House.isSleep)
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, sleepPoint.position, _moveSpeed * Time.deltaTime);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, sleepPoint.position, _moveSpeed * Time.deltaTime * 100);
             player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, sleepPoint.rotation, _moveSpeed * Time.deltaTime * 100);
         }
     }
