@@ -22,7 +22,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 
     [Header("Parrot")]
     public GameObject parrot;
-    public static bool isParrotActive = true; //∑Ω±„úy‘á
+    public static bool isParrotActive = false; //∑Ω±„úy‘á
 
     void Start()
     {
