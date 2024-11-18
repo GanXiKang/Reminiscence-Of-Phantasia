@@ -56,7 +56,6 @@ public class BirdControl_House : MonoBehaviour
         {
             BGM.PlayOneShot(bye);
             anim.SetBool("isBye", true);
-            anim.SetBool("isIdle_Out", true);
             anim.SetBool("isIdle", false);
             Invoke("FalseByAnimationisBye", 1f);
             isBye = false;
