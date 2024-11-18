@@ -8,8 +8,12 @@ public class BedControl_House : MonoBehaviour
     public static bool isGoStoryWorld = false;
     public static int _storyNum;
 
+    [Header("Bed")]
+    public BoxCollider bed;
+
     void Update()
     {
+        BedCollider();
         StoryWorld();
         Leave();
 
@@ -27,6 +31,10 @@ public class BedControl_House : MonoBehaviour
         }
     }
 
+    void BedCollider()
+    {
+        bed.isTrigger = PlayerControl_House.isSleep;
+    }
     void StoryWorld()
     {
         if (isGoStoryWorld)
