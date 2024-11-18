@@ -10,7 +10,7 @@ public class BedControl_House : MonoBehaviour
     [Header("Bed")]
     public BoxCollider bed;
     public Transform sleepPoint;
-    float _moveSpeed = 3f;
+    float _moveSpeed = 5f;
 
     public static bool isGoStoryWorld = false;
     public static int _storyNum;
@@ -46,8 +46,8 @@ public class BedControl_House : MonoBehaviour
 
         if (PlayerControl_House.isSleep)
         {
-            player.transform.position = Vector3.Lerp(player.transform.position, sleepPoint.position, _moveSpeed * Time.deltaTime);
-            player.transform.rotation = Quaternion.Lerp(player.transform.rotation, sleepPoint.rotation, _moveSpeed * Time.deltaTime);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, sleepPoint.position, _moveSpeed * Time.deltaTime);
+            player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, sleepPoint.rotation, _moveSpeed * Time.deltaTime * 100);
         }
     }
     void StoryWorld()
