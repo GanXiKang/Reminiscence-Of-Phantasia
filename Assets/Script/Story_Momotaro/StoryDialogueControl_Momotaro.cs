@@ -9,7 +9,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip give;
+    public AudioClip give, normalMusia, spikedMusia;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -292,11 +292,13 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
         {
             case "Normal":
                 dialogueBG.sprite = normal;
+                BGM.PlayOneShot(normalMusia);
                 _index++;
                 break;
 
             case "Spiked":
                 dialogueBG.sprite = spiked;
+                BGM.PlayOneShot(spikedMusia);
                 _index++;
                 break;
 
