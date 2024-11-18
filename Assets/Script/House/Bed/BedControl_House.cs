@@ -5,15 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class BedControl_House : MonoBehaviour
 {
-    public static bool isGoStoryWorld = false;
-    public static int _storyNum;
+    GameObject player;
 
     [Header("Bed")]
     public BoxCollider bed;
+    public Transform sleepPoint;
+
+    public static bool isGoStoryWorld = false;
+    public static int _storyNum;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     void Update()
     {
-        BedCollider();
+        Sleep();
         StoryWorld();
         Leave();
 
@@ -31,9 +39,14 @@ public class BedControl_House : MonoBehaviour
         }
     }
 
-    void BedCollider()
+    void Sleep()
     {
         bed.isTrigger = PlayerControl_House.isSleep;
+
+        if (PlayerControl_House.isSleep)
+        {
+            player.transform.position = sleepPoint.position;
+        }
     }
     void StoryWorld()
     {
