@@ -9,7 +9,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip give, normalMusia, spikedMusia;
+    public AudioClip normalMusia, spikedMusia;
+    public AudioClip give;
 
     [Header("UITransform")]
     public Transform[] target;
