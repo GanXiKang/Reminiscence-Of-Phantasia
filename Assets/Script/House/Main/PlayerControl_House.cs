@@ -80,7 +80,6 @@ public class PlayerControl_House : MonoBehaviour
 
     bool isCanMove()
     {
-        return CameraControl_House.isFreeLook &&
-               !isSleep;
+        return CameraControl_House.isFreeLook;
     }
 }
