@@ -9,7 +9,6 @@ public class BedControl_House : MonoBehaviour
 
     [Header("Bed")]
     public BoxCollider bed;
-    public Transform sleepPoint;
 
     public static bool isGoStoryWorld = false;
     public static int _storyNum;
@@ -42,11 +41,6 @@ public class BedControl_House : MonoBehaviour
     void Sleep()
     {
         bed.isTrigger = PlayerControl_House.isSleep;
-
-        if (!PlayerControl_House.isSleep) return;
-
-        //player.transform.position = sleepPoint.position;
-        //player.transform.rotation = sleepPoint.rotation;
     }
     void StoryWorld()
     {
