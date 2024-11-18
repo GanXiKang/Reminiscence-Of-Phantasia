@@ -40,7 +40,7 @@ public class UIAboveObject_House : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
-        isAboveDoor = true;
+        isAboveWorkbench = true;
     }
 
     void Update()
