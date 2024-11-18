@@ -45,8 +45,8 @@ public class BedControl_House : MonoBehaviour
 
         if (!PlayerControl_House.isSleep) return;
 
-        player.transform.position = sleepPoint.position;
-        player.transform.rotation = sleepPoint.rotation;
+        //player.transform.position = sleepPoint.position;
+        //player.transform.rotation = sleepPoint.rotation;
     }
     void StoryWorld()
     {
