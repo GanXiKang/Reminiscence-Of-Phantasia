@@ -16,9 +16,13 @@ public class BirdControl_House : MonoBehaviour
     public AudioSource BGM;
     public AudioClip bye, call;
 
+    [Header("Effects")]
+    public GameObject letterEffects;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        letterEffects.SetActive(false);
     }
     
     void Update()
@@ -35,12 +39,14 @@ public class BirdControl_House : MonoBehaviour
         }
         if (isDeliver)
         {
+            letterEffects.SetActive(true);
             anim.SetBool("isDeliver", true);
             anim.SetBool("isDeliver_Close", false);
             isDeliver = false;
         }
         if (isDeliver_Close)
         {
+            letterEffects.SetActive(false);
             anim.SetBool("isDeliver_Close", true);
             anim.SetBool("isDeliver", false);
             isDeliver_Close = false;
