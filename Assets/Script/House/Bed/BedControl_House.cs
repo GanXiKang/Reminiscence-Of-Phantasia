@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class BedControl_House : MonoBehaviour
 {
     GameObject player;
-    PlayerControl_House PlayerControl;
 
     [Header("Bed")]
     public BoxCollider bed;
@@ -18,7 +17,6 @@ public class BedControl_House : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        PlayerControl = player.GetComponent<PlayerControl_House>();
     }
 
     void Update()
@@ -47,8 +45,8 @@ public class BedControl_House : MonoBehaviour
 
         if (PlayerControl_House.isSleep)
         {
-            player.transform.position = sleepPoint.position;
-            PlayerControl.enabled = false;
+            player.transform.position = Vector3.Lerp(player.transform.position, sleepPoint.position, 2f * Time.deltaTime);
+            player.transform.rotation = Quaternion.Lerp(player.transform.rotation, sleepPoint.rotation, 2f * Time.deltaTime);
         }
     }
     void StoryWorld()
