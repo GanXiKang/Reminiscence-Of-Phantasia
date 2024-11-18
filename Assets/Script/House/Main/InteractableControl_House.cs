@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InteractableControl_House : MonoBehaviour
 {
     GameObject player;
-
+    
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip interact;
