@@ -470,6 +470,23 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryPlayerControl.isHappy = true;
                 break;
 
+            case 31:
+                switch (_countEvent)
+                {
+                    case 0:
+                        _countEvent++;
+                        StoryNpcAnimator_Momotaro.isCloseEyes = false;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Momotaro.isShy = true;
+                        _countEvent = 0;
+                        break;
+                }
+                StoryNpcAnimator_Momotaro.isCloseEyes = false;
+                break;
+
             case 40:
                 StoryNpcAnimator_Momotaro.isCloseEyes = true;
                 break;
@@ -635,6 +652,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 28:
                 isDialogueContinue = true;
                 StoryNpcAnimator_Momotaro.isGift = true;      
+                break;
+
+            case 31:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Momotaro.isGiveItem = true;
+                StoryInteractableControl_Momotaro._whoGive = 3;
                 break;
 
             case 36:
