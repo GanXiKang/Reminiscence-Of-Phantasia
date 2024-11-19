@@ -20,7 +20,8 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject catLow;
     public GameObject catFinish;
 
-    [Header("Parrot")]
+    [Header("Npc")]
+    public GameObject donkey;
     public GameObject parrot;
     public static bool isParrotActive = false;
 
@@ -33,7 +34,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     {
         ExitActive();
         StatueActive();
-        ParrotActive();
+        NpcActive();
     }
 
     void ExitActive()
@@ -54,8 +55,16 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         catLow.SetActive(!StoryInteractableControl_Momotaro.isFinishWork);
         catFinish.SetActive(StoryInteractableControl_Momotaro.isFinishWork);
     }
-    void ParrotActive()
+    void NpcActive()
     {
+        if (StoryNpcAnimator_Momotaro._dating == 0)
+        {
+            donkey.SetActive(forest.activeSelf);
+        }
+        else
+        {
+            donkey.SetActive(true);
+        }
         parrot.SetActive(isParrotActive);
     }
 }
