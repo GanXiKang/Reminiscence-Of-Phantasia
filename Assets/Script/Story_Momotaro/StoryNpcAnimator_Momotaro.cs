@@ -20,7 +20,6 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     //03Donkey
     public static bool isShy = false;
     public static bool isGift = false;
-    public static bool isWrongGift = false;
     //04Monkey
     public static bool isWalk_Monkey = false;
     public static bool isWalkGold_Monkey = false;
@@ -92,7 +91,6 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetInteger("Dating", _dating);
                 anim.SetBool("isShy", isShy);
                 anim.SetBool("isGift", isGift);
-                anim.SetBool("isWrongGift", isWrongGift);
                 break;
 
             case 4:
