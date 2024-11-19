@@ -21,6 +21,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject catFinish;
 
     [Header("Npc")]
+    public GameObject sceneForest;
     public GameObject donkey;
     public GameObject parrot;
     public static bool isParrotActive = true; //∑Ω±„úy‘á
@@ -59,7 +60,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     {
         if (StoryNpcAnimator_Momotaro._dating == 0)
         {
-            donkey.SetActive(forest.activeSelf);
+            donkey.SetActive(sceneForest.activeSelf);
         }
         else
         {
