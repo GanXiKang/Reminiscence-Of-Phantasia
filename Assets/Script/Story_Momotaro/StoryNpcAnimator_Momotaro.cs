@@ -26,7 +26,6 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isLeave_Monkey = false;
     //05Cat
     public static bool isCloseEyes = false;
-    public static bool isFinishWork = false;
 
     //06Raccoon
     public static bool isStone = false;
@@ -119,7 +118,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
 
             case 5:
                 anim.SetBool("isCloseEyes", isCloseEyes);
-                anim.SetBool("isFinishWork", isFinishWork);
+                anim.SetBool("isFinishWork", StoryInteractableControl_Momotaro.isFinishWork);
                 break;
 
             case 6:
