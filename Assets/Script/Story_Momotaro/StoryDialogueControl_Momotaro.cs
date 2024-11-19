@@ -465,6 +465,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryRiceDumpling_Momotaro.isRoleActive = false;
                 break;
 
+            case 28:
+                StoryPlayerControl.isHappy = true;
+                break;
+
             case 40:
                 StoryNpcAnimator_Momotaro.isCloseEyes = true;
                 break;
@@ -620,6 +624,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 26:
                 StoryGameControl_Momotaro.isPlazaActive = true;
+                break;
+
+            case 28:
+                StoryNpcAnimator_Momotaro.isGift = true;
                 break;
 
             case 36:
