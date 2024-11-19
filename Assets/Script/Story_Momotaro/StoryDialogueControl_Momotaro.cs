@@ -659,11 +659,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 30:
-                BGM.PlayOneShot(give);
-                StoryInteractableControl_Momotaro.isGiveItem = true;
-                StoryInteractableControl_Momotaro._whoGive = 3;
-                break;
-
             case 31:
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Momotaro.isGiveItem = true;
