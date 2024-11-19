@@ -66,6 +66,9 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     bool isRotation = false;
     float _speed = 180f;
 
+    //ContinueDialogue
+    bool isContinue = false;
+
     //02Goddess
     int _itemGoddess = 0;
     public static bool isGoddessGetSkill = false;
@@ -95,6 +98,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         GivePlayerObject();
         ExchangeItem();
         RotationSprite();
+        ContinueDialogue();
     }
 
     void PickUpItem()
@@ -435,7 +439,32 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     }
     void ContinueDialogue()
     {
-        
+        if (!StoryDialogueControl_Momotaro.isDialogueContinue)
+        if (!isContinue) return;
+
+        Invoke("ContinueDialogueNumber", 1f);
+        StoryDialogueControl_Momotaro.isDialogueContinue = false;
+        isContinue = false;
+    }
+    void ContinueDialogueNumber()
+    {
+        switch (_who)
+        {
+            case 3:
+                if (isGiveTheRightGift)
+                {
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                    StoryDialogueControl_Momotaro._textCount = 30;
+                }
+                else
+                {
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                    StoryDialogueControl_Momotaro._textCount = 31;
+                }
+                break;
+        }   
     }
 
     void OnMouseDown()
@@ -821,6 +850,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 1:
                                 if (StoryNpcAnimator_Momotaro._dating == 4)
                                 {
+                                    isContinue = true;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 28;
@@ -835,6 +865,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 2:
                                 if (StoryNpcAnimator_Momotaro._dating == 4)
                                 {
+                                    isContinue = true;
                                     isGiveTheRightGift = true;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
