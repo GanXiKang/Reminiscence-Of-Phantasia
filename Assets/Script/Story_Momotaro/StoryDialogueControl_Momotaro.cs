@@ -677,6 +677,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryNpcAnimator_Momotaro._dating++;
                 break;
 
+            case 44:
+                StoryNpcAnimator_Momotaro.isMeet = true;
+                break;
+
             case 47:
                 StoryNpcAnimator_Momotaro.isGoMountain = true;
                 StoryNpcAnimator_Momotaro.isWalk_Monkey = true;
