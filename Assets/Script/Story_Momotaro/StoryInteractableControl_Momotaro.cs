@@ -74,6 +74,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     //03Donkey
     public static bool isGiveTheRightGift = false;
     public static bool isWrongGift = false;
+    bool isKnowTheRightGift = false;
     //06Raccoon
     public static bool isFinishWork = false;
     //07Dog & 08Chicken
@@ -585,10 +586,20 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     {
                                         if (isWrongGift)
                                         {
-                                            StoryUIControl_Momotaro.isDialogue = true;
-                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                            StoryDialogueControl_Momotaro._isAboveWho2 = 5;
-                                            StoryDialogueControl_Momotaro._textCount = 30;
+                                            if (!isKnowTheRightGift)
+                                            {
+                                                isKnowTheRightGift = true;
+                                                StoryUIControl_Momotaro.isDialogue = true;
+                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                StoryDialogueControl_Momotaro._isAboveWho2 = 5;
+                                                StoryDialogueControl_Momotaro._textCount = 30;
+                                            }
+                                            else
+                                            {
+                                                StoryUIControl_Momotaro.isDialogue = true;
+                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                StoryDialogueControl_Momotaro._textCount = 29;
+                                            }
                                         }
                                         if (isGiveTheRightGift)
                                         {
