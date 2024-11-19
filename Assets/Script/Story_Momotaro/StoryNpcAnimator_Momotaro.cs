@@ -26,7 +26,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isLeave_Monkey = false;
     //05Cat
     public static bool isCloseEyes = false;
-
+    public static int _dating = 0;
     //06Raccoon
     public static bool isStone = false;
     //07Dog
@@ -119,6 +119,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
             case 5:
                 anim.SetBool("isCloseEyes", isCloseEyes);
                 anim.SetBool("isFinishWork", StoryInteractableControl_Momotaro.isFinishWork);
+                anim.SetInteger("Dating", _dating);
                 break;
 
             case 6:
