@@ -470,6 +470,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryPlayerControl.isHappy = true;
                 break;
 
+            case 30:
+                StoryNpcAnimator_Momotaro.isWrongGift = true;
+                StoryPlayerControl.isSurprised = true;
+                break;
+
             case 31:
                 switch (_countEvent)
                 {
@@ -652,6 +657,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 28:
                 isDialogueContinue = true;
                 StoryNpcAnimator_Momotaro.isGift = true;      
+                break;
+
+            case 30:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Momotaro.isGiveItem = true;
+                StoryInteractableControl_Momotaro._whoGive = 3;
                 break;
 
             case 31:

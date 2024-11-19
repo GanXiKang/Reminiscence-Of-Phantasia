@@ -612,9 +612,18 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 {
                                     if (!isGiveTheRightGift)
                                     {
-                                        StoryUIControl_Momotaro.isDialogue = true;
-                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                        StoryDialogueControl_Momotaro._textCount = 27;
+                                        if (!StoryNpcAnimator_Momotaro.isWrongGift)
+                                        {
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._textCount = 27;
+                                        }
+                                        else
+                                        {
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._textCount = 29;
+                                        }
                                     }
                                     else
                                     {
