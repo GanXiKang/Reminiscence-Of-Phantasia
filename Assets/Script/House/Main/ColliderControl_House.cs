@@ -6,7 +6,7 @@ public class ColliderControl_House : MonoBehaviour
 {
     public int _serialNumber;
     public static int _nowNumber;
-    float _forwardValue = 0f;
+    float _forwardValue = 0.1f;
 
     bool IsFacingObject(Transform playerTransform)
     {
