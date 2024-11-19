@@ -596,9 +596,19 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 }
                                 else
                                 {
-                                    StoryUIControl_Momotaro.isDialogue = true;
-                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                    StoryDialogueControl_Momotaro._textCount = 27;
+                                    if (!isGiveTheRightGift)
+                                    {
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._textCount = 27;
+                                    }
+                                    else
+                                    {
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = 3;
+                                        StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                        StoryDialogueControl_Momotaro._textCount = 32;
+                                    }
                                 }
                                 break;
                         }
@@ -654,6 +664,13 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 35;
+                            }
+                            if (isGiveTheRightGift)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = 3;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 32;
                             }
                         }
                         else
