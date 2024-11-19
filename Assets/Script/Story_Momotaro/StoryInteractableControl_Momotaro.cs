@@ -600,9 +600,12 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     {
                         if (!StoryPlayerAnimator_Momotaro.isDonkey)
                         {
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 35;
+                            if (StoryNpcAnimator_Momotaro._dating == 0)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 35;
+                            }
                         }
                         else
                         {
