@@ -31,6 +31,7 @@ public class PlayerControl_House : MonoBehaviour
 
     void Update()
     {
+        
         playerInput.enabled = isCanMove();
 
         PlayerMove();
@@ -76,6 +77,13 @@ public class PlayerControl_House : MonoBehaviour
     {
         anim.SetBool("isHappy", isHappy);
         anim.SetBool("isSleep", isSleep);
+
+        if (isSleep)
+        {
+            print("In");
+            transform.position = anim.GetBoneTransform(HumanBodyBones.Hips).position;
+            print(transform.position);
+        }
     }
 
     bool isCanMove()
