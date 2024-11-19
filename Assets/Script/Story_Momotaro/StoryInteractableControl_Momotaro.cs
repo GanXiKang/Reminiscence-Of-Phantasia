@@ -419,8 +419,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             {
                 switch (_who)
                 {
-                    case 1:
-                        
+                    case 4:
+                        StoryNpcAnimator_Momotaro.isGold_Monkey = true;
                         break;
                 }
             }
@@ -432,6 +432,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             totalRotation = 0f;
             transform.rotation = initialRotation;
         }
+    }
+    void ContinueDialogue()
+    {
+        
     }
 
     void OnMouseDown()
@@ -857,8 +861,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
+                                isRotation = true;
                                 StoryGameControl_Momotaro.isParrotActive = true;
-                                StoryNpcAnimator_Momotaro.isGold_Monkey = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 49;
