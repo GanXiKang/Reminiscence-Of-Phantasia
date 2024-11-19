@@ -66,10 +66,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     bool isRotation = false;
     float _speed = 180f;
 
-    //ContinueDialogue
-    bool isContinue = false;
-    float _waitNum;
-
     //02Goddess
     int _itemGoddess = 0;
     public static bool isGoddessGetSkill = false;
@@ -77,6 +73,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static bool isAnswerGold = false;
     //03Donkey
     public static bool isGiveTheRightGift = false;
+    public static bool isWrongGift = false;
     //06Raccoon
     public static bool isFinishWork = false;
     //07Dog & 08Chicken
@@ -99,7 +96,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         GivePlayerObject();
         ExchangeItem();
         RotationSprite();
-        ContinueDialogue();
     }
 
     void PickUpItem()
@@ -452,37 +448,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             transform.rotation = initialRotation;
         }
     }
-    void ContinueDialogue()
-    {
-        if (!StoryDialogueControl_Momotaro.isDialogueContinue)
-        if (!isContinue) return;
-
-        Invoke("ContinueDialogueNumber", _waitNum);
-        StoryDialogueControl_Momotaro.isDialogueContinue = false;
-        isContinue = false;
-    }
-    void ContinueDialogueNumber()
-    {
-        switch (_who)
-        {
-            case 3:
-                if (isGiveTheRightGift)
-                {
-                    StoryUIControl_Momotaro.isDialogue = true;
-                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                    StoryDialogueControl_Momotaro._isAboveWho2 = 5;
-                    StoryDialogueControl_Momotaro._textCount = 30;
-                }
-                else
-                {
-                    StoryUIControl_Momotaro.isDialogue = true;
-                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                    StoryDialogueControl_Momotaro._isAboveWho2 = 5;
-                    StoryDialogueControl_Momotaro._textCount = 31;
-                }
-                break;
-        }   
-    }
 
     void OnMouseDown()
     {
@@ -610,27 +575,38 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 }
                                 else
                                 {
-                                    if (!isGiveTheRightGift)
+                                    if (!StoryNpcAnimator_Momotaro.isGift)
                                     {
-                                        if (!StoryNpcAnimator_Momotaro.isWrongGift)
-                                        {
-                                            StoryUIControl_Momotaro.isDialogue = true;
-                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                            StoryDialogueControl_Momotaro._textCount = 27;
-                                        }
-                                        else
-                                        {
-                                            StoryUIControl_Momotaro.isDialogue = true;
-                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                            StoryDialogueControl_Momotaro._textCount = 29;
-                                        }
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._textCount = 27;
                                     }
                                     else
                                     {
-                                        StoryUIControl_Momotaro.isDialogue = true;
-                                        StoryDialogueControl_Momotaro._isAboveWho1 = 3;
-                                        StoryDialogueControl_Momotaro._isAboveWho2 = _who;
-                                        StoryDialogueControl_Momotaro._textCount = 32;
+                                        if (isWrongGift)
+                                        {
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._isAboveWho2 = 5;
+                                            StoryDialogueControl_Momotaro._textCount = 30;
+                                        }
+                                        if (isGiveTheRightGift)
+                                        {
+                                            if (!StoryNpcAnimator_Momotaro.isShy)
+                                            {
+                                                StoryUIControl_Momotaro.isDialogue = true;
+                                                StoryDialogueControl_Momotaro._isAboveWho1 = 3;
+                                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                                StoryDialogueControl_Momotaro._textCount = 31;
+                                            }
+                                            else
+                                            {
+                                                StoryUIControl_Momotaro.isDialogue = true;
+                                                StoryDialogueControl_Momotaro._isAboveWho1 = 3;
+                                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                                StoryDialogueControl_Momotaro._textCount = 32;
+                                            }
+                                        }
                                     }
                                 }
                                 break;
@@ -891,10 +867,9 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
-                                if (StoryNpcAnimator_Momotaro._dating == 4)
+                                if (StoryNpcAnimator_Momotaro._dating == 4 && !isWrongGift)
                                 {
-                                    _waitNum = 3f;
-                                    isContinue = true;
+                                    isWrongGift = true;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 28;
@@ -909,8 +884,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 2:
                                 if (StoryNpcAnimator_Momotaro._dating == 4)
                                 {
-                                    _waitNum = 3f;
-                                    isContinue = true;
+                                    isWrongGift = false;
                                     isGiveTheRightGift = true;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
