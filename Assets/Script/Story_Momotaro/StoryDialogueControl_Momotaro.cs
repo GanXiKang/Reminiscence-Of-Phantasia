@@ -494,10 +494,15 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 {
                     case 0:
                         _countEvent++;
-                        StoryPlayerControl.isHappy = true;
+                        isDialogueRotation = true;
                         break;
 
                     case 1:
+                        _countEvent++;
+                        StoryPlayerControl.isHappy = true;
+                        break;
+
+                    case 2:
                         StoryNpcAnimator_Momotaro.isLeave_Monkey = true;
                         StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
                         _countEvent = 0;
