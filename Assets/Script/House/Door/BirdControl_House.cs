@@ -61,6 +61,7 @@ public class BirdControl_House : MonoBehaviour
         if (isBye)
         {
             BGM.PlayOneShot(bye);
+            letterEffects.SetActive(false);
             anim.SetBool("isBye", true);
             anim.SetBool("isIdle", false);
             Invoke("FalseByAnimationisBye", 1f);
