@@ -576,7 +576,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 }
                                 else
                                 {
-                                    if (!StoryNpcAnimator_Momotaro.isGift)
+                                    if (StoryNpcAnimator_Momotaro._dating == 0)
                                     {
                                         StoryUIControl_Momotaro.isDialogue = true;
                                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
@@ -606,15 +606,15 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                             if (!StoryNpcAnimator_Momotaro.isShy)
                                             {
                                                 StoryUIControl_Momotaro.isDialogue = true;
-                                                StoryDialogueControl_Momotaro._isAboveWho1 = 3;
-                                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                StoryDialogueControl_Momotaro._isAboveWho2 = 5;
                                                 StoryDialogueControl_Momotaro._textCount = 31;
                                             }
                                             else
                                             {
                                                 StoryUIControl_Momotaro.isDialogue = true;
-                                                StoryDialogueControl_Momotaro._isAboveWho1 = 3;
-                                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                StoryDialogueControl_Momotaro._isAboveWho2 = 5;
                                                 StoryDialogueControl_Momotaro._textCount = 32;
                                             }
                                         }
@@ -895,11 +895,21 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 2:
                                 if (StoryNpcAnimator_Momotaro._dating == 4)
                                 {
-                                    isWrongGift = false;
-                                    isGiveTheRightGift = true;
-                                    StoryUIControl_Momotaro.isDialogue = true;
-                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                    StoryDialogueControl_Momotaro._textCount = 28;
+                                    if (!isWrongGift)
+                                    {
+                                        isGiveTheRightGift = true;
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._textCount = 28;
+                                    }
+                                    else
+                                    {
+                                        isWrongGift = false;
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._isAboveWho2 = 5;
+                                        StoryDialogueControl_Momotaro._textCount = 31;
+                                    }
                                 }
                                 else
                                 {
