@@ -614,7 +614,13 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 36:
-                StoryNpcAnimator_Momotaro._dating = 1;
+            case 38:
+            case 39:
+                StoryNpcAnimator_Momotaro._dating++;
+                break;
+
+            case 40:
+                StoryNpcAnimator_Momotaro._dating++;
                 break;
 
             case 47:
