@@ -119,7 +119,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
             case 5:
                 anim.SetBool("isCloseEyes", isCloseEyes);
                 anim.SetBool("isFinishWork", StoryInteractableControl_Momotaro.isFinishWork);
-                anim.SetInteger("Dating", _dating);
+                //anim.SetInteger("Dating", _dating);
                 break;
 
             case 6:
