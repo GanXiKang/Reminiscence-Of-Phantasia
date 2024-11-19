@@ -456,12 +456,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 {
                     StoryUIControl_Momotaro.isDialogue = true;
                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                    StoryDialogueControl_Momotaro._isAboveWho2 = 5;
                     StoryDialogueControl_Momotaro._textCount = 30;
                 }
                 else
                 {
                     StoryUIControl_Momotaro.isDialogue = true;
                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                    StoryDialogueControl_Momotaro._isAboveWho2 = 5;
                     StoryDialogueControl_Momotaro._textCount = 31;
                 }
                 break;
