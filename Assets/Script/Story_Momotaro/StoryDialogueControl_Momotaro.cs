@@ -613,6 +613,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryGameControl_Momotaro.isPlazaActive = true;
                 break;
 
+            case 36:
+                StoryNpcAnimator_Momotaro._dating = 1;
+                break;
+
             case 47:
                 StoryNpcAnimator_Momotaro.isGoMountain = true;
                 StoryNpcAnimator_Momotaro.isWalk_Monkey = true;
