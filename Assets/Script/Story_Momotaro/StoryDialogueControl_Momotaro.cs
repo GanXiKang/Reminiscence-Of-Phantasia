@@ -191,6 +191,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                             JumpToSection("D");
                             break;
 
+                        case 40:
+                            StoryNpcAnimator_Momotaro._dating++;
+                            JumpToSection("B");
+                            break;
+
                         case 47:
                             JumpToSection("A");
                             break;
@@ -460,6 +465,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryRiceDumpling_Momotaro.isRoleActive = false;
                 break;
 
+            case 40:
+                StoryNpcAnimator_Momotaro.isCloseEyes = true;
+                break;
+
             case 45:
                 switch (_countEvent)
                 {
@@ -616,10 +625,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 36:
             case 38:
             case 39:
-                StoryNpcAnimator_Momotaro._dating++;
-                break;
-
-            case 40:
                 StoryNpcAnimator_Momotaro._dating++;
                 break;
 
