@@ -18,7 +18,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isOutLake = false;
     public static bool isBackLake = false;
     //03Donkey
-    public static bool isShy = false
+    public static bool isShy = false;
     //04Monkey
     public static bool isWalk_Monkey = false;
     public static bool isWalkGold_Monkey = false;
@@ -85,6 +85,11 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 3:
+                anim.SetInteger("Dating", _dating);
+                anim.SetBool("isShy", isShy);
+                break;
+
             case 4:
                 if (isWalk_Monkey)
                 {
@@ -121,7 +126,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
             case 5:
                 anim.SetBool("isCloseEyes", isCloseEyes);
                 anim.SetBool("isFinishWork", StoryInteractableControl_Momotaro.isFinishWork);
-                //anim.SetInteger("Dating", _dating);
+                anim.SetInteger("Dating", _dating);
                 break;
 
             case 6:
