@@ -17,6 +17,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isAngry = false;
     public static bool isOutLake = false;
     public static bool isBackLake = false;
+    //03Donkey
+    public static bool isShy = false
     //04Monkey
     public static bool isWalk_Monkey = false;
     public static bool isWalkGold_Monkey = false;
