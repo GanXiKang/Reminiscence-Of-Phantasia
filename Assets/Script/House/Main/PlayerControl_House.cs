@@ -77,11 +77,6 @@ public class PlayerControl_House : MonoBehaviour
     {
         anim.SetBool("isHappy", isHappy);
         anim.SetBool("isSleep", isSleep);
-
-        //if (isSleep)
-        //{
-        //    transform.position = anim.GetBoneTransform(HumanBodyBones.Hips).position;
-        //}
     }
 
     bool isCanMove()
