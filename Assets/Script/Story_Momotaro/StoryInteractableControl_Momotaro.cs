@@ -71,6 +71,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static bool isGoddessGetSkill = false;
     public static bool isAnswerLie = false;
     public static bool isAnswerGold = false;
+    //03Donkey
+    public static bool isGiveTheRightGift = false;
     //06Raccoon
     public static bool isFinishWork = false;
     //07Dog & 08Chicken
@@ -829,6 +831,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 2:
                                 if (StoryNpcAnimator_Momotaro._dating == 4)
                                 {
+                                    isGiveTheRightGift = true;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 28;
