@@ -471,7 +471,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 30:
-                StoryNpcAnimator_Momotaro.isWrongGift = true;
                 StoryPlayerControl.isSurprised = true;
                 break;
 
