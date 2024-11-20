@@ -460,76 +460,85 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             switch (_who)
             {
                 case 1:
-                    _countMouseDown++;
-                    switch (_countMouseDown)
+                    if (StoryPlayerAnimator_Momotaro.isHuman)
                     {
-                        case 1:
-                            isInteractable = true;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 9;
-                            break;
+                        _countMouseDown++;
+                        switch (_countMouseDown)
+                        {
+                            case 1:
+                                isInteractable = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 9;
+                                break;
 
-                        default:
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 10;
-                            break;
+                            default:
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 10;
+                                break;
+                        }
                     }
                     break;
 
                 case 7:
-                    _countMouseDown++;
-                    switch (_countMouseDown)
+                    if (StoryPlayerAnimator_Momotaro.isHuman)
                     {
-                        case 1:
-                            isMeet = true;
-                            isInteractable = true;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._isAboveWho2 = 8;
-                            StoryDialogueControl_Momotaro._textCount = 56;
-                            break;
-
-                        default:
-                            if (!StoryNpcAnimator_Momotaro.isSliver_Dog)
-                            {
+                        _countMouseDown++;
+                        switch (_countMouseDown)
+                        {
+                            case 1:
+                                isMeet = true;
+                                isInteractable = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 54;
-                            }
-                            break;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                                StoryDialogueControl_Momotaro._textCount = 56;
+                                break;
+
+                            default:
+                                if (!StoryNpcAnimator_Momotaro.isSliver_Dog)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 54;
+                                }
+                                break;
+                        }
                     }
                     break;
 
                 case 9:
-                    _countMouseDown++;
-                    switch (_countMouseDown)
+                    if (StoryPlayerAnimator_Momotaro.isHuman)
                     {
-                        case 1:
-                            isInteractable = true;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 68;
-                            break;
+                        _countMouseDown++;
+                        switch (_countMouseDown)
+                        {
+                            case 1:
+                                isInteractable = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 68;
+                                break;
 
-                        default:
-                            if (isAnswerCorrect)
-                            {
-                                if (!isEatGoldRice)
+                            default:
+                                if (isAnswerCorrect)
+                                {
+                                    if (!isEatGoldRice)
+                                    {
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._textCount = 69;
+                                    }
+                                }
+                                else
                                 {
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                    StoryDialogueControl_Momotaro._textCount = 69;
+                                    StoryDialogueControl_Momotaro._textCount = 71;
                                 }
-                            }
-                            else
-                            {
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 71;
-                            }
-                            break;
+                                break;
+                        }
                     }
                     break;
             }
@@ -555,7 +564,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 3:
-                    if (isGoddessGetSkill)
+                    if (isGoddessGetSkill && StoryPlayerAnimator_Momotaro.isHuman)
                     {
                         _countMouseDown++;
                         switch (_countMouseDown)
@@ -626,7 +635,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 4:
-                    if (isGoddessGetSkill)
+                    if (isGoddessGetSkill && StoryPlayerAnimator_Momotaro.isHuman)
                     {
                         _countMouseDown++;
                         switch (_countMouseDown)
@@ -667,7 +676,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     }
                     else
                     {
-                        if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                        if (StoryPlayerAnimator_Momotaro.isHuman)
                         {
                             if (StoryNpcAnimator_Momotaro._dating == 0)
                             {
@@ -683,7 +692,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryDialogueControl_Momotaro._textCount = 32;
                             }
                         }
-                        else
+                        if (StoryPlayerAnimator_Momotaro.isDonkey)
                         {
                             switch (StoryNpcAnimator_Momotaro._dating)
                             {
@@ -724,13 +733,13 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 case 6:
                     if (!isFinishWork)
                     {
-                        if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                        if (StoryPlayerAnimator_Momotaro.isHuman)
                         {
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                             StoryDialogueControl_Momotaro._textCount = 42;
                         }
-                        else
+                        if (StoryPlayerAnimator_Momotaro.isDonkey)
                         {
                             isInteractable = true;
                             StoryUIControl_Momotaro.isDialogue = true;
@@ -740,7 +749,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     }
                     else
                     {
-                        if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                        if (StoryPlayerAnimator_Momotaro.isHuman)
                         {
                             if (!isEatGoldRice)
                             {
@@ -755,7 +764,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryDialogueControl_Momotaro._textCount = 45;
                             }
                         }
-                        else
+                        if (StoryPlayerAnimator_Momotaro.isDonkey)
                         {
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
@@ -765,21 +774,24 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 8:
-                    if (!StoryNpcAnimator_Momotaro.isGold_Chicken)
+                    if (StoryPlayerAnimator_Momotaro.isHuman)
                     {
-                        if (!isMeet)
+                        if (!StoryNpcAnimator_Momotaro.isGold_Chicken)
                         {
-                            isInteractable = true;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 64;
-                        }
-                        else
-                        {
-                            isInteractable = true;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 66;
+                            if (!isMeet)
+                            {
+                                isInteractable = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 64;
+                            }
+                            else
+                            {
+                                isInteractable = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 66;
+                            }
                         }
                     }
                     break;
