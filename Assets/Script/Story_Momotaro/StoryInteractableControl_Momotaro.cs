@@ -564,72 +564,75 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     break;
 
                 case 3:
-                    if (isGoddessGetSkill && StoryPlayerAnimator_Momotaro.isHuman)
+                    if (isGoddessGetSkill)
                     {
-                        _countMouseDown++;
-                        switch (_countMouseDown)
+                        if (StoryPlayerAnimator_Momotaro.isHuman || StoryPlayerAnimator_Momotaro.isDonkey)
                         {
-                            case 1:
-                                isInteractable = true;
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 24;
-                                break;
-
-                            default:
-                                if (!isEatGoldRice)
-                                {
+                            _countMouseDown++;
+                            switch (_countMouseDown)
+                            {
+                                case 1:
+                                    isInteractable = true;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                    StoryDialogueControl_Momotaro._textCount = 25;
-                                }
-                                else
-                                {
-                                    if (StoryNpcAnimator_Momotaro._dating == 0)
+                                    StoryDialogueControl_Momotaro._textCount = 24;
+                                    break;
+
+                                default:
+                                    if (!isEatGoldRice)
                                     {
                                         StoryUIControl_Momotaro.isDialogue = true;
                                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                        StoryDialogueControl_Momotaro._textCount = 27;
+                                        StoryDialogueControl_Momotaro._textCount = 25;
                                     }
                                     else
                                     {
-                                        if (isWrongGift)
+                                        if (StoryNpcAnimator_Momotaro._dating == 0)
                                         {
-                                            if (!isKnowTheRightGift)
-                                            {
-                                                isKnowTheRightGift = true;
-                                                StoryUIControl_Momotaro.isDialogue = true;
-                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                                StoryDialogueControl_Momotaro._isAboveWho2 = 5;
-                                                StoryDialogueControl_Momotaro._textCount = 30;
-                                            }
-                                            else
-                                            {
-                                                StoryUIControl_Momotaro.isDialogue = true;
-                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                                StoryDialogueControl_Momotaro._textCount = 29;
-                                            }
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._textCount = 27;
                                         }
-                                        if (isGiveTheRightGift)
+                                        else
                                         {
-                                            if (!StoryNpcAnimator_Momotaro.isShy)
+                                            if (isWrongGift)
                                             {
-                                                StoryUIControl_Momotaro.isDialogue = true;
-                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                                StoryDialogueControl_Momotaro._isAboveWho2 = 5;
-                                                StoryDialogueControl_Momotaro._textCount = 31;
+                                                if (!isKnowTheRightGift)
+                                                {
+                                                    isKnowTheRightGift = true;
+                                                    StoryUIControl_Momotaro.isDialogue = true;
+                                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                    StoryDialogueControl_Momotaro._isAboveWho2 = 5;
+                                                    StoryDialogueControl_Momotaro._textCount = 30;
+                                                }
+                                                else
+                                                {
+                                                    StoryUIControl_Momotaro.isDialogue = true;
+                                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                    StoryDialogueControl_Momotaro._textCount = 29;
+                                                }
                                             }
-                                            else
+                                            if (isGiveTheRightGift)
                                             {
-                                                StoryUIControl_Momotaro.isDialogue = true;
-                                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                                StoryDialogueControl_Momotaro._isAboveWho2 = 5;
-                                                StoryDialogueControl_Momotaro._textCount = 32;
+                                                if (!StoryNpcAnimator_Momotaro.isShy)
+                                                {
+                                                    StoryUIControl_Momotaro.isDialogue = true;
+                                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                    StoryDialogueControl_Momotaro._isAboveWho2 = 5;
+                                                    StoryDialogueControl_Momotaro._textCount = 31;
+                                                }
+                                                else
+                                                {
+                                                    StoryUIControl_Momotaro.isDialogue = true;
+                                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                                    StoryDialogueControl_Momotaro._isAboveWho2 = 5;
+                                                    StoryDialogueControl_Momotaro._textCount = 32;
+                                                }
                                             }
                                         }
                                     }
-                                }
-                                break;
+                                    break;
+                            }
                         }
                     }
                     break;
