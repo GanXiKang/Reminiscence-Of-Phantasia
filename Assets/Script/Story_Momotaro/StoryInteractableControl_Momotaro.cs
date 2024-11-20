@@ -57,9 +57,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public Transform skillUIPosition;
     bool isSkill = false;
 
-    [Header("Effects")]
-    public GameObject effects;
-
     //Rotation
     private float totalRotation = 0f;
     private Quaternion initialRotation;
@@ -557,8 +554,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                             StoryDialogueControl_Momotaro._textCount = 17;
-                            effects.SetActive(false);
-                            Destroy(effects, 1f);
                             break;
                     }
                     break;
