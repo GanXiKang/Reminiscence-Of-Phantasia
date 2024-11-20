@@ -682,7 +682,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 35;
                             }
-                            if (isGiveTheRightGift)
+                            if (StoryNpcAnimator_Momotaro.isShy)
                             {
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = 3;
