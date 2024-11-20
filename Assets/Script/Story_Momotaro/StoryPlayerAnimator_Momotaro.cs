@@ -6,6 +6,7 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 {
     Animator anim;
 
+    public static bool isHuman = false;
     public static bool isDonkey = false;
     public static bool isRaccoon = false;
     public static bool isStone = false;
