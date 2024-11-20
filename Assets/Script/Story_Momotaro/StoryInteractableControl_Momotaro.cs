@@ -650,14 +650,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 case 5:
                     if (!isFinishWork)
                     {
-                        if (!StoryPlayerAnimator_Momotaro.isDonkey)
+                        if (StoryPlayerAnimator_Momotaro.isHuman)
                         {
                             isInteractable = true;
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                             StoryDialogueControl_Momotaro._textCount = 33;
                         }
-                        else
+                        if (StoryPlayerAnimator_Momotaro.isDonkey)
                         {
                             isInteractable = true;
                             StoryUIControl_Momotaro.isDialogue = true;
