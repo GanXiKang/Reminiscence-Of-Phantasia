@@ -20,7 +20,7 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 
     void Update()
     {
-        HumanState();
+        isHuman = !isDonkey && !isRaccoon && !isStone;
 
         anim.SetBool("isDonkey", isDonkey);
         anim.SetBool("isRaccoon", isRaccoon);
@@ -37,11 +37,5 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
         {
             anim.SetBool("isFall", false);
         }
-    }
-
-    void HumanState()
-    {
-        isHuman = !isDonkey && !isRaccoon && !isStone;
-        print(isHuman);
     }
 }
