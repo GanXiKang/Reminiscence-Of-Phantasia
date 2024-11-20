@@ -90,7 +90,7 @@ public class StoryTeachControl : MonoBehaviour
                     {
                         if (i == _page)
                         {
-                            //background.sprite = teachImage[i];
+                            background.sprite = teachImage[i];
                             content.text = teachContent[i].ToString();
                         }
                     }
@@ -104,7 +104,7 @@ public class StoryTeachControl : MonoBehaviour
                     {
                         if (i == _page)
                         {
-                            //background.sprite = teachImage[i + _teachGoddessPage];
+                            background.sprite = teachImage[i + _teachGoddessPage];
                             content.text = teachContent[i + _teachGoddessPage].ToString();
                         }
                     }
@@ -118,7 +118,7 @@ public class StoryTeachControl : MonoBehaviour
                     {
                         if (i == _page)
                         {
-                            //background.sprite = teachImage[i + _teachChangePage];
+                            background.sprite = teachImage[i + _teachChangePage];
                             content.text = teachContent[i + _teachChangePage].ToString();
                         }
                     }
@@ -132,7 +132,7 @@ public class StoryTeachControl : MonoBehaviour
                     {
                         if (i == _page)
                         {
-                            //background.sprite = teachImage[i + _teachWindPage];
+                            background.sprite = teachImage[i + _teachWindPage];
                             content.text = teachContent[i + _teachWindPage].ToString();
                         }
                     }
