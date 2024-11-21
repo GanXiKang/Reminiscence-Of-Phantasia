@@ -655,6 +655,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 26:
                 StoryGameControl_Momotaro.isPlazaActive = true;
+                StoryTeachControl.isTeachActive = true;
                 break;
 
             case 28:
