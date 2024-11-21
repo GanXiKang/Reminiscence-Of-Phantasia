@@ -728,13 +728,17 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 51:
-                //monkeyȥfind momotaro
+                StoryNpcAnimator_Momotaro.isFindMomotaro_Monkey = true;
                 break;
 
             case 56:
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Momotaro.isGiveItem = true;
                 StoryInteractableControl_Momotaro._whoGive = 7;
+                break;
+
+            case 57:
+                StoryNpcAnimator_Momotaro.isFindPlayer = true;
                 break;
 
             case 63:
