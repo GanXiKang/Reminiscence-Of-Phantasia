@@ -20,7 +20,18 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
 
     void Update()
     {
-        isHuman = !isDonkey && !isRaccoon && !isStone;
+        if (!isDonkey && !isRaccoon && !isStone)
+        {
+            isHuman = true;
+        }
+        else
+        {
+            isHuman = false;
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            print(isHuman);
+        }
 
         anim.SetBool("isDonkey", isDonkey);
         anim.SetBool("isRaccoon", isRaccoon);
