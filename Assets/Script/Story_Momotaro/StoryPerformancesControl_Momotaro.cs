@@ -33,6 +33,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public Image star;
     public Sprite goldStar, blueStar;
     float _score;
+    float _rotSpeed = 720f;
+    int _circle = 3;
+    bool isGoldStar = false;
 
     [Header("Time")]
     public Image timeBar;
@@ -74,6 +77,8 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         StoryNpcAnimator_Momotaro._performancesNum = 2;
         player.transform.rotation = Quaternion.identity;
         _score = 0;
+        star.sprite = blueStar;
+        isGoldStar = false;
         BGM.Stop();
         BGM.clip = performancesBGM;
         BGM.Play();
@@ -288,6 +293,10 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         else if (_score > 100)
         {
             _score = 100;
+            if (!isGoldStar)
+            {
+                StartCoroutine(RotateStar());
+            }
         }
     }
     void GameTime()
@@ -325,6 +334,32 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         StartCoroutine(AnimateGameResult());
     }
 
+    private IEnumerator RotateStar()
+    {
+        isGoldStar = true;
+
+        float totalRotationTime = (360f * _circle) / _rotSpeed;
+        float elapsedTime = 0f;
+        float currentCircle = 0f;
+
+        while (elapsedTime < totalRotationTime)
+        {
+            float angle = _rotSpeed * Time.deltaTime;
+            star.transform.Rotate(0, angle, 0);
+
+            currentCircle += angle;
+            if (currentCircle >= 360f)
+            {
+                star.sprite = goldStar;
+                currentCircle -= 360f;
+            }
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        star.transform.rotation = Quaternion.identity;
+    }
     IEnumerator AnimateGameResult()
     {
         CanvasGroup canvasGroup = gameResult.GetComponent<CanvasGroup>();
