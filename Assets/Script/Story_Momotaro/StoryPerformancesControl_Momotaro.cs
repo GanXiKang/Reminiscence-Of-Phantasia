@@ -24,7 +24,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public Image gameResult;
     public Sprite success, fail;
     float _score;
-    float _countdownTime = 90f;
+    float _countdownTime = 80f;
     float _remainingTime;
     bool isGameTiming = false;
 
