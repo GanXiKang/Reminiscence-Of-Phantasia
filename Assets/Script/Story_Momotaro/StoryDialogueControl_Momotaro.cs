@@ -179,6 +179,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                             JumpToSection("C");
                             break;
 
+                        case 74:
+                            StoryGameControl_Momotaro.isReadly = true;
+                            JumpToSection("A");
+                            break;
+
                         default:
                             JumpToSection("A");
                             break;
@@ -199,6 +204,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                             break;
 
                         case 47:
+                        case 74:
                             JumpToSection("A");
                             break;
 
@@ -717,6 +723,13 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryTeachControl.isTeachActive = true;
                 StoryPerformancesControl_Momotaro._danceNum = 0;
                 //“∆Ñ”µΩŒË≈_
+                break;
+
+            case 74:
+                if (StoryGameControl_Momotaro.isReadly)
+                {
+                    StoryUIControl_Momotaro.isPerformances = true;
+                }
                 break;
         }
     }
