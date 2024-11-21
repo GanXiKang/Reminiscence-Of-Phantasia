@@ -38,6 +38,10 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     float _remainingTime;
     bool isGameTiming = false;
 
+    [Header("Word")]
+    public Image word;
+    public Sprite miss, nice, perfect, wrong;
+
     //random
     public static int _danceNum = 0;
     int _randomDanceNum;
