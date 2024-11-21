@@ -22,6 +22,7 @@ public class StoryTeachControl : MonoBehaviour
     int _teachWindPage = 2;
     public bool isPerformance;
     int _teachPerformancePage = 2;
+    int _totalPage = 0;
 
     [Header("Teach_Story3")]
     public bool isTime;
@@ -104,8 +105,8 @@ public class StoryTeachControl : MonoBehaviour
                     {
                         if (i == _page)
                         {
-                            background.sprite = teachImage[i + _teachGoddessPage];
-                            content.text = teachContent[i + _teachGoddessPage].ToString();
+                            background.sprite = teachImage[i + _totalPage];
+                            content.text = teachContent[i + _totalPage].ToString();
                         }
                     }
                 }
@@ -118,8 +119,8 @@ public class StoryTeachControl : MonoBehaviour
                     {
                         if (i == _page)
                         {
-                            background.sprite = teachImage[i + _teachChangePage];
-                            content.text = teachContent[i + _teachChangePage].ToString();
+                            background.sprite = teachImage[i + _totalPage];
+                            content.text = teachContent[i + _totalPage].ToString();
                         }
                     }
                 }
@@ -132,8 +133,8 @@ public class StoryTeachControl : MonoBehaviour
                     {
                         if (i == _page)
                         {
-                            background.sprite = teachImage[i + _teachWindPage];
-                            content.text = teachContent[i + _teachWindPage].ToString();
+                            background.sprite = teachImage[i + _totalPage];
+                            content.text = teachContent[i + _totalPage].ToString();
                         }
                     }
                 }
@@ -196,55 +197,7 @@ public class StoryTeachControl : MonoBehaviour
             }
         }
   
-        if (isGoddess && _isFinish == 0)
-        {
-            switch (_page)
-            {
-                case 1:
-                    teachButton[1].interactable = false;
-                    teachButton[2].interactable = true;
-                    break;
-
-                case 2:
-                    teachButton[0].interactable = true;
-                    teachButton[1].interactable = true;
-                    teachButton[2].interactable = false;
-                    break;
-            }
-        }
-        else if (isChange && _isFinish == 1)
-        {
-            switch (_page)
-            {
-                case 1:
-                    teachButton[1].interactable = false;
-                    teachButton[2].interactable = true;
-                    break;
-
-                case 2:
-                    teachButton[0].interactable = true;
-                    teachButton[1].interactable = true;
-                    teachButton[2].interactable = false;
-                    break;
-            }
-        }
-        else if (isWind && _isFinish == 2)
-        {
-            switch (_page)
-            {
-                case 1:
-                    teachButton[1].interactable = false;
-                    teachButton[2].interactable = true;
-                    break;
-
-                case 2:
-                    teachButton[0].interactable = true;
-                    teachButton[1].interactable = true;
-                    teachButton[2].interactable = false;
-                    break;
-            }
-        }
-        else if (isPerformance && _isFinish == 3)
+        if (isGoddess || isChange || isWind || isPerformance)
         {
             switch (_page)
             {
@@ -327,18 +280,22 @@ public class StoryTeachControl : MonoBehaviour
         if (isGoddess && _isFinish == 0)
         {
             _isFinish++;
+            _totalPage += _teachGoddessPage;
         }
         else if (isChange && _isFinish == 1)
         {
             _isFinish++;
+            _totalPage += _teachChangePage;
         }
         else if (isWind && _isFinish == 2)
         {
             _isFinish++;
+            _totalPage += _teachWindPage;
         }
         else if (isPerformance && _isFinish == 0)
         {
             _isFinish++;
+            _totalPage += _teachPerformancePage;
         }
 
         if (isTime && _isFinish == 1)
