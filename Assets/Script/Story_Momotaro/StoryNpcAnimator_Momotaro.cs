@@ -27,6 +27,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isControlled_Monkey = false;
     public static bool isGoMountain = false;
     public static bool isLeave_Monkey = false;
+    public static bool isFindPlayer = false;
+    public static bool isFindMomotaro_Monkey = false;
     //05Cat
     public static bool isMeet = false;
     public static bool isCloseEyes = false;
@@ -126,6 +128,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isControlled", isControlled_Monkey);
                 anim.SetBool("isGoMountain", isGoMountain);
                 anim.SetBool("isLeave", isLeave_Monkey);
+                anim.SetBool("isFindPlayer", isFindPlayer);
+                anim.SetBool("isFindMomotaro", isFindMomotaro_Monkey);
                 break;
 
             case 5:
