@@ -21,9 +21,10 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public Text test; //úy‘á∞Ê
     public Image gameResult;
     public Sprite success, fail;
-   
-    [Header("HandUI")]
-    public GameObject handA, handB;
+
+    [Header("Hand")]
+    public GameObject handA;
+    public GameObject handB;
     public Transform point1, point2;
 
     [Header("Score")]
