@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryGameControl_Momotaro : MonoBehaviour
 {
@@ -27,8 +28,8 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject sceneForest;
     public GameObject scenePlaza;
     public GameObject donkey;
-    public GameObject cat;
     public GameObject parrot;
+    public SpriteRenderer cat;
     public static bool isParrotActive = false;
 
     void Start()
@@ -72,7 +73,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         {
             donkey.SetActive(true);
         }
-        cat.SetActive(scenePlaza.activeSelf);
+        cat.enabled = scenePlaza.activeSelf;
         parrot.SetActive(isParrotActive);
     }
 }
