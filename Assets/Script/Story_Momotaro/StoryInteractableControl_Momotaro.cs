@@ -503,35 +503,52 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             default:
-                                if (!StoryNpcAnimator_Momotaro.isSliver_Dog)
+                                if (!isSuccessfulPerformance)
                                 {
-                                    StoryUIControl_Momotaro.isDialogue = true;
-                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                    StoryDialogueControl_Momotaro._textCount = 54;
-                                }
-                                else
-                                {
-                                    if (StoryNpcAnimator_Momotaro.isGold_Chicken)
+                                    if (!StoryNpcAnimator_Momotaro.isSliver_Dog)
                                     {
                                         StoryUIControl_Momotaro.isDialogue = true;
                                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                        StoryDialogueControl_Momotaro._isAboveWho2 = 8;
-                                        StoryDialogueControl_Momotaro._textCount = 60;
+                                        StoryDialogueControl_Momotaro._textCount = 54;
                                     }
+                                    else
+                                    {
+                                        if (StoryNpcAnimator_Momotaro.isGold_Chicken)
+                                        {
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                                            StoryDialogueControl_Momotaro._textCount = 60;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                                    StoryDialogueControl_Momotaro._textCount = 57;
                                 }
                                 break;
                         }
                     }
                     else
                     {
+                        print("1");
                         if (StoryPlayerAnimator_Momotaro.isParrot)
                         {
+                            print("2");
                             if (StoryNpcAnimator_Momotaro.isGold_Chicken && StoryNpcAnimator_Momotaro.isSliver_Dog)
                             {
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._isAboveWho2 = 8;
-                                StoryDialogueControl_Momotaro._textCount = 63;
+                                print("3");
+                                if (!isSuccessfulPerformance)
+                                {
+                                    print("4");
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                                    StoryDialogueControl_Momotaro._textCount = 63;
+                                }
                             }
                         }
                     }
@@ -806,32 +823,42 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 case 8:
                     if (StoryPlayerAnimator_Momotaro.isHuman)
                     {
-                        if (!StoryNpcAnimator_Momotaro.isGold_Chicken)
+                        if (!isSuccessfulPerformance)
                         {
-                            if (!isMeet)
+                            if (!StoryNpcAnimator_Momotaro.isGold_Chicken)
                             {
-                                isInteractable = true;
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 64;
+                                if (!isMeet)
+                                {
+                                    isInteractable = true;
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 64;
+                                }
+                                else
+                                {
+                                    isInteractable = true;
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 66;
+                                }
                             }
                             else
                             {
-                                isInteractable = true;
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 66;
+                                if (StoryNpcAnimator_Momotaro.isSliver_Dog)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = 7;
+                                    StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 60;
+                                }
                             }
                         }
                         else
                         {
-                            if (StoryNpcAnimator_Momotaro.isSliver_Dog)
-                            {
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = 7;
-                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 60;
-                            }
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = 7;
+                            StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                            StoryDialogueControl_Momotaro._textCount = 57;
                         }
                     }
                     else
@@ -840,10 +867,13 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         {
                             if (StoryNpcAnimator_Momotaro.isGold_Chicken && StoryNpcAnimator_Momotaro.isSliver_Dog)
                             {
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = 7;
-                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 63;
+                                if (!isSuccessfulPerformance)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = 7;
+                                    StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 63;
+                                }
                             }
                         }
                     }
