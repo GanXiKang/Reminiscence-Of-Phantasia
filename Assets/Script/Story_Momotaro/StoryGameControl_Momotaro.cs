@@ -19,6 +19,9 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     [Header("Statue")]
     public GameObject catLow;
     public GameObject catFinish;
+    public GameObject performancesPoint;
+    public static bool isPerformancesPointActive = false;
+    public static bool isReadly = false;
 
     [Header("Npc")]
     public GameObject sceneForest;
@@ -55,6 +58,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     {
         catLow.SetActive(!StoryInteractableControl_Momotaro.isFinishWork);
         catFinish.SetActive(StoryInteractableControl_Momotaro.isFinishWork);
+        performancesPoint.SetActive(isPerformancesPointActive);
     }
     void NpcActive()
     {
