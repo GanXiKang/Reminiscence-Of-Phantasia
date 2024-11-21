@@ -534,16 +534,12 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     }
                     else
                     {
-                        print("1");
                         if (StoryPlayerAnimator_Momotaro.isParrot)
                         {
-                            print("2");
                             if (StoryNpcAnimator_Momotaro.isGold_Chicken && StoryNpcAnimator_Momotaro.isSliver_Dog)
                             {
-                                print("3");
                                 if (!isSuccessfulPerformance)
                                 {
-                                    print("4");
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._isAboveWho2 = 8;
