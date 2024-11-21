@@ -197,7 +197,7 @@ public class StoryTeachControl : MonoBehaviour
             }
         }
   
-        if (isGoddess || isChange || isWind || isPerformance)
+        if (isGoddess)
         {
             switch (_page)
             {
