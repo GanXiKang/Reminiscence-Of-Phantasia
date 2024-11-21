@@ -3212,6 +3212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plaza
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: badb6509abd20d24191ea332702a3996, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5337294677495839891, guid: badb6509abd20d24191ea332702a3996, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7046,7 +7050,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650476546}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
