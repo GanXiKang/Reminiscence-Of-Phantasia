@@ -49,6 +49,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                 case 5:
                     if (StoryPlayerAnimator_Momotaro.isParrot)
                     {
+                        StoryGameControl_Momotaro.isReadly = false;
                         StoryUIControl_Momotaro.isDialogue = true;
                         StoryDialogueControl_Momotaro._textCount = 74;
                     }
