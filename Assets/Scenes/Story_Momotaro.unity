@@ -27274,11 +27274,13 @@ MonoBehaviour:
   goldStar: {fileID: 21300000, guid: e4c6da3fa18d15849ae16e5e26bae738, type: 3}
   blueStar: {fileID: 21300000, guid: 197eb8098a69ac04b86e3a1b8836d652, type: 3}
   timeBar: {fileID: 1926733787}
+  wordUI: {fileID: 1883115008}
   word: {fileID: 1896552124}
   miss: {fileID: 21300000, guid: 714b36eb6c4b8bd469f2c3ee0697a3f8, type: 3}
   nice: {fileID: 21300000, guid: 754f8c0adc18c0041b8cdde6f0a0793a, type: 3}
   perfect: {fileID: 21300000, guid: 80c5816163f61f44aae3f829c99ac92f, type: 3}
   wrong: {fileID: 21300000, guid: 1dc123d51c16e894aa070d01880dacee, type: 3}
+  _duration: 0.5
 --- !u!1 &1821783206 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 269081372084570080, guid: 50af3e0968325d54d8992f682f1ac337, type: 3}
@@ -27949,7 +27951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1883115009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28191,7 +28193,7 @@ RectTransform:
   m_GameObject: {fileID: 1896552122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1883115009}
