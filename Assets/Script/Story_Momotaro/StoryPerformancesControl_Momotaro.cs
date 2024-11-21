@@ -55,7 +55,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         yield return new WaitForSeconds(1f);
         allUI.SetActive(true);
         performancesCam.SetActive(true);
-        StoryNpcAnimator_Momotaro._perfoemancesNum = 2;
+        StoryNpcAnimator_Momotaro._performancesNum = 2;
         player.transform.rotation = Quaternion.identity;
         _score = 0;
         BGM.Stop();
@@ -335,7 +335,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         performancesCam.SetActive(false);
         if (StoryInteractableControl_Momotaro.isSuccessfulPerformance)
         {
-            StoryNpcAnimator_Momotaro._perfoemancesNum = 3;
+            StoryNpcAnimator_Momotaro._performancesNum = 3;
         }
         player.transform.eulerAngles = new Vector3(30, -45, 0);
         BGM.Stop();
