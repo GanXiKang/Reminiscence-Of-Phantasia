@@ -135,7 +135,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         anim.enabled = false;
         yield return new WaitForSeconds(0.8f);
         player.transform.position = respawnPoint[_respawnNum].position;
-        if (isFirstBlown && !StoryPlayerAnimator_Momotaro.isRaccoon)
+        if (isFirstBlown && !StoryPlayerAnimator_Momotaro.isRaccoon && !StoryNpcAnimator_Momotaro.isLeave_Monkey)
         {
             isFirstBlown = false;
             StoryUIControl_Momotaro.isDialogue = true;
