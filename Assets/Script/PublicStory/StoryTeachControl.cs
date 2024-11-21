@@ -233,8 +233,13 @@ public class StoryTeachControl : MonoBehaviour
             switch (_page)
             {
                 case 1:
-                    teachButton[0].interactable = true;
                     teachButton[1].interactable = false;
+                    teachButton[2].interactable = true;
+                    break;
+
+                case 2:
+                    teachButton[0].interactable = true;
+                    teachButton[1].interactable = true;
                     teachButton[2].interactable = false;
                     break;
             }
