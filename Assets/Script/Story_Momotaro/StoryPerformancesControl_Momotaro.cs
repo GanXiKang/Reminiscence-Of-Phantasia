@@ -22,13 +22,13 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public Image gameResult;
     public Sprite success, fail;
 
-    [Header("Hand")]
+    [Header("HandUI")]
     public GameObject handA;
     public GameObject handB;
     public Transform point1, point2;
     float _speed = 2.0f;
 
-    [Header("Score")]
+    [Header("ScoreUI")]
     public Image scoreBar;
     public Image star;
     public Sprite goldStar, blueStar;
@@ -37,15 +37,17 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     int _circle = 3;
     bool isGoldStar = false;
 
-    [Header("Time")]
+    [Header("TimeUI")]
     public Image timeBar;
     float _countdownTime = 80f;
     float _remainingTime;
     bool isGameTiming = false;
 
-    [Header("Word")]
+    [Header("WordUI")]
+    public GameObject wordUI;
     public Image word;
     public Sprite miss, nice, perfect, wrong;
+    public float _duration = 0.5f;
 
     //random
     public static int _danceNum = 0;
@@ -56,7 +58,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     float timer;
     bool isTiming = false;
     bool isGamePerformances = false;
-    bool isSpace = false;
+    bool isExcited = false;
 
     void Start()
     {
@@ -125,9 +127,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 break;
 
             case 3:
-                isSpace = false;
+                isExcited = false;
                 _danceNum = 3;
-                test.text = "Space";
+                test.text = "P";
                 break;
 
             case 4:
@@ -165,26 +167,27 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             if (_danceNum != 3)
             {
-                test.text = "Correct!";
                 _score += 3;
                 _danceNum = 0;
                 isTiming = false;
+                word.sprite = nice;
+                StartCoroutine(ShowWordUI());
                 float randomTime = Random.Range(0.8f, 2f);
                 Invoke("StartNewRound", randomTime);
             }
             else
             {
-                isSpace = true;
-                test.text = "Good!";
+                isExcited = true;
                 _score++;
             }
         }
         else
         {
-            test.text = "Incorrect!";
             _score -= 2;
             _danceNum = 0;
             isTiming = false;
+            word.sprite = wrong;
+            StartCoroutine(ShowWordUI());
             float randomTime = Random.Range(0.8f, 2f);
             Invoke("StartNewRound", randomTime);
         }
@@ -225,29 +228,33 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             if (_danceNum != 3)
             {
+                _score -= 2;
                 _danceNum = 0;
                 isTiming = false;
-                test.text = "TimeOut!";
-                _score -= 2;
+                word.sprite = miss;
+                StartCoroutine(ShowWordUI());
+
                 float randomTime = Random.Range(0.8f, 2f);
                 Invoke("StartNewRound", randomTime);
             }
             else
             {
-                if (isSpace)
+                if (isExcited)
                 {
                     _danceNum = 0;
                     isTiming = false;
-                    test.text = "Perfect!";
+                    word.sprite = perfect;
+                    StartCoroutine(ShowWordUI());
                     float randomTime = Random.Range(1.5f, 2f);
                     Invoke("StartNewRound", randomTime);
                 }
                 else
                 {
+                    _score -= 2;
                     _danceNum = 0;
                     isTiming = false;
-                    test.text = "Miss!";
-                    _score -= 2;
+                    word.sprite = miss;
+                    StartCoroutine(ShowWordUI());
                     float randomTime = Random.Range(0.8f, 2f);
                     Invoke("StartNewRound", randomTime);
                 }
@@ -334,7 +341,28 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         StartCoroutine(AnimateGameResult());
     }
 
-    private IEnumerator RotateStar()
+    IEnumerator ShowWordUI()
+    {
+        Vector3 startScale = new Vector3(0.5f, 0.5f, 1f);
+        Vector3 endScale = new Vector3(1f, 1f, 1f);
+        float elapsedTime = 0f;
+
+        wordUI.SetActive(true);
+        wordUI.transform.localScale = startScale;
+
+        while (elapsedTime < _duration)
+        {
+            float t = elapsedTime / _duration;
+            wordUI.transform.localScale = Vector3.Lerp(startScale, endScale, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        wordUI.transform.localScale = endScale;
+        wordUI.SetActive(false);
+    }
+    IEnumerator RotateStar()
     {
         isGoldStar = true;
 
