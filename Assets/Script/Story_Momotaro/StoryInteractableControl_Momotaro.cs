@@ -76,6 +76,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static bool isFinishWork = false;
     //07Dog & 08Chicken
     public static bool isMeet = false;
+    public static bool isSuccessfulPerformance = false;
     //09Parrot
     public static bool isAnswerCorrect = false;
 
