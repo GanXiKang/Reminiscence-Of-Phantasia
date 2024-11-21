@@ -730,7 +730,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 63:
                 StoryTeachControl.isTeachActive = true;
                 StoryPerformancesControl_Momotaro._danceNum = 0;
-                StoryNpcAnimator_Momotaro._perfoemancesNum = 1;
+                StoryNpcAnimator_Momotaro._performancesNum = 1;
                 StoryGameControl_Momotaro.isPerformancesPointActive = true;
                 break;
 
