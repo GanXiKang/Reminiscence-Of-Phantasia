@@ -24,13 +24,17 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public static bool isPerformancesPointActive = false;
     public static bool isReadly = false;
 
-    [Header("Npc")]
+    [Header("SceneActive")]
+    public GameObject sceneRiver;
     public GameObject sceneForest;
     public GameObject scenePlaza;
-    public GameObject donkey;
-    public GameObject parrot;
+
+    [Header("Npc")]
+    public SpriteRenderer momotaro;
     public SpriteRenderer monkey;
     public SpriteRenderer cat;
+    public GameObject donkey;
+    public GameObject parrot;
     public static bool isParrotActive = false;
 
     void Start()
@@ -66,8 +70,13 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     }
     void NpcActive()
     {
+        momotaro.enabled = sceneRiver.activeSelf;
         cat.enabled = scenePlaza.activeSelf;
-        parrot.SetActive(isParrotActive);
+        if (StoryNpcAnimator_Momotaro.isFindPlayer)
+        {
+            monkey.enabled = !scenePlaza.activeSelf;
+        }
+
         if (StoryNpcAnimator_Momotaro._dating == 0)
         {
             donkey.SetActive(sceneForest.activeSelf);
@@ -76,9 +85,6 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         {
             donkey.SetActive(true);
         }
-        if (StoryNpcAnimator_Momotaro.isFindPlayer)
-        {
-            monkey.enabled = !scenePlaza.activeSelf;
-        }
+        parrot.SetActive(isParrotActive);
     }
 }
