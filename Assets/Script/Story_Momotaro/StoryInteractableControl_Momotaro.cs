@@ -533,10 +533,13 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 }
                                 else
                                 {
-                                    StoryUIControl_Momotaro.isDialogue = true;
-                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                    StoryDialogueControl_Momotaro._isAboveWho2 = 8;
-                                    StoryDialogueControl_Momotaro._textCount = 57;
+                                    if (!StoryNpcAnimator_Momotaro.isFindMomotaro)
+                                    {
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                                        StoryDialogueControl_Momotaro._textCount = 57;
+                                    }
                                 }
                                 break;
                         }
@@ -700,9 +703,12 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             default:
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 48;
+                                if (!StoryNpcAnimator_Momotaro.isFindPlayer)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 48;
+                                }
                                 break;
                         }
                     }
@@ -860,10 +866,13 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         }
                         else
                         {
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = 7;
-                            StoryDialogueControl_Momotaro._isAboveWho2 = _who;
-                            StoryDialogueControl_Momotaro._textCount = 57;
+                            if (!StoryNpcAnimator_Momotaro.isFindMomotaro)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = 7;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 57;
+                            }
                         }
                     }
                     else
@@ -906,6 +915,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         if (!isBagGetItem) return;
         if (isGetItem) return;
         if (!isInteractable) return;
+        if (isSuccessfulPerformance) return;
         if (StoryUIControl_Momotaro.isDialogue) return;
 
         for (int i = 0; i < _getItemNumber.Length; i++)
