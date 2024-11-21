@@ -30,11 +30,6 @@ public class StoryUIControl_Momotaro : MonoBehaviour
         performancuesUI.SetActive(isPerformances);
         storyUI.SetActive(isStoryStart || isStoryEnding);
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            isPerformances = true;
-        }
     }
 
     bool isBagUIActive()
