@@ -574,6 +574,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 63:
+                StoryPerformancesControl_Momotaro._danceNum = 1;
+                break;
+
             case 67:
                 isDialogueRotation = true;
                 break;
@@ -697,6 +701,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Momotaro.isGiveItem = true;
                 StoryInteractableControl_Momotaro._whoGive = 7;
+                break;
+
+            case 63:
+                StoryPerformancesControl_Momotaro._danceNum = 0;
+                //½ÌŒW
                 break;
         }
     }
