@@ -706,6 +706,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 63:
                 StoryPerformancesControl_Momotaro._danceNum = 0;
                 //½ÌŒW
+                //ÒÆ„Óµ½ÎèÅ_
                 break;
         }
     }
