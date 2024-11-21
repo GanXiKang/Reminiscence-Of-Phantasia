@@ -29,6 +29,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject scenePlaza;
     public GameObject donkey;
     public GameObject parrot;
+    public SpriteRenderer monkey;
     public SpriteRenderer cat;
     public static bool isParrotActive = false;
 
