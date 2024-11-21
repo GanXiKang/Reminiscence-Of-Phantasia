@@ -26,6 +26,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public GameObject handA;
     public GameObject handB;
     public Transform point1, point2;
+    float _speed = 2.0f;
 
     [Header("Score")]
     public Image scoreBar;
@@ -143,6 +144,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         KeyBroad();
         PerformancesTimeOut();
         BGMisSettingActive();
+        Hand();
         Score();
         GameTime();
     }
@@ -265,6 +267,13 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 isStopBGM = false;
             }
         }
+    }
+    void Hand()
+    {
+        float t = Mathf.PingPong(Time.time * _speed, 1.0f);
+
+        handA.transform.position = Vector3.Lerp(point1.position, point2.position, t);
+        handB.transform.position = Vector3.Lerp(point2.position, point1.position, t);
     }
     void Score()
     {
