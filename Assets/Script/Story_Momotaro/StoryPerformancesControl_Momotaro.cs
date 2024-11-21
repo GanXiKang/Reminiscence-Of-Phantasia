@@ -18,7 +18,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("PerformancesUI")]
     public GameObject allUI;
     public GameObject resultUI;
-    public Text test; //úy‘á∞Ê
     public Image gameResult;
     public Sprite success, fail;
 
@@ -87,16 +86,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         BGM.Stop();
         BGM.clip = performancesBGM;
         BGM.Play();
-        test.text = "3";
-        yield return new WaitForSeconds(1f);
-        test.text = "2";
-        yield return new WaitForSeconds(1f);
-        test.text = "1";
-        yield return new WaitForSeconds(1f);
-        test.text = "Ready";
-        yield return new WaitForSeconds(1f);
-        test.text = "Go!!!";
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         StartNewRound();
         isGameTiming = true;
         _remainingTime = _countdownTime;
@@ -120,31 +110,26 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             case 1:
             case 6:
                 _danceNum = 1;
-                test.text = "W";
                 break;
 
             case 2:
             case 7:
                 _danceNum = 2;
-                test.text = "S";
                 break;
 
             case 3:
                 isExcited = false;
                 _danceNum = 3;
-                test.text = "P";
                 break;
 
             case 4:
             case 8:
                 _danceNum = 4;
-                test.text = "A";
                 break;
 
             case 5:
             case 9:
                 _danceNum = 5;
-                test.text = "D";
                 break;
         }
     }
@@ -180,8 +165,8 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             }
             else
             {
-                isExcited = true;
                 _score++;
+                isExcited = true;
             }
         }
         else
