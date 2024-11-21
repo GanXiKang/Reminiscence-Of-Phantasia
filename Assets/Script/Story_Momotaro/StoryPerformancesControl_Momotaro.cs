@@ -30,7 +30,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("Score")]
     public Image scoreBar;
     public Image star;
-    public Sprite goldStar, bluestar;
+    public Sprite goldStar, blueStar;
     float _score;
 
     [Header("Time")]
