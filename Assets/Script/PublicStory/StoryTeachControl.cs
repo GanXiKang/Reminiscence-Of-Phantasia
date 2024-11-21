@@ -224,9 +224,13 @@ public class StoryTeachControl : MonoBehaviour
                 break;
 
             case 2:
+                _isFinish++;
+                _totalPage += _teachAllPage;
+                break;
+
             case 3:
                 _isFinish++;
-                _totalPage += _teachGoddessPage;
+                _totalPage += _teachTimePage;
                 break;
         }
     }
