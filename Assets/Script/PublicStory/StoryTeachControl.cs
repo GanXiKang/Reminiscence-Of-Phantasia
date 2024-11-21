@@ -233,7 +233,10 @@ public class StoryTeachControl : MonoBehaviour
 
             case 3:
                 _isFinish++;
-                _totalPage += _teachTimePage;
+                if (_isFinish != 2)
+                {
+                    _totalPage += _teachTimePage;
+                }
                 break;
         }
     }
