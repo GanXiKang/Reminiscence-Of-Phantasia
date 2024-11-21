@@ -479,9 +479,18 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             default:
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 10;
+                                if (!isSuccessfulPerformance)
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 10;
+                                }
+                                else
+                                {
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 11;
+                                }
                                 break;
                         }
                     }
