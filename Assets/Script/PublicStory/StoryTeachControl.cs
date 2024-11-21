@@ -225,7 +225,10 @@ public class StoryTeachControl : MonoBehaviour
 
             case 2:
                 _isFinish++;
-                _totalPage += _teachAllPage;
+                if (_isFinish != 4)
+                {
+                    _totalPage += _teachAllPage;
+                }
                 break;
 
             case 3:
