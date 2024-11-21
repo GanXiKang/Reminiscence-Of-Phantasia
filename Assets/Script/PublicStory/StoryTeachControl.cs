@@ -9,30 +9,19 @@ public class StoryTeachControl : MonoBehaviour
     public AudioSource BGM;
     public AudioClip page, coroutine;
 
-    [Header("Teach_Story1")]
-    public bool isTemperature;
-    int _teachTemperaturePage = 4;
-
-    [Header("Teach_Story2")]
-    public bool isGoddess;
-    int _teachGoddessPage = 2;
-    public bool isChange;
-    int _teachChangePage = 2;
-    public bool isWind;
-    int _teachWindPage = 2;
-    public bool isPerformance;
-    int _teachPerformancePage = 2;
-    int _totalPage = 0;
-
-    [Header("Teach_Story3")]
-    public bool isTime;
-    int _teachTimePage = 3;
-    public bool isSupplies;
-    int _teachSuppliesPage = 4;
-
     [Header("TextFile")]
+    public int isTeachStory;
     public TextAsset[] teachContent;
     public Sprite[] teachImage;
+    int _totalPage = 0;
+
+    //Story1
+    int _teachTemperaturePage = 4;
+    //Story2
+    int _teachAllPage = 2;
+    //Story3
+    int _teachTimePage = 3;
+    int _teachSuppliesPage = 4;
 
     [Header("UI")]
     public GameObject teachUI;
@@ -70,190 +59,145 @@ public class StoryTeachControl : MonoBehaviour
     }
     void Teach()
     {
-        if (isTemperature)
+        switch (isTeachStory)
         {
-            for (int i = 1; i <= _teachTemperaturePage; i++)
-            {
-                if (i == _page)
-                {
-                    background.sprite = teachImage[i];
-                    content.text = teachContent[i].ToString();
-                }
-            }
-        }
-
-        switch (_isFinish)
-        {
-            case 0:
-                if (isGoddess)
-                {
-                    for (int i = 1; i <= _teachGoddessPage; i++)
-                    {
-                        if (i == _page)
-                        {
-                            background.sprite = teachImage[i];
-                            content.text = teachContent[i].ToString();
-                        }
-                    }
-                }
-                break;
-
             case 1:
-                if (isChange)
+                for (int i = 1; i <= _teachTemperaturePage; i++)
                 {
-                    for (int i = 1; i <= _teachChangePage; i++)
+                    if (i == _page)
                     {
-                        if (i == _page)
-                        {
-                            background.sprite = teachImage[i + _totalPage];
-                            content.text = teachContent[i + _totalPage].ToString();
-                        }
+                        background.sprite = teachImage[i];
+                        content.text = teachContent[i].ToString();
                     }
                 }
                 break;
 
             case 2:
-                if (isWind)
+                for (int i = 1; i <= _teachAllPage; i++)
                 {
-                    for (int i = 1; i <= _teachWindPage; i++)
+                    if (i == _page)
                     {
-                        if (i == _page)
-                        {
-                            background.sprite = teachImage[i + _totalPage];
-                            content.text = teachContent[i + _totalPage].ToString();
-                        }
+                        background.sprite = teachImage[i + _totalPage];
+                        content.text = teachContent[i + _totalPage].ToString();
                     }
                 }
                 break;
 
             case 3:
-                if (isPerformance)
+                switch (_isFinish)
                 {
-                    for (int i = 1; i <= _teachPerformancePage; i++)
-                    {
-                        if (i == _page)
+                    case 0:
+                        for (int i = 1; i <= _teachTimePage; i++)
                         {
-                            background.sprite = teachImage[i + _totalPage];
-                            content.text = teachContent[i + _totalPage].ToString();
+                            if (i == _page)
+                            {
+                                //background.sprite = teachImage[i];
+                                content.text = teachContent[i].ToString();
+                            }
                         }
-                    }
-                }
-                break;
-        }
+                        break;
 
-        switch (_isFinish)
-        {
-            case 0:
-                if (isTime)
-                {
-                    for (int i = 1; i <= _teachTimePage; i++)
-                    {
-                        if (i == _page)
+                    case 1:
+                        for (int i = 1; i <= _teachSuppliesPage; i++)
                         {
-                            //background.sprite = teachImage[i];
-                            content.text = teachContent[i].ToString();
+                            if (i == _page)
+                            {
+                                //background.sprite = teachImage[i + _teachTimePage];
+                                content.text = teachContent[i + _teachTimePage].ToString();
+                            }
                         }
-                    }
-                }
-                break;
-
-            case 1:
-                if (isSupplies)
-                {
-                    for (int i = 1; i <= _teachSuppliesPage; i++)
-                    {
-                        if (i == _page)
-                        {
-                            //background.sprite = teachImage[i + _teachTimePage];
-                            content.text = teachContent[i + _teachTimePage].ToString();
-                        }
-                    }
+                        break;
                 }
                 break;
         }
     }
     void ButtonActive()
     {
-        if (isTemperature)
+        switch (isTeachStory)
         {
-            switch (_page)
-            {
-                case 1:
-                    teachButton[1].interactable = false;
-                    break;
+            case 1:
+                switch (_page)
+                {
+                    case 1:
+                        teachButton[1].interactable = false;
+                        break;
 
-                case 2:
-                    teachButton[1].interactable = true;
-                    break;
+                    case 2:
+                        teachButton[1].interactable = true;
+                        break;
 
-                case 3:
-                    teachButton[2].interactable = true;
-                    break;
+                    case 3:
+                        teachButton[2].interactable = true;
+                        break;
 
-                case 4:
-                    teachButton[0].interactable = true;
-                    teachButton[2].interactable = false;
-                    break;
-            }
-        }
-  
-        if (isGoddess)
-        {
-            switch (_page)
-            {
-                case 1:
-                    teachButton[1].interactable = false;
-                    teachButton[2].interactable = true;
-                    break;
+                    case 4:
+                        teachButton[0].interactable = true;
+                        teachButton[2].interactable = false;
+                        break;
+                }
+                break;
 
-                case 2:
-                    teachButton[0].interactable = true;
-                    teachButton[1].interactable = true;
-                    teachButton[2].interactable = false;
-                    break;
-            }
-        }
+            case 2:
+                switch (_page)
+                {
+                    case 1:
+                        teachButton[1].interactable = false;
+                        teachButton[2].interactable = true;
+                        break;
 
-        if (isTime && _isFinish == 1)
-        {
-            switch (_page)
-            {
-                case 1:
-                    teachButton[1].interactable = false;
-                    break;
+                    case 2:
+                        teachButton[0].interactable = true;
+                        teachButton[1].interactable = true;
+                        teachButton[2].interactable = false;
+                        break;
+                }
+                break;
 
-                case 2:
-                    teachButton[1].interactable = true;
-                    teachButton[2].interactable = true;
-                    break;
+            case 3:
+                switch (_isFinish)
+                {
+                    case 0:
+                        switch (_page)
+                        {
+                            case 1:
+                                teachButton[1].interactable = false;
+                                break;
 
-                case 3:
-                    teachButton[0].interactable = true;
-                    teachButton[2].interactable = false;
-                    break;
-            }
-        }
-        else if (isSupplies && _isFinish == 2)
-        {
-            switch (_page)
-            {
-                case 1:
-                    teachButton[1].interactable = false;
-                    break;
+                            case 2:
+                                teachButton[1].interactable = true;
+                                teachButton[2].interactable = true;
+                                break;
 
-                case 2:
-                    teachButton[1].interactable = true;
-                    break;
+                            case 3:
+                                teachButton[0].interactable = true;
+                                teachButton[2].interactable = false;
+                                break;
+                        }
+                        break;
 
-                case 3:
-                    teachButton[2].interactable = true;
-                    break;
+                    case 1:
+                        switch (_page)
+                        {
+                            case 1:
+                                teachButton[1].interactable = false;
+                                break;
 
-                case 4:
-                    teachButton[0].interactable = true;
-                    teachButton[2].interactable = false;
-                    break;
-            }
+                            case 2:
+                                teachButton[1].interactable = true;
+                                break;
+
+                            case 3:
+                                teachButton[2].interactable = true;
+                                break;
+
+                            case 4:
+                                teachButton[0].interactable = true;
+                                teachButton[2].interactable = false;
+                                break;
+                        }
+                        break;
+                }
+                break;
         }
     }
 
@@ -273,39 +217,17 @@ public class StoryTeachControl : MonoBehaviour
 
     void CloseTeach()
     {
-        if (isTemperature)
+        switch (isTeachStory)
         {
-            StoryThermometerControl_Girl.isThermometer = true;
-        }
+            case 1:
+                StoryThermometerControl_Girl.isThermometer = true;
+                break;
 
-        if (isGoddess && _isFinish == 0)
-        {
-            _isFinish++;
-            _totalPage += _teachGoddessPage;
-        }
-        else if (isChange && _isFinish == 1)
-        {
-            _isFinish++;
-            _totalPage += _teachChangePage;
-        }
-        else if (isWind && _isFinish == 2)
-        {
-            _isFinish++;
-            _totalPage += _teachWindPage;
-        }
-        else if (isPerformance && _isFinish == 0)
-        {
-            _isFinish++;
-            _totalPage += _teachPerformancePage;
-        }
-
-        if (isTime && _isFinish == 1)
-        {
-            _isFinish++;
-        }
-        else if (isSupplies && _isFinish == 2)
-        {
-            _isFinish++;
+            case 2:
+            case 3:
+                _isFinish++;
+                _totalPage += _teachGoddessPage;
+                break;
         }
     }
 }
