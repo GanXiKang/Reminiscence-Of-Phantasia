@@ -37,7 +37,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
         RoleUI();
         RaccoonSkill();
-        ParrotPerformances();
 
         if (Input.GetKeyDown(KeyCode.E) && skillUI.activeSelf)
         {
@@ -79,16 +78,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             Button_RaccoonSkill();
-        }
-    }
-    void ParrotPerformances()
-    {
-        if (!StoryPlayerAnimator_Momotaro.isParrot) return;
-        if (StoryUIControl_Momotaro.isPerformances) return;
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StoryUIControl_Momotaro.isPerformances = true;
         }
     }
 
