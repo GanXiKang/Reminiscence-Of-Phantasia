@@ -35,6 +35,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isStone = false;
     //07Dog
     public static int _performancesNum = 0;
+    public static bool isFindMomotaro = false;
     public static bool isSliver_Dog = false;
     public static bool isControlled_Dog = false;
     //08Chicken
@@ -138,15 +139,17 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 7:
-                anim.SetBool("isPerpare", StoryGameControl_Momotaro.isParrotActive);
                 anim.SetInteger("Performances", _performancesNum);
+                anim.SetBool("isPerpare", StoryGameControl_Momotaro.isParrotActive);
+                anim.SetBool("isFind", isFindMomotaro);
                 anim.SetBool("isSliverFlute", isSliver_Dog);
                 anim.SetBool("isControlled", isControlled_Dog);
                 break;
 
             case 8:
-                anim.SetBool("isPerpare", StoryGameControl_Momotaro.isParrotActive);
                 anim.SetInteger("Performances", _performancesNum);
+                anim.SetBool("isPerpare", StoryGameControl_Momotaro.isParrotActive);
+                anim.SetBool("isFind", isFindMomotaro);
                 anim.SetBool("isGoldFlute", isGold_Chicken);
                 anim.SetBool("isControlled", isControlled_Chicken);
                 break;
