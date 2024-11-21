@@ -267,6 +267,7 @@ public class StoryTeachControl : MonoBehaviour
         BGM.PlayOneShot(coroutine);
         isTeachActive = false;
         teachButton[0].interactable = false;
+        _page = 1;
         CloseTeach();
     }
 
