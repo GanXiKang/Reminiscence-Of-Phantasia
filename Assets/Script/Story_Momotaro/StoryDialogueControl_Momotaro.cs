@@ -651,11 +651,15 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 {
                     Invoke("FalseGoddessAngry", 2f);
                 }
+                else
+                {
+                    StoryTeachControl.isTeachActive = true;
+                }
                 break;
 
             case 26:
-                StoryGameControl_Momotaro.isPlazaActive = true;
                 StoryTeachControl.isTeachActive = true;
+                StoryGameControl_Momotaro.isPlazaActive = true;
                 break;
 
             case 28:
@@ -678,6 +682,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 44:
                 StoryNpcAnimator_Momotaro.isMeet = true;
+                break;
+
+            case 45:
+                StoryTeachControl.isTeachActive = true;
                 break;
 
             case 47:
@@ -705,8 +713,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 63:
+                StoryTeachControl.isTeachActive = true;
                 StoryPerformancesControl_Momotaro._danceNum = 0;
-                //½ÌŒW
                 //ÒÆ„Óµ½ÎèÅ_
                 break;
         }
