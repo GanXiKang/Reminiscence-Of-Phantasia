@@ -66,6 +66,8 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     }
     void NpcActive()
     {
+        cat.enabled = scenePlaza.activeSelf;
+        parrot.SetActive(isParrotActive);
         if (StoryNpcAnimator_Momotaro._dating == 0)
         {
             donkey.SetActive(sceneForest.activeSelf);
@@ -74,7 +76,9 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         {
             donkey.SetActive(true);
         }
-        cat.enabled = scenePlaza.activeSelf;
-        parrot.SetActive(isParrotActive);
+        if (StoryNpcAnimator_Momotaro.isFindPlayer)
+        {
+            monkey.enabled = !scenePlaza.activeSelf;
+        }
     }
 }
