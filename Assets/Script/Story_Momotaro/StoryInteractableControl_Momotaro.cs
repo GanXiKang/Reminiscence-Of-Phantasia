@@ -435,6 +435,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                     case 4:
                         StoryNpcAnimator_Momotaro.isGold_Monkey = true;
                         break;
+
+                    case 7:
+                        StoryNpcAnimator_Momotaro.isSliver_Dog = true;
+                        break;
+
+                    case 8:
+                        StoryNpcAnimator_Momotaro.isGold_Chicken = true;
+                        break;
                 }
             }
         }
