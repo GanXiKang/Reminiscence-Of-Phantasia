@@ -389,6 +389,9 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 4:
+            case 11:
+            case 28:
+            case 51:
                 StoryPlayerControl.isHappy = true;
                 break;
 
@@ -462,6 +465,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 24:
+            case 30:
             case 33:
             case 42:
                 StoryPlayerControl.isSurprised = true;
@@ -471,14 +475,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryPlayerAnimator_Momotaro.isDonkey = true;
                 StoryRiceDumpling_Momotaro.isChangeRoles = true;
                 StoryRiceDumpling_Momotaro.isRoleActive = false;
-                break;
-
-            case 28:
-                StoryPlayerControl.isHappy = true;
-                break;
-
-            case 30:
-                StoryPlayerControl.isSurprised = true;
                 break;
 
             case 31:
@@ -558,6 +554,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 55:
+            case 67:
                 isDialogueRotation = true;
                 break;
 
@@ -593,10 +590,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 63:
                 StoryPerformancesControl_Momotaro._danceNum = 1;
-                break;
-
-            case 67:
-                isDialogueRotation = true;
                 break;
 
             case 68:
@@ -656,6 +649,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryGameControl_Momotaro.isForestActive = true;
                 StoryInteractableControl_Momotaro.isGiveItem = true;
                 StoryInteractableControl_Momotaro._whoGive = 1;
+                break;
+
+            case 11:
+                StoryUIControl_Momotaro.isStoryEnding = true;
                 break;
 
             case 17:
@@ -730,6 +727,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 Invoke("FalseControlled", 1f);
                 break;
 
+            case 51:
+                //monkeyȥfind momotaro
+                break;
+
             case 56:
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Momotaro.isGiveItem = true;
@@ -750,10 +751,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
         }
-    }
-    void StoryEnd()
-    {
-        StoryUIControl_Momotaro.isStoryEnding = true;
     }
 
     void FalseGoddessAngry()
