@@ -86,7 +86,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         BGM.Stop();
         BGM.clip = performancesBGM;
         BGM.Play();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         StartNewRound();
         isGameTiming = true;
         _remainingTime = _countdownTime;
