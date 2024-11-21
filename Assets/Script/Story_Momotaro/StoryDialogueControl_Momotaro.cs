@@ -86,6 +86,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     void TextController()
     {
         if (SettingControl.isSettingActive) return;
+        if (StoryTeachControl.isTeachActive) return;
 
         if (isTextFinish)
         {
