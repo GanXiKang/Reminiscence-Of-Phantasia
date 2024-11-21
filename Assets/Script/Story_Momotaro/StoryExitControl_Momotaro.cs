@@ -56,7 +56,7 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                         {
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = 4;
-                            StoryDialogueControl_Momotaro._textCount = 11;
+                            StoryDialogueControl_Momotaro._textCount = 51;
                         }
                         break;
 
