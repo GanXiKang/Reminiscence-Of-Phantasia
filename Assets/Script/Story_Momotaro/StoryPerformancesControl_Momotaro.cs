@@ -17,13 +17,23 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     
     [Header("PerformancesUI")]
     public GameObject allUI;
-    public Text test; //úy‘á∞Ê
-    public Image scoreBar;
-    public Image timeBar;
     public GameObject resultUI;
+    public Text test; //úy‘á∞Ê
     public Image gameResult;
     public Sprite success, fail;
+   
+    [Header("HandUI")]
+    public GameObject handA, handB;
+    public Transform point1, point2;
+
+    [Header("Score")]
+    public Image scoreBar;
+    public Image star;
+    public Sprite goldStar, bluestar;
     float _score;
+
+    [Header("Time")]
+    public Image timeBar;
     float _countdownTime = 80f;
     float _remainingTime;
     bool isGameTiming = false;
