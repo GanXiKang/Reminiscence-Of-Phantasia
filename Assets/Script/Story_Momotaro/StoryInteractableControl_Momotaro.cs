@@ -321,7 +321,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 }
                                 break;
 
-                            case 4:
+                            case 3:
                                 if (!isAnswerLie)
                                 {
                                     isPickedUp = true;
@@ -913,18 +913,18 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 3:
+                                StoryNpcAnimator_Momotaro.isOutLake = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 22;
+                                break;
+
+                            case 4:
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 21;
                                 StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                                 StoryBagControl._howManyGrids++;
-                                break;
-
-                            case 4:
-                                StoryNpcAnimator_Momotaro.isOutLake = true;
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 22;
                                 break;
                         }
                         break;
