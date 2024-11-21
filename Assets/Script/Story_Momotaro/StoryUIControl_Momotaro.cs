@@ -33,7 +33,9 @@ public class StoryUIControl_Momotaro : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            isStoryEnding = true;
+            StoryUIControl_Momotaro.isDialogue = true;
+            StoryDialogueControl_Momotaro._isAboveWho1 = 1;
+            StoryDialogueControl_Momotaro._textCount = 11;
         }
     }
 
