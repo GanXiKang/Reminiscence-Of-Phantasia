@@ -650,9 +650,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 17:
             case 18:
-            case 19:
-            case 20:
-            case 22:
                 StoryNpcAnimator_Momotaro.isBackLake = true;
                 if (StoryNpcAnimator_Momotaro.isAngry)
                 {
@@ -661,6 +658,16 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 else
                 {
                     StoryTeachControl.isTeachActive = true;
+                }
+                break;
+
+            case 19:
+            case 20:
+            case 22:
+                StoryNpcAnimator_Momotaro.isBackLake = true;
+                if (StoryNpcAnimator_Momotaro.isAngry)
+                {
+                    Invoke("FalseGoddessAngry", 2f);
                 }
                 break;
 
