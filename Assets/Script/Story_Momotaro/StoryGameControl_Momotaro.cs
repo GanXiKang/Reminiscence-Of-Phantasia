@@ -24,7 +24,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject sceneForest;
     public GameObject donkey;
     public GameObject parrot;
-    public static bool isParrotActive = true; //∑Ω±„úy‘á
+    public static bool isParrotActive = false;
 
     void Start()
     {
