@@ -51,6 +51,15 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                 StoryLoadingScene_Momotaro.isOpen = true;
                 switch (_goToThatScene)
                 {
+                    case 2:
+                        if (StoryNpcAnimator_Momotaro.isFindPlayer && !StoryNpcAnimator_Momotaro.isFindMomotaro_Monkey)
+                        {
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = 4;
+                            StoryDialogueControl_Momotaro._textCount = 11;
+                        }
+                        break;
+
                     case 4:
                         if (isOnce)
                         {
