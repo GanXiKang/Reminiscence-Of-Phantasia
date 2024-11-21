@@ -508,7 +508,30 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 54;
                                 }
+                                else
+                                {
+                                    if (StoryNpcAnimator_Momotaro.isGold_Chicken)
+                                    {
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                                        StoryDialogueControl_Momotaro._textCount = 60;
+                                    }
+                                }
                                 break;
+                        }
+                    }
+                    else
+                    {
+                        if (StoryPlayerAnimator_Momotaro.isParrot)
+                        {
+                            if (StoryNpcAnimator_Momotaro.isGold_Chicken && StoryNpcAnimator_Momotaro.isSliver_Dog)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = 8;
+                                StoryDialogueControl_Momotaro._textCount = 63;
+                            }
                         }
                     }
                     break;
@@ -799,6 +822,29 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryDialogueControl_Momotaro._textCount = 66;
                             }
                         }
+                        else
+                        {
+                            if (StoryNpcAnimator_Momotaro.isSliver_Dog)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = 7;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 60;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (StoryPlayerAnimator_Momotaro.isParrot)
+                        {
+                            if (StoryNpcAnimator_Momotaro.isGold_Chicken && StoryNpcAnimator_Momotaro.isSliver_Dog)
+                            {
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = 7;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 63;
+                            }
+                        }
                     }
                     break;
             }
@@ -1016,6 +1062,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
+                                isRotation = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 55;
@@ -1044,6 +1091,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 2:
+                                isRotation = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 67;
