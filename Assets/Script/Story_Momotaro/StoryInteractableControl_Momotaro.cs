@@ -1158,7 +1158,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         {
             isSkill = false;
             StoryRiceDumpling_Momotaro.isSkillActive = true;
-            StoryTeachControl.isTeachActive = true;
         }
         isPickedUp = false;
         isAnim = false;
