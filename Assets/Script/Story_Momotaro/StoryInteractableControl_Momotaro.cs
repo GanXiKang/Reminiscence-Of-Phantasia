@@ -808,7 +808,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             {
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 45;
+                                StoryDialogueControl_Momotaro._textCount = 75;
                             }
                         }
                         if (StoryPlayerAnimator_Momotaro.isDonkey)
