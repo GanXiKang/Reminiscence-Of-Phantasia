@@ -42,6 +42,12 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         ExitActive();
         StatueActive();
         NpcActive();
+
+        //úy‘á
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            StoryTeachControl.isTeachActive = true;
+        }    
     }
 
     void ExitActive()
