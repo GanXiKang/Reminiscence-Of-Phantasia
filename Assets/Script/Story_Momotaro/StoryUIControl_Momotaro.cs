@@ -17,7 +17,7 @@ public class StoryUIControl_Momotaro : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart = false; //·½±ãˆÌÐÐ
+    public static bool isStoryStart = true;
     public static bool isStoryEnding = false;
 
     [Header("TransitionUI")]
@@ -30,6 +30,11 @@ public class StoryUIControl_Momotaro : MonoBehaviour
         performancuesUI.SetActive(isPerformances);
         storyUI.SetActive(isStoryStart || isStoryEnding);
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            isStoryEnding = true;
+        }
     }
 
     bool isBagUIActive()
