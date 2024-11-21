@@ -719,10 +719,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryInteractableControl_Momotaro._whoGive = 7;
                 break;
 
+
             case 63:
                 StoryTeachControl.isTeachActive = true;
                 StoryPerformancesControl_Momotaro._danceNum = 0;
-                //“∆Ñ”µΩŒË≈_
+                StoryNpcAnimator_Momotaro._perfoemancesNum = 1;
+                StoryGameControl_Momotaro.isPerformancesPointActive = true;
                 break;
 
             case 74:
