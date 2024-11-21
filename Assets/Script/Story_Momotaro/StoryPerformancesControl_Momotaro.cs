@@ -79,6 +79,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         StoryNpcAnimator_Momotaro._performancesNum = 2;
         player.transform.rotation = Quaternion.identity;
         _score = 0;
+        scoreBar.fillAmount = 0;
+        _remainingTime = 80f;
+        timeBar.fillAmount = 1f;
         star.sprite = blueStar;
         isGoldStar = false;
         BGM.Stop();
@@ -320,8 +323,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         {
             GameResult();
             isGameTiming = false;
-            _remainingTime = 0f;
-            timeBar.fillAmount = 0f;
         }
     }
     void GameResult()
