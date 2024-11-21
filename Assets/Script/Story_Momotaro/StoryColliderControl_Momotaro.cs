@@ -45,6 +45,14 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
                         StoryDialogueControl_Momotaro._textCount = 73;
                     }
                     break;
+
+                case 5:
+                    if (StoryPlayerAnimator_Momotaro.isParrot)
+                    {
+                        StoryUIControl_Momotaro.isDialogue = true;
+                        StoryDialogueControl_Momotaro._textCount = 74;
+                    }
+                    break;
             }
         }
     }
