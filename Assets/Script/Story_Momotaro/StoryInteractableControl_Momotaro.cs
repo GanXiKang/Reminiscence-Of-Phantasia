@@ -1018,6 +1018,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     else
                                     {
                                         isWrongGift = false;
+                                        isGiveTheRightGift = true;
                                         StoryUIControl_Momotaro.isDialogue = true;
                                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                         StoryDialogueControl_Momotaro._isAboveWho2 = 5;
