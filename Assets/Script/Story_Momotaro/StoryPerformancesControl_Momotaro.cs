@@ -10,6 +10,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip performancesBGM, plazaBGM;
+    public AudioClip correct, incorrect, applause;
     bool isStopBGM = false;
 
     [Header("Camera")]
@@ -159,6 +160,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 _danceNum = 0;
                 isTiming = false;
                 word.sprite = nice;
+                BGM.PlayOneShot(correct);
                 StartCoroutine(ShowWordUI());
                 float randomTime = Random.Range(0.8f, 2f);
                 Invoke("StartNewRound", randomTime);
@@ -167,6 +169,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             {
                 _score++;
                 isExcited = true;
+                BGM.PlayOneShot(correct);
             }
         }
         else
@@ -175,6 +178,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             _danceNum = 0;
             isTiming = false;
             word.sprite = wrong;
+            BGM.PlayOneShot(incorrect);
             StartCoroutine(ShowWordUI());
             float randomTime = Random.Range(0.8f, 2f);
             Invoke("StartNewRound", randomTime);
@@ -220,6 +224,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                 _danceNum = 0;
                 isTiming = false;
                 word.sprite = miss;
+                BGM.PlayOneShot(incorrect);
                 StartCoroutine(ShowWordUI());
 
                 float randomTime = Random.Range(0.8f, 2f);
@@ -242,6 +247,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
                     _danceNum = 0;
                     isTiming = false;
                     word.sprite = miss;
+                    BGM.PlayOneShot(incorrect);
                     StartCoroutine(ShowWordUI());
                     float randomTime = Random.Range(0.8f, 2f);
                     Invoke("StartNewRound", randomTime);
@@ -316,6 +322,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
         if (_score >= 80)
         {
+            BGM.PlayOneShot(applause);
             gameResult.sprite = success;
             StoryInteractableControl_Momotaro.isSuccessfulPerformance = true;
         }
