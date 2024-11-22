@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class StoryRiceDumpling_Momotaro : MonoBehaviour
 {
-    GameObject player;
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip donkey, raccoon, parrot;
 
     [Header("SkillUI")]
     public GameObject skillUI;
@@ -23,11 +25,6 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     [Header("RaccoonSkillUI")]
     public GameObject raccoonSkillUI;
     public GameObject stoneButton, notStoneButton;
-
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
 
     void Update()
     {
@@ -110,14 +107,17 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         switch (role)
         {
             case 1:
+                BGM.PlayOneShot(donkey);
                 StoryPlayerAnimator_Momotaro.isDonkey = true;
                 break;
 
             case 2:
+                BGM.PlayOneShot(raccoon);
                 StoryPlayerAnimator_Momotaro.isRaccoon = true;
                 break;
 
             case 3:
+                BGM.PlayOneShot(parrot);
                 StoryPlayerAnimator_Momotaro.isParrot = true;
                 break;
         }
