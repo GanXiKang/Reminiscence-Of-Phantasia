@@ -7,6 +7,11 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
 {
     GameObject player;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip strongwind;
+    bool isPlaySound = false;
+
     [Header("Wind")]
     public GameObject[] wind;
     public float _windCooldown; // 大风间隔时间
@@ -46,6 +51,12 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_windCooldown);
+            if (!isPlaySound)
+            {
+                isPlaySound = true;
+                BGM.PlayOneShot(strongwind);
+            }
+            print("1");
             StartCoroutine(OpenWindUI());
             isMove = true;
 
@@ -55,6 +66,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             yield return new WaitForSeconds(_windDuration);
             StartCoroutine(CloseWindUI());
             isMove = false;
+            isPlaySound = false;
             isWindActive = false;
             _windCooldown = Random.Range(1, 4);
         }
