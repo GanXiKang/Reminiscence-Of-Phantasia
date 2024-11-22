@@ -7,6 +7,7 @@ public class StoreControl_House : MonoBehaviour
 {
     [Header("UI")]
     public GameObject[] storeUI;
+    public GameObject[] contentUI;
     public Button[] homePageButton;
     public Image backgound;
     public Sprite main, content;
@@ -16,12 +17,8 @@ public class StoreControl_House : MonoBehaviour
 
     void Update()
     {
-        storeUI[0].SetActive(isStoreActive);
-        storeUI[1].SetActive(isHomePageActive);
-        storeUI[2].SetActive(isContentActive);
-
         OpenUI();
-        BackgroundSprite();
+        StoreUI();
     }
 
     void OpenUI()
@@ -45,8 +42,12 @@ public class StoreControl_House : MonoBehaviour
             }
         }
     }
-    void BackgroundSprite()
+    void StoreUI()
     {
+        storeUI[0].SetActive(isStoreActive);
+        storeUI[1].SetActive(isHomePageActive);
+        storeUI[2].SetActive(isContentActive);
+
         if (isHomePageActive)
         {
             backgound.sprite = main;
