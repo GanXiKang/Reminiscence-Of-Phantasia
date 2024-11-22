@@ -10,7 +10,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip normalMusia, spikedMusia;
-    public AudioClip give, engrav, honest, dishonest;
+    public AudioClip give, engrav, honest, dishonest, magic, controlled;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -478,6 +478,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 26:
+                BGM.PlayOneShot(magic);
                 StoryPlayerAnimator_Momotaro.isDonkey = true;
                 StoryRiceDumpling_Momotaro.isChangeRoles = true;
                 StoryRiceDumpling_Momotaro.isRoleActive = false;
@@ -551,6 +552,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        BGM.PlayOneShot(controlled);
                         StoryNpcAnimator_Momotaro.isControlled_Monkey = true;
                         StoryNpcAnimator_Momotaro.isControlled_Dog = true;
                         StoryNpcAnimator_Momotaro.isControlled_Chicken = true;
