@@ -35,7 +35,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public SpriteRenderer cat;
     public GameObject donkey;
     public GameObject parrot;
-    public static bool isParrotActive = false;
+    public static bool isParrotActive = true; //test
 
     void Start()
     {
