@@ -10,7 +10,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip normalMusia, spikedMusia;
-    public AudioClip give;
+    public AudioClip give, engrav;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -492,6 +492,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
                 }
                 StoryNpcAnimator_Momotaro.isCloseEyes = false;
+                break;
+
+            case 44:
+                BGM.PlayOneShot(engrav);
+                StoryInteractableControl_Momotaro.isFinishWork = true;
                 break;
 
             case 40:
