@@ -10,7 +10,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip normalMusia, spikedMusia;
-    public AudioClip give, engrav;
+    public AudioClip give, engrav, honest, dishonest;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -176,6 +176,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     {
                         case 20:
                             StoryInteractableControl_Momotaro.isAnswerLie = false;
+                            BGM.PlayOneShot(honest);
                             JumpToSection("C");
                             break;
 
@@ -195,6 +196,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                     {
                         case 20:
                             StoryInteractableControl_Momotaro.isAnswerLie = true;
+                            BGM.PlayOneShot(dishonest);
                             JumpToSection("D");
                             break;
 
@@ -222,11 +224,13 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         case 19:
                         case 22:
                             StoryInteractableControl_Momotaro.isAnswerLie = true;
+                            BGM.PlayOneShot(dishonest);
                             JumpToSection("D");
                             break;
 
                         case 20:
                             StoryInteractableControl_Momotaro.isAnswerLie = false;
+                            BGM.PlayOneShot(honest);
                             JumpToSection("C");
                             break;
 
@@ -245,6 +249,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         case 20:
                         case 22:
                             StoryInteractableControl_Momotaro.isAnswerLie = true;
+                            BGM.PlayOneShot(dishonest);
                             JumpToSection("D");
                             break;
 
@@ -269,6 +274,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         case 19:
                         case 22:
                             StoryInteractableControl_Momotaro.isAnswerLie = false;
+                            BGM.PlayOneShot(honest);
                             break;
 
                         case 20:
