@@ -17,8 +17,9 @@ public class StoreControl_House : MonoBehaviour
 
     [Header("Coin")]
     public Text coinAmount;
+    public Button buyButton;
     public static int _MyCoin = 100;
-    int _productCoin;
+    int _productCoin = 0;
 
     [Header("ProductContent")]
     public GameObject[] scissors;
@@ -30,6 +31,7 @@ public class StoreControl_House : MonoBehaviour
     {
         OpenUI();
         StoreUI();
+        Coin();
     }
 
     void OpenUI()
@@ -67,6 +69,11 @@ public class StoreControl_House : MonoBehaviour
         {
             backgound.sprite = content;
         }
+    }
+    void Coin()
+    {
+        coinAmount.text = _MyCoin + " / " + _productCoin;
+        buyButton.interactable = _MyCoin >= _productCoin;
     }
     void LeaveState()
     {
@@ -118,11 +125,36 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Content(int _content)
     {
-        
+        if (contentUI[1].activeSelf)
+        {
+            switch (_content)
+            {
+                case 1:
+                    _productCoin = 250;
+                    break;
+            }
+        }
     }
     public void Button_Info(int _num)
     {
-        
+        if (contentUI[1].activeSelf)
+        {
+            switch (_num)
+            {
+                case 1:
+                    if (scissors[1].activeSelf)
+                    {
+                        scissors[1].SetActive(false);
+                        scissors[2].SetActive(true);
+                    }
+                    else
+                    {
+                        scissors[1].SetActive(true);
+                        scissors[2].SetActive(false);
+                    }
+                    break;
+            }
+        }
     }
     public void Button_Buy()
     {
