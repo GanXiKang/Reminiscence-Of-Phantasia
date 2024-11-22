@@ -41,10 +41,10 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
     void ItemIntroduceContent()
     {
         introduceItem[1] = "糯米糰子\n桃太郎最喜歡的零食";
-        introduceItem[2] = "金糯米糰子\n給動物吃下就能變身成牠";
+        introduceItem[2] = "金糯米糰子\n吃了會變出變身糰子";
         introduceItem[3] = "銀糯米糰子\n吃下後就能變身";
         introduceItem[4] = "單支鼓棒\n這樣沒辦法使用";
-        introduceItem[5] = "金箍棒\n能夠伸縮自如的超強武器";
+        introduceItem[5] = "金箍棒\n能伸縮自如的超強武器";
         introduceItem[6] = "銀鼓棒\n很漂亮但依舊只有一支";
         introduceItem[7] = "銀鈴鐺\n鈴聲非常清脆";
         introduceItem[8] = "木製鈴鐺\n感覺小動物會喜歡";
