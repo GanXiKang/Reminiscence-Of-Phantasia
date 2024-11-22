@@ -74,6 +74,10 @@ public class StoreControl_House : MonoBehaviour
     {
         coinAmount.text = _MyCoin + " / " + _productCoin;
         buyButton.interactable = _MyCoin >= _productCoin;
+        if (_productCoin == 0)
+        {
+            buyButton.interactable = false;
+        }
     }
     void LeaveState()
     {
@@ -90,6 +94,7 @@ public class StoreControl_House : MonoBehaviour
     {
         if (isHomePageActive)
         {
+            _productCoin = 0;
             CatControl_House.isBag = true;
             StartCoroutine(AnimateButtonDisappear(homePageButton[0], 0f, true));
             StartCoroutine(AnimateButtonDisappear(homePageButton[4], 0f, false));
@@ -110,6 +115,7 @@ public class StoreControl_House : MonoBehaviour
         }
         else
         {
+            _productCoin = 0;
             for (int p = 1; p < contentUI.Length; p++)
             {
                 if (p == _product)
