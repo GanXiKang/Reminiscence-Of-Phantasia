@@ -8,6 +8,8 @@ public class StoreControl_House : MonoBehaviour
     [Header("UI")]
     public GameObject[] storeUI;
     public Button[] homePageButton;
+    public Image backgound;
+    public Sprite main, content;
     public static bool isStoreActive = false;
     bool isHomePageActive = false;
     bool isContentActive = false;
@@ -19,6 +21,7 @@ public class StoreControl_House : MonoBehaviour
         storeUI[2].SetActive(isContentActive);
 
         OpenUI();
+        BackgroundSprite();
     }
 
     void OpenUI()
@@ -40,6 +43,17 @@ public class StoreControl_House : MonoBehaviour
                 StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, false));
                 StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
             }
+        }
+    }
+    void BackgroundSprite()
+    {
+        if (isHomePageActive)
+        {
+            backgound.sprite = main;
+        }
+        else
+        {
+            backgound.sprite = content;
         }
     }
     void LeaveState()
