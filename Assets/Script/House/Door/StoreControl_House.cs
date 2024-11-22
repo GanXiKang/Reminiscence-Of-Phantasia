@@ -20,6 +20,12 @@ public class StoreControl_House : MonoBehaviour
     public static int _MyCoin = 100;
     int _productCoin;
 
+    [Header("ProductContent")]
+    public GameObject[] scissors;
+    public GameObject[] auxiliary;
+    public GameObject[] shading;
+    public GameObject[] decorate;
+
     void Update()
     {
         OpenUI();
