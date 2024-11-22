@@ -78,10 +78,31 @@ public class StoreControl_House : MonoBehaviour
             StartCoroutine(AnimateButtonDisappear(homePageButton[3], 0.2f, false));
             StartCoroutine(AnimateButtonDisappear(homePageButton[2], 0.4f, false));
             StartCoroutine(AnimateButtonDisappear(homePageButton[1], 0.6f, false));
+            for (int p = 1; p < contentUI.Length; p++)
+            {
+                if (p == _product)
+                {
+                    contentUI[p].SetActive(true);
+                }
+                else
+                {
+                    contentUI[p].SetActive(false);
+                }
+            }
         }
         else
-        { 
-
+        {
+            for (int p = 1; p < contentUI.Length; p++)
+            {
+                if (p == _product)
+                {
+                    contentUI[p].SetActive(true);
+                }
+                else
+                {
+                    contentUI[p].SetActive(false);
+                }
+            }
         }
     }
     public void Button_Buy()
