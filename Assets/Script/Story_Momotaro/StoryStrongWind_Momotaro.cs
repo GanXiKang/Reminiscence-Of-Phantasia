@@ -10,7 +10,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip strongwind;
-    bool isPlaySound = false;
 
     [Header("Wind")]
     public GameObject[] wind;
@@ -51,12 +50,7 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_windCooldown);
-            if (!isPlaySound)
-            {
-                isPlaySound = true;
-                BGM.PlayOneShot(strongwind);
-            }
-            print("1");
+            BGM.PlayOneShot(strongwind);
             StartCoroutine(OpenWindUI());
             isMove = true;
 
