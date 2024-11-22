@@ -47,6 +47,12 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         ExitActive();
         StatueActive();
         NpcActive();
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            StoryNpcAnimator_Momotaro.isLeave_Monkey = true;
+            StoryInteractableControl_Momotaro.isSuccessfulPerformance = true;
+        }
     }
 
     void ExitActive()
