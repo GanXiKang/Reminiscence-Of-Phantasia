@@ -15,6 +15,11 @@ public class StoreControl_House : MonoBehaviour
     bool isHomePageActive = false;
     bool isContentActive = false;
 
+    [Header("Coin")]
+    public Text coinAmount;
+    public static int _MyCoin = 100;
+    int _productCoin;
+
     void Update()
     {
         OpenUI();
@@ -104,6 +109,14 @@ public class StoreControl_House : MonoBehaviour
                 }
             }
         }
+    }
+    public void Button_Content(int _content)
+    {
+        
+    }
+    public void Button_Info(int _num)
+    {
+        
     }
     public void Button_Buy()
     {
