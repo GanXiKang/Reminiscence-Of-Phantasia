@@ -9,7 +9,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip pickUp, get;
+    public AudioClip pickUp, get, fell;
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
@@ -1087,7 +1087,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
-                                isFinishWork = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 44;
@@ -1161,7 +1160,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
                 if (!StoryBagControl.isItemNumber[_getItemNumber[i]])
                 {
-                    BGM.PlayOneShot(get);
+                    if (_who != 2)
+                    {
+                        BGM.PlayOneShot(get);
+                    }
+                    else
+                    {
+                        BGM.PlayOneShot(fell);
+                    }
                 }
             }
         }
