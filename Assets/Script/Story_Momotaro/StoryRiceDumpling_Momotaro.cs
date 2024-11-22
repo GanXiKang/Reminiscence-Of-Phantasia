@@ -100,6 +100,8 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     }
     public void Button_Role(int role)
     {
+        if (StoryUIControl_Momotaro.isDialogue) return;
+
         isEat = true;
         Invoke("EatFinish", 0.3f);
 
