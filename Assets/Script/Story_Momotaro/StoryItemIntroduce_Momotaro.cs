@@ -40,7 +40,7 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
 
     void ItemIntroduceContent()
     {
-        introduceItem[1] = "糯米糰子\n據說吃下後就能聽從命令";
+        introduceItem[1] = "糯米糰子\n桃太郎最喜歡的零食";
         introduceItem[2] = "金糯米糰子\n給動物吃下就能變身成牠";
         introduceItem[3] = "銀糯米糰子\n吃下後就能變身";
         introduceItem[4] = "單支鼓棒\n這樣沒辦法使用";
