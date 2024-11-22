@@ -1008,9 +1008,9 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 2:
                                 if (StoryNpcAnimator_Momotaro._dating == 4)
                                 {
+                                    isGiveTheRightGift = true;
                                     if (!isWrongGift)
                                     {
-                                        isGiveTheRightGift = true;
                                         StoryUIControl_Momotaro.isDialogue = true;
                                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                         StoryDialogueControl_Momotaro._textCount = 28;
@@ -1018,7 +1018,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     else
                                     {
                                         isWrongGift = false;
-                                        isGiveTheRightGift = true;
                                         StoryUIControl_Momotaro.isDialogue = true;
                                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                         StoryDialogueControl_Momotaro._isAboveWho2 = 5;
