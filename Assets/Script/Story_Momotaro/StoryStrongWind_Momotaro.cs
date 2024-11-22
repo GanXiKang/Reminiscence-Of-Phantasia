@@ -60,7 +60,6 @@ public class StoryStrongWind_Momotaro : MonoBehaviour
             yield return new WaitForSeconds(_windDuration);
             StartCoroutine(CloseWindUI());
             isMove = false;
-            isPlaySound = false;
             isWindActive = false;
             _windCooldown = Random.Range(1, 4);
         }
