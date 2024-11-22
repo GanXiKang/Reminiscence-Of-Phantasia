@@ -52,8 +52,9 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                 switch (_goToThatScene)
                 {
                     case 2:
-                        if (StoryNpcAnimator_Momotaro.isFindPlayer && !StoryNpcAnimator_Momotaro.isFindMomotaro_Monkey)
+                        if (StoryInteractableControl_Momotaro.isSuccessfulPerformance && !StoryNpcAnimator_Momotaro.isFindMomotaro_Monkey)
                         {
+                            StoryNpcAnimator_Momotaro.isFindPlayer = true;
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = 4;
                             StoryDialogueControl_Momotaro._textCount = 51;
