@@ -661,10 +661,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryLoadingScene_Momotaro.isPlotAnimator = false;
                 break;
 
-            case 4:
-                StoryGameControl_Momotaro.isBeenToPlaza = true;
-                break;
-
             case 9:
                 BGM.PlayOneShot(give);
                 StoryGameControl_Momotaro.isForestActive = true;
@@ -701,7 +697,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 26:
                 StoryTeachControl.isTeachActive = true;
-                StoryGameControl_Momotaro.isPlazaActive = true;
+                StoryGameControl_Momotaro.isMeetDonkey = true;
                 break;
 
             case 28:
