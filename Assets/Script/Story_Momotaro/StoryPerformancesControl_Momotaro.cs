@@ -10,7 +10,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip performancesBGM, plazaBGM;
-    public AudioClip correct, incorrect, applause;
+    public AudioClip correct, incorrect, win, lose;
     bool isStopBGM = false;
 
     [Header("Camera")]
@@ -323,12 +323,13 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
 
         if (_score >= 80)
         {
-            BGM.PlayOneShot(applause);
+            BGM.PlayOneShot(win);
             gameResult.sprite = success;
             StoryInteractableControl_Momotaro.isSuccessfulPerformance = true;
         }
         else
         {
+            BGM.PlayOneShot(lose);
             gameResult.sprite = fail;
         }
 
