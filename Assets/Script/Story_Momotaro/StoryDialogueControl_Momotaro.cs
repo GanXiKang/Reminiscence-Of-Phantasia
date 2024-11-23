@@ -10,7 +10,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip normalMusia, spikedMusia;
-    public AudioClip give, engrav, honest, dishonest, magic, controlled;
+    public AudioClip give, engrav, honest, dishonest, magic, controlled, bingo, wrong;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -234,6 +234,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                             JumpToSection("C");
                             break;
 
+                        case 68:
+                        case 71:
+                            BGM.PlayOneShot(wrong);
+                            JumpToSection("C");
+                            break;
+
                         default:
                             JumpToSection("C");
                             break;
@@ -255,6 +261,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
                         case 68:
                         case 71:
+                            BGM.PlayOneShot(wrong);
                             JumpToSection("C");
                             break;
 
@@ -283,6 +290,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
                         case 68:
                         case 71:
+                            BGM.PlayOneShot(bingo);
                             StoryInteractableControl_Momotaro.isAnswerCorrect = true;
                             break;
                     
