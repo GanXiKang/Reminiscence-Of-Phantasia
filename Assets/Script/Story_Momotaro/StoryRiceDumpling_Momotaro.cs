@@ -7,7 +7,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip donkey, raccoon, parrot;
+    public AudioClip donkey, raccoon, parrot, open;
 
     [Header("SkillUI")]
     public GameObject skillUI;
@@ -80,6 +80,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
     public void Button_RiceDumpling()
     {
+        BGM.PlayOneShot(open);
         if (!isChangeRoles)
         {
             isRoleActive = !isRoleActive;
