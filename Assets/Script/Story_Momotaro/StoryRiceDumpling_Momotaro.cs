@@ -7,7 +7,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip donkey, raccoon, parrot, open;
+    public AudioClip donkey, raccoon, parrot, open, stone;
 
     [Header("SkillUI")]
     public GameObject skillUI;
@@ -125,6 +125,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     }
     public void Button_RaccoonSkill()
     {
+        BGM.PlayOneShot(stone);
         StoryPlayerAnimator_Momotaro.isStone = !StoryPlayerAnimator_Momotaro.isStone;
         stoneButton.SetActive(!StoryPlayerAnimator_Momotaro.isStone);
         notStoneButton.SetActive(StoryPlayerAnimator_Momotaro.isStone);
