@@ -16,6 +16,7 @@ public class CameraControl_House : MonoBehaviour
     public Transform playerPos;
     public Transform doorPos;
     public Transform bedPos;
+    public Transform bedcasePos;
     public Transform bookcasePos;
     public Transform showcasePos;
     public static bool isLookWorkbench = false;
@@ -23,6 +24,7 @@ public class CameraControl_House : MonoBehaviour
     public static bool isLookPlayer = false;
     public static bool isLookDoor = false;
     public static bool isLookBed = false;
+    public static bool isLookBedcase = false;
     public static bool isLookBookcase = false;
     public static bool isLookShowcase = false;
 
@@ -78,8 +80,16 @@ public class CameraControl_House : MonoBehaviour
         }
         else if (isLookBed)
         {
-            transform.position = Vector3.Lerp(transform.position, bedPos.position, _moveTime * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, bedPos.rotation, _moveTime * Time.deltaTime);
+            if (!isLookBedcase)
+            {
+                transform.position = Vector3.Lerp(transform.position, bedPos.position, _moveTime * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, bedPos.rotation, _moveTime * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, bedcasePos.position, _moveTime * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, bedcasePos.rotation, _moveTime * Time.deltaTime);
+            }
         }
         else if (isLookBookcase)
         {
