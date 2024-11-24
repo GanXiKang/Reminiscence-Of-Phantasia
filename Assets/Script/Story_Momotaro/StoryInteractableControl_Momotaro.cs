@@ -522,7 +522,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     }
                                     else
                                     {
-                                        if (StoryNpcAnimator_Momotaro.isGold_Chicken)
+                                        if (StoryNpcAnimator_Momotaro.isGold_Chicken && StoryNpcAnimator_Momotaro._performancesNum == 0)
                                         {
                                             StoryUIControl_Momotaro.isDialogue = true;
                                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
@@ -855,7 +855,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             }
                             else
                             {
-                                if (StoryNpcAnimator_Momotaro.isSliver_Dog)
+                                if (StoryNpcAnimator_Momotaro.isSliver_Dog && StoryNpcAnimator_Momotaro._performancesNum == 0)
                                 {
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = 7;
