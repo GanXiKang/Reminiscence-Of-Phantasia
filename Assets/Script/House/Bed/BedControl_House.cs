@@ -10,9 +10,9 @@ public class BedControl_House : MonoBehaviour
     [Header("Bed")]
     public BoxCollider bed;
     public Transform bedPos;
+    public static bool isMovingToBed = false;
     float _moveSpeed = 2f;
     float _rotateSpeed = 5f;
-    bool isMovingToBed = false;
 
     //StoryBook
     public static bool isGoStoryWorld = false;
