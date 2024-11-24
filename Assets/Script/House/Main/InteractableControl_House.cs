@@ -23,6 +23,13 @@ public class InteractableControl_House : MonoBehaviour
     public GameObject bird;
     public GameObject cat;
 
+    [Header("ObjectCollider")]
+    public GameObject workbench;
+    public GameObject door;
+    public GameObject bed;
+    public GameObject bookcase;
+    public GameObject showcase;
+
     void Start()
     {
         player = GameObject.Find("Player");
