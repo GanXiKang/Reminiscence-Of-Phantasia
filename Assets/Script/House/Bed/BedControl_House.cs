@@ -14,8 +14,10 @@ public class BedControl_House : MonoBehaviour
     float _moveSpeed = 3f;
     float _rotateSpeed = 10f;
 
-    //StoryBook
-    public static bool isGoStoryWorld = false;
+    [Header("StoryBook")]
+    public GameObject[] storyBook;
+    public Transform bedcasePoint;
+    public static bool isPutBedcase = false;
     public static int _storyNum;
 
     void Start()
@@ -28,7 +30,7 @@ public class BedControl_House : MonoBehaviour
         bed.isTrigger = PlayerControl_House.isSleep;
 
         MoveToTarget();
-        StoryWorld();
+        PutBedcase();
 
         if (Input.GetKeyDown(KeyCode.Alpha7)) //úy‘á
         {
@@ -64,27 +66,32 @@ public class BedControl_House : MonoBehaviour
         if (Vector3.Distance(playerTransform.position, bedPos.position) < 0.5f)
         {
             isMovingToBed = false;
-            isGoStoryWorld = true;
+            StartCoroutine(GoToStoryWorld());
             Quaternion finalRotation = Quaternion.LookRotation(Vector3.forward);
             playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, finalRotation, _rotateSpeed * Time.deltaTime);
             playerTransform.rotation = finalRotation;
         }
     }
+    void PutBedcase()
+    {
+        if (!isPutBedcase) return;
 
-    void StoryWorld()
-    {
-        if (isGoStoryWorld)
-        {
-            isGoStoryWorld = false;
-            //TransitionUIControl.isHouse = false;
-            //TransitionUIControl.isTransitionUIAnim_In = true;
-            Invoke("GoToStoryWorld", 1f);
-        }
+        isPutBedcase = false;
+        storyBook[_storyNum].transform.position = bedcasePoint.position;
+        storyBook[_storyNum].transform.rotation = bedcasePoint.rotation;
     }
-    void GoToStoryWorld()
+
+    IEnumerator GoToStoryWorld()
     {
+        CameraControl_House.isLookBedcase = true;
+        storyBook[_storyNum].GetComponent<Animator>().SetBool("isOpen", true);
+        yield return new WaitForSeconds(2f);
+        TransitionUIControl.isHouse = false;
+        TransitionUIControl.isTransitionUIAnim_In = true;
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(_storyNum);
         CameraControl_House.isLookBed = false;
+        CameraControl_House.isLookBedcase = false;
         PlayerControl_House.isSleep = false;
     }
 }
