@@ -70,6 +70,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         allUI.SetActive(true);
         performancesCam.SetActive(true);
         StoryGameControl_Momotaro.isPerformancesPointActive = false;
+        StoryNpcAnimator_Momotaro._performancesNum = 2;
         _score = 0;
         scoreBar.fillAmount = 0;
         _remainingTime = 80f;
@@ -412,6 +413,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         }
         else
         {
+            StoryNpcAnimator_Momotaro._performancesNum = 1;
             StoryGameControl_Momotaro.isPerformancesPointActive = true;
         }
         BGM.Stop();
