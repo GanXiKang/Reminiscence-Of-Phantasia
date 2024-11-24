@@ -27,18 +27,6 @@ public class DoorControl_House : MonoBehaviour
         storeVideo.SetActive(isCat);
         
         Leave();
-
-        //úy‘á
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
-        {
-            isBird = true;
-            isCat = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            isCat = true;
-            isBird = false;
-        }
     }
 
     void Leave()
