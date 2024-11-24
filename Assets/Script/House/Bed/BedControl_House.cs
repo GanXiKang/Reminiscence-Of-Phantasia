@@ -9,7 +9,12 @@ public class BedControl_House : MonoBehaviour
 
     [Header("Bed")]
     public BoxCollider bed;
+    public Transform bedPos;
+    float _moveSpeed = 2f;
+    float _rotateSpeed = 5f;
+    bool isMovingToBed = false;
 
+    //StoryBook
     public static bool isGoStoryWorld = false;
     public static int _storyNum;
 
@@ -35,6 +40,25 @@ public class BedControl_House : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha9)) //úy‘á
         {
             _storyNum = 4;
+        }
+
+        if (isMovingToBed)
+        {
+            MoveToTarget();
+        }
+    }
+
+    void MoveToTarget()
+    {
+        Vector3 direction = (bedPos.position - transform.position).normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        player.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+
+        player.transform.position += direction * _moveSpeed * Time.deltaTime;
+
+        if (Vector3.Distance(transform.position, bedPos.position) < 0.1f)
+        {
+            isMovingToBed = false;
         }
     }
 
