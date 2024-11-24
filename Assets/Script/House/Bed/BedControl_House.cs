@@ -27,6 +27,7 @@ public class BedControl_House : MonoBehaviour
     {
         bed.isTrigger = PlayerControl_House.isSleep;
 
+        MoveToTarget();
         StoryWorld();
 
         if (Input.GetKeyDown(KeyCode.Alpha7)) //úy‘á
@@ -41,15 +42,12 @@ public class BedControl_House : MonoBehaviour
         {
             _storyNum = 4;
         }
-
-        if (isMovingToBed)
-        {
-            MoveToTarget();
-        }
     }
 
     void MoveToTarget()
     {
+        if (!isMovingToBed) return;
+
         Transform playerTransform = player.transform;
         CharacterController cc = player.GetComponent<CharacterController>();
 
@@ -70,7 +68,6 @@ public class BedControl_House : MonoBehaviour
             Quaternion finalRotation = Quaternion.LookRotation(Vector3.forward);
             playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, finalRotation, _rotateSpeed * Time.deltaTime);
             playerTransform.rotation = finalRotation;
-            print("Stop");
         }
     }
 
