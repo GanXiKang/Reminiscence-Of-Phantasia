@@ -235,6 +235,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         if (!isBagGetItem) return;
         if (isGetItem) return;
         if (!isInteractable) return;
+        if (!StoryBagControl.isOpenBag) return;
         if (StoryUIControl_Prince.isDialogue) return;
 
         for (int i = 0; i < _getItemNumber.Length; i++)

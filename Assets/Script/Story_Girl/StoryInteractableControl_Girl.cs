@@ -699,6 +699,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         if (!isBagGetItem) return;
         if (isGetItem) return;
         if (!isInteractable) return;
+        if (!StoryBagControl.isOpenBag) return;
         if (StoryUIControl_Girl.isDialogue) return;
 
         for (int i = 0; i < _getItemNumber.Length; i++)
