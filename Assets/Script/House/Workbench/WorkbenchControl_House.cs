@@ -70,7 +70,6 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step4")]
     public Transform storyBookPoint;
     public GameObject[] storyBook;
-    public static int _storyBookNum = 0;
     public static bool isFinishStoryBook = false;
     bool isPaperAdjustScale;
 
@@ -103,24 +102,6 @@ public class WorkbenchControl_House : MonoBehaviour
             case 4:
                 Step4_Install();
                 break;
-        }
-
-        //úy‘á
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            _storyBookNum = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            _storyBookNum = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            _storyBookNum = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            _storyBookNum = 3;
         }
     }
 
@@ -173,9 +154,9 @@ public class WorkbenchControl_House : MonoBehaviour
 
             case 4:
                 isOnce = true;
-                storyBook[_storyBookNum].transform.position = storyBookPoint.position;
-                storyBook[_storyBookNum].transform.rotation = storyBookPoint.rotation;
-                storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", true);
+                storyBook[GameControl_House._storyNum].transform.position = storyBookPoint.position;
+                storyBook[GameControl_House._storyNum].transform.rotation = storyBookPoint.rotation;
+                storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", true);
                 colorUI.SetActive(false);
                 break;
         }
@@ -301,7 +282,7 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void ChooseButtonUI()
     {
-        switch (_storyBookNum)
+        switch (GameControl_House._storyNum)
         {
             case 0:
                 contentImage[1].GetComponent<Image>().sprite = contentSprite[12];
@@ -346,7 +327,7 @@ public class WorkbenchControl_House : MonoBehaviour
         isNext = true;
         selectImage.SetActive(true);
         selectImage.transform.position = contentImage[num].transform.position;
-        switch (_storyBookNum)
+        switch (GameControl_House._storyNum)
         {
             case 0:
                 _paperNum = 0;
@@ -403,7 +384,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 }
                 break;
         }
-        Showcase_House._storyBookPaperNum[_storyBookNum] = _paperNum;
+        Showcase_House._storyBookPaperNum[GameControl_House._storyNum] = _paperNum;
     }
     IEnumerator AppaerChooseUI()
     {
@@ -597,7 +578,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     IEnumerator LeaveWorkbench()
     {
-        storyBook[_storyBookNum].GetComponent<Animator>().SetBool("isOpen", false);
+        storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", false);
         yield return new WaitForSeconds(0.7f);
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
