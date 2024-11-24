@@ -85,7 +85,7 @@ public class BedControl_House : MonoBehaviour
     {
         CameraControl_House.isLookBedcase = true;
         storyBook[_storyNum].GetComponent<Animator>().SetBool("isOpen", true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         TransitionUIControl.isHouse = false;
         TransitionUIControl.isTransitionUIAnim_In = true;
         yield return new WaitForSeconds(1f);

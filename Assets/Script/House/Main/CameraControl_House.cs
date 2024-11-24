@@ -87,8 +87,8 @@ public class CameraControl_House : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.Lerp(transform.position, bedcasePos.position, _moveTime * Time.deltaTime);
-                transform.rotation = Quaternion.Lerp(transform.rotation, bedcasePos.rotation, _moveTime * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, bedcasePos.position, _moveTime / 2 * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, bedcasePos.rotation, _moveTime / 2 * Time.deltaTime);
             }
         }
         else if (isLookBookcase)
