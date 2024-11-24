@@ -74,7 +74,7 @@ public class InteractableControl_House : MonoBehaviour
                     case 3:
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBed = true;
-                        BedControl_House.isGoStoryWorld = true;
+                        //BedControl_House.isGoStoryWorld = true;
                         PlayerControl_House.isSleep = true;
                         break; 
 
