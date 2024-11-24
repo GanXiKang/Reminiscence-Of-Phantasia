@@ -18,7 +18,6 @@ public class BedControl_House : MonoBehaviour
     public GameObject[] storyBook;
     public Transform bedcasePoint;
     public static bool isPutBedcase = false;
-    public static int _storyNum;
 
     void Start()
     {
@@ -31,19 +30,6 @@ public class BedControl_House : MonoBehaviour
 
         MoveToTarget();
         PutBedcase();
-
-        if (Input.GetKeyDown(KeyCode.Alpha7)) //úy‘á
-        {
-            _storyNum = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8)) //úy‘á
-        {
-            _storyNum = 3;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9)) //úy‘á
-        {
-            _storyNum = 4;
-        }
     }
 
     void MoveToTarget()
@@ -77,20 +63,20 @@ public class BedControl_House : MonoBehaviour
         if (!isPutBedcase) return;
 
         isPutBedcase = false;
-        storyBook[_storyNum].transform.position = bedcasePoint.position;
-        storyBook[_storyNum].transform.rotation = bedcasePoint.rotation;
+        storyBook[GameControl_House._storyNum].transform.position = bedcasePoint.position;
+        storyBook[GameControl_House._storyNum].transform.rotation = bedcasePoint.rotation;
     }
 
     IEnumerator GoToStoryWorld()
     {
         yield return new WaitForSeconds(1.2f);
         CameraControl_House.isLookBedcase = true;
-        storyBook[_storyNum].GetComponent<Animator>().SetBool("isOpen", true);
+        storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", true);
         yield return new WaitForSeconds(3f);
         TransitionUIControl.isHouse = false;
         TransitionUIControl.isTransitionUIAnim_In = true;
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(_storyNum);
+        SceneManager.LoadScene(GameControl_House._storyNum + 1);
         CameraControl_House.isLookBed = false;
         CameraControl_House.isLookBedcase = false;
         PlayerControl_House.isSleep = false;
