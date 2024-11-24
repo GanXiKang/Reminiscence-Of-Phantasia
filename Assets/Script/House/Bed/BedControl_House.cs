@@ -64,7 +64,7 @@ public class BedControl_House : MonoBehaviour
         if (Vector3.Distance(playerTransform.position, bedPos.position) < 0.5f)
         {
             isMovingToBed = false;
-
+            isGoStoryWorld = true;
             Quaternion finalRotation = Quaternion.LookRotation(Vector3.forward);
             playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, finalRotation, _rotateSpeed * Time.deltaTime);
             playerTransform.rotation = finalRotation;
