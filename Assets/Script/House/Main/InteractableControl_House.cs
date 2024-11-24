@@ -24,11 +24,8 @@ public class InteractableControl_House : MonoBehaviour
     public GameObject cat;
 
     [Header("ObjectCollider")]
-    public GameObject workbench;
-    public GameObject door;
-    public GameObject bed;
-    public GameObject bookcase;
-    public GameObject showcase;
+    public GameObject[] ObjectCollider;
+    public static bool[] isColliderActive = new bool[6];
 
     void Start()
     {
