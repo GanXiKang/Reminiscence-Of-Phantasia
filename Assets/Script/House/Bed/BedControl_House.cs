@@ -76,7 +76,7 @@ public class BedControl_House : MonoBehaviour
         Vector3 move = direction * _moveSpeed * Time.deltaTime;
         cc.Move(move);
 
-        if (Vector3.Distance(playerTransform.position, bedPos.position) < 0.5f)
+        if (Vector3.Distance(playerTransform.position, bedPos.position) < 0.3f)
         {
             isMovingToBed = false;
             print("Stop");
