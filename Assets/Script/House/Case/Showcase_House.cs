@@ -26,16 +26,6 @@ public class Showcase_House : MonoBehaviour
     public GameObject showcaseUI;
     public GameObject buttonA, buttonD;
 
-    void Start()
-    {
-        //úy‘á
-        _storyBookPaperNum[0] = 0;
-        _storyBookPaperNum[1] = 1;
-        _storyBookPaperNum[2] = 4;
-        _storyBookPaperNum[3] = 7;
-        _storyBookPaperNum[4] = 8;
-    }
-
     void Update()
     {
         UIActive();
