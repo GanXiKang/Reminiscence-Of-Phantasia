@@ -22,7 +22,6 @@ public class BedControl_House : MonoBehaviour
     {
         Sleep();
         StoryWorld();
-        Leave();
 
         if (Input.GetKeyDown(KeyCode.Alpha7)) //úy‘á
         {
@@ -57,23 +56,5 @@ public class BedControl_House : MonoBehaviour
         SceneManager.LoadScene(_storyNum);
         CameraControl_House.isLookBed = false;
         PlayerControl_House.isSleep = false;
-    }
-    void Leave()
-    {
-        if (CameraControl_House.isLookBed)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                StartCoroutine(LeaveBed());
-            }
-        }
-    }
-
-    IEnumerator LeaveBed()
-    {
-        BlackScreenControl.isOpenBlackScreen = true;
-        yield return new WaitForSeconds(1f);
-        CameraControl_House.isFreeLook = true;
-        CameraControl_House.isLookBed = false;
     }
 }
