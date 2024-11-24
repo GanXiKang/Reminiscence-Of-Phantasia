@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GameControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static int _day = 1;
+    public static int _storyNum = 0;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch (_day)
+        {
+            case 1:
+                UIAboveObject_House.isAboveDoor = true;
+                InteractableControl_House.isColliderActive[2] = true;
+                InteractableControl_House.isColliderActive[1] = true;
+                break;
+        }
     }
 }
