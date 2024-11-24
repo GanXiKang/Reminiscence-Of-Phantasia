@@ -24,8 +24,16 @@ public class InteractableControl_House : MonoBehaviour
     public GameObject cat;
 
     [Header("ObjectCollider")]
-    public GameObject[] ObjectCollider;
+    public GameObject[] objectCollider;
     public static bool[] isColliderActive = new bool[6];
+
+    void Awake()
+    {
+        for (int c = 1; c < isColliderActive.Length; c++)
+        {
+            isColliderActive[c] = false;
+        }
+    }
 
     void Start()
     {
@@ -37,6 +45,7 @@ public class InteractableControl_House : MonoBehaviour
     {
         InteractableButton_F();
         Interactable();
+        ObjectCollider();
     }
 
     void InteractableButton_F()
@@ -98,6 +107,13 @@ public class InteractableControl_House : MonoBehaviour
         else 
         {
             _alpha = 0;
+        }
+    }
+    void ObjectCollider()
+    {
+        for (int c = 1; c < isColliderActive.Length; c++)
+        {
+            objectCollider[c].SetActive(isColliderActive[c]);
         }
     }
 
