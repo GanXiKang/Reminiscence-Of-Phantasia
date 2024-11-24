@@ -20,7 +20,8 @@ public class BedControl_House : MonoBehaviour
 
     void Update()
     {
-        Sleep();
+        bed.isTrigger = PlayerControl_House.isSleep;
+
         StoryWorld();
 
         if (Input.GetKeyDown(KeyCode.Alpha7)) //úy‘á
@@ -37,10 +38,6 @@ public class BedControl_House : MonoBehaviour
         }
     }
 
-    void Sleep()
-    {
-        bed.isTrigger = PlayerControl_House.isSleep;
-    }
     void StoryWorld()
     {
         if (isGoStoryWorld)
@@ -48,7 +45,7 @@ public class BedControl_House : MonoBehaviour
             isGoStoryWorld = false;
             TransitionUIControl.isHouse = false;
             TransitionUIControl.isTransitionUIAnim_In = true;
-            Invoke("GoToStoryWorld", 3f);
+            Invoke("GoToStoryWorld", 1f);
         }
     }
     void GoToStoryWorld()
