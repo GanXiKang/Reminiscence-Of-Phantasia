@@ -83,6 +83,7 @@ public class BedControl_House : MonoBehaviour
 
     IEnumerator GoToStoryWorld()
     {
+        yield return new WaitForSeconds(2f);
         CameraControl_House.isLookBedcase = true;
         storyBook[_storyNum].GetComponent<Animator>().SetBool("isOpen", true);
         yield return new WaitForSeconds(4f);
