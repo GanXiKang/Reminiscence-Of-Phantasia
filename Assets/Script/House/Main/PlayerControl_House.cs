@@ -31,7 +31,6 @@ public class PlayerControl_House : MonoBehaviour
 
     void Update()
     {
-        
         playerInput.enabled = isCanMove();
 
         PlayerMove();
