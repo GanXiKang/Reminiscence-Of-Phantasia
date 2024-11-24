@@ -11,8 +11,8 @@ public class BedControl_House : MonoBehaviour
     public BoxCollider bed;
     public Transform bedPos;
     public static bool isMovingToBed = false;
-    float _moveSpeed = 2f;
-    float _rotateSpeed = 5f;
+    float _moveSpeed = 3f;
+    float _rotateSpeed = 10f;
 
     //StoryBook
     public static bool isGoStoryWorld = false;
@@ -76,7 +76,7 @@ public class BedControl_House : MonoBehaviour
         Vector3 move = direction * _moveSpeed * Time.deltaTime;
         cc.Move(move);
 
-        if (Vector3.Distance(playerTransform.position, bedPos.position) < 0.3f)
+        if (Vector3.Distance(playerTransform.position, bedPos.position) < 0.35f)
         {
             isMovingToBed = false;
             print("Stop");
