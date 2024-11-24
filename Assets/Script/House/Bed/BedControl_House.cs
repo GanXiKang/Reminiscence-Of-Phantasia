@@ -50,13 +50,13 @@ public class BedControl_House : MonoBehaviour
 
     void MoveToTarget()
     {
-        Vector3 direction = (bedPos.position - transform.position).normalized;
+        Vector3 direction = (bedPos.position - player.transform.position).normalized;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
-        player.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
+        player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetRotation, _rotateSpeed * Time.deltaTime);
 
         player.transform.position += direction * _moveSpeed * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, bedPos.position) < 0.1f)
+        if (Vector3.Distance(player.transform.position, bedPos.position) < 0.1f)
         {
             isMovingToBed = false;
         }
