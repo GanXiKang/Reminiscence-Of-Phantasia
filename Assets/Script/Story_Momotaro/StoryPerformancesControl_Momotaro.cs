@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class StoryPerformancesControl_Momotaro : MonoBehaviour
 {
-    GameObject player;
-
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip performancesBGM, plazaBGM;
@@ -60,11 +58,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     bool isGamePerformances = false;
     bool isExcited = false;
 
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
-
     void OnEnable()
     {
         StartCoroutine(StartPerformance());
@@ -77,8 +70,6 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         allUI.SetActive(true);
         performancesCam.SetActive(true);
         StoryGameControl_Momotaro.isPerformancesPointActive = false;
-        //StoryNpcAnimator_Momotaro._performancesNum = 2;
-        //player.transform.rotation = Quaternion.identity;
         _score = 0;
         scoreBar.fillAmount = 0;
         _remainingTime = 80f;
@@ -421,10 +412,8 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         }
         else
         {
-            //StoryNpcAnimator_Momotaro._performancesNum = 1;
             StoryGameControl_Momotaro.isPerformancesPointActive = true;
         }
-        //player.transform.eulerAngles = new Vector3(30, -45, 0);
         BGM.Stop();
         BGM.clip = plazaBGM;
         BGM.Play();
