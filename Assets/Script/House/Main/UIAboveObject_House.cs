@@ -33,6 +33,7 @@ public class UIAboveObject_House : MonoBehaviour
     public static bool isAboveShowcase = false;
 
     [Header("Hint")]
+    public GameObject hintObject;
     public RectTransform hint;
     public Text hintName;
 
@@ -45,14 +46,16 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Update()
     {
-        Vector3 targetPosition = new Vector3(player.transform.position.x, hint.transform.position.y, player.transform.position.z);
-        hint.LookAt(targetPosition);
-
+        hintObject.SetActive(CameraControl_House.isFreeLook);
+        
         Hint();
     }
 
     void Hint()
     {
+        Vector3 targetPosition = new Vector3(player.transform.position.x, hint.transform.position.y, player.transform.position.z);
+        hint.LookAt(targetPosition);
+
         if (isAboveWorkbench)
         {
             Vector3 workbenchPos = workbench.position + workbenchOffset;
@@ -83,6 +86,5 @@ public class UIAboveObject_House : MonoBehaviour
             hint.position = showcasePos;
             hintName.text = "չʾ�_";
         }
-
     }
 }
