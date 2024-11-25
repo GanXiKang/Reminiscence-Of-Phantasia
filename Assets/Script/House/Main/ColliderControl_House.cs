@@ -20,6 +20,8 @@ public class ColliderControl_House : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (UIControl_House.isDialogue) return;
+
         if (other.tag == "Player")
         {
             if (IsFacingObject(other.transform))
@@ -30,6 +32,8 @@ public class ColliderControl_House : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        if (UIControl_House.isDialogue) return;
+
         if (CameraControl_House.isFreeLook)
         {
             if (other.tag == "Player")
