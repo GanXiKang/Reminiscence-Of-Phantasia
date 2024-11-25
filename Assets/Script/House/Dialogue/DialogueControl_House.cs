@@ -59,7 +59,7 @@ public class DialogueControl_House : MonoBehaviour
     void TextController()
     {
         if (SettingControl.isSettingActive) return;
-        //if (DoorControl_House.isBird || DoorControl_House.isCat) return;
+        if (DoorControl_House.isBird || DoorControl_House.isCat) return;
 
         if (isTextFinish)
         {
