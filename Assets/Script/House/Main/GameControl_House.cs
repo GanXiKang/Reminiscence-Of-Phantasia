@@ -14,7 +14,7 @@ public class GameControl_House : MonoBehaviour
             case 1:
                 UIAboveObject_House.isAboveDoor = true;
                 InteractableControl_House.isColliderActive[2] = true;
-                DoorControl_House.isCat = true;
+                DoorControl_House.isBird = true;
                 break;
         }
     }
