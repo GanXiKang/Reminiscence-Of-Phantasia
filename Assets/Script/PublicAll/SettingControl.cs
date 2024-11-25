@@ -26,7 +26,7 @@ public class SettingControl : MonoBehaviour
     Vector3 pointA = new Vector3(-888, 0, 0); 
     Vector3 pointB = new Vector3(0, 0, 0);
     float _timer = 0f;
-    float _duration = 1f;
+    float _duration = 0.8f;
     bool isMoving = false;                  
     bool isAppear = false;                 
 
