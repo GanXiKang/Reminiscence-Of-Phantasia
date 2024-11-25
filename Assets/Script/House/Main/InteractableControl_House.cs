@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InteractableControl_House : MonoBehaviour
-{
-    GameObject player;
-    
+{    
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip interact;
@@ -18,10 +16,6 @@ public class InteractableControl_House : MonoBehaviour
     float _alpha = 0f;
     public float _screenSpeed = 3f;
     public static bool isInteractable = false;
-
-    [Header("Animals")]
-    public GameObject bird;
-    public GameObject cat;
 
     [Header("ObjectCollider")]
     public GameObject[] objectCollider;
@@ -37,7 +31,6 @@ public class InteractableControl_House : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
         currentColor = hintF.color;
     }
 
@@ -78,10 +71,20 @@ public class InteractableControl_House : MonoBehaviour
                         break;
 
                     case 2:
-                        DoorControl_House.isLoading = true;
-                        CameraControl_House.isFreeLook = false;
-                        CameraControl_House.isLookDoor = true;
-                        StartCoroutine(WhoIsVisit());
+                        if (DoorControl_House.isEntrust || DoorControl_House.isStore)
+                        {
+                            DoorControl_House.isLoading = true;
+                            CameraControl_House.isFreeLook = false;
+                            CameraControl_House.isLookDoor = true;
+                            StartCoroutine(WhoIsVisit());
+                        }
+                        else
+                        {
+                            DoorControl_House.isCat = true;
+                            UIControl_House.isDialogue = true;
+                            DialogueControl_House.isCatTalk = true;
+                            DialogueControl_House._textCount = 20;
+                        }
                         break;
 
                     case 3:
@@ -123,10 +126,10 @@ public class InteractableControl_House : MonoBehaviour
         DoorControl_House.isLoading = false;
         if (DoorControl_House.isEntrust)
         {
-            bird.SetActive(true);
+            DoorControl_House.isBird = true;
 
             UIControl_House.isDialogue = true;
-            DialogueControl_House.isBird = true;
+            DialogueControl_House.isBirdTalk = true;
             DialogueControl_House._textCount = 38;
 
             yield return new WaitForSeconds(2f);
@@ -140,11 +143,11 @@ public class InteractableControl_House : MonoBehaviour
         }
         else if (DoorControl_House.isStore)
         {
-            cat.SetActive(true);
+            DoorControl_House.isCat = true;
             CatControl_House.isWave = true;
 
             UIControl_House.isDialogue = true;
-            DialogueControl_House.isBird = false;
+            DialogueControl_House.isCatTalk = true;
             DialogueControl_House._textCount = 26;
 
             yield return new WaitForSeconds(2f);
