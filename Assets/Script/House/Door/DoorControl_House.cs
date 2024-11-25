@@ -19,13 +19,17 @@ public class DoorControl_House : MonoBehaviour
     [Header("Animals")]
     public GameObject bird;
     public GameObject cat;
+    public static bool isBird = false;
+    public static bool isCat = false;
 
     void Update()
     {
         loadingUI.SetActive(isLoading);
         entrustVideo.SetActive(isEntrust);
         storeVideo.SetActive(isStore);
-        
+        bird.SetActive(isBird);
+        cat.SetActive(isCat);
+
         Leave();
     }
 
@@ -47,7 +51,9 @@ public class DoorControl_House : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookDoor = false;
-        bird.SetActive(false);
-        cat.SetActive(false);
+        isEntrust = false;
+        isStore = false;
+        isBird = false;
+        isCat = false;
     }
 }
