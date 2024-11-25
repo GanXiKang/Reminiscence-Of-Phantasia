@@ -13,18 +13,18 @@ public class DoorControl_House : MonoBehaviour
     public GameObject entrustVideo;
     public GameObject storeVideo;
     public static bool isLoading = false;
+    public static bool isEntrust = false;
+    public static bool isStore = false;
 
     [Header("Animals")]
     public GameObject bird;
     public GameObject cat;
-    public static bool isBird = false;
-    public static bool isCat = false;
 
     void Update()
     {
         loadingUI.SetActive(isLoading);
-        entrustVideo.SetActive(isBird);
-        storeVideo.SetActive(isCat);
+        entrustVideo.SetActive(isEntrust);
+        storeVideo.SetActive(isStore);
         
         Leave();
     }
