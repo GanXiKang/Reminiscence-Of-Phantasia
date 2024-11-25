@@ -121,7 +121,7 @@ public class InteractableControl_House : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         DoorControl_House.isLoading = false;
-        if (DoorControl_House.isBird)
+        if (DoorControl_House.isEntrust)
         {
             bird.SetActive(true);
 
@@ -138,7 +138,7 @@ public class InteractableControl_House : MonoBehaviour
             DialogueControl_House.isAutoNext = true;
             DialogueControl_House._paragraph = 2;
         }
-        else if (DoorControl_House.isCat)
+        else if (DoorControl_House.isStore)
         {
             cat.SetActive(true);
             CatControl_House.isWave = true;
