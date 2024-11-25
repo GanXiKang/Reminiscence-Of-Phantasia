@@ -84,6 +84,10 @@ public class SettingControl : MonoBehaviour
         {
             _timer = 0f; 
             isMoving = false;
+            if (!isAppear)
+            {
+                isSettingActive = false;
+            }
         }
     }
 
@@ -92,9 +96,17 @@ public class SettingControl : MonoBehaviour
         if (!isOperate)
         {
             BGM.PlayOneShot(open);
-            isSettingActive = !isSettingActive;
-            isAppear = isSettingActive;
-            isMoving = true;
+            if (!isSettingActive)
+            {
+                isSettingActive = true;
+                isAppear = true;
+                isMoving = true;
+            }
+            else
+            {
+                isAppear = false;
+                isMoving = true;
+            }
         }
         else
         {
