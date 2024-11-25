@@ -14,6 +14,8 @@ public class GameControl_House : MonoBehaviour
             case 1:
                 UIAboveObject_House.isAboveDoor = true;
                 InteractableControl_House.isColliderActive[2] = true;
+                InteractableControl_House.isColliderActive[4] = true;
+                InteractableControl_House.isColliderActive[5] = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 1;
                 break;
