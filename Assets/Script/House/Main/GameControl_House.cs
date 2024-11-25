@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameControl_House : MonoBehaviour
 {
     public static int _day = 1;
-    public static int _storyNum = 0;
+    public static int _storyNum = 2;
 
     void Start()
     {
@@ -13,7 +13,11 @@ public class GameControl_House : MonoBehaviour
         {
             case 1:
                 UIAboveObject_House.isAboveDoor = true;
+                InteractableControl_House.isColliderActive[1] = true;
                 InteractableControl_House.isColliderActive[2] = true;
+                InteractableControl_House.isColliderActive[3] = true;
+                InteractableControl_House.isColliderActive[4] = true;
+                InteractableControl_House.isColliderActive[5] = true;
                 DoorControl_House.isCat = true;
                 break;
         }
