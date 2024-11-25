@@ -63,7 +63,7 @@ public class DialogueControl_House : MonoBehaviour
     void TextController()
     {
         if (SettingControl.isSettingActive) return;
-        if (DoorControl_House.isBird || DoorControl_House.isCat) return;
+        if (DoorControl_House.isEntrust || DoorControl_House.isStore) return;
 
         if (isTextFinish)
         {
@@ -94,7 +94,7 @@ public class DialogueControl_House : MonoBehaviour
             whoDialogue[PosANum].transform.position = Vector3.MoveTowards(whoDialogue[PosANum].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
         }
 
-        if (!DoorControl_House.isBird && !DoorControl_House.isCat)
+        if (!DoorControl_House.isEntrust && !DoorControl_House.isStore)
         {
             if (whoDialogue[_whoDia].transform.position != dialoguePos[1].position)
             {
@@ -185,7 +185,7 @@ public class DialogueControl_House : MonoBehaviour
 
     void DialoguePoint()
     {
-        if (!DoorControl_House.isBird && !DoorControl_House.isCat)
+        if (!DoorControl_House.isEntrust && !DoorControl_House.isStore)
         {
             whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
         }
