@@ -194,7 +194,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         DoorControl_House.isLeave = true;
         DialogueControl_House.isAutoNext = true;
-        DialogueControl_House._paragraph = 6;
+        DialogueControl_House._paragraph = 7;
         isEntrustActive = false;
         isDeliverActive = false;
         isReceiveActive = false;
