@@ -106,7 +106,8 @@ public class CameraControl_House : MonoBehaviour
     bool isPlayerActive()
     {
         return !isLookDoor &&
-               !isLookBookcase;
+               !isLookBookcase &&
+               !isLookShowcase;
     }
     bool isFreeLookCamera()
     {
