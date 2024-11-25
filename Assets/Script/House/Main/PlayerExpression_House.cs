@@ -15,6 +15,11 @@ public class PlayerExpression_House : MonoBehaviour
     bool isHappyExp = false;
     bool isSleepExp = false;
 
+    void OnEnable()
+    {
+        isBlink = true;
+    }
+
     void Start()
     {
         smr = GetComponent<SkinnedMeshRenderer>();
