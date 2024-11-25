@@ -18,11 +18,11 @@ public class UIControl_House : MonoBehaviour
         dialogueUI.SetActive(isDialogue);
 
        
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            isDialogue = true;
-            DialogueControl_House._textCount = 24;
-            DialogueControl_House.isBird = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    isDialogue = true;
+        //    DialogueControl_House._textCount = 24;
+        //    DialogueControl_House.isBird = true;
+        //}
     }
 }
