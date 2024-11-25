@@ -24,7 +24,6 @@ public class EntrustControl_House : MonoBehaviour
     public GameObject[] alreadyReceived;
     public Text[] letterText;
     public Sprite normalButton, disabledButton;
-    public static int _round = 1;
     bool isAlready = false;
 
     [Header("LetterReceive")]
@@ -39,11 +38,12 @@ public class EntrustControl_House : MonoBehaviour
     {
         DeliverButtonInitialState();
     }
+
     void Update()
     {
         EntrustUI();
         OpenUI();
-        LetterDeliver();
+        LetterDeliverDay();
         LetterReceiveAndContent();
     }
 
@@ -92,9 +92,9 @@ public class EntrustControl_House : MonoBehaviour
             }
         }
     }
-    void LetterDeliver()
+    void LetterDeliverDay()
     {
-        switch (_round)
+        switch (GameControl_House._day)
         {
             case 1:
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
@@ -136,6 +136,7 @@ public class EntrustControl_House : MonoBehaviour
         BirdControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
+        GameControl_House._storyNum = _entrustNum;
         StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
