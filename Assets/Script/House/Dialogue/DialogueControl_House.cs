@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class DialogueControl_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip bell;
+
     [Header("UI")]
     public GameObject[] whoDialogue;
     public Text[] whoContent;
@@ -155,10 +159,12 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case "Event":
+                DialogueEvent();
                 _index++;
                 break;
 
             case "End":
+                DialogueEnd();
                 UIControl_House.isDialogue = false;
                 isPosA = false;
                 for (int i = 0; i < whoDialogue.Length; i++)
@@ -187,5 +193,18 @@ public class DialogueControl_House : MonoBehaviour
         {
             whoDialogue[_whoDia].transform.position = dialoguePos[3].position;
         }
+    }
+    void DialogueEvent()
+    {
+        switch (_textCount)
+        {
+            case 1:
+                BGM.PlayOneShot(bell);
+                break;
+        }
+    }
+    void DialogueEnd()
+    {
+
     }
 }
