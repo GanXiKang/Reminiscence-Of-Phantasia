@@ -17,22 +17,12 @@ public class UIControl_House : MonoBehaviour
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
         dialogueUI.SetActive(isDialogue);
 
-        if (Input.GetKeyDown(KeyCode.P)) //úy‘á
-        {
-            isDialogue = true;
-            DialogueControl_House._textCount = 1;
-        }
+       
         if (Input.GetKeyDown(KeyCode.O))
         {
             isDialogue = true;
             DialogueControl_House._textCount = 24;
             DialogueControl_House.isBird = true;
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            isDialogue = true;
-            DialogueControl_House._textCount = 36;
-            DialogueControl_House.isBird = false;
         }
     }
 }
