@@ -168,6 +168,8 @@ public class DialogueControl_House : MonoBehaviour
                 DialogueEnd();
                 UIControl_House.isDialogue = false;
                 isPosA = false;
+                isBirdTalk = false;
+                isCatTalk = false;
                 for (int i = 0; i < whoDialogue.Length; i++)
                 {
                     whoDialogue[i].transform.position = dialoguePos[0].position;
