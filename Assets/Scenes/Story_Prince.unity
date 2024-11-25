@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1207414325}
         m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
         m_MethodName: Operate_Button
         m_Mode: 1
@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1207414325}
         m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
         m_MethodName: Volume_BGM
         m_Mode: 1
@@ -2593,7 +2593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &414307461
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2606,6 +2606,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 813938374}
   - {fileID: 750797684}
   - {fileID: 705643125}
   - {fileID: 1494373708}
@@ -8758,7 +8759,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1207414325}
         m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
         m_MethodName: Close_Button
         m_Mode: 1
@@ -9247,6 +9248,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769774028}
   m_CullTransparentMesh: 1
+--- !u!1 &813938373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813938374}
+  - component: {fileID: 813938376}
+  - component: {fileID: 813938375}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &813938374
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813938373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 40, y: 12, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 414307461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &813938375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813938373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &813938376
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813938373}
+  m_CullTransparentMesh: 1
 --- !u!1 &817285225
 GameObject:
   m_ObjectHideFlags: 0
@@ -9544,7 +9620,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1207414325}
         m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
         m_MethodName: FullScreen
         m_Mode: 0
@@ -10163,7 +10239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1207414325}
         m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
         m_MethodName: ExitGame_Button
         m_Mode: 1
@@ -15661,13 +15737,13 @@ MonoBehaviour:
   open: {fileID: 8300000, guid: 8651bec12aa7f36489ecf7ce62e7feb9, type: 3}
   save: {fileID: 8300000, guid: 8e2f92d3095720c4891378e6e502fcaa, type: 3}
   leave: {fileID: 8300000, guid: ed07cd7a178520c4387ff3f7034325b2, type: 3}
-  settingsUI: {fileID: 0}
-  setting: {fileID: 0}
-  background: {fileID: 0}
-  settingPage: {fileID: 0}
-  operatePage: {fileID: 0}
-  sliderBGM: {fileID: 0}
-  fullScreen: {fileID: 0}
+  settingsUI: {fileID: 414307460}
+  setting: {fileID: 1494373707}
+  background: {fileID: 750797685}
+  settingPage: {fileID: 21300000, guid: f7354528a3b6fc045b0dfb9b2cbc6ea6, type: 3}
+  operatePage: {fileID: 21300000, guid: 6f72c0140ab741845a7add92dd2e8a57, type: 3}
+  sliderBGM: {fileID: 174163229}
+  fullScreen: {fileID: 844069955}
 --- !u!4 &1207414326
 Transform:
   m_ObjectHideFlags: 0
@@ -17792,7 +17868,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1207414325}
         m_TargetAssemblyTypeName: SettingControl, Assembly-CSharp
         m_MethodName: Save_Button
         m_Mode: 1
