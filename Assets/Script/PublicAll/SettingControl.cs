@@ -12,6 +12,7 @@ public class SettingControl : MonoBehaviour
 
     [Header("UI")]
     public GameObject settingsUI;
+    public GameObject setting;
     public Image background;
     public Sprite settingPage, operatePage;
     public Slider sliderBGM;
