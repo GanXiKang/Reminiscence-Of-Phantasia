@@ -144,14 +144,14 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case "Target":
-                if (isBird)
+                if (isBirdTalk)
                 {
                     _whoDia = 1;
                     isMove = true;
                     DialoguePoint();
                 }
-                else
-                {
+               else if(isCatTalk)
+               {
                     _whoDia = 2;
                     isMove = true;
                     DialoguePoint();
