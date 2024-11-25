@@ -13,7 +13,8 @@ public class DialogueControl_House : MonoBehaviour
     public GameObject[] whoDialogue;
     public Text[] whoContent;
     public static int _whoDia;
-    public static bool isBird = false;
+    public static bool isBirdTalk = false;
+    public static bool isCatTalk = false;
 
     [Header("Position")]
     public Transform[] dialoguePos;
