@@ -17,11 +17,19 @@ public class SettingControl : MonoBehaviour
     public Sprite settingPage, operatePage;
     public Slider sliderBGM;
     public Toggle fullScreen;
-    
     public static float volumeBGM = 0.2f;
     public static bool isFullS;
     public static bool isSettingActive = false;
     bool isOperate = false;
+
+    //Move
+    Vector3 pointA = new Vector3(-888, 0, 0); 
+    Vector3 pointB = new Vector3(0, 0, 0);
+    float _timer = 0f;
+    float _duration = 2f;
+    bool isMoving = false;                  
+    bool isAppear = false;                 
+
 
     void Start()
     {
@@ -33,6 +41,7 @@ public class SettingControl : MonoBehaviour
     void Update()
     {
         SettingUI();
+        MoveUI();
     }
 
     void SettingUI()
@@ -42,8 +51,7 @@ public class SettingControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            BGM.PlayOneShot(open);
-            isSettingActive = !isSettingActive;
+            Close_Button();
         }
 
         if (Input.GetKeyDown(KeyCode.F11))
@@ -60,16 +68,37 @@ public class SettingControl : MonoBehaviour
             background.sprite = operatePage;
         }
     }
+    void MoveUI()
+    {
+        if (!isMoving) return; 
+
+        _timer += Time.deltaTime;
+        float t = _timer / _duration;
+
+        if (isAppear)
+            settingsUI.GetComponent<RectTransform>().localPosition = Vector3.Lerp(pointA, pointB, t); 
+        else
+            settingsUI.GetComponent<RectTransform>().localPosition = Vector3.Lerp(pointB, pointA, t);
+
+        if (t >= 1f)
+        {
+            _timer = 0f; 
+            isMoving = false;
+        }
+    }
 
     public void Close_Button()
     {
-        BGM.PlayOneShot(onClick);
         if (!isOperate)
         {
+            BGM.PlayOneShot(open);
             isSettingActive = !isSettingActive;
+            isAppear = isSettingActive;
+            isMoving = true;
         }
         else
         {
+            BGM.PlayOneShot(onClick);
             isOperate = false;
         }
     }
