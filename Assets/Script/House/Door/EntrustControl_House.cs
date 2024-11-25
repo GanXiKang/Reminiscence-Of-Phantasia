@@ -29,6 +29,7 @@ public class EntrustControl_House : MonoBehaviour
     [Header("LetterReceive")]
     public Image receiveImage;
     public Sprite[] receiveSprite;
+    bool isReceive = false;
 
     [Header("LetterContent")]
     public Image contentImage;
@@ -49,6 +50,7 @@ public class EntrustControl_House : MonoBehaviour
 
     void DeliverButtonInitialState()
     {
+        isReceive = false;
         for (int i = 1; i < deliverButton.Length; i++)
         {
             deliverButton[i].GetComponent<CanvasGroup>().alpha = 0;
@@ -126,21 +128,29 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Receive()
     {
-        BGM.PlayOneShot(receive);
-        isReceiveActive = false;
-        isDeliverActive = true;
-        if (!alreadyReceived[_entrustNum].activeSelf)
+        if (!isReceive)
         {
-            isAlready = true;
+            BGM.PlayOneShot(receive);
+            isReceive = true;
+            isReceiveActive = false;
+            isDeliverActive = true;
+            if (!alreadyReceived[_entrustNum].activeSelf)
+            {
+                isAlready = true;
+            }
+            BirdControl_House.isHappy = true;
+            DialogueControl_House.isAutoNext = true;
+            DialogueControl_House._paragraph = 3;
+            GameControl_House._storyNum = _entrustNum;
+            StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
         }
-        BirdControl_House.isHappy = true;
-        DialogueControl_House.isAutoNext = true;
-        DialogueControl_House._paragraph = 3;
-        GameControl_House._storyNum = _entrustNum;
-        StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
-        StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
-        StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
-        StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
+        else
+        {
+            
+        }
     }
     public void Button_Back()
     {
