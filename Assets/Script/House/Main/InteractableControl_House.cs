@@ -127,7 +127,7 @@ public class InteractableControl_House : MonoBehaviour
 
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBird = true;
-            DialogueControl_House._textCount = 35;
+            DialogueControl_House._textCount = 38;
 
             yield return new WaitForSeconds(2f);
 
@@ -145,7 +145,7 @@ public class InteractableControl_House : MonoBehaviour
 
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBird = false;
-            DialogueControl_House._textCount = 42;
+            DialogueControl_House._textCount = 26;
 
             yield return new WaitForSeconds(2f);
 
