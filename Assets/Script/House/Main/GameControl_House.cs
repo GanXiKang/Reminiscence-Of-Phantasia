@@ -15,6 +15,9 @@ public class GameControl_House : MonoBehaviour
                 UIAboveObject_House.isAboveDoor = true;
                 InteractableControl_House.isColliderActive[2] = true;
                 DoorControl_House.isBird = true;
+
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 1;
                 break;
         }
     }
