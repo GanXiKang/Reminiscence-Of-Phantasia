@@ -29,7 +29,7 @@ public class EntrustControl_House : MonoBehaviour
     [Header("LetterReceive")]
     public Image receiveImage;
     public Sprite[] receiveSprite;
-    bool isReceive = false;
+    bool isReceive = false; //現版本暫時處理
 
     [Header("LetterContent")]
     public Image contentImage;
@@ -148,7 +148,7 @@ public class EntrustControl_House : MonoBehaviour
             StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
         }
         else
-        {
+        {   //現版本暫時處理
             DialogueControl_House.isAutoNext = true;
             DialogueControl_House._paragraph = 6;
         }
