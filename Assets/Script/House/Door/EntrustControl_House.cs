@@ -150,7 +150,7 @@ public class EntrustControl_House : MonoBehaviour
         else
         {
             DialogueControl_House.isAutoNext = true;
-            DialogueControl_House._paragraph = 7;
+            DialogueControl_House._paragraph = 6;
         }
     }
     public void Button_Back()
