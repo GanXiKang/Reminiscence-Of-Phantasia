@@ -33,12 +33,12 @@ public class SettingControl : MonoBehaviour
     void Update()
     {
         SettingUI();
-        UIBackground();
     }
 
     void SettingUI()
     {
         settingsUI.SetActive(isSettingActive);
+        setting.SetActive(!isOperate);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -50,9 +50,7 @@ public class SettingControl : MonoBehaviour
         {
             FullScreen(!isFullS);
         }
-    }
-    void UIBackground()
-    {
+
         if (!isOperate)
         {
             background.sprite = settingPage;
