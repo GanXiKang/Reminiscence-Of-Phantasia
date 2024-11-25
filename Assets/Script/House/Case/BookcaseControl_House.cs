@@ -30,7 +30,7 @@ public class BookcaseControl_House : MonoBehaviour
     public GameObject contentInteractable;
     public Image image;
     public Sprite[] letter;
-    
+
     void Update()
     {
         bookUI.SetActive(CameraControl_House.isLookBookcase);
@@ -38,7 +38,6 @@ public class BookcaseControl_House : MonoBehaviour
         OpenBookcase();
         NextStoryBook();
         MoveStoryBook();
-        Leave();
     }
 
     void OpenBookcase()
@@ -143,8 +142,8 @@ public class BookcaseControl_House : MonoBehaviour
         }
         else if (isForward)
         {
-            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[3].transform.position, _moveSpeed/2 * Time.deltaTime);
-            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[3].transform.rotation, _moveSpeed/2 * Time.deltaTime);
+            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[3].transform.position, _moveSpeed / 2 * Time.deltaTime);
+            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[3].transform.rotation, _moveSpeed / 2 * Time.deltaTime);
 
             if (book[_bookNum].transform.position == bookMovePos[3].transform.position)
             {
@@ -156,8 +155,8 @@ public class BookcaseControl_House : MonoBehaviour
         }
         else if (isBackward)
         {
-            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed/2 * Time.deltaTime);
-            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[1].transform.rotation, _moveSpeed/2 * Time.deltaTime);
+            book[_bookNum].transform.position = Vector3.MoveTowards(book[_bookNum].transform.position, bookMovePos[1].transform.position, _moveSpeed / 2 * Time.deltaTime);
+            book[_bookNum].transform.rotation = Quaternion.Lerp(book[_bookNum].transform.rotation, bookMovePos[1].transform.rotation, _moveSpeed / 2 * Time.deltaTime);
 
             if (book[_bookNum].transform.position == bookMovePos[1].transform.position)
             {
@@ -226,6 +225,11 @@ public class BookcaseControl_House : MonoBehaviour
         isBackward = true;
         bookContent.SetActive(false);
     }
+    public void Button_Leave()
+    {
+        BGM.PlayOneShot(onClick);
+        StartCoroutine(LeaveBookcase());
+    }
 
     IEnumerator AnimateReceiveAppear()
     {
@@ -252,18 +256,6 @@ public class BookcaseControl_House : MonoBehaviour
 
         canvasGroup.alpha = 1;
         rect.localScale = targetScale;
-    }
-
-    void Leave()
-    {
-        if (CameraControl_House.isLookBookcase)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                BGM.PlayOneShot(onClick);
-                StartCoroutine(LeaveBookcase());
-            }
-        }
     }
     IEnumerator LeaveBookcase()
     {

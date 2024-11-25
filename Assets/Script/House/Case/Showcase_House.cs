@@ -31,7 +31,6 @@ public class Showcase_House : MonoBehaviour
         UIActive();
         FirstShowcase();
         ChangeStoryBook();
-        Leave();
     }
 
     void UIActive()
@@ -164,18 +163,12 @@ public class Showcase_House : MonoBehaviour
             }
         }
     }
-
-    void Leave()
+    public void Button_Leave()
     {
-        if (CameraControl_House.isLookShowcase)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                BGM.PlayOneShot(onClick);
-                StartCoroutine(LeaveShowcase());
-            }
-        }
+        BGM.PlayOneShot(onClick);
+        StartCoroutine(LeaveShowcase());
     }
+
     IEnumerator LeaveShowcase()
     {
         BlackScreenControl.isOpenBlackScreen = true;
