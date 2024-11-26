@@ -16,14 +16,5 @@ public class UIControl_House : MonoBehaviour
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
         dialogueUI.SetActive(isDialogue);
-
-
-        //if (Input.GetKeyDown(KeyCode.O))
-        //{
-        //    isDialogue = true;
-        //    DialogueControl_House._textCount = 24;
-        //    DialogueControl_House.isBird = true;
-        //    DialogueControl_House.isBird = false; ÊÇØˆ
-        //}
     }
 }
