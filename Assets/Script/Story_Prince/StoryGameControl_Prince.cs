@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class StoryGameControl_Prince : MonoBehaviour
 {
-    GameObject player;
-
     void Start()
     {
-        player = GameObject.Find("Player");
-        Invoke("GoToMenu", 10f);
+        StartCoroutine(GoToMenu());
     }
 
-    void GoToMenu()
+    IEnumerator GoToMenu()
     {
+        yield return new WaitForSeconds(1f);
+        TransitionUIControl.isTransitionUIAnim_In = true;
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
 }
