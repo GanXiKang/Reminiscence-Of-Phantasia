@@ -12,9 +12,9 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     IEnumerator GoToMenu()
     {
-        yield return new WaitForSeconds(1f);
-        TransitionUIControl.isTransitionUIAnim_In = true;
         yield return new WaitForSeconds(5f);
+        TransitionUIControl.isTransitionUIAnim_In = true;
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);
     }
 }
