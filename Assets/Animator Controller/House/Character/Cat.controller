@@ -198,16 +198,16 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4851272566581385553}
-    m_Position: {x: 670, y: 120, z: 0}
+    m_Position: {x: 720, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7599883269102470073}
-    m_Position: {x: 670, y: 40, z: 0}
+    m_Position: {x: 720, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1473623599726620505}
-    m_Position: {x: 670, y: 210, z: 0}
+    m_Position: {x: 720, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8854697597018277347}
-    m_Position: {x: 960, y: 120, z: 0}
+    m_Position: {x: 1010, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -284,31 +284,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isWave
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isBye
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isBag
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isBag_On
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
