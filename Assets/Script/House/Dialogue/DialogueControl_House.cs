@@ -244,10 +244,6 @@ public class DialogueControl_House : MonoBehaviour
                 }
                 break;
 
-            case 22:
-                CatControl_House.isHappy = true;
-                break;
-
             case 25:
                 CatControl_House.isBye = true;
                 break;
