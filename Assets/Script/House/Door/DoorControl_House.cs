@@ -51,9 +51,17 @@ public class DoorControl_House : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookDoor = false;
+        UIAboveObject_House.isAboveDoor = false;
         isEntrust = false;
         isStore = false;
         isBird = false;
         isCat = false;
+        if (GameControl_House._storyNum == 0)
+        {
+            isCat = true;
+            UIControl_House.isDialogue = true;
+            DialogueControl_House.isCatTalk = true;
+            DialogueControl_House._textCount = 25;
+        }
     }
 }
