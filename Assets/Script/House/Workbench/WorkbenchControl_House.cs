@@ -192,41 +192,44 @@ public class WorkbenchControl_House : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Y) && isNext)
+        if (!UIControl_House.isDialogue)
         {
-            isNext = false;
-            switch (_process)
+            if (Input.GetKeyDown(KeyCode.Y) && isNext)
             {
-                case 1:
-                    StartCoroutine(DisappaerChooseUI());
-                    break;
+                isNext = false;
+                switch (_process)
+                {
+                    case 1:
+                        StartCoroutine(DisappaerChooseUI());
+                        break;
 
-                case 2:
-                    _process = 3;
-                    Process();
-                    break;
+                    case 2:
+                        _process = 3;
+                        Process();
+                        break;
 
-                case 3:
-                    SavePaperColor_Workbench.isSave = true;
-                    _process = 4;
-                    Process();
-                    break;
+                    case 3:
+                        SavePaperColor_Workbench.isSave = true;
+                        _process = 4;
+                        Process();
+                        break;
+                }
+            }
+            if (isFinish)
+            {
+                if (isOnce)
+                {
+                    BGM.PlayOneShot(finish);
+                    isOnce = false;
+                }
+                if (Input.GetKeyDown(KeyCode.T))
+                {
+                    isFinish = false;
+                    StartCoroutine(LeaveWorkbench());
+                }
             }
         }
-        if (isFinish)
-        {
-            if (isOnce)
-            {
-                BGM.PlayOneShot(finish);
-                isOnce = false;
-            }
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                isFinish = false;
-                StartCoroutine(LeaveWorkbench());
-            }
-        }
-        
+
         if (isOpenBox)
         {
             up.SetActive(false);
