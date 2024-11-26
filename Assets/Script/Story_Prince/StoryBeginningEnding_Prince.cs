@@ -163,6 +163,7 @@ public class StoryBeginningEnding_Prince : MonoBehaviour
             BGM.clip = plazaNowBGM;
             BGM.Play();
             StartCoroutine(StorySystemUIDisappear(canvasGroup));
+            StoryOperateControl.isFadeOut = true;
         }
         else if (StoryUIControl_Prince.isStoryEnding)
         {

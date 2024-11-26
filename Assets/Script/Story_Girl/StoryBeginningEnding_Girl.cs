@@ -163,6 +163,7 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
             BGM.clip = streetBGM;
             BGM.Play();
             StartCoroutine(StorySystemUIDisappear(canvasGroup));
+            StoryOperateControl.isFadeOut = true;
         }
         else if (StoryUIControl_Girl.isStoryEnding)
         {

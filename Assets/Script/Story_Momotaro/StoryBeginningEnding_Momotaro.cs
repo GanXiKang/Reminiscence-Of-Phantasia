@@ -163,6 +163,7 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
             BGM.clip = riverSideBGM;
             BGM.Play();
             StartCoroutine(StorySystemUIDisappear(canvasGroup));
+            StoryOperateControl.isFadeOut = true;
         }
         else if (StoryUIControl_Momotaro.isStoryEnding)
         {
