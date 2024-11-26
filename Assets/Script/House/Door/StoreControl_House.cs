@@ -18,8 +18,9 @@ public class StoreControl_House : MonoBehaviour
     [Header("Coin")]
     public Text coinAmount;
     public Button buyButton;
-    public static int _MyCoin = 100;
+    public static int _MyCoin = 150;
     int _productCoin = 0;
+    bool isBuy = false;
 
     [Header("ProductContent")]
     public GameObject[] scissors;
@@ -164,6 +165,8 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Buy()
     {
+        isBuy = true;
+        _MyCoin -= _productCoin;
         CatControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 4;
@@ -183,11 +186,25 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
-        CatControl_House.isBye = true;
-        DialogueControl_House.isAutoNext = true;
-        DialogueControl_House._paragraph = 6;
-        storeUI[1].GetComponent<CanvasGroup>().interactable = false;
-        Invoke("LeaveState", 1f);
+        if (GameControl_House._storyNum != 0)
+        {
+            CatControl_House.isBye = true;
+            DialogueControl_House.isAutoNext = true;
+            DialogueControl_House._paragraph = 6;
+            storeUI[1].GetComponent<CanvasGroup>().interactable = false;
+            Invoke("LeaveState", 1f);
+        }
+        else
+        {
+            if (isBuy)
+            {
+                CatControl_House.isBye = true;
+                DialogueControl_House.isAutoNext = true;
+                DialogueControl_House._paragraph = 6;
+                storeUI[1].GetComponent<CanvasGroup>().interactable = false;
+                Invoke("LeaveState", 1f);
+            }
+        }
     }
 
     IEnumerator AnimateButtonAppear(Button button, float delay, bool isOnlyAlpha)
