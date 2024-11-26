@@ -100,7 +100,7 @@ public class DialogueControl_House : MonoBehaviour
             whoDialogue[PosANum].transform.position = Vector3.MoveTowards(whoDialogue[PosANum].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
         }
 
-        if (!DoorControl_House.isEntrust && !DoorControl_House.isStore)
+        if (!DoorControl_House.isEntrust && !DoorControl_House.isStore && !isAutoPlot)
         {
             if (whoDialogue[_whoDia].transform.position != dialoguePos[1].position)
             {
@@ -115,13 +115,27 @@ public class DialogueControl_House : MonoBehaviour
         }
         else
         {
-            if (whoDialogue[_whoDia].transform.position != dialoguePos[4].position)
+            if (!isAutoPlot)
             {
-                whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[4].position, _moveSpeed * Time.deltaTime);
+                if (whoDialogue[_whoDia].transform.position != dialoguePos[4].position)
+                {
+                    whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[4].position, _moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    isMove = false;
+                }
             }
             else
             {
-                isMove = false;
+                if (whoDialogue[_whoDia].transform.position != dialoguePos[2].position)
+                {
+                    whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    isMove = false;
+                }
             }
         }
     }
