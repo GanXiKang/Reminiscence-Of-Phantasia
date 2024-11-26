@@ -35,6 +35,9 @@ public class DialogueControl_House : MonoBehaviour
     //Entrust and Store
     public static int _paragraph = 0;
     public static bool isAutoNext = false;
+    //Plot
+    public static bool isAutoPlot = false;
+    bool isPlot = true;
 
     void OnEnable()
     {
@@ -47,6 +50,7 @@ public class DialogueControl_House : MonoBehaviour
         TextController();
         DialogueMove();
         AutoNext();
+        AutoPlot();
     }
 
     void GetTextFormFile(TextAsset file)
@@ -63,6 +67,7 @@ public class DialogueControl_House : MonoBehaviour
     }
     void TextController()
     {
+        if (isAutoPlot) return;
         if (SettingControl.isSettingActive) return;
         if (DoorControl_House.isEntrust || DoorControl_House.isStore) return;
         if (BlackScreenControl.isOpenBlackScreen || BlackScreenControl.isCloseBlackScreen) return;
@@ -131,6 +136,15 @@ public class DialogueControl_House : MonoBehaviour
             AvatarControl_House.isTalk = !isTextFinish;
         }
     }
+    void AutoPlot()
+    {
+        if (!isAutoPlot) return;
+
+        if (isPlot)
+        {
+            StartCoroutine(AutoPlotText());
+        }
+    }
 
     IEnumerator SetTextLabelIndexUI()
     {
@@ -186,6 +200,15 @@ public class DialogueControl_House : MonoBehaviour
         isTextFinish = true;
         _index++;
     }
+    IEnumerator AutoPlotText()
+    {
+        isPlot = false;
+        SetTextLabelIndexUI();
+        AvatarControl_House.isTalk = !isTextFinish;
+        yield return new WaitForSeconds(1f);
+        _index++;
+        isPlot = true;
+    }
 
     void DialoguePoint()
     {
@@ -211,6 +234,14 @@ public class DialogueControl_House : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                isAutoPlot = false;
+                isPlot = true;
+                break;
+
             case 20:
                 BlackScreenControl.isOpenBlackScreen = true;
                 Invoke("WaitBlackScreenEvent", 1f);
