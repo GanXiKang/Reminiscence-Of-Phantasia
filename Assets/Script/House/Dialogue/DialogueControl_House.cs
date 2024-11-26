@@ -209,6 +209,22 @@ public class DialogueControl_House : MonoBehaviour
     }
     void DialogueEnd()
     {
-        
+        switch (_textCount)
+        {
+            case 20:
+                BlackScreenControl.isOpenBlackScreen = true;
+                InteractableControl_House.isColliderActive[1] = true;
+                Invoke("WaitBlackScreenEvent", 1f);
+                break;
+        }
+    }
+    void WaitBlackScreenEvent()
+    {
+        switch (_textCount)
+        {
+            case 20:
+                CatControl_House._goPointNum = 1;
+                break;
+        }
     }
 }
