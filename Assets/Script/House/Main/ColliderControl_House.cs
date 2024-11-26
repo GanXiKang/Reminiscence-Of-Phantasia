@@ -24,12 +24,13 @@ public class ColliderControl_House : MonoBehaviour
         {
             if (IsFacingObject(other.transform))
             {
-                if (CatControl_House._goPointNum != 1)
+                if (!InteractableControl_House.isCatSeeWorkbench)
                 {
                     InteractableControl_House.isInteractable = true;
                 }
                 else
                 {
+                    InteractableControl_House.isCatSeeWorkbench = false;
                     InteractableControl_House.isColliderActive[1] = false;
                     UIControl_House.isDialogue = true;
                     DialogueControl_House.isCatTalk = true;
