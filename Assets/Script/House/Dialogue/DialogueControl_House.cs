@@ -209,6 +209,6 @@ public class DialogueControl_House : MonoBehaviour
     }
     void DialogueEnd()
     {
-
+        
     }
 }
