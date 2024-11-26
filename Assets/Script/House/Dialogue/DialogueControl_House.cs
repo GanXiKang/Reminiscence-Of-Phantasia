@@ -148,6 +148,7 @@ public class DialogueControl_House : MonoBehaviour
 
     IEnumerator AutoPlotRound()
     {
+        isTextFinish = false;
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(SetTextLabelIndexUI());
     }
