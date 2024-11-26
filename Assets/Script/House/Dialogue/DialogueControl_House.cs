@@ -243,6 +243,10 @@ public class DialogueControl_House : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 25:
+                CatControl_House.isBye = true;
+                break;
         }
     }
     void DialogueEnd()
