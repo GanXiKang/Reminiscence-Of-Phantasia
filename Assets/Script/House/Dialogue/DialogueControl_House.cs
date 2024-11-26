@@ -65,6 +65,7 @@ public class DialogueControl_House : MonoBehaviour
     {
         if (SettingControl.isSettingActive) return;
         if (DoorControl_House.isEntrust || DoorControl_House.isStore) return;
+        if (BlackScreenControl.isOpenBlackScreen || BlackScreenControl.isCloseBlackScreen) return;
 
         if (isTextFinish)
         {
