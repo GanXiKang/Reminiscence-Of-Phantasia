@@ -29,7 +29,8 @@ public class DialogueControl_House : MonoBehaviour
     public float _textSpend;
     public static int _textCount = 1;
     bool isTextFinish;
-    
+    int _countEvent = 0;
+
     List<string> textList = new List<string>();
 
     //Entrust and Store
@@ -157,6 +158,13 @@ public class DialogueControl_House : MonoBehaviour
         isTextFinish = false;
         switch (textList[_index].Trim())
         {
+            case "Event":
+                DialogueEvent();
+                _index++;
+                break;
+        }
+        switch (textList[_index].Trim())
+        {
             case "Player":
                 _whoDia = 0;
                 isMove = true;
@@ -177,11 +185,6 @@ public class DialogueControl_House : MonoBehaviour
                     isMove = true;
                     DialoguePoint();
                 }
-                _index++;
-                break;
-
-            case "Event":
-                DialogueEvent();
                 _index++;
                 break;
 
@@ -224,6 +227,21 @@ public class DialogueControl_House : MonoBehaviour
         {
             case 1:
                 BGM.PlayOneShot(bell);
+                break;
+
+            case 20:
+                switch (_countEvent)
+                {
+                    case 0:
+                        _countEvent++;
+                        CatControl_House.isWave = true;
+                        break;
+
+                    case 1:
+                        _countEvent = 0;
+                        CatControl_House.isWave = false;
+                        break;
+                }
                 break;
         }
     }
