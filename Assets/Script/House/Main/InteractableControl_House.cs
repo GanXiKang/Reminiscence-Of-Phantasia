@@ -16,6 +16,7 @@ public class InteractableControl_House : MonoBehaviour
     float _alpha = 0f;
     public float _screenSpeed = 3f;
     public static bool isInteractable = false;
+    public static bool isPlot = false;
 
     [Header("ObjectCollider")]
     public GameObject[] objectCollider;
@@ -80,6 +81,7 @@ public class InteractableControl_House : MonoBehaviour
                         }
                         else
                         {
+                            isPlot = true;
                             BlackScreenControl.isOpenBlackScreen = true;
                             Invoke("WaitBlackScreenEvent", 1f);
                         }
