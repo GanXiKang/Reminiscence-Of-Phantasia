@@ -226,6 +226,7 @@ public class DialogueControl_House : MonoBehaviour
         switch (_textCount)
         {
             case 20:
+                InteractableControl_House.isCatSeeWorkbench = true;
                 InteractableControl_House.isColliderActive[1] = true;
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveDoor = false;
