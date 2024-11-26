@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoryOperateControl : MonoBehaviour
 {
     CanvasGroup canvasGroup;
-    float _duration = 2f; 
+    float _duration = 1f; 
     float _delay = 10f;
 
     public static bool isFadeOut = false;
