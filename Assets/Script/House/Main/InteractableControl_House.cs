@@ -80,7 +80,7 @@ public class InteractableControl_House : MonoBehaviour
                         }
                         else
                         {
-                            isPlot = true;
+                            isColliderActive[2] = false;
                             BlackScreenControl.isOpenBlackScreen = true;
                             Invoke("WaitBlackScreenEvent", 1f);
                         }
