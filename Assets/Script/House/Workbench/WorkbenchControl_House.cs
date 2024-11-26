@@ -146,10 +146,22 @@ public class WorkbenchControl_House : MonoBehaviour
                 toolBoxBG.SetActive(true);
                 buttonUI.SetActive(true);
                 isPaperRotation = true;
+                if (GameControl_House._storyNum == 0)
+                {
+                    UIControl_House.isDialogue = true;
+                    DialogueControl_House.isAutoPlot = true;
+                    DialogueControl_House._textCount = 4;
+                }
                 break;
 
             case 3:
                 colorUI.SetActive(true);
+                if (GameControl_House._storyNum == 0)
+                {
+                    UIControl_House.isDialogue = true;
+                    DialogueControl_House.isAutoPlot = true;
+                    DialogueControl_House._textCount = 5;
+                }
                 break;
 
             case 4:
@@ -158,6 +170,12 @@ public class WorkbenchControl_House : MonoBehaviour
                 storyBook[GameControl_House._storyNum].transform.rotation = storyBookPoint.rotation;
                 storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", true);
                 colorUI.SetActive(false);
+                if (GameControl_House._storyNum == 0)
+                {
+                    UIControl_House.isDialogue = true;
+                    DialogueControl_House.isAutoPlot = true;
+                    DialogueControl_House._textCount = 6;
+                }
                 break;
         }
     }
