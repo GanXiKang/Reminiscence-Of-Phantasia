@@ -14,6 +14,7 @@ public class InteractableControl_House : MonoBehaviour
     public Image hintF;
     Color currentColor;
     float _alpha = 0f;
+    int _blackScreenNum = 0;
     public float _screenSpeed = 3f;
     public static bool isInteractable = false;
 
@@ -81,6 +82,7 @@ public class InteractableControl_House : MonoBehaviour
                         else
                         {
                             isColliderActive[2] = false;
+                            _blackScreenNum = 1;
                             BlackScreenControl.isOpenBlackScreen = true;
                             Invoke("WaitBlackScreenEvent", 1f);
                         }
@@ -120,10 +122,15 @@ public class InteractableControl_House : MonoBehaviour
     }
     void WaitBlackScreenEvent()
     {
-        DoorControl_House.isCat = true;
-        UIControl_House.isDialogue = true;
-        DialogueControl_House.isCatTalk = true;
-        DialogueControl_House._textCount = 20;
+        switch (_blackScreenNum)
+        {
+            case 1:
+                DoorControl_House.isCat = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isCatTalk = true;
+                DialogueControl_House._textCount = 20;
+                break;
+        }
     }
 
     IEnumerator WhoIsVisit()
