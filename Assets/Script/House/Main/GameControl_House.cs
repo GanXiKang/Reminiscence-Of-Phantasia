@@ -16,7 +16,7 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[2] = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isAutoPlot = true;
-                DialogueControl_House._textCount = 4;
+                DialogueControl_House._textCount = 3;
                 break;
         }
     }
