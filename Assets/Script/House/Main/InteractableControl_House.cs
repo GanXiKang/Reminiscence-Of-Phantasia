@@ -81,10 +81,7 @@ public class InteractableControl_House : MonoBehaviour
                         else
                         {
                             BlackScreenControl.isOpenBlackScreen = true;
-                            DoorControl_House.isCat = true;
-                            UIControl_House.isDialogue = true;
-                            DialogueControl_House.isCatTalk = true;
-                            DialogueControl_House._textCount = 20;
+                            Invoke("WaitBlackScreenEvent", 1f);
                         }
                         break;
 
@@ -119,6 +116,13 @@ public class InteractableControl_House : MonoBehaviour
         {
             objectCollider[c].SetActive(isColliderActive[c]);
         }
+    }
+    void WaitBlackScreenEvent()
+    {
+        DoorControl_House.isCat = true;
+        UIControl_House.isDialogue = true;
+        DialogueControl_House.isCatTalk = true;
+        DialogueControl_House._textCount = 20;
     }
 
     IEnumerator WhoIsVisit()
