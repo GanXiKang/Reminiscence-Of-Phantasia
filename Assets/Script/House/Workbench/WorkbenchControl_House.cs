@@ -618,9 +618,13 @@ public class WorkbenchControl_House : MonoBehaviour
         CameraControl_House.isLookWorkbench = false;
         PlayerControl_House.isHappy = false;
         InteractableControl_House.isColliderActive[2] = false;
-        yield return new WaitForSeconds(0.5f);
-        UIControl_House.isDialogue = true;
-        DialogueControl_House.isCatTalk = true;
-        DialogueControl_House._textCount = 22;
+        if (GameControl_House._storyNum == 0)
+        {
+            yield return new WaitForSeconds(0.5f);
+            UIAboveObject_House.isAboveWorkbench = false;
+            UIControl_House.isDialogue = true;
+            DialogueControl_House.isCatTalk = true;
+            DialogueControl_House._textCount = 22;
+        }
     }
 }
