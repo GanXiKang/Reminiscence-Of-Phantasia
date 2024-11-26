@@ -142,8 +142,16 @@ public class DialogueControl_House : MonoBehaviour
 
         if (isPlot)
         {
-            StartCoroutine(AutoPlotText());
+            isPlot = false;
+            _index++;
+            SetTextLabelIndexUI();
+            AvatarControl_House.isTalk = !isTextFinish;
+            Invoke("AutoPlotRound", 1f);
         }
+    }
+    void AutoPlotRound()
+    {
+        isPlot = true;
     }
 
     IEnumerator SetTextLabelIndexUI()
@@ -199,15 +207,6 @@ public class DialogueControl_House : MonoBehaviour
         }
         isTextFinish = true;
         _index++;
-    }
-    IEnumerator AutoPlotText()
-    {
-        isPlot = false;
-        SetTextLabelIndexUI();
-        AvatarControl_House.isTalk = !isTextFinish;
-        yield return new WaitForSeconds(1f);
-        _index++;
-        isPlot = true;
     }
 
     void DialoguePoint()
