@@ -24,7 +24,7 @@ public class ColliderControl_House : MonoBehaviour
         {
             if (IsFacingObject(other.transform))
             {
-                if (CatControl_House._goPointNum == 1)
+                if (CatControl_House._goPointNum != 1)
                 {
                     InteractableControl_House.isInteractable = true;
                 }
