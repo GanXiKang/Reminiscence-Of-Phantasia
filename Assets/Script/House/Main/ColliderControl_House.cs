@@ -20,7 +20,7 @@ public class ColliderControl_House : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (UIControl_House.isDialogue) return;
+        if (InteractableControl_House.isPlot) return;
 
         if (other.tag == "Player")
         {
@@ -33,6 +33,7 @@ public class ColliderControl_House : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (UIControl_House.isDialogue) return;
+        if (InteractableControl_House.isPlot) return;
 
         if (CameraControl_House.isFreeLook)
         {
