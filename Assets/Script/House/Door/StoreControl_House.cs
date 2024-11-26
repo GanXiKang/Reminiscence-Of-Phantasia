@@ -18,7 +18,7 @@ public class StoreControl_House : MonoBehaviour
     [Header("Coin")]
     public Text coinAmount;
     public Button buyButton;
-    public static int _MyCoin = 150;
+    public static int _MyCoin = 250;
     int _productCoin = 0;
     bool isBuy = false;
 
