@@ -80,6 +80,7 @@ public class InteractableControl_House : MonoBehaviour
                         }
                         else
                         {
+                            BlackScreenControl.isOpenBlackScreen = true;
                             DoorControl_House.isCat = true;
                             UIControl_House.isDialogue = true;
                             DialogueControl_House.isCatTalk = true;
