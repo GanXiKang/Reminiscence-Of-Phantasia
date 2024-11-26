@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryGameControl_Prince : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        Invoke("GoToMenu", 10f);
     }
 
-    void Update()
+    void GoToMenu()
     {
-        
+        SceneManager.LoadScene(0);
     }
 }
