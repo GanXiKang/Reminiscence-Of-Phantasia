@@ -227,6 +227,8 @@ public class BookcaseControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
+        if (UIControl_House.isDialogue) return;
+
         BGM.PlayOneShot(onClick);
         StartCoroutine(LeaveBookcase());
     }
