@@ -52,6 +52,7 @@ public class DoorControl_House : MonoBehaviour
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookDoor = false;
         UIAboveObject_House.isAboveDoor = false;
+        InteractableControl_House.isColliderActive[2] = false;
         isEntrust = false;
         isStore = false;
         isBird = false;
