@@ -20,8 +20,6 @@ public class ColliderControl_House : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (InteractableControl_House.isPlot) return;
-
         if (other.tag == "Player")
         {
             if (IsFacingObject(other.transform))
