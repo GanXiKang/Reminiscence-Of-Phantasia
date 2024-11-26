@@ -22,6 +22,9 @@ public class InteractableControl_House : MonoBehaviour
     public GameObject[] objectCollider;
     public static bool[] isColliderActive = new bool[6];
 
+    //Plot
+    public static bool isCatSeeWorkbench = false;
+
     void Awake()
     {
         for (int c = 1; c < isColliderActive.Length; c++)
