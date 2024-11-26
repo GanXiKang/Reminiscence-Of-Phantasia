@@ -617,7 +617,7 @@ public class WorkbenchControl_House : MonoBehaviour
         CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
         PlayerControl_House.isHappy = false;
-        InteractableControl_House.isColliderActive[2] = false;
+        InteractableControl_House.isColliderActive[1] = false;
         if (GameControl_House._storyNum == 0)
         {
             yield return new WaitForSeconds(0.5f);
