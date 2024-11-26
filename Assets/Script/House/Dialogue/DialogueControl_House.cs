@@ -213,8 +213,11 @@ public class DialogueControl_House : MonoBehaviour
         {
             case 20:
                 BlackScreenControl.isOpenBlackScreen = true;
-                InteractableControl_House.isColliderActive[1] = true;
                 Invoke("WaitBlackScreenEvent", 1f);
+                break;
+
+            case 21:
+                InteractableControl_House.isColliderActive[1] = true;
                 break;
         }
     }
@@ -223,6 +226,9 @@ public class DialogueControl_House : MonoBehaviour
         switch (_textCount)
         {
             case 20:
+                InteractableControl_House.isColliderActive[1] = true;
+                UIAboveObject_House.isAboveWorkbench = true;
+                UIAboveObject_House.isAboveDoor = false;
                 CatControl_House._goPointNum = 1;
                 break;
         }
