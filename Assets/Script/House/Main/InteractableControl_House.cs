@@ -72,6 +72,12 @@ public class InteractableControl_House : MonoBehaviour
                     case 1:
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookWorkbench = true;
+                        if (GameControl_House._storyNum == 0)
+                        {
+                            UIControl_House.isDialogue = true;
+                            DialogueControl_House.isAutoPlot = true;
+                            DialogueControl_House._textCount = 3;
+                        }
                         break;
 
                     case 2:
