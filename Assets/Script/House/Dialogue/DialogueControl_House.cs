@@ -37,7 +37,6 @@ public class DialogueControl_House : MonoBehaviour
     public static bool isAutoNext = false;
     //Plot
     public static bool isAutoPlot = false;
-    bool isPlot = true;
 
     void OnEnable()
     {
@@ -140,20 +139,18 @@ public class DialogueControl_House : MonoBehaviour
     {
         if (!isAutoPlot) return;
 
-        if (isPlot)
+        if (isTextFinish)
         {
-            isPlot = false;
-            _index++;
-            SetTextLabelIndexUI();
-            AvatarControl_House.isTalk = !isTextFinish;
-            Invoke("AutoPlotRound", 1f);
+            StartCoroutine(AutoPlotRound());
         }
-    }
-    void AutoPlotRound()
-    {
-        isPlot = true;
+        AvatarControl_House.isTalk = !isTextFinish;
     }
 
+    IEnumerator AutoPlotRound()
+    {
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(SetTextLabelIndexUI());
+    }
     IEnumerator SetTextLabelIndexUI()
     {
         isTextFinish = false;
@@ -238,7 +235,6 @@ public class DialogueControl_House : MonoBehaviour
             case 5:
             case 6:
                 isAutoPlot = false;
-                isPlot = true;
                 break;
 
             case 20:
