@@ -15795,6 +15795,7 @@ GameObject:
   - component: {fileID: 1207414326}
   - component: {fileID: 1207414325}
   - component: {fileID: 1207414327}
+  - component: {fileID: 1207414328}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -15857,6 +15858,18 @@ MonoBehaviour:
   pointer: {fileID: 1704723678}
   time: {fileID: 1530813625}
   energyBar: {fileID: 1224331511}
+--- !u!114 &1207414328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207414324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb9f434ddb9c1741b28f1f386dcb8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1224331509
 GameObject:
   m_ObjectHideFlags: 0
