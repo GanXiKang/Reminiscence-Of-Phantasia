@@ -12,6 +12,11 @@ public class CatControl_House : MonoBehaviour
     public static bool isBag = false;
     public static bool isBag_On = false;
 
+    [Header("Point")]
+    public Transform[] plotPoint;
+    public static int _goPointNum = 0;
+    int _nowPointNum = 0;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -20,6 +25,7 @@ public class CatControl_House : MonoBehaviour
     void Update()
     {
         Animation();
+        PlotPoint();
     }
 
     void Animation()
@@ -62,5 +68,13 @@ public class CatControl_House : MonoBehaviour
         anim.SetBool("isHappy", false);
         anim.SetBool("isBye", false);
         anim.SetBool("isBag_On", false);
+    }
+    void PlotPoint()
+    {
+        if (_nowPointNum == _goPointNum) return;
+
+        _nowPointNum = _goPointNum;
+        transform.position = plotPoint[_goPointNum].transform.position;
+        transform.rotation = plotPoint[_goPointNum].transform.rotation;
     }
 }
