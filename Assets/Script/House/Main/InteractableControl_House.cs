@@ -26,6 +26,7 @@ public class InteractableControl_House : MonoBehaviour
     public static bool isCatSeeWorkbench = false;
     public static bool isCatLeave = false;
     public static bool isBirdDoorBell = false;
+    public static bool isBirdSeeBed = false;
 
     void Awake()
     {
@@ -102,7 +103,6 @@ public class InteractableControl_House : MonoBehaviour
                             }
                             else
                             {
-                                isColliderActive[2] = false;
                                 _eventNum = 3;
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
