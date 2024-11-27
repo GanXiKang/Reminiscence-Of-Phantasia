@@ -57,9 +57,10 @@ public class DoorControl_House : MonoBehaviour
         isStore = false;
         isBird = false;
         isCat = false;
-        if (GameControl_House._storyNum == 0)
+        if (!InteractableControl_House.isCatLeave)
         {
             isCat = true;
+            InteractableControl_House.isCatLeave = true;
             UIControl_House.isDialogue = true;
             DialogueControl_House.isCatTalk = true;
             DialogueControl_House._textCount = 25;
