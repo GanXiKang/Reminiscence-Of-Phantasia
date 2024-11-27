@@ -65,13 +65,16 @@ public class DoorControl_House : MonoBehaviour
             DialogueControl_House.isCatTalk = true;
             DialogueControl_House._textCount = 25;
         }
-        if (!InteractableControl_House.isBirdEntrust)
+        else
         {
-            isBird = true;
-            InteractableControl_House.isBirdEntrust = true;
-            UIControl_House.isDialogue = true;
-            DialogueControl_House.isBirdTalk = true;
-            DialogueControl_House._textCount = 28;
+            if (!InteractableControl_House.isBirdEntrust)
+            {
+                isBird = true;
+                InteractableControl_House.isBirdEntrust = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isBirdTalk = true;
+                DialogueControl_House._textCount = 28;
+            }
         }
     }
 }
