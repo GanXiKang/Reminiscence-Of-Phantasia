@@ -283,6 +283,10 @@ public class DialogueControl_House : MonoBehaviour
                 CatControl_House._goPointNum = 0;
                 DoorControl_House.isStore = true;
                 break;
+
+            case 27:
+                DoorControl_House.isEntrust = true;
+                break;
         }
     }
     void WaitBlackScreenEvent()
