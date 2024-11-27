@@ -24,6 +24,7 @@ public class InteractableControl_House : MonoBehaviour
 
     //Plot
     public static bool isCatSeeWorkbench = false;
+    public static bool isCatLeave = false;
 
     void Awake()
     {
