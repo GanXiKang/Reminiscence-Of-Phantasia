@@ -44,7 +44,14 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Update()
     {
-        hintObject.SetActive(isHintActive());
+        if (isHintActive())
+        {
+            hintObject.SetActive(CameraControl_House.isFreeLook);
+        }
+        else
+        {
+            hintObject.SetActive(false);
+        }
         
         Hint();
     }
