@@ -301,6 +301,7 @@ public class DialogueControl_House : MonoBehaviour
 
             case 25:
                 DoorControl_House.isCat = false;
+                InteractableControl_House.isBirdDoorBell = true;
                 break;
         }
     }
