@@ -236,11 +236,13 @@ public class DialogueControl_House : MonoBehaviour
                     case 0:
                         _countEvent++;
                         CatControl_House.isWave = true;
+                        PlayerControl_House.isWave = true;
                         break;
 
                     case 1:
                         _countEvent = 0;
                         CatControl_House.isWave = false;
+                        PlayerControl_House.isWave = false;
                         break;
                 }
                 break;
