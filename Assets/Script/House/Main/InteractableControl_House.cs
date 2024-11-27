@@ -93,10 +93,20 @@ public class InteractableControl_House : MonoBehaviour
                         }
                         else
                         {
-                            isColliderActive[2] = false;
-                            _eventNum = 1;
-                            BlackScreenControl.isOpenBlackScreen = true;
-                            Invoke("WaitEvent", 1f);
+                            if (!isCatLeave)
+                            {
+                                isColliderActive[2] = false;
+                                _eventNum = 1;
+                                BlackScreenControl.isOpenBlackScreen = true;
+                                Invoke("WaitEvent", 1f);
+                            }
+                            else
+                            {
+                                isColliderActive[2] = false;
+                                _eventNum = 3;
+                                BlackScreenControl.isOpenBlackScreen = true;
+                                Invoke("WaitEvent", 1f);
+                            }
                         }
                         break;
 
@@ -202,6 +212,13 @@ public class InteractableControl_House : MonoBehaviour
             case 2:
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 9;
+                break;
+
+            case 3:
+                DoorControl_House.isBird = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isBirdTalk = true;
+                DialogueControl_House._textCount = 27;
                 break;
         }
     }
