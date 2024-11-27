@@ -146,40 +146,40 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Receive()
     {
-        if (!isReceive)
+        BGM.PlayOneShot(receive);
+        isReceive = true;
+        isReceiveActive = false;
+        isDeliverActive = true;
+        if (!alreadyReceived[_entrustNum].activeSelf)
         {
-            BGM.PlayOneShot(receive);
-            isReceive = true;
-            isReceiveActive = false;
-            isDeliverActive = true;
-            if (!alreadyReceived[_entrustNum].activeSelf)
-            {
-                isAlready = true;
-            }
-            BirdControl_House.isHappy = true;
-            DialogueControl_House.isAutoNext = true;
-            DialogueControl_House._paragraph = 3;
-            GameControl_House._storyNum = _entrustNum;
-            StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
+            isAlready = true;
         }
+        BirdControl_House.isHappy = true;
+        DialogueControl_House.isAutoNext = true;
+        DialogueControl_House._paragraph = 3;
+        GameControl_House._storyNum = _entrustNum;
+        StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
+        StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
     }
     public void Button_Back()
     {
         BGM.PlayOneShot(onClick);
         if (isReceiveActive)
         {
-            isReceiveActive = false;
-            isDeliverActive = true;
-            BirdControl_House.isDeliver = true;
-            DialogueControl_House.isAutoNext = true;
-            DialogueControl_House._paragraph = 4;
-            StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
-            StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
+            if (isReceive)
+            {
+                isReceiveActive = false;
+                isDeliverActive = true;
+                BirdControl_House.isDeliver = true;
+                DialogueControl_House.isAutoNext = true;
+                DialogueControl_House._paragraph = 4;
+                StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
+                StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
+            }
         }
         else if (isContentActive)
         {
