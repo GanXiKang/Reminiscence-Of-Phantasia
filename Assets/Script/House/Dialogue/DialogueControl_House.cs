@@ -283,6 +283,7 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 27:
+                InteractableControl_House.isColliderActive[1] = true;
                 DoorControl_House.isEntrust = true;
                 break;
         }
