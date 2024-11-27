@@ -226,6 +226,7 @@ public class DialogueControl_House : MonoBehaviour
         switch (_textCount)
         {
             case 1:
+            case 9:
                 BGM.PlayOneShot(bell);
                 break;
 
