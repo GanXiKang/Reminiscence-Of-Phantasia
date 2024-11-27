@@ -220,6 +220,7 @@ public class InteractableControl_House : MonoBehaviour
 
             case 3:
                 DoorControl_House.isBird = true;
+                BirdControl_House.isIdle = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 27;
