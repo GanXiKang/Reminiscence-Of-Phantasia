@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameControl_House : MonoBehaviour
 {
-    public static int _day = 1;
+    public static int _day = 0;
     public static int _storyNum = 0;
 
     void Start()
@@ -21,7 +21,6 @@ public class GameControl_House : MonoBehaviour
 
             case 2:
                 DoorControl_House.isBird = true;
-                BirdControl_House.isIdle = true;
                 UIAboveObject_House.isAboveWorkbench = true;
                 InteractableControl_House.isColliderActive[1] = true;
                 UIControl_House.isDialogue = true;
