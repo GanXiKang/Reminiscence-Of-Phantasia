@@ -271,10 +271,6 @@ public class DialogueControl_House : MonoBehaviour
                 Invoke("WaitBlackScreenEvent", 1f);
                 break;
 
-            case 21:
-                InteractableControl_House.isColliderActive[1] = true;
-                break;
-
             case 23:
                 InteractableControl_House.isColliderActive[2] = true;
                 InteractableControl_House.isColliderActive[4] = false;
