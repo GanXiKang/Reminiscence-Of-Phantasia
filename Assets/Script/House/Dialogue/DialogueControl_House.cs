@@ -250,6 +250,21 @@ public class DialogueControl_House : MonoBehaviour
             case 25:
                 CatControl_House.isBye = true;
                 break;
+
+            case 27:
+                switch (_countEvent)
+                {
+                    case 0:
+                        _countEvent++;
+                        PlayerControl_House.isWave = true;
+                        break;
+
+                    case 1:
+                        _countEvent = 0;
+                        PlayerControl_House.isWave = false;
+                        break;
+                }
+                break;
         }
     }
     void DialogueEnd()
