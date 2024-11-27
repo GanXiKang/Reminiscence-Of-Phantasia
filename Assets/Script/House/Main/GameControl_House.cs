@@ -14,14 +14,14 @@ public class GameControl_House : MonoBehaviour
         {
             case 1:
                 UIAboveObject_House.isAboveDoor = true;
-                DoorControl_House.isEntrust = true;
                 InteractableControl_House.isColliderActive[2] = true;
-                //UIControl_House.isDialogue = true;
-                //DialogueControl_House._textCount = 1;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 1;
                 break;
 
             case 2:
                 DoorControl_House.isBird = true;
+                BirdControl_House.isIdle = true;
                 UIAboveObject_House.isAboveWorkbench = true;
                 InteractableControl_House.isColliderActive[1] = true;
                 UIControl_House.isDialogue = true;
