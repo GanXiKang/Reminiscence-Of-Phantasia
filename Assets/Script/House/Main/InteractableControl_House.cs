@@ -75,6 +75,7 @@ public class InteractableControl_House : MonoBehaviour
                 switch (ColliderControl_House._nowNumber)
                 {
                     case 1:
+                        isColliderActive[1] = false;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookWorkbench = true;
                         if (GameControl_House._storyNum == 0)
@@ -86,6 +87,7 @@ public class InteractableControl_House : MonoBehaviour
                         break;
 
                     case 2:
+                        isColliderActive[2] = false;
                         if (DoorControl_House.isEntrust || DoorControl_House.isStore)
                         {
                             DoorControl_House.isLoading = true;
@@ -112,6 +114,7 @@ public class InteractableControl_House : MonoBehaviour
                         break;
 
                     case 3:
+                        isColliderActive[3] = false;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBed = true;
                         BedControl_House.isMovingToBed = true;
