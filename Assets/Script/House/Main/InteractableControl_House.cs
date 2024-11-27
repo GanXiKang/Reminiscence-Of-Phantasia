@@ -14,7 +14,7 @@ public class InteractableControl_House : MonoBehaviour
     public Image hintF;
     Color currentColor;
     float _alpha = 0f;
-    int _blackScreenNum = 0;
+    int _eventNum = 0;
     public float _screenSpeed = 3f;
     public static bool isInteractable = false;
 
@@ -25,6 +25,7 @@ public class InteractableControl_House : MonoBehaviour
     //Plot
     public static bool isCatSeeWorkbench = false;
     public static bool isCatLeave = false;
+    public static bool isBirdDoorBell = false;
 
     void Awake()
     {
@@ -44,6 +45,7 @@ public class InteractableControl_House : MonoBehaviour
         InteractableButton_F();
         Interactable();
         ObjectCollider();
+        Plot();
     }
 
     void InteractableButton_F()
@@ -92,9 +94,9 @@ public class InteractableControl_House : MonoBehaviour
                         else
                         {
                             isColliderActive[2] = false;
-                            _blackScreenNum = 1;
+                            _eventNum = 1;
                             BlackScreenControl.isOpenBlackScreen = true;
-                            Invoke("WaitBlackScreenEvent", 1f);
+                            Invoke("WaitEvent", 1f);
                         }
                         break;
 
@@ -135,17 +137,14 @@ public class InteractableControl_House : MonoBehaviour
         {
             objectCollider[c].SetActive(isColliderActive[c]);
         }
-    }
-    void WaitBlackScreenEvent()
+    }  
+    void Plot()
     {
-        switch (_blackScreenNum)
+        if (isBirdDoorBell)
         {
-            case 1:
-                DoorControl_House.isCat = true;
-                UIControl_House.isDialogue = true;
-                DialogueControl_House.isCatTalk = true;
-                DialogueControl_House._textCount = 20;
-                break;
+            _eventNum = 2;
+            Invoke("WaitEvent", 5f);
+            isBirdDoorBell = false;
         }
     }
 
@@ -186,6 +185,24 @@ public class InteractableControl_House : MonoBehaviour
             StoreControl_House.isStoreActive = true;
             DialogueControl_House.isAutoNext = true;
             DialogueControl_House._paragraph = 2;
+        }
+    }
+
+    void WaitEvent()
+    {
+        switch (_eventNum)
+        {
+            case 1:
+                DoorControl_House.isCat = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isCatTalk = true;
+                DialogueControl_House._textCount = 20;
+                break;
+
+            case 2:
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 9;
+                break;
         }
     }
 }
