@@ -19,6 +19,11 @@ public class BirdControl_House : MonoBehaviour
     [Header("Effects")]
     public GameObject letterEffects;
 
+    [Header("Point")]
+    public Transform[] plotPoint;
+    public static int _goPointNum = 0;
+    int _nowPointNum = 0;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -28,6 +33,7 @@ public class BirdControl_House : MonoBehaviour
     void Update()
     {
         Animation();
+        PlotPoint();
     }
 
     void Animation()
@@ -68,7 +74,6 @@ public class BirdControl_House : MonoBehaviour
             isBye = false;
         }
     }
-
     void FalseByAnimationisHappy()
     {
         anim.SetBool("isHappy", false);
@@ -78,6 +83,14 @@ public class BirdControl_House : MonoBehaviour
     {
         anim.SetBool("isBye", false);
         anim.SetBool("isDeliver", false);
+    }
+    void PlotPoint()
+    {
+        if (_nowPointNum == _goPointNum) return;
+
+        _nowPointNum = _goPointNum;
+        transform.position = plotPoint[_goPointNum].transform.position;
+        transform.rotation = plotPoint[_goPointNum].transform.rotation;
     }
 }
     
