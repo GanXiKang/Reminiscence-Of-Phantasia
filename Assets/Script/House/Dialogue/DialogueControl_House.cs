@@ -267,6 +267,7 @@ public class DialogueControl_House : MonoBehaviour
             case 20:
             case 22:
             case 25:
+            case 28:
                 BlackScreenControl.isOpenBlackScreen = true;
                 Invoke("WaitBlackScreenEvent", 1f);
                 break;
@@ -306,6 +307,13 @@ public class DialogueControl_House : MonoBehaviour
             case 25:
                 DoorControl_House.isCat = false;
                 InteractableControl_House.isBirdDoorBell = true;
+                break;
+
+            case 28:
+                InteractableControl_House.isColliderActive[3] = true;
+                UIAboveObject_House.isAboveDoor = false;
+                UIAboveObject_House.isAboveBed = true;
+                BirdControl_House._goPointNum = 1;
                 break;
         }
     }
