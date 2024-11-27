@@ -20,6 +20,7 @@ public class GameControl_House : MonoBehaviour
                 break;
 
             case 2:
+                DoorControl_House.isBird = true;
                 UIAboveObject_House.isAboveWorkbench = true;
                 InteractableControl_House.isColliderActive[1] = true;
                 UIControl_House.isDialogue = true;
