@@ -260,6 +260,10 @@ public class DialogueControl_House : MonoBehaviour
                 isAutoPlot = false;
                 break;
 
+            case 9:
+                InteractableControl_House.isColliderActive[2] = true;
+                break;
+
             case 20:
             case 22:
             case 25:
