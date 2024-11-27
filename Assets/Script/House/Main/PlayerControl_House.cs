@@ -19,6 +19,7 @@ public class PlayerControl_House : MonoBehaviour
     private Vector3 _velocity;
 
     //Animation
+    public static bool isWave = false;
     public static bool isHappy = false;
     public static bool isSleep = false;
 
@@ -74,6 +75,7 @@ public class PlayerControl_House : MonoBehaviour
     }
     void Animation()
     {
+        anim.SetBool("isWave", isWave);
         anim.SetBool("isHappy", isHappy);
         anim.SetBool("isSleep", isSleep);
     }
