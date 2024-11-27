@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameControl_House : MonoBehaviour
 {
-    public static int _day = 1;
+    public static int _day = 0;
     public static int _storyNum = 0;
 
     void Start()
     {
+        _day++;
         switch (_day)
         {
             case 1:
@@ -16,6 +17,13 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[2] = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 1;
+                break;
+
+            case 2:
+                UIAboveObject_House.isAboveWorkbench = true;
+                InteractableControl_House.isColliderActive[1] = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 30;
                 break;
         }
     }
