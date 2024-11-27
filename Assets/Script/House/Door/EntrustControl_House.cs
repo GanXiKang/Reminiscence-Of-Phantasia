@@ -29,7 +29,7 @@ public class EntrustControl_House : MonoBehaviour
     [Header("LetterReceive")]
     public Image receiveImage;
     public Sprite[] receiveSprite;
-    bool isReceive = false; //現版本暫時處理
+    bool isReceive = false;
 
     [Header("LetterContent")]
     public Image contentImage;
@@ -165,11 +165,6 @@ public class EntrustControl_House : MonoBehaviour
             StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
             StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
         }
-        else
-        {   //現版本暫時處理
-            DialogueControl_House.isAutoNext = true;
-            DialogueControl_House._paragraph = 6;
-        }
     }
     public void Button_Back()
     {
@@ -212,7 +207,7 @@ public class EntrustControl_House : MonoBehaviour
     {
         DoorControl_House.isLeave = true;
         DialogueControl_House.isAutoNext = true;
-        DialogueControl_House._paragraph = 7;
+        DialogueControl_House._paragraph = 6;
         isEntrustActive = false;
         isDeliverActive = false;
         isReceiveActive = false;
