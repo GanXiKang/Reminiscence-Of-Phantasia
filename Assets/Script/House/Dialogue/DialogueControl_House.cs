@@ -280,6 +280,7 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 9:
+            case 19:
                 InteractableControl_House.isColliderActive[2] = true;
                 break;
 
