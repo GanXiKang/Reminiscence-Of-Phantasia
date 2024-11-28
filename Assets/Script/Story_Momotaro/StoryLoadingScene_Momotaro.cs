@@ -20,6 +20,10 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a, b;
+    public Sprite riverSideA, riverSideB;
+    public Sprite forestA, forestB;
+    public Sprite mountainA, mountainB;
+    public Sprite plazaA, plazaB;
     public static bool isLoading = false;
     public static bool isOpen = false; 
     bool isClose = false;
@@ -42,6 +46,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
         if (isOpen)
         {
             isLoading = true;
+            ChangeLoadingSprite();
             if (isPlayMusiaOnce)
             {
                 BGM.PlayOneShot(switchScene);
@@ -144,6 +149,31 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 BGM.Stop();
                 BGM.clip = plazaBGM;
                 BGM.Play();
+                break;
+        }
+    }
+    void ChangeLoadingSprite()
+    {
+        switch (StoryExitControl_Momotaro._changeSceneNum)
+        {
+            case 1:
+                a.sprite = riverSideA;
+                b.sprite = riverSideB;
+                break;
+
+            case 2:
+                a.sprite = forestA;
+                b.sprite = forestB;
+                break;
+
+            case 3:
+                a.sprite = mountainA;
+                b.sprite = mountainB;
+                break;
+
+            case 4:
+                a.sprite = plazaA;
+                b.sprite = plazaB;
                 break;
         }
     }
