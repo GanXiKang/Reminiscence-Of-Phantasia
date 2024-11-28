@@ -31,6 +31,9 @@ public class BookcaseControl_House : MonoBehaviour
     public Image image;
     public Sprite[] letter;
 
+    //Plot
+    bool isEntrustCome = true;
+
     void Update()
     {
         bookUI.SetActive(CameraControl_House.isLookBookcase);
@@ -270,6 +273,12 @@ public class BookcaseControl_House : MonoBehaviour
         {
             book[k].transform.position = originalPoint[k].transform.position;
             book[k].transform.rotation = originalPoint[k].transform.rotation;
+        }
+        if (GameControl_House._day > 2 && isEntrustCome)
+        {
+            DoorControl_House.isEntrust = true;
+            UIControl_House.isDialogue = true;
+            DialogueControl_House._textCount = 19;
         }
     }
 }
