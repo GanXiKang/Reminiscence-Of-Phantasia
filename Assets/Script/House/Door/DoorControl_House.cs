@@ -81,8 +81,10 @@ public class DoorControl_House : MonoBehaviour
         } 
         else if (InteractableControl_House.isReadMomLetter)
         {
+            isBird = true;
             InteractableControl_House.isReadMomLetter = false;
             UIControl_House.isDialogue = true;
+            DialogueControl_House.isBirdTalk = true;
             DialogueControl_House._textCount = 35;
         }
     }
