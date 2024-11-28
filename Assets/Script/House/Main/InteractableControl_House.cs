@@ -30,6 +30,9 @@ public class InteractableControl_House : MonoBehaviour
     public static bool isBirdSeeBed = false;
     public static bool isBirdSeeBookcase = false;
     public static bool isBirdLeave = false;
+    public static bool isReadMomLetter = false;
+    bool isBirdFirstMeet = false;
+    bool isMomEntrust = true;
     bool isBookcasePlotOnce = true;
 
     void Awake()
@@ -107,9 +110,17 @@ public class InteractableControl_House : MonoBehaviour
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
-                            else
+                            else if(isBirdFirstMeet)
                             {
+                                isBirdFirstMeet = false;
                                 _eventNum = 3;
+                                BlackScreenControl.isOpenBlackScreen = true;
+                                Invoke("WaitEvent", 1f);
+                            }
+                            else if (isMomEntrust)
+                            {
+                                isMomEntrust = false;
+                                _eventNum = 4;
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
@@ -229,6 +240,7 @@ public class InteractableControl_House : MonoBehaviour
                 break;
 
             case 2:
+                isBirdFirstMeet = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 9;
                 break;
@@ -239,6 +251,15 @@ public class InteractableControl_House : MonoBehaviour
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 27;
+                break;
+
+            case 4:
+                isReadMomLetter = true;
+                DoorControl_House.isBird = true;
+                BirdControl_House.isIdle = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isBirdTalk = true;
+                DialogueControl_House._textCount = 34;
                 break;
         }
     }
