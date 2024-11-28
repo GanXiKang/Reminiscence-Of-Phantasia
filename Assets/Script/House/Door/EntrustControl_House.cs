@@ -14,7 +14,7 @@ public class EntrustControl_House : MonoBehaviour
     public Image background;
     public Sprite normalBG, darkBG;
     public static bool isEntrustActive = false;
-    public static int _entrustNum = 0;
+    int _entrustNum = 0;
     bool isDeliverActive = false;
     bool isReceiveActive = false;
     bool isContentActive = false;
