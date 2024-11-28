@@ -76,8 +76,7 @@ public class BedControl_House : MonoBehaviour
         TransitionUIControl.isHouse = false;
         TransitionUIControl.isTransitionUIAnim_In = true;
         yield return new WaitForSeconds(1f);
-        //SceneManager.LoadScene(GameControl_House._storyNum + 1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(GameControl_House._storyNum + 1);
         CameraControl_House.isLookBed = false;
         CameraControl_House.isLookBedcase = false;
         PlayerControl_House.isSleep = false;
