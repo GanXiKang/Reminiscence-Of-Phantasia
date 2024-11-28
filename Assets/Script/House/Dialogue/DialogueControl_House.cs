@@ -227,6 +227,7 @@ public class DialogueControl_House : MonoBehaviour
         {
             case 1:
             case 9:
+            case 19:
                 BGM.PlayOneShot(bell);
                 break;
 
