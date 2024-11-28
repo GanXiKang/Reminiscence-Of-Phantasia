@@ -278,7 +278,6 @@ public class BookcaseControl_House : MonoBehaviour
         if (GameControl_House._day > 2 && isEntrustCome)
         {
             isEntrustCome = false;
-            DoorControl_House.isEntrust = true;
             UIControl_House.isDialogue = true;
             DialogueControl_House._textCount = 19;
         }
