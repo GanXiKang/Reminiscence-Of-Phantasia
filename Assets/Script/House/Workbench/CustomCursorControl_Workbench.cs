@@ -5,13 +5,17 @@ using UnityEngine;
 public class CustomCursorControl_Workbench : MonoBehaviour
 {
     [Header("Texture")]
+    public Texture2D stamp1;
+    public Texture2D stamp2;
     public Texture2D scissors1;
     public Texture2D scissors2;
     public Texture2D pencil1;
     public Texture2D pencil2;
+    public Texture2D glue1;
+    public Texture2D glue2;
     public Vector2 hotSpot = Vector2.zero; 
     private bool isCursorChanged = false;
-    bool isUsePencil = false;
+    bool isUse = false;
     bool isAnim = false;
 
     [Header("Object")]
@@ -21,6 +25,23 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     {
         switch (WorkbenchControl_House._process)
         {
+            case 1:
+                if (isUse)
+                {
+                    Cursor.SetCursor(stamp2, hotSpot, CursorMode.Auto);
+                }
+                else
+                {
+                    Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isUse = true;
+                    Invoke("FalseisUse", 0.5f);
+                }
+                break;
+
             case 2:
                 float screenHalfWidth = Screen.width / 2;
 
@@ -74,6 +95,23 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 }
                 break;
 
+            case 4:
+                if (isUse)
+                {
+                    Cursor.SetCursor(glue2, hotSpot, CursorMode.Auto);
+                }
+                else
+                {
+                    Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isUse = true;
+                    Invoke("FalseisUsePencil", 0.5f);
+                }
+                break;
+
             default:
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                 break;
@@ -89,9 +127,9 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
         objectToMove.transform.position = Vector3.Lerp(objectToMove.transform.position, newPosition, Time.deltaTime * 10f);
     }
-    void FalseisUsePencil()
+    void FalseisUse()
     {
-        isUsePencil = false;
+        isUse = false;
     }
 
     IEnumerator ScissorsAnimation()
