@@ -25,6 +25,9 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[1] = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 30;
+
+                //úy‘á
+                BirdControl_House._goPointNum = 1;
                 break;
 
             case 3:
