@@ -158,6 +158,7 @@ public class EntrustControl_House : MonoBehaviour
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
         GameControl_House._storyNum = _entrustNum;
+        print(GameControl_House._storyNum);
         StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
