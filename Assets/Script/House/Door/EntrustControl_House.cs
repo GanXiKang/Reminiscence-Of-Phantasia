@@ -102,7 +102,7 @@ public class EntrustControl_House : MonoBehaviour
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
                 letterText[1].text = "和奶奶的回憶...";
                 deliverButton[2].GetComponent<Image>().sprite = disabledButton;
-                deliverButton[3].GetComponent<Button>().interactable = false;
+                deliverButton[2].GetComponent<Button>().interactable = false;
                 deliverButton[3].GetComponent<Image>().sprite = disabledButton;
                 deliverButton[3].GetComponent<Button>().interactable = false;
                 break;
@@ -111,7 +111,7 @@ public class EntrustControl_House : MonoBehaviour
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
                 letterText[1].text = "友情的記憶";
                 deliverButton[2].GetComponent<Image>().sprite = disabledButton;
-                deliverButton[3].GetComponent<Button>().interactable = false;
+                deliverButton[2].GetComponent<Button>().interactable = false;
                 deliverButton[3].GetComponent<Image>().sprite = disabledButton;
                 deliverButton[3].GetComponent<Button>().interactable = false;
                 break;
@@ -120,7 +120,7 @@ public class EntrustControl_House : MonoBehaviour
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
                 letterText[1].text = "未來的迷茫";
                 deliverButton[2].GetComponent<Image>().sprite = disabledButton;
-                deliverButton[3].GetComponent<Button>().interactable = false;
+                deliverButton[2].GetComponent<Button>().interactable = false;
                 deliverButton[3].GetComponent<Image>().sprite = disabledButton;
                 deliverButton[3].GetComponent<Button>().interactable = false;
                 break;
