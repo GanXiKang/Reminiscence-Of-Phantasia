@@ -91,7 +91,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     isUse = true;
-                    Invoke("FalseisUsePencil", 0.5f);
+                    Invoke("FalseisUse", 0.5f);
                 }
                 break;
 
@@ -108,7 +108,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     isUse = true;
-                    Invoke("FalseisUsePencil", 0.5f);
+                    Invoke("FalseisUse", 0.5f);
                 }
                 break;
 
