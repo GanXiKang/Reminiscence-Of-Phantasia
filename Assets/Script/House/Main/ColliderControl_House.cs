@@ -38,6 +38,13 @@ public class ColliderControl_House : MonoBehaviour
                     DialogueControl_House.isBirdTalk = true;
                     DialogueControl_House._textCount = 29;
                 }
+                else if (InteractableControl_House.isBirdSeeBookcase)
+                {
+                    InteractableControl_House.isBirdSeeBookcase = false;
+                    UIControl_House.isDialogue = true;
+                    DialogueControl_House.isBirdTalk = true;
+                    DialogueControl_House._textCount = 32;
+                }
                 else
                 {
                     InteractableControl_House.isInteractable = true;
