@@ -618,13 +618,21 @@ public class WorkbenchControl_House : MonoBehaviour
         CameraControl_House.isLookWorkbench = false;
         PlayerControl_House.isHappy = false;
         InteractableControl_House.isColliderActive[1] = false;
-        if (GameControl_House._storyNum == 0)
+        yield return new WaitForSeconds(0.5f);
+        UIAboveObject_House.isAboveWorkbench = false;
+        switch (GameControl_House._storyNum)
         {
-            yield return new WaitForSeconds(0.5f);
-            UIAboveObject_House.isAboveWorkbench = false;
-            UIControl_House.isDialogue = true;
-            DialogueControl_House.isCatTalk = true;
-            DialogueControl_House._textCount = 22;
+            case 0:
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isCatTalk = true;
+                DialogueControl_House._textCount = 22;
+                break;
+
+            case 1:
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isBirdTalk = true;
+                DialogueControl_House._textCount = 31;
+                break;
         }
     }
 }
