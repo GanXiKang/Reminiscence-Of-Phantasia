@@ -105,11 +105,10 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
                 }
 
-                if (Input.GetMouseButtonDown(0))
-                {
+                if (Input.GetMouseButton(0))
                     isUse = true;
-                    Invoke("FalseisUse", 0.5f);
-                }
+                if (Input.GetMouseButtonUp(0))
+                    isUse = false;
                 break;
 
             default:
