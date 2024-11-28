@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameControl_House : MonoBehaviour
 {
-    public static int _day = 0;
+    public static int _day = 2;
     public static int _storyNum = 0;
 
     void Start()
@@ -25,6 +25,13 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[1] = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 30;
+                break;
+
+            case 3:
+                UIAboveObject_House.isAboveWorkbench = true;
+                InteractableControl_House.isColliderActive[1] = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 17;
                 break;
         }
     }
