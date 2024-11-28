@@ -14,10 +14,10 @@ public class EntrustControl_House : MonoBehaviour
     public Image background;
     public Sprite normalBG, darkBG;
     public static bool isEntrustActive = false;
-    int _entrustNum = 0;
     bool isDeliverActive = false;
     bool isReceiveActive = false;
     bool isContentActive = false;
+    int _entrustNum = 0;
 
     [Header("LetterDeliver")]
     public GameObject[] deliverButton;
