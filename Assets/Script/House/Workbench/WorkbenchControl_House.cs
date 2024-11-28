@@ -633,6 +633,11 @@ public class WorkbenchControl_House : MonoBehaviour
                 DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 31;
                 break;
+
+            default:
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 18;
+                break;
         }
     }
 }
