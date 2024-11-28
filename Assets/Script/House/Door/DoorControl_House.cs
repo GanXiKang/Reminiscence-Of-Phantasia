@@ -72,6 +72,7 @@ public class DoorControl_House : MonoBehaviour
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBirdTalk = true;
             DialogueControl_House._textCount = 28;
-        }
+        }else if( )
+
     }
 }
