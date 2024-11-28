@@ -79,7 +79,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 break;
 
             case 3:
-                if (isUsePencil)
+                if (isUse)
                 {
                     Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
                 }
@@ -90,7 +90,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    isUsePencil = true;
+                    isUse = true;
                     Invoke("FalseisUsePencil", 0.5f);
                 }
                 break;
