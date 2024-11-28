@@ -602,7 +602,7 @@ public class WorkbenchControl_House : MonoBehaviour
     IEnumerator LeaveWorkbench()
     {
         storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", false);
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.5f);
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
         CameraControl_House.isLookPlayer = true;
