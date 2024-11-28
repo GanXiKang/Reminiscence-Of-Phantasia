@@ -30,7 +30,6 @@ public class ColliderControl_House : MonoBehaviour
                     UIControl_House.isDialogue = true;
                     DialogueControl_House.isCatTalk = true;
                     DialogueControl_House._textCount = 21;
-
                 }
                 else if (InteractableControl_House.isBirdSeeBed)
                 {
