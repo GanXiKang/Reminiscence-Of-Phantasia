@@ -280,6 +280,7 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 9:
+            case 19:
                 InteractableControl_House.isColliderActive[2] = true;
                 break;
 
@@ -287,11 +288,6 @@ public class DialogueControl_House : MonoBehaviour
                 UIAboveObject_House.isAboveBed = true;
                 InteractableControl_House.isColliderActive[3] = true;
                 InteractableControl_House.isColliderActive[5] = true;
-                break;
-
-            case 19:
-                DoorControl_House.isEntrust = true;
-                InteractableControl_House.isColliderActive[2] = true;
                 break;
 
             case 20:
@@ -313,6 +309,7 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 27:
+            case 34:
                 InteractableControl_House.isColliderActive[2] = true;
                 DoorControl_House.isEntrust = true;
                 break;
