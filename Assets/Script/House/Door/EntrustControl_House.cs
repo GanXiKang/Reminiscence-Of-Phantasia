@@ -28,7 +28,7 @@ public class EntrustControl_House : MonoBehaviour
 
     [Header("LetterReceive")]
     public Image receiveImage;
-    public Sprite[] receiveSprite;
+    public Sprite[] receiveSprite;    //未來其他委托在同一天 除非分開 不然有點難整理
     bool isReceive = false;
 
     [Header("LetterContent")]
@@ -130,8 +130,8 @@ public class EntrustControl_House : MonoBehaviour
     {
         if (_entrustNum == 0) return;
 
-        receiveImage.sprite = receiveSprite[_entrustNum];
-        contentImage.sprite = contentSprite[_entrustNum];
+        receiveImage.sprite = receiveSprite[GameControl_House._day];
+        contentImage.sprite = contentSprite[GameControl_House._day];
     }
     
     public void Button_Deliver(int _letter)
@@ -157,8 +157,7 @@ public class EntrustControl_House : MonoBehaviour
         BirdControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
-        GameControl_House._storyNum = _entrustNum;
-        print(GameControl_House._storyNum);
+        GameControl_House._storyNum = GameControl_House._day;
         StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
         StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
