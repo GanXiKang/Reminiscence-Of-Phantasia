@@ -84,11 +84,17 @@ public class InteractableControl_House : MonoBehaviour
                         isColliderActive[1] = false;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookWorkbench = true;
-                        if (GameControl_House._storyNum == 0)
+                        switch (GameControl_House._storyNum)
                         {
-                            UIControl_House.isDialogue = true;
-                            DialogueControl_House.isAutoPlot = true;
-                            DialogueControl_House._textCount = 3;
+                            case 0:
+                                UIControl_House.isDialogue = true;
+                                DialogueControl_House.isAutoPlot = true;
+                                DialogueControl_House._textCount = 3;
+                                break;
+
+                            case 1:
+                                BirdControl_House._goPointNum = 3;
+                                break;
                         }
                         break;
 
