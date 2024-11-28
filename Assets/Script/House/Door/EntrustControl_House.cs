@@ -28,7 +28,7 @@ public class EntrustControl_House : MonoBehaviour
 
     [Header("LetterReceive")]
     public Image receiveImage;
-    public Sprite[] receiveSprite;    //未來其他委托在同一天 除非分開 不然有點難整理
+    public Sprite[] receiveSprite;    //未來其他委托在同一天 除非分開 不然有點難整理 29/11
     bool isReceive = false;
 
     [Header("LetterContent")]
