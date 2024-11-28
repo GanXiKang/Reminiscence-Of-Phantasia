@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameControl_House : MonoBehaviour
 {
-    public static int _day = 0;
-    public static int _storyNum = 0;
+    public static int _day = 2;
+    public static int _storyNum = 2;
 
     void Start()
     {
