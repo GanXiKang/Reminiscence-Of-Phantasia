@@ -28,7 +28,9 @@ public class InteractableControl_House : MonoBehaviour
     public static bool isBirdDoorBell = false;
     public static bool isBirdEntrust = false;
     public static bool isBirdSeeBed = false;
+    public static bool isBirdSeeBookcase = false;
     public static bool isBirdLeave = false;
+    bool isBookcasePlotOnce = true;
 
     void Awake()
     {
@@ -126,11 +128,23 @@ public class InteractableControl_House : MonoBehaviour
                     case 4:
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBookcase = true;
-                        if (GameControl_House._storyNum == 0)
+                        if (isBookcasePlotOnce)
                         {
-                            UIControl_House.isDialogue = true;
-                            DialogueControl_House.isCatTalk = true;
-                            DialogueControl_House._textCount = 23;
+                            isBookcasePlotOnce = false;
+                            switch (GameControl_House._storyNum)
+                            {
+                                case 0:
+                                    UIControl_House.isDialogue = true;
+                                    DialogueControl_House.isCatTalk = true;
+                                    DialogueControl_House._textCount = 23;
+                                    break;
+
+                                case 1:
+                                    UIControl_House.isDialogue = true;
+                                    DialogueControl_House.isBirdTalk = true;
+                                    DialogueControl_House._textCount = 33;
+                                    break;
+                            }
                         }
                         break;
 
