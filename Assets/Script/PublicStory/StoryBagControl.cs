@@ -82,6 +82,7 @@ public class StoryBagControl : MonoBehaviour
 
     void ItemNumber_Start()
     {
+        _howManyGrids = 0;
         isItemNumber = new bool[itemSprite.Length];
         _gridsItemNumber = new int[5];
         for (int i = 0; i < itemSprite.Length; i++)
