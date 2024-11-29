@@ -55,6 +55,12 @@ public class StoreControl_House : MonoBehaviour
                 StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
             }
         }
+
+        homePageButton[0].interactable = isBuy;
+        if (!isBuy)
+            homePageButton[0].GetComponent<CanvasGroup>().alpha = 0;
+        else
+            homePageButton[0].GetComponent<CanvasGroup>().alpha = 1;
     }
     void StoreUI()
     {
@@ -196,14 +202,11 @@ public class StoreControl_House : MonoBehaviour
         }
         else
         {
-            if (isBuy)
-            {
-                CatControl_House.isBye = true;
-                DialogueControl_House.isAutoNext = true;
-                DialogueControl_House._paragraph = 6;
-                storeUI[1].GetComponent<CanvasGroup>().interactable = false;
-                Invoke("LeaveState", 1f);
-            }
+            CatControl_House.isBye = true;
+            DialogueControl_House.isAutoNext = true;
+            DialogueControl_House._paragraph = 6;
+            storeUI[1].GetComponent<CanvasGroup>().interactable = false;
+            Invoke("LeaveState", 1f);
         }
     }
 

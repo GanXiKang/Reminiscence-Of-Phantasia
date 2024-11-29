@@ -20,7 +20,7 @@ public class EntrustControl_House : MonoBehaviour
     int _entrustNum = 0;
 
     [Header("LetterDeliver")]
-    public GameObject[] deliverButton;
+    public Button[] deliverButton;
     public GameObject[] alreadyReceived;
     public Text[] letterText;
     public Sprite normalButton, disabledButton;
@@ -73,6 +73,12 @@ public class EntrustControl_House : MonoBehaviour
         {
             background.sprite = darkBG;
         }
+
+        deliverButton[0].interactable = isReceive;
+        if (!isReceive)
+            deliverButton[0].GetComponent<CanvasGroup>().alpha = 0;
+        else
+            deliverButton[0].GetComponent<CanvasGroup>().alpha = 1;
     }
     void OpenUI()
     {
@@ -168,18 +174,15 @@ public class EntrustControl_House : MonoBehaviour
         BGM.PlayOneShot(onClick);
         if (isReceiveActive)
         {
-            if (isReceive)
-            {
-                isReceiveActive = false;
-                isDeliverActive = true;
-                BirdControl_House.isDeliver = true;
-                DialogueControl_House.isAutoNext = true;
-                DialogueControl_House._paragraph = 4;
-                StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
-                StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
-                StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
-                StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
-            }
+            isReceiveActive = false;
+            isDeliverActive = true;
+            BirdControl_House.isDeliver = true;
+            DialogueControl_House.isAutoNext = true;
+            DialogueControl_House._paragraph = 4;
+            StartCoroutine(AnimateButtonAppear(deliverButton[1].GetComponent<Button>(), 0f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[2].GetComponent<Button>(), 0.4f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[3].GetComponent<Button>(), 0.8f, true));
+            StartCoroutine(AnimateButtonAppear(deliverButton[0].GetComponent<Button>(), 1f, false));
         }
         else if (isContentActive)
         {
