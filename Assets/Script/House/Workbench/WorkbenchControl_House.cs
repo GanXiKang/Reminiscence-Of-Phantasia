@@ -28,7 +28,6 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isFinish = false;
 
     [Header("ToolBox")]
-    public GameObject toolBoxUI;
     public GameObject toolBoxBG;
     public GameObject buttonUI;
     public GameObject up, down;
