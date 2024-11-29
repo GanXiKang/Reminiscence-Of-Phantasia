@@ -52,7 +52,7 @@ public class StoreControl_House : MonoBehaviour
                 StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, false));
                 StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, false));
                 StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, false));
-                StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
+                //StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
             }
         }
 
