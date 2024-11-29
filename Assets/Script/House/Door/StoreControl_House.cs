@@ -52,11 +52,10 @@ public class StoreControl_House : MonoBehaviour
                 StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, false));
                 StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, false));
                 StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, false));
-                //StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
             }
         }
 
-        homePageButton[0].interactable = isBuy;
+        homePageButton[0].GetComponent<CanvasGroup>().interactable = isBuy;
         if (!isBuy)
             homePageButton[0].GetComponent<CanvasGroup>().alpha = 0;
         else
@@ -103,7 +102,6 @@ public class StoreControl_House : MonoBehaviour
         {
             _productCoin = 0;
             CatControl_House.isBag = true;
-            StartCoroutine(AnimateButtonDisappear(homePageButton[0], 0f, true));
             StartCoroutine(AnimateButtonDisappear(homePageButton[4], 0f, false));
             StartCoroutine(AnimateButtonDisappear(homePageButton[3], 0.2f, false));
             StartCoroutine(AnimateButtonDisappear(homePageButton[2], 0.4f, false));
@@ -188,7 +186,6 @@ public class StoreControl_House : MonoBehaviour
         StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f, false));
         StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f, false));
         StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f, false));
-        StartCoroutine(AnimateButtonAppear(homePageButton[0], 1f, true));
     }
     public void Button_Leave()
     {
