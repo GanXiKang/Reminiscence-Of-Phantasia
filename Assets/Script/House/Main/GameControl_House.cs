@@ -25,6 +25,7 @@ public class GameControl_House : MonoBehaviour
                 UIAboveObject_House.isAboveBed = false;
                 InteractableControl_House.isColliderActive[1] = true;
                 UIControl_House.isDialogue = true;
+                DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 30;
                 break;
 
