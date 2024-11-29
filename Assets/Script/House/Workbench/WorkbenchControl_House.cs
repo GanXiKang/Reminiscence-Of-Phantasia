@@ -143,7 +143,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
             case 2:
                 toolBoxBG.SetActive(true);
-                buttonUI.SetActive(true);
+                //buttonUI.SetActive(true); //未來製作工具時在打開
                 isPaperRotation = true;
                 if (GameControl_House._storyNum == 0)
                 {
