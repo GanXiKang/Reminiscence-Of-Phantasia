@@ -20,7 +20,7 @@ public class EntrustControl_House : MonoBehaviour
     int _entrustNum = 0;
 
     [Header("LetterDeliver")]
-    public Button[] deliverButton;
+    public GameObject[] deliverButton;
     public GameObject[] alreadyReceived;
     public Text[] letterText;
     public Sprite normalButton, disabledButton;
@@ -74,7 +74,7 @@ public class EntrustControl_House : MonoBehaviour
             background.sprite = darkBG;
         }
 
-        deliverButton[0].interactable = isReceive;
+        deliverButton[0].GetComponent<CanvasGroup>().interactable = isReceive;
         if (!isReceive)
             deliverButton[0].GetComponent<CanvasGroup>().alpha = 0;
         else
