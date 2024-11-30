@@ -94,7 +94,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
             StoryPlayerAnimator_Momotaro.isRaccoon = false;
             StoryPlayerAnimator_Momotaro.isStone = false;
             StoryPlayerAnimator_Momotaro.isParrot = false;
-            StoryPlayerAnimator_Momotaro.isTransform = true;
+            StoryPlayerAnimator_Momotaro.isSmokeEF = true;
         }
     }
     public void Button_Role(int role)
@@ -106,7 +106,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
         isChangeRoles = true;
         isRoleActive = false;
-        StoryPlayerAnimator_Momotaro.isTransform = true;
+        StoryPlayerAnimator_Momotaro.isSmokeEF = true;
         switch (role)
         {
             case 1:
