@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameControl_StartMovie : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip onClick;
+
     [Header("Video")]
     public VideoPlayer videoPlayer;
 
@@ -20,7 +24,7 @@ public class GameControl_StartMovie : MonoBehaviour
     void Update()
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
-        audioSource.volume = SettingControl.volumeBGM;
+        //BGM.volume = SettingControl.volumeBGM;
     }
 
     void OnVideoEnd(VideoPlayer vp)
@@ -30,6 +34,7 @@ public class GameControl_StartMovie : MonoBehaviour
 
     public void Skip_Button()
     {
+        BGM.PlayOneShot(onClick);
         StartCoroutine(StartGame());
     }
 
