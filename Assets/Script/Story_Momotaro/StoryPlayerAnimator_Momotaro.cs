@@ -13,6 +13,10 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
     public static bool isParrot = false;
     public static bool isFall = false;
 
+    [Header("Effects")]
+    public GameObject effects;
+    public static bool isTransform = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -36,6 +40,12 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
         else
         {
             anim.SetBool("isFall", false);
+        }
+
+        if (isTransform)
+        {
+            effects.SetActive(true);
+            isTransform = false;
         }
     }
 }
