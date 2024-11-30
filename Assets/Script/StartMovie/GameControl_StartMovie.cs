@@ -29,7 +29,6 @@ public class GameControl_StartMovie : MonoBehaviour
 
         if (SettingControl.isSettingActive)
         {
-            BGM.Play();
             videoPlayer.Pause();
             isPause = true;
         }
@@ -37,7 +36,6 @@ public class GameControl_StartMovie : MonoBehaviour
         {
             if (isPause)
             {
-                BGM.Stop();
                 videoPlayer.Play();
                 isPause = false;
             }
