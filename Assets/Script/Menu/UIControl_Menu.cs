@@ -42,7 +42,7 @@ public class UIControl_Menu : MonoBehaviour
     {
         BGM.PlayOneShot(onClick);
         TransitionUIControl.isTransitionUIAnim_In = true;
-        Invoke("GoToHouse", 1f);
+        Invoke("GoToStartMovie", 1f);
     }
     public void Button_Continue()
     {
@@ -105,8 +105,8 @@ public class UIControl_Menu : MonoBehaviour
             }
         }
     }
-    void GoToHouse()
+    void GoToStartMovie()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
     }
 }
