@@ -24,12 +24,19 @@ public class GameControl_StartMovie : MonoBehaviour
 
     void OnVideoEnd(VideoPlayer vp)
     {
-        SceneManager.LoadScene(1);
+        Skip_Button();
     }
 
     public void Skip_Button()
     {
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame()
+    {
         videoPlayer.Stop();
+        TransitionUIControl.isTransitionUIAnim_In = true;
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(1);
     }
 }
