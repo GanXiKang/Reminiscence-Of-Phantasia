@@ -487,6 +487,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 26:
                 BGM.PlayOneShot(magic);
+                StoryPlayerAnimator_Momotaro.isTransform = true;
                 StoryPlayerAnimator_Momotaro.isDonkey = true;
                 StoryRiceDumpling_Momotaro.isChangeRoles = true;
                 StoryRiceDumpling_Momotaro.isRoleActive = false;
