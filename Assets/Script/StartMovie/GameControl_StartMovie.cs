@@ -12,6 +12,7 @@ public class GameControl_StartMovie : MonoBehaviour
 
     [Header("Video")]
     public VideoPlayer videoPlayer;
+    bool isPause = false;
 
     [Header("TransitionUI")]
     public GameObject transitionUI;
@@ -24,7 +25,23 @@ public class GameControl_StartMovie : MonoBehaviour
     void Update()
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
-        //BGM.volume = SettingControl.volumeBGM;
+        videoPlayer.SetDirectAudioVolume(0, SettingControl.volumeBGM);
+
+        if (SettingControl.isSettingActive)
+        {
+            BGM.Play();
+            videoPlayer.Pause();
+            isPause = true;
+        }
+        else
+        {
+            if (isPause)
+            {
+                BGM.Stop();
+                videoPlayer.Play();
+                isPause = false;
+            }
+        }
     }
 
     void OnVideoEnd(VideoPlayer vp)
