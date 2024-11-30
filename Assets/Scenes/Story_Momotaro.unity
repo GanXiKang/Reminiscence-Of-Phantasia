@@ -565,6 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee11b348ea32ea9499e1c877ec6fbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effects: {fileID: 0}
 --- !u!1001 &50760632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4493,6 +4494,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 42048621}
     m_Modifications:
+    - target: {fileID: 1437427830686387722, guid: c6e972cbf3c67844b9066774eb128438, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2567817075135704721, guid: c6e972cbf3c67844b9066774eb128438, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4539,7 +4544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3092664095264886134, guid: c6e972cbf3c67844b9066774eb128438, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065662390099464324, guid: c6e972cbf3c67844b9066774eb128438, type: 3}
+      propertyPath: stopAction
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
