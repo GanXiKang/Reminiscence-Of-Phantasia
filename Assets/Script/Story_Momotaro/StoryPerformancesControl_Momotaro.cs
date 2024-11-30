@@ -47,6 +47,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     public Sprite miss, nice, perfect, wrong;
     public float _duration = 0.5f;
 
+    [Header("Effects")]
+    public GameObject firework;
+
     //random
     public static int _danceNum = 0;
     int _randomDanceNum;
@@ -319,6 +322,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (_score >= 80)
         {
             BGM.PlayOneShot(win);
+            firework.SetActive(true);
             gameResult.sprite = success;
             StoryInteractableControl_Momotaro.isSuccessfulPerformance = true;
         }
