@@ -567,7 +567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee11b348ea32ea9499e1c877ec6fbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: {fileID: 164130145}
+  smoke: {fileID: 164130145}
+  mist: {fileID: 244304555}
+  nervous: {fileID: 372175288}
 --- !u!1001 &50760632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2283,6 +2285,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 282456823630359976, guid: 2c6b0f86ee1ff984b8d830e8a3a30010, type: 3}
   m_PrefabInstance: {fileID: 244304553}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &244304555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5579045991246634291, guid: 2c6b0f86ee1ff984b8d830e8a3a30010, type: 3}
+  m_PrefabInstance: {fileID: 244304553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329570495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8578433623609224457, guid: badb6509abd20d24191ea332702a3996, type: 3}
@@ -2724,6 +2731,11 @@ PrefabInstance:
 --- !u!4 &372175287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8133830469128018188, guid: 8f72973cf7bf25e4aad6dd234d68bc0d, type: 3}
+  m_PrefabInstance: {fileID: 372175286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &372175288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 200876100588732810, guid: 8f72973cf7bf25e4aad6dd234d68bc0d, type: 3}
   m_PrefabInstance: {fileID: 372175286}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &373410571
