@@ -104,11 +104,13 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             case 1:
             case 6:
                 _danceNum = 1;
+                StoryPlayerAnimator_Momotaro.isMistEF = true;
                 break;
 
             case 2:
             case 7:
                 _danceNum = 2;
+                StoryPlayerAnimator_Momotaro.isMistEF = true;
                 break;
 
             case 3:
@@ -172,6 +174,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             isTiming = false;
             word.sprite = wrong;
             BGM.PlayOneShot(incorrect);
+            StoryPlayerAnimator_Momotaro.isNervousEF = true;
             StartCoroutine(ShowWordUI());
             float randomTime = Random.Range(0.8f, 2f);
             Invoke("StartNewRound", randomTime);
