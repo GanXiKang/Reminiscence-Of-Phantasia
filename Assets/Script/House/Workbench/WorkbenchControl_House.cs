@@ -145,7 +145,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 2:
-                teachUI.SetActive(isTeachHint);
                 toolBoxBG.SetActive(true);
                 //buttonUI.SetActive(true); //未來製作工具時在打開
                 isPaperRotation = true;
@@ -200,6 +199,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         nextImage.SetActive(isNext);
         FinishImage.SetActive(isFinish);
+        teachUI.SetActive(isTeachHint);
 
         for (int p = 1; p < processNum.Length; p++)
         {
