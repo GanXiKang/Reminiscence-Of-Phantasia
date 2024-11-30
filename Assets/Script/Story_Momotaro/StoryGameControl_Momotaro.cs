@@ -46,11 +46,6 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         ExitActive();
         StatueActive();
         NpcActive();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StoryUIControl_Momotaro.isPerformances = true;
-        }    
     }
 
     void ExitActive()
