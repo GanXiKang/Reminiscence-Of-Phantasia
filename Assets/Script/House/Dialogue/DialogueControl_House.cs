@@ -231,6 +231,10 @@ public class DialogueControl_House : MonoBehaviour
                 BGM.PlayOneShot(bell);
                 break;
 
+            case 4:
+                WorkbenchControl_House.isTeachHint = true;
+                break;
+
             case 20:
                 switch (_countEvent)
                 {
@@ -273,10 +277,14 @@ public class DialogueControl_House : MonoBehaviour
         switch (_textCount)
         {
             case 3:
-            case 4:
             case 5:
             case 6:
                 isAutoPlot = false;
+                break;
+
+            case 4:
+                isAutoPlot = false;
+                WorkbenchControl_House.isTeachHint = true;
                 break;
 
             case 9:
