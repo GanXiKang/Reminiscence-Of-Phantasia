@@ -14,8 +14,12 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
     public static bool isFall = false;
 
     [Header("Effects")]
-    public GameObject effects;
-    public static bool isTransform = false;
+    public GameObject smoke;
+    public GameObject mist;
+    public GameObject nervous;
+    public static bool isSmokeEF = false;
+    public static bool isMistEF = false;
+    public static bool isNervousEF = false;
 
     void Start()
     {
@@ -23,6 +27,12 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
     }
 
     void Update()
+    {
+        Animation();
+        Effects();
+    }
+
+    void Animation()
     {
         isHuman = !isDonkey && !isRaccoon && !isParrot;
 
@@ -41,11 +51,23 @@ public class StoryPlayerAnimator_Momotaro : MonoBehaviour
         {
             anim.SetBool("isFall", false);
         }
-
-        if (isTransform)
+    }
+    void Effects()
+    {
+        if (isSmokeEF)
         {
-            effects.SetActive(true);
-            isTransform = false;
+            smoke.SetActive(true);
+            isSmokeEF = false;
+        }
+        if (isMistEF)
+        {
+            mist.SetActive(true);
+            isMistEF = false;
+        }
+        if (isNervousEF)
+        {
+            nervous.SetActive(true);
+            isNervousEF = false;
         }
     }
 }
