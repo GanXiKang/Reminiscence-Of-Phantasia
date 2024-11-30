@@ -20,6 +20,7 @@ public class GameControl_StartMovie : MonoBehaviour
     void Update()
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
+        audioSource.volume = SettingControl.volumeBGM;
     }
 
     void OnVideoEnd(VideoPlayer vp)
