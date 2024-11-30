@@ -40,7 +40,6 @@ public class GameControl_StartMovie : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        videoPlayer.Stop();
         TransitionUIControl.isTransitionUIAnim_In = true;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(1);
