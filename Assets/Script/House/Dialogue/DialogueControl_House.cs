@@ -285,6 +285,7 @@ public class DialogueControl_House : MonoBehaviour
             case 4:
                 isAutoPlot = false;
                 WorkbenchControl_House.isTeachHint = false;
+                print(WorkbenchControl_House.isTeachHint);
                 break;
 
             case 9:
