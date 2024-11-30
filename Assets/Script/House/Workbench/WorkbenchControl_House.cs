@@ -54,8 +54,10 @@ public class WorkbenchControl_House : MonoBehaviour
     
     [Header("Step2")]
     public GameObject scissors;
+    public GameObject teachUI;
     public GameObject[] paperOut;
     public static bool isFinishCut = false;
+    public static bool isTeachHint = false;
     bool isPaperRotation = false;
     float _rotationSpeed = 90f;
     float _rotation = 0;
@@ -143,6 +145,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 2:
+                teachUI.SetActive(isTeachHint);
                 toolBoxBG.SetActive(true);
                 //buttonUI.SetActive(true); //未來製作工具時在打開
                 isPaperRotation = true;
