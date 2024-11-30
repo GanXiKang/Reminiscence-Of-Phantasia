@@ -568,8 +568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoke: {fileID: 164130145}
-  mist: {fileID: 244304555}
-  nervous: {fileID: 372175288}
+  mist: {fileID: 372175288}
+  nervous: {fileID: 244304555}
 --- !u!1001 &50760632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2261,11 +2261,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838046617692807343, guid: 2c6b0f86ee1ff984b8d830e8a3a30010, type: 3}
       propertyPath: lengthInSec
-      value: 1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838046617692807343, guid: 2c6b0f86ee1ff984b8d830e8a3a30010, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1838046617692807343, guid: 2c6b0f86ee1ff984b8d830e8a3a30010, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5579045991246634291, guid: 2c6b0f86ee1ff984b8d830e8a3a30010, type: 3}
       propertyPath: m_IsActive
@@ -2718,6 +2722,14 @@ PrefabInstance:
     - target: {fileID: 8997456134848071151, guid: 8f72973cf7bf25e4aad6dd234d68bc0d, type: 3}
       propertyPath: lengthInSec
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997456134848071151, guid: 8f72973cf7bf25e4aad6dd234d68bc0d, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997456134848071151, guid: 8f72973cf7bf25e4aad6dd234d68bc0d, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8997456134848071151, guid: 8f72973cf7bf25e4aad6dd234d68bc0d, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
