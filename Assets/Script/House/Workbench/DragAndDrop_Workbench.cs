@@ -15,6 +15,9 @@ public class DragAndDrop_Workbench : MonoBehaviour
     private bool isDragging = false;
     private bool isFixed = false;
 
+    [Header("Effects")]
+    public GameObject starEF;
+
     void Start()
     {
         boxC = GetComponent<BoxCollider>();
@@ -63,6 +66,7 @@ public class DragAndDrop_Workbench : MonoBehaviour
                     transform.position = targetPosition.position;
                     transform.rotation = targetPosition.rotation;
                     WorkbenchControl_House.isFinishStoryBook = true;
+                    starEF.SetActive(true);
                     isFixed = true;
                 }
             }

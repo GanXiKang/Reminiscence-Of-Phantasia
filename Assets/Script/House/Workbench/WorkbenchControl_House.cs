@@ -69,6 +69,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Step4")]
     public Transform storyBookPoint;
     public GameObject[] storyBook;
+    public GameObject naniEF;
     public static bool isFinishStoryBook = false;
     bool isPaperAdjustScale;
 
@@ -604,6 +605,7 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
+        naniEF.SetActive(true);
         CameraControl_House.isLookPlayer = true;
         PlayerControl_House.isHappy = true;
         yield return new WaitForSeconds(3.5f);
