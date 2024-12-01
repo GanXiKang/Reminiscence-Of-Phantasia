@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class StoreControl_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip leave, back, comfirm, buy, info;
+
     [Header("UI")]
     public GameObject[] storeUI;
     public GameObject[] contentUI;
