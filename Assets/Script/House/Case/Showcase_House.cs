@@ -66,7 +66,7 @@ public class Showcase_House : MonoBehaviour
                     paper[_storyBookPaperNum[_showNum + 1]].transform.position = storyBookPoint[i + 1].transform.position;
                     paper[_storyBookPaperNum[_showNum + 1]].transform.rotation = storyBookPoint[i + 1].transform.rotation;
                 }
-                Invoke("WaitOpenBookPaper", 1.6f);
+                Invoke("WaitOpenBookPaper", 1.5f);
             }
             else
             {
