@@ -7,7 +7,7 @@ public class StoreControl_House : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip leave, back, comfirm, buy, info;
+    public AudioClip leave, back, comfirm, info, buy;
 
     [Header("UI")]
     public GameObject[] storeUI;
@@ -102,6 +102,7 @@ public class StoreControl_House : MonoBehaviour
 
     public void Button_Product(int _product)
     {
+        BGM.PlayOneShot(comfirm);
         if (isHomePageActive)
         {
             _productCoin = 0;
@@ -140,6 +141,7 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Content(int _content)
     {
+        BGM.PlayOneShot(comfirm);
         if (contentUI[1].activeSelf)
         {
             switch (_content)
@@ -152,6 +154,7 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Info(int _num)
     {
+        BGM.PlayOneShot(info);
         if (contentUI[1].activeSelf)
         {
             switch (_num)
@@ -173,6 +176,7 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Buy()
     {
+        BGM.PlayOneShot(buy);
         isBuy = true;
         _MyCoin -= _productCoin;
         CatControl_House.isHappy = true;
@@ -181,6 +185,7 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Back()
     {
+        BGM.PlayOneShot(back);
         isHomePageActive = true;
         isContentActive = false;
         CatControl_House.isBag_On = true;
@@ -193,6 +198,7 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
+        BGM.PlayOneShot(leave);
         if (GameControl_House._storyNum != 0)
         {
             CatControl_House.isBye = true;
