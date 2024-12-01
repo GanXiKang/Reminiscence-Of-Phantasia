@@ -150,9 +150,11 @@ public class InteractableControl_House : MonoBehaviour
                         {
                             isBookcasePlotOnce = false;
                             BookcaseControl_House._bookNum = GameControl_House._storyNum;
+                            BookcaseControl_House.bookActive[GameControl_House._storyNum] = true;
                             switch (GameControl_House._storyNum)
                             {
                                 case 0:
+                                    
                                     UIControl_House.isDialogue = true;
                                     DialogueControl_House.isCatTalk = true;
                                     DialogueControl_House._textCount = 23;
