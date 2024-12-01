@@ -29,10 +29,12 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 if (isUse)
                 {
                     Cursor.SetCursor(stamp2, hotSpot, CursorMode.Auto);
+                    print("11");
                 }
                 else
                 {
                     Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
+                    print("1");
                 }
 
                 if (Input.GetMouseButtonDown(0))
@@ -82,10 +84,12 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 if (isUse)
                 {
                     Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
+                    print("33");
                 }
                 else
                 {
                     Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
+                    print("3");
                 }
 
                 if (Input.GetMouseButtonDown(0))
@@ -99,10 +103,12 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 if (isUse)
                 {
                     Cursor.SetCursor(glue2, hotSpot, CursorMode.Auto);
+                    print("44");
                 }
                 else
                 {
                     Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
+                    print("4");
                 }
 
                 if (Input.GetMouseButton(0))
