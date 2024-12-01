@@ -284,7 +284,7 @@ public class DialogueControl_House : MonoBehaviour
 
             case 4:
                 isAutoPlot = false;
-                WorkbenchControl_House.isTeachHint = false;
+                Invoke("WaitBlackScreenEvent", 3f);
                 break;
 
             case 9:
@@ -337,6 +337,10 @@ public class DialogueControl_House : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 4:
+                WorkbenchControl_House.isTeachHint = false;
+                break;
+
             case 20:
                 InteractableControl_House.isCatSeeWorkbench = true;
                 InteractableControl_House.isColliderActive[1] = true;

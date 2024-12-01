@@ -157,6 +157,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 break;
 
             case 3:
+                isTeachHint = false;
                 colorUI.SetActive(true);
                 if (GameControl_House._storyNum == 0)
                 {
