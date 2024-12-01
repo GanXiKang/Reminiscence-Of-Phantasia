@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class DontDestoryControl_House : MonoBehaviour
 {
-    // Start is called before the first frame update
+    static DontDestroyOnLoadControl instance;
+
     void Start()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (this != instance)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        //if ()
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }
