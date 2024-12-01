@@ -14,6 +14,7 @@ public class BookcaseControl_House : MonoBehaviour
     public Transform[] bookMovePos;
     public Transform[] originalPoint;
     public static bool[] bookActive;
+    public static bool isNewBookActive = false;
     public static int _bookActiveNum = 0;
     public static int _bookNum = 0;
 
@@ -39,6 +40,23 @@ public class BookcaseControl_House : MonoBehaviour
     void Start()
     {
         bookActive = new bool[book.Length];
+    }
+
+    void Update()
+    {
+        bookUI.SetActive(CameraControl_House.isLookBookcase);
+
+        BookActive();
+        OpenBookcase();
+        NextStoryBook();
+        MoveStoryBook();
+    }
+
+    void BookActive()
+    {
+        if (!isNewBookActive) return;
+
+        isNewBookActive = false;
         for (int a = 0; a < bookActive.Length; a++)
         {
             if (bookActive[a])
@@ -48,16 +66,6 @@ public class BookcaseControl_House : MonoBehaviour
             }
         }
     }
-
-    void Update()
-    {
-        bookUI.SetActive(CameraControl_House.isLookBookcase);
-
-        OpenBookcase();
-        NextStoryBook();
-        MoveStoryBook();
-    }
-
     void OpenBookcase()
     {
         if (!CameraControl_House.isLookBookcase) return;
