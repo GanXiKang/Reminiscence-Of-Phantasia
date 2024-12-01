@@ -39,7 +39,13 @@ public class BookcaseControl_House : MonoBehaviour
 
     void Start()
     {
-        isNewBookActive = true;
+        for (int a = 0; a < bookActive.Length; a++)
+        {
+            if (bookActive[a])
+            {
+                book[a].SetActive(true);
+            }
+        }
     }
 
     void Update()
