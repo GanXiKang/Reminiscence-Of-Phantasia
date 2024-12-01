@@ -7,7 +7,7 @@ public class InteractableControl_House : MonoBehaviour
 {    
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip interact;
+    public AudioClip interact, bed;
 
     [Header("InteractableUI")]
     public GameObject interactableUI;
@@ -134,6 +134,7 @@ public class InteractableControl_House : MonoBehaviour
                         break;
 
                     case 3:
+                        BGM.PlayOneShot(bed);
                         isColliderActive[3] = false;
                         CameraControl_House.isFreeLook = false;
                         CameraControl_House.isLookBed = true;
