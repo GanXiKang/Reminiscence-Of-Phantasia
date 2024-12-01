@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 39446136}
   - component: {fileID: 39446140}
   - component: {fileID: 39446139}
+  - component: {fileID: 39446141}
   - component: {fileID: 39446138}
   - component: {fileID: 39446137}
   m_Layer: 0
@@ -664,6 +665,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &39446141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39446135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers:
+  - {fileID: 1381404375}
+  - {fileID: 637856829}
+  - {fileID: 1180860961}
+  - {fileID: 630652593}
+  - {fileID: 2107711745}
+  loadDirectory: PaperPudding
 --- !u!1 &39658693
 GameObject:
   m_ObjectHideFlags: 0
@@ -12149,6 +12169,7 @@ GameObject:
   - component: {fileID: 499848120}
   - component: {fileID: 499848124}
   - component: {fileID: 499848123}
+  - component: {fileID: 499848125}
   - component: {fileID: 499848122}
   - component: {fileID: 499848121}
   m_Layer: 0
@@ -12270,6 +12291,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &499848125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499848119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers: []
+  loadDirectory: 
 --- !u!1 &502187512
 GameObject:
   m_ObjectHideFlags: 0
@@ -13976,6 +14011,7 @@ GameObject:
   - component: {fileID: 571010004}
   - component: {fileID: 571010008}
   - component: {fileID: 571010007}
+  - component: {fileID: 571010009}
   - component: {fileID: 571010006}
   - component: {fileID: 571010005}
   m_Layer: 0
@@ -14097,6 +14133,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &571010009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571010003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers: []
+  loadDirectory: 
 --- !u!1 &574399486
 GameObject:
   m_ObjectHideFlags: 0
@@ -15656,6 +15706,7 @@ GameObject:
   - component: {fileID: 642744327}
   - component: {fileID: 642744331}
   - component: {fileID: 642744330}
+  - component: {fileID: 642744332}
   - component: {fileID: 642744329}
   - component: {fileID: 642744328}
   m_Layer: 0
@@ -15771,6 +15822,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &642744332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642744326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers:
+  - {fileID: 1186666192}
+  - {fileID: 1647344350}
+  - {fileID: 927947014}
+  - {fileID: 1417880651}
+  - {fileID: 965978002}
+  loadDirectory: PaperJapaneseBoat
 --- !u!1 &645830662
 GameObject:
   m_ObjectHideFlags: 0
@@ -19781,6 +19851,7 @@ GameObject:
   - component: {fileID: 822938719}
   - component: {fileID: 822938723}
   - component: {fileID: 822938722}
+  - component: {fileID: 822938724}
   - component: {fileID: 822938721}
   - component: {fileID: 822938720}
   m_Layer: 0
@@ -19894,6 +19965,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &822938724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822938718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers: []
+  loadDirectory: 
 --- !u!1 &828239000
 GameObject:
   m_ObjectHideFlags: 0
@@ -20992,6 +21077,7 @@ GameObject:
   - component: {fileID: 873783109}
   - component: {fileID: 873783113}
   - component: {fileID: 873783112}
+  - component: {fileID: 873783114}
   - component: {fileID: 873783111}
   - component: {fileID: 873783110}
   m_Layer: 0
@@ -21121,6 +21207,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &873783114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873783108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers: []
+  loadDirectory: 
 --- !u!1001 &875784959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28038,7 +28138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6e4f9e87922641544b29bf5b2306ab35, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2533248727816222106, guid: 6e4f9e87922641544b29bf5b2306ab35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31964,6 +32064,7 @@ GameObject:
   - component: {fileID: 1216144983}
   - component: {fileID: 1216144987}
   - component: {fileID: 1216144986}
+  - component: {fileID: 1216144988}
   - component: {fileID: 1216144985}
   - component: {fileID: 1216144984}
   m_Layer: 0
@@ -32077,6 +32178,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1216144988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216144982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers: []
+  loadDirectory: 
 --- !u!1 &1218222175
 GameObject:
   m_ObjectHideFlags: 0
@@ -33558,6 +33673,7 @@ GameObject:
   - component: {fileID: 1271196685}
   - component: {fileID: 1271196689}
   - component: {fileID: 1271196688}
+  - component: {fileID: 1271196690}
   - component: {fileID: 1271196687}
   - component: {fileID: 1271196686}
   m_Layer: 0
@@ -33671,6 +33787,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1271196690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271196684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers: []
+  loadDirectory: 
 --- !u!1 &1275040576
 GameObject:
   m_ObjectHideFlags: 0
@@ -33892,6 +34022,7 @@ MonoBehaviour:
   - {fileID: 700032843}
   colorUI: {fileID: 418946787}
   storyBookPoint: {fileID: 1635740524}
+  originalPoint: {fileID: 1410833727}
   storyBook:
   - {fileID: 426732115}
   - {fileID: 2108493105}
@@ -33919,7 +34050,7 @@ MonoBehaviour:
   - {fileID: 1103959791}
   - {fileID: 1802121602}
   showPoint: {fileID: 595292080}
-  originalPoint: {fileID: 763708755}
+  originalPoint: {fileID: 1410833727}
   storyBookPoint:
   - {fileID: 1198284936}
   - {fileID: 48564643}
@@ -47782,7 +47913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e58efd744eb269b40b25056628198c2f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1119468588972886228, guid: e58efd744eb269b40b25056628198c2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -50977,6 +51108,7 @@ GameObject:
   - component: {fileID: 1980846679}
   - component: {fileID: 1980846683}
   - component: {fileID: 1980846682}
+  - component: {fileID: 1980846684}
   - component: {fileID: 1980846681}
   - component: {fileID: 1980846680}
   m_Layer: 0
@@ -51106,6 +51238,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1980846684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980846678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers:
+  - {fileID: 1784907634}
+  - {fileID: 953486877}
+  - {fileID: 1332650291}
+  - {fileID: 95996822}
+  - {fileID: 1416675976}
+  - {fileID: 534581824}
+  - {fileID: 288061173}
+  - {fileID: 961350277}
+  - {fileID: 667780473}
+  - {fileID: 1460354679}
+  - {fileID: 585188863}
+  - {fileID: 213013915}
+  loadDirectory: PaperStrawberryPie
 --- !u!1 &1984782547
 GameObject:
   m_ObjectHideFlags: 0
@@ -51756,6 +51914,7 @@ GameObject:
   - component: {fileID: 2028123345}
   - component: {fileID: 2028123349}
   - component: {fileID: 2028123348}
+  - component: {fileID: 2028123350}
   - component: {fileID: 2028123347}
   - component: {fileID: 2028123346}
   m_Layer: 0
@@ -51877,6 +52036,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2028123350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028123344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers:
+  - {fileID: 1313439003}
+  - {fileID: 993375893}
+  - {fileID: 1579496244}
+  - {fileID: 1562675430}
+  - {fileID: 1902153004}
+  - {fileID: 766057375}
+  - {fileID: 664048327}
+  - {fileID: 238308232}
+  loadDirectory: PaperRoastTurkey
 --- !u!1001 &2028915777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52064,6 +52245,7 @@ GameObject:
   - component: {fileID: 2030628452}
   - component: {fileID: 2030628456}
   - component: {fileID: 2030628455}
+  - component: {fileID: 2030628457}
   - component: {fileID: 2030628454}
   - component: {fileID: 2030628453}
   m_Layer: 0
@@ -52177,6 +52359,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2030628457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030628451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d277abc19fc942bb6556d2c8e77b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRenderers:
+  - {fileID: 1500962618}
+  - {fileID: 1403986423}
+  - {fileID: 2093284107}
+  - {fileID: 2028915780}
+  loadDirectory: PaperTeach
 --- !u!1 &2032660023
 GameObject:
   m_ObjectHideFlags: 0
@@ -54352,7 +54552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2cece670ecdd6e14fb79fc80c10def3b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2476868885046077849, guid: 2cece670ecdd6e14fb79fc80c10def3b, type: 3}
       propertyPath: m_Materials.Array.data[0]
