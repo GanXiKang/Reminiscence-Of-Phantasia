@@ -8,6 +8,7 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip use, stick, choose, open, finish;
+    public AudioClip openBook, closeBook;
     bool isOnce;
 
     [Header("ProcessObject")]
@@ -171,6 +172,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 isOnce = true;
                 storyBook[GameControl_House._storyNum].transform.position = storyBookPoint.position;
                 storyBook[GameControl_House._storyNum].transform.rotation = storyBookPoint.rotation;
+                BGM.PlayOneShot(openBook);
                 storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", true);
                 colorUI.SetActive(false);
                 if (GameControl_House._storyNum == 0)
@@ -605,6 +607,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     IEnumerator LeaveWorkbench()
     {
+        BGM.PlayOneShot(closeBook);
         storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", false);
         yield return new WaitForSeconds(0.5f);
         paper[_paperNum].SetActive(false);
