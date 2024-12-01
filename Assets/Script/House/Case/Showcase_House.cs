@@ -6,7 +6,7 @@ public class Showcase_House : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip onClick;
+    public AudioClip onClick, openBook;
 
     [Header("StoryBook")]
     public GameObject[] storyBook;
@@ -69,6 +69,7 @@ public class Showcase_House : MonoBehaviour
             {
                 storyBook[i].transform.position = showPoint.position;
                 storyBook[i].transform.rotation = showPoint.rotation;
+                BGM.PlayOneShot(openBook);
                 storyBook[i].GetComponent<Animator>().SetBool("isOpen", true);
                 paper[_storyBookPaperNum[_showNum]].transform.position = storyBookPoint[i].transform.position;
                 paper[_storyBookPaperNum[_showNum]].transform.rotation = storyBookPoint[i].transform.rotation;
