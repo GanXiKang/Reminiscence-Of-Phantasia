@@ -149,6 +149,7 @@ public class InteractableControl_House : MonoBehaviour
                         if (isBookcasePlotOnce)
                         {
                             isBookcasePlotOnce = false;
+                            BookcaseControl_House._bookNum = GameControl_House._storyNum;
                             switch (GameControl_House._storyNum)
                             {
                                 case 0:
