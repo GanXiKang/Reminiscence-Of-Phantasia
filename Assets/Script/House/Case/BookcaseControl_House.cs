@@ -103,22 +103,8 @@ public class BookcaseControl_House : MonoBehaviour
         if (isNext || isBack || isForward || isBackward) return;
         if (bookContent.activeSelf) return;
 
-        if (_bookNum == 0)
-        {
-            bookButton[2].SetActive(false);
-        }
-        else
-        {
-            bookButton[2].SetActive(true);
-        }
-        if (_bookNum == _bookActiveNum - 1)
-        {
-            bookButton[3].SetActive(false);
-        }
-        else
-        {
-            bookButton[3].SetActive(true);
-        }
+        bookButton[2].SetActive(_bookNum != 0);
+        bookButton[3].SetActive(_bookNum != _bookActiveNum - 1);
 
         if (Input.GetKeyDown(KeyCode.A)) //…œ“ª±æ
         {
