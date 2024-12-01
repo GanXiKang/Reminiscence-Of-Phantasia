@@ -13,6 +13,7 @@ public class BookcaseControl_House : MonoBehaviour
     public GameObject[] book;
     public Transform[] bookMovePos;
     public Transform[] originalPoint;
+    public static bool[] bookActive;
     public static int _bookNum = 0;
 
     //Move
@@ -34,6 +35,16 @@ public class BookcaseControl_House : MonoBehaviour
     //Plot
     bool isEntrustCome = true;
 
+    void Awake()
+    {
+        print("ok");
+    }
+
+    void Start()
+    {
+        print("hhh");
+    }
+
     void Update()
     {
         bookUI.SetActive(CameraControl_House.isLookBookcase);
@@ -50,8 +61,11 @@ public class BookcaseControl_House : MonoBehaviour
 
         isOpen = true;
         bookButton[0].SetActive(true);
-        bookButton[1].SetActive(GameControl_House._storyNum > 0);
         bookContent.SetActive(false);
+        for (int i = 1; i < bookButton.Length; i++)
+        {
+            bookButton[i].SetActive(GameControl_House._storyNum > 0);
+        }
         for (int b = 0; b < book.Length; b++)
         {
             if (b == _bookNum)
