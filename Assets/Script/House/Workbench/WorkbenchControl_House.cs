@@ -17,16 +17,14 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isStartProcess = true;
 
     [Header("Paper")]
-    //public GameObject[] paper;
-    //int _paperNum = 0;
+    public GameObject[] paper;
+    int _paperNum = 0;
 
     [Header("WorkbenchUI")]
     public GameObject workbenchUI;
     public GameObject[] processNum;
     public GameObject nextImage;
     public GameObject FinishImage;
-    GameObject[] paper = new GameObject[11];
-    int _paperNum = 0;
     bool isNext = false;
     bool isFinish = false;
 
@@ -81,22 +79,6 @@ public class WorkbenchControl_House : MonoBehaviour
     void Start()
     {
         Process();
-        FindPaper();
-    }
-
-    void FindPaper()
-    {
-        paper[0] = GameObject.Find("teach");
-        paper[1] = GameObject.Find("1_RoastTurkey");
-        paper[2] = GameObject.Find("2_Pudding");
-        paper[3] = GameObject.Find("3_StrawberryPie");
-        paper[4] = GameObject.Find("4_JapaneseBoat");
-        paper[5] = GameObject.Find("5_Canoe");
-        paper[6] = GameObject.Find("6_BananaBoat");
-        paper[7] = GameObject.Find("7_PrinceSwallow");
-        paper[8] = GameObject.Find("8_Flowers");
-        paper[9] = GameObject.Find("9_Fountain");
-        paper[10] = GameObject.Find("10_Artwork");
     }
 
     void Update()
