@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class DoorControl_House : MonoBehaviour
 {
-    [Header("Door")]
-    public GameObject door;
-    public static bool isLeave = false;
-
     [Header("LoadingVideo")]
     public GameObject loadingUI;
     public GameObject entrustVideo;
@@ -21,6 +17,7 @@ public class DoorControl_House : MonoBehaviour
     public GameObject cat;
     public static bool isBird = false;
     public static bool isCat = false;
+    public static bool isLeave = false;
 
     void Update()
     {
