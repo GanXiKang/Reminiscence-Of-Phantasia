@@ -53,6 +53,8 @@ public class Showcase_House : MonoBehaviour
         {
             if (i == _showNum)
             {
+                LoadPaperColor_Workbench.isLoad = true;
+                PaperEffectsControl_Workbench.isShowDestoryPaperOut = true;
                 storyBook[i].transform.position = showPoint.position;
                 storyBook[i].transform.rotation = showPoint.rotation;
                 BGM.PlayOneShot(openBook);
