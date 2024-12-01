@@ -54,11 +54,6 @@ public class SettingControl : MonoBehaviour
             Close_Button();
         }
 
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            FullScreen(!isFullS);
-        }
-
         if (!isOperate)
         {
             background.sprite = settingPage;
