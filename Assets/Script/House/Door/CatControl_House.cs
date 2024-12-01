@@ -12,6 +12,10 @@ public class CatControl_House : MonoBehaviour
     public static bool isBag = false;
     public static bool isBag_On = false;
 
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip bye, call;
+
     [Header("Point")]
     public Transform[] plotPoint;
     public static int _goPointNum = 0;
@@ -32,6 +36,7 @@ public class CatControl_House : MonoBehaviour
     {
         if (isHappy)
         {
+            BGM.PlayOneShot(call);
             anim.SetBool("isHappy", true);
             Invoke("FalseByAnimation", 0.2f);
             isHappy = false;
@@ -46,12 +51,14 @@ public class CatControl_House : MonoBehaviour
         }
         if (isBye)
         {
+            BGM.PlayOneShot(bye);
             anim.SetBool("isBye", true);
             Invoke("FalseByAnimation", 0.2f);
             isBye = false;
         }
         if (isBag)
         {
+            BGM.PlayOneShot(call);
             anim.SetBool("isBag", true);
             isBag = false;
         }
