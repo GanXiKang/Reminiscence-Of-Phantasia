@@ -6,14 +6,28 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
 {
     public GameObject[] paperOut;
     public GameObject[] paperOutEffects;
+    public static bool isShowDestoryPaperOut = false;
     bool isOnce = true;
+
 
     void Update()
     {
+        Showcase();
         PaperOutEffectsStart();
         PaperOutEffectsActive();
     }
 
+    void Showcase()
+    {
+        if (!isShowDestoryPaperOut) return;
+
+        for (int i = 0; i < paperOut.Length; i++)
+        {
+            if (paperOut[i].activeSelf)
+                Destroy(paperOut[i]);
+        }
+        isShowDestoryPaperOut = false;
+    }
     void PaperOutEffectsStart()
     {
         if (WorkbenchControl_House._process != 2) return;
@@ -39,5 +53,4 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
             Destroy(effect);
         }
     }
-
 }
