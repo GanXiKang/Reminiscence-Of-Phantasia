@@ -106,24 +106,27 @@ public class BookcaseControl_House : MonoBehaviour
         bookButton[2].SetActive(_bookNum != 0);
         bookButton[3].SetActive(_bookNum != _bookActiveNum - 1);
 
-        if (Input.GetKeyDown(KeyCode.A)) //上一本
+        if (GameControl_House._storyNum > 0)
         {
-            if (_bookNum != 0)
+            if (Input.GetKeyDown(KeyCode.A)) //上一本
             {
-                BGM.PlayOneShot(onClick);
-                _bookNum--;
-                isBack = true;
-                bookButton[1].SetActive(false);
+                if (_bookNum != 0)
+                {
+                    BGM.PlayOneShot(onClick);
+                    _bookNum--;
+                    isBack = true;
+                    bookButton[1].SetActive(false);
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.D)) //下一本
-        {
-            if (_bookNum < book.Length - 1)
+            if (Input.GetKeyDown(KeyCode.D)) //下一本
             {
-                BGM.PlayOneShot(onClick);
-                _bookNum++;
-                isNext = true;
-                bookButton[1].SetActive(false);
+                if (_bookNum < book.Length - 1)
+                {
+                    BGM.PlayOneShot(onClick);
+                    _bookNum++;
+                    isNext = true;
+                    bookButton[1].SetActive(false);
+                }
             }
         }
     }
