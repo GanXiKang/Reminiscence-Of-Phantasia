@@ -32,8 +32,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 }
                 else
                 {
-                    //Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
-                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
                 }
 
                 if (Input.GetMouseButtonDown(0))
