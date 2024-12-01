@@ -71,6 +71,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("Step4")]
     public Transform storyBookPoint;
+    public Transform originalPoint;
     public GameObject[] storyBook;
     public GameObject naniEF;
     public static bool isFinishStoryBook = false;
@@ -626,6 +627,8 @@ public class WorkbenchControl_House : MonoBehaviour
         CameraControl_House.isLookWorkbench = false;
         PlayerControl_House.isHappy = false;
         InteractableControl_House.isColliderActive[1] = false;
+        storyBook[GameControl_House._storyNum].transform.position = originalPoint.position;
+        storyBook[GameControl_House._storyNum].transform.rotation = originalPoint.rotation;
         yield return new WaitForSeconds(0.5f);
         UIAboveObject_House.isAboveWorkbench = false;
         switch (GameControl_House._storyNum)
