@@ -64,12 +64,9 @@ public class BookcaseControl_House : MonoBehaviour
         if (isOpen) return;
 
         isOpen = true;
-        bookButton[0].SetActive(true);
         bookContent.SetActive(false);
-        for (int i = 1; i < bookButton.Length; i++)
-        {
-            bookButton[i].SetActive(GameControl_House._storyNum > 0);
-        }
+        bookButton[0].SetActive(true);
+        bookButton[1].SetActive(GameControl_House._storyNum > 0);
         for (int b = 0; b < book.Length; b++)
         {
             if (b == _bookNum)
