@@ -44,7 +44,7 @@ public class Showcase_House : MonoBehaviour
         {
             buttonA.SetActive(true);
         }
-        if (_showNum == storyBook.Length - 1)
+        if (_showNum == BookcaseControl_House._bookActiveNum - 1)
         {
             buttonD.SetActive(false);
         }
