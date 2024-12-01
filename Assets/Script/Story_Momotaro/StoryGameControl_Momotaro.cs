@@ -36,6 +36,12 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject parrot;
     public static bool isParrotActive = false;
 
+    [Header("Texture")]
+    public Texture2D mouse1;
+    public Texture2D mouse2;
+    public Vector2 hotSpot = Vector2.zero;
+    bool isClick = false;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -46,6 +52,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         ExitActive();
         StatueActive();
         NpcActive();
+        MouseCursor();
     }
 
     void ExitActive()
@@ -81,5 +88,26 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         {
             donkey.SetActive(true);
         }
+    }
+    void MouseCursor()
+    {
+        if (isClick)
+        {
+            Cursor.SetCursor(mouse2, hotSpot, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(mouse1, hotSpot, CursorMode.Auto);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isClick = true;
+            Invoke("FalseisClick", 0.5f);
+        }
+    }
+    void FalseisClick()
+    {
+        isClick = false;
     }
 }
