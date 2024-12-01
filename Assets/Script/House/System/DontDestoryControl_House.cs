@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DontDestoryControl_House : MonoBehaviour
 {
-    static DontDestroyOnLoadControl instance;
+    static DontDestoryControl_House instance;
 
     void Start()
     {
