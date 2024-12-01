@@ -8,21 +8,6 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
     public GameObject[] paperOutEffects;
     bool isOnce = true;
 
-    private static PaperEffectsControl_Workbench instance;
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void Update()
     {
         PaperOutEffectsStart();
