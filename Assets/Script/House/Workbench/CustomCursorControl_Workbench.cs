@@ -5,8 +5,8 @@ using UnityEngine;
 public class CustomCursorControl_Workbench : MonoBehaviour
 {
     [Header("Texture")]
-    public Texture2D stamp1;
-    public Texture2D stamp2;
+    public Texture2D stampA;
+    public Texture2D stampB;
     public Texture2D scissors1;
     public Texture2D scissors2;
     public Texture2D pencil1;
@@ -28,11 +28,11 @@ public class CustomCursorControl_Workbench : MonoBehaviour
             case 1:
                 if (isUse)
                 {
-                    Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
+                    Cursor.SetCursor(stampB, hotSpot, CursorMode.Auto);
                 }
                 else
                 {
-                    Cursor.SetCursor(stamp2, hotSpot, CursorMode.Auto);
+                    Cursor.SetCursor(stampA, hotSpot, CursorMode.Auto);
                 }
 
                 if (Input.GetMouseButtonDown(0))
