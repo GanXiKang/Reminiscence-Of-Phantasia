@@ -35,14 +35,24 @@ public class BookcaseControl_House : MonoBehaviour
     //Plot
     bool isEntrustCome = true;
 
-    void Awake()
-    {
-        print("ok");
-    }
-
     void Start()
     {
-        print("hhh");
+        bookActive = new bool[book.Length];
+        for (int a = 0; a < bookActive.Length; a++)
+        {
+            if (bookActive[a])
+            {
+                print("true");
+            }
+            else if (bookActive[a])
+            {
+                print("false");
+            }
+            else
+            {
+                print("null");
+            }
+        }
     }
 
     void Update()
