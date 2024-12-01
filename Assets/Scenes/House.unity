@@ -26570,6 +26570,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5589c88e945c7d941b9edd662e2de4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 437453298}
+  leave: {fileID: 8300000, guid: c016f8775ccb10b4caa426b4553ca62a, type: 3}
+  back: {fileID: 8300000, guid: 7702022aa894f814b82b3b3ed13428a9, type: 3}
+  comfirm: {fileID: 8300000, guid: ee22ffc7408123d4a9c788a17d676dff, type: 3}
+  info: {fileID: 8300000, guid: dc6eb4cfe10262246b433befcdfd3457, type: 3}
+  buy: {fileID: 8300000, guid: e0c487dabf8fb0e4eab6471cd85a9433, type: 3}
   storeUI:
   - {fileID: 971938934}
   - {fileID: 647264950}
@@ -34022,7 +34028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245f8f0a9c67254087be12bfe9b860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
   loadingUI: {fileID: 872759458}
   entrustVideo: {fileID: 1075027521}
   storeVideo: {fileID: 226880567}
