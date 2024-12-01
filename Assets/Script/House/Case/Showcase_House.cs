@@ -36,22 +36,8 @@ public class Showcase_House : MonoBehaviour
     void UIActive()
     {
         showcaseUI.SetActive(CameraControl_House.isLookShowcase);
-        if (_showNum == 0)
-        {
-            buttonA.SetActive(false);
-        }
-        else
-        {
-            buttonA.SetActive(true);
-        }
-        if (_showNum == BookcaseControl_House._bookActiveNum - 1)
-        {
-            buttonD.SetActive(false);
-        }
-        else
-        {
-            buttonD.SetActive(true);
-        }
+        buttonA.SetActive(_showNum != 0);
+        buttonD.SetActive(_showNum != BookcaseControl_House._bookActiveNum - 1);
     }
     void FirstShowcase()
     {
