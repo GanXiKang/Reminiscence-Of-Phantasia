@@ -33,6 +33,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 else
                 {
                     Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
+                    print("1");
                 }
 
                 if (Input.GetMouseButtonDown(0))
@@ -86,6 +87,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                 else
                 {
                     Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
+                    print("2");
                 }
 
                 if (Input.GetMouseButtonDown(0))
