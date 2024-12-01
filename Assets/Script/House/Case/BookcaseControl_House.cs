@@ -13,7 +13,7 @@ public class BookcaseControl_House : MonoBehaviour
     public GameObject[] book;
     public Transform[] bookMovePos;
     public Transform[] originalPoint;
-    public static bool[] bookActive;
+    public static bool[] bookActive = new bool[4];
     public static bool isNewBookActive = false;
     public static int _bookActiveNum = 0;
     public static int _bookNum = 0;
@@ -39,7 +39,7 @@ public class BookcaseControl_House : MonoBehaviour
 
     void Start()
     {
-        bookActive = new bool[book.Length];
+        isNewBookActive = true;
     }
 
     void Update()
