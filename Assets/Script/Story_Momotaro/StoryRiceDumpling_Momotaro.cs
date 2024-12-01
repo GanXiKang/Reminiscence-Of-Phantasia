@@ -128,6 +128,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public void Button_RaccoonSkill()
     {
         BGM.PlayOneShot(stone);
+        StoryPlayerAnimator_Momotaro.isSmokeEF = true;
         StoryPlayerAnimator_Momotaro.isStone = !StoryPlayerAnimator_Momotaro.isStone;
         stoneButton.SetActive(!StoryPlayerAnimator_Momotaro.isStone);
         notStoneButton.SetActive(StoryPlayerAnimator_Momotaro.isStone);
