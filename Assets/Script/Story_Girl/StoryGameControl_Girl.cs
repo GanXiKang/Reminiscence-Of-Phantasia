@@ -84,8 +84,12 @@ public class StoryGameControl_Girl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isClick = true;
-            Invoke("FalseisUse", 0.5f);
+            Invoke("FalseisClick", 0.5f);
         }
+    }
+    void FalseisClick()
+    {
+        isClick = false;
     }
 
     IEnumerator ResurrectionState()
