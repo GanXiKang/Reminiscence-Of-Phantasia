@@ -7,11 +7,15 @@ public class LoadPaperColor_Workbench : MonoBehaviour
 {
     public Renderer[] canvasRenderers;
     public string loadDirectory;
+    public static bool isLoad = false;
 
-    void Start()
+    void Update()
     {
+        if (!isLoad) return;
+
         loadDirectory = Path.Combine(Application.persistentDataPath, loadDirectory);
         LoadTexture();
+        isLoad = false;
     }
 
     void LoadTexture()
