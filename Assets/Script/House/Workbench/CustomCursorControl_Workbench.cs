@@ -28,12 +28,11 @@ public class CustomCursorControl_Workbench : MonoBehaviour
             case 1:
                 if (isUse)
                 {
-                    Cursor.SetCursor(stamp2, hotSpot, CursorMode.Auto);
+                    Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
                 }
                 else
                 {
-                    //Cursor.SetCursor(stamp1, hotSpot, CursorMode.Auto);
-                    Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
+                    Cursor.SetCursor(stamp2, hotSpot, CursorMode.Auto);
                 }
 
                 if (Input.GetMouseButtonDown(0))
