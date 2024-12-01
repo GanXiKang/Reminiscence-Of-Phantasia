@@ -58,6 +58,13 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = 4;
                             StoryDialogueControl_Momotaro._textCount = 51;
+                            if (!StoryPlayerAnimator_Momotaro.isHuman)
+                            {
+                                StoryPlayerAnimator_Momotaro.isSmokeEF = true;
+                                StoryPlayerAnimator_Momotaro.isDonkey = false;
+                                StoryPlayerAnimator_Momotaro.isRaccoon = false;
+                                StoryPlayerAnimator_Momotaro.isParrot = false;
+                            }
                         }
                         break;
 
