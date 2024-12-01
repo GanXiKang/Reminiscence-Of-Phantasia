@@ -14,6 +14,7 @@ public class BookcaseControl_House : MonoBehaviour
     public Transform[] bookMovePos;
     public Transform[] originalPoint;
     public static bool[] bookActive;
+    public static int _bookActiveNum = 0;
     public static int _bookNum = 0;
 
     //Move
@@ -42,15 +43,8 @@ public class BookcaseControl_House : MonoBehaviour
         {
             if (bookActive[a])
             {
-                print("true");
-            }
-            else if (bookActive[a])
-            {
-                print("false");
-            }
-            else
-            {
-                print("null");
+                _bookActiveNum++;
+                book[a].SetActive(true);
             }
         }
     }
@@ -112,7 +106,7 @@ public class BookcaseControl_House : MonoBehaviour
         {
             bookButton[2].SetActive(true);
         }
-        if (_bookNum == book.Length - 1)
+        if (_bookNum == _bookActiveNum - 1)
         {
             bookButton[3].SetActive(false);
         }
@@ -216,7 +210,7 @@ public class BookcaseControl_House : MonoBehaviour
         }
         else if (key == "d")
         {
-            if (_bookNum < book.Length - 1)
+            if (_bookNum < _bookActiveNum - 1)
             {
                 BGM.PlayOneShot(onClick);
                 _bookNum++;
