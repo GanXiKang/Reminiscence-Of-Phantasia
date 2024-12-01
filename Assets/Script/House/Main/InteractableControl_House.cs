@@ -154,7 +154,6 @@ public class InteractableControl_House : MonoBehaviour
                             switch (GameControl_House._storyNum)
                             {
                                 case 0:
-                                    
                                     UIControl_House.isDialogue = true;
                                     DialogueControl_House.isCatTalk = true;
                                     DialogueControl_House._textCount = 23;
