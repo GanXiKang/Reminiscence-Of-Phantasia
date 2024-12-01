@@ -23933,6 +23933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71048efc83bdd7b47b18a330b0b1f01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 437453298}
+  bye: {fileID: 8300000, guid: 6f4d69717e9814a4a8a98a514f5958f0, type: 3}
+  call: {fileID: 8300000, guid: ec91d05df64e8474998113830ee69ad0, type: 3}
   plotPoint:
   - {fileID: 444888269}
   - {fileID: 361691814}
@@ -33740,6 +33743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 437453298}
   interact: {fileID: 8300000, guid: 1ea3787e151e7404caa3cdcf8b35d96c, type: 3}
+  bed: {fileID: 8300000, guid: 74d093be393d39744a7a961376c24993, type: 3}
   interactableUI: {fileID: 1168015851}
   hintF: {fileID: 1012113973}
   _screenSpeed: 3
@@ -34055,6 +34059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e1436cdcb0c044fa523074786fcf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 437453298}
+  morning: {fileID: 8300000, guid: ca16ba7c7d6505c4d80129f3495531df, type: 3}
 --- !u!1 &1278782096
 GameObject:
   m_ObjectHideFlags: 0
