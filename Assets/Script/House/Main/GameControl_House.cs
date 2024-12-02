@@ -45,4 +45,12 @@ public class GameControl_House : MonoBehaviour
                 break;
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Alpha1))
+        {
+            print("Yes");
+        }
+    }
 }
