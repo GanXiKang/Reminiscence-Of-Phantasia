@@ -52,7 +52,13 @@ public class GameControl_House : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                
+                _storyNum = 1;
+                InteractableControl_House.isColliderActive[3] = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                _storyNum = 2;
+                InteractableControl_House.isColliderActive[3] = true;
             }
         }
     }
