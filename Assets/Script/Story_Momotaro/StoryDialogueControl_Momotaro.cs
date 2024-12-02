@@ -50,7 +50,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
     //Event
     public static bool isDialogueEvent = false;
-    public static bool isDialogueRotation = false;
     public static bool isDialogueContinue = false;
 
     void Start()
@@ -540,7 +539,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 {
                     case 0:
                         _countEvent++;
-                        isDialogueRotation = true;
+                        StoryNpcAnimator_Momotaro.isGold_Monkey = true;
                         break;
 
                     case 1:
@@ -576,8 +575,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 55:
-            case 67:
-                isDialogueRotation = true;
+                StoryNpcAnimator_Momotaro.isSliver_Dog = true;
                 break;
 
             case 56:
@@ -612,6 +610,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 63:
                 StoryPerformancesControl_Momotaro._danceNum = 1;
+                break;
+
+            case 67:
+                StoryNpcAnimator_Momotaro.isGold_Chicken = true;
                 break;
 
             case 68:
