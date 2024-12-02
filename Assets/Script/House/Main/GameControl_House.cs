@@ -48,9 +48,12 @@ public class GameControl_House : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.LeftShift))  //¿ì½Ý½¨
         {
-            print("Yes");
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                
+            }
         }
     }
 }
