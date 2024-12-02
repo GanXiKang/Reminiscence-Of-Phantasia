@@ -19,9 +19,9 @@ public class GameControl_House : MonoBehaviour
         {
             case 1:
                 UIAboveObject_House.isAboveDoor = true;
-                InteractableControl_House.isColliderActive[2] = true;
-                UIControl_House.isDialogue = true;
-                DialogueControl_House._textCount = 1;
+                //InteractableControl_House.isColliderActive[2] = true;
+                //UIControl_House.isDialogue = true;
+                //DialogueControl_House._textCount = 1;
                 break;
 
             case 2:
@@ -50,15 +50,25 @@ public class GameControl_House : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))  //快捷建
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1)) //去故事一
             {
                 _storyNum = 1;
                 InteractableControl_House.isColliderActive[3] = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.Alpha2)) //去故事二
             {
                 _storyNum = 2;
                 InteractableControl_House.isColliderActive[3] = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3)) //去Store
+            {
+                DoorControl_House.isStore = true;
+                InteractableControl_House.isColliderActive[2] = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4)) //去Entrust
+            {
+                DoorControl_House.isEntrust = true;
+                InteractableControl_House.isColliderActive[2] = true;
             }
         }
     }
