@@ -65,8 +65,6 @@ public class StoryGameControl_Momotaro : MonoBehaviour
                 StoryStrongWind_Momotaro._respawnNum = 3;
                 StoryStrongWind_Momotaro.isBlownAway = true;
                 StoryStrongWind_Momotaro.isFirstBlown = false;
-                StoryExitControl_Momotaro._changeSceneNum = 3;
-                StoryLoadingScene_Momotaro.isOpen = true;
             }
         }
     }
