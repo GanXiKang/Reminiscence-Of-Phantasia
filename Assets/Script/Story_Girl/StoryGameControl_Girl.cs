@@ -44,6 +44,22 @@ public class StoryGameControl_Girl : MonoBehaviour
         TeachWall();
         PlayerResurrection();
         MouseCursor();
+
+        if (Input.GetKey(KeyCode.LeftShift))  //快捷建
+        {
+            if (Input.GetKeyDown(KeyCode.Q)) //離開故事
+            {
+                StoryUIControl_Girl.isStoryEnding = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6)) //傳送街道存檔點
+            {
+
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha7)) //傳送森林存檔點
+            {
+
+            }
+        }
     }
 
     void TeachWall()
