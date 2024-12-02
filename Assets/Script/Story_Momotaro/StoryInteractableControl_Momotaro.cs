@@ -57,12 +57,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public Transform skillUIPosition;
     bool isSkill = false;
 
-    //Rotation
-    private float totalRotation = 0f;
-    private Quaternion initialRotation;
-    bool isRotation = false;
-    float _speed = 180f;
-
     //02Goddess
     int _itemGoddess = 0;
     public static bool isGoddessGetSkill = false;
@@ -85,7 +79,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         player = GameObject.Find("Player");
 
         originalScale = transform.localScale;
-        initialRotation = transform.rotation;
     }
 
     void Update()
@@ -94,7 +87,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         InteractableUI();
         GivePlayerObject();
         ExchangeItem();
-        RotationSprite();
     }
 
     void PickUpItem()
@@ -419,41 +411,12 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     }
     void RotationSprite()
     {
-        if (!StoryDialogueControl_Momotaro.isDialogueRotation) return;
-        if (!isRotation) return;
 
-        float rotationThisFrame = _speed * Time.deltaTime;
-        totalRotation += rotationThisFrame;
-
-        if (totalRotation <= 120f)
-        {
-            Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f);
-            transform.rotation = transform.rotation * deltaRotation;
-            if (totalRotation > 90f)
-            {
-                switch (_who)
-                {
-                    case 4:
                         StoryNpcAnimator_Momotaro.isGold_Monkey = true;
-                        break;
 
-                    case 7:
                         StoryNpcAnimator_Momotaro.isSliver_Dog = true;
-                        break;
 
-                    case 8:
                         StoryNpcAnimator_Momotaro.isGold_Chicken = true;
-                        break;
-                }
-            }
-        }
-        else
-        {
-            StoryDialogueControl_Momotaro.isDialogueRotation = false;
-            isRotation = false;
-            totalRotation = 0f;
-            transform.rotation = initialRotation;
-        }
     }
 
     void OnMouseDown()
@@ -1046,7 +1009,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
-                                isRotation = true;
                                 StoryGameControl_Momotaro.isParrotActive = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
@@ -1108,7 +1070,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 1:
-                                isRotation = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 55;
@@ -1137,7 +1098,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 break;
 
                             case 2:
-                                isRotation = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 67;
