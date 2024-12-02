@@ -53,6 +53,22 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         StatueActive();
         NpcActive();
         MouseCursor();
+
+        if (Input.GetKey(KeyCode.LeftShift))  //快捷建
+        {
+            if (Input.GetKeyDown(KeyCode.Q)) //離開故事
+            {
+                StoryUIControl_Momotaro.isStoryEnding = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha8)) //傳送山3號存檔點
+            {
+                StoryStrongWind_Momotaro._respawnNum = 3;
+                StoryStrongWind_Momotaro.isBlownAway = true;
+                StoryStrongWind_Momotaro.isFirstBlown = false;
+                StoryExitControl_Momotaro._changeSceneNum = 3;
+                StoryLoadingScene_Momotaro.isOpen = true;
+            }
+        }
     }
 
     void ExitActive()
