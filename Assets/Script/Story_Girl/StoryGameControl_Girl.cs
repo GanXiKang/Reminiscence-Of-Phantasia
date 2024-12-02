@@ -53,11 +53,15 @@ public class StoryGameControl_Girl : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) //‚÷ËÍ½ÖµÀ´æ™nüc
             {
-
+                isInStreet = true;
+                StoryLoadingScene_Girl.isLeftOpen = true;
+                StartCoroutine(ResurrectionState());
             }
             if (Input.GetKeyDown(KeyCode.Alpha7)) //‚÷ËÍÉ­ÁÖ´æ™nüc
             {
-
+                isInStreet = false;
+                StoryLoadingScene_Girl.isRightOpen = true;
+                StartCoroutine(ResurrectionState());
             }
         }
     }
