@@ -409,15 +409,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             StoryBagControl.isOpenBag = false;
         }
     }
-    void RotationSprite()
-    {
-
-                        StoryNpcAnimator_Momotaro.isGold_Monkey = true;
-
-                        StoryNpcAnimator_Momotaro.isSliver_Dog = true;
-
-                        StoryNpcAnimator_Momotaro.isGold_Chicken = true;
-    }
 
     void OnMouseDown()
     {
