@@ -70,6 +70,16 @@ public class GameControl_House : MonoBehaviour
                 DoorControl_House.isEntrust = true;
                 InteractableControl_House.isColliderActive[2] = true;
             }
+            if (Input.GetKeyDown(KeyCode.Alpha5)) //Bookcase All Book
+            {
+                BookcaseControl_House.isNewBookActive = true;
+                BookcaseControl_House.bookActive[0] = true;
+                BookcaseControl_House.bookActive[1] = true;
+                BookcaseControl_House.bookActive[2] = true;
+                BookcaseControl_House.bookActive[3] = true;
+                InteractableControl_House.isColliderActive[4] = true;
+                InteractableControl_House.isColliderActive[5] = true;
+            }
         }
     }
 }
