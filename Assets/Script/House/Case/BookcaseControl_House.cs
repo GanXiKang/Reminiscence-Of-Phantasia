@@ -63,6 +63,7 @@ public class BookcaseControl_House : MonoBehaviour
         if (!isNewBookActive) return;
 
         isNewBookActive = false;
+        _bookActiveNum = 0;
         for (int a = 0; a < bookActive.Length; a++)
         {
             if (bookActive[a])
