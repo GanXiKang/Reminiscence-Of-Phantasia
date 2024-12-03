@@ -118,8 +118,11 @@ public class PaintBucketTool_Workbench : MonoBehaviour
             }
         }
 
-        texture.Apply();
+        if (WorkbenchControl_House.isFinishClickColor)
+            WorkbenchControl_House.isFinishColor = true;
 
+        texture.Apply();
+        
         if (progressBar != null)
         {
             progressBar.SetActive(false);
