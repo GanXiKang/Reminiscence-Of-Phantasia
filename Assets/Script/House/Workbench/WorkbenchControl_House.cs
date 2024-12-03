@@ -346,7 +346,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
         stamp.transform.rotation = Quaternion.Lerp(stamp.transform.rotation, stampStartPos.rotation, _rotateSpeed * Time.deltaTime);
-        Invoke("StampNextProcess", 1f);
+        Invoke("StampNextProcess", 0.7f);
     }
     void StampNextProcess()
     {
