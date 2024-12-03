@@ -66,6 +66,8 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("ColorUI")]
     public GameObject colorUI;
+    public static bool isFinishClickColor = false;
+    public static bool isFinishColor = false;
     public static bool isClickSaveButton = false;
     public static bool[] isChangeColor = new bool[13];
 
@@ -229,6 +231,7 @@ public class WorkbenchControl_House : MonoBehaviour
                         break;
 
                     case 2:
+                        isFinishColor = false;
                         _process = 3;
                         Process();
                         break;
@@ -343,13 +346,13 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         stamp.transform.position = Vector3.MoveTowards(stamp.transform.position, stampStartPos.position, _speed * Time.deltaTime);
         stamp.transform.rotation = Quaternion.Lerp(stamp.transform.rotation, stampStartPos.rotation, _rotateSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(stamp.transform.position, stampStartPos.position) < 0.05f)
-        {
-            isAppaerStamp = false;
-            _process = 2;
-            Process();
-        }
+        Invoke("StampNextProcess", 1f);
+    }
+    void StampNextProcess()
+    {
+        isAppaerStamp = false;
+        _process = 2;
+        Process();
     }
     public void Button_ChoosePattern(int num)
     {
@@ -552,7 +555,8 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
-        isNext = FinishedColoring();
+        isFinishClickColor = FinishedColoring();
+        isNext = isFinishColor;
     }
     bool FinishedColoring()
     {
