@@ -35,6 +35,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     bool isChoose = false;
     bool isChooseUI_Up = false;
     bool isChooseUI_Back = false;
+    bool isCanKeyCode = false;
     int _buttonNum;
     int _chooseNum;
 
@@ -127,8 +128,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public void ChooseButton(int _chooseButton)
     {
         _chooseNum = _chooseButton;
-        isChooseUI_Up = false;
         isChooseUI_Back = true;
+        isCanKeyCode = false;
         if (_chooseButton <= 2)
             button2UI.SetActive(false);
         else
@@ -146,34 +147,12 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             chooseUI.transform.position = Vector3.MoveTowards(chooseUI.transform.position, targetPos.position, _moveSpeed * Time.deltaTime);
             if (chooseUI.transform.position == targetPos.position)
             {
+                isChooseUI_Up = false;
+                isCanKeyCode = true;
                 if (_buttonNum == 2)
-                {
                     button2UI.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.Alpha1))
-                    {
-                        ChooseButton(1);
-                    }
-                    else if (Input.GetKeyDown(KeyCode.Alpha2))
-                    {
-                        ChooseButton(2);
-                    }
-                }
                 else
-                {
-                    button3UI.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.Alpha1))
-                    {
-                        ChooseButton(4);
-                    }
-                    else if (Input.GetKeyDown(KeyCode.Alpha2))
-                    {
-                        ChooseButton(5);
-                    }
-                    else if (Input.GetKeyDown(KeyCode.Alpha3))
-                    {
-                        ChooseButton(6);
-                    }
-                }
+                    button3UI.SetActive(true);  
             }
         }
         if (isChooseUI_Back)
@@ -230,6 +209,35 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                             StoryPlayerControl.isSad = true;
                             break;
                     }
+                }
+            }
+        }
+        if (isCanKeyCode)
+        {
+            if (_buttonNum == 2)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    ChooseButton(1);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    ChooseButton(2);
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    ChooseButton(4);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    ChooseButton(5);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    ChooseButton(6);
                 }
             }
         }
