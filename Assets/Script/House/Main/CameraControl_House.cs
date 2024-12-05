@@ -34,8 +34,6 @@ public class CameraControl_House : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-
-        Invoke("StartFreeLookCamera", 1.5f);
     }
 
     void Update()
@@ -46,10 +44,6 @@ public class CameraControl_House : MonoBehaviour
         CameraLooking();
     }
 
-    void StartFreeLookCamera()
-    {
-        isFreeLook = true;
-    }
     void CameraLooking()
     {
         if (isLookWorkbench)
