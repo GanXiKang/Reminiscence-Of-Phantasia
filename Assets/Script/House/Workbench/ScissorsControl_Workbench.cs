@@ -92,7 +92,7 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (other.tag == "Paper")
             {
                 isUseScissors = false;
-                ClearColliderBool();
+                ClearColliderBoolStatus();
             }
         }
     }
