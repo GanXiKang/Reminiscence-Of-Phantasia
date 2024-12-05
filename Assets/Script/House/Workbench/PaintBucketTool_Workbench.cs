@@ -46,14 +46,14 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         if (!isCanPaint) return;
 
         if (Input.GetMouseButtonDown(0))
-        {
-            isCanPaint = false;
+        { 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 if (hit.transform == canvasRenderer.transform)
                 {
                     BGM.PlayOneShot(draw);
+                    isCanPaint = false;
                     Vector2 uv = hit.textureCoord;
                     int x = Mathf.FloorToInt(uv.x * texture.width);
                     int y = Mathf.FloorToInt(uv.y * texture.height);
