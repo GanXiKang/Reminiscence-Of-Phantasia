@@ -214,7 +214,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         }
         if (isCanKeyCode)
         {
-            print("yes");
             if (_buttonNum == 2)
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
