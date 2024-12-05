@@ -709,18 +709,21 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             switch (StoryNpcAnimator_Momotaro._dating)
                             {
                                 case 0:
+                                    gameObject.GetComponent<BoxCollider>().enabled = false;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 36;
                                     break;
 
                                 case 1:
+                                    gameObject.GetComponent<BoxCollider>().enabled = false;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 38;
                                     break;
 
                                 case 2:
+                                    gameObject.GetComponent<BoxCollider>().enabled = false;
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 39;
