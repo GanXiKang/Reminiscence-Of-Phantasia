@@ -217,28 +217,18 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             if (_buttonNum == 2)
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
                     ChooseButton(1);
-                }
                 if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
                     ChooseButton(2);
-                }
             }
             else
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
                     ChooseButton(3);
-                }
                 if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
                     ChooseButton(4);
-                }
                 if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
                     ChooseButton(5);
-                }
             }
         }
     }
