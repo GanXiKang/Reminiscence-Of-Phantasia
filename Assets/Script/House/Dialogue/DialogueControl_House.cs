@@ -241,7 +241,7 @@ public class DialogueControl_House : MonoBehaviour
 
                     case 1:
                         _countEvent = 0;
-                        WorkbenchControl_House.isBlackHint = true;
+                        WorkbenchControl_House.isBlackHint = false;
                         break;
                 }
                 break;
