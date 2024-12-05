@@ -127,6 +127,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public void ChooseButton(int _chooseButton)
     {
         _chooseNum = _chooseButton;
+        isChooseUI_Up = false;
         isChooseUI_Back = true;
         if (_chooseButton <= 2)
         {
@@ -149,7 +150,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             chooseUI.transform.position = Vector3.MoveTowards(chooseUI.transform.position, targetPos.position, _moveSpeed * Time.deltaTime);
             if (chooseUI.transform.position == targetPos.position)
             {
-                isChooseUI_Up = false;
                 if (_buttonNum == 2)
                 {
                     button2UI.SetActive(true);
