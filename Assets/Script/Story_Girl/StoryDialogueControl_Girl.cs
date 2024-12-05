@@ -130,13 +130,9 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         isChooseUI_Up = false;
         isChooseUI_Back = true;
         if (_chooseButton <= 2)
-        {
             button2UI.SetActive(false);
-        }
         else
-        {
             button3UI.SetActive(false);
-        }
     }
 
     void ChooseUI()
