@@ -214,13 +214,15 @@ public class StoryDialogueControl_Girl : MonoBehaviour
         }
         if (isCanKeyCode)
         {
+            print("yes");
             if (_buttonNum == 2)
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
+                    print("INput");
                     ChooseButton(1);
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
                     ChooseButton(2);
                 }
@@ -229,13 +231,14 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
+                    print("INput");
                     ChooseButton(4);
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
                     ChooseButton(5);
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (Input.GetKeyDown(KeyCode.Alpha3))
                 {
                     ChooseButton(6);
                 }
