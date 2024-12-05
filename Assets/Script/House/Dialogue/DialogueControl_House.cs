@@ -288,6 +288,8 @@ public class DialogueControl_House : MonoBehaviour
         switch (_textCount)
         {
             case 1:
+            case 17:
+            case 30:
                 CameraControl_House.isFreeLook = true;
                 break;
 
