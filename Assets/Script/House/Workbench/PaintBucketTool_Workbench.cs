@@ -15,7 +15,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     public int _number = 0;
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
-    bool isCanPaint = true;
 
     [Header("UI")]
     public Canvas canvas;
@@ -43,7 +42,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     void Paint()
     {
         if (WorkbenchControl_House._process != 3) return;
-        if (!isCanPaint) return;
 
         if (Input.GetMouseButtonDown(0))
         { 
@@ -53,7 +51,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                 if (hit.transform == canvasRenderer.transform)
                 {
                     BGM.PlayOneShot(draw);
-                    isCanPaint = false;
                     Vector2 uv = hit.textureCoord;
                     int x = Mathf.FloorToInt(uv.x * texture.width);
                     int y = Mathf.FloorToInt(uv.y * texture.height);
@@ -122,8 +119,6 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         }
 
         texture.Apply();
-
-        isCanPaint = true;
         if (progressBar != null)
         {
             progressBar.SetActive(false);
