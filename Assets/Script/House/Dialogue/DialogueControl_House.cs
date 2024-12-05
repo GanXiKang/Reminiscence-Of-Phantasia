@@ -232,7 +232,18 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 4:
-                WorkbenchControl_House.isTeachHint = true;
+                switch (_countEvent)
+                {
+                    case 0:
+                        _countEvent++;
+                        WorkbenchControl_House.isBlackHint = true;
+                        break;
+
+                    case 1:
+                        _countEvent = 0;
+                        WorkbenchControl_House.isBlackHint = true;
+                        break;
+                }
                 break;
 
             case 20:
