@@ -35,6 +35,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     bool isChoose = false;
     bool isChooseUI_Up = false;
     bool isChooseUI_Back = false;
+    bool isCanKeyCode = false;
     int _buttonNum;
     int _chooseNum;
 
@@ -128,14 +129,11 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     {
         _chooseNum = _chooseButton;
         isChooseUI_Back = true;
+        isCanKeyCode = false;
         if (_chooseButton <= 2)
-        {
             button2UI.SetActive(false);
-        }
         else
-        {
             button3UI.SetActive(false);
-        }
     }
 
     void ChooseUI()
@@ -150,14 +148,11 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             if (chooseUI.transform.position == targetPos.position)
             {
                 isChooseUI_Up = false;
+                isCanKeyCode = true;
                 if (_buttonNum == 2)
-                {
                     button2UI.SetActive(true);
-                }
                 else
-                {
                     button3UI.SetActive(true);
-                }
             }
         }
         if (isChooseUI_Back)
@@ -187,6 +182,25 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 {
                     JumpToSection("E");
                 }
+            }
+        }
+        if (isCanKeyCode)
+        {
+            if (_buttonNum == 2)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                    ChooseButton(1);
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                    ChooseButton(2);
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                    ChooseButton(3);
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                    ChooseButton(4);
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                    ChooseButton(5);
             }
         }
     }
