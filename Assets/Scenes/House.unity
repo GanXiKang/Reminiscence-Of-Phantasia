@@ -2724,6 +2724,7 @@ GameObject:
   - component: {fileID: 143630462}
   - component: {fileID: 143630464}
   - component: {fileID: 143630463}
+  - component: {fileID: 143630465}
   m_Layer: 5
   m_Name: BlackHint
   m_TagString: Untagged
@@ -2788,6 +2789,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143630461}
   m_CullTransparentMesh: 1
+--- !u!225 &143630465
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143630461}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &150349297
 PrefabInstance:
   m_ObjectHideFlags: 0
