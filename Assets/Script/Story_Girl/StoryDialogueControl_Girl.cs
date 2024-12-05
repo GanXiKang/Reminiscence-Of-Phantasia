@@ -153,10 +153,30 @@ public class StoryDialogueControl_Girl : MonoBehaviour
                 if (_buttonNum == 2)
                 {
                     button2UI.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.Alpha1))
+                    {
+                        ChooseButton(1);
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Alpha2))
+                    {
+                        ChooseButton(2);
+                    }
                 }
                 else
                 {
                     button3UI.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.Alpha1))
+                    {
+                        ChooseButton(4);
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Alpha2))
+                    {
+                        ChooseButton(5);
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Alpha3))
+                    {
+                        ChooseButton(6);
+                    }
                 }
             }
         }
