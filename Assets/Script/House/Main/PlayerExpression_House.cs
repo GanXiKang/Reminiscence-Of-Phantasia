@@ -5,19 +5,22 @@ using UnityEngine;
 public class PlayerExpression_House : MonoBehaviour
 {
     SkinnedMeshRenderer smr;
+    Coroutine blinkCoroutine;
 
     [Header("Material")]
     public Material openEyes;
     public Material closeEyes;
     public Material happy;
     public Material Sad;
-    bool isBlink = true;
-    bool isHappyExp = false;
-    bool isSleepExp = false;
+    bool isBlink;
+    bool isHappyExp;
+    bool isSleepExp;
 
     void OnEnable()
     {
         isBlink = true;
+        isHappyExp = false;
+        isSleepExp = false;
     }
 
     void Start()
@@ -40,7 +43,7 @@ public class PlayerExpression_House : MonoBehaviour
         if (isBlink)
         {
             int r = Random.Range(1, 3);
-            StartCoroutine(Blink(r));
+            blinkCoroutine = StartCoroutine(Blink(r));
         }
     }
     void Happy()
@@ -51,7 +54,11 @@ public class PlayerExpression_House : MonoBehaviour
             {
                 isHappyExp = true;
                 isBlink = false;
-                StopCoroutine(Blink(0));
+                if (blinkCoroutine != null)
+                {
+                    StopCoroutine(blinkCoroutine);
+                    blinkCoroutine = null;
+                }
                 smr.material = happy;
             }
         }
@@ -73,7 +80,11 @@ public class PlayerExpression_House : MonoBehaviour
             {
                 isSleepExp = true;
                 isBlink = false;
-                StopCoroutine(Blink(0));
+                if (blinkCoroutine != null)
+                {
+                    StopCoroutine(blinkCoroutine);
+                    blinkCoroutine = null;
+                }
                 smr.material = closeEyes;
             }
         }
@@ -87,5 +98,6 @@ public class PlayerExpression_House : MonoBehaviour
         smr.material = openEyes;
         yield return new WaitForSeconds(wait);
         isBlink = true;
+        blinkCoroutine = null;
     }
 }
