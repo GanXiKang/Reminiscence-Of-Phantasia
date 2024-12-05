@@ -131,14 +131,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     {
         _chooseNum = _chooseButton;
         isChooseUI_Back = true;
+        isCanKeyCode = false;
         if (_chooseButton <= 2)
-        {
             button2UI.SetActive(false);
-        }
         else
-        {
             button3UI.SetActive(false);
-        }
     }
 
     void ChooseUI()
@@ -300,28 +297,18 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             if (_buttonNum == 2)
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
                     ChooseButton(1);
-                }
                 if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
                     ChooseButton(2);
-                }
             }
             else
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
                     ChooseButton(3);
-                }
                 if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
                     ChooseButton(4);
-                }
                 if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
                     ChooseButton(5);
-                }
             }
         }
     }
