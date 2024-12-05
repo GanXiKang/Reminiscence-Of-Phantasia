@@ -219,7 +219,6 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
-                    print("INput");
                     ChooseButton(1);
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -231,16 +230,15 @@ public class StoryDialogueControl_Girl : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
-                    print("INput");
-                    ChooseButton(4);
+                    ChooseButton(3);
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
-                    ChooseButton(5);
+                    ChooseButton(4);
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha3))
                 {
-                    ChooseButton(6);
+                    ChooseButton(5);
                 }
             }
         }
