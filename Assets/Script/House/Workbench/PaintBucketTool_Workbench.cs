@@ -15,6 +15,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     public int _number = 0;
     public ColorPicker_Workbench colorPicker;
     private Texture2D texture;
+    bool isCanPaint = true;
 
     [Header("UI")]
     public Canvas canvas;
@@ -42,9 +43,11 @@ public class PaintBucketTool_Workbench : MonoBehaviour
     void Paint()
     {
         if (WorkbenchControl_House._process != 3) return;
+        if (!isCanPaint) return;
 
         if (Input.GetMouseButtonDown(0))
         {
+            isCanPaint = false;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
@@ -118,15 +121,15 @@ public class PaintBucketTool_Workbench : MonoBehaviour
             }
         }
 
-        if (WorkbenchControl_House.isFinishClickColor)
-            WorkbenchControl_House.isFinishColor = true;
-
         texture.Apply();
-        
+
+        isCanPaint = true;
         if (progressBar != null)
         {
             progressBar.SetActive(false);
             progressBar.GetComponent<Image>().fillAmount = 0f;
         }
+        if (WorkbenchControl_House.isFinishClickColor)
+            WorkbenchControl_House.isFinishColor = true;
     }
 }
