@@ -14,10 +14,27 @@ public class ScissorsControl_Workbench : MonoBehaviour
     public static bool isUseScissors = false;
     public static int _cutPoint = 0;
     bool[] isCollider = new bool[5];
+    bool[] isCut = new bool[5];
 
     void Start()
     {
-        ClearColliderBool();
+        ClearColliderBoolStatus();
+        ClearCutBoolStatus();
+    }
+
+    void ClearColliderBoolStatus()
+    {
+        for (int i = 1; i < isCollider.Length; i++)
+        {
+            isCollider[i] = false;
+        }
+    }
+    void ClearCutBoolStatus()
+    {
+        for (int i = 1; i < isCut.Length; i++)
+        {
+            isCut[i] = false;
+        }
     }
 
     void Update()
@@ -33,24 +50,20 @@ public class ScissorsControl_Workbench : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 isUseScissors = false;
-                ClearColliderBool();
+                ClearColliderBoolStatus();
             }
         }
     }
 
-    void ClearColliderBool()
-    {
-        for (int i = 1; i < isCollider.Length; i++)
-        {
-            isCollider[i] = false;
-        }
-    }
     void Cut()
     {
+        if (isCut[_cutPoint]) return;
+
         BGM.PlayOneShot(cut);
-        WorkbenchControl_House.isFinishCut = true;
         isUseScissors = false;
-        ClearColliderBool();
+        isCut[_cutPoint] = true;
+        WorkbenchControl_House.isFinishCut = true;
+        ClearColliderBoolStatus();
     }
 
     private void OnTriggerStay(Collider other)
