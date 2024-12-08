@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SettingControl : MonoBehaviour
 {
+    GameObject player;
+
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip onClick, open, save, leave;
@@ -33,6 +35,7 @@ public class SettingControl : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player");
         sliderBGM.value = volumeBGM;
         BGM.volume = volumeBGM;
         fullScreen.isOn = Screen.fullScreen;
@@ -117,6 +120,16 @@ public class SettingControl : MonoBehaviour
     public void Save_Button()
     {
         BGM.PlayOneShot(save);
+
+        GameData gameData = new GameData
+        {
+            playerPosition = player.transform.position,
+            playerCoins = StoreControl_House._MyCoin,
+            currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+        };
+
+        SaveManagerControl.Instance.SaveGame(gameData);
+        Debug.Log("Game saved successfully!");
     }
     public void ExitGame_Button()
     {
