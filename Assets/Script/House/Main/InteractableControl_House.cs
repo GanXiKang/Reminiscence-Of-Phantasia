@@ -31,9 +31,9 @@ public class InteractableControl_House : MonoBehaviour
     public static bool isBirdSeeBookcase = false;
     public static bool isBirdLeave = false;
     public static bool isReadMomLetter = false;
-    bool isBirdFirstMeet = false;
-    bool isMomEntrust = true;
-    bool isBookcasePlotOnce = true;
+    public static bool isBirdFirstMeet = false;
+    public static bool isMomEntrust = true;
+    public static bool isBookcasePlotOnce = true;
 
     void Awake()
     {
