@@ -189,6 +189,8 @@ public class StoryBeginningEnding_Girl : MonoBehaviour
     }
     void GoToHouse()
     {
+        print("1");
+        GameControl_House._day++;
         SceneManager.LoadScene(1);
     }
 
