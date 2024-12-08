@@ -8,13 +8,12 @@ public class GameControl_House : MonoBehaviour
     public AudioSource BGM;
     public AudioClip morning;
 
-    public static int _day = 0;
+    public static int _day = 1;
     public static int _storyNum = 0;
 
     void Start()
     {
         BGM.PlayOneShot(morning);
-        _day++;
         switch (_day)
         {
             case 1:
