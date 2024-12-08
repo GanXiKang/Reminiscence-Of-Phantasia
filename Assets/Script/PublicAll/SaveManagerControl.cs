@@ -22,8 +22,6 @@ public class SaveManagerControl : MonoBehaviour
     public static SaveManagerControl Instance { get; private set; }
     private string saveFilePath;
 
-    GameObject player;
-
     private void Awake()
     {
         if (Instance == null)
@@ -37,11 +35,6 @@ public class SaveManagerControl : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    //void Start()
-    //{
-    //    player = GameObject.Find("Player");
-    //}
 
     public bool SaveFileExists()
     {
@@ -82,11 +75,6 @@ public class SaveManagerControl : MonoBehaviour
             string json = File.ReadAllText(saveFilePath);
             GameData gameData = JsonUtility.FromJson<GameData>(json);
 
-            //System
-            //player.transform.position = gameData.playerPosition;
-            GameControl_House._day = gameData.gameDay;
-            GameControl_House._storyNum = gameData.gameStoryNum;
-            StoreControl_House._MyCoin = gameData.playerCoins;
             //House
             InteractableControl_House.isColliderActive[1] = gameData.houseBooleans[0];
             InteractableControl_House.isColliderActive[2] = gameData.houseBooleans[1];
