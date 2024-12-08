@@ -50,4 +50,9 @@ public class SaveManagerControl : MonoBehaviour
             return null;
         }
     }
+
+    public bool SaveFileExists()
+    {
+        return File.Exists(saveFilePath);
+    }
 }
