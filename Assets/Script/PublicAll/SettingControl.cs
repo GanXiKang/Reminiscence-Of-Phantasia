@@ -127,7 +127,7 @@ public class SettingControl : MonoBehaviour
             gameDay = GameControl_House._day,
             gameStoryNum = GameControl_House._storyNum,
             playerCoins = StoreControl_House._MyCoin,
-            currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+            currentSceneName = SceneManager.GetActiveScene().name
         };
 
         SaveManagerControl.Instance.SaveGame(gameData);
