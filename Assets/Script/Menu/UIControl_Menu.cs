@@ -56,7 +56,8 @@ public class UIControl_Menu : MonoBehaviour
         TransitionUIControl.isTransitionUIAnim_In = true;
 
         GameData gameData = SaveManagerControl.Instance.LoadGame();
-
+        GameControl_House._day = gameData.gameDay;
+        GameControl_House._storyNum = gameData.gameStoryNum;
         StoreControl_House._MyCoin = gameData.playerCoins;
         UnityEngine.SceneManagement.SceneManager.LoadScene(gameData.currentSceneName);
     }
