@@ -11,6 +11,9 @@ public class GameData
     public int gameStoryNum;
     public int playerCoins;
     public string currentSceneName;
+    public bool[] houseBooleans;
+    public bool[] girlBooleans;
+    public bool[] momotaroBooleans;
 }
 
 public class SaveManagerControl : MonoBehaviour
@@ -34,10 +37,26 @@ public class SaveManagerControl : MonoBehaviour
 
     public void SaveGame(GameData gameData)
     {
+        SaveHouseBooleans();
+
         string json = JsonUtility.ToJson(gameData);
         File.WriteAllText(saveFilePath, json);
         Debug.Log("Game saved to " + saveFilePath);
     }
+
+    void SaveHouseBooleans()
+    {
+        GameData gameData = new GameData();
+        gameData.houseBooleans = new bool[]
+        {
+            InteractableControl_House.isColliderActive[1],
+            InteractableControl_House.isColliderActive[2],
+            InteractableControl_House.isColliderActive[3],
+            InteractableControl_House.isColliderActive[4],
+            InteractableControl_House.isColliderActive[5],
+        };
+    }
+
 
     public GameData LoadGame()
     {
@@ -45,6 +64,8 @@ public class SaveManagerControl : MonoBehaviour
         {
             string json = File.ReadAllText(saveFilePath);
             return JsonUtility.FromJson<GameData>(json);
+
+
         }
         else
         {
