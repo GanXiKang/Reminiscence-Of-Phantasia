@@ -54,11 +54,7 @@ public class UIControl_Menu : MonoBehaviour
     {
         BGM.PlayOneShot(onClick);
         TransitionUIControl.isTransitionUIAnim_In = true;
-
         GameData gameData = SaveManagerControl.Instance.LoadGame();
-        GameControl_House._day = gameData.gameDay;
-        GameControl_House._storyNum = gameData.gameStoryNum;
-        StoreControl_House._MyCoin = gameData.playerCoins;
         Invoke("GoToLoadGameScene", 1f);
     }
     public void Button_Setting()
