@@ -59,7 +59,7 @@ public class UIControl_Menu : MonoBehaviour
         GameControl_House._day = gameData.gameDay;
         GameControl_House._storyNum = gameData.gameStoryNum;
         StoreControl_House._MyCoin = gameData.playerCoins;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(gameData.currentSceneName);
+        Invoke("GoToLoadGameScene", 1f);
     }
     public void Button_Setting()
     {
@@ -121,5 +121,9 @@ public class UIControl_Menu : MonoBehaviour
     void GoToStartMovie()
     {
         SceneManager.LoadScene(5);
+    }
+    void GoToLoadGameScene()
+    {
+        SceneManager.LoadScene(SaveManagerControl.Instance.LoadGame().currentSceneName);
     }
 }
