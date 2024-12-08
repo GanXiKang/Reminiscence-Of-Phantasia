@@ -7,6 +7,8 @@ using System.IO;
 public class GameData
 {
     public Vector3 playerPosition;
+    public int gameDay;
+    public int gameStoryNum;
     public int playerCoins;
     public string currentSceneName;
 }
@@ -22,7 +24,7 @@ public class SaveManagerControl : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            saveFilePath = Application.persistentDataPath + "/savefile.json";
+            saveFilePath = Application.persistentDataPath + "/SaveFile.json";
         }
         else
         {
