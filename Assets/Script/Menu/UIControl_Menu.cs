@@ -53,6 +53,7 @@ public class UIControl_Menu : MonoBehaviour
     public void Button_Continue()
     {
         BGM.PlayOneShot(onClick);
+        TransitionUIControl.isTransitionUIAnim_In = true;
     }
     public void Button_Setting()
     {
