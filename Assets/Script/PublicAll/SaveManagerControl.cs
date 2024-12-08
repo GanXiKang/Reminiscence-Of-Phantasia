@@ -46,7 +46,6 @@ public class SaveManagerControl : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No save file found.");
             return null;
         }
     }

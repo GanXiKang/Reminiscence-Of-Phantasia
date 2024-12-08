@@ -129,7 +129,6 @@ public class SettingControl : MonoBehaviour
         };
 
         SaveManagerControl.Instance.SaveGame(gameData);
-        Debug.Log("Game saved successfully!");
     }
     public void ExitGame_Button()
     {
