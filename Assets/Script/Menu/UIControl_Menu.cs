@@ -14,6 +14,7 @@ public class UIControl_Menu : MonoBehaviour
     public GameObject[] menuUI;
     public Sprite[] bgSprite;
     public Image background;
+    public Button continueButton;
     public Slider sliderBGM;
     public Toggle fullScreen;
     bool isStaff = false;
@@ -23,6 +24,11 @@ public class UIControl_Menu : MonoBehaviour
 
     void Start()
     {
+        //if (SaveManagerControl.Instance.SaveFileExists())
+        //    continueButton.interactable = true; 
+        //else
+        //    continueButton.interactable = false; 
+
         sliderBGM.value = SettingControl.volumeBGM;
         BGM.volume = SettingControl.volumeBGM;
         fullScreen.isOn = Screen.fullScreen;
