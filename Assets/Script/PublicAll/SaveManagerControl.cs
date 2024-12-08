@@ -38,10 +38,10 @@ public class SaveManagerControl : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
+    //void Start()
+    //{
+    //    player = GameObject.Find("Player");
+    //}
 
     public bool SaveFileExists()
     {
@@ -83,7 +83,7 @@ public class SaveManagerControl : MonoBehaviour
             GameData gameData = JsonUtility.FromJson<GameData>(json);
 
             //System
-            player.transform.position = gameData.playerPosition;
+            //player.transform.position = gameData.playerPosition;
             GameControl_House._day = gameData.gameDay;
             GameControl_House._storyNum = gameData.gameStoryNum;
             StoreControl_House._MyCoin = gameData.playerCoins;
