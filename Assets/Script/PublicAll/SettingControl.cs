@@ -123,7 +123,6 @@ public class SettingControl : MonoBehaviour
 
         GameData gameData = new GameData
         {
-            playerPosition = player.transform.position,
             gameDay = GameControl_House._day,
             gameStoryNum = GameControl_House._storyNum,
             playerCoins = StoreControl_House._MyCoin,
