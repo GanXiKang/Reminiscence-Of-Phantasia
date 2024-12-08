@@ -188,6 +188,7 @@ public class StoryBeginningEnding_Momotaro : MonoBehaviour
     }
     void GoToHouse()
     {
+        GameControl_House._day++;
         SceneManager.LoadScene(1);
     }
 
