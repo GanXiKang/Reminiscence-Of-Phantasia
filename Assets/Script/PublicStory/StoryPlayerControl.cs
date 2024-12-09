@@ -98,17 +98,19 @@ public class StoryPlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (_moveSpeed == 12)
-            {
                 _moveSpeed = 20;
-            }
             else
-            {
                 _moveSpeed = 12;
-            }
         }
 
         walkEffects.SetActive(isWalkEffects);
         cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.LeftShift))  //快捷建
+        {
+            if (Input.GetKeyDown(KeyCode.Z)) //超加速
+                _moveSpeed = 35;
+        }
     }
     void StoryPlayerOnTheGround()
     {
