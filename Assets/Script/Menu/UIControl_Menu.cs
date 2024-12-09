@@ -31,7 +31,6 @@ public class UIControl_Menu : MonoBehaviour
 
         sliderBGM.value = SettingControl.volumeBGM;
         BGM.volume = SettingControl.volumeBGM;
-        sliderBGM.value = BGM.volume;
         fullScreen.isOn = Screen.fullScreen;
     }
 
