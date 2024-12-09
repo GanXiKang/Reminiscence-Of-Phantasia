@@ -303,7 +303,6 @@ public class DialogueControl_House : MonoBehaviour
             case 9:
             case 19:
                 InteractableControl_House.isColliderActive[2] = true;
-                InteractableControl_House.isColliderActive[5] = true;
                 break;
 
             case 10:
@@ -338,6 +337,7 @@ public class DialogueControl_House : MonoBehaviour
             case 33:
                 InteractableControl_House.isBirdLeave = true;
                 InteractableControl_House.isColliderActive[2] = true;
+                InteractableControl_House.isColliderActive[5] = true;
                 UIAboveObject_House.isAboveDoor = true;
                 UIAboveObject_House.isAboveBookcase = false;
                 BirdControl_House._goPointNum = 0;
