@@ -314,6 +314,15 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             GameResult();
             isGameTiming = false;
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))  //¿ì½Ý½¨
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha9)) //±íÑÝ½YÊø
+            {
+                _remainingTime = 2;
+                _score = 100;
+            }
+        }
     }
     void GameResult()
     {
