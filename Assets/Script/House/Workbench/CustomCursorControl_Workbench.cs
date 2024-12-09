@@ -15,7 +15,9 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     public Texture2D glue2;
     public Vector2 hotSpot = Vector2.zero; 
     private bool isCursorChanged = false;
-    bool isUse = false;
+    bool isStamp = false;
+    bool isPencil = false;
+    bool isGlue = false;
     bool isAnim = false;
 
     [Header("Object")]
@@ -28,20 +30,15 @@ public class CustomCursorControl_Workbench : MonoBehaviour
             switch (WorkbenchControl_House._process)
             {
                 case 1:
-                    if (isUse)
-                    {
-                        Cursor.SetCursor(stampB, hotSpot, CursorMode.Auto);
-                    }
-                    else
+                    if (!isStamp)
                     {
                         Cursor.SetCursor(stampA, hotSpot, CursorMode.Auto);
+                        isStamp = true;
                     }
-
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        isUse = true;
-                        Invoke("FalseisUse", 0.5f);
-                    }
+                    if (Input.GetMouseButton(0))
+                        Cursor.SetCursor(stampB, hotSpot, CursorMode.Auto);
+                    if (Input.GetMouseButtonUp(0))
+                        Cursor.SetCursor(stampA, hotSpot, CursorMode.Auto);
                     break;
 
                 case 2:
@@ -81,39 +78,33 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     break;
 
                 case 3:
-                    if (isUse)
-                    {
-                        Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
-                    }
-                    else
+                    if (!isPencil)
                     {
                         Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
+                        isPencil = true;
                     }
-
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        isUse = true;
-                        Invoke("FalseisUse", 0.5f);
-                    }
+                    if (Input.GetMouseButton(0))
+                        Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
+                    if (Input.GetMouseButtonUp(0))
+                        Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
                     break;
 
                 case 4:
-                    if (isUse)
-                    {
-                        Cursor.SetCursor(glue2, hotSpot, CursorMode.Auto);
-                    }
-                    else
+                    if (!isGlue)
                     {
                         Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
+                        isGlue = true;
                     }
-
                     if (Input.GetMouseButton(0))
-                        isUse = true;
+                        Cursor.SetCursor(glue2, hotSpot, CursorMode.Auto);
                     if (Input.GetMouseButtonUp(0))
-                        isUse = false;
+                        Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
                     break;
 
                 default:
+                    isStamp = false;
+                    isPencil = false;
+                    isGlue = false;
                     Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                     break;
             }
@@ -132,10 +123,6 @@ public class CustomCursorControl_Workbench : MonoBehaviour
         Vector3 newPosition = new Vector3(worldPosition.x, objectToMove.transform.position.y, worldPosition.z);
 
         objectToMove.transform.position = Vector3.Lerp(objectToMove.transform.position, newPosition, Time.deltaTime * 10f);
-    }
-    void FalseisUse()
-    {
-        isUse = false;
     }
 
     IEnumerator ScissorsAnimation()
