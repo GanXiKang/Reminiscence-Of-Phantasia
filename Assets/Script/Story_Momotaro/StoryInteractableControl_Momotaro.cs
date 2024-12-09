@@ -852,6 +852,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     }
     void OnMouseEnter()
     {
+        if (SettingControl.isSettingActive) return;
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
         if (currentCoroutine != null)
