@@ -164,5 +164,7 @@ public class Showcase_House : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookShowcase = false;
+        LoadPaperColor_Workbench.isLoad = false;
+        PaperEffectsControl_Workbench.isShowDestoryPaperOut = false;
     }
 }
