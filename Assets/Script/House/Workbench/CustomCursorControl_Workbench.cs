@@ -23,97 +23,104 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
     void Update()
     {
-        switch (WorkbenchControl_House._process)
+        if (CameraControl_House.isLookWorkbench)
         {
-            case 1:
-                if (isUse)
-                {
-                    Cursor.SetCursor(stampB, hotSpot, CursorMode.Auto);
-                }
-                else
-                {
-                    Cursor.SetCursor(stampA, hotSpot, CursorMode.Auto);
-                }
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    isUse = true;
-                    Invoke("FalseisUse", 0.5f);
-                }
-                break;
-
-            case 2:
-                float screenHalfWidth = Screen.width / 2;
-
-                if (Input.mousePosition.x > screenHalfWidth)
-                {
-                    if (!isCursorChanged)
+            switch (WorkbenchControl_House._process)
+            {
+                case 1:
+                    if (isUse)
                     {
-                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
-                        isCursorChanged = true;
-                    }
-                    if (ScissorsControl_Workbench.isUseScissors)
-                    {
-                        if (!isAnim)
-                        {
-                            StartCoroutine(ScissorsAnimation());
-                        }
+                        Cursor.SetCursor(stampB, hotSpot, CursorMode.Auto);
                     }
                     else
                     {
-                        StopCoroutine(ScissorsAnimation());
-                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
-                        isAnim = false;
+                        Cursor.SetCursor(stampA, hotSpot, CursorMode.Auto);
                     }
 
-                    MoveObjectWithMouse();
-                }
-                else
-                {
-                    if (isCursorChanged)
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                        isCursorChanged = false;
+                        isUse = true;
+                        Invoke("FalseisUse", 0.5f);
                     }
-                }
-                break;
+                    break;
 
-            case 3:
-                if (isUse)
-                {
-                    Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
-                }
-                else
-                {
-                    Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
-                }
+                case 2:
+                    float screenHalfWidth = Screen.width / 2;
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    isUse = true;
-                    Invoke("FalseisUse", 0.5f);
-                }
-                break;
+                    if (Input.mousePosition.x > screenHalfWidth)
+                    {
+                        if (!isCursorChanged)
+                        {
+                            Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                            isCursorChanged = true;
+                        }
+                        if (ScissorsControl_Workbench.isUseScissors)
+                        {
+                            if (!isAnim)
+                            {
+                                StartCoroutine(ScissorsAnimation());
+                            }
+                        }
+                        else
+                        {
+                            StopCoroutine(ScissorsAnimation());
+                            Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                            isAnim = false;
+                        }
 
-            case 4:
-                if (isUse)
-                {
-                    Cursor.SetCursor(glue2, hotSpot, CursorMode.Auto);
-                }
-                else
-                {
-                    Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
-                }
+                        MoveObjectWithMouse();
+                    }
+                    else
+                    {
+                        if (isCursorChanged)
+                        {
+                            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                            isCursorChanged = false;
+                        }
+                    }
+                    break;
 
-                if (Input.GetMouseButton(0))
-                    isUse = true;
-                if (Input.GetMouseButtonUp(0))
-                    isUse = false;
-                break;
+                case 3:
+                    if (isUse)
+                    {
+                        Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
+                    }
+                    else
+                    {
+                        Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
+                    }
 
-            default:
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                break;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        isUse = true;
+                        Invoke("FalseisUse", 0.5f);
+                    }
+                    break;
+
+                case 4:
+                    if (isUse)
+                    {
+                        Cursor.SetCursor(glue2, hotSpot, CursorMode.Auto);
+                    }
+                    else
+                    {
+                        Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
+                    }
+
+                    if (Input.GetMouseButton(0))
+                        isUse = true;
+                    if (Input.GetMouseButtonUp(0))
+                        isUse = false;
+                    break;
+
+                default:
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    break;
+            }
+        }
+        else
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
 
