@@ -8,7 +8,7 @@ public class GameControl_House : MonoBehaviour
     public AudioSource BGM;
     public AudioClip morning;
 
-    public static int _day = 1;
+    public static int _day = 3;
     public static int _storyNum = 0;
 
     void Start()
