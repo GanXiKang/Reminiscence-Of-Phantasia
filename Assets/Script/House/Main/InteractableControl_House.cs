@@ -71,6 +71,8 @@ public class InteractableControl_House : MonoBehaviour
     }
     void Interactable()
     {
+        if (SettingControl.isSettingActive) return;
+
         if (isInteractable)
         {
             AppearInteractableHint();
