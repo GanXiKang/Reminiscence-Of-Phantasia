@@ -9,7 +9,7 @@ public class GameControl_House : MonoBehaviour
     public AudioClip morning;
 
     public static int _day = 3;
-    public static int _storyNum = 0;
+    public static int _storyNum = 2;
 
     void Start()
     {
