@@ -310,6 +310,10 @@ public class DialogueControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[3] = true;
                 break;
 
+            case 18:
+                UIAboveObject_House.isAboveBookcase = true;
+                break;
+
             case 20:
             case 22:
             case 25:
