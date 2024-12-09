@@ -121,15 +121,15 @@ public class SettingControl : MonoBehaviour
     {
         BGM.PlayOneShot(save);
 
-        GameData gameData = new GameData
-        {
-            gameDay = GameControl_House._day,
-            gameStoryNum = GameControl_House._storyNum,
-            playerCoins = StoreControl_House._MyCoin,
-            currentSceneName = SceneManager.GetActiveScene().name
-        };
+        //GameData gameData = new GameData
+        //{
+        //    gameDay = GameControl_House._day,
+        //    gameStoryNum = GameControl_House._storyNum,
+        //    playerCoins = StoreControl_House._MyCoin,
+        //    currentSceneName = SceneManager.GetActiveScene().name
+        //};
 
-        SaveManagerControl.Instance.SaveGame(gameData);
+        //SaveManagerControl.Instance.SaveGame(gameData);
     }
     public void ExitGame_Button()
     {
