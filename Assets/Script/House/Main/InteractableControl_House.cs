@@ -189,7 +189,21 @@ public class InteractableControl_House : MonoBehaviour
         {
             objectCollider[c].SetActive(isColliderActive[c]);
         }
-    }  
+
+        if (isColliderActive[2])
+        {
+            objectCollider[0].SetActive(true);
+        }
+        else
+        {
+            if (objectCollider[0].activeSelf)
+                Invoke("FalseDoorNoTriggerCollider", 1f);
+        }
+    }
+    void FalseDoorNoTriggerCollider()
+    {
+        objectCollider[0].SetActive(false);
+    }
     void Plot()
     {
         if (isBirdDoorBell)
