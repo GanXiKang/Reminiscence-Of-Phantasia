@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StoryGameControl_Momotaro : MonoBehaviour
 {
-    GameObject player;
-
     [Header("Exit")]
     public GameObject forest;
     public GameObject mountain;
@@ -41,11 +38,6 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public Texture2D mouse2;
     public Vector2 hotSpot = Vector2.zero;
     bool isClick = false;
-
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
 
     void Update()
     {
