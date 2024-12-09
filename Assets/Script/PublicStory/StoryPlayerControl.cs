@@ -109,7 +109,7 @@ public class StoryPlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))  //快捷建
         {
             if (Input.GetKeyDown(KeyCode.Z)) //超加速
-                _moveSpeed = 35;
+                _moveSpeed = 50;
         }
     }
     void StoryPlayerOnTheGround()
