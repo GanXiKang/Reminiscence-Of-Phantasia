@@ -299,6 +299,8 @@ public class BookcaseControl_House : MonoBehaviour
             isEntrustCome = false;
             UIControl_House.isDialogue = true;
             DialogueControl_House._textCount = 19;
+            UIAboveObject_House.isAboveDoor = true;
+            UIAboveObject_House.isAboveBookcase = false;
         }
     }
 }
