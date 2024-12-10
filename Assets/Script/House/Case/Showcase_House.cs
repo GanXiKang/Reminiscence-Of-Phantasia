@@ -81,7 +81,7 @@ public class Showcase_House : MonoBehaviour
     {
         if (!CameraControl_House.isLookShowcase) return;
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && buttonA.activeSelf)
         {
             if (_showNum != 0)
             {
@@ -91,7 +91,7 @@ public class Showcase_House : MonoBehaviour
                 StoryBookShow();
             }
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && buttonD.activeSelf)
         {
             if (_showNum != storyBook.Length - 1)
             {

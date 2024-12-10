@@ -115,7 +115,7 @@ public class BookcaseControl_House : MonoBehaviour
 
         if (GameControl_House._storyNum > 0)
         {
-            if (Input.GetKeyDown(KeyCode.A)) //上一本
+            if (Input.GetKeyDown(KeyCode.A) && bookButton[2].activeSelf) //上一本
             {
                 if (_bookNum != 0)
                 {
@@ -125,7 +125,7 @@ public class BookcaseControl_House : MonoBehaviour
                     bookButton[1].SetActive(false);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.D)) //下一本
+            if (Input.GetKeyDown(KeyCode.D) && bookButton[3].activeSelf) //下一本
             {
                 if (_bookNum < book.Length - 1)
                 {
