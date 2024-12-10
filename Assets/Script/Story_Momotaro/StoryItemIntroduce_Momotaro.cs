@@ -20,6 +20,12 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
         ItemIntroduceContent();
     }
 
+    void Update()
+    {
+        if (!StoryBagControl.isOpenBag && introduce.activeSelf)
+            introduce.SetActive(false);
+    }
+
     public void OnPointEnter(int _whichItem)
     {
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
