@@ -205,8 +205,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void WorkbenchUI()
     {
-        buttonUI[4].SetActive(isNext);
-        buttonUI[5].SetActive(isFinish);
+        buttonUI[3].SetActive(isNext);
+        buttonUI[4].SetActive(isFinish);
         teachHint.SetActive(isTeachHint);
         blackHint.SetActive(isBlackHint);
 
