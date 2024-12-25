@@ -23,8 +23,8 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("WorkbenchUI")]
     public GameObject workbenchUI;
     public GameObject[] processNum;
-    public GameObject nextImage;
-    public GameObject FinishImage;
+    public GameObject nextButton;
+    public GameObject finishButton;
     bool isNext = false;
     bool isFinish = false;
 
@@ -207,8 +207,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void WorkbenchUI()
     {
-        nextImage.SetActive(isNext);
-        FinishImage.SetActive(isFinish);
+        nextButton.SetActive(isNext);
+        finishButton.SetActive(isFinish);
         teachHint.SetActive(isTeachHint);
         blackHint.SetActive(isBlackHint);
 
