@@ -42,39 +42,39 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     break;
 
                 case 2:
-                    float screenHalfWidth = Screen.width / 2;
+                    //float screenHalfWidth = Screen.width / 2;
 
-                    if (Input.mousePosition.x > screenHalfWidth)
+                    //if (Input.mousePosition.x > screenHalfWidth)
+                    //{
+                    if (!isCursorChanged)
                     {
-                        if (!isCursorChanged)
+                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                        isCursorChanged = true;
+                    }
+                    if (ScissorsControl_Workbench.isUseScissors)
+                    {
+                        if (!isAnim)
                         {
-                            Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
-                            isCursorChanged = true;
+                            StartCoroutine(ScissorsAnimation());
                         }
-                        if (ScissorsControl_Workbench.isUseScissors)
-                        {
-                            if (!isAnim)
-                            {
-                                StartCoroutine(ScissorsAnimation());
-                            }
-                        }
-                        else
-                        {
-                            StopCoroutine(ScissorsAnimation());
-                            Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
-                            isAnim = false;
-                        }
-
-                        MoveObjectWithMouse();
                     }
                     else
                     {
-                        if (isCursorChanged)
-                        {
-                            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                            isCursorChanged = false;
-                        }
+                        StopCoroutine(ScissorsAnimation());
+                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                        isAnim = false;
                     }
+
+                    MoveObjectWithMouse();
+                    //}
+                    //else
+                    //{
+                    //    if (isCursorChanged)
+                    //    {
+                    //        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    //        isCursorChanged = false;
+                    //    }
+                    //}
                     break;
 
                 case 3:
