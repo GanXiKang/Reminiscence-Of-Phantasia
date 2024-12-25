@@ -655,6 +655,7 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         BGM.PlayOneShot(closeBook);
         buttonUI[0].SetActive(false);
+        buttonUI[1].SetActive(false);
         storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", false);
         yield return new WaitForSeconds(0.5f);
         paper[_paperNum].SetActive(false);
