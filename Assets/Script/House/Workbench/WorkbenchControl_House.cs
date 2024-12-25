@@ -228,25 +228,7 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Y) && isNext)
             {
-                isNext = false;
-                switch (_process)
-                {
-                    case 1:
-                        StartCoroutine(DisappaerChooseUI());
-                        break;
-
-                    case 2:
-                        isFinishColor = false;
-                        _process = 3;
-                        Process();
-                        break;
-
-                    case 3:
-                        SavePaperColor_Workbench.isSave = true;
-                        _process = 4;
-                        Process();
-                        break;
-                }
+                Button_Next();
             }
             if (isFinish)
             {
@@ -257,8 +239,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.T))
                 {
-                    isFinish = false;
-                    StartCoroutine(LeaveWorkbench());
+                    Button_Finish();
                 }
             }
         }
@@ -280,6 +261,33 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         BGM.PlayOneShot(open);
         isOpenBox = !isOpenBox;
+    }
+    public void Button_Next()
+    {
+        isNext = false;
+        switch (_process)
+        {
+            case 1:
+                StartCoroutine(DisappaerChooseUI());
+                break;
+
+            case 2:
+                isFinishColor = false;
+                _process = 3;
+                Process();
+                break;
+
+            case 3:
+                SavePaperColor_Workbench.isSave = true;
+                _process = 4;
+                Process();
+                break;
+        }
+    }
+    public void Button_Finish()
+    {
+        isFinish = false;
+        StartCoroutine(LeaveWorkbench());
     }
 
     void Step1_Choose()
