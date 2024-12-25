@@ -23,15 +23,12 @@ public class WorkbenchControl_House : MonoBehaviour
     [Header("WorkbenchUI")]
     public GameObject workbenchUI;
     public GameObject[] processNum;
-    public GameObject nextButton;
-    public GameObject finishButton;
+    public GameObject[] buttonUI;
     bool isNext = false;
     bool isFinish = false;
 
     [Header("ToolBox")]
     public GameObject toolBoxBG;
-    public GameObject buttonUI;
-    public GameObject up, down;
     public Transform openPoint, closePoint;
     bool isOpenBox = false;
 
@@ -138,7 +135,8 @@ public class WorkbenchControl_House : MonoBehaviour
         {
             case 0:
                 toolBoxBG.SetActive(false);
-                buttonUI.SetActive(false);
+                buttonUI[0].SetActive(true);
+                buttonUI[1].SetActive(false); //未來製作工具時在打開
                 isPaperAdjustScale = false;
                 for (int c = 1; c < isChangeColor.Length; c++)
                 {
@@ -154,7 +152,7 @@ public class WorkbenchControl_House : MonoBehaviour
             case 2:
                 isTeachHint = true;
                 toolBoxBG.SetActive(true);
-                //buttonUI.SetActive(true); //未來製作工具時在打開
+                //buttonUI[1].SetActive(true); //未來製作工具時在打開
                 isPaperRotation = true;
                 if (GameControl_House._storyNum == 0)
                 {
@@ -207,8 +205,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void WorkbenchUI()
     {
-        nextButton.SetActive(isNext);
-        finishButton.SetActive(isFinish);
+        buttonUI[4].SetActive(isNext);
+        buttonUI[5].SetActive(isFinish);
         teachHint.SetActive(isTeachHint);
         blackHint.SetActive(isBlackHint);
 
@@ -246,14 +244,14 @@ public class WorkbenchControl_House : MonoBehaviour
 
         if (isOpenBox)
         {
-            up.SetActive(false);
-            down.SetActive(true);
+            buttonUI[1].SetActive(false);
+            buttonUI[2].SetActive(true);
             toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, openPoint.position, 8f);
         }
         else
         {
-            up.SetActive(true);
-            down.SetActive(false);
+            buttonUI[1].SetActive(true);
+            buttonUI[2].SetActive(false);
             toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, closePoint.position, 10f);
         }
     }
@@ -641,7 +639,7 @@ public class WorkbenchControl_House : MonoBehaviour
         if (isFinishStoryBook)
         {
             toolBoxBG.SetActive(false);
-            buttonUI.SetActive(false);
+            buttonUI[0].SetActive(false);
             isFinishStoryBook = false;
             CameraControl_House.isLookStorkBook = true;
             Invoke("FinishpPocess", 1.5f);
