@@ -14,8 +14,8 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     public Texture2D glue1;
     public Texture2D glue2;
     public Vector2 hotSpot = Vector2.zero; 
-    private bool isCursorChanged = false;
     bool isStamp = false;
+    bool isScissors = false;
     bool isPencil = false;
     bool isGlue = false;
     bool isAnim = false;
@@ -42,14 +42,10 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     break;
 
                 case 2:
-                    //float screenHalfWidth = Screen.width / 2;
-
-                    //if (Input.mousePosition.x > screenHalfWidth)
-                    //{
-                    if (!isCursorChanged)
+                    if (!isScissors)
                     {
                         Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
-                        isCursorChanged = true;
+                        isScissors = true;
                     }
                     if (ScissorsControl_Workbench.isUseScissors)
                     {
@@ -66,15 +62,6 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     }
 
                     MoveObjectWithMouse();
-                    //}
-                    //else
-                    //{
-                    //    if (isCursorChanged)
-                    //    {
-                    //        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                    //        isCursorChanged = false;
-                    //    }
-                    //}
                     break;
 
                 case 3:
@@ -103,6 +90,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
 
                 default:
                     isStamp = false;
+                    isScissors = false;
                     isPencil = false;
                     isGlue = false;
                     Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
@@ -129,7 +117,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     {
         isAnim = true;
 
-        while (isCursorChanged && ScissorsControl_Workbench.isUseScissors)
+        while (isScissors && ScissorsControl_Workbench.isUseScissors)
         {
             Cursor.SetCursor(scissors1, hotSpot, CursorMode.Auto);
             yield return new WaitForSeconds(0.4f);
