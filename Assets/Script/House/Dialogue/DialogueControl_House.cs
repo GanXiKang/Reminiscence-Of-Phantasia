@@ -231,21 +231,6 @@ public class DialogueControl_House : MonoBehaviour
                 BGM.PlayOneShot(bell);
                 break;
 
-            case 4:
-                switch (_countEvent)
-                {
-                    case 0:
-                        _countEvent++;
-                        WorkbenchControl_House.isBlackHint = true;
-                        break;
-
-                    case 1:
-                        _countEvent = 0;
-                        WorkbenchControl_House.isBlackHint = false;
-                        break;
-                }
-                break;
-
             case 20:
                 switch (_countEvent)
                 {

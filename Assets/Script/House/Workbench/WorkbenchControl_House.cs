@@ -55,7 +55,6 @@ public class WorkbenchControl_House : MonoBehaviour
     public GameObject teachHint;
     public GameObject[] paperOut;
     public static bool isFinishCut = false;
-    public static bool isBlackHint = false;
     bool isTeachHint = false;
     bool isPaperRotation = false;
     float _rotationSpeed = 90f;
