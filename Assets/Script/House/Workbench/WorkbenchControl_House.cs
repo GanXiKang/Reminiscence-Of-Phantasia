@@ -52,12 +52,10 @@ public class WorkbenchControl_House : MonoBehaviour
     
     [Header("Step2")]
     public GameObject scissors;
-    public GameObject blackHint;
     public GameObject teachHint;
     public GameObject[] paperOut;
     public static bool isFinishCut = false;
     public static bool isBlackHint = false;
-    bool isBlackHintAppear = false;
     bool isTeachHint = false;
     bool isPaperRotation = false;
     float _rotationSpeed = 90f;
@@ -205,7 +203,6 @@ public class WorkbenchControl_House : MonoBehaviour
         buttonUI[3].SetActive(isNext);
         buttonUI[4].SetActive(isFinish);
         teachHint.SetActive(isTeachHint);
-        blackHint.SetActive(isBlackHint);
 
         for (int p = 1; p < processNum.Length; p++)
         {
@@ -461,7 +458,6 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         PaperRotation();
         CutPaperOutFinish();
-        BlackHint();
     }
     void PaperRotation()
     {
@@ -563,34 +559,6 @@ public class WorkbenchControl_House : MonoBehaviour
             _cutPaperFinish = 0;
             paper[_paperNum].transform.rotation = Quaternion.Euler(90f, 0f, 90f);
         }
-    }
-    void BlackHint()
-    {
-        if (isBlackHint && !isBlackHintAppear)
-        {
-            isBlackHintAppear = true;
-            StartCoroutine(FadeInCanvasGroup());
-        }    
-    }
-    IEnumerator FadeInCanvasGroup()
-    {
-        CanvasGroup cg = blackHint.GetComponent<CanvasGroup>();
-        float elapsedTime = 0f;
-        
-        cg.alpha = 0f;
-        cg.interactable = false;
-        cg.blocksRaycasts = false;
-
-        while (elapsedTime < 0.8f)
-        {
-            elapsedTime += Time.deltaTime;
-            cg.alpha = Mathf.Clamp01(elapsedTime / 0.8f);
-            yield return null;
-        }
-
-        cg.alpha = 1f;
-        cg.interactable = true;
-        cg.blocksRaycasts = true;
     }
 
     void Step3_Color()
