@@ -106,7 +106,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
                 if (py > 0) pixels.Enqueue(new Vector2Int(px, py - 1));
                 if (py < texture.height - 1) pixels.Enqueue(new Vector2Int(px, py + 1));
 
-                if (filledPixels % 12000 == 0)
+                if (filledPixels % 30000 == 0)
                 {
                     float progress = (float)filledPixels / totalPixels;
                     if (progressBar != null)
