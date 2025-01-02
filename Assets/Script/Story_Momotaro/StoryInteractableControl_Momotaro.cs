@@ -58,8 +58,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     bool isSkill = false;
 
     //01Momotaro
-    int _findPartner = 0;
-    bool specialEnding = false;
+    public static int _findPartner = 0;
+    public static bool specialEnding = false;
     //02Goddess
     int _itemGoddess = 0;
     public static bool isGoddessGetSkill = false;
