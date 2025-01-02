@@ -476,6 +476,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 isMeet = true;
                                 isInteractable = true;
                                 _findPartner += 2;
+                                print(_findPartner);
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._isAboveWho2 = 8;
@@ -669,6 +670,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 1:
                                 isInteractable = true;
                                 _findPartner++;
+                                print(_findPartner);
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 47;
