@@ -438,9 +438,22 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             default:
                                 if (!isSuccessfulPerformance)
                                 {
-                                    StoryUIControl_Momotaro.isDialogue = true;
-                                    StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                    StoryDialogueControl_Momotaro._textCount = 10;
+                                    if (!specialEnding)
+                                    {
+                                        if (_findPartner < 3)
+                                        {
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._textCount = 10;
+                                        }
+                                        else
+                                        {
+                                            specialEnding = true;
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._textCount = 12;
+                                        }
+                                    }
                                 }
                                 else
                                 {
@@ -462,6 +475,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             case 1:
                                 isMeet = true;
                                 isInteractable = true;
+                                _findPartner += 2;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._isAboveWho2 = 8;
@@ -654,6 +668,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         {
                             case 1:
                                 isInteractable = true;
+                                _findPartner++;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 47;
