@@ -57,6 +57,9 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public Transform skillUIPosition;
     bool isSkill = false;
 
+    //01Momotaro
+    int _findPartner = 0;
+    bool specialEnding = false;
     //02Goddess
     int _itemGoddess = 0;
     public static bool isGoddessGetSkill = false;
