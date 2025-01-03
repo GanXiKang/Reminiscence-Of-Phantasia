@@ -13,6 +13,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     //01Momotaro
     public static bool isHappy_Momo = false;
     public static bool isSad_Momo = true;
+    public static bool isWalk_Momo = false;
+    public static bool isGoForest = false;
     //02Goddess
     public static bool isAngry = false;
     public static bool isOutLake = false;
@@ -74,6 +76,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                     anim.SetBool("isHappy", false);
                 }
                 anim.SetBool("isSad", isSad_Momo);
+                anim.SetBool("isWalk", isWalk_Momo);
+                anim.SetBool("isGoForest", isGoForest);
                 break;
 
             case 2:
