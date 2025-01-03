@@ -116,9 +116,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         interactableUI.SetActive(isInteractableUI);
 
         if (StoryUIControl_Momotaro.isDialogue)
-        {
             isInteractableUI = false;
-        }
 
         if (!isInteractableUI) return;
 
@@ -208,6 +206,26 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "Ð¡ÅÁ";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 12:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "½ðÌ«ÀÉ";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 13:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "ãyÌ«ÀÉ";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
