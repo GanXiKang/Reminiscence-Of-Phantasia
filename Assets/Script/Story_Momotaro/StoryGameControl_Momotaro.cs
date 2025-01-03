@@ -83,17 +83,18 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     }
     void NpcActive()
     {
-        momotaro.enabled = sceneRiver.activeSelf;
         cat.enabled = scenePlaza.activeSelf;
         parrot.SetActive(isParrotActive);
-        if (StoryNpcAnimator_Momotaro._dating == 0)
-        {
-            donkey.SetActive(sceneForest.activeSelf);
-        }
+
+        if (!StoryInteractableControl_Momotaro.isSpecialEnding)
+            momotaro.enabled = sceneRiver.activeSelf;
         else
-        {
+            momotaro.enabled = true;
+
+        if (StoryNpcAnimator_Momotaro._dating == 0)
+            donkey.SetActive(sceneForest.activeSelf);
+        else
             donkey.SetActive(true);
-        }
     }
     void MouseCursor()
     {
