@@ -18,6 +18,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     [Header("RoleUI")]
     public GameObject roleUI;
     public GameObject[] roleButton;
+    public Transform[] point;
     public static bool isRoleActive = false;
     public static int _whoEatGoldRice;
     public static bool isEat = false;
@@ -137,5 +138,26 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     void EatFinish()
     {
         isEat = false;
+    }
+
+    IEnumerator RiceAnimation(GameObject obj, Vector3 start, Vector3 end, CanvasGroup canvasGroup)
+    {
+        float elapsedTime = 0f;
+        float duration = 1f;
+
+        while (elapsedTime < duration)
+        {
+            obj.transform.position = Vector3.Lerp(start, end, elapsedTime / duration);
+
+            canvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / duration);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        obj.transform.position = end;
+        canvasGroup.alpha = 1;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
     }
 }
