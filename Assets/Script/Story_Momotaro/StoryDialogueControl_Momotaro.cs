@@ -453,7 +453,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
                     case 2:
                         StoryNpcAnimator_Momotaro.isWalk_Momo = true;
-                        StoryNpcAnimator_Momotaro.isGoForest = true;
+                        StoryNpcAnimator_Momotaro.isMoveForest = true;
                         _countEvent = 0;
                         break;
                 }
