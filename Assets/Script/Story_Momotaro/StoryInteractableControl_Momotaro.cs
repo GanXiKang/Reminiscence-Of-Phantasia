@@ -59,7 +59,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
 
     //01Momotaro
     public static int _findPartner = 0;
-    public static bool specialEnding = false;
+    public static bool isSpecialEnding = false;
     //02Goddess
     int _itemGoddess = 0;
     public static bool isGoddessGetSkill = false;
@@ -456,7 +456,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             default:
                                 if (!isSuccessfulPerformance)
                                 {
-                                    if (!specialEnding)
+                                    if (!isSpecialEnding)
                                     {
                                         if (_findPartner < 3)
                                         {
@@ -466,7 +466,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                         }
                                         else
                                         {
-                                            specialEnding = true;
+                                            isSpecialEnding = true;
                                             StoryUIControl_Momotaro.isDialogue = true;
                                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                             StoryDialogueControl_Momotaro._textCount = 12;
