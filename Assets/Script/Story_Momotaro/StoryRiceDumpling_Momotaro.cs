@@ -30,9 +30,8 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     void Update()
     {
         skillUI.SetActive(isSkillActive && !StoryUIControl_Momotaro.isPerformances);
-        roleUI.SetActive(isRoleActive);
-        raccoonSkillUI.SetActive(StoryPlayerAnimator_Momotaro.isRaccoon);
 
+        raccoonSkillUI.SetActive(StoryPlayerAnimator_Momotaro.isRaccoon);
         RoleUI();
         RaccoonSkill();
 
@@ -85,6 +84,19 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (!isChangeRoles)
         {
             isRoleActive = !isRoleActive;
+            if (isRoleActive)
+            {
+                roleUI.SetActive(true);
+                StartCoroutine(RiceAppearAnimation(roleButton[1], point[0].position, point[1].position));
+                StartCoroutine(RiceAppearAnimation(roleButton[2], point[0].position, point[2].position));
+                StartCoroutine(RiceAppearAnimation(roleButton[3], point[0].position, point[3].position));
+            }
+            else
+            {
+                StartCoroutine(RiceDisappearAnimation(roleButton[1], point[1].position, point[0].position));
+                StartCoroutine(RiceDisappearAnimation(roleButton[2], point[2].position, point[0].position));
+                StartCoroutine(RiceDisappearAnimation(roleButton[3], point[3].position, point[0].position));
+            }
         }
         else
         {
@@ -106,7 +118,9 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         Invoke("EatFinish", 0.3f);
 
         isChangeRoles = true;
-        isRoleActive = false;
+        StartCoroutine(RiceDisappearAnimation(roleButton[1], point[1].position, point[0].position));
+        StartCoroutine(RiceDisappearAnimation(roleButton[2], point[2].position, point[0].position));
+        StartCoroutine(RiceDisappearAnimation(roleButton[3], point[3].position, point[0].position));
         StoryPlayerAnimator_Momotaro.isSmokeEF = true;
         switch (role)
         {
@@ -140,8 +154,12 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         isEat = false;
     }
 
-    IEnumerator RiceAnimation(GameObject obj, Vector3 start, Vector3 end, CanvasGroup canvasGroup)
+    IEnumerator RiceAppearAnimation(GameObject obj, Vector3 start, Vector3 end)
     {
+        CanvasGroup cg = obj.GetComponent<CanvasGroup>();
+
+        cg.alpha = 0;
+        cg.interactable = false;
         float elapsedTime = 0f;
         float duration = 1f;
 
@@ -149,15 +167,39 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         {
             obj.transform.position = Vector3.Lerp(start, end, elapsedTime / duration);
 
-            canvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / duration);
+            cg.alpha = Mathf.Lerp(0, 1, elapsedTime / duration);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         obj.transform.position = end;
-        canvasGroup.alpha = 1;
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
+        cg.alpha = 1;
+        cg.interactable = true;
+    }
+    IEnumerator RiceDisappearAnimation(GameObject obj, Vector3 start, Vector3 end)
+    {
+        CanvasGroup cg = obj.GetComponent<CanvasGroup>();
+
+        cg.alpha = 1;
+        cg.interactable = true;
+        float elapsedTime = 0f;
+        float duration = 1f;
+
+        while (elapsedTime < duration)
+        {
+            obj.transform.position = Vector3.Lerp(start, end, elapsedTime / duration);
+
+            cg.alpha = Mathf.Lerp(1, 0, elapsedTime / duration);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        obj.transform.position = end;
+        cg.alpha = 0;
+        cg.interactable = false;
+        isRoleActive = false;
+        roleUI.SetActive(false);
     }
 }
