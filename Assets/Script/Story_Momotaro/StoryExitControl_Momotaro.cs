@@ -10,7 +10,6 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     [Header("Value")]
     public int _goToThatScene;
     public static int _changeSceneNum;
-    bool isSpecialEndingOnce = true;
     bool isGoPlazaOnce = true;
 
     [Header("UI")]
@@ -66,14 +65,6 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                                 StoryPlayerAnimator_Momotaro.isRaccoon = false;
                                 StoryPlayerAnimator_Momotaro.isParrot = false;
                             }
-                        }
-                        if (StoryInteractableControl_Momotaro.isSpecialEnding && isSpecialEndingOnce)
-                        {
-                            isSpecialEndingOnce = false;
-                            StoryNpcAnimator_Momotaro.isWalk_Momo = false;
-                            StoryUIControl_Momotaro.isDialogue = true;
-                            StoryDialogueControl_Momotaro._isAboveWho1 = 1;
-                            StoryDialogueControl_Momotaro._textCount = 13;
                         }
                         break;
 
