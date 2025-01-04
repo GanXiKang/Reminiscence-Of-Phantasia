@@ -607,7 +607,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             if (isSpecialEnding && isSpecialEndingOnce)
                             {
                                 isSpecialEndingOnce = false;
-                                //momo◊ﬂﬂ^ÅÌ
+                                StoryNpcAnimator_Momotaro._movePlot = 2;
                                 StoryNpcAnimator_Momotaro.isWalk_Momo = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = 1;
