@@ -991,6 +991,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                     StoryDialogueControl_Momotaro._textCount = 26;
                                     StoryRiceDumpling_Momotaro._whoEatGoldRice = _who;
+                                    StoryRiceDumpling_Momotaro.isChangeRolePlot = true;
                                 }
                                 StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
                                 StoryBagControl._howManyGrids++;
