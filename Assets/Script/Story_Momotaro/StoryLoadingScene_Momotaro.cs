@@ -27,6 +27,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     public static bool isLoading = false;
     public static bool isOpen = false; 
     bool isClose = false;
+    bool isSpecialEndingOnce = true;
     float _loadingSpeed = 1.5f;
 
     //value
@@ -89,6 +90,14 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                     isFirstGoPlaza = false;
                     StoryUIControl_Momotaro.isDialogue = true;
                     StoryDialogueControl_Momotaro._textCount = 4;
+                }
+                if (StoryInteractableControl_Momotaro.isSpecialEnding && isSpecialEndingOnce)
+                {
+                    isSpecialEndingOnce = false;
+                    StoryNpcAnimator_Momotaro.isWalk_Momo = false;
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._isAboveWho1 = 1;
+                    StoryDialogueControl_Momotaro._textCount = 13;
                 }
             }
         }
