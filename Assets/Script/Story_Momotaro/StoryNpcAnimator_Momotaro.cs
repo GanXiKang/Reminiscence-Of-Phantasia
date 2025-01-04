@@ -190,6 +190,12 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isExcited", isExcited);
                 anim.SetBool("isLeave", isLeave_Parrot);
                 break;
+
+            case 12:
+                break;
+
+            case 13:
+                break;
         }
     }
 
