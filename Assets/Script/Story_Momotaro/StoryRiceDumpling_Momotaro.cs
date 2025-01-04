@@ -43,7 +43,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         if (isChangeRolePlot)
         {
             isChangeRolePlot = false;
-            Button_RiceDumpling();
+            roleUI.SetActive(false);
         }
     }
 
