@@ -478,16 +478,21 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Momotaro.isWalk_Momo = false;
                         StoryNpcAnimator_Momotaro.isOutLake = true;
                         _countEvent++;
                         break;
 
                     case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        StoryNpcAnimator_Momotaro.isWalk_Momo = true;
                         StoryNpcAnimator_Momotaro._movePlot = 3;
                         _countEvent++;
                         break;
 
                     case 2:
+                        StoryNpcAnimator_Momotaro.isWalk_Momo = false;
                         StoryNpcAnimator_Momotaro.isOutLake_GSMomo = true;
                         _countEvent = 0;
                         break;
