@@ -488,7 +488,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
 
                     case 2:
-                        //≥ˆÅÌ
+                        StoryNpcAnimator_Momotaro.isOutLake_GSMomo = true;
                         _countEvent = 0;
                         break;
                 }
