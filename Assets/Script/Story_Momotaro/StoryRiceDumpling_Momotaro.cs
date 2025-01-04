@@ -19,9 +19,10 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public GameObject roleUI;
     public GameObject[] roleButton;
     public Transform[] point;
-    public static bool isRoleActive = false;
+    public static bool isChangeRolePlot = false;
     public static int _whoEatGoldRice;
     public static bool isEat = false;
+    bool isRoleActive = false;
 
     [Header("RaccoonSkillUI")]
     public GameObject raccoonSkillUI;
@@ -37,6 +38,11 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && skillUI.activeSelf)
         {
+            Button_RiceDumpling();
+        }
+        if (isChangeRolePlot)
+        {
+            isChangeRolePlot = false;
             Button_RiceDumpling();
         }
     }
