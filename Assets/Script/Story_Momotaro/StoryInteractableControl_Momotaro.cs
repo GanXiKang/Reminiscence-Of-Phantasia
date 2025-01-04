@@ -62,6 +62,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static bool isSpecialEnding = false;
     //02Goddess
     int _itemGoddess = 0;
+    bool isSpecialEndingOnce = true;
     public static bool isGoddessGetSkill = false;
     public static bool isAnswerLie = false;
     public static bool isAnswerGold = false;
@@ -600,6 +601,19 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                             StoryDialogueControl_Momotaro._textCount = 17;
+                            break;
+
+                        default:
+                            if (isSpecialEnding && isSpecialEndingOnce)
+                            {
+                                isSpecialEndingOnce = false;
+                                //momo◊ﬂﬂ^ÅÌ
+                                StoryNpcAnimator_Momotaro.isWalk_Momo = true;
+                                StoryUIControl_Momotaro.isDialogue = true;
+                                StoryDialogueControl_Momotaro._isAboveWho1 = 1;
+                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                StoryDialogueControl_Momotaro._textCount = 15;
+                            }
                             break;
                     }
                     break;
