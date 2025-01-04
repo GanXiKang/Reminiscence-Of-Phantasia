@@ -483,7 +483,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
 
                     case 1:
-                        //jump
+                        StoryNpcAnimator_Momotaro._movePlot = 3;
                         _countEvent++;
                         break;
 
