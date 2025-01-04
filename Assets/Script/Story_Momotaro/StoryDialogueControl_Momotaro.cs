@@ -459,6 +459,21 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 13:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryNpcAnimator_Momotaro.isSad_Momo = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryNpcAnimator_Momotaro.isSad_Momo = false;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
             case 17:
             case 18:
             case 19:
