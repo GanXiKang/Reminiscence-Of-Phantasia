@@ -10,6 +10,8 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     [Header("Value")]
     public int _goToThatScene;
     public static int _changeSceneNum;
+    bool isSpecialEndingOnce = true;
+    bool isGoPlazaOnce = true;
 
     [Header("UI")]
     public GameObject exitUI;
@@ -17,7 +19,6 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     public Text sceneName;
     public static bool isExit = false;
     float _barSpeed = 2f;
-    bool isOnce = true;
 
     void Start()
     {
@@ -66,12 +67,20 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                                 StoryPlayerAnimator_Momotaro.isParrot = false;
                             }
                         }
+                        if (StoryInteractableControl_Momotaro.isSpecialEnding && isSpecialEndingOnce)
+                        {
+                            isSpecialEndingOnce = false;
+                            StoryNpcAnimator_Momotaro.isWalk_Momo = false;
+                            StoryUIControl_Momotaro.isDialogue = true;
+                            StoryDialogueControl_Momotaro._isAboveWho1 = 1;
+                            StoryDialogueControl_Momotaro._textCount = 13;
+                        }
                         break;
 
                     case 4:
-                        if (isOnce)
+                        if (isGoPlazaOnce)
                         {
-                            isOnce = false;
+                            isGoPlazaOnce = false;
                             StoryLoadingScene_Momotaro.isFirstGoPlaza = true;
                         }
                         break;
