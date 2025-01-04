@@ -565,7 +565,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryPlayerAnimator_Momotaro.isSmokeEF = true;
                 StoryPlayerAnimator_Momotaro.isDonkey = true;
                 StoryRiceDumpling_Momotaro.isChangeRoles = true;
-                StoryRiceDumpling_Momotaro.isChangeRolePlot = true;
                 break;
 
             case 31:
