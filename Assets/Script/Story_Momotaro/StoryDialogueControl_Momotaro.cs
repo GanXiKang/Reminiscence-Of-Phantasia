@@ -474,6 +474,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 15:
+
+                break;
+
             case 17:
             case 18:
             case 19:
