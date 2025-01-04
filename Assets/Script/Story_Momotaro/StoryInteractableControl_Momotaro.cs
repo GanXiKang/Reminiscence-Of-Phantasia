@@ -609,7 +609,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 isSpecialEndingOnce = false;
                                 StoryNpcAnimator_Momotaro._movePlot = 2;
                                 StoryNpcAnimator_Momotaro.isWalk_Momo = true;
-                                StoryNpcAnimator_Momotaro.isOutLake = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = 1;
                                 StoryDialogueControl_Momotaro._isAboveWho2 = _who;
