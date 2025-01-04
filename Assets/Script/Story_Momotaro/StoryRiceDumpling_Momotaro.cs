@@ -158,8 +158,10 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     {
         CanvasGroup cg = obj.GetComponent<CanvasGroup>();
 
+        obj.transform.position = start;
         cg.alpha = 0;
         cg.interactable = false;
+
         float elapsedTime = 0f;
         float duration = 1f;
 
@@ -181,8 +183,10 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     {
         CanvasGroup cg = obj.GetComponent<CanvasGroup>();
 
+        obj.transform.position = start;
         cg.alpha = 1;
         cg.interactable = true;
+
         float elapsedTime = 0f;
         float duration = 1f;
 
