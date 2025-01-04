@@ -68,7 +68,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
 
         bool isRiceOpenButtonActive()
         {
-            return isRoleActive || 
+            return isRoleActive ||
                    StoryPlayerAnimator_Momotaro.isDonkey || 
                    StoryPlayerAnimator_Momotaro.isRaccoon ||
                    StoryPlayerAnimator_Momotaro.isStone;
@@ -106,6 +106,7 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         }
         else
         {
+            isRoleActive = false;
             isChangeRoles = false;
             riceButton.SetActive(true);
             riceOpenButton.SetActive(false);
