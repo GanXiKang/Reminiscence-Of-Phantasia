@@ -50,6 +50,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isPerformance = false;
     public static bool isExcited = false;
     public static bool isLeave_Parrot = false;
+    //12Gold13SilverMomo
+    public static bool isOutLake_GSMomo = false;
 
     void Start()
     {
@@ -192,9 +194,11 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 12:
+                anim.SetBool("isOutLake", isOutLake_GSMomo);
                 break;
 
             case 13:
+                anim.SetBool("isOutLake", isOutLake_GSMomo);
                 break;
         }
     }
