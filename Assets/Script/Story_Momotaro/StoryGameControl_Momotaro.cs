@@ -24,11 +24,14 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     [Header("SceneActive")]
     public GameObject sceneRiver;
     public GameObject sceneForest;
+    public GameObject sceneMountain;
     public GameObject scenePlaza;
 
     [Header("Npc")]
     public SpriteRenderer momotaro;
     public SpriteRenderer cat;
+    public SpriteRenderer goldMomo;
+    public SpriteRenderer sliverMomo;
     public GameObject donkey;
     public GameObject parrot;
     public static bool isParrotActive = false;
@@ -95,6 +98,10 @@ public class StoryGameControl_Momotaro : MonoBehaviour
             donkey.SetActive(sceneForest.activeSelf);
         else
             donkey.SetActive(true);
+
+
+        //goldMomo.enabled = sceneMountain.activeSelf;
+        //sliverMomo.enabled = scenePlaza.activeSelf;
     }
     void MouseCursor()
     {
