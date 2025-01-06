@@ -58,6 +58,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     bool isSkill = false;
 
     //01Momotaro
+    bool isSpecialOver = false;
     public static int _findPartner = 0;
     public static bool isSpecialEnding = false;
     //02Goddess
@@ -459,18 +460,18 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 {
                                     if (!isSpecialEnding)
                                     {
-                                        if (_findPartner < 3)
-                                        {
-                                            StoryUIControl_Momotaro.isDialogue = true;
-                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                            StoryDialogueControl_Momotaro._textCount = 10;
-                                        }
-                                        else
+                                        if (_findPartner >= 3 && !isSpecialOver)
                                         {
                                             isSpecialEnding = true;
                                             StoryUIControl_Momotaro.isDialogue = true;
                                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                             StoryDialogueControl_Momotaro._textCount = 12;
+                                        }
+                                        else
+                                        {
+                                            StoryUIControl_Momotaro.isDialogue = true;
+                                            StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                            StoryDialogueControl_Momotaro._textCount = 10;
                                         }
                                     }
                                 }
@@ -1056,6 +1057,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                 StoryDialogueControl_Momotaro._textCount = 49;
+                                if (!isSpecialEnding)
+                                {
+                                    isSpecialOver = true;
+                                }
                                 break;
                         }
                         break;
