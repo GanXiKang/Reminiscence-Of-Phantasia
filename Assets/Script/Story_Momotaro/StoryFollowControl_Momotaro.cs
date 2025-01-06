@@ -25,20 +25,21 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         switch (_who)
         {
             case 12:
-                if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime < 1f) return;
+                if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime >= 1f)
+                    FollowPlayer();
                 break;
 
             case 13:
-                if (stateInfo.IsName("GoPlaza") && stateInfo.normalizedTime < 1f) return;
+                if (stateInfo.IsName("GoPlaza") && stateInfo.normalizedTime >= 1f)
+                    FollowPlayer();
                 break;
         }
 
-        FollowPlayer();
+        
     }
 
     void FollowPlayer()
     {
-        print("OK");
         Vector3 targetPosition = player.transform.position - player.transform.forward * _followDistance;
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _followSpeed);
     }
