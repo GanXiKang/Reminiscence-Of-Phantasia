@@ -53,9 +53,6 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
             {
                 isPlayMusiaOnce = false;
                 BGM.PlayOneShot(switchScene);
-
-                if (isHintGoPlaza)
-                    BGM.PlayOneShot(hintGoPlaza);
             }
 
             BarValue(a, true);
@@ -98,6 +95,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 if (isHintGoPlaza)
                 {
                     isHintGoPlaza = false;
+                    BGM.PlayOneShot(hintGoPlaza);
                     StoryUIControl_Momotaro.isDialogue = true;
                     StoryDialogueControl_Momotaro._textCount = 76;
                 }
