@@ -63,10 +63,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static bool isSpecialOver = false;
     //02Goddess
     int _itemGoddess = 0;
-    bool isSpecialEndingOnce = true;
     public static bool isGoddessGetSkill = false;
     public static bool isAnswerLie = false;
     public static bool isAnswerGold = false;
+    public static bool isMomoFindGoddess = false;
     //03Donkey
     public static bool isGiveTheRightGift = false;
     public static bool isWrongGift = false;
@@ -605,9 +605,9 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             break;
 
                         default:
-                            if (isSpecialEnding && isSpecialEndingOnce)
+                            if (isSpecialEnding && isMomoFindGoddess)
                             {
-                                isSpecialEndingOnce = false;
+                                isMomoFindGoddess = false;
                                 StoryNpcAnimator_Momotaro._movePlot = 2;
                                 StoryNpcAnimator_Momotaro.isWalk_Momo = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
