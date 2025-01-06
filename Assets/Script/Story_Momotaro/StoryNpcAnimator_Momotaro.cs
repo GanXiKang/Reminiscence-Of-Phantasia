@@ -11,6 +11,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     bool isOnce = true;
 
     //01Momotaro
+    public static int _direction_Momo = 0;
     public static bool isHappy_Momo = false;
     public static bool isSad_Momo = true;
     public static bool isWalk_Momo = false;
@@ -69,6 +70,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
         switch (_who)
         {
             case 1:
+                anim.SetInteger("Direction", _direction_Momo);
                 if (isHappy_Momo)
                 {
                     anim.SetBool("isHappy", true);
