@@ -11,6 +11,8 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     float _followDistance = 12f;
 
     public int _who;
+    public GameObject mountainScene;
+    public GameObject plazaScene;
 
     void Start()
     {
@@ -25,12 +27,12 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         switch (_who)
         {
             case 12:
-                if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime >= 1f)
+                if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime >= 1f && mountainScene.activeSelf)
                     FollowPlayer();
                 break;
 
             case 13:
-                if (stateInfo.IsName("GoPlaza") && stateInfo.normalizedTime >= 1f)
+                if (stateInfo.IsName("GoPlaza") && stateInfo.normalizedTime >= 1f && plazaScene.activeSelf)
                     FollowPlayer();
                 break;
         }
@@ -41,6 +43,8 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     void FollowPlayer()
     {
         Vector3 targetPosition = player.transform.position - player.transform.forward * _followDistance;
+        print("1: " + targetPosition);
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _followSpeed);
+        print("2: " + transform.position);
     }
 }
