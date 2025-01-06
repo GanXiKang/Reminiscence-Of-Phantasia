@@ -8,7 +8,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip riverSideBGM, forestBGM, mountainBGM, plazaBGM;
-    public AudioClip switchScene;
+    public AudioClip switchScene, hintGoPlaza;
     bool isPlayMusiaOnce = true;
 
     [Header("Scene")]
@@ -27,13 +27,14 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
     public static bool isLoading = false;
     public static bool isOpen = false; 
     bool isClose = false;
-    bool isSpecialEndingOnce = true;
     float _loadingSpeed = 1.5f;
 
-    //value
+    //Plot
     bool isFirstGoForest = true;
+    bool isSpecialEndingOnce = true;
     public static bool isFirstGoPlaza = false;
     public static bool isPlotAnimator = false;
+    public static bool isHintGoPlaza = false;
 
     void Update()
     {
@@ -50,8 +51,11 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
             ChangeLoadingSprite();
             if (isPlayMusiaOnce)
             {
-                BGM.PlayOneShot(switchScene);
                 isPlayMusiaOnce = false;
+                BGM.PlayOneShot(switchScene);
+
+                if (isHintGoPlaza)
+                    BGM.PlayOneShot(hintGoPlaza);
             }
 
             BarValue(a, true);
@@ -90,6 +94,12 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                     isFirstGoPlaza = false;
                     StoryUIControl_Momotaro.isDialogue = true;
                     StoryDialogueControl_Momotaro._textCount = 4;
+                }
+                if (isHintGoPlaza)
+                {
+                    isHintGoPlaza = false;
+                    StoryUIControl_Momotaro.isDialogue = true;
+                    StoryDialogueControl_Momotaro._textCount = 76;
                 }
                 if (StoryInteractableControl_Momotaro.isSpecialEnding && isSpecialEndingOnce)
                 {
