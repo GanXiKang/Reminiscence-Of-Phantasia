@@ -86,6 +86,8 @@ public class StoryExitControl_Momotaro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (StoryInteractableControl_Momotaro.isMomoFindGoddess) return;
+
         if (other.tag == "Player")
         {
             isExit = true;
