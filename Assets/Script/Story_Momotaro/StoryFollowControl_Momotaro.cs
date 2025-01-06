@@ -10,6 +10,8 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     float _followSpeed = 3f;
     float _followDistance = 2f;
 
+    public int _who;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -20,8 +22,18 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     {
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(1);
 
-        if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime < 1f) return;
+        switch (_who)
+        {
+            case 12:
+                if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime < 1f) return;
+                break;
 
+            case 13:
+                if (stateInfo.IsName("GoPlaza") && stateInfo.normalizedTime < 1f) return;
+                break;
+        }
+
+        print("OK");
         FollowPlayer();
     }
 
