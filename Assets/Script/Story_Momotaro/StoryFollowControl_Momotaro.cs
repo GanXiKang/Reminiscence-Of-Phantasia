@@ -36,8 +36,6 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
                     FollowPlayer();
                 break;
         }
-
-        
     }
 
     void FollowPlayer()
