@@ -623,8 +623,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
 
                     case 2:
-                        StoryNpcAnimator_Momotaro.isLeave_Monkey = true;
-                        StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
+                        //StoryNpcAnimator_Momotaro.isLeave_Monkey = true;
+                        //StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
                         _countEvent = 0;
                         break;
                 }
@@ -812,6 +812,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 49:
+                StoryNpcAnimator_Momotaro.isLeave_Monkey = true;
+                StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
                 StoryStrongWind_Momotaro._respawnNum = 1;
                 StoryStrongWind_Momotaro.isBlownAway = true;
                 BlackScreenControl.isOpenBlackScreen = true;
