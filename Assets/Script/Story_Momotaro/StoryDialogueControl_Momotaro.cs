@@ -815,6 +815,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryStrongWind_Momotaro._respawnNum = 1;
                 StoryStrongWind_Momotaro.isBlownAway = true;
                 BlackScreenControl.isOpenBlackScreen = true;
+                StoryLoadingScene_Momotaro.isHintGoPlaza = true;
                 break;
 
             case 50:
