@@ -103,7 +103,6 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 {
                     isSpecialEndingOnce = false;
                     StoryNpcAnimator_Momotaro.isWalk_Momo = false;
-                    StoryNpcAnimator_Momotaro._direction_Momo = 1;
                     StoryUIControl_Momotaro.isDialogue = true;
                     StoryDialogueControl_Momotaro._isAboveWho1 = 1;
                     StoryDialogueControl_Momotaro._textCount = 13;
