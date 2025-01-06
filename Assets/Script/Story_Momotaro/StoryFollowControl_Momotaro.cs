@@ -7,8 +7,8 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     GameObject player;
     Animator anim;
 
-    float _followSpeed = 3f;
-    float _followDistance = 2f;
+    float _followSpeed = 20f;
+    float _followDistance = 12f;
 
     public int _who;
 
@@ -33,12 +33,12 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
                 break;
         }
 
-        print("OK");
         FollowPlayer();
     }
 
     void FollowPlayer()
     {
+        print("OK");
         Vector3 targetPosition = player.transform.position - player.transform.forward * _followDistance;
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _followSpeed);
     }
