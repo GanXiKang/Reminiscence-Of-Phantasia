@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class StoryFollowControl_Momotaro : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject player;
+    Animator anim;
+
+    float _followSpeed = 3f;
+    float _followDistance = 2f;
+
     void Start()
     {
-        
+        player = GameObject.Find("Player");
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(1);
+
+        if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime < 1f) return;
+
+        FollowPlayer();
+    }
+
+    void FollowPlayer()
+    {
+        Vector3 targetPosition = player.transform.position - player.transform.forward * _followDistance;
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _followSpeed);
     }
 }
