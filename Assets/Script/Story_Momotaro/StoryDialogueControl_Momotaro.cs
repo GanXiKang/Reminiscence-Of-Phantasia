@@ -497,7 +497,6 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         _countEvent = 0;
                         break;
                 }
-                
                 break;
 
             case 17:
@@ -745,14 +744,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 15:
-            case 19:
-            case 20:
-            case 22:
+                StoryNpcAnimator_Momotaro.isGoTarget_GSMomo = true;
                 StoryNpcAnimator_Momotaro.isBackLake = true;
-                if (StoryNpcAnimator_Momotaro.isAngry)
-                {
-                    Invoke("FalseGoddessAngry", 2f);
-                }
                 break;
 
             case 17:
@@ -765,6 +758,16 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 else
                 {
                     StoryTeachControl.isTeachActive = true;
+                }
+                break;
+
+            case 19:
+            case 20:
+            case 22:
+                StoryNpcAnimator_Momotaro.isBackLake = true;
+                if (StoryNpcAnimator_Momotaro.isAngry)
+                {
+                    Invoke("FalseGoddessAngry", 2f);
                 }
                 break;
 
