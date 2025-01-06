@@ -743,6 +743,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryUIControl_Momotaro.isStoryEnding = true;
                 break;
 
+            case 13:
+                StoryInteractableControl_Momotaro.isMomoFindGoddess = true;
+                break;
+
             case 15:
                 StoryNpcAnimator_Momotaro.isGoTarget_GSMomo = true;
                 StoryNpcAnimator_Momotaro.isBackLake = true;
