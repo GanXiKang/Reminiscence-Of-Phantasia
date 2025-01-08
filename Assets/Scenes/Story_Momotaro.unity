@@ -10263,7 +10263,7 @@ Transform:
   m_GameObject: {fileID: 796611226}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -108.8, y: -6.38, z: 94.7}
+  m_LocalPosition: {x: -109.12, y: -5.59, z: 95.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10432,8 +10432,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 796611226}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.5
-  m_Speed: 9
+  m_Radius: 2
+  m_Speed: 11
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -10442,7 +10442,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 8
-  m_BaseOffset: 4
+  m_BaseOffset: 5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &801270832
@@ -27903,7 +27903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1487504410
 Transform:
   m_ObjectHideFlags: 0
@@ -29395,7 +29395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1666230236
 Transform:
   m_ObjectHideFlags: 0
@@ -32080,7 +32080,7 @@ Transform:
   m_GameObject: {fileID: 1953770824}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -230, y: -6.5, z: 44}
+  m_LocalPosition: {x: -230.36, y: -5.61, z: 44.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32249,8 +32249,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1953770824}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.5
-  m_Speed: 8
+  m_Radius: 2
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -32259,7 +32259,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 8
-  m_BaseOffset: 4
+  m_BaseOffset: 5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &1973864498
