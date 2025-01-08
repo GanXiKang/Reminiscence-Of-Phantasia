@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class StoryFollowControl_Momotaro : MonoBehaviour
 {
     GameObject player;
     Animator anim;
-
-    float _followSpeed = 20f;
-    float _followDistance = 12f;
+    NavMeshAgent agent;
 
     public int _who;
     public GameObject mountainScene;
     public GameObject plazaScene;
 
+    float _followDistance = 2f;
+
     void Start()
     {
         player = GameObject.Find("Player");
         anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -29,24 +31,34 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
             case 12:
                 if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime >= 1f && mountainScene.activeSelf)
                     FollowPlayer();
+                else
+                    anim.applyRootMotion = false;
                 break;
 
             case 13:
                 if (stateInfo.IsName("GoPlaza") && stateInfo.normalizedTime >= 1f && plazaScene.activeSelf)
                     FollowPlayer();
+                else
+                    anim.applyRootMotion = false;
                 break;
         }
     }
 
     void FollowPlayer()
     {
-        //    Vector3 targetPosition = player.transform.position + player.transform.forward * -_followDistance;
-        //    print("Target Position: " + targetPosition);
-        //    print("Current Position: " + transform.position);
+        anim.applyRootMotion = true;
+        float distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
 
-        //    targetPosition.y = transform.position.y;
+        if (distanceToTarget > _followDistance)
+        {
+            Vector3 directionToTarget = (player.transform.position - transform.position).normalized;
+            Vector3 newTargetPosition = player.transform.position - directionToTarget * _followDistance;
 
-        //    transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _followSpeed);
-        //    print("New Position: " + transform.position);
+            agent.SetDestination(newTargetPosition);
+        }
+        else
+        {
+            agent.ResetPath();
+        }
     }
 }
