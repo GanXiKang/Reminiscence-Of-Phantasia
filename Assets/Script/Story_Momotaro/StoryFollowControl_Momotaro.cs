@@ -40,13 +40,13 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
 
     void FollowPlayer()
     {
-        Vector3 targetPosition = player.transform.position + player.transform.forward * -_followDistance;
-        print("Target Position: " + targetPosition);
-        print("Current Position: " + transform.position);
+        //    Vector3 targetPosition = player.transform.position + player.transform.forward * -_followDistance;
+        //    print("Target Position: " + targetPosition);
+        //    print("Current Position: " + transform.position);
 
-        targetPosition.y = transform.position.y;
+        //    targetPosition.y = transform.position.y;
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _followSpeed);
-        print("New Position: " + transform.position);
+        //    transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _followSpeed);
+        //    print("New Position: " + transform.position);
     }
 }
