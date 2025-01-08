@@ -47,6 +47,8 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     void FollowPlayer()
     {
         anim.applyRootMotion = true;
+        agent.updateRotation = false;
+
         float distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
 
         if (distanceToTarget > _followDistance)
