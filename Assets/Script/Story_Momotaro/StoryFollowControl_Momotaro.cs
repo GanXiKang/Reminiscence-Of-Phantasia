@@ -20,12 +20,14 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         player = GameObject.Find("Player");
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+
+        agent.updateRotation = false;
     }
 
     void Update()
     {
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(1);
-
+        
         switch (_who)
         {
             case 12:
@@ -47,7 +49,6 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     void FollowPlayer()
     {
         anim.applyRootMotion = true;
-        agent.updateRotation = false;
 
         float distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
 
