@@ -13,7 +13,7 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     public GameObject mountainScene;
     public GameObject plazaScene;
 
-    float _followDistance = 12f;
+    float _followDistance = 11f;
 
     void Start()
     {
