@@ -33,16 +33,26 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         {
             case 12:
                 if (stateInfo.IsName("GoMountain") && stateInfo.normalizedTime >= 1f && mountainScene.activeSelf)
+                {
                     FollowPlayer();
+                }
                 else
+                {
                     anim.applyRootMotion = false;
+                    StoryNpcAnimator_Momotaro.isWalk_GSMomo = false;
+                }
                 break;
 
             case 13:
                 if (stateInfo.IsName("GoPlaza") && stateInfo.normalizedTime >= 1f && plazaScene.activeSelf)
+                {
                     FollowPlayer();
+                }
                 else
+                {
                     anim.applyRootMotion = false;
+                    StoryNpcAnimator_Momotaro.isWalk_GSMomo = false;
+                }
                 break;
         }
     }
@@ -58,11 +68,25 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
             Vector3 directionToTarget = (player.transform.position - transform.position).normalized;
             Vector3 newTargetPosition = player.transform.position - directionToTarget * _followDistance;
 
+            StoryNpcAnimator_Momotaro.isWalk_GSMomo = true;
             agent.SetDestination(newTargetPosition);
+            CheckDirection();
         }
         else
         {
+            StoryNpcAnimator_Momotaro.isWalk_GSMomo = false;
             agent.ResetPath();
         }
+    }
+    void CheckDirection()
+    {
+        Vector3 forward = transform.forward;
+        Vector3 toPlayer = (player.transform.position - transform.position).normalized;
+        Vector3 crossProduct = Vector3.Cross(forward, toPlayer);
+
+        if (crossProduct.y > 0)
+            StoryNpcAnimator_Momotaro._direction_GSMomo = 1;
+        else
+            StoryNpcAnimator_Momotaro._direction_GSMomo = 0;
     }
 }
