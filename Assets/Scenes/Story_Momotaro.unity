@@ -10246,6 +10246,7 @@ GameObject:
   - component: {fileID: 796611229}
   - component: {fileID: 796611228}
   - component: {fileID: 796611233}
+  - component: {fileID: 796611234}
   m_Layer: 0
   m_Name: 13SliverMomo
   m_TagString: Untagged
@@ -10422,6 +10423,28 @@ MonoBehaviour:
   _who: 13
   mountainScene: {fileID: 1867473635}
   plazaScene: {fileID: 1597263627}
+--- !u!195 &796611234
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796611226}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.5
+  m_Speed: 8
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 8
+  m_BaseOffset: 4.875
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &801270832
 GameObject:
   m_ObjectHideFlags: 0
@@ -32040,6 +32063,7 @@ GameObject:
   - component: {fileID: 1953770827}
   - component: {fileID: 1953770826}
   - component: {fileID: 1953770831}
+  - component: {fileID: 1953770832}
   m_Layer: 0
   m_Name: 12GoldenMomo
   m_TagString: Untagged
@@ -32216,6 +32240,28 @@ MonoBehaviour:
   _who: 12
   mountainScene: {fileID: 1867473635}
   plazaScene: {fileID: 1597263627}
+--- !u!195 &1953770832
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953770824}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.5
+  m_Speed: 8
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 8
+  m_BaseOffset: 4.875
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1973864498
 GameObject:
   m_ObjectHideFlags: 0
