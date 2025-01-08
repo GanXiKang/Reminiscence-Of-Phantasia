@@ -10245,6 +10245,7 @@ GameObject:
   - component: {fileID: 796611230}
   - component: {fileID: 796611229}
   - component: {fileID: 796611228}
+  - component: {fileID: 796611233}
   m_Layer: 0
   m_Name: 13SliverMomo
   m_TagString: Untagged
@@ -10406,6 +10407,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &796611233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796611226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ff0104a28be7b49b7df2d506948caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 13
+  mountainScene: {fileID: 1867473635}
+  plazaScene: {fileID: 1597263627}
 --- !u!1 &801270832
 GameObject:
   m_ObjectHideFlags: 0
