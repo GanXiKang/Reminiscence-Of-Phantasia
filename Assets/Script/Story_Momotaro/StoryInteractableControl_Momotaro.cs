@@ -518,7 +518,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                             StoryUIControl_Momotaro.isDialogue = true;
                                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                             StoryDialogueControl_Momotaro._isAboveWho2 = 8;
-                                            StoryDialogueControl_Momotaro._textCount = 60;
+                                            if (!isSpecialEnding)
+                                                StoryDialogueControl_Momotaro._textCount = 60;
+                                            else
+                                                StoryDialogueControl_Momotaro._textCount = 61;
                                         }
                                     }
                                 }
@@ -529,7 +532,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                         StoryUIControl_Momotaro.isDialogue = true;
                                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                         StoryDialogueControl_Momotaro._isAboveWho2 = 8;
-                                        StoryDialogueControl_Momotaro._textCount = 57;
+                                        if (!isSpecialEnding)
+                                            StoryDialogueControl_Momotaro._textCount = 57;
+                                        else
+                                            StoryDialogueControl_Momotaro._textCount = 59;
                                     }
                                 }
                                 break;
@@ -865,7 +871,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                     StoryUIControl_Momotaro.isDialogue = true;
                                     StoryDialogueControl_Momotaro._isAboveWho1 = 7;
                                     StoryDialogueControl_Momotaro._isAboveWho2 = _who;
-                                    StoryDialogueControl_Momotaro._textCount = 60;
+                                    if (!isSpecialEnding)
+                                        StoryDialogueControl_Momotaro._textCount = 60;
+                                    else
+                                        StoryDialogueControl_Momotaro._textCount = 61;
                                 }
                             }
                         }
@@ -876,7 +885,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = 7;
                                 StoryDialogueControl_Momotaro._isAboveWho2 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 57;
+                                if (!isSpecialEnding)
+                                    StoryDialogueControl_Momotaro._textCount = 57;
+                                else
+                                    StoryDialogueControl_Momotaro._textCount = 59;
                             }
                         }
                     }
