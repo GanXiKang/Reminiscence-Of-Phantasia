@@ -14,7 +14,7 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     public GameObject plazaScene;
 
     float _followDistance = 11f;
-    int _direct = 0;
+    int _direction = 0;
 
     void Start()
     {
@@ -88,13 +88,13 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         Vector3 crossProduct = Vector3.Cross(forward, toPlayer);
 
         if (crossProduct.y > 0)
-            _direct = 1;
+            _direction = 1;
         else
-            _direct = 0;
+            _direction = 0;
 
         if (mountainScene.activeSelf)
-            StoryNpcAnimator_Momotaro._direction_GoldMomo = _direct;
+            StoryNpcAnimator_Momotaro._direction_GoldMomo = _direction;
         else if (plazaScene.activeSelf)
-            StoryNpcAnimator_Momotaro._direction_SliverMomo = _direct;
+            StoryNpcAnimator_Momotaro._direction_SliverMomo = _direction;
     }
 }
