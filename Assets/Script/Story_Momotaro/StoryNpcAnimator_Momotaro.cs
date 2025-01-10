@@ -55,6 +55,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     public static bool isGoTarget_GSMomo = false;
     public static bool isWalk_GoldMomo = false;
     public static bool isWalk_SliverMomo = false;
+    public static bool isFinishPerformances_SliverMomo = false;
 
     void Start()
     {
@@ -210,7 +211,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isOutLake", isOutLake_GSMomo);
                 anim.SetBool("isGoPlaza", isGoTarget_GSMomo);
                 anim.SetBool("isLookPerformances", StoryUIControl_Momotaro.isPerformances);
-                anim.SetBool("isFinishPerformances", StoryInteractableControl_Momotaro.isSuccessfulPerformance);
+                anim.SetBool("isFinishPerformances", isFinishPerformances_SliverMomo);
                 anim.SetBool("isGoLake", isFindMomotaro);
                 break;
         }

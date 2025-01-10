@@ -426,6 +426,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
         if (StoryInteractableControl_Momotaro.isSuccessfulPerformance)
         {
             StoryNpcAnimator_Momotaro._performancesNum = 3;
+            StoryNpcAnimator_Momotaro.isFinishPerformances_SliverMomo = true;
         }
         else
         {
