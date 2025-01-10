@@ -664,6 +664,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 57:
+            case 59:
                 switch (_countEvent)
                 {
                     case 0:
