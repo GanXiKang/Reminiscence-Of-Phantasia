@@ -453,6 +453,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                         break;
 
                     case 2:
+                        StoryPlayerControl.isSurprised = true;
                         StoryNpcAnimator_Momotaro.isWalk_Momo = true;
                         StoryNpcAnimator_Momotaro._movePlot = 1;
                         _countEvent = 0;
