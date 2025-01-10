@@ -609,6 +609,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 49:
+            case 52:
                 switch (_countEvent)
                 {
                     case 0:
@@ -813,8 +814,10 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 49:
+            case 52:
                 StoryNpcAnimator_Momotaro.isLeave_Monkey = true;
                 StoryNpcAnimator_Momotaro.isWalkGold_Monkey = true;
+                StoryNpcAnimator_Momotaro.isWalk_GoldMomo = true;
                 StoryStrongWind_Momotaro._respawnNum = 1;
                 StoryStrongWind_Momotaro.isBlownAway = true;
                 BlackScreenControl.isOpenBlackScreen = true;
