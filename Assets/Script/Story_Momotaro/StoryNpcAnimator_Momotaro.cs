@@ -209,8 +209,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isWalk", isWalk_SliverMomo);
                 anim.SetBool("isOutLake", isOutLake_GSMomo);
                 anim.SetBool("isGoPlaza", isGoTarget_GSMomo);
-                anim.SetBool("isLookPerformances", false);
-                anim.SetBool("isFinishPerformances", false);
+                anim.SetBool("isLookPerformances", StoryUIControl_Momotaro.isPerformances);
+                anim.SetBool("isFinishPerformances", StoryInteractableControl_Momotaro.isSuccessfulPerformance);
                 anim.SetBool("isGoLake", isFindMomotaro);
                 break;
         }
