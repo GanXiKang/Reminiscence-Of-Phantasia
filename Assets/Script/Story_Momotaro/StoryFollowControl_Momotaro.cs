@@ -65,9 +65,7 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         }
 
         if (isGoLake_Golden && isGoLake_Sliver)
-        {
-            //»Øµ½lakeµÄÅÐ”à
-        }
+            StoryInteractableControl_Momotaro.isBackLake = true;
     }
 
     void FollowPlayer()

@@ -78,6 +78,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static bool isSuccessfulPerformance = false;
     //09Parrot
     public static bool isAnswerCorrect = false;
+    //12&13 GoldSliverMomo
+    public static bool isBackLake = false;
 
     void Start()
     {
@@ -907,6 +909,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 }
                             }
                         }
+                    }
+                    break;
+
+                case 12:
+                case 13:
+                    if (isBackLake)
+                    {
+                        //»Øµ½ºþÑY
                     }
                     break;
             }
