@@ -64,10 +64,10 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
                 break;
         }
 
-        //if (isGoLake_Golden && isGoLake_Sliver)
-        //{
-            
-        //}
+        if (isGoLake_Golden && isGoLake_Sliver)
+        {
+            //»Øµ½lakeµÄÅÐ”à
+        }
     }
 
     void FollowPlayer()
