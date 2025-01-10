@@ -57,7 +57,14 @@ public class StoryExitControl_Momotaro : MonoBehaviour
                             StoryNpcAnimator_Momotaro.isFindPlayer = true;
                             StoryUIControl_Momotaro.isDialogue = true;
                             StoryDialogueControl_Momotaro._isAboveWho1 = 4;
-                            StoryDialogueControl_Momotaro._textCount = 51;
+                            if (!StoryInteractableControl_Momotaro.isSpecialEnding)
+                            {
+                                StoryDialogueControl_Momotaro._textCount = 51;
+                            }
+                            else
+                            {
+                                StoryDialogueControl_Momotaro._textCount = 53;
+                            }
                             if (!StoryPlayerAnimator_Momotaro.isHuman)
                             {
                                 StoryPlayerAnimator_Momotaro.isSmokeEF = true;
