@@ -14,6 +14,7 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     public GameObject plazaScene;
 
     float _followDistance = 11f;
+    int _direct = 0;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
                 else
                 {
                     anim.applyRootMotion = false;
-                    StoryNpcAnimator_Momotaro.isWalk_GSMomo = false;
+                    StoryNpcAnimator_Momotaro.isWalk_GoldMomo = false;
                 }
                 break;
 
@@ -51,7 +52,7 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
                 else
                 {
                     anim.applyRootMotion = false;
-                    StoryNpcAnimator_Momotaro.isWalk_GSMomo = false;
+                    StoryNpcAnimator_Momotaro.isWalk_SliverMomo = false;
                 }
                 break;
         }
@@ -68,13 +69,15 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
             Vector3 directionToTarget = (player.transform.position - transform.position).normalized;
             Vector3 newTargetPosition = player.transform.position - directionToTarget * _followDistance;
 
-            StoryNpcAnimator_Momotaro.isWalk_GSMomo = true;
+            StoryNpcAnimator_Momotaro.isWalk_GoldMomo = mountainScene.activeSelf;
+            StoryNpcAnimator_Momotaro.isWalk_SliverMomo = plazaScene.activeSelf;
             agent.SetDestination(newTargetPosition);
             CheckDirection();
         }
         else
         {
-            StoryNpcAnimator_Momotaro.isWalk_GSMomo = false;
+            StoryNpcAnimator_Momotaro.isWalk_GoldMomo = false;
+            StoryNpcAnimator_Momotaro.isWalk_SliverMomo = false;
             agent.ResetPath();
         }
     }
@@ -85,8 +88,13 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         Vector3 crossProduct = Vector3.Cross(forward, toPlayer);
 
         if (crossProduct.y > 0)
-            StoryNpcAnimator_Momotaro._direction_GSMomo = 1;
+            _direct = 1;
         else
-            StoryNpcAnimator_Momotaro._direction_GSMomo = 0;
+            _direct = 0;
+
+        if (mountainScene.activeSelf)
+            StoryNpcAnimator_Momotaro._direction_GoldMomo = _direct;
+        else if (plazaScene.activeSelf)
+            StoryNpcAnimator_Momotaro._direction_SliverMomo = _direct;
     }
 }
