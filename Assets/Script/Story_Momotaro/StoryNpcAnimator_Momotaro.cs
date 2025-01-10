@@ -53,9 +53,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     //12Gold13SilverMomo
     public static bool isOutLake_GSMomo = false;
     public static bool isGoTarget_GSMomo = false;
-    public static int _direction_GoldMomo = 0;
     public static bool isWalk_GoldMomo = false;
-    public static int _direction_SliverMomo = 0;
     public static bool isWalk_SliverMomo = false;
 
     void Start()
@@ -199,14 +197,12 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 break;
 
             case 12:
-                anim.SetInteger("Direction", _direction_GoldMomo);
                 anim.SetBool("isWalk", isWalk_GoldMomo);
                 anim.SetBool("isOutLake", isOutLake_GSMomo);
                 anim.SetBool("isGoMountain", isGoTarget_GSMomo);
                 break;
 
             case 13:
-                anim.SetInteger("Direction", _direction_SliverMomo);
                 anim.SetBool("isWalk", isWalk_SliverMomo);
                 anim.SetBool("isOutLake", isOutLake_GSMomo);
                 anim.SetBool("isGoPlaza", isGoTarget_GSMomo);

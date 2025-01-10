@@ -14,7 +14,6 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     public GameObject plazaScene;
 
     float _followDistance = 11f;
-    int _direction = 0;
 
     void Start()
     {
@@ -72,7 +71,6 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
             StoryNpcAnimator_Momotaro.isWalk_GoldMomo = mountainScene.activeSelf;
             StoryNpcAnimator_Momotaro.isWalk_SliverMomo = plazaScene.activeSelf;
             agent.SetDestination(newTargetPosition);
-            CheckDirection();
         }
         else
         {
@@ -80,21 +78,5 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
             StoryNpcAnimator_Momotaro.isWalk_SliverMomo = false;
             agent.ResetPath();
         }
-    }
-    void CheckDirection()
-    {
-        Vector3 forward = transform.forward;
-        Vector3 toPlayer = (player.transform.position - transform.position).normalized;
-        Vector3 crossProduct = Vector3.Cross(forward, toPlayer);
-
-        if (crossProduct.y > 0)
-            _direction = 1;
-        else
-            _direction = 0;
-
-        if (mountainScene.activeSelf)
-            StoryNpcAnimator_Momotaro._direction_GoldMomo = _direction;
-        else if (plazaScene.activeSelf)
-            StoryNpcAnimator_Momotaro._direction_SliverMomo = _direction;
     }
 }
