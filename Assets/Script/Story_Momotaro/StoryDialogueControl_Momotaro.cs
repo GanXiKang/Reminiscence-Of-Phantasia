@@ -419,6 +419,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 11:
             case 28:
             case 51:
+            case 53:
                 StoryPlayerControl.isHappy = true;
                 break;
 
@@ -831,6 +832,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 51:
+            case 53:
                 StoryNpcAnimator_Momotaro.isFindMomotaro_Monkey = true;
                 break;
 
