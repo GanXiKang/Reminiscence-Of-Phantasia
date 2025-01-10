@@ -1056,10 +1056,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 StoryGameControl_Momotaro.isParrotActive = true;
                                 StoryUIControl_Momotaro.isDialogue = true;
                                 StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 49;
                                 if (!isSpecialEnding)
                                 {
+                                    StoryDialogueControl_Momotaro._textCount = 49;
                                     isSpecialOver = true;
+                                }
+                                else
+                                {
+                                    StoryDialogueControl_Momotaro._textCount = 52;
                                 }
                                 break;
                         }
