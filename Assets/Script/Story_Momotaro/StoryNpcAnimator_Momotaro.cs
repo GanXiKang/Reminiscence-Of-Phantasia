@@ -200,7 +200,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isWalk", isWalk_GoldMomo);
                 anim.SetBool("isOutLake", isOutLake_GSMomo);
                 anim.SetBool("isGoMountain", isGoTarget_GSMomo);
-                //和monkey一起去        isLeave_Monkey
+                anim.SetBool("isMonkeyTogether", isLeave_Monkey); 
                 //等Player             isFindPlayer
                 //回lake               isFindMomotaro_Monkey
                 break;
