@@ -43,9 +43,6 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
                     anim.applyRootMotion = false;
                     StoryNpcAnimator_Momotaro.isWalk_GoldMomo = false;
                 }
-
-                if (stateInfo.IsName("GoLake"))
-                    isGoLake_Golden = true;
                 break;
 
             case 13:
@@ -58,16 +55,7 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
                     anim.applyRootMotion = false;
                     StoryNpcAnimator_Momotaro.isWalk_SliverMomo = false;
                 }
-
-                if (stateInfo.IsName("GoLake"))
-                    isGoLake_Sliver = true;
                 break;
-        }
-
-        if (isGoLake_Golden && isGoLake_Sliver)
-        {
-            print("OK");
-            StoryInteractableControl_Momotaro.isBackLake = true;
         }
     }
 
