@@ -109,6 +109,7 @@ public class StoryLoadingScene_Momotaro : MonoBehaviour
                 }
                 if (StoryInteractableControl_Momotaro.isSpecialEnding && StoryInteractableControl_Momotaro.isMeetPartner)
                 {
+                    StoryNpcAnimator_Momotaro.isWalk_Momo = false;
                     StoryUIControl_Momotaro.isDialogue = true;
                     StoryDialogueControl_Momotaro._isAboveWho1 = 1;
                     StoryDialogueControl_Momotaro._textCount = 14;
