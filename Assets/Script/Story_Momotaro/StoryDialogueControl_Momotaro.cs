@@ -695,7 +695,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
                     case 1:
                         StoryNpcAnimator_Momotaro.isFindMomotaro = true;
-                        _countEvent++;
+                        _countEvent = 0;
                         break;
                 }
                 break;
