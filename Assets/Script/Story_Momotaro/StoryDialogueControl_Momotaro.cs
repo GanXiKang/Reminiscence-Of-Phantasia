@@ -866,6 +866,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 51:
             case 53:
+                StoryInteractableControl_Momotaro.isBackLake = true;
                 StoryNpcAnimator_Momotaro.isFindMomotaro_Monkey = true;
                 break;
 
