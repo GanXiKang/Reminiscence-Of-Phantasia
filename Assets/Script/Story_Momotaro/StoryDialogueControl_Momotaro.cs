@@ -507,7 +507,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 {
                     case 0:
                         StoryPlayerControl.isHappy = true;
-                        //金銀各自回lake
+                        StoryNpcAnimator_Momotaro.isBackLake_GSMomo = true;
                         _countEvent++;
                         break;
 
