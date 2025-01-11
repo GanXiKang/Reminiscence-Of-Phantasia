@@ -69,9 +69,9 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
         bool isRiceOpenButtonActive()
         {
             return isRoleActive ||
-                   StoryPlayerAnimator_Momotaro.isDonkey || 
+                   StoryPlayerAnimator_Momotaro.isDonkey ||
                    StoryPlayerAnimator_Momotaro.isRaccoon ||
-                   StoryPlayerAnimator_Momotaro.isStone;
+                   StoryPlayerAnimator_Momotaro.isParrot;
         }
     }
     void RaccoonSkill()
