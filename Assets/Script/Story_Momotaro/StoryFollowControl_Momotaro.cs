@@ -14,8 +14,6 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
     public GameObject plazaScene;
 
     float _followDistance = 11f;
-    bool isGoLake_Golden = false;
-    bool isGoLake_Sliver = false;
 
     void Start()
     {
