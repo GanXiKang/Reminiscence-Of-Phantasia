@@ -782,6 +782,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 16:
                 StoryNpcAnimator_Momotaro.isWalk_Momo = true;
                 //È¥ºÓ¿Úanim
+                StoryInteractableControl_Momotaro.isMeetPartner = true;
                 break;
 
             case 17:
