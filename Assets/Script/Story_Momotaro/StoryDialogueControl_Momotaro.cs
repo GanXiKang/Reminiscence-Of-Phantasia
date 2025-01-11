@@ -417,6 +417,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 4:
             case 11:
+            case 14:
             case 28:
             case 51:
             case 53:
@@ -505,11 +506,13 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        StoryPlayerControl.isHappy = true;
                         //金銀各自回lake
                         _countEvent++;
                         break;
 
                     case 1:
+                        StoryPlayerControl.isHappy = true;
                         //Momo出來
                         _countEvent = 0;
                         break;
