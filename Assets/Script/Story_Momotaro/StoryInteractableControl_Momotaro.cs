@@ -614,15 +614,27 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                             break;
 
                         default:
-                            if (isSpecialEnding && isMomoFindGoddess)
+                            if (isSpecialEnding)
                             {
-                                isMomoFindGoddess = false;
-                                StoryNpcAnimator_Momotaro._movePlot = 2;
-                                StoryNpcAnimator_Momotaro.isWalk_Momo = true;
-                                StoryUIControl_Momotaro.isDialogue = true;
-                                StoryDialogueControl_Momotaro._isAboveWho1 = 1;
-                                StoryDialogueControl_Momotaro._isAboveWho2 = _who;
-                                StoryDialogueControl_Momotaro._textCount = 15;
+                                if (isMomoFindGoddess)
+                                {
+                                    isMomoFindGoddess = false;
+                                    StoryNpcAnimator_Momotaro._movePlot = 2;
+                                    StoryNpcAnimator_Momotaro.isWalk_Momo = true;
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = 1;
+                                    StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 15;
+                                }
+                                if (isBackLake)
+                                {
+                                    isBackLake = false;
+                                    StoryNpcAnimator_Momotaro.isOutLake = true;
+                                    StoryUIControl_Momotaro.isDialogue = true;
+                                    StoryDialogueControl_Momotaro._isAboveWho1 = 1;
+                                    StoryDialogueControl_Momotaro._isAboveWho2 = _who;
+                                    StoryDialogueControl_Momotaro._textCount = 16;
+                                }
                             }
                             break;
                     }
@@ -910,18 +922,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                 }
                             }
                         }
-                    }
-                    break;
-
-                case 12:
-                case 13:
-                    if (isBackLake)
-                    {
-                        StoryNpcAnimator_Momotaro.isOutLake = true;
-                        StoryUIControl_Momotaro.isDialogue = true;
-                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
-                        StoryDialogueControl_Momotaro._isAboveWho1 = 2;
-                        StoryDialogueControl_Momotaro._textCount = 16;
                     }
                     break;
             }
