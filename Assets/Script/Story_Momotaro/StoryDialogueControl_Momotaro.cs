@@ -766,6 +766,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryUIControl_Momotaro.isStoryEnding = true;
                 if (StoryInteractableControl_Momotaro.isSpecialEnding)
                 {
+                    StoryNpcAnimator_Momotaro.isWalk_Momo = true;
                     StoryNpcAnimator_Momotaro._movePlot = 6;
                 }
                 break;
