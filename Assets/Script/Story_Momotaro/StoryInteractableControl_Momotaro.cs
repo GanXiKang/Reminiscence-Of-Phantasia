@@ -916,7 +916,10 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 case 13:
                     if (isBackLake)
                     {
-                        //»Øµ½ºþÑY
+                        StoryUIControl_Momotaro.isDialogue = true;
+                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                        StoryDialogueControl_Momotaro._isAboveWho1 = 2;
+                        StoryDialogueControl_Momotaro._textCount = 16;
                     }
                     break;
             }
