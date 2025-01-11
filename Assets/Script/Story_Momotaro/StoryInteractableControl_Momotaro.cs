@@ -917,6 +917,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 case 13:
                     if (isBackLake)
                     {
+                        StoryNpcAnimator_Momotaro.isOutLake = true;
                         StoryUIControl_Momotaro.isDialogue = true;
                         StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                         StoryDialogueControl_Momotaro._isAboveWho1 = 2;
