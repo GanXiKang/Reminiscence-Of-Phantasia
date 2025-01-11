@@ -514,6 +514,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
                     case 1:
                         StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Momotaro.isBackLake = true;
                         StoryNpcAnimator_Momotaro._movePlot = 4;
                         _countEvent = 0;
                         break;
