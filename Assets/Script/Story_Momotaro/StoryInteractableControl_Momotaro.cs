@@ -61,6 +61,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public static int _findPartner = 0;
     public static bool isSpecialEnding = false;
     public static bool isSpecialOver = false;
+    public static bool isMeetPartner = false;
     //02Goddess
     int _itemGoddess = 0;
     public static bool isGoddessGetSkill = false;
