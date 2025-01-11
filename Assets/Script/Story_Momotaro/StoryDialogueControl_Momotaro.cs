@@ -501,6 +501,21 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 }
                 break;
 
+            case 16:
+                switch (_countEvent)
+                {
+                    case 0:
+                        //金銀各自回lake
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        //Momo出來
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
             case 17:
             case 18:
             case 19:
@@ -744,7 +759,12 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 11:
+            case 14:
                 StoryUIControl_Momotaro.isStoryEnding = true;
+                if (StoryInteractableControl_Momotaro.isSpecialEnding)
+                {
+                    //回去朋友身邊
+                }
                 break;
 
             case 13:
@@ -754,6 +774,11 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
             case 15:
                 StoryNpcAnimator_Momotaro.isGoTarget_GSMomo = true;
                 StoryNpcAnimator_Momotaro.isBackLake = true;
+                break;
+
+            case 16:
+                StoryNpcAnimator_Momotaro.isWalk_Momo = true;
+                //去河口anim
                 break;
 
             case 17:
