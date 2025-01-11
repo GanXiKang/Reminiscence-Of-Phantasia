@@ -513,7 +513,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
                     case 1:
                         StoryPlayerControl.isHappy = true;
-                        //Momo出來
+                        StoryNpcAnimator_Momotaro._movePlot = 4;
                         _countEvent = 0;
                         break;
                 }
@@ -766,7 +766,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 StoryUIControl_Momotaro.isStoryEnding = true;
                 if (StoryInteractableControl_Momotaro.isSpecialEnding)
                 {
-                    //回去朋友身邊
+                    StoryNpcAnimator_Momotaro._movePlot = 6;
                 }
                 break;
 
@@ -781,7 +781,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
 
             case 16:
                 StoryNpcAnimator_Momotaro.isWalk_Momo = true;
-                //去河口anim
+                StoryNpcAnimator_Momotaro._movePlot = 5;
                 StoryInteractableControl_Momotaro.isMeetPartner = true;
                 break;
 
