@@ -53,6 +53,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
     //12Gold13SilverMomo
     public static bool isOutLake_GSMomo = false;
     public static bool isGoTarget_GSMomo = false;
+    public static bool isBackLake_GSMomo = false;
     public static bool isWalk_GoldMomo = false;
     public static bool isWalk_SliverMomo = false;
     public static bool isFinishPerformances_SliverMomo = false;
@@ -203,7 +204,8 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isGoMountain", isGoTarget_GSMomo);
                 anim.SetBool("isMonkeyTogether", isLeave_Monkey);
                 anim.SetBool("isWaitPlayer", isFindPlayer);
-                anim.SetBool("isGoLake", isFindMomotaro_Monkey); 
+                anim.SetBool("isGoLake", isFindMomotaro_Monkey);
+                anim.SetBool("isBackLake", isBackLake_GSMomo);
                 break;
 
             case 13:
@@ -213,6 +215,7 @@ public class StoryNpcAnimator_Momotaro : MonoBehaviour
                 anim.SetBool("isLookPerformances", StoryUIControl_Momotaro.isPerformances);
                 anim.SetBool("isFinishPerformances", isFinishPerformances_SliverMomo);
                 anim.SetBool("isGoLake", isFindMomotaro);
+                anim.SetBool("isBackLake", isBackLake_GSMomo);
                 break;
         }
     }
