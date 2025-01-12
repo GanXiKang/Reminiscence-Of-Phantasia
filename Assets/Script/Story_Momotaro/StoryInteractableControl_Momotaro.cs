@@ -477,6 +477,12 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                             StoryDialogueControl_Momotaro._textCount = 10;
                                         }
                                     }
+                                    else
+                                    {
+                                        StoryUIControl_Momotaro.isDialogue = true;
+                                        StoryDialogueControl_Momotaro._isAboveWho1 = _who;
+                                        StoryDialogueControl_Momotaro._textCount = 77;
+                                    }
                                 }
                                 else
                                 {
