@@ -21,7 +21,7 @@ Shader "Custom/CharacterOutlineShader"
                 CGPROGRAM
                 #pragma vertex vert
                 #pragma fragment frag
-                #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+                #include "UnityCG.cginc"
 
                 struct appdata
                 {
