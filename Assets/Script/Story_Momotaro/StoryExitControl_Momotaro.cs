@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -101,19 +101,19 @@ public class StoryExitControl_Momotaro : MonoBehaviour
             switch (_goToThatScene)
             {
                 case 1:
-                    sceneName.text = "∫”ﬂÖ";
+                    sceneName.text = "Ê≤≥ÈÇä";
                     break;
 
                 case 2:
-                    sceneName.text = "…≠¡÷";
+                    sceneName.text = "Ê£ÆÊûó";
                     break;
 
                 case 3:
-                    sceneName.text = "…Ωƒ_";
+                    sceneName.text = "Â±±";
                     break;
 
                 case 4:
-                    sceneName.text = "èVàˆ";
+                    sceneName.text = "¬èÂª£Â†¥";
                     break;
             }
             _changeSceneNum = _goToThatScene;
