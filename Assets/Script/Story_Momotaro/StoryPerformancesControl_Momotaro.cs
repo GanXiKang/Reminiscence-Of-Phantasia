@@ -55,7 +55,7 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
     int _randomDanceNum;
    
     //control
-    float timeLimit = 2f; //2秒內按下按鈕
+    float timeLimit = 2f;
     float timer;
     bool isTiming = false;
     bool isGamePerformances = false;
@@ -315,9 +315,9 @@ public class StoryPerformancesControl_Momotaro : MonoBehaviour
             isGameTiming = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))  //快捷建
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (Input.GetKeyDown(KeyCode.Alpha9)) //表演結束
+            if (Input.GetKeyDown(KeyCode.Alpha9))
             {
                 _remainingTime = 2;
                 _score = 100;
