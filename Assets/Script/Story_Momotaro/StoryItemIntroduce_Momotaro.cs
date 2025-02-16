@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,16 +46,16 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
 
     void ItemIntroduceContent()
     {
-        introduceItem[1] = "Å´Ã×¼a×Ó\nÌÒÌ«ÀÉ×îÏ²šgµÄÁãÊ³";
-        introduceItem[2] = "½ğÅ´Ã×¼a×Ó\n³ÔÁË•ş×ƒ³ö×ƒÉí¼a×Ó";
-        introduceItem[3] = "ãyÅ´Ã×¼a×Ó\n³ÔÏÂáá¾ÍÄÜ×ƒÉí";
-        introduceItem[4] = "†ÎÖ§¹Ä°ô\nß@˜Ó›]Şk·¨Ê¹ÓÃ";
-        introduceItem[5] = "½ğ¹¿°ô\nÄÜÉì¿s×ÔÈçµÄ³¬ŠÎäÆ÷";
-        introduceItem[6] = "ãy¹Ä°ô\nºÜÆ¯ÁÁµ«ÒÀÅfÖ»ÓĞÒ»Ö§";
-        introduceItem[7] = "ãyâèK\nâÂ•·Ç³£Çå´à";
-        introduceItem[8] = "Ä¾ÑuâèK\n¸ĞÓXĞ¡„ÓÎï•şÏ²šg";
-        introduceItem[9] = "µÑ×Ó\nÓĞĞ©ÀÏÅfÁË";
-        introduceItem[10] = "ãyµÑ\n¿ÉÒÔ´µ³öƒÃÀµÄĞıÂÉ";
-        introduceItem[11] = "½ğµÑ\n¿ÉÒÔ´µ³öÈAûµÄµÑÂ•";
+        introduceItem[1] = "ç³¯ç±³ç³°å­\næ¡ƒå¤ªéƒæœ€å–œæ­¡çš„é›¶é£Ÿ";
+        introduceItem[2] = "é‡‘ç³¯ç±³ç³°å­\nåƒäº†æœƒè®Šå‡ºè®Šèº«ç³°å­";
+        introduceItem[3] = "éŠ€ç³¯ç±³ç³°å­\nåƒä¸‹å¾Œå°±èƒ½è®Šèº«";
+        introduceItem[4] = "å–®æ”¯é¼“æ£’\né€™æ¨£æ²’è¾¦æ³•ä½¿ç”¨";
+        introduceItem[5] = "é‡‘ç®æ£’\nèƒ½ä¼¸ç¸®è‡ªå¦‚çš„è¶…å¼·æ­¦å™¨";
+        introduceItem[6] = "éŠ€é¼“æ£’\nå¾ˆæ¼‚äº®ä½†ä¾èˆŠåªæœ‰ä¸€æ”¯";
+        introduceItem[7] = "éŠ€éˆ´éº\néˆ´è²éå¸¸æ¸…è„†";
+        introduceItem[8] = "æœ¨è£½éˆ´éº\næ„Ÿè¦ºå°å‹•ç‰©æœƒå–œæ­¡";
+        introduceItem[9] = "ç¬›å­\næœ‰äº›è€èˆŠäº†";
+        introduceItem[10] = "éŠ€ç¬›\nå¯ä»¥å¹å‡ºå„ªç¾çš„æ—‹å¾‹";
+        introduceItem[11] = "é‡‘ç¬›\nå¯ä»¥å¹å‡ºè¯éº—çš„ç¬›è²";
     }
 }
