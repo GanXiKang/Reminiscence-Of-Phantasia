@@ -45,19 +45,19 @@ public class StoryGameControl_Girl : MonoBehaviour
         PlayerResurrection();
         MouseCursor();
 
-        if (Input.GetKey(KeyCode.LeftShift))  //快捷建
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (Input.GetKeyDown(KeyCode.Q)) //離開故事
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 StoryUIControl_Girl.isStoryEnding = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha6)) //傳送街道存檔點
+            if (Input.GetKeyDown(KeyCode.Alpha6)) 
             {
                 isInStreet = true;
                 StoryLoadingScene_Girl.isLeftOpen = true;
                 StartCoroutine(ResurrectionState());
             }
-            if (Input.GetKeyDown(KeyCode.Alpha7)) //傳送森林存檔點
+            if (Input.GetKeyDown(KeyCode.Alpha7))
             {
                 isInStreet = false;
                 StoryLoadingScene_Girl.isRightOpen = true;
