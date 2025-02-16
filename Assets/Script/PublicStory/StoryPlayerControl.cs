@@ -59,35 +59,35 @@ public class StoryPlayerControl : MonoBehaviour
             isWalkEffects = false;
         }
 
-        if (_storyMoveInput.x == 0 && _storyMoveInput.z > 0) // 仅按下 W 键
+        if (_storyMoveInput.x == 0 && _storyMoveInput.z > 0)
         {
             _storyMoveInput = new Vector3(-0.71f, 0f, 0.71f);
         }
-        else if (_storyMoveInput.x == 0 && _storyMoveInput.z < 0) // 仅按下 S 键
+        else if (_storyMoveInput.x == 0 && _storyMoveInput.z < 0)
         {
             _storyMoveInput = new Vector3(0.71f, 0f, -0.71f);
         }
-        else if (_storyMoveInput.x < 0 && _storyMoveInput.z == 0) // 仅按下 A 键
+        else if (_storyMoveInput.x < 0 && _storyMoveInput.z == 0)
         {
             _storyMoveInput = new Vector3(-0.71f, 0f, -0.71f);
         }
-        else if (_storyMoveInput.x > 0 && _storyMoveInput.z == 0) // 仅按下 D 键
+        else if (_storyMoveInput.x > 0 && _storyMoveInput.z == 0)
         {
             _storyMoveInput = new Vector3(0.71f, 0f, 0.71f);
         }
-        else if (_storyMoveInput.x < 0 && _storyMoveInput.z > 0) // 同时按下 W 和 A 键
+        else if (_storyMoveInput.x < 0 && _storyMoveInput.z > 0)
         {
             _storyMoveInput = new Vector3(-1f, 0f, 0f);
         }
-        else if (_storyMoveInput.x > 0 && _storyMoveInput.z > 0) // 同时按下 W 和 D 键
+        else if (_storyMoveInput.x > 0 && _storyMoveInput.z > 0)
         {
             _storyMoveInput = new Vector3(0f, 0f, 1f);
         }
-        else if (_storyMoveInput.x < 0 && _storyMoveInput.z < 0) // 同时按下 A 和 S 键
+        else if (_storyMoveInput.x < 0 && _storyMoveInput.z < 0)
         {
             _storyMoveInput = new Vector3(0f, 0f, -1f);
         }
-        else if (_storyMoveInput.x > 0 && _storyMoveInput.z < 0) // 同时按下 S 和 D 键
+        else if (_storyMoveInput.x > 0 && _storyMoveInput.z < 0)
         {
             _storyMoveInput = new Vector3(1f, 0f, 0f);
         }
@@ -106,9 +106,9 @@ public class StoryPlayerControl : MonoBehaviour
         walkEffects.SetActive(isWalkEffects);
         cc.Move((_storyVelocity + _storyMoveInput * _moveSpeed) * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.LeftShift))  //快捷建
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (Input.GetKeyDown(KeyCode.Z)) //超加速
+            if (Input.GetKeyDown(KeyCode.Z))
                 _moveSpeed = 50;
         }
     }
