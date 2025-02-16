@@ -24,15 +24,15 @@ public class StoryBagControl : MonoBehaviour
     public GameObject[] itemButton;
     public GameObject[] itemBG;
     public static bool isItemFollow = false;
-    public static int _whatItemButton = 5;    //記錄哪個格子0~4
+    public static int _whatItemButton = 5;
 
     [Header("ItemSprite")]
     public Sprite[] itemSprite;
     public static bool isGet = false;
     public static bool isRenewBag = false;
-    public static bool[] isItemNumber;        //記錄擁有哪個道具0~9
-    public static int[] _gridsItemNumber;     //記錄每個格子内部的道具編號0~4
-    public static int _howManyGrids = 0;      //記錄存在幾個格子
+    public static bool[] isItemNumber;        
+    public static int[] _gridsItemNumber;
+    public static int _howManyGrids = 0;
 
     [Header("GetItemMoveUI")]
     public Image getMoveItem;
