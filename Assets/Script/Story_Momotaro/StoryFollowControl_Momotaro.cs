@@ -21,8 +21,8 @@ public class StoryFollowControl_Momotaro : MonoBehaviour
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
-        agent.updateRotation = false;  //Y ÝS
-        agent.updateUpAxis = false;    //X & Z ÝS
+        agent.updateRotation = false;  
+        agent.updateUpAxis = false; 
     }
 
     void Update()
