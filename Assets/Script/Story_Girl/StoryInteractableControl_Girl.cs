@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -136,7 +136,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 1:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "–°≈Æ∫¢";
+                    interactableName.text = "Â∞èÂ•≥Â≠©";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -146,7 +146,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 2:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "¿¨ª¯Õ∞";
+                    interactableName.text = "ÂûÉÂúæÊ°∂";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -156,7 +156,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 3:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "¬}’Q¿œ»À";
+                    interactableName.text = "ËÅñË™ïËÄÅ‰∫∫";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -166,7 +166,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 4:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "–°è©";
+                    interactableName.text = "Â∞èÂΩ•";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -176,7 +176,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 5:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "–°–¿";
+                    interactableName.text = "Â∞èÊ¨£";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -186,7 +186,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 6:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "´C»À";
+                    interactableName.text = "Áçµ‰∫∫";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -196,7 +196,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 7:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "ËF∞Ù";
+                    interactableName.text = "ÈêµÊ£í";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -206,7 +206,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 8:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "ƒæ÷¶";
+                    interactableName.text = "Êú®Êùê";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -216,7 +216,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 9:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "¬∂†I’ﬂ";
+                    interactableName.text = "Èú≤ÁáüËÄÖ";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -226,7 +226,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 11:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "¥Û“∞¿«";
+                    interactableName.text = "Áãº";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
