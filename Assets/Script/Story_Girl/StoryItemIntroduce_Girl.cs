@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,14 +46,14 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
 
     void ItemIntroduceContent()
     {
-        introduceItem[1] = "»ğ²ñºĞ\n¿ÉÒÔücÈ¼í¶Ì•ºÈ¡Å¯";
-        introduceItem[2] = "ÆÆÅfµÄÃ«ÒÂ\n²»ÖªµÀß€ÄÜ²»ÄÜ±£Å¯";
-        introduceItem[3] = "À¬»øÍ°Éw\n¸ĞÓXÖ®ááÄÜ‰òÅÉÉÏÓÃˆö";
-        introduceItem[4] = "Ğ¡ĞÜÍŞÍŞ\nĞ¡ÅóÓÑÒ»¶¨ºÜÏ²šg";
-        introduceItem[5] = "Ğ¡¼tÃ±Åû¼ç\nÓÃí±£Å¯„‚„‚ºÃ";
-        introduceItem[6] = "èF°ô\nÃşÆğí·Ç³£ˆÔ¹Ì";
-        introduceItem[7] = "Ä¾°ô\n¿´ÆğíÊÇ±»¿³”àµÄ";
-        introduceItem[8] = "ÌO¹û\nîÉ«·Ç³£õrÆG";
-        introduceItem[9] = "¿¾Èâ´®\nÏãÎ¶ËÄÒç¶Ç×Ó¶¼ğIÁË";
+        introduceItem[1] = "ç«æŸ´ç›’\nå¯ä»¥é»ç‡ƒä¾†çŸ­æš«å–æš–";
+        introduceItem[2] = "ç ´èˆŠçš„æ¯›è¡£\nä¸çŸ¥é“é‚„èƒ½ä¸èƒ½ä¿æš–";
+        introduceItem[3] = "åƒåœ¾æ¡¶è“‹\næ„Ÿè¦ºä¹‹å¾Œèƒ½å¤ æ´¾ä¸Šç”¨å ´";
+        introduceItem[4] = "å°ç†Šå¨ƒå¨ƒ\nå°æœ‹å‹ä¸€å®šå¾ˆå–œæ­¡";
+        introduceItem[5] = "å°ç´…å¸½æŠ«è‚©\nç”¨ä¾†ä¿æš–å‰›å‰›å¥½";
+        introduceItem[6] = "éµæ£’\næ‘¸èµ·ä¾†éå¸¸å …å›º";
+        introduceItem[7] = "æœ¨æ£’\nçœ‹èµ·ä¾†æ˜¯è¢«ç æ–·çš„";
+        introduceItem[8] = "è˜‹æœ\né¡è‰²éå¸¸é®®è‰·";
+        introduceItem[9] = "çƒ¤è‚‰ä¸²\né¦™å‘³å››æº¢è‚šå­éƒ½é¤“äº†";
     }
 }
