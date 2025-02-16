@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -79,11 +79,11 @@ public class StoryExitControl_Girl : MonoBehaviour
                 switch (_goToThatScene)
                 {
                     case 1:
-                        sceneName.text = "Ω÷µ¿";
+                        sceneName.text = "Ë°óÈÅì";
                         break;
 
                     case 2:
-                        sceneName.text = "…≠¡÷";
+                        sceneName.text = "Ê£ÆÊûó";
                         break;
                 }
             }
