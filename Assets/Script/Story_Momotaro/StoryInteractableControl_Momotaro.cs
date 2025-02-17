@@ -140,7 +140,14 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 2:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "湖中女神";
+                    if (!isGoddessGetSkill)
+                    {
+                        interactableName.text = "?";
+                    }
+                    else
+                    {
+                        interactableName.text = "湖中女神";
+                    }
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
