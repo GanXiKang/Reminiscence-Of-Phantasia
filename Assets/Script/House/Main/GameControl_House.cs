@@ -47,29 +47,29 @@ public class GameControl_House : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))  //快捷建
+        if (Input.GetKey(KeyCode.LeftShift)) 
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) //去故事一
+            if (Input.GetKeyDown(KeyCode.Alpha1)) 
             {
                 _storyNum = 1;
                 InteractableControl_House.isColliderActive[3] = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2)) //去故事二
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 _storyNum = 2;
                 InteractableControl_House.isColliderActive[3] = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3)) //去Store
+            if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 DoorControl_House.isStore = true;
                 InteractableControl_House.isColliderActive[2] = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha4)) //去Entrust
+            if (Input.GetKeyDown(KeyCode.Alpha4)) 
             {
                 DoorControl_House.isEntrust = true;
                 InteractableControl_House.isColliderActive[2] = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha5)) //Bookcase All Book
+            if (Input.GetKeyDown(KeyCode.Alpha5))
             {
                 BookcaseControl_House.isNewBookActive = true;
                 BookcaseControl_House.bookActive[0] = true;
