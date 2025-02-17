@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,31 +74,31 @@ public class UIAboveObject_House : MonoBehaviour
         {
             Vector3 workbenchPos = workbench.position + workbenchOffset;
             hint.position = workbenchPos;
-            hintName.text = "π§◊˜≈_";
+            hintName.text = "Â∑•‰ΩúËá∫";
         }
         else if (isAboveDoor)
         {
             Vector3 doorPos = door.position + doorOffset;
             hint.position = doorPos;
-            hintName.text = "¥ÛÈT";
+            hintName.text = "Â§ßÈñÄ";
         }
         else if (isAboveBed)
         {
             Vector3 bedPos = bed.position + bedOffset;
             hint.position = bedPos;
-            hintName.text = "ÀØ¥≤";
+            hintName.text = "Áù°Â∫ä";
         }
         else if (isAboveBookcase)
         {
             Vector3 bookcasePos = bookcase.position + bookcaseOffset;
             hint.position = bookcasePos;
-            hintName.text = "ï¯º‹";
+            hintName.text = "Êõ∏Êû∂";
         }
         else if (isAboveShowcase)
         {
             Vector3 showcasePos = showcase.position + showcaseOffset;
             hint.position = showcasePos;
-            hintName.text = "’π æ≈_";
+            hintName.text = "Â±ïÁ§∫Ëá∫";
         }
     }
 }
