@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,7 +27,7 @@ public class PaintBucketTool_Workbench : MonoBehaviour
         texture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.RGBA32, false);
         texture.filterMode = FilterMode.Point;
         texture.wrapMode = TextureWrapMode.Clamp;
-        //Material那邊Read/Write一定要開
+        //Material Read/Write 鎵撻枊
         texture.SetPixels(originalTexture.GetPixels());
         texture.Apply();
         canvasRenderer.material.mainTexture = texture;
