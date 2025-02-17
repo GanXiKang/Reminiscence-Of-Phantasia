@@ -140,7 +140,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 2:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "女神";
+                    interactableName.text = "湖中女神";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -150,7 +150,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 3:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "小灰";
+                    interactableName.text = "咴咴";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -160,7 +160,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 4:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "猴子";
+                    interactableName.text = "空助";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -170,7 +170,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 5:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "貓";
+                    interactableName.text = "咪子";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -180,7 +180,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 6:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "狸貓­";
+                    interactableName.text = "亨汰";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -190,7 +190,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 7:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "狗";
+                    interactableName.text = "豆丸";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -200,7 +200,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 8:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "雞";
+                    interactableName.text = "吉太";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -210,7 +210,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 9:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "鸚鵡";
+                    interactableName.text = "小帕";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -220,7 +220,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 12:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "金太郎";
+                    interactableName.text = "金桃太郎";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -230,7 +230,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
             case 13:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "銀太郎";
+                    interactableName.text = "銀桃太郎";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
