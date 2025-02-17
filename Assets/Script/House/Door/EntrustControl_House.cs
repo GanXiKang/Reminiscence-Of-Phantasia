@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +28,7 @@ public class EntrustControl_House : MonoBehaviour
 
     [Header("LetterReceive")]
     public Image receiveImage;
-    public Sprite[] receiveSprite;    //Î´íÆäËûÎ¯ÍĞÔÚÍ¬Ò»Ìì ³ı·Ç·Öé_ ²»È»ÓĞücëyÕûÀí 29/11
+    public Sprite[] receiveSprite;    //ÃÂ´ÂÃ­Ã†Ã¤Ã‹Ã»ÃÂ¯ÃÃÃ”ÃšÃÂ¬Ã’Â»ÃŒÃ¬ Â³Ã½Â·Ã‡Â·Ã–Ã©_ Â²Â»ÃˆÂ»Ã“ÃÃ¼cÃ«yÃ•Ã»Ã€Ã­ 29/11
     bool isReceive = false;
 
     [Header("LetterContent")]
@@ -106,7 +106,7 @@ public class EntrustControl_House : MonoBehaviour
         {
             case 1:
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
-                letterText[1].text = "ºÍÄÌÄÌµÄ»Ø‘›...";
+                letterText[1].text = "å’Œå¥¶å¥¶çš„å›æ†¶...";
                 deliverButton[2].GetComponent<Image>().sprite = disabledButton;
                 deliverButton[2].GetComponent<Button>().interactable = false;
                 deliverButton[3].GetComponent<Image>().sprite = disabledButton;
@@ -115,7 +115,7 @@ public class EntrustControl_House : MonoBehaviour
 
             case 2:
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
-                letterText[1].text = "ÓÑÇéµÄÓ›‘›";
+                letterText[1].text = "å‹æƒ…çš„è¨˜æ†¶";
                 deliverButton[2].GetComponent<Image>().sprite = disabledButton;
                 deliverButton[2].GetComponent<Button>().interactable = false;
                 deliverButton[3].GetComponent<Image>().sprite = disabledButton;
@@ -124,7 +124,7 @@ public class EntrustControl_House : MonoBehaviour
 
             case 3:
                 deliverButton[1].GetComponent<Image>().sprite = normalButton;
-                letterText[1].text = "Î´íµÄÃÔÃ£";
+                letterText[1].text = "æœªä¾†çš„è¿·èŒ«";
                 deliverButton[2].GetComponent<Image>().sprite = disabledButton;
                 deliverButton[2].GetComponent<Button>().interactable = false;
                 deliverButton[3].GetComponent<Image>().sprite = disabledButton;
