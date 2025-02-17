@@ -226,7 +226,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
             case 11:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "狼";
+                    interactableName.text = "大野狼";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
