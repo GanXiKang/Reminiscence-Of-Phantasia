@@ -1,101 +1,109 @@
-Shader "Custom/CharacterOutlineShader"
+Shader "Custom/CharacterOutlineShaderURP"
 {
     Properties
     {
-        _MainTex("Texture", 2D) = "white" {}  // Ö÷²ÄÙ|µÄ¼yÀíÙNˆD
-        _OutlineColor("Outline Color", Color) = (0,0,0,1)  // Íâ¿òîÉ«
-        _OutlineThickness("Outline Thickness", Range(0.01, 10)) = 10  // Íâ¿ò´Ö¼š¹ ‡ú¿sĞ¡
+        _MainTex("Texture", 2D) = "white" {} // ä¸»è²¼åœ–
+        _OutlineColor("Outline Color", Color) = (0, 0, 0, 1) // è¼ªå»“é¡è‰²
+        _OutlineThickness("Outline Thickness", Range(0.01, 10)) = 1.0 // è¼ªå»“åšåº¦
     }
-        SubShader
+    SubShader
+    {
+        Tags { "RenderPipeline" = "UniversalRenderPipeline" }
+        LOD 200
+
+        // Outline Pass
+        Pass
         {
-            Tags { "RenderType" = "Opaque" }
-            LOD 200
+            Name "Outline"
+            Tags { "LightMode" = "UniversalForward" }
+            Cull Front // æ¸²æŸ“èƒŒé¢
+            Blend SrcAlpha OneMinusSrcAlpha
 
-            // µÚÒ»‚€PassäÖÈ¾Íâ¿ò
-            Pass
+            HLSLPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+            struct Attributes
             {
-                Name "OUTLINE"
-                Tags { "LightMode" = "ForwardBase" }
-                Cull Front  // ·´ŞD±³ÃæÌŞ³ıÒÔäÖÈ¾Íâ¿ò
+                float4 positionOS : POSITION;
+                float3 normalOS : NORMAL;
+            };
 
-                CGPROGRAM
-                #pragma vertex vert
-                #pragma fragment frag
-                #include "UnityCG.cginc"
+            struct Varyings
+            {
+                float4 positionCS : SV_POSITION;
+                float4 color : COLOR;
+            };
 
-                struct appdata
-                {
-                    float4 vertex : POSITION;
-                    float3 normal : NORMAL;
-                };
+            float _OutlineThickness;
+            float4 _OutlineColor;
 
-                struct v2f
-                {
-                    float4 pos : SV_POSITION;
-                    float4 color : COLOR;
-                };
+            Varyings vert(Attributes v)
+            {
+                Varyings o;
+                float3 normalWS = TransformObjectToWorldNormal(v.normalOS);
+                float3 offset = normalWS * _OutlineThickness;
 
-                float _OutlineThickness;
-                float4 _OutlineColor;
+                float4 positionWS = TransformObjectToWorld(v.positionOS);
+                positionWS.xyz += offset;
+                o.positionCS = TransformWorldToHClip(positionWS);
 
-                v2f vert(appdata v)
-                {
-                    v2f o;
-                    float3 norm = normalize(mul((float3x3) unity_ObjectToWorld, v.normal));
-                    v.vertex.xyz += norm * _OutlineThickness;  // Õ{ÕûÍâ¿ò´Ö¼š
-                    o.pos = UnityObjectToClipPos(v.vertex);  // ŞD“Qé¼ô²Ã¿Õég
-                    o.color = _OutlineColor;  // ÔO¶¨Íâ¿òîÉ«
-                    return o;
-                }
-
-                fixed4 frag(v2f i) : SV_Target
-                {
-                    return i.color;  // äÖÈ¾Íâ¿òîÉ«
-                }
-                ENDCG
+                o.color = _OutlineColor;
+                return o;
             }
 
-            // µÚ¶ş‚€PassäÖÈ¾Îïów±¾Éí
-            Pass
+            half4 frag(Varyings i) : SV_Target
             {
-                Name "BASE"
-                Tags { "LightMode" = "ForwardBase" }
-                Cull Back  // Õı³£µÄ±³ÃæÌŞ³ı
-
-                CGPROGRAM
-                #pragma vertex vertBase
-                #pragma fragment fragBase
-                #include "UnityCG.cginc"
-
-                sampler2D _MainTex;  // ¼yÀí
-                float4 _MainTex_ST;  // ¼yÀí¿s·ÅÅcÆ«ÒÆ
-
-                struct appdata
-                {
-                    float4 vertex : POSITION;
-                    float2 uv : TEXCOORD0;
-                };
-
-                struct v2f
-                {
-                    float2 uv : TEXCOORD0;
-                    float4 pos : SV_POSITION;
-                };
-
-                v2f vertBase(appdata v)
-                {
-                    v2f o;
-                    o.pos = UnityObjectToClipPos(v.vertex);  // Ó‹Ëãí”ücÎ»ÖÃ
-                    o.uv = TRANSFORM_TEX(v.uv, _MainTex);  // Ó‹Ëã¼yÀíUV×ø˜Ë
-                    return o;
-                }
-
-                fixed4 fragBase(v2f i) : SV_Target
-                {
-                    return tex2D(_MainTex, i.uv);  // ¸ù“şUV×ø˜ËÄ¼yÀíÈ¡˜Ó
-                }
-                ENDCG
+                return i.color;
             }
+            ENDHLSL
         }
-            FallBack "Diffuse"
+
+        // Base Pass
+        Pass
+        {
+            Name "Base"
+            Tags { "LightMode" = "UniversalForward" }
+            Cull Back // æ¸²æŸ“æ­£é¢
+            ZWrite On
+            ZTest LEqual
+            Blend SrcAlpha OneMinusSrcAlpha
+
+            HLSLPROGRAM
+            #pragma vertex vertBase
+            #pragma fragment fragBase
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
+
+            struct Attributes
+            {
+                float4 positionOS : POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct Varyings
+            {
+                float4 positionCS : SV_POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            Varyings vertBase(Attributes v)
+            {
+                Varyings o;
+                o.positionCS = TransformObjectToHClip(v.positionOS);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                return o;
+            }
+
+            half4 fragBase(Varyings i) : SV_Target
+            {
+                return SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+            }
+            ENDHLSL
+        }
+    }
+    FallBack "Hidden/InternalErrorShader"
 }
