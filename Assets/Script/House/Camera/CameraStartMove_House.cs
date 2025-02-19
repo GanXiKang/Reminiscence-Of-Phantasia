@@ -7,12 +7,19 @@ public class CameraStartMove_House : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
     public float _duration = 2.0f; 
-    public bool isDialogueFinished = false; 
+    public static bool isStartMoveCamera = false; 
     
     bool isMoving = false;
+    float _YSpeed = 2;
+    float _XSpeed = 100;
 
-    public float _YSpeed = 2;
-    public float _XSpeed = 100;
+    void Update()
+    {
+        if (isStartMoveCamera && !isMoving)
+        {
+            StartCoroutine(MoveCamera());
+        }
+    }
 
     IEnumerator MoveCamera()
     {
@@ -47,13 +54,5 @@ public class CameraStartMove_House : MonoBehaviour
         freeLookCamera.m_XAxis.m_MaxSpeed = originalXAxisSpeed;
 
         isMoving = false;
-    }
-
-    void Update()
-    {
-        if (isDialogueFinished && !isMoving)
-        {
-            StartCoroutine(MoveCamera());
-        }
     }
 }
