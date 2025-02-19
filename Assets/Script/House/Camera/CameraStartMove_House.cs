@@ -25,11 +25,10 @@ public class CameraStartMove_House : MonoBehaviour
     {
         isMoving = true;
 
-        // **關鍵 1：記錄原本的相機速度，然後禁用控制**
-        originalYAxisSpeed = freeLookCamera.m_YAxis.m_MaxSpeed;
-        originalXAxisSpeed = freeLookCamera.m_XAxis.m_MaxSpeed;
-        freeLookCamera.m_YAxis.m_MaxSpeed = 0; // 鎖定垂直控制
-        freeLookCamera.m_XAxis.m_MaxSpeed = 0; // 鎖定水平控制
+        _YSpeed = freeLookCamera.m_YAxis.m_MaxSpeed;
+        _XSpeed = freeLookCamera.m_XAxis.m_MaxSpeed;
+        freeLookCamera.m_YAxis.m_MaxSpeed = 0;
+        freeLookCamera.m_XAxis.m_MaxSpeed = 0;
 
         float elapsedTime = 0;
         float startY = freeLookCamera.m_YAxis.Value;
@@ -37,21 +36,18 @@ public class CameraStartMove_House : MonoBehaviour
         float targetY = 0.5f;
         float targetX = 350f;
 
-        while (elapsedTime < transitionDuration)
+        while (elapsedTime < _duration)
         {
-            freeLookCamera.m_YAxis.Value = Mathf.Lerp(startY, targetY, elapsedTime / transitionDuration);
-            freeLookCamera.m_XAxis.Value = Mathf.Lerp(startX, targetX, elapsedTime / transitionDuration);
+            freeLookCamera.m_YAxis.Value = Mathf.Lerp(startY, targetY, elapsedTime / _duration);
+            freeLookCamera.m_XAxis.Value = Mathf.Lerp(startX, targetX, elapsedTime / _duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // 確保最終值正確
         freeLookCamera.m_YAxis.Value = targetY;
         freeLookCamera.m_XAxis.Value = targetX;
-
-        // **關鍵 2：恢復玩家控制**
-        freeLookCamera.m_YAxis.m_MaxSpeed = originalYAxisSpeed;
-        freeLookCamera.m_XAxis.m_MaxSpeed = originalXAxisSpeed;
+        freeLookCamera.m_YAxis.m_MaxSpeed = _YSpeed;
+        freeLookCamera.m_XAxis.m_MaxSpeed = _XSpeed;
 
         isMoving = false;
     }
