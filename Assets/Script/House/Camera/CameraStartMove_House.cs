@@ -7,11 +7,10 @@ public class CameraStartMove_House : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
     public float _duration = 2.0f; 
-    public static bool isStartMoveCamera = false; 
-    
-    bool isMoving = false;
-    float _YSpeed = 2;
-    float _XSpeed = 100;
+    public static bool isStartMoveCamera = false;
+    public static bool isMoving = false;
+    float _YSpeed;
+    float _XSpeed;
 
     void Update()
     {
