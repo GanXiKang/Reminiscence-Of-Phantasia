@@ -5974,6 +5974,7 @@ GameObject:
   - component: {fileID: 290596005}
   - component: {fileID: 290596004}
   - component: {fileID: 290596008}
+  - component: {fileID: 290596010}
   - component: {fileID: 290596009}
   m_Layer: 0
   m_Name: MainCamera
@@ -6157,6 +6158,20 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &290596010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290596003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe80e45a01968e4fa87b4349a838936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeLookCamera: {fileID: 197710868}
+  _duration: 2
 --- !u!1001 &296028466
 PrefabInstance:
   m_ObjectHideFlags: 0
