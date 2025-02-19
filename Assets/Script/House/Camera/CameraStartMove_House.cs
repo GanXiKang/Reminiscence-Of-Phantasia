@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraStartMove_House : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
-    public float _duration = 2.0f; 
+    public float _duration = 5f; 
     public static bool isStartMoveCamera = false;
     public static bool isMoving = false;
     float _YSpeed;
