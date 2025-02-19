@@ -49,5 +49,6 @@ public class CameraStartMove_House : MonoBehaviour
         freeLookCamera.m_XAxis.m_MaxSpeed = _XSpeed;
 
         isMoving = false;
+        isStartMoveCamera = false;
     }
 }
