@@ -29,7 +29,7 @@ public class CameraControl_House : MonoBehaviour
     public static bool isLookShowcase = false;
 
     [Header("PlotCameraPoint")]
-    public Transform doorDialaguoPoint;
+    public Transform doorPlotPoint;
 
     [Header("CameraMovement")]
     public float _moveTime = 5f;
