@@ -115,8 +115,6 @@ public class InteractableControl_House : MonoBehaviour
                             {
                                 isColliderActive[2] = false;
                                 _eventNum = 1;
-                                CameraControl_House.isFreeLook = false;
-                                CameraControl_House.isLookDoorPlot = true;
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
@@ -261,8 +259,8 @@ public class InteractableControl_House : MonoBehaviour
         switch (_eventNum)
         {
             case 1:
-                //CameraControl_House.isFreeLook = false;
-                //CameraControl_House.isLookDoorPlot = true;
+                CameraControl_House.isFreeLook = false;
+                CameraControl_House.isLookDoorPlot = true;
                 DoorControl_House.isCat = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isCatTalk = true;
