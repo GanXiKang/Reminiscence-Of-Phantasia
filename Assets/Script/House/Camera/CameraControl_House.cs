@@ -10,7 +10,7 @@ public class CameraControl_House : MonoBehaviour
     public GameObject freeLookCamera;
     public static bool isFreeLook = false;
 
-    [Header("CameraPosition")]
+    [Header("InteractableCameraPosition")]
     public Transform workbenchPos;
     public Transform storyBookPos;
     public Transform playerPos;
@@ -27,6 +27,9 @@ public class CameraControl_House : MonoBehaviour
     public static bool isLookBedcase = false;
     public static bool isLookBookcase = false;
     public static bool isLookShowcase = false;
+
+    [Header("PlotCameraPoint")]
+    public Transform doorDialaguoPoint;
 
     [Header("CameraMovement")]
     public float _moveTime = 5f;
