@@ -115,6 +115,8 @@ public class InteractableControl_House : MonoBehaviour
                             {
                                 isColliderActive[2] = false;
                                 _eventNum = 1;
+                                CameraControl_House.isFreeLook = false;
+                                CameraControl_House.isLookDoorPlot = true;
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
@@ -122,6 +124,8 @@ public class InteractableControl_House : MonoBehaviour
                             {
                                 isBirdFirstMeet = false;
                                 _eventNum = 3;
+                                CameraControl_House.isFreeLook = false;
+                                CameraControl_House.isLookDoorPlot = true;
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
@@ -129,6 +133,8 @@ public class InteractableControl_House : MonoBehaviour
                             {
                                 isMomEntrust = false;
                                 _eventNum = 4;
+                                CameraControl_House.isFreeLook = false;
+                                CameraControl_House.isLookDoorPlot = true;
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
