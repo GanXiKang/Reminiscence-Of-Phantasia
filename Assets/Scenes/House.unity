@@ -6113,6 +6113,7 @@ MonoBehaviour:
   bedcasePos: {fileID: 460468388}
   bookcasePos: {fileID: 1611748570}
   showcasePos: {fileID: 937808342}
+  doorDialaguoPoint: {fileID: 0}
   _moveTime: 5
 --- !u!114 &290596009
 MonoBehaviour:
@@ -6171,7 +6172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeLookCamera: {fileID: 197710868}
-  _duration: 2
 --- !u!1001 &296028466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10014,7 +10014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460468388}
   m_Layer: 0
-  m_Name: BedcasePoint
+  m_Name: BedcasePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
