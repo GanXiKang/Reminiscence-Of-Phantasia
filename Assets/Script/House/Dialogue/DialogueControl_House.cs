@@ -304,6 +304,12 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 20:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookDoor = false;
+                BlackScreenControl.isOpenBlackScreen = true;
+                Invoke("WaitBlackScreenEvent", 1f);
+                break;
+
             case 22:
             case 25:
             case 28:
