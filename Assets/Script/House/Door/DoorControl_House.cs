@@ -76,7 +76,6 @@ public class DoorControl_House : MonoBehaviour
         }
         else if (InteractableControl_House.isBirdLeave)
         {
-            CameraControl_House.isFreeLook = false;
             InteractableControl_House.isBirdLeave = false;
             UIControl_House.isDialogue = true;
             DialogueControl_House._textCount = 10;

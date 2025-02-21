@@ -295,7 +295,6 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 10:
-                CameraControl_House.isFreeLook = true;
                 UIAboveObject_House.isAboveBed = true;
                 InteractableControl_House.isColliderActive[3] = true;
                 break;
