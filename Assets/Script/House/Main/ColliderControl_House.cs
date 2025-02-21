@@ -56,22 +56,10 @@ public class ColliderControl_House : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (UIControl_House.isDialogue) return;
-
-        if (CameraControl_House.isFreeLook)
+        if (!UIControl_House.isDialogue && CameraControl_House.isFreeLook && IsFacingObject(other.transform) && other.tag == "Player")
         {
-            if (other.tag == "Player")
-            {
-                if (IsFacingObject(other.transform))
-                {
-                    _nowNumber = _serialNumber;
-                    InteractableControl_House.isInteractable = true;
-                }
-                else
-                {
-                    InteractableControl_House.isInteractable = false;
-                }
-            }
+            _nowNumber = _serialNumber;
+            InteractableControl_House.isInteractable = true;
         }
         else
         {
