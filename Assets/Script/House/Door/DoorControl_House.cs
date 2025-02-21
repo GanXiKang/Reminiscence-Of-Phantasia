@@ -67,6 +67,8 @@ public class DoorControl_House : MonoBehaviour
         else if (!InteractableControl_House.isBirdEntrust)
         {
             isBird = true;
+            CameraControl_House.isFreeLook = false;
+            CameraControl_House.isLookDoorPlot = true;
             InteractableControl_House.isBirdEntrust = true;
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBirdTalk = true;
@@ -74,6 +76,7 @@ public class DoorControl_House : MonoBehaviour
         }
         else if (InteractableControl_House.isBirdLeave)
         {
+            CameraControl_House.isFreeLook = false;
             InteractableControl_House.isBirdLeave = false;
             UIControl_House.isDialogue = true;
             DialogueControl_House._textCount = 10;
@@ -81,6 +84,8 @@ public class DoorControl_House : MonoBehaviour
         else if (InteractableControl_House.isReadMomLetter)
         {
             isBird = true;
+            CameraControl_House.isFreeLook = false;
+            CameraControl_House.isLookDoorPlot = true;
             InteractableControl_House.isReadMomLetter = false;
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBirdTalk = true;
