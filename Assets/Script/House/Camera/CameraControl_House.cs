@@ -30,7 +30,9 @@ public class CameraControl_House : MonoBehaviour
 
     [Header("PlotCameraPoint")]
     public Transform doorPlotPoint;
+    public Transform workPlotPoint;
     public static bool isLookDoorPlot = false;
+    public static bool isLookWorkPlot = false;
 
     [Header("CameraMovement")]
     public float _moveTime = 5f;
@@ -103,6 +105,11 @@ public class CameraControl_House : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, doorPlotPoint.position, _moveTime * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, doorPlotPoint.rotation, _moveTime * Time.deltaTime);
+        }
+        else if (isLookWorkPlot)
+        {
+            transform.position = Vector3.Lerp(transform.position, workPlotPoint.position, _moveTime * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, workPlotPoint.rotation, _moveTime * Time.deltaTime);
         }
     }
 
