@@ -301,9 +301,6 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 18:
-                UIAboveObject_House.isAboveBookcase = true;
-                break;
-
             case 20:
             case 21:
             case 22:
@@ -346,6 +343,12 @@ public class DialogueControl_House : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 18:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookWorkPlot = false;
+                UIAboveObject_House.isAboveBookcase = true;
+                break;
+
             case 20:
                 CameraControl_House.isFreeLook = true;
                 CameraControl_House.isLookDoorPlot = false;
@@ -362,6 +365,8 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 22:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookWorkPlot = false;
                 InteractableControl_House.isColliderActive[4] = true;
                 UIAboveObject_House.isAboveBookcase = true;
                 CatControl_House._goPointNum = 2;
@@ -384,6 +389,8 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 31:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookWorkPlot = false;
                 InteractableControl_House.isColliderActive[4] = true;
                 UIAboveObject_House.isAboveBookcase = true;
                 BirdControl_House._goPointNum = 2;
