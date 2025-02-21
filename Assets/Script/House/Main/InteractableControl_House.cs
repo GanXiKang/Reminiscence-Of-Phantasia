@@ -274,6 +274,8 @@ public class InteractableControl_House : MonoBehaviour
                 break;
 
             case 3:
+                CameraControl_House.isFreeLook = false;
+                CameraControl_House.isLookDoorPlot = true;
                 DoorControl_House.isBird = true;
                 BirdControl_House.isIdle = true;
                 UIControl_House.isDialogue = true;
@@ -283,6 +285,8 @@ public class InteractableControl_House : MonoBehaviour
 
             case 4:
                 isReadMomLetter = true;
+                CameraControl_House.isFreeLook = false;
+                CameraControl_House.isLookDoorPlot = true;
                 DoorControl_House.isBird = true;
                 BirdControl_House.isIdle = true;
                 UIControl_House.isDialogue = true;
