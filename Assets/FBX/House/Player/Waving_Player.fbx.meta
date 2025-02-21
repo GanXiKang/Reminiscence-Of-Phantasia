@@ -19,17 +19,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Scene' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'palm.01.L' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'palm.02.L' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'palm.03.L'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.04.L'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.01.R'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.02.R'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.03.R'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.04.R'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -54,7 +44,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -70,7 +60,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 0.96
     isReadable: 0
   meshes:
     lODScreenPercentages: []
