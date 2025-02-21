@@ -295,6 +295,7 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 10:
+                CameraControl_House.isFreeLook = true;
                 UIAboveObject_House.isAboveBed = true;
                 InteractableControl_House.isColliderActive[3] = true;
                 break;
@@ -374,6 +375,8 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 28:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookDoorPlot = false;
                 InteractableControl_House.isColliderActive[3] = true;
                 UIAboveObject_House.isAboveDoor = false;
                 UIAboveObject_House.isAboveBed = true;
@@ -387,6 +390,8 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 35:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookDoorPlot = false;
                 DoorControl_House.isBird = false;
                 InteractableControl_House.isColliderActive[3] = true;
                 UIAboveObject_House.isAboveDoor = false;
