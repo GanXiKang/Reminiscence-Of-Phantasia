@@ -57,6 +57,8 @@ public class DoorControl_House : MonoBehaviour
         if (!InteractableControl_House.isCatLeave)
         {
             isCat = true;
+            CameraControl_House.isFreeLook = false;
+            CameraControl_House.isLookDoorPlot = true;
             InteractableControl_House.isCatLeave = true;
             UIControl_House.isDialogue = true;
             DialogueControl_House.isCatTalk = true;
