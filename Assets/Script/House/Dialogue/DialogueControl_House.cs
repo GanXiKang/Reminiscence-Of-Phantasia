@@ -305,9 +305,6 @@ public class DialogueControl_House : MonoBehaviour
 
             case 20:
             case 21:
-                CameraControl_House.isFreeLook = true;
-                CameraControl_House.isLookDoorPlot = false;
-                CameraControl_House.isLookWorkPlot = false;
                 BlackScreenControl.isOpenBlackScreen = true;
                 Invoke("WaitBlackScreenEvent", 1f);
                 break;
@@ -353,11 +350,18 @@ public class DialogueControl_House : MonoBehaviour
         switch (_textCount)
         {
             case 20:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookDoorPlot = false;
                 InteractableControl_House.isCatSeeWorkbench = true;
                 InteractableControl_House.isColliderActive[1] = true;
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveDoor = false;
                 CatControl_House._goPointNum = 1;
+                break;
+
+            case 21:
+                CameraControl_House.isFreeLook = true;
+                CameraControl_House.isLookWorkPlot = false;
                 break;
 
             case 22:
