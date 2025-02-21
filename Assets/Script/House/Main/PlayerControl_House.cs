@@ -83,7 +83,7 @@ public class PlayerControl_House : MonoBehaviour
     bool isCanMove()
     {
         return CameraControl_House.isFreeLook &&
-               CameraStartMove_House.isStartMoveCamera &&
+               !CameraStartMove_House.isStartMoveCamera &&
                !SettingControl.isSettingActive &&
                !UIControl_House.isDialogue;
     }
