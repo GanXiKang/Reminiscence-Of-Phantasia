@@ -635,7 +635,6 @@ public class WorkbenchControl_House : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _process = 0;
         workbenchUI.SetActive(false);
-        CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookPlayer = false;
         CameraControl_House.isLookStorkBook = false;
         CameraControl_House.isLookWorkbench = false;
@@ -649,18 +648,21 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (GameControl_House._storyNum)
         {
             case 0:
+                CameraControl_House.isLookWorkPlot = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isCatTalk = true;
                 DialogueControl_House._textCount = 22;
                 break;
 
             case 1:
+                CameraControl_House.isLookWorkPlot = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 31;
                 break;
 
             default:
+                CameraControl_House.isLookWorkPlot = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 18;
                 break;
