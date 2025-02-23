@@ -13,7 +13,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(GoToMenu());
+        //StartCoroutine(GoToMenu());
     }
 
     void Update()
@@ -43,11 +43,11 @@ public class StoryGameControl_Prince : MonoBehaviour
         isClick = false;
     }
 
-    IEnumerator GoToMenu()
-    {
-        yield return new WaitForSeconds(5f);
-        TransitionUIControl.isTransitionUIAnim_In = true;
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(0);
-    }
+    //IEnumerator GoToMenu()
+    //{
+    //    yield return new WaitForSeconds(5f);
+    //    TransitionUIControl.isTransitionUIAnim_In = true;
+    //    yield return new WaitForSeconds(1f);
+    //    SceneManager.LoadScene(0);
+    //}
 }
