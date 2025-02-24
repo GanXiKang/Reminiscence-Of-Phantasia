@@ -1,4 +1,4 @@
-using System.Collections;
+О╩©using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,20 +46,20 @@ public class StoryItemIntroduce_Prince : MonoBehaviour
 
     void ItemIntroduceContent()
     {
-        introduceItem[1] = "сЯцв\nпбУr╣дсЯцв";
-        introduceItem[2] = "п║Ш°\nъ─⌡]╪с╧╓ъ^╣дп║Ш°";
-        introduceItem[3] = "длсм\nр╩уШ┴K╣ддлсм";
-        introduceItem[4] = "Аuсм\nф©яbАuсм";
-        introduceItem[5] = "╥╛гяАu\nф©яb╥╛гяАu";
-        introduceItem[6] = "п║╣╟╦Б\n©╢фП│М╨э╨цЁт";
-        introduceItem[7] = "нОыYоД\nдц╩ь╛Fтз╣д∙rИg╟и";
-        introduceItem[8] = "▄ й╞\nмУвс╣ЯоЯиМио╣д▄ й╞";
-        introduceItem[9] = "юKкВ\nдэ┴Рсц│Мв╔в║√|нВ";
-        introduceItem[10] = "д╬╟Е\n╟╪╟╪м╧м╧╣д";
-        introduceItem[11] = "фолявя\nяbспфолявя╣д╪┬╢Э";
-        introduceItem[12] = "≥ялрвя\nяbсп≥ялрвя╣д╪┬╢Э";
-        introduceItem[13] = "цюдквл\nф©яbцюдквл";
-        introduceItem[14] = "цюдквл\nф©яbцюдквл";
-        introduceItem[15] = "цюдквл\nф©яbцюдквл";
+        introduceItem[1] = "Г▌┴Г╠Ё\nФ√╟И╝╝Г └Г▌┴Г╠Ё";
+        introduceItem[2] = "Е╟▐И╨╔\nИ┌└Ф╡▓Е┼═Е╥╔И│▌Г └Е╟▐И╨╔";
+        introduceItem[3] = "Е╔╤Ф╡╧\nД╦─Ф∙╢Е║┼Г └Е╔╤Ф╡╧";
+        introduceItem[4] = "И├╛Ф╡╧\nГ⌠╤Хё²И├╛Ф╡╧";
+        introduceItem[5] = "Г∙╙Х▄└И├╛\nГ⌠╤Хё²Г∙╙Х▄└И├╛";
+        introduceItem[6] = "Е╟▐Х⌡▀ГЁ∙\nГ°▀Х╣╥Д╬├Е╬┬Е╔╫Е░┐";
+        introduceItem[7] = "Г┴╘ХЁ┤Г╝╠\nФ▀©Е⌡·Г▐╬Е°╗Г └Ф≥┌И√⌠Е░╖";
+        introduceItem[8] = "Е╞╤Г÷Ё\nГ╒▌Д╨├Д╦─Е█┼Г └Г╤═Е╞╤Г÷Ё";
+        introduceItem[9] = "Е╞╤Г÷Ё\nЕ╝▄Ф∙╢Г └Г╤═Е╞╤Г÷Ё";
+        introduceItem[10] = "Г╧╘Г╢╒\nХ┐╫Е╓═Г■╗Д╬├Ф┼⌠Д╫▐Ф²╠Х╔©";
+        introduceItem[11] = "Ф°╗Ф²©\nЕ┤╧Е┤╧Е┤╦Е┤╦Г └";
+        introduceItem[12] = "Х▒║Х░└Г╠╫\nХё²Ф°┴Х▒║Х░└Г╠╫Г └Г╢≥Х╒▀";
+        introduceItem[13] = "Ф╚╩Ф║┐Г╠╫\nХё²Ф°┴Ф╚╩Ф║┐Г╠╫Г └Г╢≥Х╒▀";
+        introduceItem[14] = "Г╬▌Д╧┐Ф╩▀\nГ⌠╤Хё²Г╬▌Д╧┐Ф╩▀";
+        introduceItem[15] = "Г▌▀Е├═\nГ╪╨Е╟▒Д╨├Е╞╤Г÷ЁГ └Г▌▀Е├═";
     }
 }
