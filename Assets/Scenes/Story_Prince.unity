@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 45923350}
   - component: {fileID: 45923349}
   m_Layer: 0
-  m_Name: Kang
+  m_Name: 06Kang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 56790179}
   - component: {fileID: 56790178}
   m_Layer: 0
-  m_Name: Cri
+  m_Name: 07Cri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2341,7 +2341,9 @@ Transform:
   - {fileID: 1640057675}
   - {fileID: 550003414}
   - {fileID: 2077388625}
+  - {fileID: 1344391423}
   - {fileID: 1632587659}
+  - {fileID: 677724125}
   - {fileID: 564387779}
   m_Father: {fileID: 1176625417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3353,7 +3355,7 @@ GameObject:
   - component: {fileID: 550003416}
   - component: {fileID: 550003415}
   m_Layer: 0
-  m_Name: Ghost
+  m_Name: 01Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3386,7 +3388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b9a3b89ac9813489b173ebf5524228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _who: 0
+  _who: 1
 --- !u!114 &550003416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3406,7 +3408,7 @@ MonoBehaviour:
   _scaleSpeed: 20
   interactableUI: {fileID: 1397862595}
   interactableName: {fileID: 1923290708}
-  _who: 0
+  _who: 1
   isGive: 0
   _giveItemNumber: 
   isGet: 0
@@ -3615,13 +3617,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 913108437}
-  - {fileID: 677724125}
-  - {fileID: 1508316138}
   - {fileID: 45923345}
   - {fileID: 56790177}
   - {fileID: 1757695441}
   - {fileID: 851688470}
+  - {fileID: 1508316138}
+  - {fileID: 913108437}
+  - {fileID: 983348538}
   m_Father: {fileID: 296686966}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &570018015
@@ -9096,7 +9098,7 @@ GameObject:
   - component: {fileID: 677724127}
   - component: {fileID: 677724126}
   m_Layer: 0
-  m_Name: Qian
+  m_Name: 05Qian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9112,10 +9114,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
   m_LocalPosition: {x: 18.65, y: -5, z: 33.65}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.9, y: 0.8999999, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 564387779}
+  m_Father: {fileID: 296686966}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
 --- !u!114 &677724126
 MonoBehaviour:
@@ -9129,7 +9131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b9a3b89ac9813489b173ebf5524228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _who: 0
+  _who: 5
 --- !u!114 &677724127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9149,7 +9151,7 @@ MonoBehaviour:
   _scaleSpeed: 20
   interactableUI: {fileID: 1397862595}
   interactableName: {fileID: 1923290708}
-  _who: 0
+  _who: 5
   isGive: 0
   _giveItemNumber: 
   isGet: 0
@@ -10464,7 +10466,7 @@ GameObject:
   - component: {fileID: 851688472}
   - component: {fileID: 851688471}
   m_Layer: 0
-  m_Name: Jun
+  m_Name: 09Jun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10892,7 +10894,7 @@ GameObject:
   - component: {fileID: 913108439}
   - component: {fileID: 913108438}
   m_Layer: 0
-  m_Name: Wen
+  m_Name: 11Wen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11200,6 +11202,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980226060}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &983348537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983348538}
+  m_Layer: 0
+  m_Name: 12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &983348538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983348537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
+  m_LocalPosition: {x: -32.55, y: -5, z: -17.55}
+  m_LocalScale: {x: 0.9, y: 0.8999999, z: 0.9}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 564387779}
+  m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
 --- !u!1 &998913525
 GameObject:
   m_ObjectHideFlags: 0
@@ -17487,6 +17520,104 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326371853}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1344391422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344391423}
+  - component: {fileID: 1344391426}
+  - component: {fileID: 1344391425}
+  - component: {fileID: 1344391424}
+  m_Layer: 0
+  m_Name: '03PrinceStatue '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1344391423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344391422}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
+  m_LocalPosition: {x: -20.4, y: -5, z: -5.4}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 296686966}
+  m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
+--- !u!114 &1344391424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344391422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b9a3b89ac9813489b173ebf5524228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _who: 3
+--- !u!114 &1344391425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344391422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b967c884480289438767160ce16f687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 1836693494}
+  pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
+  get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 1397862595}
+  interactableName: {fileID: 1923290708}
+  _who: 3
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 1236206427}
+  bagUIPosition: {fileID: 2001287592}
+  skillUIPosition: {fileID: 1592127918}
+  effects: {fileID: 0}
+--- !u!65 &1344391426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344391422}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 10, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1350342456
 GameObject:
   m_ObjectHideFlags: 0
@@ -18063,7 +18194,7 @@ GameObject:
   - component: {fileID: 1508316140}
   - component: {fileID: 1508316139}
   m_Layer: 0
-  m_Name: Li
+  m_Name: 10Li
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19274,7 +19405,7 @@ GameObject:
   - component: {fileID: 1632587661}
   - component: {fileID: 1632587660}
   m_Layer: 0
-  m_Name: Swallow
+  m_Name: 04Swallow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19307,7 +19438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b9a3b89ac9813489b173ebf5524228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _who: 0
+  _who: 4
 --- !u!114 &1632587661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19327,7 +19458,7 @@ MonoBehaviour:
   _scaleSpeed: 20
   interactableUI: {fileID: 1397862595}
   interactableName: {fileID: 1923290708}
-  _who: 0
+  _who: 4
   isGive: 0
   _giveItemNumber: 
   isGet: 0
@@ -20089,7 +20220,7 @@ GameObject:
   - component: {fileID: 1757695443}
   - component: {fileID: 1757695442}
   m_Layer: 0
-  m_Name: Yan
+  m_Name: 08Yan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22194,7 +22325,7 @@ GameObject:
   - component: {fileID: 2077388627}
   - component: {fileID: 2077388626}
   m_Layer: 0
-  m_Name: Prince
+  m_Name: 02Prince
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22227,7 +22358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b9a3b89ac9813489b173ebf5524228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _who: 0
+  _who: 2
 --- !u!114 &2077388627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22247,7 +22378,7 @@ MonoBehaviour:
   _scaleSpeed: 20
   interactableUI: {fileID: 1397862595}
   interactableName: {fileID: 1923290708}
-  _who: 0
+  _who: 2
   isGive: 0
   _giveItemNumber: 
   isGet: 0
