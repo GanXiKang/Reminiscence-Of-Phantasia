@@ -59,5 +59,7 @@ public class StoryItemIntroduce_Prince : MonoBehaviour
         introduceItem[11] = "фолявя\nяbспфолявя╣д╪┬╢Э";
         introduceItem[12] = "≥ялрвя\nяbсп≥ялрвя╣д╪┬╢Э";
         introduceItem[13] = "цюдквл\nф©яbцюдквл";
+        introduceItem[14] = "цюдквл\nф©яbцюдквл";
+        introduceItem[15] = "цюдквл\nф©яbцюдквл";
     }
 }
