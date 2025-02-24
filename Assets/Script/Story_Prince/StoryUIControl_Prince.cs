@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ public class StoryUIControl_Prince : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart = false; //·½±ãˆÌÐÐ
+    public static bool isStoryStart = false; //æš«æ™‚
     public static bool isStoryEnding = false;
 
     [Header("TransitionUI")]
