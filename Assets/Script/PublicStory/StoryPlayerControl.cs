@@ -166,6 +166,10 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryPlayerAnimator_Momotaro.isStone &&
                !StoryUIControl_Momotaro.isPerformances && 
                !StoryStrongWind_Momotaro.isBlownAway &&
-               !StoryLoadingScene_Momotaro.isPlotAnimator;
+               !StoryLoadingScene_Momotaro.isPlotAnimator &&
+
+               StoryInteractableControl_Prince.isPlayerMove &&
+               !StoryLoadingScene_Prince.isLoading &&
+               !StoryUIControl_Prince.isDialogue;
     }
 }
