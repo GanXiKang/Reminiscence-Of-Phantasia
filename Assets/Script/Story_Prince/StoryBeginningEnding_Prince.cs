@@ -214,6 +214,8 @@ public class StoryBeginningEnding_Prince : MonoBehaviour
         canvasGroup.alpha = targetAlpha;
         image.fillAmount = 0;
         StoryUIControl_Prince.isStoryStart = false;
+        StoryUIControl_Prince.isDialogue = true;
+        StoryDialogueControl_Prince._textCount = 1;
     }
     IEnumerator StorySystemUIAppear(CanvasGroup canvasGroup)
     {
