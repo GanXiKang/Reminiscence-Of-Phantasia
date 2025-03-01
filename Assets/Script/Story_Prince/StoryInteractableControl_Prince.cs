@@ -225,6 +225,16 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     interactableUI.transform.position = screenPos;
                 }
                 break;
+
+            case 14:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "木板";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
         }
     }
     void GivePlayerObject()
@@ -277,6 +287,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 14:
+
                     break;
             }
         }
