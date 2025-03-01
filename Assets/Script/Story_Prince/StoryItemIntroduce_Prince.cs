@@ -9,7 +9,7 @@ public class StoryItemIntroduce_Prince : MonoBehaviour
     public GameObject introduce;
     public GameObject panel;
     public Text content;
-    string[] introduceItem = new string[14];
+    string[] introduceItem = new string[16];
     public static bool isIntroduce = true;
 
     [Header("IntroduceTransform")]
