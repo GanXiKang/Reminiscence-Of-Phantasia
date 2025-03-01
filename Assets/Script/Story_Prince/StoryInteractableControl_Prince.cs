@@ -127,7 +127,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             case 2:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "王子";
+                    interactableName.text = "善願王子";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -137,7 +137,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             case 3:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "？";
+                    interactableName.text = "王子雕像";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -147,7 +147,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             case 4:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "鳥";
+                    interactableName.text = "姿裴絲";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -158,6 +158,76 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "千千";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 6:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "千千";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 7:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "小康";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 8:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "小彥";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 9:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "小俊";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 10:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "小欣";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 11:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "薇普";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 12:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "貝蘿";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
