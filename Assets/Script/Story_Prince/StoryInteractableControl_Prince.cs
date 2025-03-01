@@ -317,9 +317,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     {
                         case 1:
                             isInteractable = true;
-                            StoryUIControl_Girl.isDialogue = true;
-                            StoryDialogueControl_Girl._isAboveWho1 = _who;
-                            StoryDialogueControl_Girl._textCount = 2;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 2;
                             break;
 
                         default:
