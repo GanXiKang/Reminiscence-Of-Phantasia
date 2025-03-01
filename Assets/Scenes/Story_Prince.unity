@@ -17790,7 +17790,6 @@ GameObject:
   - component: {fileID: 1344391423}
   - component: {fileID: 1344391426}
   - component: {fileID: 1344391425}
-  - component: {fileID: 1344391424}
   m_Layer: 0
   m_Name: '03PrinceStatue '
   m_TagString: Untagged
@@ -17814,19 +17813,6 @@ Transform:
   - {fileID: 234943787}
   m_Father: {fileID: 296686966}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
---- !u!114 &1344391424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344391422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b9a3b89ac9813489b173ebf5524228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _who: 3
 --- !u!114 &1344391425
 MonoBehaviour:
   m_ObjectHideFlags: 0
