@@ -64,7 +64,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         player = GameObject.Find("Player");
 
         originalScale = transform.localScale;
-        initialRotation = transform.rotation;
     }
 
     void Update()
