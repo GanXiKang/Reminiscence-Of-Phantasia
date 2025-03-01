@@ -275,6 +275,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 case 1:
 
                     break;
+
+                case 14:
+                    break;
             }
         }
         else
