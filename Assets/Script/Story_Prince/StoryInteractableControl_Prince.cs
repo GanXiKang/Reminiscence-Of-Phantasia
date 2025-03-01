@@ -287,7 +287,23 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 14:
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._textCount = 26;
 
+                    isPickedUp = true;
+                    BGM.PlayOneShot(pickUp);
+                    StoryBagControl.isGet = true;
+                    StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                    StoryBagControl._whichItem = _giveItemNumber[0];
+                    if (StoryBagControl.isOpenBag)
+                    {
+                        StoryBagControl.isOpenBag = false;
+                    }
+
+                    isInteractableUI = false;
+                    effects.SetActive(false);
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    Destroy(this.gameObject, 2f);
                     break;
             }
         }
@@ -295,7 +311,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         {
             switch (_who)
             {
-                case 1:
+                case 3:
 
                     break;
             }
