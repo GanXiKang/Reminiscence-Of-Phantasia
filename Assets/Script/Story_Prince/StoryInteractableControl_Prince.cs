@@ -59,12 +59,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     [Header("Effects")]
     public GameObject effects;
 
-    //Rotation
-    private float totalRotation = 0f;
-    private Quaternion initialRotation;
-    bool isRotation = false;
-    float _speed = 180f;
-
     void Start()
     {
         player = GameObject.Find("Player");
@@ -79,7 +73,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         InteractableUI();
         GivePlayerObject();
         ExchangeItem();
-        RotationSprite();
     }
 
     void PickUpItem()
@@ -268,36 +261,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         if (StoryBagControl.isOpenBag)
         {
             StoryBagControl.isOpenBag = false;
-        }
-    }
-    void RotationSprite()
-    {
-        if (!StoryDialogueControl_Prince.isDialogueRotation) return;
-        if (!isRotation) return;
-
-        float rotationThisFrame = _speed * Time.deltaTime;
-        totalRotation += rotationThisFrame;
-
-        if (totalRotation <= 120f)
-        {
-            Quaternion deltaRotation = Quaternion.Euler(0f, rotationThisFrame, 0f);
-            transform.rotation = transform.rotation * deltaRotation;
-            if (totalRotation > 90f)
-            {
-                switch (_who)
-                {
-                    case 1:
-
-                        break;
-                }
-            }
-        }
-        else
-        {
-            StoryDialogueControl_Prince.isDialogueRotation = false;
-            isRotation = false;
-            totalRotation = 0f;
-            transform.rotation = initialRotation;
         }
     }
 
