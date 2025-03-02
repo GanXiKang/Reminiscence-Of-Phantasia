@@ -303,6 +303,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     switch (_countMouseDown)
                     {
                         case 1:
+                            isInteractable = true;
                             StoryUIControl_Prince.isDialogue = true;
                             StoryDialogueControl_Prince._isAboveWho1 = _who;
                             StoryDialogueControl_Prince._textCount = 19;
@@ -363,11 +364,31 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     }
                     break;
 
+                case 9:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            isInteractable = true;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 47;
+                            break;
+
+                        default:
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 48;
+                            break;
+                    }
+                    break;
+
                 case 11:
                     _countMouseDown++;
                     switch (_countMouseDown)
                     {
                         case 1:
+                            isInteractable = true;
                             StoryUIControl_Prince.isDialogue = true;
                             StoryDialogueControl_Prince._isAboveWho1 = _who;
                             StoryDialogueControl_Prince._textCount = 44;
