@@ -59,6 +59,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     [Header("Effects")]
     public GameObject effects;
 
+    //03PrinceStatue 
+    public static bool isTakeGems = false;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -333,6 +336,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
+                            if (isTakeGems)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 3;
+                                //幽靈出現
+                            }
                             break;
                     }
                     break;
