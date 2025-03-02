@@ -332,15 +332,14 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             StoryDialogueControl_Prince._textCount = 2;
                             break;
 
+                        case 2:
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 3;
+                            //幽靈出現
+                            break;
+
                         default:
-                            if (isTakeGems)
-                            {
-                                isTakeGems = false;
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._textCount = 3;
-                                //幽靈出現
-                            }
                             break;
                     }
                     break;
