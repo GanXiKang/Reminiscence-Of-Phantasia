@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -306,13 +306,18 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 1:
                 StoryPlayerControl.isSad = true;
                 break;
+
+            case 3:
+                StoryPlayerControl.isSurprised = true;
+                break;
         }
     }
     void DialogurEnd()
     {
         switch (_textCount)
         {
-            case 2:
+            case 3:
+                //幽靈離開
                 break;
         }
     }
