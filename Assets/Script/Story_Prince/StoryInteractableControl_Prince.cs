@@ -59,9 +59,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     [Header("Effects")]
     public GameObject effects;
 
-    //03PrinceStatue 
-    public static bool isTakeGems = false;
-
     void Start()
     {
         player = GameObject.Find("Player");
