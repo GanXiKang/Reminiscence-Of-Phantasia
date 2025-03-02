@@ -312,7 +312,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     {
         switch (_textCount)
         {
-            case 1:
+            case 2:
                 break;
         }
     }
