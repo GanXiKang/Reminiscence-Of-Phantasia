@@ -338,6 +338,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         default:
                             if (isTakeGems)
                             {
+                                isTakeGems = false;
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 3;
