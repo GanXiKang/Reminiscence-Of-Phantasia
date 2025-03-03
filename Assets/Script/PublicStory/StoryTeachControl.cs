@@ -30,9 +30,14 @@ public class StoryTeachControl : MonoBehaviour
     public Text content;
     public Button[] teachButton;
     public float _openSpeed = 1f;
-    public static bool isTeachActive = false;
+    public static bool isTeachActive;
     int _page = 1;
     int _isFinish = 0;
+
+    void Start()
+    {
+        isTeachActive = false;
+    }
 
     void Update()
     {
