@@ -15,7 +15,7 @@ public class StoryBagControl : MonoBehaviour
     [Header("BagUI")]
     public Image background;
     public Button bag;
-    public static bool isOpenBag = false;
+    public static bool isOpenBag;
     public float _speed = 2f;
     float value = 0;
     bool isAnim = false;
@@ -23,26 +23,48 @@ public class StoryBagControl : MonoBehaviour
     [Header("BagButton")]
     public GameObject[] itemButton;
     public GameObject[] itemBG;
-    public static bool isItemFollow = false;
-    public static int _whatItemButton = 5;
+    public static bool isItemFollow;
+    public static int _whatItemButton;
 
     [Header("ItemSprite")]
     public Sprite[] itemSprite;
-    public static bool isGet = false;
-    public static bool isRenewBag = false;
+    public static bool isGet;
+    public static bool isRenewBag;
     public static bool[] isItemNumber;        
     public static int[] _gridsItemNumber;
-    public static int _howManyGrids = 0;
+    public static int _howManyGrids;
 
     [Header("GetItemMoveUI")]
     public Image getMoveItem;
-    public static int _whichItem = 0;
+    public static int _whichItem;
 
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
 
         ItemNumber_Start();
+        Static_Start();
+    }
+
+    void ItemNumber_Start()
+    {
+        _howManyGrids = 0;
+        isItemNumber = new bool[itemSprite.Length];
+        _gridsItemNumber = new int[5];
+        for (int i = 0; i < itemSprite.Length; i++)
+        {
+            isItemNumber[i] = false;
+        }
+    }
+    void Static_Start()
+    {
+        isOpenBag = false;
+        isItemFollow = false;
+        isGet = false;
+        isRenewBag = false;
+        _whatItemButton = 5;
+        _howManyGrids = 0;
+        _whichItem = 0;
     }
 
     void Update()
@@ -80,16 +102,6 @@ public class StoryBagControl : MonoBehaviour
         StoryItemIntroduce_Prince.isIntroduce = !isItemFollow;
     }
 
-    void ItemNumber_Start()
-    {
-        _howManyGrids = 0;
-        isItemNumber = new bool[itemSprite.Length];
-        _gridsItemNumber = new int[5];
-        for (int i = 0; i < itemSprite.Length; i++)
-        {
-            isItemNumber[i] = false;
-        }
-    }
     void BagGirdDisplay()
     {
         if (isGet)
