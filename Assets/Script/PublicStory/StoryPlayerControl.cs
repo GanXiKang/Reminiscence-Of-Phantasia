@@ -18,7 +18,7 @@ public class StoryPlayerControl : MonoBehaviour
     public float _gravity = 20f;
     private Vector3 _storyMoveInput;
     private Vector3 _storyVelocity;
-    public static float _direction = 1;
+    public static float _direction;
 
     [Header("WalkEffects")]
     public GameObject walkEffects;
@@ -29,6 +29,8 @@ public class StoryPlayerControl : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         anim = GetComponent<Animator>();
+
+        _direction = 1;
     }
 
     void Update()
