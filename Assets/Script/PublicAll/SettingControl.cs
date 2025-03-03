@@ -150,7 +150,7 @@ public class SettingControl : MonoBehaviour
 
     void GoToMenu()
     {
-        isSettingActive = false;
+        //isSettingActive = false;
         SceneManager.LoadScene(0);
     }
 }
