@@ -16,13 +16,14 @@ public class TransitionUIControl : MonoBehaviour
     [Header("UI")]
     public Sprite book;
     public Sprite house;
-    public static bool isHouse = true;
+    public static bool isHouse;
 
     void Start()
     {
         transform.localScale = smallScale;
         isTransitionUIAnim_In = false;
-        isTransitionUIAnim_Out = true; 
+        isTransitionUIAnim_Out = true;
+        isHouse = true;
     }
 
     void OnEnable()
