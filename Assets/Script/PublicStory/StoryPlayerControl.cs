@@ -42,7 +42,6 @@ public class StoryPlayerControl : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        Debug.Log("Yes");
         Vector2 input = value.Get<Vector2>();
         _storyMoveInput = new Vector3(input.x, 0f, input.y);
 
