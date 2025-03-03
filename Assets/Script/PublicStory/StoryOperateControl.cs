@@ -8,11 +8,13 @@ public class StoryOperateControl : MonoBehaviour
     float _duration = 1f; 
     float _delay = 10f;
 
-    public static bool isFadeOut = false;
+    public static bool isFadeOut;
 
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+
+        isFadeOut = false;
     }
 
     void Update()
