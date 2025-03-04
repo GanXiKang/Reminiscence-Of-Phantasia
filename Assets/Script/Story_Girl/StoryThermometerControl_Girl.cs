@@ -14,7 +14,7 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     public static bool isThermometer;
     public static bool isStepOnSnow;
     public static bool isFireBeside;
-    public static bool isDead;
+    public static bool isDead = false;
     bool isUseMatches = false;
     float _decline = 0.08f;
     float _rise = 0.14f;

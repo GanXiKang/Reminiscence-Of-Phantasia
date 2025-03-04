@@ -6,7 +6,7 @@ public class StoryUIControl_Girl : MonoBehaviour
 {
     [Header("DialogueUI")]
     public GameObject dialogueUI;
-    public static bool isDialogue;
+    public static bool isDialogue = false;
 
     [Header("StoryUI")]
     public GameObject storyUI;
