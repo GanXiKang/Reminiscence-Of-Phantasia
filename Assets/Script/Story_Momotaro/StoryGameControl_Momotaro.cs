@@ -8,18 +8,18 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public GameObject forest;
     public GameObject mountain;
     public GameObject plaza;
-    public static bool isForestActive = false;
-    public static bool isMountainActive = false;
-    public static bool isPlazaActive = false;
-    public static bool isMeetDonkey = false;
+    public static bool isForestActive;
+    public static bool isMountainActive;
+    public static bool isPlazaActive;
+    public static bool isMeetDonkey;
     bool isOnce = true;
 
     [Header("Statue")]
     public GameObject catLow;
     public GameObject catFinish;
     public GameObject performancesPoint;
-    public static bool isPerformancesPointActive = false;
-    public static bool isReadly = false;
+    public static bool isPerformancesPointActive;
+    public static bool isReadly;
 
     [Header("SceneActive")]
     public GameObject sceneRiver;
@@ -31,13 +31,26 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public SpriteRenderer cat;
     public GameObject donkey;
     public GameObject parrot;
-    public static bool isParrotActive = false;
+    public static bool isParrotActive;
 
     [Header("Texture")]
     public Texture2D mouse1;
     public Texture2D mouse2;
     public Vector2 hotSpot = Vector2.zero;
     bool isClick = false;
+
+    void Start()
+    {
+        isForestActive = false;
+        isMountainActive = false;
+        isPlazaActive = false;
+        isMeetDonkey = false;
+        isPerformancesPointActive = false;
+        isReadly = false;
+        isParrotActive = false;
+
+        StoryColliderControl_Momotaro.isStoneSuccess = true;
+    }
 
     void Update()
     {

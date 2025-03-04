@@ -8,7 +8,7 @@ public class StoryColliderControl_Momotaro : MonoBehaviour
 
     //Once
     bool isParrotOnce = true;
-    public static bool isStoneSuccess = true;
+    public static bool isStoneSuccess;
 
     private void OnTriggerEnter(Collider other)
     {
