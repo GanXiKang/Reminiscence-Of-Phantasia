@@ -36,11 +36,29 @@ public class StoryGameControl_Girl : MonoBehaviour
         player = GameObject.Find("Player");
         playerControl = player.GetComponent<StoryPlayerControl>();
 
+        GameStatic_Start();
+    }
+
+    void GameStatic_Start()
+    {
         isWallActive = true;
         isTrashcanLidActice = true;
         isInStreet = true;
         isResurrection = false;
         isRenewTemperature = false;
+        Debug.Log("Yes");
+        StoryInteractableControl_Girl.isInteractableUI = false;
+        StoryInteractableControl_Girl.isGiveItem = false;
+        StoryInteractableControl_Girl.isBagGetItem = false;
+        StoryInteractableControl_Girl.isPlayerMove = true;
+        StoryInteractableControl_Girl.isFinallyMatch = false;
+        StoryInteractableControl_Girl.isWearingLittleRedHood = false;
+        StoryInteractableControl_Girl.isTrashCanLid = false;
+        StoryInteractableControl_Girl.isNeedHelp = false;
+        StoryInteractableControl_Girl.isGetGift = false;
+        StoryInteractableControl_Girl.isCanKillWolf = false;
+        StoryInteractableControl_Girl.isFirstAskFind = false;
+        StoryInteractableControl_Girl.isAgreeFind = false;
     }
 
     void Update()

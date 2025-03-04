@@ -90,27 +90,6 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
         originalScale = transform.localScale;
         initialRotation = transform.rotation;
-
-        Static_Start();
-    }
-
-    void Static_Start()
-    {
-        Debug.Log("Yes");
-        isInteractableUI = false;
-        isGiveItem = false;
-        isBagGetItem = false;
-        isPlayerMove = true;
-
-        //Plot
-        isFinallyMatch = false;
-        isWearingLittleRedHood = false;
-        isTrashCanLid = false;
-        isNeedHelp = false;
-        isGetGift = false;
-        isCanKillWolf = false;
-        isFirstAskFind = false;
-        isAgreeFind = false;
     }
 
     void Update()
