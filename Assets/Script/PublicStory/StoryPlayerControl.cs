@@ -163,12 +163,12 @@ public class StoryPlayerControl : MonoBehaviour
 
                StoryInteractableControl_Momotaro.isPlayerMove &&
                !StoryLoadingScene_Momotaro.isLoading &&
+               !StoryLoadingScene_Momotaro.isPlotAnimator &&
                !StoryUIControl_Momotaro.isDialogue &&
+               !StoryUIControl_Momotaro.isPerformances &&
                !StoryRiceDumpling_Momotaro.isEat &&
                !StoryPlayerAnimator_Momotaro.isStone &&
-               !StoryUIControl_Momotaro.isPerformances && 
                !StoryStrongWind_Momotaro.isBlownAway &&
-               !StoryLoadingScene_Momotaro.isPlotAnimator &&
 
                StoryInteractableControl_Prince.isPlayerMove &&
                !StoryLoadingScene_Prince.isLoading &&
