@@ -45,29 +45,23 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     void Static_Start()
     {
         _direction = 1;
-        //isHappy_Irls;
-        //isSurprise;
-        //isLeaveStreet;
-        //isGoGrandmom;
-        //isHide;
-        //isFind;
-        //isAttractWolf;
-
-        //isOpen;
-
-        //isAngry;
-        //isLeave;
-
-        //isHappy_Cri;
-
-        //isMoveSeeWolf;
-        //isFinishLeave;
-
-        //isNormal;
-
-        //isScared;
-        //isShotRunAway;
-        //isFightRunAway;
+        isHappy_Irls = false;
+        isSurprise = false;
+        isLeaveStreet = false;
+        isGoGrandmom = false;
+        isHide = false;
+        isFind = false;
+        isAttractWolf = false;
+        isOpen = false;
+        isAngry = false;
+        isLeave = false;
+        isHappy_Cri = false;
+        isMoveSeeWolf = false;
+        isFinishLeave = false;
+        isNormal = false;
+        isScared = false;
+        isShotRunAway = false;
+        isFightRunAway = false;
     }
 
     void Update()
