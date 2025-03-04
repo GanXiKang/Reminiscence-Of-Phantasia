@@ -40,8 +40,6 @@ public class StoryPlayerControl : MonoBehaviour
         StoryPlayerMove();
         StoryPlayerOnTheGround();
         Animation();
-
-        Debug.Log(isCanMove());
     }
 
     void OnMove(InputValue value)
