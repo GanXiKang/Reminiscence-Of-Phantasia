@@ -13,6 +13,8 @@ public class StoryPlayerAnimator_Girl : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+
+
     }
 
     void Update()

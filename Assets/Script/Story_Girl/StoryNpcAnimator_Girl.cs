@@ -45,30 +45,30 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     void Static_Start()
     {
         _direction = 1;
-    public static bool isHappy_Irls;
-    public static bool isSurprise;
-    public static bool isLeaveStreet;
-    public static bool isGoGrandmom;
-    public static bool isHide;
-    public static bool isFind;
-    public static bool isAttractWolf;
-    //02GarbageCan
-    public static bool isOpen;
-    //04Child_Yan
-    public static bool isAngry;
-    public static bool isLeave;
-    //05Child_Cri
-    public static bool isHappy_Cri;
-    //06Hunter
-    public static bool isMoveSeeWolf;
-    public static bool isFinishLeave;
-    //09Camping
-    public static bool isNormal;
-    //11Wolf
-    public static bool isScared;
-    public static bool isShotRunAway;
-    public static bool isFightRunAway;
-}
+        //isHappy_Irls;
+        //isSurprise;
+        //isLeaveStreet;
+        //isGoGrandmom;
+        //isHide;
+        //isFind;
+        //isAttractWolf;
+
+        //isOpen;
+
+        //isAngry;
+        //isLeave;
+
+        //isHappy_Cri;
+
+        //isMoveSeeWolf;
+        //isFinishLeave;
+
+        //isNormal;
+
+        //isScared;
+        //isShotRunAway;
+        //isFightRunAway;
+    }
 
     void Update()
     {
