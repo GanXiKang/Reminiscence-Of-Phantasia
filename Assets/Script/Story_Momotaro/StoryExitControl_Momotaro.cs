@@ -16,12 +16,14 @@ public class StoryExitControl_Momotaro : MonoBehaviour
     public GameObject exitUI;
     public Image bar;
     public Text sceneName;
-    public static bool isExit = false;
+    public static bool isExit;
     float _barSpeed = 2f;
 
     void Start()
     {
         player = GameObject.Find("Player");
+
+        isExit = false;
     }
 
     void Update()
