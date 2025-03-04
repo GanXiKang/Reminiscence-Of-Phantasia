@@ -31,7 +31,6 @@ public class StoryPlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
 
         _direction = 1;
-        Debug.Log(isCanMove());
     }
 
     void Update()
@@ -41,6 +40,10 @@ public class StoryPlayerControl : MonoBehaviour
         StoryPlayerMove();
         StoryPlayerOnTheGround();
         Animation();
+
+        Debug.Log(StoryInteractableControl_Girl.isPlayerMove);
+        Debug.Log(StoryInteractableControl_Prince.isPlayerMove);
+        Debug.Log(StoryInteractableControl_Momotaro.isPlayerMove);
     }
 
     void OnMove(InputValue value)
