@@ -50,6 +50,8 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         isParrotActive = false;
 
         StoryColliderControl_Momotaro.isStoneSuccess = true;
+
+        StoryExitControl_Momotaro.isExit = false;
     }
 
     void Update()
