@@ -31,6 +31,7 @@ public class StoryPlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
 
         _direction = 1;
+        Debug.Log(isCanMove());
     }
 
     void Update()
