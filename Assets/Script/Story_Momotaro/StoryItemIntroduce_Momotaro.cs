@@ -10,7 +10,7 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
     public GameObject panel;
     public Text content;
     string[] introduceItem = new string[12];
-    public static bool isIntroduce = true;
+    public static bool isIntroduce;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;
@@ -18,6 +18,8 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
     void Start()
     {
         ItemIntroduceContent();
+
+        isIntroduce = true;
     }
 
     void Update()
@@ -30,14 +32,7 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
     {
         panel.GetComponent<RectTransform>().position = buttonTransform[_whichItem].position + new Vector3(-80f, 150f, 0f);
         content.text = introduceItem[StoryBagControl._gridsItemNumber[_whichItem]].ToString();
-        if (isIntroduce)
-        {
-            introduce.SetActive(true);
-        }
-        else
-        {
-            introduce.SetActive(false);
-        }
+        introduce.SetActive(isIntroduce);
     }
     public void OnPointExit()
     {
