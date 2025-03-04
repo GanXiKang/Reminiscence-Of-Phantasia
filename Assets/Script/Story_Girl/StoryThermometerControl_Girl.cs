@@ -11,9 +11,9 @@ public class StoryThermometerControl_Girl : MonoBehaviour
 
     [Header("Value")]
     public float _temperature = 36.5f;
-    public static bool isThermometer;
-    public static bool isStepOnSnow;
-    public static bool isFireBeside;
+    public static bool isThermometer = false;
+    public static bool isStepOnSnow = false;
+    public static bool isFireBeside = false;
     public static bool isDead = false;
     bool isUseMatches = false;
     float _decline = 0.08f;
@@ -28,8 +28,8 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     [Header("SkillUI")]
     public GameObject skill;
     public Text quantity;
-    public static bool isSkillActive;
-    public static int _matchQuantity;
+    public static bool isSkillActive = false;
+    public static int _matchQuantity = 0;
     int _countUse = 0;
     bool isteach = false;
 
