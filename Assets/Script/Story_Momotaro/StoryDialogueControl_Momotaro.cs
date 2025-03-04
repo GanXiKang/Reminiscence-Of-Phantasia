@@ -50,8 +50,8 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
     List<string> textList = new List<string>();
 
     //Event
-    public static bool isDialogueEvent = false;
-    public static bool isDialogueContinue = false;
+    //public static bool isDialogueEvent = false;
+    //public static bool isDialogueContinue = false;
 
     void Start()
     {
@@ -821,7 +821,7 @@ public class StoryDialogueControl_Momotaro : MonoBehaviour
                 break;
 
             case 28:
-                isDialogueContinue = true;
+                //isDialogueContinue = true;
                 StoryNpcAnimator_Momotaro.isGift = true;      
                 break;
 

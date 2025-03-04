@@ -429,9 +429,9 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     {
         if (!isExchange) return;
         if (!isExchangeItem) return;
-        if (!StoryDialogueControl_Momotaro.isDialogueEvent) return;
+        //if (!StoryDialogueControl_Momotaro.isDialogueEvent) return;
 
-        StoryDialogueControl_Momotaro.isDialogueEvent = false;
+        //StoryDialogueControl_Momotaro.isDialogueEvent = false;
         isExchangeItem = false;
         isPickedUp = true;
         StoryBagControl.isGet = true;
