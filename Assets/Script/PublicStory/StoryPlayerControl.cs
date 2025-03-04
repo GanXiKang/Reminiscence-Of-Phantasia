@@ -41,9 +41,7 @@ public class StoryPlayerControl : MonoBehaviour
         StoryPlayerOnTheGround();
         Animation();
 
-        Debug.Log(StoryInteractableControl_Girl.isPlayerMove);
-        Debug.Log(StoryInteractableControl_Prince.isPlayerMove);
-        Debug.Log(StoryInteractableControl_Momotaro.isPlayerMove);
+        Debug.Log(isCanMove());
     }
 
     void OnMove(InputValue value)
