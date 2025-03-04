@@ -61,7 +61,15 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         StoryLoadingScene_Momotaro.isPlotAnimator = false;
         StoryLoadingScene_Momotaro.isHintGoPlaza = false;
 
-
+        StoryPlayerAnimator_Momotaro.isHuman = false;
+        StoryPlayerAnimator_Momotaro.isDonkey = false;
+        StoryPlayerAnimator_Momotaro.isRaccoon = false;
+        StoryPlayerAnimator_Momotaro.isStone = false;
+        StoryPlayerAnimator_Momotaro.isParrot = false;
+        StoryPlayerAnimator_Momotaro.isFall = false;
+        StoryPlayerAnimator_Momotaro.isSmokeEF = false;
+        StoryPlayerAnimator_Momotaro.isMistEF = false;
+        StoryPlayerAnimator_Momotaro.isNervousEF = false;
 
         StoryInteractableControl_Momotaro.isInteractableUI = false;
         StoryInteractableControl_Momotaro.isGiveItem = false;
@@ -82,6 +90,44 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         StoryInteractableControl_Momotaro.isSuccessfulPerformance = false;
         StoryInteractableControl_Momotaro.isAnswerCorrect = false;
         StoryInteractableControl_Momotaro.isBackLake = false;
+
+        StoryNpcAnimator_Momotaro.isHappy_Momo = false;
+        StoryNpcAnimator_Momotaro.isSad_Momo = true;
+        StoryNpcAnimator_Momotaro.isWalk_Momo = false;
+        StoryNpcAnimator_Momotaro._movePlot = 0;
+        StoryNpcAnimator_Momotaro.isAngry = false;
+        StoryNpcAnimator_Momotaro.isOutLake = false;
+        StoryNpcAnimator_Momotaro.isBackLake = false;
+        StoryNpcAnimator_Momotaro.isShy = false;
+        StoryNpcAnimator_Momotaro.isGift = false;
+        StoryNpcAnimator_Momotaro.isWalk_Monkey = false;
+        StoryNpcAnimator_Momotaro.isWalkGold_Monkey = false;
+        StoryNpcAnimator_Momotaro.isGold_Monkey = false;
+        StoryNpcAnimator_Momotaro.isControlled_Monkey = false;
+        StoryNpcAnimator_Momotaro.isGoMountain = false;
+        StoryNpcAnimator_Momotaro.isLeave_Monkey = false;
+        StoryNpcAnimator_Momotaro.isFindPlayer = false;
+        StoryNpcAnimator_Momotaro.isFindMomotaro_Monkey = false;
+        StoryNpcAnimator_Momotaro.isMeet = false;
+        StoryNpcAnimator_Momotaro.isCloseEyes = false;
+        StoryNpcAnimator_Momotaro._dating = 0;
+        StoryNpcAnimator_Momotaro.isStone = false;
+        StoryNpcAnimator_Momotaro._performancesNum = 0;
+        StoryNpcAnimator_Momotaro.isFindMomotaro = false;
+        StoryNpcAnimator_Momotaro.isSliver_Dog = false;
+        StoryNpcAnimator_Momotaro.isControlled_Dog = false;
+        StoryNpcAnimator_Momotaro.isGold_Chicken = false;
+        StoryNpcAnimator_Momotaro.isControlled_Chicken = false;
+        StoryNpcAnimator_Momotaro.isWalk_Parrot = false;
+        StoryNpcAnimator_Momotaro.isPerformance = false;
+        StoryNpcAnimator_Momotaro.isExcited = false;
+        StoryNpcAnimator_Momotaro.isLeave_Parrot = false;
+        StoryNpcAnimator_Momotaro.isOutLake_GSMomo = false;
+        StoryNpcAnimator_Momotaro.isGoTarget_GSMomo = false;
+        StoryNpcAnimator_Momotaro.isBackLake_GSMomo = false;
+        StoryNpcAnimator_Momotaro.isWalk_GoldMomo = false;
+        StoryNpcAnimator_Momotaro.isWalk_SliverMomo = false;
+        StoryNpcAnimator_Momotaro.isFinishPerformances_SliverMomo = false;
     }
 
     void Update()
