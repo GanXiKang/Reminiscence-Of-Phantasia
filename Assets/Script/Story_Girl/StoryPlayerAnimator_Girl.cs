@@ -14,7 +14,10 @@ public class StoryPlayerAnimator_Girl : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-
+        //isCold;
+        //isIronRod;
+        //isMatch;
+        //isStrongWind;
     }
 
     void Update()
