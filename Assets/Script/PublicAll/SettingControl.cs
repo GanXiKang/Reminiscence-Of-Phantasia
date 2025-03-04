@@ -21,16 +21,16 @@ public class SettingControl : MonoBehaviour
     public Toggle fullScreen;
     public static float volumeBGM = 0.5f;
     public static bool isFullS;
-    public static bool isSettingActive = false;
+    public static bool isSettingActive;
     bool isOperate = false;
 
     //Move
-    Vector3 pointA = new Vector3(-888, 0, 0); 
+    Vector3 pointA = new Vector3(-888, 0, 0);
     Vector3 pointB = new Vector3(0, 0, 0);
     float _timer = 0f;
     float _duration = 0.8f;
-    bool isMoving = false;                  
-    bool isAppear = false;                 
+    bool isMoving = false; 
+    bool isAppear = false;
 
 
     void Start()
@@ -39,6 +39,7 @@ public class SettingControl : MonoBehaviour
         sliderBGM.value = volumeBGM;
         BGM.volume = volumeBGM;
         fullScreen.isOn = Screen.fullScreen;
+        isSettingActive = false;
     }
 
     void Update()
