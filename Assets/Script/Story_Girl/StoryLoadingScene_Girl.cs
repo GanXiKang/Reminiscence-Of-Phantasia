@@ -18,13 +18,22 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     [Header("LoadingUI")]
     public GameObject loadingUI;
     public Image a, b, c;
-    public static bool isLoading = false;
-    public static bool isLeftOpen = false;
-    public static bool isLeftClose = false;
-    public static bool isRightOpen = false;
-    public static bool isRightClose = false;
+    public static bool isLoading;
+    public static bool isLeftOpen;
+    public static bool isLeftClose;
+    public static bool isRightOpen;
+    public static bool isRightClose;
     float _loadingSpeed = 1.5f;
     bool isOnce = true;
+
+    void Start()
+    {
+        isLoading = false;
+        isLeftOpen = false;
+        isLeftClose = false;
+        isRightOpen = false;
+        isRightClose = false;
+    }
 
     void Update()
     {
