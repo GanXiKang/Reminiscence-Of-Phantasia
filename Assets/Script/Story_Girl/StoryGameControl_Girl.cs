@@ -10,19 +10,19 @@ public class StoryGameControl_Girl : MonoBehaviour
     public GameObject teachWall;
     public GameObject mistLeft;
     public GameObject mistRight;
-    public static bool isWallActive = true;
+    public static bool isWallActive;
     bool isMistEffects = true;
 
     [Header("GarbageCan")]
     public GameObject trashcanLid;
-    public static bool isTrashcanLidActice = true;
+    public static bool isTrashcanLidActice;
 
     [Header("Resurrection")]
     public Transform streetPoint;
     public Transform forestPoint;
-    public static bool isInStreet = true;
-    public static bool isResurrection = false;
-    public static bool isRenewTemperature = false;
+    public static bool isInStreet;
+    public static bool isResurrection;
+    public static bool isRenewTemperature;
     StoryPlayerControl playerControl;
 
     [Header("Texture")]
@@ -35,6 +35,12 @@ public class StoryGameControl_Girl : MonoBehaviour
     {
         player = GameObject.Find("Player");
         playerControl = player.GetComponent<StoryPlayerControl>();
+
+        isWallActive = true;
+        isTrashcanLidActice = true;
+        isInStreet = true;
+        isResurrection = false;
+        isRenewTemperature = false;
     }
 
     void Update()
