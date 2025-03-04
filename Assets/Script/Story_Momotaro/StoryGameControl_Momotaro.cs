@@ -55,6 +55,16 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 
         StoryItemIntroduce_Momotaro.isIntroduce = true;
 
+        StoryStrongWind_Momotaro._respawnNum = 0;
+        StoryStrongWind_Momotaro.isBlownAway = false;
+        StoryStrongWind_Momotaro.isFirstBlown = true;
+
+        StoryRiceDumpling_Momotaro.isSkillActive = false;
+        StoryRiceDumpling_Momotaro.isChangeRoles = false;
+        StoryRiceDumpling_Momotaro.isChangeRolePlot = false;
+        StoryRiceDumpling_Momotaro.isEat = false;
+        StoryRiceDumpling_Momotaro._whoEatGoldRice = 0;
+
         StoryLoadingScene_Momotaro.isLoading = false;
         StoryLoadingScene_Momotaro.isOpen = false;
         StoryLoadingScene_Momotaro.isFirstGoPlaza = false;
