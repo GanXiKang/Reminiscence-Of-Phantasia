@@ -22,21 +22,21 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public GameObject interactableUI;
     public Text interactableName;
     public int _who;
-    public static int _aboveWho = 0;
-    public static bool isInteractableUI = false;
+    public static int _aboveWho;
+    public static bool isInteractableUI;
     bool isInteractable = false;
     int _countMouseDown;
 
     [Header("Item_Give")]
     public bool isGive;
     public int[] _giveItemNumber;
-    public static bool isGiveItem = false;
+    public static bool isGiveItem;
     public static int _whoGive;
 
     [Header("Item_Get")]
     public bool isGet;
     public int[] _getItemNumber;
-    public static bool isBagGetItem = false;
+    public static bool isBagGetItem;
     bool isGetItem = false;
 
     [Header("Item_Exchange")]
@@ -48,7 +48,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
     public Transform bagUIPosition;
-    public static bool isPlayerMove = true;
+    public static bool isPlayerMove;
     bool isPickedUp = false;
     bool isAnim = false;
 
@@ -68,21 +68,21 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     //Npc_01Girl
     int _heldMatchboxesQuantity = 6;
     bool isTeach = false;
-    public static bool isFinallyMatch = false;
-    public static bool isWearingLittleRedHood = false;
-    public static bool isTrashCanLid = false;
-    public static bool isNeedHelp = false;
+    public static bool isFinallyMatch;
+    public static bool isWearingLittleRedHood;
+    public static bool isTrashCanLid;
+    public static bool isNeedHelp;
     //Npc_03SantaClaus
-    public static bool isGetGift = false;
+    public static bool isGetGift;
     //Npc_05XiaoXin
-    bool isFinishExchangeGift = false;
+    bool isFinishExchangeGift;
     //Npc_06Hunter
-    public static bool isCanKillWolf = false;
+    public static bool isCanKillWolf;
     //Npc_09Camping
     bool isGetApple = false;
     bool isGetKebab = false;
-    public static bool isFirstAskFind = false;
-    public static bool isAgreeFind = false;
+    public static bool isFirstAskFind;
+    public static bool isAgreeFind;
 
     void Start()
     {
@@ -90,6 +90,26 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
         originalScale = transform.localScale;
         initialRotation = transform.rotation;
+
+        Static_Start();
+    }
+
+    void Static_Start()
+    {
+        isInteractableUI = false;
+        isGiveItem = false;
+        isBagGetItem = false;
+        isPlayerMove = true;
+
+        //Plot
+        isFinallyMatch = false;
+        isWearingLittleRedHood = false;
+        isTrashCanLid = false;
+        isNeedHelp = false;
+        isGetGift = false;
+        isCanKillWolf = false;
+        isFirstAskFind = false;
+        isAgreeFind = false;
     }
 
     void Update()
