@@ -8,16 +8,14 @@ public class StoryPlayerAnimator_Girl : MonoBehaviour
     public static bool isCold;
     public static bool isIronRod;
     public static bool isMatch;
-    public static bool isStrongWind;
 
     void Start()
     {
         anim = GetComponent<Animator>();
 
-        //isCold;
-        //isIronRod;
-        //isMatch;
-        //isStrongWind;
+        isCold = false;
+        isIronRod = false;
+        isMatch = false;
     }
 
     void Update()
@@ -25,6 +23,5 @@ public class StoryPlayerAnimator_Girl : MonoBehaviour
         anim.SetBool("isCold", isCold);
         anim.SetBool("isIronRod", isIronRod);
         anim.SetBool("isMatch", isMatch);
-        anim.SetBool("isStrongWind", isStrongWind);
     }
 }
