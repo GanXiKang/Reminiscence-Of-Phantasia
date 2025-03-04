@@ -10,7 +10,7 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
     public GameObject panel;
     public Text content;
     string[] introduceItem = new string[12];
-    public static bool isIntroduce;
+    public static bool isIntroduce = true;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;
@@ -18,8 +18,6 @@ public class StoryItemIntroduce_Momotaro : MonoBehaviour
     void Start()
     {
         ItemIntroduceContent();
-
-        isIntroduce = true;
     }
 
     void Update()

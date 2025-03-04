@@ -53,6 +53,8 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 
         StoryExitControl_Momotaro.isExit = false;
 
+        StoryItemIntroduce_Momotaro.isIntroduce = true;
+
         StoryInteractableControl_Momotaro.isInteractableUI = false;
         StoryInteractableControl_Momotaro.isGiveItem = false;
         StoryInteractableControl_Momotaro.isBagGetItem = false;
