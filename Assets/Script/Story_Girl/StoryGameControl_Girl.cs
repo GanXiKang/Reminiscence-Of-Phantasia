@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class StoryGameControl_Girl : MonoBehaviour
 {
