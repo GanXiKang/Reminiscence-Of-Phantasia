@@ -55,6 +55,14 @@ public class StoryGameControl_Momotaro : MonoBehaviour
 
         StoryItemIntroduce_Momotaro.isIntroduce = true;
 
+        StoryLoadingScene_Momotaro.isLoading = false;
+        StoryLoadingScene_Momotaro.isOpen = false;
+        StoryLoadingScene_Momotaro.isFirstGoPlaza = false;
+        StoryLoadingScene_Momotaro.isPlotAnimator = false;
+        StoryLoadingScene_Momotaro.isHintGoPlaza = false;
+
+
+
         StoryInteractableControl_Momotaro.isInteractableUI = false;
         StoryInteractableControl_Momotaro.isGiveItem = false;
         StoryInteractableControl_Momotaro.isBagGetItem = false;
