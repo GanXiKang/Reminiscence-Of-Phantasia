@@ -20,8 +20,8 @@ public class StoryRiceDumpling_Momotaro : MonoBehaviour
     public GameObject[] roleButton;
     public Transform[] point;
     public static bool isChangeRolePlot = false;
-    public static int _whoEatGoldRice;
     public static bool isEat = false;
+    public static int _whoEatGoldRice;
     bool isRoleActive = false;
 
     [Header("RaccoonSkillUI")]
