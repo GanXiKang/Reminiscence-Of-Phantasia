@@ -10,11 +10,18 @@ public class StoryUIControl_Girl : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart = true;
-    public static bool isStoryEnding = false;
+    public static bool isStoryStart;
+    public static bool isStoryEnding;
 
     [Header("TransitionUI")]
     public GameObject transitionUI;
+
+    void Start()
+    {
+        isDialogue = false;
+        isStoryStart = true;
+        isStoryEnding = false;
+    }
 
     void Update()
     {
