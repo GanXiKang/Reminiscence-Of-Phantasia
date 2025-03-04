@@ -42,11 +42,11 @@ public class StoryBagControl : MonoBehaviour
     {
         canvas = GetComponentInParent<Canvas>();
 
-        ItemNumber_Start();
-        Static_Start();
+        ItemNumber();
+        StaticValue();
     }
 
-    void ItemNumber_Start()
+    void ItemNumber()
     {
         _howManyGrids = 0;
         isItemNumber = new bool[itemSprite.Length];
@@ -56,7 +56,7 @@ public class StoryBagControl : MonoBehaviour
             isItemNumber[i] = false;
         }
     }
-    void Static_Start()
+    void StaticValue()
     {
         isOpenBag = false;
         isItemFollow = false;
@@ -219,9 +219,9 @@ public class StoryBagControl : MonoBehaviour
         for (int i = 0; i < _howManyGrids; i++)
         {
             itemBG[i].SetActive(true);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
             itemButton[i].SetActive(true);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         isAnim = false;
     }
