@@ -59,6 +59,11 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         StoryStrongWind_Momotaro.isBlownAway = false;
         StoryStrongWind_Momotaro.isFirstBlown = true;
 
+        StoryUIControl_Momotaro.isDialogue = false;
+        StoryUIControl_Momotaro.isPerformances = false;
+        StoryUIControl_Momotaro.isStoryStart = true;
+        StoryUIControl_Momotaro.isStoryEnding = false;
+
         StoryRiceDumpling_Momotaro.isSkillActive = false;
         StoryRiceDumpling_Momotaro.isChangeRoles = false;
         StoryRiceDumpling_Momotaro.isChangeRolePlot = false;
