@@ -38,30 +38,6 @@ public class StoryNpcAnimator_Girl : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
-        Static_Start();
-    }
-
-    void Static_Start()
-    {
-        _direction = 1;
-        isHappy_Irls = false;
-        isSurprise = false;
-        isLeaveStreet = false;
-        isGoGrandmom = false;
-        isHide = false;
-        isFind = false;
-        isAttractWolf = false;
-        isOpen = false;
-        isAngry = false;
-        isLeave = false;
-        isHappy_Cri = false;
-        isMoveSeeWolf = false;
-        isFinishLeave = false;
-        isNormal = false;
-        isScared = false;
-        isShotRunAway = false;
-        isFightRunAway = false;
     }
 
     void Update()

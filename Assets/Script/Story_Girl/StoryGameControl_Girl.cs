@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class StoryGameControl_Girl : MonoBehaviour
@@ -36,17 +38,19 @@ public class StoryGameControl_Girl : MonoBehaviour
         player = GameObject.Find("Player");
         playerControl = player.GetComponent<StoryPlayerControl>();
 
-        GameStatic_Start();
+        GameStatic();
     }
 
-    void GameStatic_Start()
+    void GameStatic()
     {
         isWallActive = true;
         isTrashcanLidActice = true;
         isInStreet = true;
         isResurrection = false;
         isRenewTemperature = false;
-        Debug.Log("Yes");
+
+        StoryExitControl_Girl.isExit = false;
+
         StoryInteractableControl_Girl.isInteractableUI = false;
         StoryInteractableControl_Girl.isGiveItem = false;
         StoryInteractableControl_Girl.isBagGetItem = false;
@@ -59,6 +63,25 @@ public class StoryGameControl_Girl : MonoBehaviour
         StoryInteractableControl_Girl.isCanKillWolf = false;
         StoryInteractableControl_Girl.isFirstAskFind = false;
         StoryInteractableControl_Girl.isAgreeFind = false;
+
+        StoryNpcAnimator_Girl._direction = 1;
+        StoryNpcAnimator_Girl.isHappy_Irls = false;
+        StoryNpcAnimator_Girl.isSurprise = false;
+        StoryNpcAnimator_Girl.isLeaveStreet = false;
+        StoryNpcAnimator_Girl.isGoGrandmom = false;
+        StoryNpcAnimator_Girl.isHide = false;
+        StoryNpcAnimator_Girl.isFind = false;
+        StoryNpcAnimator_Girl.isAttractWolf = false;
+        StoryNpcAnimator_Girl.isOpen = false;
+        StoryNpcAnimator_Girl.isAngry = false;
+        StoryNpcAnimator_Girl.isLeave = false;
+        StoryNpcAnimator_Girl.isHappy_Cri = false;
+        StoryNpcAnimator_Girl.isMoveSeeWolf = false;
+        StoryNpcAnimator_Girl.isFinishLeave = false;
+        StoryNpcAnimator_Girl.isNormal = false;
+        StoryNpcAnimator_Girl.isScared = false;
+        StoryNpcAnimator_Girl.isShotRunAway = false;
+        StoryNpcAnimator_Girl.isFightRunAway = false;
     }
 
     void Update()

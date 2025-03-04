@@ -20,8 +20,6 @@ public class StoryExitControl_Girl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-
-        isExit = false;
     }
 
     void Update()
