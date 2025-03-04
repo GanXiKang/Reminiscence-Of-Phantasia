@@ -14,8 +14,8 @@ public class StoryDialogueControl_Girl : MonoBehaviour
 
     [Header("UITransform")]
     public Transform[] target;
-    public static int _isAboveWho1 = 0;
-    public static int _isAboveWho2 = 0;
+    public static int _isAboveWho1;
+    public static int _isAboveWho2;
     bool isPlayerTalk;
     int _targetNum = 0;
 
@@ -43,7 +43,7 @@ public class StoryDialogueControl_Girl : MonoBehaviour
     public TextAsset[] textFile;
     public int _index;
     public float _textSpend;
-    public static int _textCount = 1;
+    public static int _textCount;
     bool isTextFinish;
 
     List<string> textList = new List<string>();
