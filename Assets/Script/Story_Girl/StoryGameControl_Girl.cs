@@ -12,19 +12,19 @@ public class StoryGameControl_Girl : MonoBehaviour
     public GameObject teachWall;
     public GameObject mistLeft;
     public GameObject mistRight;
-    public static bool isWallActive;
+    public static bool isWallActive = true;
     bool isMistEffects = true;
 
     [Header("GarbageCan")]
     public GameObject trashcanLid;
-    public static bool isTrashcanLidActice;
+    public static bool isTrashcanLidActice = true;
 
     [Header("Resurrection")]
     public Transform streetPoint;
     public Transform forestPoint;
-    public static bool isInStreet;
-    public static bool isResurrection;
-    public static bool isRenewTemperature;
+    public static bool isInStreet = true;
+    public static bool isResurrection = false;
+    public static bool isRenewTemperature = false;
     StoryPlayerControl playerControl;
 
     [Header("Texture")]
