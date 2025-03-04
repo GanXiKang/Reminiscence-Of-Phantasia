@@ -22,7 +22,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     public GameObject interactableUI;
     public Text interactableName;
     public int _who;
-    public static int _aboveWho = 0;
+    public static int _aboveWho;
     public static bool isInteractableUI = false;
     bool isInteractable = false;
     int _countMouseDown;

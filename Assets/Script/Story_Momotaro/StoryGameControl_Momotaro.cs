@@ -52,6 +52,26 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         StoryColliderControl_Momotaro.isStoneSuccess = true;
 
         StoryExitControl_Momotaro.isExit = false;
+
+        StoryInteractableControl_Momotaro.isInteractableUI = false;
+        StoryInteractableControl_Momotaro.isGiveItem = false;
+        StoryInteractableControl_Momotaro.isBagGetItem = false;
+        StoryInteractableControl_Momotaro.isPlayerMove = true;
+        StoryInteractableControl_Momotaro._findPartner = 0;
+        StoryInteractableControl_Momotaro.isSpecialEnding = false;
+        StoryInteractableControl_Momotaro.isSpecialOver = false;
+        StoryInteractableControl_Momotaro.isMeetPartner = false;
+        StoryInteractableControl_Momotaro.isGoddessGetSkill = false;
+        StoryInteractableControl_Momotaro.isAnswerLie = false;
+        StoryInteractableControl_Momotaro.isAnswerGold = false;
+        StoryInteractableControl_Momotaro.isMomoFindGoddess = false;
+        StoryInteractableControl_Momotaro.isGiveTheRightGift = false;
+        StoryInteractableControl_Momotaro.isWrongGift = false;
+        StoryInteractableControl_Momotaro.isFinishWork = false;
+        StoryInteractableControl_Momotaro.isMeet = false;
+        StoryInteractableControl_Momotaro.isSuccessfulPerformance = false;
+        StoryInteractableControl_Momotaro.isAnswerCorrect = false;
+        StoryInteractableControl_Momotaro.isBackLake = false;
     }
 
     void Update()
