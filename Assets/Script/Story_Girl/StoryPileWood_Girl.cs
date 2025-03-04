@@ -9,13 +9,15 @@ public class StoryPileWood_Girl : MonoBehaviour
 
     [Header("Effects")]
     public GameObject fireEffect;
-    public static bool isFireActice = false;
+    public static bool isFireActice;
     float _snapDistance = 20f;
 
     void Start()
     {
         player = GameObject.Find("Player");
         campfire = GetComponent<AudioSource>();
+
+        isFireActice = false;
     }
 
     void Update()
