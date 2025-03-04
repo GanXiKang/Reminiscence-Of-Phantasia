@@ -96,6 +96,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
 
     void Static_Start()
     {
+        Debug.Log("Yes");
         isInteractableUI = false;
         isGiveItem = false;
         isBagGetItem = false;
