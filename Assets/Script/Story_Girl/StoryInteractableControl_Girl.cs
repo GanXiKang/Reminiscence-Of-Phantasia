@@ -23,20 +23,20 @@ public class StoryInteractableControl_Girl : MonoBehaviour
     public Text interactableName;
     public int _who;
     public static int _aboveWho;
-    public static bool isInteractableUI;
+    public static bool isInteractableUI = false;
     bool isInteractable = false;
     int _countMouseDown;
 
     [Header("Item_Give")]
     public bool isGive;
     public int[] _giveItemNumber;
-    public static bool isGiveItem;
+    public static bool isGiveItem = false;
     public static int _whoGive;
 
     [Header("Item_Get")]
     public bool isGet;
     public int[] _getItemNumber;
-    public static bool isBagGetItem;
+    public static bool isBagGetItem = false;
     bool isGetItem = false;
 
     [Header("Item_Exchange")]
