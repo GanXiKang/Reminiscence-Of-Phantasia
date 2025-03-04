@@ -10,7 +10,7 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     public GameObject panel;
     public Text content;
     string[] introduceItem = new string[10];
-    public static bool isIntroduce;
+    public static bool isIntroduce = true;
 
     [Header("IntroduceTransform")]
     public Transform[] buttonTransform;

@@ -10,8 +10,8 @@ public class StoryUIControl_Girl : MonoBehaviour
 
     [Header("StoryUI")]
     public GameObject storyUI;
-    public static bool isStoryStart;
-    public static bool isStoryEnding;
+    public static bool isStoryStart = true;
+    public static bool isStoryEnding = false;
 
     [Header("TransitionUI")]
     public GameObject transitionUI;
