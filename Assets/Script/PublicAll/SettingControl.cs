@@ -36,6 +36,7 @@ public class SettingControl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+
         sliderBGM.value = volumeBGM;
         BGM.volume = volumeBGM;
         fullScreen.isOn = Screen.fullScreen;
