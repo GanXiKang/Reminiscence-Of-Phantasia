@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class StoryGameControl_Girl : MonoBehaviour
 {
@@ -49,7 +50,32 @@ public class StoryGameControl_Girl : MonoBehaviour
         isResurrection = false;
         isRenewTemperature = false;
 
+        StoryPileWood_Girl.isFireActice = false;
+
         StoryExitControl_Girl.isExit = false;
+
+        StoryItemIntroduce_Girl.isIntroduce = true;
+
+        StoryUIControl_Girl.isDialogue = false;
+        StoryUIControl_Girl.isStoryStart = true;
+        StoryUIControl_Girl.isStoryEnding = false;
+
+        StoryPlayerAnimator_Girl.isCold = false;
+        StoryPlayerAnimator_Girl.isIronRod = false;
+        StoryPlayerAnimator_Girl.isMatch = false;
+
+        StoryLoadingScene_Girl.isLoading = false;
+        StoryLoadingScene_Girl.isLeftOpen = false;
+        StoryLoadingScene_Girl.isLeftClose = false;
+        StoryLoadingScene_Girl.isRightOpen = false;
+        StoryLoadingScene_Girl.isRightClose = false;
+
+        StoryThermometerControl_Girl.isThermometer = false;
+        StoryThermometerControl_Girl.isStepOnSnow = false;
+        StoryThermometerControl_Girl.isFireBeside = false;
+        StoryThermometerControl_Girl.isDead = false;
+        StoryThermometerControl_Girl.isSkillActive = false;
+        StoryThermometerControl_Girl._matchQuantity = 0;
 
         StoryInteractableControl_Girl.isInteractableUI = false;
         StoryInteractableControl_Girl.isGiveItem = false;

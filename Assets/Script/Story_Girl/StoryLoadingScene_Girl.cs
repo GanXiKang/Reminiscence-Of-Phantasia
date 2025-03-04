@@ -26,15 +26,6 @@ public class StoryLoadingScene_Girl : MonoBehaviour
     float _loadingSpeed = 1.5f;
     bool isOnce = true;
 
-    void Start()
-    {
-        isLoading = false;
-        isLeftOpen = false;
-        isLeftClose = false;
-        isRightOpen = false;
-        isRightClose = false;
-    }
-
     void Update()
     {
         loadingUI.SetActive(isLoading);

@@ -16,8 +16,6 @@ public class StoryPileWood_Girl : MonoBehaviour
     {
         player = GameObject.Find("Player");
         campfire = GetComponent<AudioSource>();
-
-        isFireActice = false;
     }
 
     void Update()

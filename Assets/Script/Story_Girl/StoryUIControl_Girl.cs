@@ -16,13 +16,6 @@ public class StoryUIControl_Girl : MonoBehaviour
     [Header("TransitionUI")]
     public GameObject transitionUI;
 
-    void Start()
-    {
-        isDialogue = false;
-        isStoryStart = true;
-        isStoryEnding = false;
-    }
-
     void Update()
     {
         dialogueUI.SetActive(isDialogue);

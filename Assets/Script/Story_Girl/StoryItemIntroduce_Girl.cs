@@ -18,8 +18,6 @@ public class StoryItemIntroduce_Girl : MonoBehaviour
     void Start()
     {
         ItemIntroduceContent();
-
-        isIntroduce = true;
     }
 
     void Update()

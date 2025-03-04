@@ -40,16 +40,6 @@ public class StoryThermometerControl_Girl : MonoBehaviour
     float _animDuration = 1f;
     bool isCold = false;
 
-    void Start()
-    {
-        isThermometer = false;
-        isStepOnSnow = false;
-        isFireBeside = false;
-        isDead = false;
-        isSkillActive = false;
-        _matchQuantity = 0;
-    }
-
     void Update()
     {    
         Thermometer();

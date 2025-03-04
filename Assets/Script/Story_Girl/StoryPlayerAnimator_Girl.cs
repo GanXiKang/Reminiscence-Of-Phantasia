@@ -12,10 +12,6 @@ public class StoryPlayerAnimator_Girl : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
-        isCold = false;
-        isIronRod = false;
-        isMatch = false;
     }
 
     void Update()
