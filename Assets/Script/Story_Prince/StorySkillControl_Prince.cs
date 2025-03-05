@@ -22,12 +22,15 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("EnergyUI")]
     public Image energyBar;
     public static int _zoneNum;
-    float _energyValue = 0.7f;
+    float _energyValue = 1f;
     float _rotation = 0.005f;
     float _smallArea = 0.1f;
     float _largeArea = 0.15f;
     float _nowArea = 0.05f;
     bool isEnergyConsume = false;
+
+    //Plot
+    bool isFirstUse = true;
 
     void Update()
     {
@@ -111,25 +114,14 @@ public class StorySkillControl_Prince : MonoBehaviour
         {
             case 1:
             case 2:
+            case 3:
             case 12:
                 if (!StoryLoadingScene_Prince.isNowScene)
                 {
-                    _energyValue -= _largeArea * Time.deltaTime;
-                    StoryLoadingScene_Prince.isNowScene = true;
-                    StoryLoadingScene_Prince.isPastScene = false;
-                    StoryLoadingScene_Prince.isFutureScene = false;
-                    isChange = true;
-                }
-                else
-                {
-                    _energyValue -= _nowArea * Time.deltaTime;
-                }
-                break;
-
-            case 3:
-                if (!StoryLoadingScene_Prince.isNowScene)
-                {
-                    _energyValue -= _smallArea * Time.deltaTime;
+                    if (_zoneNum != 3)
+                        _energyValue -= _largeArea * Time.deltaTime;
+                    else
+                        _energyValue -= _smallArea * Time.deltaTime;
                     StoryLoadingScene_Prince.isNowScene = true;
                     StoryLoadingScene_Prince.isPastScene = false;
                     StoryLoadingScene_Prince.isFutureScene = false;
@@ -144,24 +136,13 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 4:
             case 5:
             case 6:
-                if (!StoryLoadingScene_Prince.isFutureScene)
-                {
-                    _energyValue -= _largeArea * Time.deltaTime;
-                    StoryLoadingScene_Prince.isNowScene = false;
-                    StoryLoadingScene_Prince.isPastScene = false;
-                    StoryLoadingScene_Prince.isFutureScene = true;
-                    isChange = true;
-                }
-                else
-                {
-                    _energyValue -= _nowArea * Time.deltaTime;
-                }
-                break;
-
             case 7:
                 if (!StoryLoadingScene_Prince.isFutureScene)
                 {
-                    _energyValue -= _smallArea * Time.deltaTime;
+                    if (_zoneNum != 7)
+                        _energyValue -= _largeArea * Time.deltaTime;
+                    else
+                        _energyValue -= _smallArea * Time.deltaTime;
                     StoryLoadingScene_Prince.isNowScene = false;
                     StoryLoadingScene_Prince.isPastScene = false;
                     StoryLoadingScene_Prince.isFutureScene = true;
@@ -176,24 +157,13 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 8:
             case 9:
             case 10:
-                if (!StoryLoadingScene_Prince.isPastScene)
-                {
-                    _energyValue -= _largeArea * Time.deltaTime;
-                    StoryLoadingScene_Prince.isNowScene = false;
-                    StoryLoadingScene_Prince.isPastScene = true;
-                    StoryLoadingScene_Prince.isFutureScene = false;
-                    isChange = true;
-                }
-                else
-                {
-                    _energyValue -= _nowArea * Time.deltaTime;
-                }
-                break;
-
             case 11:
                 if (!StoryLoadingScene_Prince.isPastScene)
                 {
-                    _energyValue -= _smallArea * Time.deltaTime;
+                    if (_zoneNum != 11)
+                        _energyValue -= _largeArea * Time.deltaTime;
+                    else
+                        _energyValue -= _smallArea * Time.deltaTime;
                     StoryLoadingScene_Prince.isNowScene = false;
                     StoryLoadingScene_Prince.isPastScene = true;
                     StoryLoadingScene_Prince.isFutureScene = false;
