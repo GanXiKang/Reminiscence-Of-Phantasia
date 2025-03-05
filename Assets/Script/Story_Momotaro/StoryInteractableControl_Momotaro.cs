@@ -94,7 +94,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         PickUpItem();
         InteractableUI();
         GivePlayerObject();
-        ExchangeItem();
     }
 
     void PickUpItem()
@@ -423,23 +422,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                         break;
                 }
             }
-        }
-    }
-    void ExchangeItem()
-    {
-        if (!isExchange) return;
-        if (!isExchangeItem) return;
-
-
-        print("Exchange");
-        isExchangeItem = false;
-        isPickedUp = true;
-        StoryBagControl.isGet = true;
-        StoryBagControl.isItemNumber[_exchangeItemNumber[_exchangeDifferentItemRecord]] = true;
-        StoryBagControl._whichItem = _exchangeItemNumber[_exchangeDifferentItemRecord];
-        if (StoryBagControl.isOpenBag)
-        {
-            StoryBagControl.isOpenBag = false;
         }
     }
 
