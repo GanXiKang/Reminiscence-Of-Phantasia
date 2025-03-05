@@ -52,6 +52,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         return !isIncreasing &&
                !isReducing &&
+               !isRecoverEnergy &&
                energyBar.fillAmount > 0;
     }
 
