@@ -1759,7 +1759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &175442478
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20347,6 +20347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 2117618732}
   storyUI: {fileID: 1473231131}
+  skillUI: {fileID: 175442477}
   transitionUI: {fileID: 1627665712}
 --- !u!114 &1631694441
 MonoBehaviour:
