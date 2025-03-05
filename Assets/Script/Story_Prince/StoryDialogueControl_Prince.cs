@@ -310,24 +310,8 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 3:
-                StoryPlayerControl.isSurprised = true;
-                break;
-
             case 4:
-                switch (_countEvent)
-                {
-                    case 0:
-                        //BGM.PlayOneShot(give);
-                        //StoryInteractableControl_Prince.isGiveItem = true;
-                        //StoryInteractableControl_Prince._whoGive = 1;
-                        _countEvent++;
-                        break;
-
-                    case 1:
-                        StoryPlayerControl.isSurprised = true;
-                        _countEvent = 0;
-                        break;
-                }
+                StoryPlayerControl.isSurprised = true;
                 break;
         }
     }
