@@ -49,10 +49,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
     List<string> textList = new List<string>();
 
-    //Event
-    public static bool isDialogueEvent = false;
-    public static bool isDialogueRotation = false;
-
     void Start()
     {
         player = GameObject.Find("Player");
