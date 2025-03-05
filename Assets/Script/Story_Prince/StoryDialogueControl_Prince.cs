@@ -320,6 +320,9 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 3:
                 //幽靈離開
                 break;
+
+            case 4:
+                break;
         }
     }
     void StoryEnd()
