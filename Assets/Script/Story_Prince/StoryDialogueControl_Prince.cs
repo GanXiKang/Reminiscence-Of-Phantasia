@@ -86,6 +86,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     void TextController()
     {
         if (SettingControl.isSettingActive) return;
+        if (StoryLoadingScene_Prince.isLoading) return;
 
         if (isTextFinish)
         {
