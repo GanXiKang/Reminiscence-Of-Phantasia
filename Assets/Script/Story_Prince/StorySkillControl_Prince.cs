@@ -206,7 +206,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (!isRecoverEnergy) return;
 
-        _energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.5f);
+        _energyValue = Mathf.Lerp(_energyValue, 0.71f, Time.deltaTime * 0.5f);
         if (_energyValue >= 0.7f)
             isRecoverEnergy = false;
         print(isRecoverEnergy);
