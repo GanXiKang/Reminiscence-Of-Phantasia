@@ -18,7 +18,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     public static int _isAboveWho2;
     bool isPlayerTalk;
     int _targetNum = 0;
-    int _countEvent = 0;
+    //int _countEvent = 0;
 
     [Header("UIComponents")]
     public Transform dialogueUI;
