@@ -18,6 +18,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     public static int _isAboveWho2;
     bool isPlayerTalk;
     int _targetNum = 0;
+    int _countEvent = 0;
 
     [Header("UIComponents")]
     public Transform dialogueUI;
@@ -311,6 +312,23 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 3:
                 StoryPlayerControl.isSurprised = true;
                 break;
+
+            case 4:
+                switch (_countEvent)
+                {
+                    case 0:
+                        BGM.PlayOneShot(give);
+                        StoryInteractableControl_Prince.isGiveItem = true;
+                        StoryInteractableControl_Prince._whoGive = 1;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
         }
     }
     void DialogurEnd()
@@ -322,6 +340,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 4:
+                //教學説明
                 break;
         }
     }
