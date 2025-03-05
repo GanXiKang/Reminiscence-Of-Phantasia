@@ -313,6 +313,18 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 4:
                 StoryPlayerControl.isSurprised = true;
                 break;
+
+            
+                //switch (_countEvent)
+                //{
+                //    case 0:
+                //        _countEvent++;
+                //        break;
+
+                //    case 1:
+                //        _countEvent = 0;
+                //        break;
+                //}
         }
     }
     void DialogurEnd()
