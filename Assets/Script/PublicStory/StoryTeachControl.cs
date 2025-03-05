@@ -96,7 +96,7 @@ public class StoryTeachControl : MonoBehaviour
                         {
                             if (i == _page)
                             {
-                                //background.sprite = teachImage[i];
+                                background.sprite = teachImage[i];
                                 content.text = teachContent[i].ToString();
                             }
                         }
@@ -107,7 +107,7 @@ public class StoryTeachControl : MonoBehaviour
                         {
                             if (i == _page)
                             {
-                                //background.sprite = teachImage[i + _teachTimePage];
+                                background.sprite = teachImage[i + _teachTimePage];
                                 content.text = teachContent[i + _teachTimePage].ToString();
                             }
                         }
