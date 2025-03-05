@@ -209,6 +209,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         _energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.5f);
         if (_energyValue >= 0.7f)
             isRecoverEnergy = false;
+        print(isRecoverEnergy);
     }
 
     public void Button_Time()
