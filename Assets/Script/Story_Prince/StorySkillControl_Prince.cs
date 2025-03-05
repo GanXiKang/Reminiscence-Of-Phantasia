@@ -40,7 +40,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         ClockRotating();
         CheckCurrentZone();
         Energy();
-        FirstUseRecoverEnergy();
     }
 
     void ObjectActive()
@@ -114,6 +113,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     //_energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.1f);
             }
         }
+        FirstUseRecoverEnergy();
 
         if (!isEnergyConsume) return;
 
@@ -209,7 +209,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         _energyValue = Mathf.Lerp(_energyValue, 0.71f, Time.deltaTime * 0.5f);
         if (_energyValue >= 0.7f)
             isRecoverEnergy = false;
-        print(isRecoverEnergy);
     }
 
     public void Button_Time()
@@ -230,6 +229,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     public void Button_ClockActive()
     {
-       isClockActice = !isClockActice;
+        if (!StoryUIControl_Prince.isDialogue)
+            isClockActice = !isClockActice;
     }
 }
