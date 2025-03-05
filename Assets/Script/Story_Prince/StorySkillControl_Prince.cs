@@ -107,7 +107,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                 CheckCurrentZone();
 
                 if (isFirstUse)
-                    _energyValue = 0.7f;
+                    _energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.5f);
             }
         }
 
@@ -189,7 +189,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             if (isFirstUse)
             {
                 if(_energyValue < 0.7f)
-                    _energyValue = 0.7f;
+                    _energyValue = _energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 2);
                 StoryUIControl_Prince.isDialogue = true;
                 StoryDialogueControl_Prince._isAboveWho1 = 1;
                 StoryDialogueControl_Prince._textCount = 5;
