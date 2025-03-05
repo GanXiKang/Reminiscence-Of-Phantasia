@@ -259,7 +259,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 switch (_who)
                 {
                     case 1:
-
+                        isPickedUp = true;
+                        isSkill = true;
+                        StoryBagControl._whichItem = _giveItemNumber[0];
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
+                        }
                         break;
                 }
             }
