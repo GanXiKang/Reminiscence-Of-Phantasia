@@ -158,7 +158,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 9:
             case 10:
             case 11:
-                if (!StoryLoadingScene_Prince.isPastScene)
+                if (!StoryLoadingScene_Prince.isPastScene && !isFirstUse)
                 {
                     if (_zoneNum != 11)
                         _energyValue -= _largeArea * Time.deltaTime;
@@ -183,6 +183,12 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isChange)
         {
             StoryLoadingScene_Prince.isOpen = true;
+            if (isFirstUse)
+            {
+                if(_energyValue < 0.7f)
+                    _energyValue = 0.7f;
+                isFirstUse = false;
+            }
             isChange = false;
         }
     }
