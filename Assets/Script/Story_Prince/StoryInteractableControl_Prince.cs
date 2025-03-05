@@ -496,7 +496,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         itemUI.SetActive(false);
         if (isSkill)
         {
-
+            StoryUIControl_Prince.isSkillActive = true;
             isSkill = false;
         }
         isPickedUp = false;
