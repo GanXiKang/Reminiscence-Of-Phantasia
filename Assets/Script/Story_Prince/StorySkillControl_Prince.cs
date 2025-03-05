@@ -187,6 +187,9 @@ public class StorySkillControl_Prince : MonoBehaviour
             {
                 if(_energyValue < 0.7f)
                     _energyValue = 0.7f;
+                StoryUIControl_Prince.isDialogue = true;
+                StoryDialogueControl_Prince._isAboveWho1 = 1;
+                StoryDialogueControl_Prince._textCount = 4;
                 isFirstUse = false;
             }
             isChange = false;
