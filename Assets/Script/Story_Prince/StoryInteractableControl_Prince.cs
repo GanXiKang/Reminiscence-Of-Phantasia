@@ -275,9 +275,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     {
         if (!isExchange) return;
         if (!isExchangeItem) return;
-        if (!StoryDialogueControl_Prince.isDialogueEvent) return;
 
-        StoryDialogueControl_Prince.isDialogueEvent = false;
         isExchangeItem = false;
         isPickedUp = true;
         StoryBagControl.isGet = true;
