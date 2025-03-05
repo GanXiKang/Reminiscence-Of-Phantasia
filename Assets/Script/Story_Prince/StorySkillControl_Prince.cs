@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class StorySkillControl_Prince : MonoBehaviour
 {
     [Header("ClockUI")]
@@ -31,6 +32,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     //Plot
     bool isFirstUse = true;
+    bool isRecoverEnergy;
 
     void Update()
     {
@@ -38,6 +40,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         ClockRotating();
         CheckCurrentZone();
         Energy();
+        FirstUseRecoverEnergy();
     }
 
     void ObjectActive()
@@ -107,7 +110,8 @@ public class StorySkillControl_Prince : MonoBehaviour
                 CheckCurrentZone();
 
                 if (isFirstUse)
-                    _energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.5f);
+                    isRecoverEnergy = true;
+                    //_energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.1f);
             }
         }
 
@@ -189,7 +193,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             if (isFirstUse)
             {
                 if(_energyValue < 0.7f)
-                    _energyValue = _energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 2);
+                    isRecoverEnergy = true;
                 StoryUIControl_Prince.isDialogue = true;
                 StoryDialogueControl_Prince._isAboveWho1 = 1;
                 StoryDialogueControl_Prince._textCount = 5;
@@ -197,6 +201,14 @@ public class StorySkillControl_Prince : MonoBehaviour
             }
             isChange = false;
         }
+    }
+    void FirstUseRecoverEnergy()
+    {
+        if (!isRecoverEnergy) return;
+
+        _energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.5f);
+        if (_energyValue >= 0.7f)
+            isRecoverEnergy = false;
     }
 
     public void Button_Time()
