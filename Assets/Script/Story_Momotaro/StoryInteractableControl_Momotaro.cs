@@ -430,6 +430,8 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
         if (!isExchange) return;
         if (!isExchangeItem) return;
 
+
+        print("Exchange");
         isExchangeItem = false;
         isPickedUp = true;
         StoryBagControl.isGet = true;
