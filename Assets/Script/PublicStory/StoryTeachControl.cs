@@ -166,6 +166,7 @@ public class StoryTeachControl : MonoBehaviour
                         {
                             case 1:
                                 teachButton[1].interactable = false;
+                                teachButton[2].interactable = true;
                                 break;
 
                             case 2:
@@ -175,6 +176,7 @@ public class StoryTeachControl : MonoBehaviour
 
                             case 3:
                                 teachButton[0].interactable = true;
+                                teachButton[1].interactable = true;
                                 teachButton[2].interactable = false;
                                 break;
                         }
@@ -185,18 +187,22 @@ public class StoryTeachControl : MonoBehaviour
                         {
                             case 1:
                                 teachButton[1].interactable = false;
+                                teachButton[2].interactable = true;
                                 break;
 
                             case 2:
                                 teachButton[1].interactable = true;
+                                teachButton[2].interactable = true;
                                 break;
 
                             case 3:
+                                teachButton[1].interactable = true;
                                 teachButton[2].interactable = true;
                                 break;
 
                             case 4:
                                 teachButton[0].interactable = true;
+                                teachButton[1].interactable = true;
                                 teachButton[2].interactable = false;
                                 break;
                         }
