@@ -310,9 +310,18 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             switch (_who)
             {
                 case 1:
-                    StoryUIControl_Prince.isDialogue = true;
-                    StoryDialogueControl_Prince._isAboveWho1 = _who;
-                    StoryDialogueControl_Prince._textCount = 4;
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 4;
+                            break;
+
+                        default:
+                            break;
+                    }
                     break;
 
                 case 2:
