@@ -59,6 +59,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     [Header("Effects")]
     public GameObject effects;
 
+    //Plot
+    public static bool isSwallowFindPrince = false;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -374,6 +377,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
+                            if (isSwallowFindPrince)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._isAboveWho2 = 4;
+                                StoryDialogueControl_Prince._textCount = 7;
+                            }
                             break;
                     }
                     break;
