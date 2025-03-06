@@ -9,8 +9,10 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("ClockUI")]
     public GameObject clockUI;
     public GameObject pointer;
-    public Button time;
+    public Button stopTime;
+    public Button skillClock;
     public static bool isClockActice = false;
+    public static bool isDisabledClock = false;
     bool isCheckZone = false;
     bool isRotating = false;
     bool isIncreasing = false;
@@ -33,6 +35,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     //Plot
     bool isFirstUse = true;
     bool isRecoverEnergy;
+    public static bool isFirstBackNow = false;
 
     void Update()
     {
@@ -45,8 +48,8 @@ public class StorySkillControl_Prince : MonoBehaviour
     void ObjectActive()
     {
         clockUI.SetActive(isClockActice);
-
-        time.interactable = ButtonTimeInteractable();
+        stopTime.interactable = ButtonTimeInteractable();
+        skillClock.interactable = !isDisabledClock;
     }
     bool ButtonTimeInteractable()
     {
