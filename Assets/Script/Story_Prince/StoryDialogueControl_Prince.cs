@@ -343,6 +343,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince._whoGive = 1;
                 StoryTeachControl.isTeachActive = true;
                 break;
+
+            case 6:
+                StorySkillControl_Prince.isDisabledClock = false;
+                break;
         }
     }
     void StoryEnd()
