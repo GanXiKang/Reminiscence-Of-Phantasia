@@ -43,6 +43,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         ClockRotating();
         CheckCurrentZone();
         Energy();
+        FirstUseRecoverEnergy();
     }
 
     void ObjectActive()
@@ -114,10 +115,8 @@ public class StorySkillControl_Prince : MonoBehaviour
 
                 if (isFirstUse)
                     isRecoverEnergy = true;
-                    //_energyValue = Mathf.Lerp(_energyValue, 0.7f, Time.deltaTime * 0.1f);
             }
         }
-        FirstUseRecoverEnergy();
 
         if (!isEnergyConsume) return;
 
@@ -169,7 +168,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 9:
             case 10:
             case 11:
-                if (!StoryLoadingScene_Prince.isPastScene && !isFirstUse)
+                if (!StoryLoadingScene_Prince.isPastScene && !isFirstUse && !isFirstBackNow)
                 {
                     if (_zoneNum != 11)
                         _energyValue -= _largeArea * Time.deltaTime;
@@ -197,13 +196,17 @@ public class StorySkillControl_Prince : MonoBehaviour
             StoryLoadingScene_Prince.isOpen = true;
             if (isFirstUse)
             {
-                if(_energyValue < 0.7f)
+                if (_energyValue < 0.7f)
                     isRecoverEnergy = true;
                 StoryUIControl_Prince.isDialogue = true;
                 StoryDialogueControl_Prince._isAboveWho1 = 1;
                 StoryDialogueControl_Prince._textCount = 5;
                 isDisabledClock = true;
                 isFirstUse = false;
+            }
+            if (isFirstBackNow)
+            {
+                isFirstBackNow = false;
             }
         }
     }
