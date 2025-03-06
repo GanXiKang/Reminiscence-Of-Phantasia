@@ -43,8 +43,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
     [Header("Item_Exchange")]
     public bool isExchange;
     public int[] _exchangeItemNumber;
-    int _exchangeDifferentItemRecord;
-    bool isExchangeItem = false;
 
     [Header("ItemPickUp")]
     public GameObject moveItemUI;
