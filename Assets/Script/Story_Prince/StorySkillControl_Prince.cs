@@ -193,6 +193,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         isEnergyConsume = false;
         if (isChange)
         {
+            isChange = false;
             StoryLoadingScene_Prince.isOpen = true;
             if (isFirstUse)
             {
@@ -201,9 +202,9 @@ public class StorySkillControl_Prince : MonoBehaviour
                 StoryUIControl_Prince.isDialogue = true;
                 StoryDialogueControl_Prince._isAboveWho1 = 1;
                 StoryDialogueControl_Prince._textCount = 5;
+                isDisabledClock = true;
                 isFirstUse = false;
             }
-            isChange = false;
         }
     }
     void FirstUseRecoverEnergy()
