@@ -317,10 +317,12 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        //獲得善能
                         _countEvent++;
                         break;
 
                     case 1:
+                        //Swallow Sad
                         _countEvent = 0;
                         break;
                 }
