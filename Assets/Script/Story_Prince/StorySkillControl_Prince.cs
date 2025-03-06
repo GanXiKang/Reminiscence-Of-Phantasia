@@ -36,6 +36,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     bool isFirstUse = true;
     bool isRecoverEnergy;
     public static bool isFirstBackNow = false;
+    public static int _goPast = 0;
 
     void Update()
     {
@@ -177,6 +178,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isNowScene = false;
                     StoryLoadingScene_Prince.isPastScene = true;
                     StoryLoadingScene_Prince.isFutureScene = false;
+                    _goPast++;
                     isChange = true;
                 }
                 else
