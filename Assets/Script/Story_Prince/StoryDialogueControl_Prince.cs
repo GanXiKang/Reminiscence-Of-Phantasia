@@ -302,6 +302,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
         switch (_textCount)
         {
             case 1:
+            case 6:
             case 19:
                 StoryPlayerControl.isSad = true;
                 break;
