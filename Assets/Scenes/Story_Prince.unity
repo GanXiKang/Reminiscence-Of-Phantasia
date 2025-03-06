@@ -2667,7 +2667,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1640057675}
-  - {fileID: 550003414}
   - {fileID: 2077388625}
   - {fileID: 1344391423}
   - {fileID: 1632587659}
@@ -3697,10 +3696,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
   m_LocalPosition: {x: -4.9, y: -5, z: 10.1}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.9, y: 0.8999999, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 296686966}
+  m_Father: {fileID: 1176625417}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
 --- !u!114 &550003415
 MonoBehaviour:
@@ -17650,6 +17649,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 38814385}
+  - {fileID: 550003414}
   - {fileID: 296686966}
   - {fileID: 474405248}
   - {fileID: 597276441}
