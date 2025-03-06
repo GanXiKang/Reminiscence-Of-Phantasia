@@ -379,6 +379,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         default:
                             if (isSwallowFindPrince)
                             {
+                                isSwallowFindPrince = false;
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._isAboveWho2 = 4;
