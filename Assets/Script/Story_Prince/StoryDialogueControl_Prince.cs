@@ -18,7 +18,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     public static int _isAboveWho2;
     bool isPlayerTalk;
     int _targetNum = 0;
-    //int _countEvent = 0;
+    int _countEvent = 0;
 
     [Header("UIComponents")]
     public Transform dialogueUI;
@@ -313,17 +313,18 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isSurprised = true;
                 break;
 
-            
-                //switch (_countEvent)
-                //{
-                //    case 0:
-                //        _countEvent++;
-                //        break;
+            case 7:
+                switch (_countEvent)
+                {
+                    case 0:
+                        _countEvent++;
+                        break;
 
-                //    case 1:
-                //        _countEvent = 0;
-                //        break;
-                //}
+                    case 1:
+                        _countEvent = 0;
+                        break;
+                }
+                break;
         }
     }
     void DialogurEnd()
