@@ -345,6 +345,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 6:
+                StoryInteractableControl_Prince.isSwallowFindPrince = true;
                 StorySkillControl_Prince.isDisabledClock = false;
                 break;
         }
