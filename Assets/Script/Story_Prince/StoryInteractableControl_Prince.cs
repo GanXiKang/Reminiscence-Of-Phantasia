@@ -249,7 +249,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             case 16:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "損壞的雕像";
+                    interactableName.text = "損壞雕像";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
@@ -419,6 +419,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 case 16:
                     StoryUIControl_Prince.isDialogue = true;
                     StoryDialogueControl_Prince._isAboveWho1 = _who;
+                    StoryDialogueControl_Prince._isAboveWho2 = 1;
                     StoryDialogueControl_Prince._textCount = 6;
                     break;
             }
