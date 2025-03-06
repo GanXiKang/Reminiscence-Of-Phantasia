@@ -957,7 +957,6 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                 StoryBagControl._howManyGrids--;
                 StoryBagControl.isRenewBag = true;
                 StoryItemIntroduce_Momotaro.isIntroduce = true;
-                _exchangeDifferentItemRecord = i;
 
                 switch (_who)
                 {
