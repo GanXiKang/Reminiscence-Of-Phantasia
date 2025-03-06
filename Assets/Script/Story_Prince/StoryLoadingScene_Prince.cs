@@ -67,6 +67,11 @@ public class StoryLoadingScene_Prince : MonoBehaviour
                 isPlayMusiaOnce = true;
                 isClose = false;
                 isLoading = false;
+                if (StorySkillControl_Prince._goPast == 1)
+                {
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._textCount = 8;
+                }
             }
         }
     }
