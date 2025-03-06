@@ -2652,7 +2652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &296686966
 Transform:
   m_ObjectHideFlags: 0
@@ -4150,7 +4150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &597276441
 Transform:
   m_ObjectHideFlags: 0
@@ -17925,7 +17925,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockUI: {fileID: 1187902722}
   pointer: {fileID: 1704723678}
-  time: {fileID: 1530813625}
+  stopTime: {fileID: 1530813625}
+  skillClock: {fileID: 1592127919}
   energyBar: {fileID: 1224331511}
 --- !u!114 &1207414328
 MonoBehaviour:
@@ -19541,7 +19542,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
