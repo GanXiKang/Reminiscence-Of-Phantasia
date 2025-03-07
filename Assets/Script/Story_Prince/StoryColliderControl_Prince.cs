@@ -17,6 +17,7 @@ public class StoryColliderControl_Prince : MonoBehaviour
                 case 1:
                     if (isLookPastOnce)
                     {
+                        print("OK");
                         isLookPastOnce = false;
                         StoryUIControl_Momotaro.isDialogue = true;
                         StoryDialogueControl_Momotaro._textCount = 9;
