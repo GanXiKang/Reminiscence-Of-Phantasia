@@ -163,6 +163,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 if (_chooseNum == 1)
                 {
                     JumpToSection("A");
+                    switch (_textCount)
+                    {
+                        case 10:
+                        case 11:
+                            StoryInteractableControl_Prince.isCanHelpPrince = true;
+                            break;
+                    }
                 }
                 else if (_chooseNum == 2)
                 {
