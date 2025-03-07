@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class StoryColliderControl_Prince : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    public int _whatCollider;
 
-    void Update()
+    bool isLookPastOnce = true;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            switch (_whatCollider)
+            {
+                case 1:
+                    if (isLookPastOnce)
+                    {
+                        isLookPastOnce = false;
+                        StoryUIControl_Momotaro.isDialogue = true;
+                        StoryDialogueControl_Momotaro._textCount = 9;
+                    }
+                    break;
+            }
+        }
     }
 }
