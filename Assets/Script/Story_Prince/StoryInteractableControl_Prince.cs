@@ -61,6 +61,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
     //Plot
     public static bool isSwallowFindPrince = false;
+    public static bool isCanHelpPrince = false;
 
     void Start()
     {
@@ -335,9 +336,12 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
-                            StoryUIControl_Prince.isDialogue = true;
-                            StoryDialogueControl_Prince._isAboveWho1 = _who;
-                            StoryDialogueControl_Prince._textCount = 11;
+                            if (!isCanHelpPrince)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 11;
+                            }
                             break;
                     }
                     break;
