@@ -347,7 +347,9 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 else
                 {
-                    //從幽靈得到寶石
+                    BGM.PlayOneShot(give);
+                    StoryInteractableControl_Momotaro.isGiveItem = true;
+                    StoryInteractableControl_Momotaro._whoGive = 1;
                 }
                 break;
         }
