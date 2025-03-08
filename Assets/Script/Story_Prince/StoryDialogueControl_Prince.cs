@@ -343,7 +343,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
                     //雕像破敗 
-                    //PlayerSurprised
+                    StoryPlayerControl.isSurprised = true;
                 }
                 else
                 {
@@ -377,6 +377,8 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
                     //壞結束
+                    StoryInteractableControl_Prince.isTakeGem = false;
+                    BlackScreenControl.isOpenBlackScreen = true;
                     StoryPlayerControl.isSad = true;
                 }
                 break;
