@@ -377,6 +377,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
                     //壞結束
+                    StoryPlayerControl.isSad = true;
                 }
                 break;
         }
