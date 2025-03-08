@@ -65,7 +65,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isSwallowFindPrince = false;
     public static bool isTakeGem = false;
     //07Kang
-    bool isKangNeedGem = false;
+    public static bool isKangNeedGem = false;
 
     void Start()
     {
