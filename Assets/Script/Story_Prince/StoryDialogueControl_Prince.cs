@@ -348,8 +348,9 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 else
                 {
                     BGM.PlayOneShot(give);
-                    StoryInteractableControl_Momotaro.isGiveItem = true;
-                    StoryInteractableControl_Momotaro._whoGive = 1;
+                    StoryInteractableControl_Prince.isGiveItem = true;
+                    StoryInteractableControl_Prince._whoGive = 1;
+                    StoryInteractableControl_Prince._whoGiveNumber = 0;
                 }
                 break;
         }
@@ -366,6 +367,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Prince.isGiveItem = true;
                 StoryInteractableControl_Prince._whoGive = 1;
+                StoryInteractableControl_Prince._whoGiveNumber = 2;
                 StoryTeachControl.isTeachActive = true;
                 break;
 
