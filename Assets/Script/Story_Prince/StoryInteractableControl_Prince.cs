@@ -59,9 +59,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     [Header("Effects")]
     public GameObject effects;
 
-    //Plot
-    public static bool isSwallowFindPrince = false;
+    //02Prince
     public static bool isCanHelpPrince = false;
+    //03PrinceStatue
+    public static bool isSwallowFindPrince = false;
+    public static bool isTakeGem = false;
+    //07Kang
+    bool isKangNeedGem = false;
 
     void Start()
     {
@@ -371,6 +375,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     {
                         case 1:
                             isInteractable = true;
+                            isKangNeedGem = true;
                             StoryUIControl_Prince.isDialogue = true;
                             StoryDialogueControl_Prince._isAboveWho1 = _who;
                             StoryDialogueControl_Prince._textCount = 12;
@@ -434,6 +439,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._isAboveWho2 = 4;
                                 StoryDialogueControl_Prince._textCount = 7;
+                            }
+                            if (isKangNeedGem)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._isAboveWho2 = 2;
+                                StoryDialogueControl_Prince._textCount = 15;
                             }
                             break;
                     }
