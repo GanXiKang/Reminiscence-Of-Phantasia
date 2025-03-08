@@ -32,6 +32,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public int[] _giveItemNumber;
     public static bool isGiveItem = false;
     public static int _whoGive;
+    public static int _whoGiveNumber;
 
     [Header("Item_Get")]
     public bool isGet;
@@ -277,12 +278,31 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 switch (_who)
                 {
                     case 1:
-                        isPickedUp = true;
-                        isSkill = true;
-                        StoryBagControl._whichItem = _giveItemNumber[0];
-                        if (StoryBagControl.isOpenBag)
+                        switch (_whoGiveNumber)
                         {
-                            StoryBagControl.isOpenBag = false;
+                            case 0:
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_giveItemNumber[_whoGiveNumber]] = true;
+                                StoryBagControl._whichItem = _giveItemNumber[_whoGiveNumber];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+
+                            case 1:
+                                break;
+
+                            case 2://鐘錶
+                                isPickedUp = true;
+                                isSkill = true;
+                                StoryBagControl._whichItem = _giveItemNumber[_whoGiveNumber];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
                         }
                         break;
                 }
