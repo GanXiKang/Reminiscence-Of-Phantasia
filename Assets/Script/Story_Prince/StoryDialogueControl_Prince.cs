@@ -169,6 +169,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         case 11:
                             StoryInteractableControl_Prince.isCanHelpPrince = true;
                             break;
+
+                        case 15:
+                            StoryInteractableControl_Prince.isTakeGem = true;
+                            break;
                     }
                 }
                 else if (_chooseNum == 2)
@@ -334,6 +338,18 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 15:
+                if (StoryInteractableControl_Prince.isTakeGem)
+                {
+                    //雕像破敗 
+                    //PlayerSurprised
+                }
+                else
+                {
+                    //從幽靈得到寶石
+                }
+                break;
         }
     }
     void DialogurEnd()
@@ -355,6 +371,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince.isSwallowFindPrince = true;
                 StorySkillControl_Prince.isFirstBackNow = true;
                 StorySkillControl_Prince.isDisabledClock = false;
+                break;
+
+            case 15:
+                if (StoryInteractableControl_Prince.isTakeGem)
+                {
+                    //壞結束
+                }
                 break;
         }
     }
