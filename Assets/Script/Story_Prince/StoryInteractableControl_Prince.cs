@@ -523,11 +523,14 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         if (SettingControl.isSettingActive) return;
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
-        if (currentCoroutine != null)
+        if (_who != 3 && _who != 16)
         {
-            StopCoroutine(currentCoroutine);
+            if (currentCoroutine != null)
+            {
+                StopCoroutine(currentCoroutine);
+            }
+            currentCoroutine = StartCoroutine(ScaleObject(scaledSize));
         }
-        currentCoroutine = StartCoroutine(ScaleObject(scaledSize));
         if (!StoryUIControl_Prince.isDialogue)
         {
             isInteractableUI = true;
