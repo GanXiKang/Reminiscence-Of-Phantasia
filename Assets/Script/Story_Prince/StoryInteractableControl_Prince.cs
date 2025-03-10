@@ -304,6 +304,36 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     interactableUI.transform.position = screenPos;
                 }
                 break;
+
+            case 21:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "小鈴";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 22:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "陸歐";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
+
+            case 23:
+                if (_aboveWho == _who)
+                {
+                    interactableName.text = "妮可";
+                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+                    interactableUI.transform.position = screenPos;
+                }
+                break;
         }
     }
     void GivePlayerObject()
