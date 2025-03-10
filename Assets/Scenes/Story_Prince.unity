@@ -28713,6 +28713,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1921730493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8322164863570037168, guid: 3260eabb41380df4f8222a530c929a72, type: 3}
+  m_PrefabInstance: {fileID: 39616106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1921730496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28822,6 +28827,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923290706}
   m_CullTransparentMesh: 1
+--- !u!4 &1930360018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 533193074659131909, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
+  m_PrefabInstance: {fileID: 1602712363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1930360021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30624,7 +30634,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 550003414}
   - {fileID: 2077388625}
-  - {fileID: 0}
+  - {fileID: 1930360018}
   - {fileID: 1632587659}
   - {fileID: 677724125}
   - {fileID: 1547584780}
@@ -30635,6 +30645,16 @@ MonoBehaviour:
   - {fileID: 1508316138}
   - {fileID: 913108437}
   - {fileID: 983348538}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1921730493}
+  - {fileID: 325878447}
+  - {fileID: 874902213}
+  - {fileID: 365037207}
+  - {fileID: 1854459490}
+  - {fileID: 204015307}
+  - {fileID: 225759990}
+  - {fileID: 1309524454}
   dialogueUI: {fileID: 2117618733}
   dialogueBG: {fileID: 608887529}
   content: {fileID: 440565826}
