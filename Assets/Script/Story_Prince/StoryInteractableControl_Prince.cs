@@ -405,6 +405,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 isPickedUp = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
                                 StoryBagControl._whichItem = _giveItemNumber[0];
                                 if (StoryBagControl.isOpenBag)
                                 {
