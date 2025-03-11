@@ -415,6 +415,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     BlackScreenControl.isOpenBlackScreen = true;
                     StoryPlayerControl.isSad = true;
                 }
+                else
+                {
+                    StoryInteractableControl_Prince.isKangNeedGem = false;
+                }
                 break;
 
             case 17:
@@ -426,7 +430,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 22:
                 //小康離開
-                StoryInteractableControl_Prince.isKangNeedGem = false;
                 break;
         }
     }
