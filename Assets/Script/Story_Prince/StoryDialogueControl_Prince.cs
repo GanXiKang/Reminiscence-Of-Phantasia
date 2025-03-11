@@ -430,8 +430,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince.isGiveItem = true;
                 StoryInteractableControl_Prince._whoGive = 7;
                 StoryInteractableControl_Prince._whoGiveNumber = 0;
-
-                StoryBagControl.isItemNumber[9] = true;
                 break;
 
             case 22:
