@@ -365,6 +365,9 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     }
                 }
                 break;
+
+            case 22:
+                break;
         }
     }
     void DialogurEnd()
