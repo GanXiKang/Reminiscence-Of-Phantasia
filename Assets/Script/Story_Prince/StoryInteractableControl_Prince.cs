@@ -66,6 +66,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isSwallowFindPrince = false;
     public static bool isKangNeedGem = false;
     public static bool isTakeGem = false;
+    //06Qian_Adult
+    bool isHalfGemMerge = false;
 
     void Start()
     {
@@ -499,9 +501,12 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
-                            StoryUIControl_Prince.isDialogue = true;
-                            StoryDialogueControl_Prince._isAboveWho1 = _who;
-                            StoryDialogueControl_Prince._textCount = 20;
+                            if (!isHalfGemMerge)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 20;
+                            }
                             break;
                     }
                     break;
@@ -678,6 +683,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         switch (i)
                         {
                             case 0:
+                                isHalfGemMerge = true;
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 21;
