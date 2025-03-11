@@ -367,6 +367,21 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 22:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        BGM.PlayOneShot(give);
+                        StoryInteractableControl_Prince.isGiveItem = true;
+                        StoryInteractableControl_Prince._whoGive = 1;
+                        StoryInteractableControl_Prince._whoGiveNumber = 0;
+                        _countEvent = 0;
+                        break;
+                }
                 break;
         }
     }
@@ -403,9 +418,14 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 17:
+                BGM.PlayOneShot(give);
                 StoryInteractableControl_Prince.isGiveItem = true;
                 StoryInteractableControl_Prince._whoGive = 7;
                 StoryInteractableControl_Prince._whoGiveNumber = 0;
+                break;
+
+            case 22:
+                //小康離開
                 break;
         }
     }
