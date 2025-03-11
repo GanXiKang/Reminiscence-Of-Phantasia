@@ -432,6 +432,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince._whoGiveNumber = 0;
                 break;
 
+            case 21:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Prince.isGiveItem = true;
+                StoryInteractableControl_Prince._whoGive = 6;
+                StoryInteractableControl_Prince._whoGiveNumber = 0;
+                break;
+
             case 22:
                 //小康離開
                 break;
