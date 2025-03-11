@@ -19,11 +19,6 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Update()
     {
         MouseCursor();
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            StoryTeachControl.isTeachActive = true;
-        }
     }
 
     void MouseCursor()
