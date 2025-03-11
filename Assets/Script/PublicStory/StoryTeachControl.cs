@@ -15,13 +15,9 @@ public class StoryTeachControl : MonoBehaviour
     public Sprite[] teachImage;
     int _totalPage = 0;
 
-    //Story1
     int _teachTemperaturePage = 4;
-    //Story2
-    int _teachAllPage = 2;
-    //Story3
-    int _teachTimePage = 3;
-    int _teachSuppliesPage = 4;
+    int _teachAllPage_Story2 = 2;
+    int _teachAllPage_Story3 = 3;
 
     [Header("UI")]
     public GameObject teachUI;
@@ -78,7 +74,7 @@ public class StoryTeachControl : MonoBehaviour
                 break;
 
             case 2:
-                for (int i = 1; i <= _teachAllPage; i++)
+                for (int i = 1; i <= _teachAllPage_Story2; i++)
                 {
                     if (i == _page)
                     {
@@ -89,29 +85,13 @@ public class StoryTeachControl : MonoBehaviour
                 break;
 
             case 3:
-                switch (_isFinish)
+                for (int i = 1; i <= _teachAllPage_Story3; i++)
                 {
-                    case 0:
-                        for (int i = 1; i <= _teachTimePage; i++)
-                        {
-                            if (i == _page)
-                            {
-                                background.sprite = teachImage[i];
-                                content.text = teachContent[i].ToString();
-                            }
-                        }
-                        break;
-
-                    case 1:
-                        for (int i = 1; i <= _teachSuppliesPage; i++)
-                        {
-                            if (i == _page)
-                            {
-                                background.sprite = teachImage[i + _teachTimePage];
-                                content.text = teachContent[i + _teachTimePage].ToString();
-                            }
-                        }
-                        break;
+                    if (i == _page)
+                    {
+                        background.sprite = teachImage[i + _totalPage];
+                        content.text = teachContent[i + _totalPage].ToString();
+                    }
                 }
                 break;
         }
@@ -159,53 +139,22 @@ public class StoryTeachControl : MonoBehaviour
                 break;
 
             case 3:
-                switch (_isFinish)
+                switch (_page)
                 {
-                    case 0:
-                        switch (_page)
-                        {
-                            case 1:
-                                teachButton[1].interactable = false;
-                                teachButton[2].interactable = true;
-                                break;
-
-                            case 2:
-                                teachButton[1].interactable = true;
-                                teachButton[2].interactable = true;
-                                break;
-
-                            case 3:
-                                teachButton[0].interactable = true;
-                                teachButton[1].interactable = true;
-                                teachButton[2].interactable = false;
-                                break;
-                        }
+                    case 1:
+                        teachButton[1].interactable = false;
+                        teachButton[2].interactable = true;
                         break;
 
-                    case 1:
-                        switch (_page)
-                        {
-                            case 1:
-                                teachButton[1].interactable = false;
-                                teachButton[2].interactable = true;
-                                break;
+                    case 2:
+                        teachButton[1].interactable = true;
+                        teachButton[2].interactable = true;
+                        break;
 
-                            case 2:
-                                teachButton[1].interactable = true;
-                                teachButton[2].interactable = true;
-                                break;
-
-                            case 3:
-                                teachButton[1].interactable = true;
-                                teachButton[2].interactable = true;
-                                break;
-
-                            case 4:
-                                teachButton[0].interactable = true;
-                                teachButton[1].interactable = true;
-                                teachButton[2].interactable = false;
-                                break;
-                        }
+                    case 3:
+                        teachButton[0].interactable = true;
+                        teachButton[1].interactable = true;
+                        teachButton[2].interactable = false;
                         break;
                 }
                 break;
@@ -238,7 +187,7 @@ public class StoryTeachControl : MonoBehaviour
                 _isFinish++;
                 if (_isFinish != 4)
                 {
-                    _totalPage += _teachAllPage;
+                    _totalPage += _teachAllPage_Story2;
                 }
                 break;
 
@@ -246,7 +195,7 @@ public class StoryTeachControl : MonoBehaviour
                 _isFinish++;
                 if (_isFinish != 2)
                 {
-                    _totalPage += _teachTimePage;
+                    _totalPage += _teachAllPage_Story3;
                 }
                 break;
         }
