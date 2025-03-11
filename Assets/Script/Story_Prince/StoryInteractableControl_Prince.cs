@@ -73,8 +73,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         player = GameObject.Find("Player");
 
         originalScale = transform.localScale;
-
-        StoryBagControl.isItemNumber[9] = true;
     }
 
     void Update()
