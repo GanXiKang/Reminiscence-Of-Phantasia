@@ -650,16 +650,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 17;
-                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
-                                StoryBagControl._howManyGrids++;
+                                
                                 break;
 
                             case 1:
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 22;
-                                StoryBagControl.isItemNumber[_exchangeItemNumber[i]] = true;
-                                StoryBagControl._howManyGrids++;
                                 break;
                         }
                         break;
