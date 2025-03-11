@@ -394,16 +394,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 isPickedUp = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_exchangeItemNumber[_whoGiveNumber]] = true;
-                                StoryBagControl._whichItem = _exchangeItemNumber[_whoGiveNumber];
-                                if (StoryBagControl.isOpenBag)
-                                {
-                                    StoryBagControl.isOpenBag = false;
-                                }
-                                break;
-
-                            case 2:
-                                isPickedUp = true;
-                                StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
                                 StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
                                 StoryBagControl._whichItem = _giveItemNumber[2];
