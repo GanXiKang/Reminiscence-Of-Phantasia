@@ -66,7 +66,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isSwallowFindPrince = false;
     public static bool isTakeGem = false;
     //07Kang
-    public static bool isKangNeedGem = false;
+    public static bool isKangNeedGem = true;
 
     void Start()
     {
@@ -524,18 +524,18 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     _countMouseDown++;
                     switch (_countMouseDown)
                     {
-                        case 1:
-                            StoryUIControl_Prince.isDialogue = true;
-                            StoryDialogueControl_Prince._isAboveWho1 = _who;
-                            StoryDialogueControl_Prince._textCount = 2;
-                            break;
+                        //case 1:
+                        //    StoryUIControl_Prince.isDialogue = true;
+                        //    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        //    StoryDialogueControl_Prince._textCount = 2;
+                        //    break;
 
-                        case 2:
-                            StoryUIControl_Prince.isDialogue = true;
-                            StoryDialogueControl_Prince._isAboveWho1 = 1;
-                            StoryDialogueControl_Prince._textCount = 3;
-                            //幽靈出現
-                            break;
+                        //case 2:
+                        //    StoryUIControl_Prince.isDialogue = true;
+                        //    StoryDialogueControl_Prince._isAboveWho1 = 1;
+                        //    StoryDialogueControl_Prince._textCount = 3;
+                        //    //幽靈出現
+                        //    break;
 
                         default:
                             if (isSwallowFindPrince)
