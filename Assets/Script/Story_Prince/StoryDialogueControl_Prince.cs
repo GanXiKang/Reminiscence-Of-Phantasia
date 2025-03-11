@@ -379,14 +379,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         StoryInteractableControl_Prince.isGiveItem = true;
                         StoryInteractableControl_Prince._whoGive = 7;
                         StoryInteractableControl_Prince._whoGiveNumber = 1;
-                        _countEvent++;
-                        break;
-
-                    case 2:
-                        BGM.PlayOneShot(give);
-                        StoryInteractableControl_Prince.isGiveItem = true;
-                        StoryInteractableControl_Prince._whoGive = 7;
-                        StoryInteractableControl_Prince._whoGiveNumber = 2;
                         _countEvent = 0;
                         break;
                 }
