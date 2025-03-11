@@ -325,6 +325,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isSurprised = true;
                 break;
 
+            case 21:
+                StoryPlayerControl.isHappy = true;
+                break;
+
             case 7:
                 switch (_countEvent)
                 {
