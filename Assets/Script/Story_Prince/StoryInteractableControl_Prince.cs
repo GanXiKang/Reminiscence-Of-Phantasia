@@ -73,6 +73,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         player = GameObject.Find("Player");
 
         originalScale = transform.localScale;
+
+        StoryBagControl.isItemNumber[_exchangeItemNumber[_whoGiveNumber]] = true;
     }
 
     void Update()
@@ -405,8 +407,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 isPickedUp = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
-                                StoryBagControl._whichItem = _giveItemNumber[0];
+                                StoryBagControl.isItemNumber[_giveItemNumber[1]] = true;
+                                StoryBagControl._whichItem = _giveItemNumber[2];
                                 if (StoryBagControl.isOpenBag)
                                 {
                                     StoryBagControl.isOpenBag = false;
