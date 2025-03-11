@@ -398,6 +398,12 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     StoryPlayerControl.isSad = true;
                 }
                 break;
+
+            case 17:
+                StoryInteractableControl_Prince.isGiveItem = true;
+                StoryInteractableControl_Prince._whoGive = 7;
+                StoryInteractableControl_Prince._whoGiveNumber = 0;
+                break;
         }
     }
     void StoryEnd()
