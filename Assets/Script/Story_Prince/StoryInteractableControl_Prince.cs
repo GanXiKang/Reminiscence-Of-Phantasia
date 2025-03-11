@@ -67,6 +67,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isTakeGem = false;
     //07Kang
     public static bool isKangNeedGem = true;
+    public static bool isKangIdentity = false;
 
     void Start()
     {
@@ -178,7 +179,10 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             case 7:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "小康";
+                    if (!isKangIdentity)
+                        interactableName.text = "小康";
+                    else
+                        interactableName.text = "康大臣";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
