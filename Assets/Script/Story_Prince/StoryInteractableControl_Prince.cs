@@ -74,7 +74,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
         originalScale = transform.localScale;
 
-        StoryBagControl.isItemNumber[_exchangeItemNumber[_whoGiveNumber]] = true;
+        StoryBagControl.isItemNumber[9] = true;
     }
 
     void Update()
