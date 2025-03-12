@@ -68,6 +68,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isTakeGem = false;
     //06Qian_Adult
     bool isHalfGemMerge = false;
+    //09Jun & 11Bei
+    bool isHelpJun = false;
+    public static bool isDoubleButter = false;
 
     void Start()
     {
@@ -339,8 +342,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     }
     void GivePlayerObject()
     {
-        if (StoryUIControl_Prince.isDialogue) return;
-
         if (isGiveItem)
         {
             if (_whoGive == _who)
@@ -422,6 +423,23 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                     StoryBagControl.isOpenBag = false;
                                 }
                                 break;
+                        }
+                        break;
+
+                    case 9:
+                    case 11:
+                        isPickedUp = true;
+                        StoryBagControl.isGet = true;
+                        StoryBagControl.isItemNumber[_exchangeItemNumber[0]] = true;
+                        StoryBagControl._whichItem = _exchangeItemNumber[0];
+                        if (isDoubleButter)
+                        {
+                            isDoubleButter = false;
+                            StoryBagControl.isItemNumber[_exchangeItemNumber[1]] = true;
+                        }
+                        if (StoryBagControl.isOpenBag)
+                        {
+                            StoryBagControl.isOpenBag = false;
                         }
                         break;
                 }
@@ -605,9 +623,18 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
-                            StoryUIControl_Prince.isDialogue = true;
-                            StoryDialogueControl_Prince._isAboveWho1 = _who;
-                            StoryDialogueControl_Prince._textCount = 48;
+                            if (!isHelpJun)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 48;
+                            }
+                            else
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 50;
+                            }
                             break;
                     }
                     break;
@@ -722,6 +749,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 49;
+                                isHelpJun = true;
+                                if (i == 1)
+                                    isDoubleButter = true;
                                 break;
                         }
                         break;
@@ -734,6 +764,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 46;
+                                if (i == 1)
+                                    isDoubleButter = true;
                                 break;
                         }
                         break;
