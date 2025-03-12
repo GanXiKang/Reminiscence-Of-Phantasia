@@ -322,6 +322,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 4:
             case 5:
             case 17:
+            case 82:
                 StoryPlayerControl.isSurprised = true;
                 break;
 
@@ -452,6 +453,16 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 22:
                 //小康離開
+                break;
+
+            case 81:
+            case 82:
+            case 83:
+            case 84:
+            case 85:
+            case 86:
+                StoryPlayerControl.isHappy = true;
+                //獲得善能
                 break;
         }
     }
