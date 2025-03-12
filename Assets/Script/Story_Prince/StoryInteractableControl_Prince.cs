@@ -374,10 +374,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 {
                                     StoryBagControl.isOpenBag = false;
                                 }
-
-                                //test
-                                StoryBagControl.isGet = true;
-                                StoryBagControl.isItemNumber[16] = true;
                                 break;
                         }
                         break;
