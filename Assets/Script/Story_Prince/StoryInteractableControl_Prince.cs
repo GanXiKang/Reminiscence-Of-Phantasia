@@ -719,6 +719,23 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         StoryDialogueControl_Prince._textCount = 86;
                     }
                     break;
+
+                case 21:
+                    if (!isPrinceNoDie && isResidentOnce)
+                    {
+                        isResidentOnce = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 72;
+                    }
+                    else if (isPrinceNoDie && isResidentTwo)
+                    {
+                        isResidentTwo = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 78;
+                    }
+                    break;
             }
         }
         StoryBagControl.isOpenBag = false;
