@@ -405,6 +405,14 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     {
         switch (_textCount)
         {
+            case 72:
+                StoryPlayerControl.isSurprised = true;
+                break;
+
+            case 78:
+                StoryPlayerControl.isHappy = true;
+                break;
+
             case 3:
                 //幽靈離開
                 break;
