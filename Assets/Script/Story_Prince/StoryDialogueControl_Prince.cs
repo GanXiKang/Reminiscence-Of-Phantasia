@@ -409,7 +409,14 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isSurprised = true;
                 break;
 
+            case 73:
+                StoryPlayerControl.isSad = true;
+                break;
+
+            case 74:
             case 78:
+            case 79:
+            case 80:
                 StoryPlayerControl.isHappy = true;
                 break;
 
