@@ -62,7 +62,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
     //02Prince
     public static bool isCanHelpPrince = false;
-    public static bool isPrinceHelpQian = false;
+    public static bool isPrinceNoDie = false;
     //03PrinceStatue
     public static bool isSwallowFindPrince = false;
     public static bool isKangNeedGem = false;
@@ -72,6 +72,10 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     //09Jun & 11Bei
     bool isHelpJun = false;
     public static bool isDoubleButter = false;
+    // Resident
+    bool isResidentOnce = true;
+    bool isResidentTwo = true;
+
 
     void Start()
     {
@@ -666,47 +670,62 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 18:
-                    if (!isPrinceHelpQian)
+                    if (!isPrinceNoDie && isResidentOnce)
                     {
+                        isResidentOnce = false;
                         StoryUIControl_Prince.isDialogue = true;
                         StoryDialogueControl_Prince._isAboveWho1 = _who;
                         StoryDialogueControl_Prince._textCount = 81;
                     }
-                    else
+                    else 
                     {
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 84;
+                        if (isResidentTwo)
+                        {
+                            isResidentTwo = false;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 84;
+                        }
                     }
                     break;
 
                 case 19:
-                    if (!isPrinceHelpQian)
+                    if (!isPrinceNoDie && isResidentOnce)
                     {
+                        isResidentOnce = false;
                         StoryUIControl_Prince.isDialogue = true;
                         StoryDialogueControl_Prince._isAboveWho1 = _who;
                         StoryDialogueControl_Prince._textCount = 82;
                     }
                     else
                     {
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 85;
+                        if (isResidentTwo)
+                        {
+                            isResidentTwo = false;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 85;
+                        }
                     }
                     break;
 
                 case 20:
-                    if (!isPrinceHelpQian)
+                    if (!isPrinceNoDie && isResidentOnce)
                     {
+                        isResidentOnce = false;
                         StoryUIControl_Prince.isDialogue = true;
                         StoryDialogueControl_Prince._isAboveWho1 = _who;
                         StoryDialogueControl_Prince._textCount = 83;
                     }
                     else
                     {
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 86;
+                        if (isResidentTwo)
+                        {
+                            isResidentTwo = false;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 86;
+                        }
                     }
                     break;
             }
