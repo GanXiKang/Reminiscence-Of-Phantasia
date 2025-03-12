@@ -326,6 +326,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 21:
+            case 46:
                 StoryPlayerControl.isHappy = true;
                 break;
 
@@ -441,6 +442,12 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 22:
                 //小康離開
+                break;
+
+            case 49:
+                BGM.PlayOneShot(give);
+                StoryInteractableControl_Prince.isGiveItem = true;
+                StoryInteractableControl_Prince._whoGive = 9;
                 break;
         }
     }
