@@ -19,6 +19,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Update()
     {
         MouseCursor();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StoryInteractableControl_Prince.isPrinceNoDie = true;
+        }
     }
 
     void MouseCursor()
