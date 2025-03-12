@@ -416,6 +416,8 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isSad = true;
                 break;
 
+            case 62:
+            case 63:
             case 74:
             case 78:
             case 79:
