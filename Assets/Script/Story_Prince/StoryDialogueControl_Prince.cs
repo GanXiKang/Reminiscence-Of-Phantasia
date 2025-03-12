@@ -326,7 +326,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 21:
-            case 46:
                 StoryPlayerControl.isHappy = true;
                 break;
 
@@ -388,6 +387,17 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 46:
+            case 49:
+                BGM.PlayOneShot(give);
+                StoryPlayerControl.isHappy = true;
+                StoryInteractableControl_Prince.isGiveItem = true;
+                if (_textCount == 49)
+                    StoryInteractableControl_Prince._whoGive = 9;
+                else
+                    StoryInteractableControl_Prince._whoGive = 11;
+                break;
         }
     }
     void DialogurEnd()
@@ -442,12 +452,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 22:
                 //小康離開
-                break;
-
-            case 49:
-                BGM.PlayOneShot(give);
-                StoryInteractableControl_Prince.isGiveItem = true;
-                StoryInteractableControl_Prince._whoGive = 9;
                 break;
         }
     }
