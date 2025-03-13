@@ -22,7 +22,9 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StoryInteractableControl_Prince.isPrinceNoDie = true;
+            StoryBagControl.isGet = true;
+            StoryBagControl.isItemNumber[12] = true;
+            StoryBagControl.isItemNumber[13] = true;
         }
     }
 
