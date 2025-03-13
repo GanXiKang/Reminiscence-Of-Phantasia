@@ -1,0 +1,888 @@
+fileFormatVersion: 2
+guid: dd2d3a46445aeef41a4f8ecc6287062f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6514dbf5460fcff45b29e6a68edf48d7
+      internalID: 96732915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_1
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815bdd29dfb1cfc479d8e05aa18ebe98
+      internalID: 1389602052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_2
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2e9d5b772a5804190f838b2d0a3cd0
+      internalID: 1650368595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_3
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7516041d30601a442bd9d77b9e601ccd
+      internalID: -1486735141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_4
+      rect:
+        serializedVersion: 2
+        x: 3184
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f1919d8277cb842927d914588e4ed6
+      internalID: -753234615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_5
+      rect:
+        serializedVersion: 2
+        x: 3980
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2e0a1b7ffcdf941a260b0dfe2eda0d
+      internalID: 1837649282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_6
+      rect:
+        serializedVersion: 2
+        x: 4776
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5a2862873338c4b91aaf42a9e4c14f
+      internalID: -1167241171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_7
+      rect:
+        serializedVersion: 2
+        x: 5572
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603301d96ff42e14f8f1397a06fa9453
+      internalID: -1746137333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_8
+      rect:
+        serializedVersion: 2
+        x: 6368
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1a94e572c21b54dad5e6fcb55a9164
+      internalID: -156872618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_9
+      rect:
+        serializedVersion: 2
+        x: 7164
+        y: 3144
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c036a98ebdd27e488f275cc2f497776
+      internalID: 1169580429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39aea95607f739945b4cc2e4734dfb9a
+      internalID: 1439569953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_11
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982f95e3d7fcf684f978bfc6acd88fd4
+      internalID: -325527359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_12
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56a9861f0bb9b049a505f2d512ca005
+      internalID: 151718612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_13
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abc576704f3b724283effe4bad8d904
+      internalID: -1986554808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_14
+      rect:
+        serializedVersion: 2
+        x: 3184
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c16b9ebf4a84ce4e9e18bfda13de2f1
+      internalID: -246058030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_15
+      rect:
+        serializedVersion: 2
+        x: 3980
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2260449142dba41a90d13f73a7201a
+      internalID: -1208605433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_16
+      rect:
+        serializedVersion: 2
+        x: 4776
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3178adfd0a92374eb8338e19886967d
+      internalID: -623217797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_17
+      rect:
+        serializedVersion: 2
+        x: 5572
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efbb68239760ae40812fa368cf74a0d
+      internalID: 656076030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_18
+      rect:
+        serializedVersion: 2
+        x: 6368
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c96c0ef10053e8479027824f0ee8149
+      internalID: -1692383797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_19
+      rect:
+        serializedVersion: 2
+        x: 7164
+        y: 2192
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6893b6200fcd48b4f820e24f7d36bdf0
+      internalID: 1291799490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d785cbea5ea0940a13c7ac90be97bc
+      internalID: 627020473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_21
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d489c5546240045bcc83e6c1f5189e
+      internalID: -161635966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_22
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6450fca554cd82a4397c41c07386e73d
+      internalID: 1696700059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_23
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf71085761309a49a7cab638771247f
+      internalID: 1461417954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_24
+      rect:
+        serializedVersion: 2
+        x: 3184
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13117965c991d0742b6bf68d42920387
+      internalID: 1089803255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_25
+      rect:
+        serializedVersion: 2
+        x: 3980
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3559eb8378830e478ec12c622a80a9a
+      internalID: -613320324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_26
+      rect:
+        serializedVersion: 2
+        x: 4776
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f318d5339fd8aa4fbaa2775044cd42e
+      internalID: 1662842968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_27
+      rect:
+        serializedVersion: 2
+        x: 5572
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd55bfc659cca3489689902132f851f
+      internalID: -244446127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_28
+      rect:
+        serializedVersion: 2
+        x: 6368
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1876994561916154fb3e97628d98afd8
+      internalID: 1867203896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_29
+      rect:
+        serializedVersion: 2
+        x: 7164
+        y: 1240
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e30594374f60a9439455d94c5730977
+      internalID: 793781061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2184996ed8dfc4741be8ca38439c151f
+      internalID: -1796630602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_31
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 288
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd112c5f25363f42840c619e229fb2a
+      internalID: -641274920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_32
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 288
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5012416f8ddbc0948a2af91996ac5e6a
+      internalID: 525386848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp_NoGem_Right_33
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 288
+        width: 796
+        height: 952
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b8c3d73ec614148b7a9ee64926f1a0
+      internalID: -1204802742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Warp_NoGem_Right_0: 96732915
+      Warp_NoGem_Right_1: 1389602052
+      Warp_NoGem_Right_10: 1439569953
+      Warp_NoGem_Right_11: -325527359
+      Warp_NoGem_Right_12: 151718612
+      Warp_NoGem_Right_13: -1986554808
+      Warp_NoGem_Right_14: -246058030
+      Warp_NoGem_Right_15: -1208605433
+      Warp_NoGem_Right_16: -623217797
+      Warp_NoGem_Right_17: 656076030
+      Warp_NoGem_Right_18: -1692383797
+      Warp_NoGem_Right_19: 1291799490
+      Warp_NoGem_Right_2: 1650368595
+      Warp_NoGem_Right_20: 627020473
+      Warp_NoGem_Right_21: -161635966
+      Warp_NoGem_Right_22: 1696700059
+      Warp_NoGem_Right_23: 1461417954
+      Warp_NoGem_Right_24: 1089803255
+      Warp_NoGem_Right_25: -613320324
+      Warp_NoGem_Right_26: 1662842968
+      Warp_NoGem_Right_27: -244446127
+      Warp_NoGem_Right_28: 1867203896
+      Warp_NoGem_Right_29: 793781061
+      Warp_NoGem_Right_3: -1486735141
+      Warp_NoGem_Right_30: -1796630602
+      Warp_NoGem_Right_31: -641274920
+      Warp_NoGem_Right_32: 525386848
+      Warp_NoGem_Right_33: -1204802742
+      Warp_NoGem_Right_4: -753234615
+      Warp_NoGem_Right_5: 1837649282
+      Warp_NoGem_Right_6: -1167241171
+      Warp_NoGem_Right_7: -1746137333
+      Warp_NoGem_Right_8: -156872618
+      Warp_NoGem_Right_9: 1169580429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
