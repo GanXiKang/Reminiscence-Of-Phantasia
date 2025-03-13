@@ -16,13 +16,9 @@ public class StoryGardenControl_Prince : MonoBehaviour
     public GameObject treeKid;
     public GameObject effects;
     public static bool isPlanting = false;
+    public static bool isDigPlant = false;
     public static bool isCherryTree = false;
     public static bool isGrapeTree = false;
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
