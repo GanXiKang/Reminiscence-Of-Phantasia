@@ -26,5 +26,37 @@ public class StoryGardenControl_Prince : MonoBehaviour
         treeGrape_Future.SetActive(isGrapeTree);
         treeCherry_Now.SetActive(isCherryTree);
         treeGrape_Now.SetActive(isGrapeTree);
+
+        if (isPlanting)
+        {
+            isPlanting = false;
+            StartCoroutine(Planting());
+        }
+
+        if (isDigPlant)
+        {
+            isDigPlant = false;
+            StartCoroutine(DigPlant());
+        }
+    }
+
+    IEnumerator Planting()
+    {
+        effects.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        treeKid.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        effects.SetActive(false);
+    }
+
+    IEnumerator DigPlant()
+    {
+        isCherryTree = false;
+        isGrapeTree = false;
+        effects.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        treeKid.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        effects.SetActive(false);
     }
 }
