@@ -34,20 +34,14 @@ public class StoryGardenControl_Prince : MonoBehaviour
             isPlanting = false;
             StartCoroutine(Planting());
         }
-
-        if (isDigPlant)
-        {
-            isDigPlant = false;
-            StartCoroutine(DigPlant());
-        }
     }
 
     IEnumerator Planting()
     {
-        effects.SetActive(true);
+        plantingEF.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         treeKid.SetActive(true);
         yield return new WaitForSeconds(1f);
-        effects.SetActive(false);
+        plantingEF.SetActive(false);
     }
 }
