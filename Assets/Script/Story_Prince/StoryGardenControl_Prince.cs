@@ -27,7 +27,9 @@ public class StoryGardenControl_Prince : MonoBehaviour
         treeGrape_Future.SetActive(isGrapeTree);
         treeCherry_Now.SetActive(isCherryTree);
         treeGrape_Now.SetActive(isGrapeTree);
-        interactableEF.SetActive(!isGrapeTree && !isCherryTree);
+
+        if (StoryBagControl.isItemNumber[12] && StoryBagControl.isItemNumber[13])
+            interactableEF.SetActive(true);
 
         if (isPlanting)
         {
@@ -38,6 +40,7 @@ public class StoryGardenControl_Prince : MonoBehaviour
 
     IEnumerator Planting()
     {
+        interactableEF.SetActive(false);
         plantingEF.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         treeKid.SetActive(true);
