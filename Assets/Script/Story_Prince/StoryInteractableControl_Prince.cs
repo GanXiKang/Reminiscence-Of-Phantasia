@@ -513,6 +513,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 11;
                             }
+                            if (StoryGardenControl_Prince.isCherryTree)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._isAboveWho2 = 4;
+                                StoryDialogueControl_Prince._textCount = 36;
+                            }
                             break;
                     }
                     break;
@@ -911,6 +918,36 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._textCount = 46;
                                 if (i == 1)
                                     isDoubleButter = true;
+                                break;
+                        }
+                        break;
+
+                    case 15:
+                        switch (i)
+                        {
+                            case 0:
+                                if (!StoryGardenControl_Prince.isCherryTree)
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._textCount = 35;
+                                    StoryGardenControl_Prince.isPlanting = true;
+                                    StoryGardenControl_Prince.isGrapeTree = true;
+                                }
+                                else
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._textCount = 37;
+                                    StoryGardenControl_Prince.isPlanting = true;
+                                    StoryGardenControl_Prince.isGrapeTree = true;
+                                    StoryGardenControl_Prince.isCherryTree = false;
+                                }
+                                break;
+
+                            case 1:
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._textCount = 90;
+                                StoryGardenControl_Prince.isPlanting = true;
+                                StoryGardenControl_Prince.isCherryTree = true;
                                 break;
                         }
                         break;
