@@ -12308,6 +12308,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &627880059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5805360583503011449, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
+  m_PrefabInstance: {fileID: 105717243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &627880060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7109510341672048946, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
@@ -22103,7 +22108,7 @@ MonoBehaviour:
   treeGrape_Future: {fileID: 1325566224}
   treeKid: {fileID: 1696099344}
   plantingEF: {fileID: 1665087420}
-  interactableEF: {fileID: 0}
+  interactableEF: {fileID: 627880059}
 --- !u!1 &1208403250
 GameObject:
   m_ObjectHideFlags: 0
