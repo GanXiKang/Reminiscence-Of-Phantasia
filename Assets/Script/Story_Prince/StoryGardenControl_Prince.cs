@@ -42,9 +42,9 @@ public class StoryGardenControl_Prince : MonoBehaviour
     {
         interactableEF.SetActive(false);
         plantingEF.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         treeKid.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
         plantingEF.SetActive(false);
     }
 }
