@@ -951,6 +951,11 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                     StoryGardenControl_Prince.isPlanting = true;
                                     StoryGardenControl_Prince.isCherryTree = true;
                                 }
+                                else
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
+                                }
                                 break;
                         }
                         break;
