@@ -82,6 +82,11 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         player = GameObject.Find("Player");
 
         originalScale = transform.localScale;
+
+        if (_who == 15)
+        {
+            isInteractable = true;
+        }
     }
 
     void Update()
