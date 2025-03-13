@@ -944,10 +944,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 break;
 
                             case 1:
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._textCount = 90;
-                                StoryGardenControl_Prince.isPlanting = true;
-                                StoryGardenControl_Prince.isCherryTree = true;
+                                if (!StoryGardenControl_Prince.isGrapeTree)
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._textCount = 90;
+                                    StoryGardenControl_Prince.isPlanting = true;
+                                    StoryGardenControl_Prince.isCherryTree = true;
+                                }
                                 break;
                         }
                         break;
