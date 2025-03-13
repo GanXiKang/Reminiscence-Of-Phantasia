@@ -14,7 +14,8 @@ public class StoryGardenControl_Prince : MonoBehaviour
 
     [Header("Past")]
     public GameObject treeKid;
-    public GameObject effects;
+    public GameObject plantingEF;
+    public GameObject interactableEF;
     public static bool isPlanting = false;
     public static bool isDigPlant = false;
     public static bool isCherryTree = false;
@@ -26,6 +27,7 @@ public class StoryGardenControl_Prince : MonoBehaviour
         treeGrape_Future.SetActive(isGrapeTree);
         treeCherry_Now.SetActive(isCherryTree);
         treeGrape_Now.SetActive(isGrapeTree);
+        interactableEF.SetActive(!isGrapeTree && !isCherryTree);
 
         if (isPlanting)
         {
@@ -45,17 +47,6 @@ public class StoryGardenControl_Prince : MonoBehaviour
         effects.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         treeKid.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        effects.SetActive(false);
-    }
-
-    IEnumerator DigPlant()
-    {
-        isCherryTree = false;
-        isGrapeTree = false;
-        effects.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        treeKid.SetActive(false);
         yield return new WaitForSeconds(1f);
         effects.SetActive(false);
     }
