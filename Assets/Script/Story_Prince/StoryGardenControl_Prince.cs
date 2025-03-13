@@ -5,15 +5,19 @@ using UnityEngine;
 public class StoryGardenControl_Prince : MonoBehaviour
 {
     [Header("Now")]
-    public GameObject treeGrape_Now;
     public GameObject treeCherry_Now;
+    public GameObject treeGrape_Now;
+    
+    [Header("Future")]
+    public GameObject treeCherry_Future;
+    public GameObject treeGrape_Future;
 
     [Header("Past")]
-    public GameObject
-
-    [Header("Future")]
-    public GameObject treeGrape_Future;
-    public GameObject treeCherry_Future;
+    public GameObject treeKid;
+    public GameObject effects;
+    public static bool isPlanting = false;
+    bool isCherryTree = false;
+    bool isGrapeTree = false;
 
     void Start()
     {
@@ -22,6 +26,9 @@ public class StoryGardenControl_Prince : MonoBehaviour
 
     void Update()
     {
-        
+        treeCherry_Future.SetActive(isCherryTree);
+        treeGrape_Future.SetActive(isGrapeTree);
+        treeCherry_Now.SetActive(isCherryTree);
+        treeGrape_Now.SetActive(isGrapeTree);
     }
 }
