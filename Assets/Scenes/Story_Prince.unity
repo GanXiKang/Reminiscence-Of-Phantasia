@@ -1569,6 +1569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Star_PS
       objectReference: {fileID: 0}
+    - target: {fileID: 5805360583503011449, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7109510341672048946, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1583,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109510341672048946, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.206
       objectReference: {fileID: 0}
     - target: {fileID: 7109510341672048946, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1591,7 +1595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109510341672048946, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.167
       objectReference: {fileID: 0}
     - target: {fileID: 7109510341672048946, guid: eb694025ff152fa4fa8c0fcd03be3539, type: 3}
       propertyPath: m_LocalRotation.w
