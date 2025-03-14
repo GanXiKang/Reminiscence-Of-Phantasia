@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45142382, g: 0.5008121, b: 0.5717435, a: 1}
+  m_IndirectSpecularColor: {r: 0.45132333, g: 0.5009489, b: 0.5730404, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2417,7 +2417,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.8
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -4539,7 +4539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &296686966
 Transform:
   m_ObjectHideFlags: 0
@@ -6354,13 +6354,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479157464}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2422173, y: -0.17188016, z: 0.07727099, w: 0.95174426}
+  m_LocalRotation: {x: 0.26465106, y: -0.17000525, z: 0.081313044, w: 0.94575167}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 900641995}
-  m_LocalEulerAnglesHint: {x: 29.184, y: -19.382, z: 4.192}
+  m_LocalEulerAnglesHint: {x: 31.886, y: -19.149, z: 4.311}
 --- !u!114 &479157466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6405,7 +6405,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.7
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -7501,7 +7501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &597276441
 Transform:
   m_ObjectHideFlags: 0
@@ -15622,7 +15622,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.9
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -15689,13 +15689,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922480448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27012008, y: -0.19265245, z: 0.08989055, w: 0.9390633}
+  m_LocalRotation: {x: 0.2701035, y: -0.11876463, z: 0.0060668876, w: 0.9554592}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 39616107}
-  m_LocalEulerAnglesHint: {x: 32.817, y: -21.885, z: 4.419}
+  m_LocalEulerAnglesHint: {x: 31.171, y: -15.154, z: -3.522}
 --- !u!114 &922480450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15740,7 +15740,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.6
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
