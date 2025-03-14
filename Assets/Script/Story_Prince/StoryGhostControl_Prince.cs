@@ -11,7 +11,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
     Animator anim;
     float _directionGhost;
     public static bool isWarp = false;
-    public static bool isNoGem = false;
+    public static bool isNoGem = true;
     public static bool isDisappear = false;
 
     void Start()
