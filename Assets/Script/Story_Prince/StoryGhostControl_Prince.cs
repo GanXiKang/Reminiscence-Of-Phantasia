@@ -20,9 +20,11 @@ public class StoryGhostControl_Prince : MonoBehaviour
     
     void Update()
     {
-        Warp();
-        
+        anim.SetFloat("Direction", _directionGhost);
+        anim.SetBool("isWarp", isWarp);
         anim.SetBool("isNoGem", isNoGem);
+
+        Warp();
     }
 
     void Warp()
@@ -32,13 +34,34 @@ public class StoryGhostControl_Prince : MonoBehaviour
             AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
             StoryPlayerControl._direction = _directionGhost;
-            anim.SetFloat("Direction", _directionGhost);
-            anim.SetBool("isWarp", isWarp);
+            if (_directionGhost == 0)
+                gameObject.transform.position = playerLeftPoint.position;
+            else
+                gameObject.transform.position = playerRightPoint.position;
 
-            if (stateInfo.IsName("Warp") && stateInfo.normalizedTime >= 1f)
+            if (!isNoGem)
             {
-                
+                if (stateInfo.IsName("Warp") && stateInfo.normalizedTime >= 1f)
+                {
+                    isWarp = false;
+                    if (_directionGhost == 0)
+                        _directionGhost = 1;
+                    else
+                        _directionGhost = 0;
+                }
             }
+            else
+            {
+                if (stateInfo.IsName("WarpNoGem") && stateInfo.normalizedTime >= 1f)
+                {
+                    isWarp = false;
+                    if (_directionGhost == 0)
+                        _directionGhost = 1;
+                    else
+                        _directionGhost = 0;
+                }
+            }
+            
         }
     }
 }
