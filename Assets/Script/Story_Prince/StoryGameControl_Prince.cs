@@ -24,6 +24,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         {
             StoryGhostControl_Prince.isWarp = true;
         }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             StoryGhostControl_Prince.isDisappear = true;
