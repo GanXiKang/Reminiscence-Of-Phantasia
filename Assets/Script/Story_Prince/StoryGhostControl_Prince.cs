@@ -12,6 +12,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        anim.SetFloat("Direction", 1);
     }
 
     
