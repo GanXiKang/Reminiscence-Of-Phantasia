@@ -27,6 +27,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
         anim.SetBool("isDisappear", isDisappear);
 
         Warp();
+        Disappear();
     }
 
     void Warp()
@@ -64,8 +65,15 @@ public class StoryGhostControl_Prince : MonoBehaviour
             }
         }
     }
-    void OnAnimationExit()
+    void Disappear()
     {
-        isDisappear = false;
+        if (!isDisappear) return;
+
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.IsTag("Exit"))
+        {
+            isDisappear = false;
+        }
     }
 }
