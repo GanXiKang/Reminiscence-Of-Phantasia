@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class StoryGhostControl_Prince : MonoBehaviour
@@ -19,10 +20,25 @@ public class StoryGhostControl_Prince : MonoBehaviour
     
     void Update()
     {
-        StoryPlayerControl._direction = _directionGhost;
-
-        anim.SetFloat("Direction", _directionGhost);
-        anim.SetBool("isWarp", isWarp);
+        Warp();
+        
         anim.SetBool("isNoGem", isNoGem);
+    }
+
+    void Warp()
+    {
+        if (isWarp)
+        {
+            AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+            StoryPlayerControl._direction = _directionGhost;
+            anim.SetFloat("Direction", _directionGhost);
+            anim.SetBool("isWarp", isWarp);
+
+            if (stateInfo.IsName("Warp") && stateInfo.normalizedTime >= 1f)
+            {
+                
+            }
+        }
     }
 }
