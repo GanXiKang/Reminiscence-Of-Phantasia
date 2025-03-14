@@ -27,7 +27,6 @@ public class StoryGhostControl_Prince : MonoBehaviour
         anim.SetBool("isWarp", isDisappear);
 
         Warp();
-        Disappear();
     }
 
     void Warp()
