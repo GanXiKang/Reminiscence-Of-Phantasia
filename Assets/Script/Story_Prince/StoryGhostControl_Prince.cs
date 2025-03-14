@@ -71,7 +71,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (stateInfo.IsName("Exit"))
+        if (stateInfo.IsName("Empty"))
         {
             isDisappear = false;
         }
