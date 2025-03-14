@@ -22,7 +22,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+            StoryGhostControl_Prince.isWarp = true;
         }
     }
 
