@@ -41,7 +41,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
             if (!isNoGem)
             {
-                if (stateInfo.IsName("Warp") && stateInfo.normalizedTime >= 1f)
+                if (stateInfo.IsName("Normal"))
                 {
                     isWarp = false;
                     if (_directionGhost == 0)
@@ -52,7 +52,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
             }
             else
             {
-                if (stateInfo.IsName("WarpNoGem") && stateInfo.normalizedTime >= 1f)
+                if (stateInfo.IsName("NoGem"))
                 {
                     isWarp = false;
                     if (_directionGhost == 0)
