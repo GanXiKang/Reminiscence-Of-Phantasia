@@ -29,39 +29,37 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
     void Warp()
     {
-        if (isWarp)
+        if (!isWarp) return;
+
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        _directionGhost = StoryPlayerControl._direction;
+        if (_directionGhost == 0)
+            gameObject.transform.position = playerLeftPoint.position;
+        else
+            gameObject.transform.position = playerRightPoint.position;
+
+        if (!isNoGem)
         {
-            AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-
-            _directionGhost = StoryPlayerControl._direction;
-            if (_directionGhost == 0)
-                gameObject.transform.position = playerLeftPoint.position;
-            else
-                gameObject.transform.position = playerRightPoint.position;
-
-            if (!isNoGem)
+            if (stateInfo.IsName("Normal"))
             {
-                if (stateInfo.IsName("Normal"))
-                {
-                    isWarp = false;
-                    if (_directionGhost == 0)
-                        _directionGhost = 1;
-                    else
-                        _directionGhost = 0;
-                }
+                isWarp = false;
+                if (_directionGhost == 0)
+                    _directionGhost = 1;
+                else
+                    _directionGhost = 0;
             }
-            else
+        }
+        else
+        {
+            if (stateInfo.IsName("NoGem"))
             {
-                if (stateInfo.IsName("NoGem"))
-                {
-                    isWarp = false;
-                    if (_directionGhost == 0)
-                        _directionGhost = 1;
-                    else
-                        _directionGhost = 0;
-                }
+                isWarp = false;
+                if (_directionGhost == 0)
+                    _directionGhost = 1;
+                else
+                    _directionGhost = 0;
             }
-            
         }
     }
 }
