@@ -12,6 +12,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
     float _directionGhost;
     public static bool isWarp = false;
     public static bool isNoGem = false;
+    public static bool isDisappear = false;
 
     void Start()
     {
@@ -23,8 +24,10 @@ public class StoryGhostControl_Prince : MonoBehaviour
         anim.SetFloat("Direction", _directionGhost);
         anim.SetBool("isWarp", isWarp);
         anim.SetBool("isNoGem", isNoGem);
+        anim.SetBool("isWarp", isDisappear);
 
         Warp();
+        Disappear();
     }
 
     void Warp()
