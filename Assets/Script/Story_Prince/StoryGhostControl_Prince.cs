@@ -33,7 +33,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
         {
             AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-            StoryPlayerControl._direction = _directionGhost;
+            _directionGhost = StoryPlayerControl._direction;
             if (_directionGhost == 0)
                 gameObject.transform.position = playerLeftPoint.position;
             else
