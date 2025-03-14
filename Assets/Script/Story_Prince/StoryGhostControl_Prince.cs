@@ -8,16 +8,21 @@ public class StoryGhostControl_Prince : MonoBehaviour
     public Transform playerRightPoint;
 
     Animator anim;
+    float _directionGhost;
+    public static bool isWarp = false;
+    public static bool isNoGem = false;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetFloat("Direction", 1);
     }
-
     
     void Update()
     {
-        
+        StoryPlayerControl._direction = _directionGhost;
+
+        anim.SetFloat("Direction", _directionGhost);
+        anim.SetBool("isWarp", isWarp);
+        anim.SetBool("isNoGem", isNoGem);
     }
 }
