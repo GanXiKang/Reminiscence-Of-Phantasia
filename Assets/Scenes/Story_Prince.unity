@@ -6830,6 +6830,7 @@ GameObject:
   - component: {fileID: 550003417}
   - component: {fileID: 550003416}
   - component: {fileID: 550003415}
+  - component: {fileID: 550003420}
   m_Layer: 0
   m_Name: 01Ghost
   m_TagString: Untagged
@@ -6989,6 +6990,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &550003420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550003413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad28b0571ad4fa546973a0f8e5b2eb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLeftPoint: {fileID: 995875921}
+  playerRightPoint: {fileID: 1090854208}
 --- !u!1 &551510079
 GameObject:
   m_ObjectHideFlags: 0
@@ -15894,7 +15909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995875921}
   m_Layer: 0
-  m_Name: ghostLeftPoint
+  m_Name: GhostLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16716,7 +16731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090854208}
   m_Layer: 0
-  m_Name: ghostRightPoint
+  m_Name: GhostRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
