@@ -64,4 +64,8 @@ public class StoryGhostControl_Prince : MonoBehaviour
             }
         }
     }
+    void OnAnimationExit()
+    {
+        isDisappear = false;
+    }
 }
