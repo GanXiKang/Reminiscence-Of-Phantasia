@@ -442,6 +442,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 6:
+                StoryGhostControl_Prince.isDisappear = true;
                 StoryInteractableControl_Prince.isSwallowFindPrince = true;
                 StorySkillControl_Prince.isFirstBackNow = true;
                 StorySkillControl_Prince.isDisabledClock = false;
