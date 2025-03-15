@@ -17,6 +17,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     [Header("Npc")]
     public GameObject[] npc;
     public static bool isNpcActive = false;
+    bool isNpcActiveTrueOnce = true;
 
     void Start()
     {
@@ -26,9 +27,13 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     void StartNoNpc()
     {
+        if (!isNpcActiveTrueOnce) return;
+
         for (int i = 1; i < npc.Length; i++)
         {
-           npc[i].SetActive(isNpcActive);
+            npc[i].SetActive(isNpcActive);
+            if (isNpcActiveTrueOnce && isNpcActive)
+                isNpcActiveTrueOnce = false;
         }
     }
 
