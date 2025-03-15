@@ -26,7 +26,6 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Start()
     {
         NpcActive();
-        //StartCoroutine(GoToMenu());
     }
 
     void Update()
@@ -85,12 +84,4 @@ public class StoryGameControl_Prince : MonoBehaviour
         if (isNpcActive)
             isNpcActive = false;
     }
-
-    //IEnumerator GoToMenu()
-    //{
-    //    yield return new WaitForSeconds(5f);
-    //    TransitionUIControl.isTransitionUIAnim_In = true;
-    //    yield return new WaitForSeconds(1f);
-    //    SceneManager.LoadScene(0);
-    //}
 }
