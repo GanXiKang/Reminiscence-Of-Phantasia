@@ -14,6 +14,10 @@ public class StoryGameControl_Prince : MonoBehaviour
     [Header("Plank")]
     public GameObject plank;
 
+    [Header("Npc")]
+    public GameObject[] npc;
+    public static bool isNpcActive = false;
+
     void Start()
     {
         //StartCoroutine(GoToMenu());
