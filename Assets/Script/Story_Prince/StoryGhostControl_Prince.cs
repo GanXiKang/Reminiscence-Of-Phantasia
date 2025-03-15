@@ -75,6 +75,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
         if (stateInfo.IsName("Empty"))
         {
             isDisappear = false;
+            gameObject.transform.position = originPoint.position;
         }
     }
 }
