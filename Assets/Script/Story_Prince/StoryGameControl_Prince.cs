@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +11,9 @@ public class StoryGameControl_Prince : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
     bool isClick = false;
 
+    [Header("Plank")]
+    public GameObject plank;
+
     void Start()
     {
         //StartCoroutine(GoToMenu());
@@ -19,6 +22,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Update()
     {
         MouseCursor();
+        PlankActive();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -51,6 +55,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     void FalseisClick()
     {
         isClick = false;
+    }
+    void PlankActive()
+    {
+        //if (//救王子的時候)
+        //    plank.SetActive(true);
     }
 
     //IEnumerator GoToMenu()
