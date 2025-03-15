@@ -208,6 +208,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             }
             if (isFirstBackNow)
             {
+                StoryGameControl_Prince.isNpcActive = true;
                 isFirstBackNow = false;
             }
         }
