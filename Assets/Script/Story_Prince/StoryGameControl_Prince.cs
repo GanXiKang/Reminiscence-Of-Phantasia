@@ -16,7 +16,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     [Header("Npc")]
     public GameObject[] npc;
-    public static bool isNpcActive = false;
+    public static bool isPlotNpcActive = false;
 
     [Header("Scene")]
     public GameObject now;
@@ -25,7 +25,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     void Start()
     {
-        NpcActive();
+        PlotNpcActive();
     }
 
     void Update()
@@ -33,9 +33,9 @@ public class StoryGameControl_Prince : MonoBehaviour
         MouseCursor();
         PlankActive();
 
-        if (isNpcActive)
+        if (isPlotNpcActive)
         {
-            NpcActive();
+            PlotNpcActive();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -75,7 +75,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         //if (//救王子的時候)
         //    plank.SetActive(true);
     }
-    void NpcActive()
+    void PlotNpcActive()
     {
         for (int i = 4; i < npc.Length; i++)
         {
