@@ -28,7 +28,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         for (int i = 1; i < npc.Length; i++)
         {
-           npc[i].SetActive(false);
+           npc[i].SetActive(isNpcActive);
         }
     }
 
