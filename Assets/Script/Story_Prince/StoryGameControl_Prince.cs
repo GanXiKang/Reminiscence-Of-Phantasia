@@ -26,7 +26,10 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     void StartNoNpc()
     {
-        
+        for (int i = 1; i < npc.Length; i++)
+        {
+           npc[i].SetActive(false);
+        }
     }
 
     void Update()
