@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class StoryGhostControl_Prince : MonoBehaviour
 {
+    public Transform originPoint;
     public Transform playerLeftPoint;
     public Transform playerRightPoint;
 
