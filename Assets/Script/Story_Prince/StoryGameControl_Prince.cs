@@ -17,10 +17,10 @@ public class StoryGameControl_Prince : MonoBehaviour
     [Header("Npc")]
     public GameObject[] npc;
     public static bool isNpcActive = false;
-    bool isNpcActiveTrueOnce = true;
 
     void Start()
     {
+        NpcActive();
         //StartCoroutine(GoToMenu());
     }
 
@@ -28,7 +28,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         MouseCursor();
         PlankActive();
-        NpcActive();
+
+        if (isNpcActive)
+        {
+            NpcActive();
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -69,14 +73,12 @@ public class StoryGameControl_Prince : MonoBehaviour
     }
     void NpcActive()
     {
-        if (!isNpcActiveTrueOnce) return;
-
         for (int i = 1; i < npc.Length; i++)
         {
             npc[i].SetActive(isNpcActive);
         }
-        if (isNpcActiveTrueOnce && isNpcActive)
-            isNpcActiveTrueOnce = false;
+        if (isNpcActive)
+            isNpcActive = false;
         print("1");
     }
 
