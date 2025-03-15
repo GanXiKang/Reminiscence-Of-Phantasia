@@ -21,26 +21,14 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     void Start()
     {
-        StartNoNpc();
         //StartCoroutine(GoToMenu());
-    }
-
-    void StartNoNpc()
-    {
-        if (!isNpcActiveTrueOnce) return;
-
-        for (int i = 1; i < npc.Length; i++)
-        {
-            npc[i].SetActive(isNpcActive);
-            if (isNpcActiveTrueOnce && isNpcActive)
-                isNpcActiveTrueOnce = false;
-        }
     }
 
     void Update()
     {
         MouseCursor();
         PlankActive();
+        NpcActive();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -78,6 +66,17 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         //if (//救王子的時候)
         //    plank.SetActive(true);
+    }
+    void NpcActive()
+    {
+        if (!isNpcActiveTrueOnce) return;
+
+        for (int i = 1; i < npc.Length; i++)
+        {
+            npc[i].SetActive(isNpcActive);
+            if (isNpcActiveTrueOnce && isNpcActive)
+                isNpcActiveTrueOnce = false;
+        }
     }
 
     //IEnumerator GoToMenu()
