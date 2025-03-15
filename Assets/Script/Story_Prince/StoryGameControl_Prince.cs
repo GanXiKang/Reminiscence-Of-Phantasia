@@ -79,7 +79,6 @@ public class StoryGameControl_Prince : MonoBehaviour
         }
         if (isNpcActive)
             isNpcActive = false;
-        print("1");
     }
 
     //IEnumerator GoToMenu()
