@@ -18,6 +18,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     public GameObject[] npc;
     public static bool isNpcActive = false;
 
+    [Header("Scene")]
+    public GameObject now;
+    public GameObject past;
+    public GameObject future;
+
     void Start()
     {
         NpcActive();
