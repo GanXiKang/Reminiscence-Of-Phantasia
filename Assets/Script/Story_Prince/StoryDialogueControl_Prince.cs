@@ -318,7 +318,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isSad = true;
                 break;
 
-            case 3:
             case 4:
             case 5:
             case 17:
@@ -332,6 +331,11 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 37:
             case 90:
                 StoryPlayerControl.isHappy = true;
+                break;
+
+            case 3:
+                StoryGhostControl_Prince.isWarp = true;
+                StoryPlayerControl.isSurprised = true;
                 break;
 
             case 7:
@@ -427,10 +431,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 79:
             case 80:
                 StoryPlayerControl.isHappy = true;
-                break;
-
-            case 3:
-                //幽靈離開
                 break;
 
             case 4:
