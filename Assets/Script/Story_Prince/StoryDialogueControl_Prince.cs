@@ -333,6 +333,21 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isHappy = true;
                 break;
 
+            case 2:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
             case 3:
                 StoryGhostControl_Prince.isWarp = true;
                 StoryPlayerControl.isSurprised = true;
