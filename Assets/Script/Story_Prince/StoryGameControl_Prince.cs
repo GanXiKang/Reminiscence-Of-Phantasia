@@ -32,7 +32,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         MouseCursor();
         PlankActive();
-        NpcActive();
+        NpcPrinceActive();
 
         if (isPlotNpcActive)
         {
@@ -76,9 +76,9 @@ public class StoryGameControl_Prince : MonoBehaviour
         //if (//救王子的時候)
         //    plank.SetActive(true);
     }
-    void NpcActive()
+    void NpcPrinceActive()
     {
-        npc[2]
+        npc[2].SetActive(past.activeSelf);
     }
     void PlotNpcActive()
     {
