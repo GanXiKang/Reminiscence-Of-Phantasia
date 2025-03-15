@@ -20,7 +20,13 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     void Start()
     {
+        StartNoNpc();
         //StartCoroutine(GoToMenu());
+    }
+
+    void StartNoNpc()
+    {
+        
     }
 
     void Update()
