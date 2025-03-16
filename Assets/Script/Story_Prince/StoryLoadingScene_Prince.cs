@@ -85,5 +85,24 @@ public class StoryLoadingScene_Prince : MonoBehaviour
         now.SetActive(isNowScene);
         past.SetActive(isPastScene);
         future.SetActive(isFutureScene);
+
+        if (isNowScene)
+        {
+            BGM.Stop();
+            BGM.clip = nowBGM;
+            BGM.Play();
+        }
+        else if (isPastScene)
+        {
+            BGM.Stop();
+            BGM.clip = pastBGM;
+            BGM.Play();
+        }
+        else if (isFutureScene)
+        {
+            BGM.Stop();
+            BGM.clip = futureBGM;
+            BGM.Play();
+        }
     }
 }
