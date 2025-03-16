@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class StoryGhostControl_Prince : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip warp;
+    bool isWarpOnce = true;
+
+    [Header("Transform")]
     public Transform originPoint;
     public Transform playerLeftPoint;
     public Transform playerRightPoint;
@@ -36,6 +42,12 @@ public class StoryGhostControl_Prince : MonoBehaviour
         if (!isWarp) return;
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        if (isWarpOnce)
+        {
+            BGM.PlayOneShot(warp);
+            isWarpOnce = false;
+        }
 
         _directionGhost = StoryPlayerControl._direction;
         if (_directionGhost == 0)
@@ -75,6 +87,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
         if (stateInfo.IsName("Empty"))
         {
             isDisappear = false;
+            isWarpOnce = true;
             gameObject.transform.position = originPoint.position;
         }
     }
