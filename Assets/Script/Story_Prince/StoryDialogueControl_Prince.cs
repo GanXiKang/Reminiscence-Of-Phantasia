@@ -10,7 +10,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip normalMusia, spikedMusia;
-    public AudioClip give;
+    public AudioClip give, gainEnergy;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -357,7 +357,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
-                        //獲得善能
+                        BGM.PlayOneShot(gainEnergy);
                         _countEvent++;
                         break;
 
@@ -466,7 +466,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 15:
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
-                    //壞結束
+                    //壞結局
                     StoryInteractableControl_Prince.isTakeGem = false;
                     BlackScreenControl.isOpenBlackScreen = true;
                     StoryPlayerControl.isSad = true;
@@ -502,7 +502,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 85:
             case 86:
                 StoryPlayerControl.isHappy = true;
-                //獲得善能
+                BGM.PlayOneShot(gainEnergy);
                 break;
         }
     }
