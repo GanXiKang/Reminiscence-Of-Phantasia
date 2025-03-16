@@ -35,6 +35,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     //Plot
     bool isFirstUse = true;
     bool isRecoverEnergy;
+    public static bool isGainEnegry = false;
     public static bool isFirstBackNow = false;
     public static int _goPast = 0;
 
@@ -45,6 +46,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         CheckCurrentZone();
         Energy();
         FirstUseRecoverEnergy();
+        GainEnegry();
     }
 
     void ObjectActive()
@@ -220,6 +222,13 @@ public class StorySkillControl_Prince : MonoBehaviour
         _energyValue = Mathf.Lerp(_energyValue, 0.71f, Time.deltaTime * 0.5f);
         if (_energyValue >= 0.7f)
             isRecoverEnergy = false;
+    }
+    void GainEnegry()
+    {
+        if (!isGainEnegry) return;
+
+        _energyValue += 0.2f;
+        isGainEnegry = false;
     }
 
     public void Button_Time()
