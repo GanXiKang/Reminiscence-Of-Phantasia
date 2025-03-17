@@ -8,7 +8,6 @@ public class StoryGhostControl_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip warp;
-    bool isWarpOnce = true;
 
     [Header("Transform")]
     public Transform originPoint;
@@ -43,12 +42,6 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (isWarpOnce)
-        {
-            BGM.PlayOneShot(warp);
-            isWarpOnce = false;
-        }
-
         _directionGhost = StoryPlayerControl._direction;
         if (_directionGhost == 0)
             gameObject.transform.position = playerLeftPoint.position;
@@ -60,6 +53,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
             if (stateInfo.IsName("Normal"))
             {
                 isWarp = false;
+                BGM.PlayOneShot(warp);
                 if (_directionGhost == 0)
                     _directionGhost = 1;
                 else
@@ -71,6 +65,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
             if (stateInfo.IsName("NoGem"))
             {
                 isWarp = false;
+                BGM.PlayOneShot(warp);
                 if (_directionGhost == 0)
                     _directionGhost = 1;
                 else
