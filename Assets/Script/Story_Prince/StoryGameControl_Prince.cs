@@ -37,11 +37,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Update()
     {
         MouseCursor();
-        PlankActive();
         PlotNpcActive();
 
         npc[2].SetActive(past.activeSelf);
-
+        supplies_Now.SetActive(isSuppliesNowActive);
+        supplies_Past.SetActive(isSuppliesPastActive);
 
         //if (//救王子的時候)
         //    plank.SetActive(true);
