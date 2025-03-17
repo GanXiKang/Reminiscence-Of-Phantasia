@@ -25,7 +25,12 @@ public class StoryColliderControl_Prince : MonoBehaviour
 
                 case 2:
                 case 3:
-
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._textCount = 89;
+                    if (_whatCollider == 2)
+                        StorySuppliesGame_Prince.isEasy = true;
+                    else
+                        StorySuppliesGame_Prince.isDifficult = true;
                     break;
             }
         }
