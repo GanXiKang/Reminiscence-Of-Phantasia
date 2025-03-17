@@ -168,6 +168,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         case 10:
                         case 11:
                             StoryInteractableControl_Prince.isCanHelpPrince = true;
+                            StoryGameControl_Prince.isSuppliesPastActive = true;
                             break;
 
                         case 15:
