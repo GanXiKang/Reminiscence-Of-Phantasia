@@ -5,12 +5,22 @@ using UnityEngine.UI;
 
 public class StorySuppliesGame_Prince : MonoBehaviour
 {
-    private void OnEnable()
+    void OnEnable()
+    {
+        GameEnd();
+    }
+
+    void Update()
     {
         
     }
 
-    void Update()
+    void GameEnd()
+    {
+        StoryUIControl_Prince.isSuppliesActive = false;
+    }
+
+    void OnDisable()
     {
         
     }
