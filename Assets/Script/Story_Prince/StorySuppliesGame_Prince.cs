@@ -22,6 +22,13 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void OnDisable()
     {
-        
+        if (StoryGameControl_Prince.isSuppliesGameEasy)
+        {
+            
+        }
+        else if(StoryGameControl_Prince.isSuppliesGameHard)
+        {
+
+        }
     }
 }
