@@ -61,6 +61,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         return !isIncreasing &&
                !isReducing &&
                !isRecoverEnergy &&
+               !isChange &&
                !StoryLoadingScene_Prince.isOpen &&
                energyBar.fillAmount > 0;
     }
