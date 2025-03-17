@@ -26,8 +26,8 @@ public class StoryGameControl_Prince : MonoBehaviour
     [Header("SuppliesGame")]
     public GameObject supplies_Now;
     public GameObject supplies_Past;
-    public static bool isSuppliesNowActive = false;
-    public static bool isSuppliesPastActive = false;
+    public static bool isSuppliesGameEasy = false;
+    public static bool isSuppliesGameHard = false;
 
     void Start()
     {
@@ -40,8 +40,8 @@ public class StoryGameControl_Prince : MonoBehaviour
         PlotNpcActive();
 
         npc[2].SetActive(past.activeSelf);
-        supplies_Now.SetActive(isSuppliesNowActive);
-        supplies_Past.SetActive(isSuppliesPastActive);
+        supplies_Now.SetActive(isSuppliesGameHard);
+        supplies_Past.SetActive(isSuppliesGameEasy);
 
         //if (//救王子的時候)
         //    plank.SetActive(true);
