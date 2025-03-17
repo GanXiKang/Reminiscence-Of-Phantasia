@@ -26,7 +26,9 @@ public class StoryGameControl_Prince : MonoBehaviour
     [Header("SuppliesGame")]
     public GameObject supplies_Now;
     public GameObject supplies_Past;
-    
+    public static bool isSuppliesNowActive = false;
+    public static bool isSuppliesPastActive = false;
+
     void Start()
     {
         PlotNpcActive();
@@ -36,12 +38,13 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         MouseCursor();
         PlankActive();
-        NpcPrinceActive();
+        PlotNpcActive();
 
-        if (isPlotNpcActive)
-        {
-            PlotNpcActive();
-        }
+        npc[2].SetActive(past.activeSelf);
+
+
+        //if (//救王子的時候)
+        //    plank.SetActive(true);
     }
 
     void MouseCursor()
@@ -65,21 +68,15 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         isClick = false;
     }
-    void PlankActive()
-    {
-        //if (//救王子的時候)
-        //    plank.SetActive(true);
-    }
-    void NpcPrinceActive()
-    {
-        npc[2].SetActive(past.activeSelf);
-    }
     void PlotNpcActive()
     {
+        if (!isPlotNpcActive) return;
+
         for (int i = 3; i < npc.Length; i++)
         {
             npc[i].SetActive(isPlotNpcActive);
         }
+
         if (isPlotNpcActive)
             isPlotNpcActive = false;
     }
