@@ -23,6 +23,10 @@ public class StoryGameControl_Prince : MonoBehaviour
     public GameObject past;
     public GameObject future;
 
+    [Header("SuppliesGame")]
+    public GameObject supplies_Now;
+    public GameObject supplies_Past;
+    
     void Start()
     {
         PlotNpcActive();
