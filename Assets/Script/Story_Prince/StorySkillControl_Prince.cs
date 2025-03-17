@@ -25,11 +25,11 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("EnergyUI")]
     public Image energyBar;
     public static int _zoneNum;
-    float _energyValue = 1f;
-    float _rotation = 0.005f;
-    float _smallArea = 0.1f;
-    float _largeArea = 0.15f;
-    float _nowArea = 0.05f;
+    float _energyValue = 0.7f;
+    float _rotation = 0.008f;
+    float _smallArea = 0.03f;
+    float _largeArea = 0.05f;
+    float _nowArea = 0.01f;
     bool isEnergyConsume = false;
 
     //Plot
@@ -42,6 +42,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     void Update()
     {
         ObjectActive();
+        KeyButton();
         ClockRotating();
         CheckCurrentZone();
         Energy();
@@ -63,6 +64,13 @@ public class StorySkillControl_Prince : MonoBehaviour
                energyBar.fillAmount > 0;
     }
 
+    void KeyButton()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && !isDisabledClock)
+        {
+            Button_ClockActive();
+        }
+    }
     void ClockRotating()
     {
         if (!isRotating) return;
@@ -200,8 +208,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             StoryLoadingScene_Prince.isOpen = true;
             if (isFirstUse)
             {
-                if (_energyValue < 0.7f)
-                    isRecoverEnergy = true;
+                isRecoverEnergy = true;
                 StoryUIControl_Prince.isDialogue = true;
                 StoryDialogueControl_Prince._isAboveWho1 = 1;
                 StoryDialogueControl_Prince._textCount = 5;
@@ -219,15 +226,15 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (!isRecoverEnergy) return;
 
-        _energyValue = Mathf.Lerp(_energyValue, 0.71f, Time.deltaTime * 0.5f);
-        if (_energyValue >= 0.7f)
+        _energyValue = Mathf.Lerp(_energyValue, 0.31f, Time.deltaTime * 0.5f);
+        if (_energyValue >= 0.3f)
             isRecoverEnergy = false;
     }
     void GainEnegry()
     {
         if (!isGainEnegry) return;
 
-        _energyValue += 0.2f;
+        _energyValue += 0.02f;
         isGainEnegry = false;
     }
 
