@@ -176,7 +176,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                             break;
 
                         case 89:
-                            //開始物資玩法
+                            StoryUIControl_Prince.isSuppliesActive = true;
                             break;
                     }
                 }
