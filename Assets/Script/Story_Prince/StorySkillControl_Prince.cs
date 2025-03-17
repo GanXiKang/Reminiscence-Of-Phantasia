@@ -61,6 +61,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         return !isIncreasing &&
                !isReducing &&
                !isRecoverEnergy &&
+               !StoryLoadingScene_Prince.isLoading &&
                energyBar.fillAmount > 0;
     }
 
@@ -226,8 +227,8 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (!isRecoverEnergy) return;
 
-        _energyValue = Mathf.Lerp(_energyValue, 0.31f, Time.deltaTime * 0.5f);
-        if (_energyValue >= 0.3f)
+        _energyValue = Mathf.Lerp(_energyValue, 0.71f, Time.deltaTime * 0.5f);
+        if (_energyValue >= 0.7f)
             isRecoverEnergy = false;
     }
     void GainEnegry()
