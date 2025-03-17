@@ -9,6 +9,9 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     [Header("Npc")]
     public int _who;
 
+    //07Kang
+    public static bool isFindGem = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -23,7 +26,8 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     {
         switch (_who)
         {
-            case 1:
+            case 7:
+                anim.SetBool("isFindGem", isFindGem);
                 break;
         }
     }
