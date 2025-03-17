@@ -22,6 +22,11 @@ public class StoryColliderControl_Prince : MonoBehaviour
                         StoryDialogueControl_Prince._textCount = 9;
                     }
                     break;
+
+                case 2:
+                case 3:
+
+                    break;
             }
         }
     }
