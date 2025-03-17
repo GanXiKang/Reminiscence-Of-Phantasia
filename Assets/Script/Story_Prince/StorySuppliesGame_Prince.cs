@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class StorySuppliesGame_Prince : MonoBehaviour
 {
-    //GameMode
-    public static bool isEasy = false;
-    public static bool isDifficult = false;
+    public enum GameMode { Easy, Hard }
+    public static GameMode currentMode;
 
     void Start()
     {
