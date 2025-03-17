@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class StorySuppliesGame_Prince : MonoBehaviour
 {
-
-    void Start()
+    private void OnEnable()
     {
         
     }
