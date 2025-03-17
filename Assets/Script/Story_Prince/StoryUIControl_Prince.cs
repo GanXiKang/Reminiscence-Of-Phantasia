@@ -29,7 +29,7 @@ public class StoryUIControl_Prince : MonoBehaviour
         dialogueUI.SetActive(isDialogue);
         storyUI.SetActive(isStoryStart || isStoryEnding);
         skillUI.SetActive(isSkillActive);
-        suppliesUI.SetActive(isSkillActive);
+        suppliesUI.SetActive(isSuppliesActive);
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
     }
 }
