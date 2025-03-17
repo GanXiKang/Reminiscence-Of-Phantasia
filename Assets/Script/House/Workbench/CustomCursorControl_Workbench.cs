@@ -13,11 +13,14 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     public Texture2D pencil2;
     public Texture2D glue1;
     public Texture2D glue2;
+    public Texture2D interactable1;
+    public Texture2D interactable2;
     public Vector2 hotSpot = Vector2.zero; 
     bool isStamp = false;
     bool isScissors = false;
     bool isPencil = false;
     bool isGlue = false;
+    bool isClick = false;
     bool isAnim = false;
 
     [Header("Object")]
@@ -99,7 +102,20 @@ public class CustomCursorControl_Workbench : MonoBehaviour
         }
         else
         {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            if (isClick)
+            {
+                Cursor.SetCursor(interactable2, hotSpot, CursorMode.Auto);
+            }
+            else
+            {
+                Cursor.SetCursor(interactable1, hotSpot, CursorMode.Auto);
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                isClick = true;
+                Invoke("FalseisClick", 0.5f);
+            }
         }
     }
 
@@ -111,6 +127,10 @@ public class CustomCursorControl_Workbench : MonoBehaviour
         Vector3 newPosition = new Vector3(worldPosition.x, objectToMove.transform.position.y, worldPosition.z);
 
         objectToMove.transform.position = Vector3.Lerp(objectToMove.transform.position, newPosition, Time.deltaTime * 10f);
+    }
+    void FalseisClick()
+    {
+        isClick = false;
     }
 
     IEnumerator ScissorsAnimation()
