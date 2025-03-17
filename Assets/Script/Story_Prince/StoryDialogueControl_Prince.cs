@@ -173,11 +173,24 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         case 15:
                             StoryInteractableControl_Prince.isTakeGem = true;
                             break;
+
+                        case 89:
+                            //開始物資玩法
+                            break;
                     }
                 }
                 else if (_chooseNum == 2)
                 {
-                    JumpToSection("B");
+                    switch (_textCount)
+                    {
+                        case 89:
+                            JumpToSection("A");
+                            break;
+
+                        default:
+                            JumpToSection("B");
+                            break;
+                    }
                 }
                 else if (_chooseNum == 3)
                 {
