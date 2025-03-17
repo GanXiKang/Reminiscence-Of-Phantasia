@@ -37,7 +37,9 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Update()
     {
         MouseCursor();
-        PlotNpcActive();
+
+        if (isPlotNpcActive)
+            PlotNpcActive();
 
         npc[2].SetActive(past.activeSelf);
         supplies_Now.SetActive(isSuppliesGameHard && !StoryUIControl_Prince.isSuppliesActive);
@@ -70,8 +72,6 @@ public class StoryGameControl_Prince : MonoBehaviour
     }
     void PlotNpcActive()
     {
-        if (!isPlotNpcActive) return;
-
         for (int i = 3; i < npc.Length; i++)
         {
             npc[i].SetActive(isPlotNpcActive);
