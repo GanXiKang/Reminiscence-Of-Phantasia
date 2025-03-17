@@ -25,10 +25,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (StoryGameControl_Prince.isSuppliesGameEasy)
         {
             StoryNpcAnimator_Prince.isFindGem = true;
+            StoryGameControl_Prince.isSuppliesGameEasy = false;
         }
         else if(StoryGameControl_Prince.isSuppliesGameHard)
         {
-
+            StoryGameControl_Prince.isSuppliesGameHard = false;
         }
     }
 }
