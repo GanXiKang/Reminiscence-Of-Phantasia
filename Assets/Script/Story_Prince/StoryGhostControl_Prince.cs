@@ -92,6 +92,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
         if (stateInfo.IsName("Empty"))
         {
             isDisappear = false;
+            isFirstWarp = false;
             gameObject.transform.position = originPoint.position;
         }
     }
