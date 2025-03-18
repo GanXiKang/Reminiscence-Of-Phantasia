@@ -6635,6 +6635,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _whatCollider: 2
+--- !u!1 &484544775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484544776}
+  m_Layer: 0
+  m_Name: GhostPrinceStatuePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484544776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484544775}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06, y: 0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1930360018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &493664866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16923,7 +16954,7 @@ GameObject:
   m_Layer: 0
   m_Name: GhostRightPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -22673,7 +22704,7 @@ MonoBehaviour:
   setting: {fileID: 1494373707}
   background: {fileID: 750797685}
   settingPage: {fileID: 21300000, guid: f7354528a3b6fc045b0dfb9b2cbc6ea6, type: 3}
-  operatePage: {fileID: 21300000, guid: 6f72c0140ab741845a7add92dd2e8a57, type: 3}
+  operatePage: {fileID: 21300000, guid: 2ec996c0eada3ab4281df0a0a49a18ab, type: 3}
   sliderBGM: {fileID: 174163229}
   fullScreen: {fileID: 844069955}
 --- !u!4 &1207414326
@@ -26482,6 +26513,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 479157465}
+    - targetCorrespondingSourceObject: {fileID: 533193074659131909, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484544776}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -3133498875991405556, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
       insertIndex: -1
