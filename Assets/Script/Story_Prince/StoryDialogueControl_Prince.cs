@@ -478,6 +478,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StorySkillControl_Prince.isDisabledClock = false;
                 break;
 
+            case 7:
+                //Swallow離開
+                break;
+
             case 15:
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
