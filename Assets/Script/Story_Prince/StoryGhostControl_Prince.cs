@@ -11,11 +11,13 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
     [Header("Transform")]
     public Transform originPoint;
+    public Transform princeStatuePoint;
     public Transform playerLeftPoint;
     public Transform playerRightPoint;
 
     Animator anim;
     float _directionGhost;
+    bool isFirstWarp = true;
     public static bool isWarp = false;
     public static bool isNoGem = false;
     public static bool isDisappear = false;
@@ -42,11 +44,19 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        _directionGhost = StoryPlayerControl._direction;
-        if (_directionGhost == 0)
-            gameObject.transform.position = playerLeftPoint.position;
+        if (!isFirstWarp)
+        {
+            _directionGhost = StoryPlayerControl._direction;
+            if (_directionGhost == 0)
+                gameObject.transform.position = playerLeftPoint.position;
+            else
+                gameObject.transform.position = playerRightPoint.position;
+        }
         else
-            gameObject.transform.position = playerRightPoint.position;
+        {
+            _directionGhost = 1;
+            gameObject.transform.position = princeStatuePoint.position;
+        }
 
         if (!isNoGem)
         {
