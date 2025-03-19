@@ -29,6 +29,10 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     {
         switch (_who)
         {
+            case 2:
+
+                break;
+
             case 4:
                 anim.SetBool("isWalk", isWalk_Swallow);
                 anim.SetBool("isFindFood", isFindFood);
