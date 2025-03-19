@@ -168,7 +168,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         case 10:
                         case 11:
                             StoryInteractableControl_Prince.isCanHelpPrince = true;
-                            StoryGameControl_Prince.isSuppliesGameEasy = true;
                             break;
 
                         case 15:
@@ -487,6 +486,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 11:
                 if (StoryInteractableControl_Prince.isCanHelpPrince)
                 {
+                    StoryGameControl_Prince.isSuppliesGameEasy = true;
                     StoryNpcAnimator_Prince.isWalk_Prince = true;
                     StoryNpcAnimator_Prince.isLeaveHelp = true;
                 }
