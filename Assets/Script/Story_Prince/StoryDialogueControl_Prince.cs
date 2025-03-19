@@ -483,6 +483,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryNpcAnimator_Prince.isFindFood = true;
                 break;
 
+            case 10:
+            case 11:
+                if (StoryInteractableControl_Prince.isCanHelpPrince)
+                { }
+                    //王子離開
+                break;
+
             case 15:
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
