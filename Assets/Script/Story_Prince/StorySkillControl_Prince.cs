@@ -217,11 +217,6 @@ public class StorySkillControl_Prince : MonoBehaviour
                 isDisabledClock = true;
                 isFirstUse = false;
             }
-            if (isFirstBackNow)
-            {
-                StoryGameControl_Prince.isPlotNpcActive = true;
-                isFirstBackNow = false;
-            }
         }
     }
     void FirstUseRecoverEnergy()

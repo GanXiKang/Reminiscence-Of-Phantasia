@@ -79,6 +79,11 @@ public class StoryLoadingScene_Prince : MonoBehaviour
     {
         ChangeScene();
         isClose = true;
+        if (StorySkillControl_Prince.isFirstBackNow)
+        {
+            StoryGameControl_Prince.isPlotNpcActive = true;
+            StorySkillControl_Prince.isFirstBackNow = false;
+        }
     }
     void ChangeScene() 
     {
