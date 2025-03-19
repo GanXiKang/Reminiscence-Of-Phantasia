@@ -486,8 +486,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 10:
             case 11:
                 if (StoryInteractableControl_Prince.isCanHelpPrince)
-                { }
-                    //王子離開
+                {
+                    StoryNpcAnimator_Prince.isWalk_Prince = true;
+                    StoryNpcAnimator_Prince.isLeaveHelp = true;
+                }
                 break;
 
             case 15:
