@@ -29,6 +29,14 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
             case 7:
                 anim.SetBool("isFindGem", isFindGem);
                 break;
+
+            case 8:
+                anim.SetBool("isNormal", StoryInteractableControl_Prince.isPrinceNoDie);
+                break;
+
+            case 10:
+                anim.SetBool("isHappy", StoryInteractableControl_Prince.isPrinceNoDie);
+                break;
         }
     }
 }
