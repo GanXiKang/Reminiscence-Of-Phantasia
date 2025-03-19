@@ -125,9 +125,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
         interactableUI.SetActive(isInteractableUI);
 
         if (StoryUIControl_Girl.isDialogue)
-        {
             isInteractableUI = false;
-        }
        
         if (!isInteractableUI) return;
 
