@@ -162,7 +162,10 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             case 4:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "姿裴絲";
+                    if (isSwallowFindPrince)
+                        interactableName.text = "？";
+                    else
+                        interactableName.text = "姿裴絲";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
