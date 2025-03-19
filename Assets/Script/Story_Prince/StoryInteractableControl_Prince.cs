@@ -840,7 +840,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         if (SettingControl.isSettingActive) return;
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
-        if (_who != 3 && _who != 15 && _who != 16)
+        if (_who != 3 && _who != 15 && _who != 16 && _who != 24)
         {
             if (currentCoroutine != null)
             {
