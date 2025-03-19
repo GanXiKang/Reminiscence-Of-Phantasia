@@ -479,7 +479,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 7:
-                //Swallow離開
+                StoryNpcAnimator_Prince.isFindFood = true;
                 break;
 
             case 15:
