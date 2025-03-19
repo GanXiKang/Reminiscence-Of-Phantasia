@@ -9,6 +9,9 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     [Header("Npc")]
     public int _who;
 
+    //04Swallow
+    public static bool isWalk = false;
+    public static bool isFindFood = false;
     //07Kang
     public static bool isFindGem = false;
 
@@ -26,6 +29,10 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     {
         switch (_who)
         {
+            case 4:
+                anim.SetBool("isFindFood", isFindFood);
+                break;
+
             case 7:
                 anim.SetBool("isFindGem", isFindGem);
                 break;
