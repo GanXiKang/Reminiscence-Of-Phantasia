@@ -738,6 +738,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf695536922ef5642817fee0f64bf7d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 28899656}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf695536922ef5642817fee0f64bf7d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 28899659}
   m_SourcePrefab: {fileID: 100100000, guid: cf695536922ef5642817fee0f64bf7d4, type: 3}
 --- !u!4 &28899654 stripped
 Transform:
@@ -770,6 +773,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.023893584, y: 0.008769297, z: 0.070685305}
   m_Center: {x: 0.000000007571104, y: 0.00000003825351, z: 0.028705047}
+--- !u!114 &28899659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28899655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b967c884480289438767160ce16f687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 1836693494}
+  pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
+  get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
+  _snapDistance: 12
+  _scaleSpeed: 20
+  interactableUI: {fileID: 1397862595}
+  interactableName: {fileID: 1923290708}
+  _who: 24
+  isGive: 0
+  _giveItemNumber: 
+  isGet: 0
+  _getItemNumber: 
+  isExchange: 0
+  _exchangeItemNumber: 
+  moveItemUI: {fileID: 1236206427}
+  bagUIPosition: {fileID: 2001287592}
+  skillUIPosition: {fileID: 1592127918}
+  effects: {fileID: 0}
 --- !u!1001 &39616106
 PrefabInstance:
   m_ObjectHideFlags: 0
