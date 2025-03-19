@@ -53,7 +53,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
             {
                 isOpen = false;
                 StorySkillControl_Prince.isClockActice = false;
-                Invoke("WaitCloseLoading", 0.5f);
+                Invoke("WaitCloseLoading", 1f);
             }
         }
         if (isClose)
