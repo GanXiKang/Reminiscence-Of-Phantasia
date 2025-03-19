@@ -121,9 +121,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
         interactableUI.SetActive(isInteractableUI);
 
         if (StoryUIControl_Prince.isDialogue)
-        {
             isInteractableUI = false;
-        }
 
         if (!isInteractableUI) return;
 
