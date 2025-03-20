@@ -21,6 +21,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     float _currentTime = 0f;
     float _duration = 3f;
     float _maxRotationSpeed = 270f;
+    float _onClickCount = 0;
 
     [Header("EnergyUI")]
     public Image energyBar;
@@ -68,7 +69,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     void KeyButton()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isDisabledClock)
+        if (Input.GetKeyDown(KeyCode.E) && !isDisabledClock && skillClock.gameObject.activeSelf)
         {
             Button_ClockActive();
         }
@@ -253,7 +254,27 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     public void Button_ClockActive()
     {
-        if (!StoryUIControl_Prince.isDialogue)
-            isClockActice = !isClockActice;
+        if (StoryUIControl_Prince.isDialogue) return;
+
+        _onClickCount++;
+        switch (_onClickCount)
+        {
+            case 1:
+                isClockActice = true;
+                break;
+
+            default:
+                if (!isClockActice)
+                {
+                    StoryGhostControl_Prince.isWarp = true;
+                    StoryGhostControl_Prince.isWatchSkill = true;
+                }
+                else
+                {
+                    isClockActice = false;
+                }
+                break;
+        }
+        
     }
 }
