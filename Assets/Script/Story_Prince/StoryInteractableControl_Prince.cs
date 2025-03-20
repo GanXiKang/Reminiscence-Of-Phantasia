@@ -62,8 +62,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
     //02Prince
     public static bool isCanHelpPrince = false;
-    public static bool isListenForHelp = false;
     public static bool isPrinceNoDie = false;
+    public static int isHelpChildQian = 0;
     //03PrinceStatue
     public static bool isSwallowFindPrince = false;
     public static bool isKangNeedGem = false;
@@ -525,9 +525,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 11;
                             }
-                            if (isListenForHelp)
+                            if (isHelpChildQian == 1)
                             {
-                                isListenForHelp = false;
+                                isHelpChildQian++;
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._isAboveWho2 = 13;
