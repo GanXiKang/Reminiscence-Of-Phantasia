@@ -29,6 +29,10 @@ public class StoryGameControl_Prince : MonoBehaviour
     public static bool isSuppliesGameEasy = false;
     public static bool isSuppliesGameHard = false;
 
+    [Header("WoodFence")]
+    public GameObject woodFence;
+    public GameObject woodFence_Bad;
+
     void Start()
     {
         PlotNpcActive();
@@ -46,8 +50,17 @@ public class StoryGameControl_Prince : MonoBehaviour
         supplies_Now.SetActive(isSuppliesGameHard && !StoryUIControl_Prince.isSuppliesActive);
         supplies_Past.SetActive(isSuppliesGameEasy && !StoryUIControl_Prince.isSuppliesActive);
 
-        //if (//救王子的時候)
-        //    plank.SetActive(true);
+        switch (StoryInteractableControl_Prince._HelpChildQian)
+        {
+            case 1:
+                woodFence.SetActive(false);
+                woodFence_Bad.SetActive(true);
+                break;
+
+            //case 3:
+            //    plank.SetActive(true);
+            //    break;
+        }
     }
 
     void MouseCursor()
