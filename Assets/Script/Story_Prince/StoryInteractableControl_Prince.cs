@@ -62,6 +62,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
     //02Prince
     public static bool isCanHelpPrince = false;
+    public static bool isListenForHelp = false;
     public static bool isPrinceNoDie = false;
     //03PrinceStatue
     public static bool isSwallowFindPrince = false;
@@ -524,6 +525,14 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 11;
                             }
+                            if (isListenForHelp)
+                            {
+                                isListenForHelp = false;
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._isAboveWho2 = 13;
+                                StoryDialogueControl_Prince._textCount = 23;
+                            }
                             if (StoryGardenControl_Prince.isCherryTree)
                             {
                                 StoryUIControl_Prince.isDialogue = true;
@@ -712,6 +721,15 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             StoryDialogueControl_Prince._isAboveWho1 = _who;
                             StoryDialogueControl_Prince._textCount = 45;
                             break;
+                    }
+                    break;
+
+                case 15:
+                    if (!StoryGardenControl_Prince.isPlanting && StoryBagControl.isItemNumber[12] && StoryBagControl.isItemNumber[13])
+                    {
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 34;
                     }
                     break;
 
