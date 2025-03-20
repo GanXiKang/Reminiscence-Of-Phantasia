@@ -52,7 +52,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         switch (StoryInteractableControl_Prince._HelpChildQian)
         {
-            case 1:
+            case 2:
                 woodFence.SetActive(false);
                 woodFence_Bad.SetActive(true);
                 break;
