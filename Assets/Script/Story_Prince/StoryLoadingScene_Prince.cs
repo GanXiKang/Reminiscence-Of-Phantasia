@@ -72,6 +72,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
 
                 if (StorySkillControl_Prince._goPast == 1)
                 {
+                    StorySkillControl_Prince._goPast++;
                     StoryUIControl_Prince.isDialogue = true;
                     StoryDialogueControl_Prince._textCount = 8;
                 }
