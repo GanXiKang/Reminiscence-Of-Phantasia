@@ -36,6 +36,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
             case 2:
                 anim.SetBool("isWalk", isWalk_Prince);
                 anim.SetBool("isLeaveHelp", isLeaveHelp);
+                anim.SetInteger("HelpChildQian", StoryInteractableControl_Prince._HelpChildQian);
                 break;
 
             case 4:
@@ -45,7 +46,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
 
             case 7:
                 anim.SetBool("isFindGem", isFindGem);
-                anim.SetBone("isLeave", isLeave_Kang);
+                anim.SetBool("isLeave", isLeave_Kang);
                 break;
 
             case 8:
