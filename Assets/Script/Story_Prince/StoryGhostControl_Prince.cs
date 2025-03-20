@@ -68,6 +68,13 @@ public class StoryGhostControl_Prince : MonoBehaviour
                     _directionGhost = 1;
                 else
                     _directionGhost = 0;
+
+                if (isWatchSkill)
+                {
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._isAboveWho1 = 1;
+                    StoryDialogueControl_Prince._textCount = 16;
+                }
             }
         }
         else
@@ -80,6 +87,13 @@ public class StoryGhostControl_Prince : MonoBehaviour
                     _directionGhost = 1;
                 else
                     _directionGhost = 0;
+
+                if (isWatchSkill)
+                {
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._isAboveWho1 = 1;
+                    StoryDialogueControl_Prince._textCount = 16;
+                }
             }
         }
     }
