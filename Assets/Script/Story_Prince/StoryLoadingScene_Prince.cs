@@ -67,7 +67,9 @@ public class StoryLoadingScene_Prince : MonoBehaviour
                 isPlayMusiaOnce = true;
                 isClose = false;
                 isLoading = false;
-                StoryGhostControl_Prince.isDisappear = true;
+                if (StoryGhostControl_Prince.isWatchSkill)
+                    StoryGhostControl_Prince.isDisappear = true;
+
                 if (StorySkillControl_Prince._goPast == 1)
                 {
                     StoryUIControl_Prince.isDialogue = true;
