@@ -183,6 +183,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 {
                     switch (_textCount)
                     {
+                        case 11:
                         case 89:
                             JumpToSection("A");
                             break;
