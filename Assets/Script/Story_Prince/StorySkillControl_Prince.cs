@@ -271,6 +271,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             else
             {
                 isClockActice = false;
+                StoryGhostControl_Prince.isDisappear = true;
             }
         }
     }
