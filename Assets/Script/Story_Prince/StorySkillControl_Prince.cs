@@ -69,7 +69,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     void KeyButton()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isDisabledClock && skillClock.gameObject.activeSelf)
+        if (Input.GetKeyDown(KeyCode.E) && !isDisabledClock && StoryUIControl_Prince.isSkillActive)
         {
             Button_ClockActive();
         }
