@@ -17,6 +17,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     public static bool isFindFood = false;
     //07Kang
     public static bool isFindGem = false;
+    public static bool isLeave_Kang = false;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
 
             case 7:
                 anim.SetBool("isFindGem", isFindGem);
+                anim.SetBone("isLeave", isLeave_Kang);
                 break;
 
             case 8:
