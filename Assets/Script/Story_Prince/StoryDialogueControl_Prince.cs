@@ -539,12 +539,11 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 22:
                 StoryInteractableControl_Prince._HelpChildQian = 1;
-                //王子出現
                 StoryNpcAnimator_Prince.isLeave_Kang = true;
                 break;
 
             case 23:
-                //王子來到河邊
+                StoryInteractableControl_Prince._HelpChildQian = 2;
                 //小女孩落水
                 break;
 
