@@ -16269,6 +16269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 995875921}
+  - component: {fileID: 995875922}
   m_Layer: 0
   m_Name: GhostLeftPoint
   m_TagString: Untagged
@@ -16291,6 +16292,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1798176896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &995875922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995875920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &998913525
 GameObject:
   m_ObjectHideFlags: 0
@@ -17091,6 +17113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090854208}
+  - component: {fileID: 1090854209}
   m_Layer: 0
   m_Name: GhostRightPoint
   m_TagString: Untagged
@@ -17113,6 +17136,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1798176896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1090854209
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090854207}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1091563815 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4810278497401386204, guid: e45eb10f222958d4bbe3c1ef0069bc77, type: 3}
