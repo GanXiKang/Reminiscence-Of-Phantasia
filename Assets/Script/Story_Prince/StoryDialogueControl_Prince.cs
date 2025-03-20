@@ -478,7 +478,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 7:
-                StoryNpcAnimator_Prince.isWalk_Swallow = true;
                 StoryNpcAnimator_Prince.isFindFood = true;
                 break;
 
@@ -486,8 +485,8 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 11:
                 if (StoryInteractableControl_Prince.isCanHelpPrince)
                 {
+                    StoryTeachControl.isTeachActive = true;
                     StoryGameControl_Prince.isSuppliesGameEasy = true;
-                    StoryNpcAnimator_Prince.isWalk_Prince = true;
                     StoryNpcAnimator_Prince.isLeaveHelp = true;
                 }
                 break;
