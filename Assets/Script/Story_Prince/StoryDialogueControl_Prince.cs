@@ -385,8 +385,19 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 15:
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
-                    //雕像破敗 
-                    StoryPlayerControl.isSurprised = true;
+                    switch (_countEvent)
+                    {
+                        case 0:
+                            //雕像破敗 
+                            StoryPlayerControl.isSurprised = true;
+                            _countEvent++;
+                            break;
+
+                        case 1:
+                            StoryGhostControl_Prince.isWarp = true;
+                            _countEvent = 0;
+                            break;
+                    }
                 }
                 else
                 {
@@ -394,6 +405,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     {
                         case 0:
                             StoryPlayerControl.isSad = true;
+                            StoryGhostControl_Prince.isWarp = true;
                             _countEvent++;
                             break;
 
@@ -496,11 +508,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 {
                     //壞結局
                     StoryInteractableControl_Prince.isTakeGem = false;
+                    StoryGhostControl_Prince.isDisappear = true;
                     BlackScreenControl.isOpenBlackScreen = true;
                     StoryPlayerControl.isSad = true;
                 }
                 else
                 {
+                    StoryGhostControl_Prince.isDisappear = true;
                     StoryInteractableControl_Prince.isKangNeedGem = false;
                 }
                 break;
