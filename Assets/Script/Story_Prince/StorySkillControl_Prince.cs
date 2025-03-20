@@ -254,6 +254,8 @@ public class StorySkillControl_Prince : MonoBehaviour
     public void Button_ClockActive()
     {
         if (StoryUIControl_Prince.isDialogue) return;
+        if (StoryGhostControl_Prince.isWarp) return;
+        if (StoryGhostControl_Prince.isDisappear) return;
 
         if (isFirstUse)
         {
