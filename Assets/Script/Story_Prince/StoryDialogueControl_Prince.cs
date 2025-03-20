@@ -506,6 +506,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 break;
 
+            case 16:
+                StorySkillControl_Prince.isClockActice = true;
+                break;
+
             case 17:
                 BGM.PlayOneShot(give);
                 StoryInteractableControl_Prince.isGiveItem = true;
