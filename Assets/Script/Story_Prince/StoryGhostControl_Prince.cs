@@ -14,10 +14,10 @@ public class StoryGhostControl_Prince : MonoBehaviour
     public Transform princeStatuePoint;
     public Transform playerLeftPoint;
     public Transform playerRightPoint;
+    public static bool isWatchSkill = false;
 
     Animator anim;
     float _directionGhost;
-    bool isFirstWarp = true;
     public static bool isWarp = false;
     public static bool isNoGem = false;
     public static bool isDisappear = false;
@@ -44,7 +44,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (!isFirstWarp)
+        if (isWatchSkill)
         {
             _directionGhost = StoryPlayerControl._direction;
             if (_directionGhost == 0)
@@ -92,7 +92,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
         if (stateInfo.IsName("Empty"))
         {
             isDisappear = false;
-            isFirstWarp = false;
+            isWatchSkill = false;
             gameObject.transform.position = originPoint.position;
         }
     }
