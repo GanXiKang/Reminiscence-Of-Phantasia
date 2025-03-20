@@ -63,7 +63,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     //02Prince
     public static bool isCanHelpPrince = false;
     public static bool isPrinceNoDie = false;
-    public static int isHelpChildQian = 0;
+    public static int _HelpChildQian = 0;
     //03PrinceStatue
     public static bool isSwallowFindPrince = false;
     public static bool isKangNeedGem = false;
@@ -525,20 +525,29 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 11;
                             }
-                            if (isHelpChildQian == 1)
-                            {
-                                isHelpChildQian++;
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._isAboveWho2 = 13;
-                                StoryDialogueControl_Prince._textCount = 23;
-                            }
                             if (StoryGardenControl_Prince.isCherryTree)
                             {
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._isAboveWho2 = 4;
                                 StoryDialogueControl_Prince._textCount = 36;
+                            }
+                            switch (_HelpChildQian)
+                            {
+                                case 1:
+                                    _HelpChildQian++;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._isAboveWho2 = 13;
+                                    StoryDialogueControl_Prince._textCount = 23;
+                                    break;
+
+                                case 2:
+                                    _HelpChildQian++;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 24;
+                                    break;
                             }
                             break;
                     }
