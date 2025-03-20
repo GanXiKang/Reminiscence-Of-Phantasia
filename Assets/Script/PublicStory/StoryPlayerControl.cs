@@ -173,7 +173,7 @@ public class StoryPlayerControl : MonoBehaviour
                StoryInteractableControl_Prince.isPlayerMove &&
                !StoryLoadingScene_Prince.isLoading &&
                !StoryUIControl_Prince.isDialogue &&
-               !StoryUIControl_Prince.isSkillActive &&
+               !StorySkillControl_Prince.isClockActice &&
                !StoryGhostControl_Prince.isWatchSkill;
     }
 }
