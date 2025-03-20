@@ -538,7 +538,9 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 22:
+                StoryInteractableControl_Prince.isListenForHelp = true;
                 //小康離開
+                //王子出現
                 break;
 
             case 81:
