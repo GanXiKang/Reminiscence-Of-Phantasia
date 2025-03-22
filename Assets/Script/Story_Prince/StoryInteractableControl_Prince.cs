@@ -9,7 +9,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip pickUp, get, shock;
+    public AudioClip pickUp, get;
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
@@ -580,7 +580,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             }
                             if (_HelpChildQian == 4 && !isGiveRope)
                             {
-                                BGM.PlayOneShot(shock);
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 27;
