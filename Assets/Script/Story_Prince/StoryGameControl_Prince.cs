@@ -99,6 +99,11 @@ public class StoryGameControl_Prince : MonoBehaviour
             case 4:
                 plank.SetActive(true);
                 break;
+
+            case 5:
+                if(plank.activeSelf)
+                    plank.SetActive(false);
+                break;
         }
     }
     void PlotNpcActive()
