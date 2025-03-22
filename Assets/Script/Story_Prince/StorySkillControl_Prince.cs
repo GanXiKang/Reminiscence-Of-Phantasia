@@ -70,7 +70,14 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !isDisabledClock && StoryUIControl_Prince.isSkillActive)
         {
-            Button_ClockActive();
+            if (!isClockActice)
+            {
+                Button_ClockActive();
+            }
+            else
+            {
+                Button_Back();
+            }
         }
     }
     void ClockRotating()
@@ -259,20 +266,28 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         if (isFirstUse)
         {
-            isClockActice = !isClockActice;
+            isClockActice = true;
         }
         else
         {
-            if (!isClockActice)
-            {
-                StoryGhostControl_Prince.isWarp = true;
-                StoryGhostControl_Prince.isWatchSkill = true;
-            }
-            else
-            {
-                isClockActice = false;
-                StoryGhostControl_Prince.isDisappear = true;
-            }
+            StoryGhostControl_Prince.isWarp = true;
+            StoryGhostControl_Prince.isWatchSkill = true;
+        }
+    }
+    public void Button_Back()
+    {
+        if (StoryGhostControl_Prince.isWarp) return;
+        if (StoryGhostControl_Prince.isDisappear) return;
+        if (isRotating) return;
+
+        if (isFirstUse)
+        {
+            isClockActice = false;
+        }
+        else
+        {
+            isClockActice = false;
+            StoryGhostControl_Prince.isDisappear = true;
         }
     }
 }
