@@ -550,6 +550,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince._HelpChildQian = 3;
                 break;
 
+            case 28:
+                //王子死了
+                break;
+
             case 81:
             case 82:
             case 83:
