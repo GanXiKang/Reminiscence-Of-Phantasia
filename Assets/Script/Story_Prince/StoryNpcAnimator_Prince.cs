@@ -13,6 +13,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     public static bool isWalk_Prince = false;
     public static bool isLeaveHelp = false;
     //04Swallow
+    public static bool isSad_Swallow = false;
     public static bool isWalk_Swallow = false;
     public static bool isFindFood = false;
     //06Qian_Adult
@@ -42,6 +43,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 break;
 
             case 4:
+                anim.SetBool("isSad", isSad_Swallow);
                 anim.SetBool("isWalk", isWalk_Swallow);
                 anim.SetBool("isFindFood", isFindFood);
                 break;
