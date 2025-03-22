@@ -57,9 +57,9 @@ public class StoryGameControl_Prince : MonoBehaviour
                 woodFence_Bad.SetActive(true);
                 break;
 
-            //case 3:
-            //    plank.SetActive(true);
-            //    break;
+            case 4:
+                plank.SetActive(true);
+                break;
         }
     }
 
