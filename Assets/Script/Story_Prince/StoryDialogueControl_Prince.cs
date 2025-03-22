@@ -573,12 +573,12 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince._HelpChildQian = 3;
                 break;
 
-            case 28:
-                //王子死了
+            case 27:
+                StoryNpcAnimator_Prince.isShock_Qian = false;
                 break;
 
-            case 29:
-                StoryNpcAnimator_Prince.isShock_Qian = false;
+            case 28:
+                //王子死了
                 break;
 
             case 81:
