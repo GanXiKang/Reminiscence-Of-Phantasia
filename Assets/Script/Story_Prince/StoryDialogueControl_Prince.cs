@@ -438,6 +438,11 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 break;
 
+            case 25:
+                StoryPlayerControl.isSurprised = true;
+                StoryInteractableControl_Prince._HelpChildQian = 4;
+                break;
+
             case 27:
                 switch (_countEvent)
                 {
@@ -477,6 +482,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isSurprised = true;
                 break;
 
+            case 14:
             case 73:
             case 76:
                 StoryPlayerControl.isSad = true;
