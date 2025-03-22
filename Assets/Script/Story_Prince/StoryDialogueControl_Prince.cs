@@ -10,7 +10,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip normalMusia, spikedMusia;
-    public AudioClip give, gainEnergy;
+    public AudioClip give, gainEnergy, shock, drowning;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -439,6 +439,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 25:
+                BGM.PlayOneShot(drowning);
                 StoryPlayerControl.isSurprised = true;
                 StoryInteractableControl_Prince._HelpChildQian = 4;
                 break;
@@ -447,6 +448,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        BGM.PlayOneShot(shock);
                         StoryNpcAnimator_Prince.isShock_Qian = true;
                         _countEvent++;
                         break;
