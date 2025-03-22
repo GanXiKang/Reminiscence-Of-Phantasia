@@ -9,7 +9,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip pickUp, get;
+    public AudioClip pickUp, get, shock;
 
     [Header("InteractableDistance")]
     public float _snapDistance = 12f;
@@ -569,6 +569,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 20;
                             }
+                            if (_HelpChildQian == 4)
+                            {
+                                BGM.PlayOneShot(shock);
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 27;
+                            }
                             break;
                     }
                     break;
@@ -921,6 +928,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                     break;
 
                                 case 1:
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 29;
                                     break;
 
                                 case 2:
