@@ -39,7 +39,6 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 anim.SetBool("isWalk", isWalk_Prince);
                 anim.SetBool("isLeaveHelp", isLeaveHelp);
                 anim.SetInteger("HelpChildQian", StoryInteractableControl_Prince._HelpChildQian);
-                PrinceDrowning();
                 break;
 
             case 4:
@@ -67,16 +66,6 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
             case 10:
                 anim.SetBool("isHappy", StoryInteractableControl_Prince.isPrinceNoDie);
                 break;
-        }
-    }
-
-    void PrinceDrowning()
-    {
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(1);
-
-        if (stateInfo.IsName("Drowning"))
-        {
-            StoryInteractableControl_Prince._HelpChildQian = 4;
         }
     }
 }
