@@ -22959,6 +22959,7 @@ MonoBehaviour:
   pointer: {fileID: 1704723678}
   stopTime: {fileID: 1530813625}
   skillClock: {fileID: 1592127919}
+  back: {fileID: 1355701419}
   energyBar: {fileID: 1224331511}
 --- !u!114 &1207414328
 MonoBehaviour:
@@ -24341,7 +24342,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: c068700ee105f184ca33888142a7092c, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 35d40dffde2c61945bdd0e4213724a36, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 35d40dffde2c61945bdd0e4213724a36, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
