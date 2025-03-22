@@ -544,7 +544,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 23:
                 StoryInteractableControl_Prince._HelpChildQian = 2;
-                //小女孩落水
+                break;
+
+            case 24:
+                StoryInteractableControl_Prince._HelpChildQian = 3;
                 break;
 
             case 81:
