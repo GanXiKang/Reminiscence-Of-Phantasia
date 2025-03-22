@@ -70,6 +70,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isTakeGem = false;
     //06Qian_Adult
     bool isHalfGemMerge = false;
+    bool isGiveRope = false;
     //09Jun & 11Bei
     bool isHelpJun = false;
     public static bool isDoubleButter = false;
@@ -415,6 +416,14 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 break;
 
                             case 1:
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_giveItemNumber[0]] = true;
+                                StoryBagControl._whichItem = _giveItemNumber[0];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
                                 break;
                         }
                         break;
@@ -569,7 +578,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 20;
                             }
-                            if (_HelpChildQian == 4)
+                            if (_HelpChildQian == 4 && !isGiveRope)
                             {
                                 BGM.PlayOneShot(shock);
                                 StoryUIControl_Prince.isDialogue = true;
