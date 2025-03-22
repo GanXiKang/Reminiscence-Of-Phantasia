@@ -16,6 +16,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
     [Header("Npc")]
     public GameObject[] npc;
+    public GameObject[] npcShadow;
     public static bool isPlotNpcActive = false;
 
     [Header("Scene")]
