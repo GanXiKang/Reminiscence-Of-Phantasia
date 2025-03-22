@@ -42,26 +42,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         MouseCursor();
 
+        MainNpcActive();
+        PlotObjectActive();
+
         if (isPlotNpcActive)
             PlotNpcActive();
-
-        npc[2].SetActive(past.activeSelf);
-        npc[4].SetActive(past.activeSelf);
-        npc[6].SetActive(past.activeSelf);
-        supplies_Now.SetActive(isSuppliesGameHard && !StoryUIControl_Prince.isSuppliesActive);
-        supplies_Past.SetActive(isSuppliesGameEasy && !StoryUIControl_Prince.isSuppliesActive);
-
-        switch (StoryInteractableControl_Prince._HelpChildQian)
-        {
-            case 2:
-                woodFence.SetActive(false);
-                woodFence_Bad.SetActive(true);
-                break;
-
-            case 4:
-                plank.SetActive(true);
-                break;
-        }
     }
 
     void MouseCursor()
@@ -84,6 +69,33 @@ public class StoryGameControl_Prince : MonoBehaviour
     void FalseisClick()
     {
         isClick = false;
+    }
+    
+    void MainNpcActive()
+    {
+        npc[2].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
+        npc[2].GetComponent<BoxCollider>().enabled = past.activeSelf;
+        npc[4].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
+        npc[4].GetComponent<BoxCollider>().enabled = past.activeSelf;
+        npc[6].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
+        npc[6].GetComponent<BoxCollider>().enabled = past.activeSelf;
+    }
+    void PlotObjectActive()
+    {
+        supplies_Now.SetActive(isSuppliesGameHard && !StoryUIControl_Prince.isSuppliesActive);
+        supplies_Past.SetActive(isSuppliesGameEasy && !StoryUIControl_Prince.isSuppliesActive);
+
+        switch (StoryInteractableControl_Prince._HelpChildQian)
+        {
+            case 2:
+                woodFence.SetActive(false);
+                woodFence_Bad.SetActive(true);
+                break;
+
+            case 4:
+                plank.SetActive(true);
+                break;
+        }
     }
     void PlotNpcActive()
     {
