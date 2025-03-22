@@ -11,6 +11,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public GameObject pointer;
     public Button stopTime;
     public Button skillClock;
+    public Button back;
     public static bool isClockActice = false;
     public static bool isDisabledClock = false;
     bool isCheckZone = false;
@@ -54,6 +55,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         clockUI.SetActive(isClockActice);
         stopTime.interactable = ButtonTimeInteractable();
+        back.interactable = ButtonTimeInteractable();
         skillClock.interactable = !isDisabledClock;
     }
     bool ButtonTimeInteractable()
