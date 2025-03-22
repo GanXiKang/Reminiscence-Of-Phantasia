@@ -442,7 +442,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
-                        
+                        StoryNpcAnimator_Prince.isShock_Qian = true;
                         _countEvent++;
                         break;
 
@@ -572,7 +572,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 29:
-
+                StoryNpcAnimator_Prince.isShock_Qian = false;
                 break;
 
             case 81:
