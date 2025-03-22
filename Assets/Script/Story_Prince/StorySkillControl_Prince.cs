@@ -55,7 +55,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         clockUI.SetActive(isClockActice);
         stopTime.interactable = ButtonTimeInteractable();
-        back.interactable = ButtonTimeInteractable();
+        back.interactable = ButtonTimeInteractable() && isRotating;
         skillClock.interactable = !isDisabledClock;
     }
     bool ButtonTimeInteractable()
