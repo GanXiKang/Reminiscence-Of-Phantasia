@@ -46,6 +46,7 @@ public class StoryGameControl_Prince : MonoBehaviour
             PlotNpcActive();
 
         npc[2].SetActive(past.activeSelf);
+        npc[4].SetActive(past.activeSelf);
         npc[6].SetActive(past.activeSelf);
         supplies_Now.SetActive(isSuppliesGameHard && !StoryUIControl_Prince.isSuppliesActive);
         supplies_Past.SetActive(isSuppliesGameEasy && !StoryUIControl_Prince.isSuppliesActive);
