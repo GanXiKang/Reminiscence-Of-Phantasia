@@ -438,6 +438,23 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 break;
 
+            case 27:
+                switch (_countEvent)
+                {
+                    case 0:
+                        
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryInteractableControl_Prince.isGiveItem = true;
+                        StoryInteractableControl_Prince._whoGive = 6;
+                        StoryInteractableControl_Prince._whoGiveNumber = 1;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
             case 46:
             case 49:
                 BGM.PlayOneShot(give);
@@ -552,6 +569,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 28:
                 //王子死了
+                break;
+
+            case 29:
+
                 break;
 
             case 81:
