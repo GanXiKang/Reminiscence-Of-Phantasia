@@ -49,6 +49,9 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 anim.SetInteger("PrinceHelp", StoryInteractableControl_Prince._HelpChildQian);
                 break;
 
+            case 6:
+                break;
+
             case 7:
                 anim.SetBool("isFindGem", isFindGem);
                 anim.SetBool("isLeave", isLeave_Kang);
