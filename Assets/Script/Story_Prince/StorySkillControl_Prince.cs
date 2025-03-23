@@ -326,6 +326,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     IEnumerator PlaySoundRot()
     {
+        print("2");
         isPlaySound = true;
         while (true) 
         {
