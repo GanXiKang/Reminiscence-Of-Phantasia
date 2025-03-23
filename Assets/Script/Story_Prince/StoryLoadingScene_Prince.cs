@@ -54,7 +54,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
                 isOpen = false;
                 BGM.PlayOneShot(loading);
                 StorySkillControl_Prince.isClockActice = false;
-                Invoke("WaitCloseLoading", 0.8f);
+                Invoke("WaitCloseLoading", 1f);
             }
         }
         if (isClose)
