@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -467,6 +468,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 BGM.PlayOneShot(success);
                 break;
 
+            case 38:
+                //Swallow anim
+                break;
+
             case 46:
             case 49:
                 BGM.PlayOneShot(give);
@@ -588,6 +593,22 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 28:
                 BGM.PlayOneShot(fail);
                 //王子死了
+                break;
+
+            case 30:
+                //Qian_Child 離開
+                break;
+
+            case 31:
+                //王子離開
+                break;
+
+            case 38:
+                StoryInteractableControl_Prince.isGiveSuppliesBox = true;
+                break;
+
+            case 40:
+                StoryGameControl_Prince.isSuppliesGameHard = true;
                 break;
 
             case 81:
