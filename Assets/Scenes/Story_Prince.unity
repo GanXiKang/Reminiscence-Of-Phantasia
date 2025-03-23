@@ -37989,6 +37989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff85f3da7b783542af36c618169d05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  a: {fileID: 0}
   clockUI: {fileID: 1187902722}
   pointer: {fileID: 1704723678}
   stopTime: {fileID: 1530813625}
@@ -42490,6 +42492,7 @@ MonoBehaviour:
   pastBGM: {fileID: 8300000, guid: 301161fa7b4970745abe1a9cac682ddb, type: 3}
   futureBGM: {fileID: 8300000, guid: 752e3196be85c4f4ca5bf49490390ad8, type: 3}
   switchScene: {fileID: 8300000, guid: 2ec8dd438657a574dbd4763eed0e0c4c, type: 3}
+  loading: {fileID: 8300000, guid: a78d0d11a3e6a5d45b072c1fa212a6dd, type: 3}
   now: {fileID: 296686965}
   past: {fileID: 474405247}
   future: {fileID: 597276440}
