@@ -8,7 +8,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip nowBGM, pastBGM, futureBGM;
-    public AudioClip switchScene;
+    public AudioClip switchScene, loading;
     bool isPlayMusiaOnce = true;
 
     [Header("Scene")]
@@ -52,8 +52,9 @@ public class StoryLoadingScene_Prince : MonoBehaviour
             else if (a.fillAmount == 1)
             {
                 isOpen = false;
+                BGM.PlayOneShot(loading);
                 StorySkillControl_Prince.isClockActice = false;
-                Invoke("WaitCloseLoading", 1f);
+                Invoke("WaitCloseLoading", 0.8f);
             }
         }
         if (isClose)
