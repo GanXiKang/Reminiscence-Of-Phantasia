@@ -7,7 +7,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip rot, cli, bac, suc, fai;
+    public AudioClip rot, cli, ope, suc, fai;
 
     [Header("ClockUI")]
     public GameObject clockUI;
@@ -251,16 +251,19 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (isIncreasing || isReducing) return;
 
+        BGM.PlayOneShot(cli);
         isRotating = !isRotating;
         _currentTime = 0f;
         if (isRotating)
         {
             isIncreasing = true;
+            StartCoroutine(PlaySoundRot());
         }
         else
         {
             isCheckZone = true;
             isReducing = true;
+            StopCoroutine(PlaySoundRot());
         }
     }
     public void Button_ClockActive()
@@ -269,6 +272,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (StoryGhostControl_Prince.isWarp) return;
         if (StoryGhostControl_Prince.isDisappear) return;
 
+        BGM.PlayOneShot(ope);
         if (isFirstUse)
         {
             isClockActice = true;
@@ -285,6 +289,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (StoryGhostControl_Prince.isDisappear) return;
         if (isRotating) return;
 
+        BGM.PlayOneShot(ope);
         if (isFirstUse)
         {
             isClockActice = false;
@@ -293,6 +298,15 @@ public class StorySkillControl_Prince : MonoBehaviour
         {
             isClockActice = false;
             StoryGhostControl_Prince.isDisappear = true;
+        }
+    }
+
+    IEnumerator PlaySoundRot()
+    {
+        while (true) 
+        {
+            BGM.PlayOneShot(rot);
+            yield return new WaitForSeconds(rot.length);
         }
     }
 }
