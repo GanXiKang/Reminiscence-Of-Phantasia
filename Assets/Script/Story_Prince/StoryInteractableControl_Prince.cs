@@ -64,6 +64,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isCanHelpPrince = false;
     public static bool isPrinceNoDie = false;
     public static int _HelpChildQian = 0;
+    public static bool isGiveSuppliesBox = false;
     //03PrinceStatue
     public static bool isSwallowFindPrince = false;
     public static bool isKangNeedGem = false;
@@ -535,13 +536,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 11;
                             }
-                            if (StoryGardenControl_Prince.isCherryTree)
-                            {
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._isAboveWho2 = 4;
-                                StoryDialogueControl_Prince._textCount = 36;
-                            }
                             switch (_HelpChildQian)
                             {
                                 case 1:
@@ -556,6 +550,32 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
                                     StoryDialogueControl_Prince._textCount = 24;
                                     break;
+
+                                case 5://暫時
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 31;
+                                    break;
+                            }
+                            if (StoryGardenControl_Prince.isCherryTree)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._isAboveWho2 = 4;
+                                StoryDialogueControl_Prince._textCount = 36;
+                            }
+                            if (StoryGardenControl_Prince.isGrapeTree)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._isAboveWho2 = 4;
+                                StoryDialogueControl_Prince._textCount = 38;
+                            }
+                            if (isGiveSuppliesBox)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 39;
                             }
                             break;
                     }
@@ -940,21 +960,32 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             switch (i)
                             {
                                 case 0:
+                                    isGiveSuppliesBox = false;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 40;
                                     break;
 
                                 case 1:
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                    StoryDialogueControl_Prince._textCount = 29;
+                                    StoryDialogueControl_Prince._isAboveWho1 = 5;
+                                    StoryDialogueControl_Prince._textCount = 30;
                                     break;
 
                                 case 2:
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                    StoryDialogueControl_Prince._textCount = 28;
+                                    StoryDialogueControl_Prince._textCount = 29;
                                     break;
 
                                 case 3:
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 28;
+                                    break;
+
+                                case 4:
                                     break;
                             }
                         }
