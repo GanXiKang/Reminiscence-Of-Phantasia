@@ -8,6 +8,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip rot, cli, ope, suc, fai;
+    bool isPlaySound = false;
 
     [Header("ClockUI")]
     public GameObject clockUI;
@@ -52,6 +53,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         Energy();
         FirstUseRecoverEnergy();
         GainEnegry();
+        SoundEffects();
     }
 
     void ObjectActive()
@@ -176,6 +178,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 7:
                 if (!StoryLoadingScene_Prince.isFutureScene)
                 {
+                    print("1");
                     BGM.PlayOneShot(suc);
                     if (_zoneNum != 7)
                         _energyValue -= _largeArea * Time.deltaTime;
@@ -252,6 +255,19 @@ public class StorySkillControl_Prince : MonoBehaviour
         _energyValue += 0.02f;
         isGainEnegry = false;
     }
+    void SoundEffects()
+    {
+        if (isRotating)
+        {
+            if(isPlaySound)
+                StartCoroutine(PlaySoundRot());
+        }
+        else
+        {
+            isPlaySound = false;
+            StopCoroutine(PlaySoundRot());
+        }
+    }
 
     public void Button_Time()
     {
@@ -263,13 +279,11 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isRotating)
         {
             isIncreasing = true;
-            StartCoroutine(PlaySoundRot());
         }
         else
         {
             isCheckZone = true;
             isReducing = true;
-            StopCoroutine(PlaySoundRot());
         }
     }
     public void Button_ClockActive()
@@ -309,6 +323,8 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     IEnumerator PlaySoundRot()
     {
+        print("2");
+        isPlaySound = true;
         while (true) 
         {
             BGM.PlayOneShot(rot);
