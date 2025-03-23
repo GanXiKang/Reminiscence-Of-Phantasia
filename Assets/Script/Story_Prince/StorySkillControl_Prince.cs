@@ -260,6 +260,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void SoundEffects()
     {
+        print(isRotating);
         if (isRotating)
         {
             if(!isPlaySound)
@@ -267,6 +268,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         }
         else
         {
+            print("3");
             isPlaySound = false;
             StopCoroutine(PlaySoundRot());
         }
@@ -326,7 +328,6 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     IEnumerator PlaySoundRot()
     {
-        print("2");
         isPlaySound = true;
         while (true) 
         {
