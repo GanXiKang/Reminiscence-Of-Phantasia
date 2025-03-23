@@ -9,6 +9,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public AudioSource BGM;
     public AudioClip rot, cli, ope, suc, fai;
     bool isPlaySound = false;
+    bool isPlayOnce = true;
 
     [Header("ClockUI")]
     public GameObject clockUI;
@@ -155,7 +156,6 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 12:
                 if (!StoryLoadingScene_Prince.isNowScene)
                 {
-                    BGM.PlayOneShot(suc);
                     if (_zoneNum != 3)
                         _energyValue -= _largeArea * Time.deltaTime;
                     else
@@ -167,7 +167,6 @@ public class StorySkillControl_Prince : MonoBehaviour
                 }
                 else
                 {
-                    BGM.PlayOneShot(fai);
                     _energyValue -= _nowArea * Time.deltaTime;
                 }
                 break;
@@ -178,7 +177,6 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 7:
                 if (!StoryLoadingScene_Prince.isFutureScene)
                 {
-                    BGM.PlayOneShot(suc);
                     if (_zoneNum != 7)
                         _energyValue -= _largeArea * Time.deltaTime;
                     else
@@ -190,7 +188,6 @@ public class StorySkillControl_Prince : MonoBehaviour
                 }
                 else
                 {
-                    BGM.PlayOneShot(fai);
                     _energyValue -= _nowArea * Time.deltaTime;
                 }
                 break;
@@ -201,7 +198,6 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 11:
                 if (!StoryLoadingScene_Prince.isPastScene && !isFirstUse && !isFirstBackNow)
                 {
-                    BGM.PlayOneShot(suc);
                     if (_zoneNum != 11)
                         _energyValue -= _largeArea * Time.deltaTime;
                     else
@@ -214,15 +210,23 @@ public class StorySkillControl_Prince : MonoBehaviour
                 }
                 else
                 {
-                    BGM.PlayOneShot(fai);
                     _energyValue -= _nowArea * Time.deltaTime;
                 }
                 break;
+        }
+        if (isPlayOnce)
+        {
+            isPlayOnce = false;
+            if (isChange)
+                BGM.PlayOneShot(suc);
+            else
+                BGM.PlayOneShot(fai);
         }
         Invoke("FalseByisCheckConsume", 1f);
     }
     void FalseByisCheckConsume()
     {
+        isPlayOnce = true;
         isEnergyConsume = false;
         if (isChange)
         {
@@ -322,7 +326,6 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     IEnumerator PlaySoundRot()
     {
-        print("2");
         isPlaySound = true;
         while (true) 
         {
