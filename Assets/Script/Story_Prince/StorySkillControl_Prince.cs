@@ -7,7 +7,7 @@ public class StorySkillControl_Prince : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip a;
+    public AudioClip rotat, click, back, succ, fail;
 
     [Header("ClockUI")]
     public GameObject clockUI;
