@@ -174,6 +174,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 7:
                 if (!StoryLoadingScene_Prince.isFutureScene)
                 {
+                    print("Yes!");
                     if (_zoneNum != 7)
                         _energyValue -= _largeArea * Time.deltaTime;
                     else
