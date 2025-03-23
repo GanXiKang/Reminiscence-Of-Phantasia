@@ -8,7 +8,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip rot, cli, ope, suc, fai;
-    bool isPlaySound = false;
+    private Coroutine current;
     bool isPlayOnce = true;
 
     [Header("ClockUI")]
@@ -263,14 +263,14 @@ public class StorySkillControl_Prince : MonoBehaviour
         print(isRotating);
         if (isRotating)
         {
-            if(!isPlaySound)
-                StartCoroutine(PlaySoundRot());
+            if(current == null)
+               current = StartCoroutine(PlaySoundRot());
         }
         else
         {
             print("3");
-            isPlaySound = false;
-            StopCoroutine(PlaySoundRot());
+            StopCoroutine(current);
+            current = null;
         }
     }
 
@@ -328,7 +328,6 @@ public class StorySkillControl_Prince : MonoBehaviour
 
     IEnumerator PlaySoundRot()
     {
-        isPlaySound = true;
         while (true) 
         {
             BGM.PlayOneShot(rot);
