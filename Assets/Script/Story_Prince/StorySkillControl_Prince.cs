@@ -259,7 +259,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (isRotating)
         {
-            if(isPlaySound)
+            if(!isPlaySound)
                 StartCoroutine(PlaySoundRot());
         }
         else
