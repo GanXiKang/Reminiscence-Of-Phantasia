@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class StorySkillControl_Prince : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip a;
+
     [Header("ClockUI")]
     public GameObject clockUI;
     public GameObject pointer;
