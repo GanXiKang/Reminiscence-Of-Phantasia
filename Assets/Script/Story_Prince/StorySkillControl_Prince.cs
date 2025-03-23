@@ -153,6 +153,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 12:
                 if (!StoryLoadingScene_Prince.isNowScene)
                 {
+                    BGM.PlayOneShot(suc);
                     if (_zoneNum != 3)
                         _energyValue -= _largeArea * Time.deltaTime;
                     else
@@ -164,6 +165,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                 }
                 else
                 {
+                    BGM.PlayOneShot(fai);
                     _energyValue -= _nowArea * Time.deltaTime;
                 }
                 break;
@@ -174,7 +176,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 7:
                 if (!StoryLoadingScene_Prince.isFutureScene)
                 {
-                    print("Yes!");
+                    BGM.PlayOneShot(suc);
                     if (_zoneNum != 7)
                         _energyValue -= _largeArea * Time.deltaTime;
                     else
@@ -186,6 +188,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                 }
                 else
                 {
+                    BGM.PlayOneShot(fai);
                     _energyValue -= _nowArea * Time.deltaTime;
                 }
                 break;
@@ -196,6 +199,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 11:
                 if (!StoryLoadingScene_Prince.isPastScene && !isFirstUse && !isFirstBackNow)
                 {
+                    BGM.PlayOneShot(suc);
                     if (_zoneNum != 11)
                         _energyValue -= _largeArea * Time.deltaTime;
                     else
@@ -208,6 +212,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                 }
                 else
                 {
+                    BGM.PlayOneShot(fai);
                     _energyValue -= _nowArea * Time.deltaTime;
                 }
                 break;
