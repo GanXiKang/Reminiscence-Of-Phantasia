@@ -178,7 +178,6 @@ public class StorySkillControl_Prince : MonoBehaviour
             case 7:
                 if (!StoryLoadingScene_Prince.isFutureScene)
                 {
-                    print("1");
                     BGM.PlayOneShot(suc);
                     if (_zoneNum != 7)
                         _energyValue -= _largeArea * Time.deltaTime;
