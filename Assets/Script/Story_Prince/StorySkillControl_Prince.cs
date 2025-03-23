@@ -260,7 +260,6 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void SoundEffects()
     {
-        print(isRotating);
         if (isRotating)
         {
             if(current == null)
@@ -268,9 +267,11 @@ public class StorySkillControl_Prince : MonoBehaviour
         }
         else
         {
-            print("3");
-            StopCoroutine(current);
-            current = null;
+            if (current != null)
+            {
+                StopCoroutine(current);
+                current = null;
+            }
         }
     }
 
