@@ -22,6 +22,12 @@ public class UIControl_Menu : MonoBehaviour
     [Header("TransitionUI")]
     public GameObject transitionUI;
 
+    [Header("Texture")]
+    public Texture2D mouse1;
+    public Texture2D mouse2;
+    public Vector2 hotSpot = Vector2.zero;
+    bool isClick = false;
+
     void Start()
     {
         //if (SaveManagerControl.Instance.SaveFileExists())
@@ -37,6 +43,7 @@ public class UIControl_Menu : MonoBehaviour
     void Update()
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
+        MouseCursor();
 
         if (Input.GetKeyDown(KeyCode.F11))
         {
@@ -111,6 +118,19 @@ public class UIControl_Menu : MonoBehaviour
         SettingControl.isFullS = isFullScreen;
     }
 
+    void MouseCursor()
+    {
+        if (isClick)
+            Cursor.SetCursor(mouse[1], hotSpot, CursorMode.Auto);
+        else
+            Cursor.SetCursor(mouse[0], hotSpot, CursorMode.Auto);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isClick = true;
+            Invoke("FalseisClick", 0.5f);
+        }
+    }
     void BackgroundSprite()
     {
         for (int i = 0; i < menuUI.Length; i++)

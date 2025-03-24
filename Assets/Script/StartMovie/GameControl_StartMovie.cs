@@ -17,6 +17,12 @@ public class GameControl_StartMovie : MonoBehaviour
     [Header("TransitionUI")]
     public GameObject transitionUI;
 
+    [Header("Texture")]
+    public Texture2D mouse1;
+    public Texture2D mouse2;
+    public Vector2 hotSpot = Vector2.zero;
+    bool isClick = false;
+
     void Start()
     {
         videoPlayer.loopPointReached += OnVideoEnd;
@@ -26,6 +32,7 @@ public class GameControl_StartMovie : MonoBehaviour
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
         videoPlayer.SetDirectAudioVolume(0, SettingControl.volumeBGM);
+        MouseCursor();
 
         if (SettingControl.isSettingActive)
         {
@@ -42,6 +49,19 @@ public class GameControl_StartMovie : MonoBehaviour
         }
     }
 
+    void MouseCursor()
+    {
+        if (isClick)
+            Cursor.SetCursor(mouse[1], hotSpot, CursorMode.Auto);
+        else
+            Cursor.SetCursor(mouse[0], hotSpot, CursorMode.Auto);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isClick = true;
+            Invoke("FalseisClick", 0.5f);
+        }
+    }
     void OnVideoEnd(VideoPlayer vp)
     {
         Skip_Button();
