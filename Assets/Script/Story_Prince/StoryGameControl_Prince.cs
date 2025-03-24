@@ -34,10 +34,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     public GameObject woodFence_Bad;
 
     [Header("PrinceState_Now")]
-    public GameObject princeState;
-    public GameObject brokenPrinceState;
-    public GameObject notPrinceState;
+    public GameObject princeStatue;
+    public GameObject brokenPrinceStatue;
+    public GameObject notPrinceStatue;
     public GameObject smokEF;
+    public static bool isBroken = false;
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         MainNpcActive();
         PlotObjectActive();
+        PrinceState_Now();
 
         if (isPlotNpcActive)
             PlotNpcActive();
@@ -123,5 +125,28 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         if (isPlotNpcActive)
             isPlotNpcActive = false;
+    }
+    void PrinceState_Now()
+    {
+        if (StoryInteractableControl_Prince.isPrinceNoDie)
+        {
+            princeStatue.SetActive(false);
+            notPrinceStatue.SetActive(true);
+        }
+        else
+        {
+            if (isBroken)
+            {
+                smokEF.SetActive(true);
+                princeStatue.SetActive(false);
+                brokenPrinceStatue.SetActive(true);
+            }
+            else
+            {
+                smokEF.SetActive(false);
+                princeStatue.SetActive(true);
+                brokenPrinceStatue.SetActive(false);
+            }
+        }
     }
 }
