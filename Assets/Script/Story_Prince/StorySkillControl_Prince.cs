@@ -38,6 +38,9 @@ public class StorySkillControl_Prince : MonoBehaviour
     float _nowArea = 0.01f;
     bool isEnergyConsume = false;
 
+    [Header("Effects")]
+    public GameObject timeEF;
+
     //Plot
     bool isFirstUse = true;
     bool isRecoverEnergy;
@@ -299,6 +302,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (StoryGhostControl_Prince.isDisappear) return;
 
         BGM.PlayOneShot(ope);
+        timeEF.SetActive(true);
         if (isFirstUse)
         {
             isClockActice = true;
@@ -316,6 +320,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isRotating) return;
 
         BGM.PlayOneShot(ope);
+        timeEF.SetActive(false);
         if (isFirstUse)
         {
             isClockActice = false;
