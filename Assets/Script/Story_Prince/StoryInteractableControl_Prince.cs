@@ -552,7 +552,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                     StoryDialogueControl_Prince._textCount = 24;
                                     break;
 
-                                case 5://暫時
+                                case 7:
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
                                     StoryDialogueControl_Prince._textCount = 31;
@@ -956,39 +956,60 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 switch (_who)
                 {
                     case 2:
-                        if (_HelpChildQian == 4)
+                        switch (i)
                         {
-                            switch (i)
-                            {
-                                case 0:
-                                    isGiveSuppliesBox = false;
-                                    StoryUIControl_Prince.isDialogue = true;
-                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                    StoryDialogueControl_Prince._textCount = 40;
-                                    break;
+                            case 0:
+                                isGiveSuppliesBox = false;
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 40;
+                                break;
 
-                                case 1:
+                            case 1:
+                                if (_HelpChildQian == 5)
+                                {
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
                                     StoryDialogueControl_Prince._isAboveWho1 = 5;
                                     StoryDialogueControl_Prince._textCount = 30;
-                                    break;
+                                }
+                                else
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
+                                }
+                                break;
 
-                                case 2:
+                            case 2:
+                                if (_HelpChildQian == 4)
+                                {
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
                                     StoryDialogueControl_Prince._textCount = 29;
-                                    break;
+                                }
+                                else
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
+                                }
+                                break;
 
-                                case 3:
+                            case 3:
+                                if (_HelpChildQian == 4)
+                                {
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
                                     StoryDialogueControl_Prince._textCount = 28;
-                                    break;
+                                }
+                                else
+                                {
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
+                                }
+                                break;
 
-                                case 4:
-                                    break;
-                            }
+                            case 4:
+                                break;
                         }
                         break;
 
