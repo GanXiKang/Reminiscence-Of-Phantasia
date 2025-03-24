@@ -38053,10 +38053,10 @@ MonoBehaviour:
   supplies_Past: {fileID: 483734067}
   woodFence: {fileID: 1801589209}
   woodFence_Bad: {fileID: 936342976}
-  princeState: {fileID: 0}
-  brokenPrinceState: {fileID: 0}
-  notPrinceState: {fileID: 0}
-  smokEF: {fileID: 0}
+  princeState: {fileID: 1602712364}
+  brokenPrinceState: {fileID: 1629690554}
+  notPrinceState: {fileID: 1219024783}
+  smokEF: {fileID: 1480063876}
 --- !u!114 &1207414329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38215,7 +38215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1219024784
 Transform:
   m_ObjectHideFlags: 0
@@ -40442,6 +40442,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6381597691041385330, guid: 039da3a61ce49c84c92e77761b100e7e, type: 3}
   m_PrefabInstance: {fileID: 1480063874}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1480063876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8722289386312156713, guid: 039da3a61ce49c84c92e77761b100e7e, type: 3}
+  m_PrefabInstance: {fileID: 1480063874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1485669199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42018,14 +42023,14 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 484544776}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1480063875}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
-      insertIndex: 3
+      insertIndex: 2
       addedObject: {fileID: 1629690555}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1219024784}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1480063875}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21be163e830ff3045bc33c1f02c0695a, type: 3}
       insertIndex: 9
       addedObject: {fileID: 617720121}
