@@ -444,6 +444,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 25:
                 BGM.PlayOneShot(drowning);
                 StoryPlayerControl.isSurprised = true;
+                StoryNpcAnimator_Prince.isWet = true;
                 StoryInteractableControl_Prince._HelpChildQian = 4;
                 break;
 
