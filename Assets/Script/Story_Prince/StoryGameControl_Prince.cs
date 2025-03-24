@@ -86,7 +86,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            npc[2].GetComponent<SpriteRenderer>().enabled = !npc[2].GetComponent<SpriteRenderer>().enabled;
+            npc[2].GetComponent<BoxCollider>().enabled = !npc[2].GetComponent<BoxCollider>().enabled;
         }
         //npc[2].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
         //npc[2].GetComponent<BoxCollider>().enabled = past.activeSelf;
