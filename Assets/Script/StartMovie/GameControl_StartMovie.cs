@@ -52,9 +52,9 @@ public class GameControl_StartMovie : MonoBehaviour
     void MouseCursor()
     {
         if (isClick)
-            Cursor.SetCursor(mouse[1], hotSpot, CursorMode.Auto);
+            Cursor.SetCursor(mouse2, hotSpot, CursorMode.Auto);
         else
-            Cursor.SetCursor(mouse[0], hotSpot, CursorMode.Auto);
+            Cursor.SetCursor(mouse1, hotSpot, CursorMode.Auto);
 
         if (Input.GetMouseButtonDown(0))
         {
