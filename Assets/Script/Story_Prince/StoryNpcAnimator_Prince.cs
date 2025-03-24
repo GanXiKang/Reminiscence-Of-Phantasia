@@ -12,6 +12,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     //02Prince
     public static bool isWalk_Prince = false;
     public static bool isLeaveHelp = false;
+    public static bool isWet = false;
     public static bool isDrown = false;
     //04Swallow
     public static bool isSad_Swallow = false;
@@ -43,6 +44,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 anim.SetBool("isWalk", isWalk_Prince);
                 anim.SetBool("isLeaveHelp", isLeaveHelp);
                 anim.SetInteger("HelpChildQian", StoryInteractableControl_Prince._HelpChildQian);
+                anim.SetBool("isWet", isWet);
                 anim.SetBool("isDrown", isDrown);
                 break;
 
