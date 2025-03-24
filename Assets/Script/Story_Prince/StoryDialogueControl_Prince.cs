@@ -465,8 +465,34 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 break;
 
+            case 28:
+                BGM.PlayOneShot(fail);
+                StoryPlayerControl.isSurprised = true;
+                StoryNpcAnimator_Prince.isDrown = true;
+                break;
+
             case 29:
                 BGM.PlayOneShot(success);
+                StoryInteractableControl_Prince._HelpChildQian = 5;
+                break;
+
+            case 30:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryInteractableControl_Prince._HelpChildQian = 6;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryInteractableControl_Prince._HelpChildQian = 7;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
+            case 31:
+                //王子離開
                 break;
 
             case 38:
@@ -501,6 +527,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryPlayerControl.isSad = true;
                 break;
 
+            case 29:
             case 62:
             case 63:
             case 74:
@@ -598,16 +625,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 28:
-                BGM.PlayOneShot(fail);
-                //王子死了
+                BlackScreenControl.isOpenBlackScreen = true;
+                StoryPlayerControl.isSad = true;
+                Invoke("FalsePrinceDrown", 1f);
                 break;
 
             case 30:
                 //Qian_Child 離開
-                break;
-
-            case 31:
-                //王子離開
                 break;
 
             case 38:
@@ -638,5 +662,9 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     void FalseBrokenPrinceStatue()
     {
         StoryGameControl_Prince.isBroken = false;
+    }
+    void FalsePrinceDrown()
+    {
+        StoryNpcAnimator_Prince.isDrown = false;
     }
 }
