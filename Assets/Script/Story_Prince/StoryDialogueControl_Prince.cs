@@ -496,6 +496,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 {
                     case 0:
                         StoryPlayerControl.isHappy = true;
+                        BGM.PlayOneShot(give);
+                        StoryInteractableControl_Prince.isGiveItem = true;
+                        StoryInteractableControl_Prince._whoGive = 2;
+                        StoryInteractableControl_Prince._whoGiveNumber = 0;
                         _countEvent++;
                         break;
 
