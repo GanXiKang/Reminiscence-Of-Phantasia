@@ -171,6 +171,7 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryStrongWind_Momotaro.isBlownAway &&
 
                StoryInteractableControl_Prince.isPlayerMove &&
+               !StoryInteractableControl_Prince.isPlotBanMove &&
                !StoryLoadingScene_Prince.isLoading &&
                !StoryUIControl_Prince.isDialogue &&
                !StorySkillControl_Prince.isClockActice &&
