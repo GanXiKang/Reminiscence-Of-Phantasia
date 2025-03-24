@@ -138,8 +138,7 @@ public class StoryGameControl_Prince : MonoBehaviour
             if (isBroken)
             {
                 smokEF.SetActive(true);
-                princeStatue.SetActive(false);
-                brokenPrinceStatue.SetActive(true);
+                Invoke("Broken", 0.5f);
             }
             else
             {
@@ -148,5 +147,10 @@ public class StoryGameControl_Prince : MonoBehaviour
                 brokenPrinceStatue.SetActive(false);
             }
         }
+    }
+    void Broken()
+    {
+        princeStatue.SetActive(false);
+        brokenPrinceStatue.SetActive(true);
     }
 }
