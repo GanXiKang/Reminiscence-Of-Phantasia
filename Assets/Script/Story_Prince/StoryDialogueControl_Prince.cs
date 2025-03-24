@@ -513,7 +513,12 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince.isGiveItem = true;
                 StoryInteractableControl_Prince._whoGive = 1;
                 StoryInteractableControl_Prince._whoGiveNumber = 2;
+                StoryInteractableControl_Prince.isPlotBanMove = true;
                 StoryTeachControl.isTeachActive = true;
+                break;
+
+            case 5:
+                StoryInteractableControl_Prince.isPlotBanMove = false;
                 break;
 
             case 6:
