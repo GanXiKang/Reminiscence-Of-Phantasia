@@ -546,11 +546,11 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 15:
                 if (StoryInteractableControl_Prince.isTakeGem)
                 {
-                    //壞結局
                     StoryInteractableControl_Prince.isTakeGem = false;
                     StoryGhostControl_Prince.isDisappear = true;
                     BlackScreenControl.isOpenBlackScreen = true;
                     StoryPlayerControl.isSad = true;
+                    Invoke("FalseBrokenPrinceStatue", 1f);
                 }
                 else
                 {
@@ -634,6 +634,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
     void FalseBrokenPrinceStatue()
     {
-        
+        StoryGameControl_Prince.isBroken = false;
     }
 }
