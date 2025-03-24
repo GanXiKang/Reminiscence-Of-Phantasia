@@ -234,6 +234,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isChange)
         {
             isChange = false;
+            //timeEF.SetActive(true);
             StoryLoadingScene_Prince.isOpen = true;
             if (isFirstUse)
             {
@@ -302,7 +303,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (StoryGhostControl_Prince.isDisappear) return;
 
         BGM.PlayOneShot(ope);
-        timeEF.SetActive(true);
         if (isFirstUse)
         {
             isClockActice = true;
@@ -320,7 +320,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isRotating) return;
 
         BGM.PlayOneShot(ope);
-        timeEF.SetActive(false);
         if (isFirstUse)
         {
             isClockActice = false;
