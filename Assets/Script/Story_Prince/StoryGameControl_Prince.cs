@@ -90,9 +90,6 @@ public class StoryGameControl_Prince : MonoBehaviour
         npcBC[0].SetActive(past.activeSelf);
         npcBC[2].SetActive(past.activeSelf);
         npcBC[3].SetActive(past.activeSelf);
-
-        npc[3].GetComponent<SpriteRenderer>().enabled = now.activeSelf;
-        npcBC[1].SetActive(now.activeSelf);
     }
     void PlotObjectActive()
     {
@@ -118,7 +115,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     }
     void PlotNpcActive()
     {
-        for (int i = 3; i < npc.Length; i++)
+        for (int i = 2; i < npc.Length; i++)
         {
             npc[i].SetActive(isPlotNpcActive);
         }
