@@ -556,6 +556,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 else
                 {
+                    StoryNpcAnimator_Prince.isNoGem = true;
                     StoryGhostControl_Prince.isDisappear = true;
                     StoryInteractableControl_Prince.isKangNeedGem = false;
                 }

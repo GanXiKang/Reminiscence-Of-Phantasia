@@ -379,7 +379,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         {
                             case 0:
                                 isPickedUp = true;
-                                StoryNpcAnimator_Prince.isNoGem = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_giveItemNumber[_whoGiveNumber]] = true;
                                 StoryBagControl._whichItem = _giveItemNumber[_whoGiveNumber];
