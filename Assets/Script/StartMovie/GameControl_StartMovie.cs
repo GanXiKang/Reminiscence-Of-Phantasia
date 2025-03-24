@@ -62,6 +62,11 @@ public class GameControl_StartMovie : MonoBehaviour
             Invoke("FalseisClick", 0.5f);
         }
     }
+    void FalseisClick()
+    {
+        isClick = false;
+    }
+
     void OnVideoEnd(VideoPlayer vp)
     {
         Skip_Button();

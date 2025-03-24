@@ -131,6 +131,11 @@ public class UIControl_Menu : MonoBehaviour
             Invoke("FalseisClick", 0.5f);
         }
     }
+    void FalseisClick()
+    {
+        isClick = false;
+    }
+
     void BackgroundSprite()
     {
         for (int i = 0; i < menuUI.Length; i++)
