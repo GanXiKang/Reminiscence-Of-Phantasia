@@ -33,6 +33,12 @@ public class StoryGameControl_Prince : MonoBehaviour
     public GameObject woodFence;
     public GameObject woodFence_Bad;
 
+    [Header("PrinceState_Now")]
+    public GameObject princeState;
+    public GameObject brokenPrinceState;
+    public GameObject notPrinceState;
+    public GameObject smokEF;
+
     void Start()
     {
         PlotNpcActive();
