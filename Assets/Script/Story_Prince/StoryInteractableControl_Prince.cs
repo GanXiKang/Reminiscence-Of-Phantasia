@@ -987,7 +987,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 {
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                    StoryDialogueControl_Prince._isAboveWho1 = 5;
+                                    StoryDialogueControl_Prince._isAboveWho2 = 5;
                                     StoryDialogueControl_Prince._textCount = 30;
                                 }
                                 else
