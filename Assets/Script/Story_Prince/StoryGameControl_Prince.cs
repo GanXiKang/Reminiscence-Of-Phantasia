@@ -86,10 +86,13 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         npc[2].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
         npc[2].GetComponent<BoxCollider>().enabled = past.activeSelf;
-        npcShadow[0].SetActive(past.activeSelf);
+        //npcShadow[0].SetActive(past.activeSelf);
         npc[4].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
         npc[4].GetComponent<BoxCollider>().enabled = past.activeSelf;
-        npcShadow[1].SetActive(past.activeSelf);
+        //npcShadow[1].SetActive(past.activeSelf);
+        npc[6].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
+        npc[6].GetComponent<BoxCollider>().enabled = past.activeSelf;
+        //npcShadow[2].SetActive(past.activeSelf);
     }
     void PlotObjectActive()
     {
@@ -115,7 +118,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     }
     void PlotNpcActive()
     {
-        for (int i = 3; i < npc.Length; i++)
+        for (int i = 2; i < npc.Length; i++)
         {
             npc[i].SetActive(isPlotNpcActive);
         }
