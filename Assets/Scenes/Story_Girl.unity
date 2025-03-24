@@ -36671,8 +36671,10 @@ MonoBehaviour:
   trashcanLid: {fileID: 837005898}
   streetPoint: {fileID: 317680447}
   forestPoint: {fileID: 1518858712}
-  mouse1: {fileID: 2800000, guid: 23fcabe3217260940a90a71a3ec2d2e0, type: 3}
-  mouse2: {fileID: 2800000, guid: 42197dc0b3e8129499ac7b210276796e, type: 3}
+  mouse:
+  - {fileID: 2800000, guid: 23fcabe3217260940a90a71a3ec2d2e0, type: 3}
+  - {fileID: 2800000, guid: 42197dc0b3e8129499ac7b210276796e, type: 3}
+  - {fileID: 2800000, guid: ff024b7af36fb4d4abaee10664c25d6e, type: 3}
   hotSpot: {x: 0, y: 0}
 --- !u!1 &1857795614 stripped
 GameObject:
