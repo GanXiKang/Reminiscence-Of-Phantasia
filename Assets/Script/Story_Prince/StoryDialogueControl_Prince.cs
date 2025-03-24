@@ -389,7 +389,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     switch (_countEvent)
                     {
                         case 0:
-                            //雕像破敗 
+                            StoryGameControl_Prince.isBroken = true;
                             StoryPlayerControl.isSurprised = true;
                             _countEvent++;
                             break;
@@ -630,5 +630,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     void StoryEnd()
     {
         StoryUIControl_Prince.isStoryEnding = true;
+    }
+
+    void FalseBrokenPrinceStatue()
+    {
+        
     }
 }
