@@ -403,6 +403,23 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         }
                         break;
 
+                    case 2:
+                        switch (_whoGiveNumber)
+                        {
+                            case 0:
+                            case 1:
+                                isPickedUp = true;
+                                StoryBagControl.isGet = true;
+                                StoryBagControl.isItemNumber[_giveItemNumber[_whoGiveNumber]] = true;
+                                StoryBagControl._whichItem = _giveItemNumber[_whoGiveNumber];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+                        }
+                        break;
+
                     case 6:
                         switch (_whoGiveNumber)
                         {
