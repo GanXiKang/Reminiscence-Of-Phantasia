@@ -61,6 +61,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public GameObject effects;
 
     //02Prince
+    public static bool isPlotBanMove = false;
     public static bool isCanHelpPrince = false;
     public static bool isPrinceNoDie = false;
     public static int _HelpChildQian = 0;
