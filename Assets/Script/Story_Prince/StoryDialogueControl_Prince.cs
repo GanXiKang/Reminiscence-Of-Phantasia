@@ -492,7 +492,18 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 31:
-                //王子離開
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryInteractableControl_Prince._HelpChildQian = 8;
+                        _countEvent = 0;
+                        break;
+                }
                 break;
 
             case 38:
