@@ -631,7 +631,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 30:
-                //Qian_Child 離開
+                StoryNpcAnimator_Prince.isLeave_Qian = true;
                 break;
 
             case 38:
