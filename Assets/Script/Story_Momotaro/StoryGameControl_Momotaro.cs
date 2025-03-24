@@ -34,8 +34,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     public static bool isParrotActive;
 
     [Header("Texture")]
-    public Texture2D mouse1;
-    public Texture2D mouse2;
+    public Texture2D[] mouse;
     public Vector2 hotSpot = Vector2.zero;
     bool isClick = false;
 
@@ -204,13 +203,16 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     }
     void MouseCursor()
     {
-        if (isClick)
+        if (StoryBagControl.isItemFollow)
         {
-            Cursor.SetCursor(mouse2, hotSpot, CursorMode.Auto);
+            Cursor.SetCursor(mouse[2], hotSpot, CursorMode.Auto);
         }
         else
         {
-            Cursor.SetCursor(mouse1, hotSpot, CursorMode.Auto);
+            if (isClick)
+                Cursor.SetCursor(mouse[1], hotSpot, CursorMode.Auto);
+            else
+                Cursor.SetCursor(mouse[0], hotSpot, CursorMode.Auto);
         }
 
         if (Input.GetMouseButtonDown(0))
