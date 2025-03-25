@@ -364,16 +364,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     interactableUI.transform.position = screenPos;
                 }
                 break;
-
-            case 25:
-                if (_aboveWho == _who)
-                {
-                    interactableName.text = "紀念碑";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
-                    Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-                    interactableUI.transform.position = screenPos;
-                }
-                break;
         }
     }
     void GivePlayerObject()
