@@ -234,7 +234,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isChange)
         {
             isChange = false;
-            //timeEF.SetActive(true);
+            timeEF.SetActive(true);
             StoryLoadingScene_Prince.isOpen = true;
             if (isFirstUse)
             {
