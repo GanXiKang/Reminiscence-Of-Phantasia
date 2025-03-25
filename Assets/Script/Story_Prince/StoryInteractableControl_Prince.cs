@@ -813,7 +813,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 15:
-                    if (!StoryGardenControl_Prince.isPlanting && StoryBagControl.isItemNumber[12] && StoryBagControl.isItemNumber[13])
+                    if (!StoryGardenControl_Prince.isPlanting && isSwallowHunger)
                     {
                         StoryUIControl_Prince.isDialogue = true;
                         StoryDialogueControl_Prince._isAboveWho1 = _who;
@@ -1107,30 +1107,46 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                if (!StoryGardenControl_Prince.isCherryTree)
+                                if (isSwallowHunger)
                                 {
-                                    StoryUIControl_Prince.isDialogue = true;
-                                    StoryDialogueControl_Prince._textCount = 35;
-                                    StoryGardenControl_Prince.isPlanting = true;
-                                    StoryGardenControl_Prince.isGrapeTree = true;
+                                    if (!StoryGardenControl_Prince.isCherryTree)
+                                    {
+                                        StoryUIControl_Prince.isDialogue = true;
+                                        StoryDialogueControl_Prince._textCount = 35;
+                                        StoryGardenControl_Prince.isPlanting = true;
+                                        StoryGardenControl_Prince.isGrapeTree = true;
+                                    }
+                                    else
+                                    {
+                                        StoryUIControl_Prince.isDialogue = true;
+                                        StoryDialogueControl_Prince._textCount = 37;
+                                        StoryGardenControl_Prince.isPlanting = true;
+                                        StoryGardenControl_Prince.isGrapeTree = true;
+                                        StoryGardenControl_Prince.isCherryTree = false;
+                                    }
                                 }
                                 else
                                 {
-                                    StoryUIControl_Prince.isDialogue = true;
-                                    StoryDialogueControl_Prince._textCount = 37;
-                                    StoryGardenControl_Prince.isPlanting = true;
-                                    StoryGardenControl_Prince.isGrapeTree = true;
-                                    StoryGardenControl_Prince.isCherryTree = false;
+                                    StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                    StoryBagControl._howManyGrids++;
                                 }
                                 break;
 
                             case 1:
-                                if (!StoryGardenControl_Prince.isGrapeTree)
+                                if (isSwallowHunger)
                                 {
-                                    StoryUIControl_Prince.isDialogue = true;
-                                    StoryDialogueControl_Prince._textCount = 90;
-                                    StoryGardenControl_Prince.isPlanting = true;
-                                    StoryGardenControl_Prince.isCherryTree = true;
+                                    if (!StoryGardenControl_Prince.isGrapeTree)
+                                    {
+                                        StoryUIControl_Prince.isDialogue = true;
+                                        StoryDialogueControl_Prince._textCount = 90;
+                                        StoryGardenControl_Prince.isPlanting = true;
+                                        StoryGardenControl_Prince.isCherryTree = true;
+                                    }
+                                    else
+                                    {
+                                        StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                        StoryBagControl._howManyGrids++;
+                                    }
                                 }
                                 else
                                 {
