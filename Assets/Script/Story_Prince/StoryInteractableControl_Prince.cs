@@ -628,6 +628,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             }
                             else if (_HelpChildQian == 4 && !isGiveRope)
                             {
+                                isGiveRope = true;
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 27;
