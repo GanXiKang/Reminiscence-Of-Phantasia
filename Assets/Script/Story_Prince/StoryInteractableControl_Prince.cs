@@ -66,7 +66,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static int _HelpChildQian = 0;
     public static bool isPrinceNoDie = false;
     public static bool isGiveSuppliesBox = false;
-
+    public static bool isPrinceInNow = false;
+    public static bool isSwallowHunger = false;
     //03PrinceStatue
     public static bool isSwallowFindPrince = false;
     public static bool isKangNeedGem = false;
