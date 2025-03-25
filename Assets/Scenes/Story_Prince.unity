@@ -32345,6 +32345,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1798176896}
     m_Modifications:
+    - target: {fileID: 3626882899149812306, guid: b6353c0b35802924b8278512677bd6d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3896068260280816516, guid: b6353c0b35802924b8278512677bd6d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -32399,7 +32403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648033608487529364, guid: b6353c0b35802924b8278512677bd6d0, type: 3}
       propertyPath: m_Name
-      value: New_Magic time circle
+      value: TimeEF
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32413,7 +32417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1091713583 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7648033608487529364, guid: b6353c0b35802924b8278512677bd6d0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3626882899149812306, guid: b6353c0b35802924b8278512677bd6d0, type: 3}
   m_PrefabInstance: {fileID: 1091713581}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130314901
