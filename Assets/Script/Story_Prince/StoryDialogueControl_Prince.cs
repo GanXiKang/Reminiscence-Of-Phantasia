@@ -379,6 +379,12 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         break;
 
                     case 1:
+                        StoryNpcAnimator_Prince.isSurprise_Swallow = true;
+                        _countEvent++;
+                        break;
+
+                    case 2:
+                        StoryNpcAnimator_Prince.isSurprise_Swallow = false;
                         StoryNpcAnimator_Prince.isSad_Swallow = true;
                         _countEvent = 0;
                         break;
@@ -574,7 +580,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 7:
-                StoryNpcAnimator_Prince.isSad_Swallow = false;
                 StoryNpcAnimator_Prince.isFindFood = true;
                 break;
 
