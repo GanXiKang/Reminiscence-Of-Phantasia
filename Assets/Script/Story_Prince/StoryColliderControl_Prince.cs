@@ -15,7 +15,7 @@ public class StoryColliderControl_Prince : MonoBehaviour
             switch (_whatCollider)
             {
                 case 1:
-                    if (isLookPastOnce)
+                    if (isLookPastOnce && StoryInteractableControl_Prince._HelpChildQian == 0)
                     {
                         isLookPastOnce = false;
                         StoryUIControl_Prince.isDialogue = true;
@@ -26,6 +26,15 @@ public class StoryColliderControl_Prince : MonoBehaviour
                 case 2:
                     StoryUIControl_Prince.isDialogue = true;
                     StoryDialogueControl_Prince._textCount = 89;
+                    break;
+                     
+                case 3:
+                    StoryInteractableControl_Prince.isPrinceInNow = true;
+                    StoryInteractableControl_Prince.isSwallowHunger = true;
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._isAboveWho1 = 2;
+                    StoryDialogueControl_Prince._isAboveWho2 = 4;
+                    StoryDialogueControl_Prince._textCount = 32;
                     break;
             }
         }
