@@ -38458,9 +38458,8 @@ GameObject:
   - component: {fileID: 1219024787}
   - component: {fileID: 1219024786}
   - component: {fileID: 1219024785}
-  - component: {fileID: 1219024788}
   m_Layer: 0
-  m_Name: 25BaseOH
+  m_Name: BaseOH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38552,36 +38551,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219024783}
   m_Mesh: {fileID: -8661862892160092484, guid: e45eb10f222958d4bbe3c1ef0069bc77, type: 3}
---- !u!114 &1219024788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219024783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b967c884480289438767160ce16f687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BGM: {fileID: 1836693494}
-  pickUp: {fileID: 8300000, guid: 0e9c08239ccff814384da29f8a254bb4, type: 3}
-  get: {fileID: 8300000, guid: d4d6a26766d58674180a781783c884d1, type: 3}
-  _snapDistance: 12
-  _scaleSpeed: 20
-  interactableUI: {fileID: 1397862595}
-  interactableName: {fileID: 1923290708}
-  _who: 25
-  isGive: 0
-  _giveItemNumber: 
-  isGet: 0
-  _getItemNumber: 
-  isExchange: 0
-  _exchangeItemNumber: 
-  moveItemUI: {fileID: 1236206427}
-  bagUIPosition: {fileID: 2001287592}
-  skillUIPosition: {fileID: 1592127918}
-  effects: {fileID: 0}
 --- !u!1 &1219048479
 GameObject:
   m_ObjectHideFlags: 0
@@ -48084,7 +48053,6 @@ MonoBehaviour:
   - {fileID: 225759990}
   - {fileID: 1309524454}
   - {fileID: 28899654}
-  - {fileID: 1219024784}
   dialogueUI: {fileID: 2117618733}
   dialogueBG: {fileID: 608887529}
   content: {fileID: 440565826}
