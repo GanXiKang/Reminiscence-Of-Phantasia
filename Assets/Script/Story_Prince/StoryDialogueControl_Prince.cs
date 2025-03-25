@@ -517,6 +517,25 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 break;
 
+            case 32:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        _countEvent++;
+                        break;
+
+                    case 2:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
             case 38:
                 //Swallow anim
                 break;
@@ -653,6 +672,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 30:
                 StoryNpcAnimator_Prince.isLeave_Qian = true;
+                break;
+
+            case 32:
+                StoryInteractableControl_Prince.isSwallowHunger = true;
                 break;
 
             case 38:
