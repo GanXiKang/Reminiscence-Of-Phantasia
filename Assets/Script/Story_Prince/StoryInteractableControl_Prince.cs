@@ -577,14 +577,21 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                     StoryDialogueControl_Prince._textCount = 31;
                                     break;
                             }
-                            if (StoryGardenControl_Prince.isCherryTree)
+                            if (isSwallowHunger && !StoryGardenControl_Prince.isCherryTree && !StoryGardenControl_Prince.isGrapeTree)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._isAboveWho2 = 4;
+                                StoryDialogueControl_Prince._textCount = 33;
+                            }
+                            else if (StoryGardenControl_Prince.isCherryTree)
                             {
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._isAboveWho2 = 4;
                                 StoryDialogueControl_Prince._textCount = 36;
                             }
-                            if (StoryGardenControl_Prince.isGrapeTree)
+                            else if (StoryGardenControl_Prince.isGrapeTree)
                             {
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
