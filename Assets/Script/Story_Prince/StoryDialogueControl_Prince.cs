@@ -522,10 +522,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 {
                     case 0:
                         StoryPlayerControl.isHappy = true;
+                        //王子出來 anim
                         _countEvent++;
                         break;
 
                     case 1:
+                        //swallow出現 anim
+                        //王子靠近
                         _countEvent++;
                         break;
 
@@ -672,6 +675,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 30:
                 StoryNpcAnimator_Prince.isLeave_Qian = true;
+                break;
+
+            case 31:
+                StoryInteractableControl_Prince.isPrinceNoDie = true;
                 break;
 
             case 32:
