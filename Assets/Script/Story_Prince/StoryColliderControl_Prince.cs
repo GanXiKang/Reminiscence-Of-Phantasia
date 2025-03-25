@@ -29,6 +29,7 @@ public class StoryColliderControl_Prince : MonoBehaviour
                     break;
                      
                 case 3:
+                    StoryNpcAnimator_Prince.isWet = false;
                     StoryInteractableControl_Prince.isPrinceInNow = true;
                     StoryInteractableControl_Prince.isSwallowHunger = true;
                     StoryUIControl_Prince.isDialogue = true;
