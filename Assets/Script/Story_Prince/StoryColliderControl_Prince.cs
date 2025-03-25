@@ -7,6 +7,7 @@ public class StoryColliderControl_Prince : MonoBehaviour
     public int _whatCollider;
 
     bool isLookPastOnce = true;
+    bool isLookBaseOnce = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,12 +30,16 @@ public class StoryColliderControl_Prince : MonoBehaviour
                     break;
                      
                 case 3:
-                    StoryNpcAnimator_Prince.isWet = false;
-                    StoryInteractableControl_Prince.isPrinceInNow = true;
-                    StoryUIControl_Prince.isDialogue = true;
-                    StoryDialogueControl_Prince._isAboveWho1 = 2;
-                    StoryDialogueControl_Prince._isAboveWho2 = 4;
-                    StoryDialogueControl_Prince._textCount = 32;
+                    if (isLookBaseOnce)
+                    {
+                        isLookBaseOnce = false;
+                        StoryNpcAnimator_Prince.isWet = false;
+                        StoryInteractableControl_Prince.isPrinceInNow = true;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = 2;
+                        StoryDialogueControl_Prince._isAboveWho2 = 4;
+                        StoryDialogueControl_Prince._textCount = 32;
+                    }
                     break;
             }
         }
