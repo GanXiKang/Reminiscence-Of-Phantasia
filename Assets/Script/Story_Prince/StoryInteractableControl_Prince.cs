@@ -78,6 +78,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     //09Jun & 11Bei
     bool isHelpJun = false;
     public static bool isDoubleButter = false;
+    //14Plank
+    public static bool isGivePlank = false;
     // Resident
     bool isResidentOnce = true;
     bool isResidentTwo = true;
@@ -664,6 +666,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 14:
+                    isGivePlank = true;
                     StoryUIControl_Prince.isDialogue = true;
                     StoryDialogueControl_Prince._textCount = 26;
 

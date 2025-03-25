@@ -117,7 +117,7 @@ public class StoryGameControl_Prince : MonoBehaviour
                 break;
 
             case 5:
-                if(plank.activeSelf)
+                if(!StoryInteractableControl_Prince.isGivePlank)
                     plank.SetActive(false);
                 break;
         }
