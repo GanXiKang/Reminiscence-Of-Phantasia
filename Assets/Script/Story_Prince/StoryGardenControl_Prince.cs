@@ -28,7 +28,7 @@ public class StoryGardenControl_Prince : MonoBehaviour
         treeCherry_Now.SetActive(isCherryTree);
         treeGrape_Now.SetActive(isGrapeTree);
 
-        if (StoryInteractableControl_Prince.isSwallowHunger)
+        if (StoryInteractableControl_Prince.isSwallowHunger && StoryBagControl.isItemNumber[12] && StoryBagControl.isItemNumber[13])
             interactableEF.SetActive(true);
 
         if (isPlanting)
