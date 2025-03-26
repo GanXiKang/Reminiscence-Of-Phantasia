@@ -818,7 +818,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 15:
-                    if (!StoryGardenControl_Prince.isPlanting && isSwallowHunger)
+                    if (isSwallowHunger && StoryBagControl.isItemNumber[12] && StoryBagControl.isItemNumber[13])
                     {
                         StoryUIControl_Prince.isDialogue = true;
                         StoryDialogueControl_Prince._isAboveWho1 = _who;
