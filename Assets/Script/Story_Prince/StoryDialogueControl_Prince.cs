@@ -542,7 +542,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 38:
+                StoryPlayerControl.isHappy = true;
                 //Swallow anim
+                break;
+
+            case 41:
+                StoryPlayerControl.isHappy = true;
+                //王子和Swallow離開
                 break;
 
             case 46:
@@ -694,7 +700,12 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 40:
+                StoryPlayerControl.isHappy = true;
                 StoryGameControl_Prince.isSuppliesGameHard = true;
+                break;
+
+            case 41:
+                //有人跑出來
                 break;
 
             case 81:
