@@ -55,6 +55,16 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         if (isPlotNpcActive)
             PlotNpcActive();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StoryBagControl.isGet = true;
+            StoryBagControl.isItemNumber[12] = true;
+            StoryBagControl.isItemNumber[13] = true;
+
+            StoryInteractableControl_Prince._helpChildQian = 8;
+            StoryInteractableControl_Prince.isPrinceNoDie = true;
+        }
     }
 
     void MouseCursor()
