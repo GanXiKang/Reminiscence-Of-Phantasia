@@ -16,7 +16,7 @@ public class StoryColliderControl_Prince : MonoBehaviour
             switch (_whatCollider)
             {
                 case 1:
-                    if (isLookPastOnce && StoryInteractableControl_Prince._HelpChildQian == 0)
+                    if (isLookPastOnce && StoryInteractableControl_Prince._helpChildQian == 0)
                     {
                         isLookPastOnce = false;
                         StoryUIControl_Prince.isDialogue = true;

@@ -105,7 +105,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         supplies_Now.SetActive(isSuppliesGameHard && !StoryUIControl_Prince.isSuppliesActive);
         supplies_Past.SetActive(isSuppliesGameEasy && !StoryUIControl_Prince.isSuppliesActive);
 
-        switch (StoryInteractableControl_Prince._HelpChildQian)
+        switch (StoryInteractableControl_Prince._helpChildQian)
         {
             case 2:
                 woodFence.SetActive(false);
