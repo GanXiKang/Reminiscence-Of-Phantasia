@@ -64,6 +64,9 @@ public class StoryGameControl_Prince : MonoBehaviour
 
             StoryInteractableControl_Prince._helpChildQian = 8;
             StoryInteractableControl_Prince.isPrinceNoDie = true;
+
+            StoryNpcAnimator_Prince.isLeaveHelp = true;
+            StoryNpcAnimator_Prince.isFindFood = true;
         }
     }
 
