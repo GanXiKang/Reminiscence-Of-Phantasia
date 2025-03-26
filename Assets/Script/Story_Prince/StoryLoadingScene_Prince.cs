@@ -131,7 +131,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
             if (index >= 3)
                 index = 0;
             ima.sprite = time[index];
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
