@@ -28,6 +28,8 @@ public class StoryLoadingScene_Prince : MonoBehaviour
     bool isClose = false;
     float _loadingSpeed = 1.5f;
 
+    private Coroutine current;
+
     void Update()
     {
         loadingUI.SetActive(isLoading);
@@ -42,8 +44,9 @@ public class StoryLoadingScene_Prince : MonoBehaviour
             isLoading = true;
             if (isPlayMusiaOnce)
             {
-                BGM.PlayOneShot(switchScene);
                 isPlayMusiaOnce = false;
+                BGM.PlayOneShot(switchScene);
+                current = StartCoroutine(TimeLoading());
             }
 
             if (ima.fillAmount < 1)
@@ -69,6 +72,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
                 isPlayMusiaOnce = true;
                 isClose = false;
                 isLoading = false;
+                StopCoroutine(current);
                 if (StoryGhostControl_Prince.isWatchSkill)
                     StoryGhostControl_Prince.isDisappear = true;
 
@@ -114,6 +118,20 @@ public class StoryLoadingScene_Prince : MonoBehaviour
             BGM.Stop();
             BGM.clip = futureBGM;
             BGM.Play();
+        }
+    }
+
+    IEnumerator TimeLoading()
+    {
+        int index = 0;
+
+        while (true)
+        {
+            index++;
+            if (index >= 3)
+                index = 0;
+            ima.sprite = time[index];
+            yield return new WaitForSeconds(0.15f);
         }
     }
 }
