@@ -528,7 +528,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
                     case 1:
                         StoryNpcAnimator_Prince.isWalk_Swallow = false;
-                        StoryNpcAnimator_Prince.isSad_Swallow = true;
+                        StoryNpcAnimator_Prince.isHungry = true;
                         StoryNpcAnimator_Prince.isComeBack = true;
                         StoryInteractableControl_Prince._swallowHunger = 2;
                         _countEvent++;
@@ -543,7 +543,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 38:
                 StoryPlayerControl.isHappy = true;
-                //Swallow anim
+                StoryNpcAnimator_Prince.isHungry = false;
                 break;
 
             case 41:
