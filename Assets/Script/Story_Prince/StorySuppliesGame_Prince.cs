@@ -29,6 +29,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         }
         else if(StoryGameControl_Prince.isSuppliesGameHard)
         {
+            StoryUIControl_Prince.isDialogue = true;
+            StoryDialogueControl_Prince._isAboveWho1 = 2;
+            StoryDialogueControl_Prince._isAboveWho2 = 4;
+            StoryDialogueControl_Prince._textCount = 41;
             StoryGameControl_Prince.isSuppliesGameHard = false;
         }
     }
