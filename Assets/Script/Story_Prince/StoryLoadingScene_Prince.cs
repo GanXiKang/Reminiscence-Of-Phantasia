@@ -21,7 +21,8 @@ public class StoryLoadingScene_Prince : MonoBehaviour
 
     [Header("LoadingUI")]
     public GameObject loadingUI;
-    public Image a;
+    public Image ima;
+    public Sprite[] time;
     public static bool isLoading = false;
     public static bool isOpen = false;
     bool isClose = false;
@@ -45,11 +46,11 @@ public class StoryLoadingScene_Prince : MonoBehaviour
                 isPlayMusiaOnce = false;
             }
 
-            if (a.fillAmount < 1)
+            if (ima.fillAmount < 1)
             {
-                a.fillAmount += _loadingSpeed * Time.deltaTime;
+                ima.fillAmount += _loadingSpeed * Time.deltaTime;
             }
-            else if (a.fillAmount == 1)
+            else if (ima.fillAmount == 1)
             {
                 isOpen = false;
                 BGM.PlayOneShot(loading);
@@ -59,11 +60,11 @@ public class StoryLoadingScene_Prince : MonoBehaviour
         }
         if (isClose)
         {
-            if (a.fillAmount > 0)
+            if (ima.fillAmount > 0)
             {
-                a.fillAmount -= _loadingSpeed * Time.deltaTime;
+                ima.fillAmount -= _loadingSpeed * Time.deltaTime;
             }
-            else if (a.fillAmount == 0)
+            else if (ima.fillAmount == 0)
             {
                 isPlayMusiaOnce = true;
                 isClose = false;
