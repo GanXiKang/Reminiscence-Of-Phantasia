@@ -19,6 +19,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     public static bool isSurprise_Swallow = false;
     public static bool isWalk_Swallow = false;
     public static bool isFindFood = false;
+    public static bool isComeBack = false;
     //05Qian_Child
     public static bool isLeave_Qian = false;
     //06Qian_Adult
@@ -47,6 +48,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 anim.SetInteger("HelpChildQian", StoryInteractableControl_Prince._helpChildQian);
                 anim.SetBool("isWet", isWet);
                 anim.SetBool("isDrown", isDrown);
+                anim.SetInteger("SwallowHunger", StoryInteractableControl_Prince._swallowHunger);
                 break;
 
             case 4:
@@ -54,6 +56,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 anim.SetBool("isSurprise", isSurprise_Swallow);
                 anim.SetBool("isWalk", isWalk_Swallow);
                 anim.SetBool("isFindFood", isFindFood);
+                anim.SetBool("isComeBack", isComeBack);
                 break;
 
             case 5:
