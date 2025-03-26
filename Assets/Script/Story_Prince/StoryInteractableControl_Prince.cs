@@ -559,7 +559,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 11;
                             }
-                            switch (_HelpChildQian)
+                            switch (_helpChildQian)
                             {
                                 case 1:
                                     StoryUIControl_Prince.isDialogue = true;
@@ -629,7 +629,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 20;
                             }
-                            else if (_HelpChildQian == 4 && !isGiveRope)
+                            else if (_helpChildQian == 4 && !isGiveRope)
                             {
                                 isGiveRope = true;
                                 StoryUIControl_Prince.isDialogue = true;
@@ -997,7 +997,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 break;
 
                             case 1:
-                                if (_HelpChildQian == 5)
+                                if (_helpChildQian == 5)
                                 {
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
@@ -1012,7 +1012,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 break;
 
                             case 2:
-                                if (_HelpChildQian == 4)
+                                if (_helpChildQian == 4)
                                 {
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;
@@ -1026,7 +1026,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 break;
 
                             case 3:
-                                if (_HelpChildQian == 4)
+                                if (_helpChildQian == 4)
                                 {
                                     StoryUIControl_Prince.isDialogue = true;
                                     StoryDialogueControl_Prince._isAboveWho1 = _who;

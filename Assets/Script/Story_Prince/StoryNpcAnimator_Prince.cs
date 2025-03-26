@@ -44,7 +44,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
             case 2:
                 anim.SetBool("isWalk", isWalk_Prince);
                 anim.SetBool("isLeaveHelp", isLeaveHelp);
-                anim.SetInteger("HelpChildQian", StoryInteractableControl_Prince._HelpChildQian);
+                anim.SetInteger("HelpChildQian", StoryInteractableControl_Prince._helpChildQian);
                 anim.SetBool("isWet", isWet);
                 anim.SetBool("isDrown", isDrown);
                 break;
@@ -57,7 +57,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 break;
 
             case 5:
-                anim.SetInteger("PrinceHelp", StoryInteractableControl_Prince._HelpChildQian);
+                anim.SetInteger("PrinceHelp", StoryInteractableControl_Prince._helpChildQian);
                 anim.SetBool("isLeave", isLeave_Qian);
                 break;
 

@@ -451,7 +451,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 BGM.PlayOneShot(drowning);
                 StoryPlayerControl.isSurprised = true;
                 StoryNpcAnimator_Prince.isWet = true;
-                StoryInteractableControl_Prince._HelpChildQian = 4;
+                StoryInteractableControl_Prince._helpChildQian = 4;
                 break;
 
             case 27:
@@ -480,19 +480,19 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 29:
                 BGM.PlayOneShot(success);
-                StoryInteractableControl_Prince._HelpChildQian = 5;
+                StoryInteractableControl_Prince._helpChildQian = 5;
                 break;
 
             case 30:
                 switch (_countEvent)
                 {
                     case 0:
-                        StoryInteractableControl_Prince._HelpChildQian = 6;
+                        StoryInteractableControl_Prince._helpChildQian = 6;
                         _countEvent++;
                         break;
 
                     case 1:
-                        StoryInteractableControl_Prince._HelpChildQian = 7;
+                        StoryInteractableControl_Prince._helpChildQian = 7;
                         _countEvent = 0;
                         break;
                 }
@@ -511,7 +511,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         break;
 
                     case 1:
-                        StoryInteractableControl_Prince._HelpChildQian = 8;
+                        StoryInteractableControl_Prince._helpChildQian = 8;
                         _countEvent = 0;
                         break;
                 }
@@ -655,16 +655,16 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 22:
-                StoryInteractableControl_Prince._HelpChildQian = 1;
+                StoryInteractableControl_Prince._helpChildQian = 1;
                 StoryNpcAnimator_Prince.isLeave_Kang = true;
                 break;
 
             case 23:
-                StoryInteractableControl_Prince._HelpChildQian = 2;
+                StoryInteractableControl_Prince._helpChildQian = 2;
                 break;
 
             case 24:
-                StoryInteractableControl_Prince._HelpChildQian = 3;
+                StoryInteractableControl_Prince._helpChildQian = 3;
                 break;
 
             case 27:
