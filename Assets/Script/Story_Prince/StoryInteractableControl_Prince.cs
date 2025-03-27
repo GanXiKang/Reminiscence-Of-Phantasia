@@ -78,6 +78,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     bool isGiveRope = false;
     //09Jun & 11Bei
     bool isHelpJun = false;
+    bool isExchangeTomato = false;
     public static bool isDoubleButter = false;
     //12Bei
     public static bool isNeedSauce = false;
@@ -813,9 +814,18 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
-                            StoryUIControl_Prince.isDialogue = true;
-                            StoryDialogueControl_Prince._isAboveWho1 = _who;
-                            StoryDialogueControl_Prince._textCount = 45;
+                            if (!isExchangeTomato)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 45;
+                            }
+                            else
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 87;
+                            }
                             break;
                     }
                     break;
@@ -1130,6 +1140,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         {
                             case 0:
                             case 1:
+                                isExchangeTomato = true;
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 46;
