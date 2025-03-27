@@ -40,6 +40,10 @@ public class StoryGameControl_Prince : MonoBehaviour
     public GameObject smokEF;
     public static bool isBroken = false;
 
+    [Header("SceneSound")]
+    public AudioSource[] fountain;
+    public AudioSource[] river;
+
     void Start()
     {
         PlotNpcActive();
@@ -52,6 +56,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         MainNpcActive();
         PlotObjectActive();
         PrinceState_Now();
+        SceneSound();
 
         if (isPlotNpcActive)
             PlotNpcActive();
@@ -178,5 +183,14 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         princeStatue.SetActive(false);
         brokenPrinceStatue.SetActive(true);
+    }
+    void SceneSound()
+    {
+        fountain[0].volume = SettingControl.volumeBGM;
+        fountain[1].volume = SettingControl.volumeBGM;
+        fountain[2].volume = SettingControl.volumeBGM;
+        river[0].volume = SettingControl.volumeBGM;
+        river[1].volume = SettingControl.volumeBGM;
+        river[2].volume = SettingControl.volumeBGM;
     }
 }
