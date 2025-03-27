@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class StorySuppliesGame_Prince : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip gainEnergy;
+
     void OnEnable()
     {
         GameEnd();
@@ -35,5 +39,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             StoryDialogueControl_Prince._textCount = 41;
             StoryGameControl_Prince.isSuppliesGameHard = false;
         }
+        BGM.PlayOneShot(gainEnergy);
+        StorySkillControl_Prince.isGainEnegry = true;
+        StorySkillControl_Prince._gainEnegryValue = 0.2f;
     }
 }
