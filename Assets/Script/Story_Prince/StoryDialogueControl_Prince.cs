@@ -720,7 +720,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 41:
-                //有人跑出來
+                StoryNpcAnimator_Prince.isNeedSauce = true;
                 break;
 
             case 81:
