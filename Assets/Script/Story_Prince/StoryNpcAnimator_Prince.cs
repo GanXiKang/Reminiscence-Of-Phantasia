@@ -29,6 +29,8 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
     //07Kang
     public static bool isFindGem = false;
     public static bool isLeave_Kang = false;
+    //12Bei
+    public static bool isNeedSauce = false;
 
     void Start()
     {
@@ -83,6 +85,10 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
 
             case 10:
                 anim.SetBool("isHappy", StoryInteractableControl_Prince.isPrinceNoDie);
+                break;
+
+            case 12:
+                anim.SetBool("isNeedSauce", isNeedSauce);
                 break;
         }
     }
