@@ -515,7 +515,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     case 1:
                         BGM.PlayOneShot(gainEnergy);
                         StorySkillControl_Prince.isGainEnegry = true;
-                        StorySkillControl_Prince._gainEnegryValue = 0.03f;
+                        StorySkillControl_Prince._gainEnegryValue = 0.3f;
                         StoryInteractableControl_Prince._helpChildQian = 8;
                         _countEvent = 0;
                         break;
@@ -742,7 +742,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 BGM.PlayOneShot(gainEnergy);
                 StoryPlayerControl.isHappy = true;
                 StorySkillControl_Prince.isGainEnegry = true;
-                StorySkillControl_Prince._gainEnegryValue = 0.02f;
+                StorySkillControl_Prince._gainEnegryValue = 0.05f;
                 break;
         }
     }
