@@ -81,6 +81,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isDoubleButter = false;
     //12Bei
     public static bool isNeedSauce = false;
+    public static bool isGetTomato = false;
     //14Plank
     public static bool isGivePlank = false;
     // Resident
@@ -831,9 +832,18 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
-                            StoryUIControl_Prince.isDialogue = true;
-                            StoryDialogueControl_Prince._isAboveWho1 = _who;
-                            StoryDialogueControl_Prince._textCount = 43;
+                            if (!isGetTomato)
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 43;
+                            }
+                            else
+                            {
+                                StoryUIControl_Prince.isDialogue = true;
+                                StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                StoryDialogueControl_Prince._textCount = 55;
+                            }
                             break;
                     }
                     break;
