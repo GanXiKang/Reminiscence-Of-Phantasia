@@ -559,7 +559,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
                     case 1:
                         StoryPlayerControl.isHappy = true;
-                        //王子和Swallow離開
+                        StoryInteractableControl_Prince._swallowHunger = 4;
                         _countEvent = 0;
                         break;
                 }
@@ -715,6 +715,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 40:
                 StoryPlayerControl.isHappy = true;
+                StoryInteractableControl_Prince._swallowHunger = 3;
                 StoryGameControl_Prince.isSuppliesGameHard = true;
                 break;
 
