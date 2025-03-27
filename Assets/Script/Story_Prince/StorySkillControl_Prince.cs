@@ -57,7 +57,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         Energy();
         FirstUseRecoverEnergy();
         GainEnegry();
-        SoundEffects();
     }
 
     void ObjectActive()
@@ -220,10 +219,12 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isPlayOnce)
         {
             isPlayOnce = false;
+            StopCoroutine(current);
+            current = null;
             if (isChange)
                 BGM.PlayOneShot(suc);
             else
-                BGM.PlayOneShot(fai);
+                BGM.PlayOneShot(fai); 
         }
         Invoke("FalseByisCheckConsume", 1f);
     }
@@ -262,22 +263,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         _energyValue += 0.02f;
         isGainEnegry = false;
     }
-    void SoundEffects()
-    {
-        if (isRotating)
-        {
-            if(current == null)
-               current = StartCoroutine(PlaySoundRot());
-        }
-        else
-        {
-            if (current != null)
-            {
-                StopCoroutine(current);
-                current = null;
-            }
-        }
-    }
 
     public void Button_Time()
     {
@@ -289,6 +274,8 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isRotating)
         {
             isIncreasing = true;
+            if (current == null)
+                current = StartCoroutine(PlaySoundRot());
         }
         else
         {
