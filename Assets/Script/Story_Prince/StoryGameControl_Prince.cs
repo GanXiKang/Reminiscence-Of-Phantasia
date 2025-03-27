@@ -114,6 +114,9 @@ public class StoryGameControl_Prince : MonoBehaviour
         npc[4].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
         npcBC[3].SetActive(past.activeSelf);
         npc[6].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
+
+        npc[7].SetActive(StoryInteractableControl_Prince.isNeedSauce);
+        npc[8].SetActive(StoryInteractableControl_Prince.isNeedSauce);
     }
     void PlotObjectActive()
     {
