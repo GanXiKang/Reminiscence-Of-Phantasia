@@ -19,7 +19,7 @@ public class SettingControl : MonoBehaviour
     public Sprite settingPage, operatePage;
     public Slider sliderBGM;
     public Toggle fullScreen;
-    public static float volumeBGM = 0.1f; //測試階段
+    public static float volumeBGM = 0.7f; 
     public static bool isFullS;
     public static bool isSettingActive;
     bool isOperate = false;
