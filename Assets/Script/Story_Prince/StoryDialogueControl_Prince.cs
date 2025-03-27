@@ -504,15 +504,17 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
-                        StoryPlayerControl.isHappy = true;
                         BGM.PlayOneShot(give);
                         StoryInteractableControl_Prince.isGiveItem = true;
                         StoryInteractableControl_Prince._whoGive = 2;
                         StoryInteractableControl_Prince._whoGiveNumber = 0;
+                        StoryPlayerControl.isHappy = true;
                         _countEvent++;
                         break;
 
                     case 1:
+                        BGM.PlayOneShot(gainEnergy);
+                        StorySkillControl_Prince.isGainEnegry = true;
                         StoryInteractableControl_Prince._helpChildQian = 8;
                         _countEvent = 0;
                         break;
