@@ -335,6 +335,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 4:
             case 5:
             case 17:
+            case 23:
             case 36:
             case 82:
                 StoryPlayerControl.isSurprised = true;
