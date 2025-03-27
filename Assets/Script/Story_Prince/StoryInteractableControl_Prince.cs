@@ -817,6 +817,25 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     }
                     break;
 
+                case 12:
+                    _countMouseDown++;
+                    switch (_countMouseDown)
+                    {
+                        case 1:
+                            isInteractable = true;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 42;
+                            break;
+
+                        default:
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 43;
+                            break;
+                    }
+                    break;
+
                 case 15:
                     if (isSwallowHunger && StoryBagControl.isItemNumber[12] && StoryBagControl.isItemNumber[13])
                     {
