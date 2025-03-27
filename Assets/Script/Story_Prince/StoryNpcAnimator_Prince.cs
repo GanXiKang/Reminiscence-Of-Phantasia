@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class StoryNpcAnimator_Prince : MonoBehaviour
@@ -59,6 +60,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 anim.SetBool("isWalk", isWalk_Swallow);
                 anim.SetBool("isFindFood", isFindFood);
                 anim.SetBool("isComeBack", isComeBack);
+                anim.SetInteger("SuppliesGame", StoryInteractableControl_Prince._swallowHunger);
                 break;
 
             case 5:
