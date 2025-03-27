@@ -79,6 +79,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     //09Jun & 11Bei
     bool isHelpJun = false;
     public static bool isDoubleButter = false;
+    //12Bei
+    public static bool isNeedSauce = false;
     //14Plank
     public static bool isGivePlank = false;
     // Resident
