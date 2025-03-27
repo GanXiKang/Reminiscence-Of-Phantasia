@@ -46,7 +46,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     bool isRecoverEnergy;
     public static bool isGainEnegry = false;
     public static bool isFirstBackNow = false;
-    public static int _gainEnegryValue = 0;
+    public static float _gainEnegryValue = 0;
     public static int _goPast = 0;
 
     void Update()
