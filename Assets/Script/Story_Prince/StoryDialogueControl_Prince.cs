@@ -578,7 +578,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 56:
-                //Bei leave
+                StoryNpcAnimator_Prince.isLeave_Bei = true;
                 break;
         }
     }
