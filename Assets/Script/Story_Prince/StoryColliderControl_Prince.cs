@@ -41,6 +41,24 @@ public class StoryColliderControl_Prince : MonoBehaviour
                         StoryDialogueControl_Prince._textCount = 32;
                     }
                     break;
+
+                case 4:
+                    AudioSource sound = GetComponent<AudioSource>();
+                    sound.Play();
+                    break;
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            switch (_whatCollider)
+            {
+                case 4:
+                    AudioSource sound = GetComponent<AudioSource>();
+                    sound.Stop();
+                    break;
             }
         }
     }
