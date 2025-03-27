@@ -576,6 +576,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 else
                     StoryInteractableControl_Prince._whoGive = 11;
                 break;
+
+            case 56:
+                //Bei leave
+                break;
         }
     }
     void DialogurEnd()
@@ -589,6 +593,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 14:
+            case 54:
             case 73:
             case 76:
                 StoryPlayerControl.isSad = true;
