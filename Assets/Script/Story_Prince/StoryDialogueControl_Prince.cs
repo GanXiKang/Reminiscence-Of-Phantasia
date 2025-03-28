@@ -689,12 +689,17 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
-                        StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Prince.isShock_Qian = true;
                         _countEvent++;
                         break;
 
                     case 1:
-                        StoryPlayerControl.isSurprised = true;
+                        StoryNpcAnimator_Prince.isShock_Qian = false;
+                        _countEvent++;
+                        break;
+
+                    case 2:
+                        StoryPlayerControl.isHappy = true;
                         _countEvent = 0;
                         break;
                 }
@@ -704,12 +709,34 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
-                        StoryPlayerControl.isHappy = true;
+                        StoryPlayerControl.isSad = true;
                         _countEvent++;
                         break;
 
                     case 1:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 2:
                         StoryPlayerControl.isSurprised = true;
+                        StoryNpcAnimator_Prince.isSmiling_Prince = true;
+                        _countEvent++;
+                        break;
+
+                    case 3:
+                        StoryPlayerControl.isSad = true;
+                        _countEvent++;
+                        break;
+
+                    case 4:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 5:
+                        StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Prince.isSmiling_Swallow = true;
                         _countEvent = 0;
                         break;
                 }
