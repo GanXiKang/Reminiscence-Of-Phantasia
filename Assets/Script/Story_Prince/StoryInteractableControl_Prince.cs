@@ -956,12 +956,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 17:
-                    if (!StoryGameControl_Prince.isFutureGood)
-                    {
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 77;
-                    }
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                    StoryDialogueControl_Prince._textCount = 77;
                     break;
 
                 case 18:
