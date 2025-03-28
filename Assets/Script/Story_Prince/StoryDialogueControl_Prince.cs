@@ -635,6 +635,85 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 67:
                 StoryNpcAnimator_Prince.isPrinceAppear = true;
                 break;
+
+            case 68:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Prince.isSmiling_Prince = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryNpcAnimator_Prince.isSmiling_Swallow = true;
+                        StoryNpcAnimator_Prince.isSmiling_Prince = false;
+                        _countEvent = 0;
+                        break;
+
+                    case 2:
+                        StoryNpcAnimator_Prince.isSmiling_Swallow = false;
+                        _countEvent = 0;
+                        break;
+
+                    case 3:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
+            case 69:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isSad = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        StoryNpcAnimator_Prince.isSmiling_Prince = true;
+                        _countEvent++;
+                        break;
+
+                    case 2:
+                        StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Prince.isSmiling_Swallow = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
+            case 70:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
+            case 71:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
         }
     }
     void DialogurEnd()
