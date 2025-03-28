@@ -9,7 +9,7 @@ public class StoryItemIntroduce_Prince : MonoBehaviour
     public GameObject introduce;
     public GameObject panel;
     public Text content;
-    string[] introduceItem = new string[16];
+    string[] introduceItem = new string[17];
     public static bool isIntroduce;
 
     [Header("IntroduceTransform")]
@@ -56,5 +56,6 @@ public class StoryItemIntroduce_Prince : MonoBehaviour
         introduceItem[13] = "櫻桃籽\n裝有櫻桃籽的紙袋";
         introduceItem[14] = "美乃滋\n瓶裝美乃滋";
         introduceItem[15] = "王冠\n缺少了寶石的王冠";
+        introduceItem[16] = "奶油\n一整塊的奶油";
     }
 }
