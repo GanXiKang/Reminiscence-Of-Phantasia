@@ -62,7 +62,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         MainNpcActive();
         PlotObjectActive();
         PrinceState_Now();
-        SceneFuture()
+        SceneFuture();
         SceneSound();
 
         if (isPlotNpcActive)
