@@ -51,7 +51,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
             isPlayOnce = false;
         }
 
-        if (isWatchSkill)
+        if (isWatchSkill || StoryInteractableControl_Prince.isReallyGoFutureGood)
         {
             _directionGhost = StoryPlayerControl._direction;
             if (_directionGhost == 0)
