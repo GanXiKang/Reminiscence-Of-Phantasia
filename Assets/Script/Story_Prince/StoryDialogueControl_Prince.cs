@@ -625,9 +625,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 29:
-            case 62:
-            case 63:
-            case 64:
             case 74:
             case 78:
             case 79:
@@ -753,6 +750,14 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 41:
                 StoryInteractableControl_Prince.isNeedSauce = true;
+                break;
+
+            case 61:
+            case 62:
+            case 63:
+            case 64:
+                StoryInteractableControl_Prince._askResident++;
+                StoryPlayerControl.isHappy = true;
                 break;
 
             case 81:
