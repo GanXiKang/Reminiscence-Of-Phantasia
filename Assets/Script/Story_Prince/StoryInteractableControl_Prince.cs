@@ -394,6 +394,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                         switch (_whoGiveNumber)
                         {
                             case 0:
+                            case 1:
                                 isPickedUp = true;
                                 StoryBagControl.isGet = true;
                                 StoryBagControl.isItemNumber[_giveItemNumber[_whoGiveNumber]] = true;
@@ -402,9 +403,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                 {
                                     StoryBagControl.isOpenBag = false;
                                 }
-                                break;
-
-                            case 1:
                                 break;
 
                             case 2:
