@@ -22,6 +22,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
     public static bool isWarp = false;
     public static bool isNoGem = false;
     public static bool isDisappear = false;
+    public static bool isAscend = false;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
         anim.SetBool("isWarp", isWarp);
         anim.SetBool("isNoGem", isNoGem);
         anim.SetBool("isDisappear", isDisappear);
+        anim.SetBool("isAscend", isAscend);
 
         Warp();
         Disappear();
