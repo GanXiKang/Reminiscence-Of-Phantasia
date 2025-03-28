@@ -745,7 +745,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 8:
-                    if (!isPrinceNoDie)
+                    if (!StoryGameControl_Prince.isFutureGood)
                     {
                         StoryUIControl_Prince.isDialogue = true;
                         StoryDialogueControl_Prince._isAboveWho1 = _who;
@@ -788,7 +788,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 10:
-                    if (!isPrinceNoDie)
+                    if (!StoryGameControl_Prince.isFutureGood)
                     {
                         StoryUIControl_Prince.isDialogue = true;
                         StoryDialogueControl_Prince._isAboveWho1 = _who;
