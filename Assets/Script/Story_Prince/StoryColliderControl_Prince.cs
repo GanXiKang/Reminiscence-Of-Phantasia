@@ -8,6 +8,7 @@ public class StoryColliderControl_Prince : MonoBehaviour
 
     bool isLookPastOnce = true;
     bool isLookBaseOnce = true;
+    bool isPrinceAppearOnce = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -45,6 +46,16 @@ public class StoryColliderControl_Prince : MonoBehaviour
                 case 4:
                     AudioSource sound = GetComponent<AudioSource>();
                     sound.Play();
+                    break;
+
+                case 5:
+                    if (StoryGhostControl_Prince.isAscend && isPrinceAppearOnce)
+                    {
+                        isPrinceAppearOnce = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = 10;
+                        StoryDialogueControl_Prince._textCount = 67;
+                    }
                     break;
             }
         }
