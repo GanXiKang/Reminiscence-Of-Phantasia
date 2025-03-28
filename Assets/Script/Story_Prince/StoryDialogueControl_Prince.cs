@@ -630,6 +630,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 67:
+                //prince swallow appear
+                break;
         }
     }
     void DialogurEnd()
