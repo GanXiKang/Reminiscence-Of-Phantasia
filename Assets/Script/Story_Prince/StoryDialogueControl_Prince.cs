@@ -611,6 +611,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 switch (_countEvent)
                 {
                     case 0:
+                        StoryGhostControl_Prince.isSmile = true;
                         StoryPlayerControl.isHappy = true;
                         _countEvent++;
                         break;
