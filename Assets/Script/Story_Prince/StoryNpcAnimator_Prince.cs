@@ -73,19 +73,26 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
             case 6:
                 anim.SetBool("isShock", isShock_Qian);
                 anim.SetBool("isSmiling", StoryGameControl_Prince.isFutureGood);
+                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
                 break;
 
             case 7:
                 anim.SetBool("isFindGem", isFindGem);
                 anim.SetBool("isLeave", isLeave_Kang);
+                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
                 break;
 
             case 8:
                 anim.SetBool("isNormal", StoryInteractableControl_Prince.isPrinceNoDie);
                 break;
 
+            case 9:
+                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
+                break;
+
             case 10:
                 anim.SetBool("isHappy", StoryInteractableControl_Prince.isPrinceNoDie);
+                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
                 break;
 
             case 12:
