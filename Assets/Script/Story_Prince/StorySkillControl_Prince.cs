@@ -210,6 +210,11 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isFutureScene = false;
                     _goPast++;
                     isChange = true;
+                    if (StoryInteractableControl_Prince.isReallyGoFutureGood)
+                    {
+                        StoryInteractableControl_Prince.isReallyGoFutureGood = false;
+                        StoryInteractableControl_Prince.isGoFutureGood = true;
+                    }
                 }
                 else
                 {
