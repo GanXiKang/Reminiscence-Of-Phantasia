@@ -61,8 +61,11 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public GameObject effects;
 
     //01Ghost
+    public static bool isReallyGoFutureGood = false;
     public static bool isGoFutureGood = false;
     public static int _askResident = 0;
+    bool isReallyGoOnce = true;
+    bool isGoOnce = true;
     //02Prince
     public static bool isPlotBanMove = false;
     public static bool isCanHelpPrince = false;
@@ -545,6 +548,47 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
+                            if (isReallyGoFutureGood)
+                            {
+                                if (isReallyGoOnce)
+                                {
+                                    isReallyGoOnce = false;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 57;
+                                }
+                                else
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 58;
+                                }
+                            }
+                            if (isGoFutureGood)
+                            {
+                                if (isGoOnce)
+                                {
+                                    isGoOnce = false;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 59;
+                                }
+                                else
+                                {
+                                    if (_askResident < 4)
+                                    {
+                                        StoryUIControl_Prince.isDialogue = true;
+                                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                        StoryDialogueControl_Prince._textCount = 60;
+                                    }
+                                    else
+                                    {
+                                        StoryUIControl_Prince.isDialogue = true;
+                                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                        StoryDialogueControl_Prince._textCount = 66;
+                                    }
+                                }
+                            }
                             break;
                     }
                     break;
