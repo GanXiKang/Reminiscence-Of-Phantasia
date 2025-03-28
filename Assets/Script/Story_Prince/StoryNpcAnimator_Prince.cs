@@ -73,13 +73,13 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
             case 6:
                 anim.SetBool("isShock", isShock_Qian);
                 anim.SetBool("isSmiling", StoryGameControl_Prince.isFutureGood);
-                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
+                anim.SetBool("isGoodFuture", StoryGameControl_Prince.isFutureGood);
                 break;
 
             case 7:
                 anim.SetBool("isFindGem", isFindGem);
                 anim.SetBool("isLeave", isLeave_Kang);
-                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
+                anim.SetBool("isGoodFuture", StoryGameControl_Prince.isFutureGood);
                 break;
 
             case 8:
@@ -87,12 +87,12 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
                 break;
 
             case 9:
-                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
+                anim.SetBool("isGoodFuture", StoryGameControl_Prince.isFutureGood);
                 break;
 
             case 10:
                 anim.SetBool("isHappy", StoryInteractableControl_Prince.isPrinceNoDie);
-                anim.SetBool("isGoodFuture", StoryInteractableControl_Prince.isGoFutureGood);
+                anim.SetBool("isGoodFuture", StoryGameControl_Prince.isFutureGood);
                 break;
 
             case 12:
