@@ -606,6 +606,30 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 66:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent++;
+                        break;
+
+                    case 2:
+                        BGM.PlayOneShot(give);
+                        StoryInteractableControl_Prince.isGiveItem = true;
+                        StoryInteractableControl_Prince._whoGive = 1;
+                        StoryInteractableControl_Prince._whoGiveNumber = 1;
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
         }
     }
     void DialogurEnd()
@@ -769,6 +793,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 64:
                 StoryInteractableControl_Prince._askResident++;
                 StoryPlayerControl.isHappy = true;
+                break;
+
+            case 66:
+                StoryGhostControl_Prince.isAscend = true;
                 break;
 
             case 81:
