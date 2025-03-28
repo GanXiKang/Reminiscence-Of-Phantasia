@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,6 +61,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     [Header("Effects")]
     public GameObject effects;
 
+    //01Ghost
+    public static bool isGoFutureGood = false;
+    public static int _askResident = 0;
     //02Prince
     public static bool isPlotBanMove = false;
     public static bool isCanHelpPrince = false;
