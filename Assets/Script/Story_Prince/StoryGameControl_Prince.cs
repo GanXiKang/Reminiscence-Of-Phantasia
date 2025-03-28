@@ -125,15 +125,23 @@ public class StoryGameControl_Prince : MonoBehaviour
             npc[2].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
         }
 
+        if (StoryInteractableControl_Prince.isGoFutureGood)
+        {
+            npcBC[3].SetActive(future.activeSelf);
+            npc[6].GetComponent<SpriteRenderer>().enabled = future.activeSelf;
+        }
+        else
+        {
+            npcBC[3].SetActive(past.activeSelf);
+            npc[6].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
+        }
+
         npcBC[1].SetActive(now.activeSelf);
         npc[3].GetComponent<SpriteRenderer>().enabled = now.activeSelf;
         npcBC[2].SetActive(past.activeSelf);
         npc[4].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
-        npcBC[3].SetActive(past.activeSelf);
-        npc[6].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
-        npcBC[5].SetActive(now.activeSelf);
+        npcBC[4].SetActive(now.activeSelf);
         npc[9].GetComponent<SpriteRenderer>().enabled = now.activeSelf;
-
         npc[7].SetActive(StoryInteractableControl_Prince.isNeedSauce);
         npc[8].SetActive(StoryInteractableControl_Prince.isNeedSauce);
     }
