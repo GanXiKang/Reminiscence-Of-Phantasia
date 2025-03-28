@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,6 +41,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     public GameObject smokEF;
     public static bool isBroken = false;
 
+    [Header("SceneFuture")]
+    public GameObject futureBad;
+    public GameObject futureGood;
+    public static bool isFutureGood = false;
+
     [Header("SceneSound")]
     public AudioSource[] fountain;
     public AudioSource[] river;
@@ -56,6 +62,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         MainNpcActive();
         PlotObjectActive();
         PrinceState_Now();
+        SceneFuture()
         SceneSound();
 
         if (isPlotNpcActive)
@@ -183,6 +190,11 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         princeStatue.SetActive(false);
         brokenPrinceStatue.SetActive(true);
+    }
+    void SceneFuture()
+    {
+        futureBad.SetActive(!isFutureGood);
+        futureGood.SetActive(isFutureGood);
     }
     void SceneSound()
     {
