@@ -842,9 +842,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     }
                     else
                     {
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 62;
+                        if (isResidentOnce)
+                        {
+                            isResidentOnce = false;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 62;
+                        }
                     }
                     break;
 
@@ -877,9 +881,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             }
                             else
                             {
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._textCount = 61;
+                                if (isResidentOnce)
+                                {
+                                    isResidentOnce = false;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 61;
+                                }
                             }
                             break;
                     }
@@ -894,9 +902,13 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     }
                     else
                     {
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 63;
+                        if (isResidentOnce)
+                        {
+                            isResidentOnce = false;
+                            StoryUIControl_Prince.isDialogue = true;
+                            StoryDialogueControl_Prince._isAboveWho1 = _who;
+                            StoryDialogueControl_Prince._textCount = 63;
+                        }
                     }
                     break;
 
