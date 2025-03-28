@@ -584,6 +584,27 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 56:
                 StoryNpcAnimator_Prince.isLeave_Bei = true;
                 break;
+
+            case 64:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryNpcAnimator_Prince.isShock_Qian = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryNpcAnimator_Prince.isShock_Qian = false;
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent++;
+                        break;
+
+                    case 2:
+                        StoryPlayerControl.isHappy = true;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
         }
     }
     void DialogurEnd()
@@ -606,6 +627,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 29:
             case 62:
             case 63:
+            case 64:
             case 74:
             case 78:
             case 79:
