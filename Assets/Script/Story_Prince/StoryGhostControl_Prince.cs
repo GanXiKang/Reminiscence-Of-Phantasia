@@ -33,6 +33,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
     void Update()
     {
         anim.SetFloat("Direction", _directionGhost);
+        anim.SetBool("isSmile", isSmile);
         anim.SetBool("isWarp", isWarp);
         anim.SetBool("isNoGem", isNoGem);
         anim.SetBool("isDisappear", isDisappear);
