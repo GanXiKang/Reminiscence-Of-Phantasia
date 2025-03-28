@@ -633,7 +633,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 67:
-                //prince swallow appear
+                StoryNpcAnimator_Prince.isPrinceAppear = true;
                 break;
         }
     }
@@ -802,6 +802,15 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 66:
                 StoryGhostControl_Prince.isAscend = true;
+                break;
+
+            case 69:
+            case 71:
+                StoryEnd();
+                break;
+
+            case 70:
+                StoryNpcAnimator_Prince.isNearPrince = true;
                 break;
 
             case 81:
