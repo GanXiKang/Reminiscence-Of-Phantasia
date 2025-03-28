@@ -76,6 +76,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     //06Qian_Adult
     bool isHalfGemMerge = false;
     bool isGiveRope = false;
+    bool isGoodFutureFirstMeet = true;
     //09Jun & 11Bei
     bool isHelpJun = false;
     bool isExchangeTomato = false;
@@ -627,24 +628,43 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
-                            if (!isHalfGemMerge)
+                            if (!StoryGameControl_Prince.isFutureGood)
                             {
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._textCount = 20;
+                                if (!isHalfGemMerge)
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 20;
+                                }
+                                else if (_helpChildQian == 4 && !isGiveRope)
+                                {
+                                    isGiveRope = true;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 27;
+                                }
+                                else
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 88;
+                                }
                             }
-                            else if (_helpChildQian == 4 && !isGiveRope)
+                            else
                             {
-                                isGiveRope = true;
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._textCount = 27;
-                            }
-                            else 
-                            {
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._textCount = 88;
+                                if (isGoodFutureFirstMeet)
+                                {
+                                    isGoodFutureFirstMeet = false;
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 64;
+                                }
+                                else
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 65;
+                                }
                             }
                             break;
                     }
@@ -880,12 +900,9 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     break;
 
                 case 17:
-                    if (!isPrinceNoDie)
-                    {
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 77;
-                    }
+                    StoryUIControl_Prince.isDialogue = true;
+                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                    StoryDialogueControl_Prince._textCount = 77;
                     break;
 
                 case 18:
