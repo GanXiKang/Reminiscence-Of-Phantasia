@@ -346,6 +346,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 21:
             case 35:
             case 37:
+            case 57:
             case 90:
                 StoryPlayerControl.isHappy = true;
                 break;
@@ -753,7 +754,13 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 56:
+                StoryInteractableControl_Prince.isReallyGoFutureGood = true;
                 StoryGhostControl_Prince.isWarp = true;
+                StorySkillControl_Prince.isDisabledClock = true;
+                break;
+
+            case 57:
+                StorySkillControl_Prince.isDisabledClock = false;
                 break;
 
             case 61:
