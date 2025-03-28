@@ -2323,6 +2323,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2051776080}
   m_SourcePrefab: {fileID: 100100000, guid: ba93be2cd51d64040976cfa37466b9ca, type: 3}
+--- !u!1 &144473277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ba93be2cd51d64040976cfa37466b9ca, type: 3}
+  m_PrefabInstance: {fileID: 144473276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &145494075
 GameObject:
   m_ObjectHideFlags: 0
@@ -39576,6 +39581,8 @@ MonoBehaviour:
   brokenPrinceStatue: {fileID: 1629690554}
   notPrinceStatue: {fileID: 1219024783}
   smokEF: {fileID: 1480063876}
+  futureBad: {fileID: 1360138881}
+  futureGood: {fileID: 144473277}
   fountain:
   - {fileID: 254807322}
   - {fileID: 1177836364}
@@ -41180,6 +41187,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355701417}
   m_CullTransparentMesh: 1
+--- !u!1 &1360138881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3260eabb41380df4f8222a530c929a72, type: 3}
+  m_PrefabInstance: {fileID: 39616106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1364378371
 GameObject:
   m_ObjectHideFlags: 0
