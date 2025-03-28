@@ -752,6 +752,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 StoryInteractableControl_Prince.isNeedSauce = true;
                 break;
 
+            case 56:
+                StoryGhostControl_Prince.isWarp = true;
+                break;
+
             case 61:
             case 62:
             case 63:
