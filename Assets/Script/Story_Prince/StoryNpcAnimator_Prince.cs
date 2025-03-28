@@ -72,6 +72,7 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
 
             case 6:
                 anim.SetBool("isShock", isShock_Qian);
+                anim.SetBool("isSmiling", StoryGameControl_Prince.isFutureGood);
                 break;
 
             case 7:
