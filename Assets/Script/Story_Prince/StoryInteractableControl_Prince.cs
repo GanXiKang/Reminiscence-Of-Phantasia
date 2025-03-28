@@ -791,17 +791,26 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             break;
 
                         default:
-                            if (!isHelpJun)
+                            if (!StoryGameControl_Prince.isFutureGood)
                             {
-                                StoryUIControl_Prince.isDialogue = true;
-                                StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._textCount = 48;
+                                if (!isHelpJun)
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 48;
+                                }
+                                else
+                                {
+                                    StoryUIControl_Prince.isDialogue = true;
+                                    StoryDialogueControl_Prince._isAboveWho1 = _who;
+                                    StoryDialogueControl_Prince._textCount = 50;
+                                }
                             }
                             else
                             {
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
-                                StoryDialogueControl_Prince._textCount = 50;
+                                StoryDialogueControl_Prince._textCount = 61;
                             }
                             break;
                     }
