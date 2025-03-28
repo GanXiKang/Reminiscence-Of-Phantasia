@@ -19,6 +19,7 @@ public class StoryGhostControl_Prince : MonoBehaviour
 
     Animator anim;
     float _directionGhost;
+    public static bool isSmile = false;
     public static bool isWarp = false;
     public static bool isNoGem = false;
     public static bool isDisappear = false;
