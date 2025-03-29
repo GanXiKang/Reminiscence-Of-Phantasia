@@ -69,11 +69,12 @@ public class StoryGameControl_Prince : MonoBehaviour
         if (isPlotNpcActive)
             PlotNpcActive();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            StoryUIControl_Prince.isDialogue = true;
-            StoryDialogueControl_Prince._isAboveWho1 = 3;
-            StoryDialogueControl_Prince._textCount = 67;
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                StoryUIControl_Girl.isStoryEnding = true;
+            }
         }
     }
 
