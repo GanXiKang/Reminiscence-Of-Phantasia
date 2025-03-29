@@ -10,7 +10,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip normalMusia, spikedMusia;
-    public AudioClip give, gainEnergy, shock, drowning, fail, success;
+    public AudioClip give, gainEnergy, shock, drowning, fail, success, broken;
 
     [Header("UITransform")]
     public Transform[] target;
@@ -400,6 +400,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     switch (_countEvent)
                     {
                         case 0:
+                            BGM.PlayOneShot(broken);
                             StoryGameControl_Prince.isBroken = true;
                             StoryPlayerControl.isSurprised = true;
                             _countEvent++;
