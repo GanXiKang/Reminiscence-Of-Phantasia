@@ -68,11 +68,6 @@ public class StorySkillControl_Prince : MonoBehaviour
         stopTime.interactable = ButtonTimeInteractable();
         back.interactable = ButtonTimeInteractable() && !isRotating;
         skillClock.interactable = !isDisabledClock;
-
-        print("1" + isIncreasing);
-        print("2" + isReducing);
-        print("3" + isRecoverEnergy);
-        print("4" + isChange);
     }
     bool ButtonTimeInteractable()
     {
@@ -250,6 +245,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void NoEnergyGameOver()
     {
+        isIncreasing = false;
         if (isFirstUse)
             _energyValue = 0.7f;
         else
