@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -109,7 +107,7 @@ public class StoryGameControl_Prince : MonoBehaviour
             npcBC[0].SetActive(now.activeSelf);
             npc[2].GetComponent<SpriteRenderer>().enabled = now.activeSelf;
         }
-        else if (StoryInteractableControl_Prince.isGoFutureGood)
+        else if (isFutureGood)
         {
             npcBC[0].SetActive(future.activeSelf);
             npc[2].GetComponent<SpriteRenderer>().enabled = future.activeSelf;
@@ -131,8 +129,17 @@ public class StoryGameControl_Prince : MonoBehaviour
             npc[6].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
         }
 
-        npcBC[1].SetActive(now.activeSelf);
-        npc[3].GetComponent<SpriteRenderer>().enabled = now.activeSelf;
+        if (isFutureGood)
+        {
+            npcBC[1].SetActive(future.activeSelf);
+            npc[3].GetComponent<SpriteRenderer>().enabled = future.activeSelf;
+        }
+        else
+        {
+            npcBC[1].SetActive(now.activeSelf);
+            npc[3].GetComponent<SpriteRenderer>().enabled = now.activeSelf;
+        }
+
         npcBC[2].SetActive(past.activeSelf);
         npc[4].GetComponent<SpriteRenderer>().enabled = past.activeSelf;
         npcBC[4].SetActive(now.activeSelf);
