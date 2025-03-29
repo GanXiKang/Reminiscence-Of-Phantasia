@@ -69,10 +69,10 @@ public class StorySkillControl_Prince : MonoBehaviour
         back.interactable = ButtonTimeInteractable() && !isRotating;
         skillClock.interactable = !isDisabledClock;
 
-        print(isIncreasing);
-        print(isReducing);
-        print(isRecoverEnergy);
-        print(isChange);
+        print("1" + isIncreasing);
+        print("2" + isReducing);
+        print("3" + isRecoverEnergy);
+        print("4" + isChange);
     }
     bool ButtonTimeInteractable()
     {
