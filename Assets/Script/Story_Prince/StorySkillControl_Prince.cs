@@ -44,7 +44,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public GameObject timeEF;
 
     //Plot
-    bool isFirstUse = false;
+    bool isFirstUse = true;
     bool isRecoverEnergy;
     public static bool isGainEnegry = false;
     public static bool isFirstBackNow = false;
