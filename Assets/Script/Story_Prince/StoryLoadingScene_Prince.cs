@@ -7,7 +7,7 @@ public class StoryLoadingScene_Prince : MonoBehaviour
 {
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip nowBGM, pastBGM, futureBGM;
+    public AudioClip nowBGM, pastBGM, futureBadBGM, futureGoodBGM;
     public AudioClip switchScene, loading;
     bool isPlayMusiaOnce = true;
 
@@ -115,9 +115,18 @@ public class StoryLoadingScene_Prince : MonoBehaviour
         }
         else if (isFutureScene)
         {
-            BGM.Stop();
-            BGM.clip = futureBGM;
-            BGM.Play();
+            if (!StoryGameControl_Prince.isFutureGood)
+            {
+                BGM.Stop();
+                BGM.clip = futureBadBGM;
+                BGM.Play();
+            }
+            else
+            {
+                BGM.Stop();
+                BGM.clip = futureGoodBGM;
+                BGM.Play();
+            }
         }
     }
 
