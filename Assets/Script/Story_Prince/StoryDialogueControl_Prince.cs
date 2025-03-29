@@ -633,11 +633,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 }
                 break;
 
-            case 67:
-                StoryNpcAnimator_Prince.isPrinceAppear = true;
-                print(StoryNpcAnimator_Prince.isPrinceAppear);
-                break;
-
             case 68:
                 switch (_countEvent)
                 {
@@ -912,6 +907,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             case 66:
                 StoryGhostControl_Prince.isAscend = true;
                 StorySkillControl_Prince.isDisabledClock = true;
+                break;
+
+            case 67:
+                StoryNpcAnimator_Prince.isPrinceAppear = true;
                 break;
 
             case 69:
