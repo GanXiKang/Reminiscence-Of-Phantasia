@@ -33,7 +33,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public Image bg;
     public Sprite bgEnergy, bgNoEnergy;
     public static int _zoneNum;
-    float _energyValue = 0.01f;
+    float _energyValue = 0.7f;
     float _rotation = 0.008f;
     float _smallArea = 0.03f;
     float _largeArea = 0.05f;
