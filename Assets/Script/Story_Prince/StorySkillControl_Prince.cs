@@ -298,7 +298,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (StoryGhostControl_Prince.isDisappear) return;
 
         BGM.PlayOneShot(ope);
-        if (isFirstUse)
+        if (isFirstUse || StoryInteractableControl_Prince.isReallyGoFutureGood)
         {
             isClockActice = true;
         }
