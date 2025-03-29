@@ -46,6 +46,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     //Plot
     bool isFirstUse = true;
     bool isRecoverEnergy;
+    float _recoverEnergyValue;
     public static bool isGainEnegry = false;
     public static bool isFirstBackNow = false;
     public static float _gainEnegryValue = 0;
@@ -141,14 +142,18 @@ public class StorySkillControl_Prince : MonoBehaviour
 
         if (energyBar.fillAmount <= 0)
         {
+            bg.sprite = bgNoEnergy;
             if (isRotating)
             {
                 isRotating = false;
-                CheckCurrentZone();
-
-                if (isFirstUse)
-                    isRecoverEnergy = true;
+                StopCoroutine(current);
+                BlackScreenControl.isOpenBlackScreen = true;
+                Invoke("NoEnergyGameOver", 1f);
             }
+        }
+        else
+        {
+            bg.sprite = bgEnergy;
         }
 
         if (!isEnergyConsume) return;
@@ -238,6 +243,14 @@ public class StorySkillControl_Prince : MonoBehaviour
         }
         Invoke("FalseByisCheckConsume", 1f);
     }
+    void NoEnergyGameOver()
+    {
+        isRecoverEnergy = true;
+        if (isFirstUse)
+            _recoverEnergyValue = 0.7f;
+        else
+            _energyValue = 0.1f;
+    }
     void FalseByisCheckConsume()
     {
         isPlayOnce = true;
@@ -262,8 +275,8 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (!isRecoverEnergy) return;
 
-        _energyValue = Mathf.Lerp(_energyValue, 0.71f, Time.deltaTime * 0.5f);
-        if (_energyValue >= 0.7f)
+        _energyValue = Mathf.Lerp(_energyValue, _recoverEnergyValue + 0.01f, Time.deltaTime * 0.5f);
+        if (_energyValue >= _recoverEnergyValue)
             isRecoverEnergy = false;
     }
     void GainEnegry()
