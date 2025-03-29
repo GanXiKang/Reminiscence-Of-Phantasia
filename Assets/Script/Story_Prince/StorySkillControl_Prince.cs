@@ -46,7 +46,6 @@ public class StorySkillControl_Prince : MonoBehaviour
     //Plot
     bool isFirstUse = false;
     bool isRecoverEnergy;
-    float _recoverEnergyValue;
     public static bool isGainEnegry = false;
     public static bool isFirstBackNow = false;
     public static float _gainEnegryValue = 0;
@@ -69,6 +68,11 @@ public class StorySkillControl_Prince : MonoBehaviour
         stopTime.interactable = ButtonTimeInteractable();
         back.interactable = ButtonTimeInteractable() && !isRotating;
         skillClock.interactable = !isDisabledClock;
+
+        print(isIncreasing);
+        print(isReducing);
+        print(isRecoverEnergy);
+        print(isChange);
     }
     bool ButtonTimeInteractable()
     {
@@ -246,11 +250,10 @@ public class StorySkillControl_Prince : MonoBehaviour
     }
     void NoEnergyGameOver()
     {
-        isRecoverEnergy = true;
         if (isFirstUse)
-            _recoverEnergyValue = 0.7f;
+            _energyValue = 0.7f;
         else
-            _recoverEnergyValue = 0.1f;
+            _energyValue = 0.15f;
     }
     void FalseByisCheckConsume()
     {
@@ -276,10 +279,9 @@ public class StorySkillControl_Prince : MonoBehaviour
     {
         if (!isRecoverEnergy) return;
 
-        _energyValue = Mathf.Lerp(_energyValue, _recoverEnergyValue + 0.01f, Time.deltaTime * 0.5f);
-        if (_energyValue >= _recoverEnergyValue)
+        _energyValue = Mathf.Lerp(_energyValue, 0.71f, Time.deltaTime * 0.5f);
+        if (_energyValue >= 0.7f)
             isRecoverEnergy = false;
-        print(isRecoverEnergy);
     }
     void GainEnegry()
     {
