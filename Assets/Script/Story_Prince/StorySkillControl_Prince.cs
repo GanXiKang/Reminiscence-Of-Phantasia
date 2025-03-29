@@ -188,6 +188,12 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isPastScene = false;
                     StoryLoadingScene_Prince.isFutureScene = true;
                     isChange = true;
+                    if (StoryInteractableControl_Prince.isReallyGoFutureGood)
+                    {
+                        StoryGameControl_Prince.isFutureGood = true;
+                        StoryInteractableControl_Prince.isGoFutureGood = true;
+                        StoryInteractableControl_Prince.isReallyGoFutureGood = false;
+                    }
                 }
                 else
                 {
@@ -210,13 +216,6 @@ public class StorySkillControl_Prince : MonoBehaviour
                     StoryLoadingScene_Prince.isFutureScene = false;
                     _goPast++;
                     isChange = true;
-                    if (StoryInteractableControl_Prince.isReallyGoFutureGood)
-                    {
-                        isDisabledClock = true;
-                        StoryGameControl_Prince.isFutureGood = true;
-                        StoryInteractableControl_Prince.isGoFutureGood = true;
-                        StoryInteractableControl_Prince.isReallyGoFutureGood = false;
-                    }
                 }
                 else
                 {
