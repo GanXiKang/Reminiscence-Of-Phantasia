@@ -635,6 +635,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 67:
                 StoryNpcAnimator_Prince.isPrinceAppear = true;
+                print(StoryNpcAnimator_Prince.isPrinceAppear);
                 break;
 
             case 68:
