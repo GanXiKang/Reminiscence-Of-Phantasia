@@ -9,6 +9,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public AudioSource BGM;
     public AudioClip gainEnergy;
 
+    float _gameCount = 0;
+
     void OnEnable()
     {
         GameEnd();
@@ -34,14 +36,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void OnDisable()
     {
-        if (StoryGameControl_Prince.isPassGameEasy)
+        if (StoryGameControl_Prince.isPassGameEasy && _gameCount == 0)
         {
+            _gameCount++;
             StoryNpcAnimator_Prince.isFindGem = true;
             StoryGameControl_Prince.isSuppliesGameEasy = false;
         }
-        else if (StoryGameControl_Prince.isPassGameHard)
+        if (StoryGameControl_Prince.isPassGameHard && _gameCount >= 1)
         {
-            print("1");
             StoryUIControl_Prince.isDialogue = true;
             StoryDialogueControl_Prince._isAboveWho1 = 2;
             StoryDialogueControl_Prince._isAboveWho2 = 4;
