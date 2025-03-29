@@ -73,7 +73,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-           
+            isSuppliesGameHard = true;
         }
     }
 
