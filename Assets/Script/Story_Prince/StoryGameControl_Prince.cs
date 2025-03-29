@@ -71,7 +71,9 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isFutureGood = true;
+            StoryUIControl_Prince.isDialogue = true;
+            StoryDialogueControl_Prince._isAboveWho1 = 3;
+            StoryDialogueControl_Prince._textCount = 67;
         }
     }
 
