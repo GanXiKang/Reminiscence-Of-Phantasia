@@ -192,6 +192,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     {
                         StoryGameControl_Prince.isFutureGood = true;
                         StoryInteractableControl_Prince.isGoFutureGood = true;
+                        StoryInteractableControl_Prince.isPrinceInNow = false;
                         StoryInteractableControl_Prince.isReallyGoFutureGood = false;
                     }
                 }
