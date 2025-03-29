@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class StoryGardenControl_Prince : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip plant;
+
     [Header("Now")]
     public GameObject treeCherry_Now;
     public GameObject treeGrape_Now;
@@ -43,6 +47,8 @@ public class StoryGardenControl_Prince : MonoBehaviour
         interactableEF.SetActive(false);
         plantingEF.SetActive(true);
         yield return new WaitForSeconds(0.8f);
+        print("1");
+        BGM.PlayOneShot(plant);
         treeKid.SetActive(true);
         yield return new WaitForSeconds(1.2f);
         plantingEF.SetActive(false);
