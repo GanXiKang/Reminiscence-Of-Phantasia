@@ -250,7 +250,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         if (isFirstUse)
             _recoverEnergyValue = 0.7f;
         else
-            _energyValue = 0.1f;
+            _recoverEnergyValue = 0.1f;
     }
     void FalseByisCheckConsume()
     {
@@ -279,6 +279,7 @@ public class StorySkillControl_Prince : MonoBehaviour
         _energyValue = Mathf.Lerp(_energyValue, _recoverEnergyValue + 0.01f, Time.deltaTime * 0.5f);
         if (_energyValue >= _recoverEnergyValue)
             isRecoverEnergy = false;
+        print(isRecoverEnergy);
     }
     void GainEnegry()
     {
