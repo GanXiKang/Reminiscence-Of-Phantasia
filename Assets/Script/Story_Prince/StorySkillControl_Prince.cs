@@ -44,7 +44,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     public GameObject timeEF;
 
     //Plot
-    bool isFirstUse = true;
+    bool isFirstUse = false;
     bool isRecoverEnergy;
     float _recoverEnergyValue;
     public static bool isGainEnegry = false;
@@ -146,6 +146,7 @@ public class StorySkillControl_Prince : MonoBehaviour
             if (isRotating)
             {
                 isRotating = false;
+                CheckCurrentZone();
                 StopCoroutine(current);
                 BlackScreenControl.isOpenBlackScreen = true;
                 Invoke("NoEnergyGameOver", 1f);
