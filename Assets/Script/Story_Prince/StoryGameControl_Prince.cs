@@ -70,15 +70,7 @@ public class StoryGameControl_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StoryBagControl.isGet = true;
-            StoryBagControl.isItemNumber[12] = true;
-            StoryBagControl.isItemNumber[13] = true;
-
-            StoryInteractableControl_Prince._helpChildQian = 8;
-            StoryInteractableControl_Prince.isPrinceNoDie = true;
-
-            StoryNpcAnimator_Prince.isLeaveHelp = true;
-            StoryNpcAnimator_Prince.isFindFood = true;
+           
         }
     }
 
