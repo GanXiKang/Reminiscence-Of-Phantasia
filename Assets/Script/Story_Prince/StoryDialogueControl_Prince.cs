@@ -876,6 +876,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 38:
+                StoryInteractableControl_Prince.isSwallowHunger = false;
                 StoryInteractableControl_Prince.isGiveSuppliesBox = true;
                 break;
 
