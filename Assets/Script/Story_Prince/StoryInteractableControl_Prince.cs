@@ -1116,6 +1116,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     void OnMouseEnter()
     {
         if (SettingControl.isSettingActive) return;
+        if (StoryLoadingScene_Prince.isLoading) return;
         if (StorySkillControl_Prince.isClockActice) return;
         if (Vector3.Distance(transform.position, player.transform.position) > _snapDistance) return;
 
