@@ -4158,8 +4158,8 @@ GameObject:
   m_Component:
   - component: {fileID: 254807323}
   - component: {fileID: 254807322}
-  - component: {fileID: 254807321}
   - component: {fileID: 254807324}
+  - component: {fileID: 254807325}
   m_Layer: 0
   m_Name: FountainSound
   m_TagString: Untagged
@@ -4167,29 +4167,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &254807321
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254807320}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 30
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &254807322
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4314,6 +4291,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _whatCollider: 4
+--- !u!65 &254807325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254807320}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 56.036335, y: 5.706493, z: 66.32287}
+  m_Center: {x: -4.3138638, y: -2.1467535, z: -1.2379723}
 --- !u!1 &262326332
 GameObject:
   m_ObjectHideFlags: 0
@@ -39502,8 +39500,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1177836361}
   - component: {fileID: 1177836364}
-  - component: {fileID: 1177836363}
   - component: {fileID: 1177836362}
+  - component: {fileID: 1177836365}
   m_Layer: 0
   m_Name: FountainSound
   m_TagString: Untagged
@@ -39539,29 +39537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _whatCollider: 4
---- !u!136 &1177836363
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177836360}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 30
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &1177836364
 AudioSource:
   m_ObjectHideFlags: 0
@@ -39658,6 +39633,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1177836365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177836360}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 56.036335, y: 5.706493, z: 66.32287}
+  m_Center: {x: -4.3138638, y: -2.1467535, z: -1.2379723}
 --- !u!1001 &1179476574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39742,8 +39738,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1182082341}
   - component: {fileID: 1182082344}
-  - component: {fileID: 1182082343}
   - component: {fileID: 1182082342}
+  - component: {fileID: 1182082345}
   m_Layer: 0
   m_Name: FountainSound
   m_TagString: Untagged
@@ -39779,29 +39775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _whatCollider: 4
---- !u!136 &1182082343
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182082340}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 30
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &1182082344
 AudioSource:
   m_ObjectHideFlags: 0
@@ -39898,6 +39871,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1182082345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182082340}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 56.036335, y: 5.706493, z: 66.32287}
+  m_Center: {x: -4.3138638, y: -2.1467535, z: -1.2379723}
 --- !u!4 &1183443632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bf2dd7f12bc3b764393137bb942a3d7f, type: 3}
