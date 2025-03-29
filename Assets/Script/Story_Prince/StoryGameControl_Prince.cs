@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +30,8 @@ public class StoryGameControl_Prince : MonoBehaviour
     public GameObject supplies_Past;
     public static bool isSuppliesGameEasy = false;
     public static bool isSuppliesGameHard = false;
+    public static bool isPassGameEasy = false;
+    public static bool isPassGameHard = false;
 
     [Header("WoodFence")]
     public GameObject woodFence;
@@ -139,8 +142,8 @@ public class StoryGameControl_Prince : MonoBehaviour
     }
     void PlotObjectActive()
     {
-        supplies_Now.SetActive(isSuppliesGameHard && !StoryUIControl_Prince.isSuppliesActive);
-        supplies_Past.SetActive(isSuppliesGameEasy && !StoryUIControl_Prince.isSuppliesActive);
+        supplies_Now.SetActive(isSuppliesGameHard && !isPassGameHard && !StoryUIControl_Prince.isSuppliesActive);
+        supplies_Past.SetActive(isSuppliesGameEasy && !isPassGameEasy && !StoryUIControl_Prince.isSuppliesActive);
 
         switch (StoryInteractableControl_Prince._helpChildQian)
         {
