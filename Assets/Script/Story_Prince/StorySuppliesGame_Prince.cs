@@ -24,9 +24,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject gameHardObject;
     public GameObject[] boxSprite;
     public Transform[] boxPoint;
-    int _pointNum;
-    float _moveSpeed = 5f;
 
+    //PlayerMove
+    int _pointNum;
+    bool isPlayerMove = false;
+    float _moveSpeed = 5f;
+    //GameControl
     float _gameCount = 0;
     
     void Start()
@@ -49,8 +52,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         suppliesCamera.SetActive(true);
         gameEasyObject.SetActive(StoryGameControl_Prince.isSuppliesGameEasy);
         gameHardObject.SetActive(StoryGameControl_Prince.isSuppliesGameHard);
+        isPlayerMove = true;
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
-        player.transform.position = boxPoint[_pointNum].position;
         player.transform.rotation = boxPoint[_pointNum].rotation;
     }
 
@@ -80,6 +83,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void PlayerMove()
     {
+        if (!isPlayerMove) return;
+
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? Mathf.Clamp(_pointNum, 1, 3) : Mathf.Clamp(_pointNum, 4, 7);
         player.transform.position = Vector3.MoveTowards(player.transform.position, boxPoint[_pointNum].position, _moveSpeed);
     }
