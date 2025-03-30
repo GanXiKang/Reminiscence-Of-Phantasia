@@ -197,6 +197,7 @@ public class StorySkillControl_Prince : MonoBehaviour
                     isChange = true;
                     if (StoryInteractableControl_Prince.isReallyGoFutureGood)
                     {
+                        isDisabledClock = true;
                         StoryGameControl_Prince.isFutureGood = true;
                         StoryInteractableControl_Prince.isGoFutureGood = true;
                         StoryInteractableControl_Prince.isPrinceInNow = false;
