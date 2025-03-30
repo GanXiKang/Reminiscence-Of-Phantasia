@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,9 +24,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] boxSprite;
     public Transform[] boxPoint;
     int _pointNum;
+    float _moveSpeed = 5f;
 
     float _gameCount = 0;
-
+    
     void Start()
     {
         player = GameObject.Find("Player");
@@ -53,12 +54,31 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void Update()
     {
-        GameControl();
+        GameKeyBoardControl();
     }
 
-    void GameControl()
+    void GameKeyBoardControl()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A))
+            MoveToPoint(-1);
+        else if (Input.GetKeyDown(KeyCode.D))
+            MoveToPoint(1);
+    }
+    void MoveToPoint(int direction)
+    {
+        _pointNum += direction;
+        _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? Mathf.Clamp(_pointNum, 1, 3) : Mathf.Clamp(_pointNum, 4, 7);
+
+        StartCoroutine(MoveToPosition(boxPoint[_pointNum].position));
+    }
+    IEnumerator MoveToPosition(Vector3 targetPosition)
+    {
+        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+        transform.position = targetPosition;
     }
 
     void GameEnd()
