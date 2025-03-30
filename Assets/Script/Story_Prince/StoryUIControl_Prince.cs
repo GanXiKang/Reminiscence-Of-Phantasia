@@ -13,6 +13,9 @@ public class StoryUIControl_Prince : MonoBehaviour
     public static bool isStoryStart = false; 
     public static bool isStoryEnding = false;
 
+    [Header("BagUI")]
+    public GameObject bagUI;
+
     [Header("SkillUI")]
     public GameObject skillUI;
     public static bool isSkillActive = false;
@@ -28,7 +31,8 @@ public class StoryUIControl_Prince : MonoBehaviour
     {
         dialogueUI.SetActive(isDialogue);
         storyUI.SetActive(isStoryStart || isStoryEnding);
-        skillUI.SetActive(isSkillActive);
+        bagUI.SetActive(!isSuppliesActive);
+        skillUI.SetActive(isSkillActive && !isSuppliesActive);
         suppliesUI.SetActive(isSuppliesActive);
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
     }
