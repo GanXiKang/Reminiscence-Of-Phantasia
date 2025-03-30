@@ -122,7 +122,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             if (i == _pointNum)
             {
-                boxSprite[i].transform.localScale = Vector3.Lerp(oriScale, bigScale, 1f);
+                boxSprite[i].transform.localScale = Vector3.Lerp(oriScale, bigScale, 5f);
             }
             else
             {
