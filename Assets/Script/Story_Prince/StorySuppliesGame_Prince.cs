@@ -11,6 +11,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public AudioSource BGM;
     public AudioClip gainEnergy;
 
+    [Header("Camera")]
+    public GameObject suppliesCamera;
+
     [Header("UI")]
     public GameObject suppliesUI;
 
@@ -19,7 +22,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject gameEasyObject;
     public GameObject gameHardObject;
     public GameObject[] boxSprite;
-    public Transform[] boxPoint; 
+    public Transform[] boxPoint;
+    int _pointNum;
 
     float _gameCount = 0;
 
@@ -39,11 +43,22 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         yield return new WaitForSeconds(1f);
         suppliesUI.SetActive(true);
         sceneObject.SetActive(true);
+        suppliesCamera.SetActive(true);
+        gameEasyObject.SetActive(StoryGameControl_Prince.isSuppliesGameEasy);
+        gameHardObject.SetActive(StoryGameControl_Prince.isSuppliesGameHard);
+        _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
+        player.transform.position = boxPoint[_pointNum].position;
+        player.transform.rotation = boxPoint[_pointNum].rotation;
     }
 
     void Update()
     {
+        GameControl();
+    }
 
+    void GameControl()
+    {
+        
     }
 
     void GameEnd()
