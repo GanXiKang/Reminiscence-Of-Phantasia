@@ -9,11 +9,25 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public AudioSource BGM;
     public AudioClip gainEnergy;
 
+    [Header("UI")]
+    public GameObject suppliesUI;
+
+    [Header("SceneGameObject")]
+    public GameObject sceneObject;
+
     float _gameCount = 0;
 
     void OnEnable()
     {
-        GameEnd();
+        StartCoroutine(StartSuppliesGame());
+    }
+
+    IEnumerator StartSuppliesGame()
+    {
+        BlackScreenControl.isOpenBlackScreen = true;
+        yield return new WaitForSeconds(1f);
+        suppliesUI.SetActive(true);
+        sceneObject.SetActive(true);
     }
 
     void Update()
