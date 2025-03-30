@@ -4356,7 +4356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &241390755
 Transform:
   m_ObjectHideFlags: 0
@@ -5578,7 +5578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &302392355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5613,6 +5613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1836693494}
   gainEnergy: {fileID: 8300000, guid: 17cf6ae7cd62c674b863db783d6ff372, type: 3}
+  suppliesCamera: {fileID: 1423731982}
   suppliesUI: {fileID: 1112410244}
   sceneObject: {fileID: 1997743895}
   gameEasyObject: {fileID: 241390754}
@@ -51370,7 +51371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1997743896
 Transform:
   m_ObjectHideFlags: 0
