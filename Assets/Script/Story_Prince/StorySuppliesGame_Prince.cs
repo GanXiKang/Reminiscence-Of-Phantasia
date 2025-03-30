@@ -121,13 +121,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         for (int i = a; i < b; i++)
         {
             if (i == _pointNum)
-            {
-                boxSprite[i].transform.localScale = Vector3.Lerp(oriScale, bigScale, 5f);
-            }
+                boxSprite[i].transform.localScale = bigScale;
             else
-            {
                 boxSprite[i].transform.localScale = oriScale;
-            }
         }
     }
 
