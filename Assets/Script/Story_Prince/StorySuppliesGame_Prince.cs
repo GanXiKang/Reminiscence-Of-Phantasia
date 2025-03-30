@@ -55,30 +55,21 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void Update()
     {
         GameKeyBoardControl();
+        PlayerMove();
     }
 
     void GameKeyBoardControl()
     {
         if (Input.GetKeyDown(KeyCode.A))
-            MoveToPoint(-1);
+            _pointNum -= 1;
         else if (Input.GetKeyDown(KeyCode.D))
-            MoveToPoint(1);
+            _pointNum += 1;
+        print(_pointNum);
     }
-    void MoveToPoint(int direction)
+    void PlayerMove()
     {
-        _pointNum += direction;
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? Mathf.Clamp(_pointNum, 1, 3) : Mathf.Clamp(_pointNum, 4, 7);
-
-        StartCoroutine(MoveToPosition(boxPoint[_pointNum].position));
-    }
-    IEnumerator MoveToPosition(Vector3 targetPosition)
-    {
-        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-        transform.position = targetPosition;
+        player.transform.position = Vector3.MoveTowards(player.transform.position, boxPoint[_pointNum].position, _moveSpeed * Time.deltaTime);
     }
 
     void GameEnd()
