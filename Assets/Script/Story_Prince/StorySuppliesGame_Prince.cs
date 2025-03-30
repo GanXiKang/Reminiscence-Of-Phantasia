@@ -64,7 +64,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void Update()
     {
         GameKeyBoardControl();
-        PlayerMove();
+        PlayerMoveAndAnimator();
     }
 
     void GameKeyBoardControl()
@@ -85,12 +85,16 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             print(_pointNum);
         }
     }
-    void PlayerMove()
+    void PlayerMoveAndAnimator()
     {
         if (!isPlayerMove) return;
 
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? Mathf.Clamp(_pointNum, 1, 3) : Mathf.Clamp(_pointNum, 4, 7);
         player.transform.position = Vector3.MoveTowards(player.transform.position, boxPoint[_pointNum].position, _moveSpeed);
+
+        anim.SetBool("isCarrying", isCarrying);
+        anim.SetBool("isCarryHappy", isCorrect);
+        anim.SetBool("isCarrySurprised", isError);
     }
 
     void GameEnd()
