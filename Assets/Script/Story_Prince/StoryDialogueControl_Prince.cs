@@ -102,7 +102,8 @@ public class StoryDialogueControl_Prince : MonoBehaviour
     }
     void TextPosition()
     {
-        Vector3 offset = new Vector3(0f, 360f, 0f);
+        Vector3 offset = new Vector3(0f, 250f, 0f);
+        Vector3 offsetPrinceStatue = new Vector3(0f, 360f, 0f);
         if (isPlayerTalk)
         {
             Vector3 playerPos = Camera.main.WorldToScreenPoint(player.transform.position);
@@ -113,7 +114,10 @@ public class StoryDialogueControl_Prince : MonoBehaviour
             if (_targetNum == 1)
             {
                 Vector3 targetPos = Camera.main.WorldToScreenPoint(target[_isAboveWho1].position);
-                dialogueUI.position = targetPos + offset;
+                if(_isAboveWho1 != 3)
+                    dialogueUI.position = targetPos + offset;
+                else
+                    dialogueUI.position = targetPos + offsetPrinceStatue;
             }
             else
             {
