@@ -172,7 +172,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "王子雕像";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 worldPos = transform.position + new Vector3(0f, 12f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
                 }
@@ -295,7 +295,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                 if (_aboveWho == _who)
                 {
                     interactableName.text = "損壞雕像";
-                    Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
+                    Vector3 worldPos = transform.position + new Vector3(0f, 10f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
                 }
