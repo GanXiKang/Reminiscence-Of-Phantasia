@@ -76,6 +76,11 @@ public class StoryGameControl_Prince : MonoBehaviour
                 StoryUIControl_Girl.isStoryEnding = true;
             }
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            isSuppliesGameHard = true;
+        }
     }
 
     void MouseCursor()
