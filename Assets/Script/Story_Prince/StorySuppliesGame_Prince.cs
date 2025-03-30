@@ -64,12 +64,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void Update()
     {
-        GameKeyBoardControl();
+        KeyBoardControl();
         PlayerMoveAndAnimator();
         BoxSpriteScale();
     }
 
-    void GameKeyBoardControl()
+    void KeyBoardControl()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
