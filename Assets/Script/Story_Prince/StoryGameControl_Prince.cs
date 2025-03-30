@@ -77,7 +77,7 @@ public class StoryGameControl_Prince : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.T))
         {
             isSuppliesGameHard = true;
         }
