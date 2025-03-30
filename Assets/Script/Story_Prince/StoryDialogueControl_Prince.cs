@@ -347,7 +347,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 10:
             case 11:
-            case 21:
             case 35:
             case 37:
             case 57:
@@ -436,6 +435,23 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                     }
                 }
                 break;
+
+            case 21:
+                switch (_countEvent)
+                {
+                    case 0:
+                        StoryPlayerControl.isHappy = true;
+                        StoryNpcAnimator_Prince.isShock_Qian = true;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryNpcAnimator_Prince.isShock_Qian = false;
+                        _countEvent = 0;
+                        break;
+                }
+                break;
+
 
             case 22:
                 switch (_countEvent)
