@@ -113,7 +113,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void BoxSpriteScale()
     {
         Vector3 oriScale = new Vector3(0.1f, 0.1f, 0f);
-        Vector3 bigScale = new Vector3(0.12f, 0.12f, 0f);
+        Vector3 bigScale = new Vector3(0.15f, 0.15f, 0f);
 
         for (int i = 1; i < boxSprite.Length; i++)
         {
