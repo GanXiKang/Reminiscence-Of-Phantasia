@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StorySuppliesGame_Prince : MonoBehaviour
 {
     GameObject player;
+    Animator anim;
 
     [Header("Musia")]
     public AudioSource BGM;
@@ -31,6 +32,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        anim = player.GetComponent<Animator>();
     }
 
     void OnEnable()
@@ -61,15 +63,25 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void GameKeyBoardControl()
     {
         if (Input.GetKeyDown(KeyCode.A))
+        {
             _pointNum -= 1;
+            StoryPlayerControl._direction = 0;
+        }
         else if (Input.GetKeyDown(KeyCode.D))
+        {
             _pointNum += 1;
-        print(_pointNum);
+            StoryPlayerControl._direction = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            print(_pointNum);
+        }
     }
     void PlayerMove()
     {
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? Mathf.Clamp(_pointNum, 1, 3) : Mathf.Clamp(_pointNum, 4, 7);
-        player.transform.position = Vector3.MoveTowards(player.transform.position, boxPoint[_pointNum].position, _moveSpeed * Time.deltaTime);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, boxPoint[_pointNum].position, _moveSpeed);
     }
 
     void GameEnd()
