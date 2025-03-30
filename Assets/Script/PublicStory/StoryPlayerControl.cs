@@ -174,6 +174,7 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryInteractableControl_Prince.isPlotBanMove &&
                !StoryLoadingScene_Prince.isLoading &&
                !StoryUIControl_Prince.isDialogue &&
+               !StoryUIControl_Prince.isSuppliesActive &&
                !StorySkillControl_Prince.isClockActice &&
                !StoryGhostControl_Prince.isWatchSkill;
     }
