@@ -925,7 +925,6 @@ public class StoryDialogueControl_Prince : MonoBehaviour
 
             case 66:
                 StoryGhostControl_Prince.isAscend = true;
-                StorySkillControl_Prince.isDisabledClock = true;
                 break;
 
             case 67:
