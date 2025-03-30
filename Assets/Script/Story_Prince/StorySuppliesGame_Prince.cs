@@ -29,6 +29,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     int _pointNum;
     bool isPlayerMove = false;
     float _moveSpeed = 5f;
+    //Animator
+    bool isCarrying = false;
+    bool isCorrect = false;
+    bool isError = false;
     //GameControl
     float _gameCount = 0;
     
