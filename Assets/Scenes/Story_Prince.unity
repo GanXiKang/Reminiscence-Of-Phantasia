@@ -43589,7 +43589,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1423731986}
   - component: {fileID: 1423731985}
-  - component: {fileID: 1423731984}
   - component: {fileID: 1423731983}
   m_Layer: 0
   m_Name: SuppliesCamera
@@ -43642,14 +43641,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1423731984
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423731982}
-  m_Enabled: 1
 --- !u!20 &1423731985
 Camera:
   m_ObjectHideFlags: 0
