@@ -66,6 +66,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         GameKeyBoardControl();
         PlayerMoveAndAnimator();
+        BoxSpriteScale();
     }
 
     void GameKeyBoardControl()
@@ -108,6 +109,23 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         isCorrect = false;
         isError = false;
+    }
+    void BoxSpriteScale()
+    {
+        Vector3 oriScale = new Vector3(0.1f, 0.1f, 0f);
+        Vector3 bigScale = new Vector3(0.12f, 0.12f, 0f);
+
+        for (int i = 1; i < boxSprite.Length; i++)
+        {
+            if (i == _pointNum)
+            {
+                boxSprite[i].transform.localScale = bigScale;
+            }
+            else
+            {
+                boxSprite[i].transform.localScale = oriScale;
+            }
+        }
     }
 
     void GameEnd()
