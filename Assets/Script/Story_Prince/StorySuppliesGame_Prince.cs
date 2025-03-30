@@ -115,11 +115,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         Vector3 oriScale = new Vector3(0.1f, 0.1f, 0f);
         Vector3 bigScale = new Vector3(0.12f, 0.12f, 0f);
 
-        for (int i = 1; i < boxSprite.Length; i++)
+        int a = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : 4;
+        int b = StoryGameControl_Prince.isSuppliesGameEasy ? 4 : 8;
+
+        for (int i = a; i < b; i++)
         {
             if (i == _pointNum)
             {
-                boxSprite[i].transform.localScale = bigScale;
+                boxSprite[i].transform.localScale = Vector3.Lerp(oriScale, bigScale, 1f);
             }
             else
             {
