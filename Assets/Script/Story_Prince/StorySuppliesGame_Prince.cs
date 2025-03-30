@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StorySuppliesGame_Prince : MonoBehaviour
 {
+    GameObject player;
+
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip gainEnergy;
@@ -14,8 +16,17 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     [Header("SceneGameObject")]
     public GameObject sceneObject;
+    public GameObject gameEasyObject;
+    public GameObject gameHardObject;
+    public GameObject[] boxSprite;
+    public Transform[] boxPoint; 
 
     float _gameCount = 0;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     void OnEnable()
     {
