@@ -57,6 +57,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         gameEasyObject.SetActive(StoryGameControl_Prince.isSuppliesGameEasy);
         gameHardObject.SetActive(StoryGameControl_Prince.isSuppliesGameHard);
         isPlayerMove = true;
+        isCarrying = true;
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
         player.transform.rotation = boxPoint[_pointNum].rotation;
     }
@@ -83,6 +84,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             print(_pointNum);
+            if (_pointNum == 5)
+                isCorrect = true;
+            else
+                isError = true;
         }
     }
     void PlayerMoveAndAnimator()
@@ -95,6 +100,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         anim.SetBool("isCarrying", isCarrying);
         anim.SetBool("isCarryHappy", isCorrect);
         anim.SetBool("isCarrySurprised", isError);
+
+        if (isCorrect || isError)
+            Invoke("FalseAnimation", 0.3f);
+    }
+    void FalseAnimation()
+    {
+        isCorrect = false;
+        isError = false;
     }
 
     void GameEnd()
