@@ -284,7 +284,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
             case 15:
                 if (_aboveWho == _who)
                 {
-                    interactableName.text = "花圃";
+                    interactableName.text = "樹圃";
                     Vector3 worldPos = transform.position + new Vector3(0f, 8f, 0f);
                     Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
                     interactableUI.transform.position = screenPos;
