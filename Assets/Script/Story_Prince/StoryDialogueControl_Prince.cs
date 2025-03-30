@@ -471,10 +471,22 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 25:
-                BGM.PlayOneShot(drowning);
-                StoryPlayerControl.isSurprised = true;
-                StoryNpcAnimator_Prince.isWet = true;
-                StoryInteractableControl_Prince._helpChildQian = 4;
+
+                switch (_countEvent)
+                {
+                    case 0:
+                        BGM.PlayOneShot(drowning);
+                        StoryPlayerControl.isSurprised = true;
+                        StoryNpcAnimator_Prince.isWet = true;
+                        StoryInteractableControl_Prince._helpChildQian = 4;
+                        _countEvent++;
+                        break;
+
+                    case 1:
+                        StoryPlayerControl.isSurprised = true;
+                        _countEvent = 0;
+                        break;
+                }
                 break;
 
             case 27:
