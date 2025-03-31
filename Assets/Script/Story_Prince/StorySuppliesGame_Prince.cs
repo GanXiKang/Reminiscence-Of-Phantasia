@@ -157,6 +157,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             if (barA.fillAmount != amount)
                 barA.fillAmount = Mathf.Lerp(barA.fillAmount, barB.fillAmount, Time.deltaTime * _smoothSpeed);
         }
+
+        if (_patience <= 0)
+        {
+            isError = true;
+            GameEnd();
+        }
     }  
     
     void Combo()
