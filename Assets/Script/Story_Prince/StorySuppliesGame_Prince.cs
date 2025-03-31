@@ -111,7 +111,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         _score = 0;
         _patience = 100f;
-        _gameTime = 35f;
+        _gameTime = 90f;
         _combo = 0;
         _firstResident = 1;
 
@@ -166,13 +166,13 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void GameTime()
     {
+        timeText.text = _gameTime.ToString("0");
+
         if (!isGameStart) return;
 
         if (_gameTime > 0)
         {
             _gameTime -= Time.deltaTime;
-            timeText.text = _gameTime.ToString("0");
-
             if(_gameTime <= 30)
                 isBusyTime = true;
         }
