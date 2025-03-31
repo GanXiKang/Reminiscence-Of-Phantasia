@@ -138,12 +138,27 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void Patience()
     {
         _patience = Mathf.Clamp(_patience, 0, 100);
+        float amount = _patience / 100;
+
         if (Input.GetKeyDown(KeyCode.P))
             _patience -= 10;
-        barB.fillAmount = _patience / 100;
-        if (barA.fillAmount != barB.fillAmount)
-            barA.fillAmount = Mathf.Lerp(barA.fillAmount, barB.fillAmount, Time.deltaTime * _smoothSpeed);
-    }
+        if (Input.GetKeyDown(KeyCode.O))
+            _patience += 10;
+
+        if (amount > barB.fillAmount)
+        {
+            barA.fillAmount = amount;
+            if (barB.fillAmount != amount)
+                barB.fillAmount = Mathf.Lerp(barB.fillAmount, barA.fillAmount, Time.deltaTime * _smoothSpeed);
+        }
+        else
+        {
+            barB.fillAmount = amount;
+            if (barA.fillAmount != amount)
+                barA.fillAmount = Mathf.Lerp(barA.fillAmount, barB.fillAmount, Time.deltaTime * _smoothSpeed);
+        }
+    }  
+    
     void Combo()
     {
         comboText.text = _combo.ToString();
