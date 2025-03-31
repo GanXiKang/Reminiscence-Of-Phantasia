@@ -18,7 +18,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("UI")]
     public GameObject suppliesUI;
     public GameObject resultUI;
-    public GameObject winUI, LoseUI;
+    public Image resultImage;
+    public Sprite winUI, LoseUI;
 
     [Header("ScoreUI")]
     public Image scoreBG;
@@ -32,6 +33,17 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("TimeUI")]
     public Image timeBG;
     public Text timeText;
+
+    [Header("NeedUI")]
+    public GameObject needUI;
+    public GameObject diagolueBG;
+    public GameObject[] item;
+    public Transform[] pointItem;
+    public Sprite[] itemSprite;
+
+    [Header(ComboUI)]
+    public GameObject comboUI;
+    public Text comboText;
 
     [Header("SceneGameObject")]
     public GameObject sceneObject;
