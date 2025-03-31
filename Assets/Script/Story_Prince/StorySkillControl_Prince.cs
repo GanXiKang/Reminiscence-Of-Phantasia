@@ -154,7 +154,12 @@ public class StorySkillControl_Prince : MonoBehaviour
         }
         else
         {
-            bg.sprite = bgEnergy;
+            if (isFirstUse)
+                bg.sprite = bgFutureOnly;
+            else if (isFirstBackNow)
+                bg.sprite = bgNowOnly;
+            else
+                bg.sprite = bgEnergy;
         }
 
         if (!isEnergyConsume) return;
