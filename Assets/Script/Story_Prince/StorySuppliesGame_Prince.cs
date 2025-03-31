@@ -45,8 +45,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] item;
     public GameObject[] itemCorrect;
     public Transform[] pointItem;
-    public Sprite[] itemEasySprite;
-    public Sprite[] itemHardSprite;
+    public Sprite[] itemSprite;
     bool isNeedItem;
     int _itemCount;
     int[] _itemNumber;
@@ -201,15 +200,26 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             case 1:
                 diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
-                
+                item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
+                item[1].transform.position = pointItem[1].position;
                 break;
 
             case 2:
                 diagolueBG.transform.localScale = new Vector3(4f, 2.5f, 1f);
+                item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
+                item[2].GetComponent<Image>().sprite = itemSprite[_itemNumber[2]];
+                item[1].transform.position = pointItem[2].position;
+                item[2].transform.position = pointItem[3].position;
                 break;
 
             case 3:
                 diagolueBG.transform.localScale = new Vector3(5.5f, 2.5f, 1f);
+                item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
+                item[2].GetComponent<Image>().sprite = itemSprite[_itemNumber[2]];
+                item[3].GetComponent<Image>().sprite = itemSprite[_itemNumber[3]];
+                item[1].transform.position = pointItem[4].position;
+                item[2].transform.position = pointItem[1].position;
+                item[2].transform.position = pointItem[5].position;
                 break;
         }
     }
