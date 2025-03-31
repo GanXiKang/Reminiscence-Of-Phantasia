@@ -45,9 +45,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] item;
     public GameObject[] itemCorrect;
     public Transform[] pointItem;
-    public Sprite[] itemSprite;
+    public Sprite[] itemEasySprite;
+    public Sprite[] itemHardSprite;
     bool isNeedItem;
-    int _itemCount, _itemNumber;
+    int _itemCount;
+    int[] _itemNumber;
 
     [Header("ComboUI")]
     public GameObject comboUI;
@@ -189,7 +191,27 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         diagolueBG.transform.position = needPos + offset;
 
         diagolueBG.SetActive(isNeedItem);
-        if(isNeedItem)
+
+        if (!isNeedItem) return;
+        _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
+        for (int n = 1; n <= _itemCount; n++)
+            _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
+
+        switch (_itemCount)
+        {
+            case 1:
+                diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
+                
+                break;
+
+            case 2:
+                diagolueBG.transform.localScale = new Vector3(4f, 2.5f, 1f);
+                break;
+
+            case 3:
+                diagolueBG.transform.localScale = new Vector3(5.5f, 2.5f, 1f);
+                break;
+        }
     }
     void Combo()
     {
