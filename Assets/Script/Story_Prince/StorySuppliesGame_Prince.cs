@@ -64,7 +64,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     //PlayerMove
     int _pointNum;
     bool isPlayerMove = false;
-    float _moveSpeed = 5f;
+    float _moveSpeed = 3f;
     //Animator
     bool isCarrying = false;
     bool isCorrect = false;
@@ -137,6 +137,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void Patience()
     {
+        _patience = Mathf.Clamp(_patience, 0, 100);
         if (Input.GetKeyDown(KeyCode.P))
             _patience -= 10;
         barB.fillAmount = _patience / 100;
