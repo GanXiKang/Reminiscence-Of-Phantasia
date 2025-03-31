@@ -295,6 +295,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 _firstResident++;
                 if (_firstResident >= resident.Length)
                     _firstResident = 1;
+                print("OK");
             }
         }
     }
