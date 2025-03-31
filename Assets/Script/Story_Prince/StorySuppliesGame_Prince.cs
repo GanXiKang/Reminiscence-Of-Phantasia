@@ -271,6 +271,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         resident[i] = residentHard[i].transform;
                 }
             }
+
+            for (int i = 1; i < 4; i++)
+                resident[i].position = lineUpPoint[i].position;
+            for (int d = 4; d < 7; d++)
+                resident[d].position = lineUpPoint[7].position;
+
             isRecordResidentOnce = false;
         }
 
@@ -294,8 +300,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
             //    }
             //}
-            StartCoroutine(LineUpMove());
-            //_firstResident++;
+            _firstResident++;
             isLineUpMoving = false;
         }
     }
