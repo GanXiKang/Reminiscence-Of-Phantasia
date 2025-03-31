@@ -64,6 +64,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] residentEasy;
     public GameObject[] residentHard;
     public Transform[] lineUpPoint;
+    Transform[] resident;
     bool isRecordResidentOnce;
     bool isLineUpMoving;
     int _firstResident;
@@ -250,7 +251,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void LineUp()
     {
-        Transform[] resident;
         if (isRecordResidentOnce)
         {
             if (StoryGameControl_Prince.isSuppliesGameEasy)
@@ -282,25 +282,16 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (isLineUpMoving)
         {
-            //for (int i = 1; i < 7; i++)
-            //{
-            //    if (!isBusyTime)
-            //    {
-            //        if (i == _firstResident)
-            //        {
-            //            resident[i].position = Vector3.Lerp(resident[i].position, lineUpPoint[6].position, 5f);
-            //        }
-            //        else
-            //        {
+            resident[_firstResident].position = Vector3.Lerp(resident[_firstResident].position, lineUpPoint[6].position, Time.deltaTime * _moveSpeed);
+            resident[_firstResident + 1].position = Vector3.Lerp(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position, Time.deltaTime * _moveSpeed);
+            resident[_firstResident + 2].position = Vector3.Lerp(resident[_firstResident + 2].position, lineUpPoint[_firstResident - 1].position, Time.deltaTime * _moveSpeed);
+            resident[_firstResident + 3].position = Vector3.Lerp(resident[_firstResident + 3].position, lineUpPoint[_firstResident - 2].position, Time.deltaTime * _moveSpeed);
+            resident[_firstResident + 4].position = Vector3.Lerp(resident[_firstResident + 4].position, lineUpPoint[_firstResident - 3].position, Time.deltaTime * _moveSpeed);
+            resident[_firstResident + 5].position = Vector3.Lerp(resident[_firstResident + 5].position, lineUpPoint[_firstResident - 4].position, Time.deltaTime * _moveSpeed);
 
-            //        }
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
             _firstResident++;
+            if(_firstResident >= resident.Length)
+                _firstResident = 1;
             isLineUpMoving = false;
         }
     }
@@ -337,38 +328,5 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         BGM.PlayOneShot(gainEnergy);
         StorySkillControl_Prince.isGainEnegry = true;
         StorySkillControl_Prince._gainEnegryValue = 0.2f;
-    }
-
-    IEnumerator LineUpMove()
-    {
-        // 暫存第一個 residentHard[1]，將移動到lineUpPoint[6]
-        GameObject firstResident = residentHard[1];
-
-        // 移動 residentHard[1] 到 lineUpPoint[6]
-        yield return StartCoroutine(MoveTo(firstResident, lineUpPoint[6].position));
-
-        // 傳送到 lineUpPoint[7]
-        firstResident.transform.position = lineUpPoint[7].position;
-
-        // 其餘的向前移動
-        for (int i = 1; i < residentHard.Length - 1; i++)
-        {
-            residentHard[i] = residentHard[i + 1];
-            StartCoroutine(MoveTo(residentHard[i], lineUpPoint[i].position));
-        }
-
-        // 最後一個移動到 lineUpPoint[3]
-        residentHard[residentHard.Length - 1] = firstResident;
-        yield return StartCoroutine(MoveTo(residentHard[residentHard.Length - 1], lineUpPoint[3].position));
-    }
-
-    IEnumerator MoveTo(GameObject obj, Vector3 targetPosition)
-    {
-        float speed = 2f;
-        while (Vector3.Distance(obj.transform.position, targetPosition) > 0.01f)
-        {
-            obj.transform.position = Vector3.MoveTowards(obj.transform.position, targetPosition, speed * Time.deltaTime);
-            yield return null;
-        }
     }
 }
