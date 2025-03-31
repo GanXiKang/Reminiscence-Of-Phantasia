@@ -48,6 +48,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Transform[] pointItem;
     public Sprite[] itemSprite;
     bool isNeedItem;
+    bool isRandomOnce;
     int _itemCount;
     int[] _itemNumber = new int[4];
 
@@ -124,6 +125,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         yield return new WaitForSeconds(2f);
         isGameStart = true;
         isNeedItem = true;
+        isRandomOnce = true;
     }
 
     void Update()
@@ -195,9 +197,13 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (!isNeedItem) return;
 
-        _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
-        for (int n = 1; n <= _itemCount; n++)
-            _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
+        if (isRandomOnce)
+        {
+            _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
+            for (int n = 1; n <= _itemCount; n++)
+                _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
+            isRandomOnce = false;
+        }
 
         switch (_itemCount)
         {
@@ -349,6 +355,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             {
                 isLineUpMoving = false;
                 isNeedItem = true;
+                isRandomOnce = true;
                 resident[_firstResident].position = lineUpPoint[7].position;
 
                 _firstResident++;
