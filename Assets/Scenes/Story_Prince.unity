@@ -6259,8 +6259,9 @@ MonoBehaviour:
   suppliesCamera: {fileID: 1423731982}
   suppliesUI: {fileID: 1112410244}
   resultUI: {fileID: 2081681066}
-  winUI: {fileID: 1733279561}
-  LoseUI: {fileID: 1592551262}
+  resultImage: {fileID: 1733279563}
+  win: {fileID: 0}
+  Lose: {fileID: 0}
   scoreBG: {fileID: 1473432964}
   scoreText: {fileID: 1567029418}
   scoreTargetText: {fileID: 1851954248}
@@ -6269,6 +6270,30 @@ MonoBehaviour:
   barB: {fileID: 418564748}
   timeBG: {fileID: 1783829827}
   timeText: {fileID: 1853895285}
+  needUI: {fileID: 667529140}
+  diagolueBG: {fileID: 740559578}
+  item:
+  - {fileID: 0}
+  - {fileID: 1698646087}
+  - {fileID: 2054133971}
+  - {fileID: 23269225}
+  pointItem:
+  - {fileID: 0}
+  - {fileID: 1963804762}
+  - {fileID: 1567932519}
+  - {fileID: 586731194}
+  - {fileID: 2069719383}
+  - {fileID: 452768250}
+  itemSprite:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 70bfbaac0a4e0da4bb05d372c9e98222, type: 3}
+  - {fileID: 21300000, guid: a42e677b54b9d4043b92280ac7dc4281, type: 3}
+  - {fileID: 21300000, guid: e54877b7fe8f6c94caa092e61042be87, type: 3}
+  - {fileID: 21300000, guid: a6f5ec487a5197249a69921e17fd3003, type: 3}
+  - {fileID: 21300000, guid: 95ec298a4190f1242ac4652d812d6e88, type: 3}
+  - {fileID: 21300000, guid: cbd403d142bc9d140a78124923545eb4, type: 3}
+  comboUI: {fileID: 1422420856}
+  comboText: {fileID: 1848065817}
   sceneObject: {fileID: 1997743895}
   gameEasyObject: {fileID: 241390754}
   gameHardObject: {fileID: 868062055}
@@ -48867,81 +48892,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592127917}
   m_CullTransparentMesh: 1
---- !u!1 &1592551262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1592551263}
-  - component: {fileID: 1592551265}
-  - component: {fileID: 1592551264}
-  m_Layer: 5
-  m_Name: Lose
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1592551263
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592551262}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.45454544, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2081681067}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1592551264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592551262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.049020927, b: 0.16872594, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1592551265
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592551262}
-  m_CullTransparentMesh: 1
 --- !u!4 &1596340966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3583183661947883871, guid: 4ef823c64fe0a1c48b7184a2e619c449, type: 3}
@@ -51307,7 +51257,7 @@ GameObject:
   - component: {fileID: 1733279564}
   - component: {fileID: 1733279563}
   m_Layer: 5
-  m_Name: Win
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51345,7 +51295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.44393662, g: 0.96981126, b: 0.027447322, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -56162,7 +56112,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1733279562}
-  - {fileID: 1592551263}
   m_Father: {fileID: 1112410245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
