@@ -44,7 +44,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject diagolue;
     public GameObject diagolueBG;
     public GameObject[] item;
-    public GameObject[] itemImage;
+    public Image[] itemImage;
     public GameObject[] itemCorrect;
     public Transform[] pointItem;
     public Sprite[] itemSprite;
@@ -210,8 +210,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             case 1:
                 diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
-                //item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
-                //item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(image.fillAmount, 1f, Time.deltaTime * fillSpeed);
+                itemImage[1].sprite = itemSprite[_itemNumber[1]];
+                itemImage[1].fillAmount = Mathf.Lerp(itemImage[1].fillAmount, 1f, Time.deltaTime * 1f);
                 item[1].transform.position = pointItem[1].position;
                 break;
 
