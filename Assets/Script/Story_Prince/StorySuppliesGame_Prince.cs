@@ -41,6 +41,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     [Header("NeedUI")]
     public GameObject needUI;
+    public GameObject diagolue;
     public GameObject diagolueBG;
     public GameObject[] item;
     public GameObject[] itemCorrect;
@@ -188,7 +189,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         Vector3 offset = new Vector3(0f, 300f, 0f);
         Vector3 needPos = suppliesCamera.GetComponent<Camera>().WorldToScreenPoint(lineUpPoint[1].position);
-        diagolueBG.transform.position = needPos + offset;
+        diagolue.transform.position = needPos + offset;
 
         diagolueBG.SetActive(isNeedItem);
 
