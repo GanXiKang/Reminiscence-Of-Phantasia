@@ -37,6 +37,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Image timeBG;
     public Text timeText;
     float _gameTime;
+    bool isBusyTime = false;
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -64,6 +65,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] residentHard;
     public Transform[] lineUpPoint;
     bool isLineUpMoving;
+    int firstResident;
 
     //PlayerMove
     int _pointNum;
@@ -159,6 +161,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             _gameTime -= Time.deltaTime;
             timeText.text = _gameTime.ToString("0");
+
+            if(_gameTime <= 30)
+                isBusyTime = true;
         }
         else
         {
@@ -237,7 +242,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         if (isLineUpMoving)
         {
-            StartCoroutine(LineUpMoving());
+            isLineUpMoving = false;
+
+            for (int i = 1; i < 7 - 1; i++)
+            {
+                
+            }
         }
     }
 
@@ -277,9 +287,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     IEnumerator LineUpMoving()
     {
-        isLineUpMoving = false;
-        if (residentHard.Length < 7 || lineUpPoint.Length < 8) yield break;
-
+        
         // 讓隊首的居民移動到最後的待命位置
         GameObject firstResident = residentHard[1];
         yield return MoveTo(firstResident, lineUpPoint[6].position);
