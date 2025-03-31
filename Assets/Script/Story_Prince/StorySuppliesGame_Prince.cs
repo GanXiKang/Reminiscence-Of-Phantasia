@@ -165,8 +165,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void Need()
     {
-        Vector3 offset = new Vector3(0f, 250f, 0f);
-        Vector3 needPos = Camera.main.WorldToScreenPoint(lineUpPoint[1].position);
+        Vector3 offset = new Vector3(0f, 300f, 0f);
+        Vector3 needPos = suppliesCamera.GetComponent<Camera>().WorldToScreenPoint(lineUpPoint[1].position);
         diagolueBG.transform.position = needPos + offset;
     }
     void Combo()
