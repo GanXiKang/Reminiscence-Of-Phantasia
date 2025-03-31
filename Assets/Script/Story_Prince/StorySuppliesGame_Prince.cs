@@ -25,6 +25,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Image scoreBG;
     public Text scoreText;
     public Text scoreTargetText;
+    int _score;
 
     [Header("PatienceUI")]
     public Image patienceBG;
@@ -33,7 +34,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("TimeUI")]
     public Image timeBG;
     public Text timeText;
-    float gameTime;
+    float _gameTime;
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -91,7 +92,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         gameHardObject.SetActive(StoryGameControl_Prince.isSuppliesGameHard);
         isPlayerMove = true;
         isCarrying = true;
-        gameTime = 90;
+        _score = 0;
+        _gameTime = 90;
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
         player.transform.rotation = boxPoint[_pointNum].rotation;
         yield return new WaitForSeconds(2f);
@@ -119,6 +121,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             
         }
+    }
+    void Score()
+    {
+        scoreText.text = _score.ToString();
+        scoreTargetText.text = StoryGameControl_Prince.isSuppliesGameEasy ? "/2500" : "/3000";
     }
     void KeyBoardControl()
     {
