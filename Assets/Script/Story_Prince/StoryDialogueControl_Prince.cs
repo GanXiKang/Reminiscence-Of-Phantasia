@@ -794,6 +794,7 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 5:
+                StorySkillControl_Prince.isFirstUse = false;
                 StoryInteractableControl_Prince.isPlotBanMove = false;
                 break;
 
