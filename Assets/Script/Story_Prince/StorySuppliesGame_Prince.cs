@@ -33,6 +33,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("TimeUI")]
     public Image timeBG;
     public Text timeText;
+    float gameTime;
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -66,6 +67,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     bool isError = false;
     //GameControl
     float _gameCount = 0;
+    bool isGameStart = false;
     
     void Start()
     {
@@ -81,7 +83,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     IEnumerator StartSuppliesGame()
     {
         BlackScreenControl.isOpenBlackScreen = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         suppliesUI.SetActive(true);
         sceneObject.SetActive(true);
         suppliesCamera.SetActive(true);
@@ -89,17 +91,35 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         gameHardObject.SetActive(StoryGameControl_Prince.isSuppliesGameHard);
         isPlayerMove = true;
         isCarrying = true;
+        gameTime = 90;
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
         player.transform.rotation = boxPoint[_pointNum].rotation;
+        yield return new WaitForSeconds(2f);
+        isGameStart = true;
     }
 
     void Update()
     {
+        GameTime();
         KeyBoardControl();
         PlayerMoveAndAnimator();
         BoxSpriteScale();
     }
 
+    void GameTime()
+    {
+        if (!isGameStart) return;
+
+        if (gameTime > 0)
+        {
+            gameTime -= Time.deltaTime;
+            timeText.text = gameTime.ToString("0");
+        }
+        else 
+        {
+            
+        }
+    }
     void KeyBoardControl()
     {
         if (Input.GetKeyDown(KeyCode.A))
