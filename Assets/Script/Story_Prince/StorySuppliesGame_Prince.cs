@@ -122,6 +122,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         isGameStart = true;
+        isNeedItem = true;
     }
 
     void Update()
