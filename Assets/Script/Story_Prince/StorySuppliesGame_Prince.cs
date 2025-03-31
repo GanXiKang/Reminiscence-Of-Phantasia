@@ -153,11 +153,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 barA.fillAmount = Mathf.Lerp(barA.fillAmount, barB.fillAmount, Time.deltaTime * _smoothSpeed);
         }
 
-        if (isGameStart && _patience <= 0)
+        if (_patience <= 0 && isGameStart)
         {
             GameEnd();
         }
-
     }  
     
     void Combo()
