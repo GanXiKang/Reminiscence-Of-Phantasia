@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -105,6 +106,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         isPlayerMove = true;
         isCarrying = true;
         isRecordResidentOnce = true;
+        isBusyTime = false;
         isLineUpMoving = false;
 
         _score = 0;
@@ -250,34 +252,52 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void LineUp()
     {
         Transform[] resident;
-
-        if (StoryGameControl_Prince.isSuppliesGameEasy)
+        if (isRecordResidentOnce)
         {
-            resident = new Transform[residentEasy.Length];
-            for (int i = 0; i < residentEasy.Length; i++)
+            if (StoryGameControl_Prince.isSuppliesGameEasy)
             {
-                if (residentEasy[i] != null)
-                    resident[i] = residentEasy[i].transform;
+                resident = new Transform[residentEasy.Length];
+                for (int i = 0; i < residentEasy.Length; i++)
+                {
+                    if (residentEasy[i] != null)
+                        resident[i] = residentEasy[i].transform;
+                }
             }
-        }
-        else
-        {
-            resident = new Transform[residentHard.Length];
-            for (int i = 0; i < residentHard.Length; i++)
+            else
             {
-                if (residentHard[i] != null)
-                    resident[i] = residentHard[i].transform;
+                resident = new Transform[residentHard.Length];
+                for (int i = 0; i < residentHard.Length; i++)
+                {
+                    if (residentHard[i] != null)
+                        resident[i] = residentHard[i].transform;
+                }
             }
+            isRecordResidentOnce = false;
         }
 
         if (isLineUpMoving)
         {
-            isLineUpMoving = false;
+            //for (int i = 1; i < 7; i++)
+            //{
+            //    if (!isBusyTime)
+            //    {
+            //        if (i == _firstResident)
+            //        {
+            //            resident[i].position = Vector3.Lerp(resident[i].position, lineUpPoint[6].position, 5f);
+            //        }
+            //        else
+            //        {
 
-            for (int i = 1; i < 7; i++)
-            {
-                //transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
-            }
+            //        }
+            //    }
+            //    else
+            //    {
+
+            //    }
+            //}
+            StartCoroutine(LineUpMove());
+            //_firstResident++;
+            isLineUpMoving = false;
         }
     }
 
@@ -315,33 +335,36 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         StorySkillControl_Prince._gainEnegryValue = 0.2f;
     }
 
-    IEnumerator LineUpMoving()
+    IEnumerator LineUpMove()
     {
-        
-        // 讓隊首的居民移動到最後的待命位置
+        // 暫存第一個 residentHard[1]，將移動到lineUpPoint[6]
         GameObject firstResident = residentHard[1];
-        yield return MoveTo(firstResident, lineUpPoint[6].position);
+
+        // 移動 residentHard[1] 到 lineUpPoint[6]
+        yield return StartCoroutine(MoveTo(firstResident, lineUpPoint[6].position));
+
+        // 傳送到 lineUpPoint[7]
         firstResident.transform.position = lineUpPoint[7].position;
 
-        // 其他居民依次向前移動
+        // 其餘的向前移動
         for (int i = 1; i < residentHard.Length - 1; i++)
         {
-            yield return MoveTo(residentHard[i + 1], lineUpPoint[i].position);
+            residentHard[i] = residentHard[i + 1];
+            StartCoroutine(MoveTo(residentHard[i], lineUpPoint[i].position));
         }
+
+        // 最後一個移動到 lineUpPoint[3]
+        residentHard[residentHard.Length - 1] = firstResident;
+        yield return StartCoroutine(MoveTo(residentHard[residentHard.Length - 1], lineUpPoint[3].position));
     }
 
     IEnumerator MoveTo(GameObject obj, Vector3 targetPosition)
     {
-        float duration = 0.5f;
-        float elapsed = 0f;
-        Vector3 startPosition = obj.transform.position;
-
-        while (elapsed < duration)
+        float speed = 2f;
+        while (Vector3.Distance(obj.transform.position, targetPosition) > 0.01f)
         {
-            obj.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
-            elapsed += Time.deltaTime;
+            obj.transform.position = Vector3.MoveTowards(obj.transform.position, targetPosition, speed * Time.deltaTime);
             yield return null;
         }
-        obj.transform.position = targetPosition;
     }
 }
