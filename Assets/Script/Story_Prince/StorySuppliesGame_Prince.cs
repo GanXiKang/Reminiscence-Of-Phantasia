@@ -222,10 +222,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 1].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                        //item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
+                        item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
                     }
-                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
-                    item[2].GetComponent<Image>().fillAmount = Mathf.Lerp(item[2].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 1.5f);
                     break;
 
                 case 3:
@@ -235,11 +233,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 3].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                        //item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
+                        item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
                     }
-                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
-                    item[2].GetComponent<Image>().fillAmount = Mathf.Lerp(item[2].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 2f);
-                    item[3].GetComponent<Image>().fillAmount = Mathf.Lerp(item[3].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 1f);
                     break;
             }
         }
