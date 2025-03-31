@@ -45,6 +45,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] itemCorrect;
     public Transform[] pointItem;
     public Sprite[] itemSprite;
+    bool isNeedItem;
 
     [Header("ComboUI")]
     public GameObject comboUI;
@@ -61,6 +62,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("Resident")]
     public GameObject[] residentEasy;
     public GameObject[] residentHard;
+    public Transform[] lineUpPoint;
 
     //PlayerMove
     int _pointNum;
@@ -108,29 +110,17 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void Update()
     {
-        GameTime();
         Score();
         Patience();
+        GameTime();
+        Need();
         Combo();
         KeyBoardControl();
         PlayerMoveAndAnimator();
         BoxSpriteScale();
     }
 
-    void GameTime()
-    {
-        if (!isGameStart) return;
 
-        if (_gameTime > 0)
-        {
-            _gameTime -= Time.deltaTime;
-            timeText.text = _gameTime.ToString("0");
-        }
-        else 
-        {
-            
-        }
-    }
     void Score()
     {
         scoreText.text = _score.ToString();
@@ -158,8 +148,27 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             GameEnd();
         }
-    }  
-    
+    }
+    void GameTime()
+    {
+        if (!isGameStart) return;
+
+        if (_gameTime > 0)
+        {
+            _gameTime -= Time.deltaTime;
+            timeText.text = _gameTime.ToString("0");
+        }
+        else
+        {
+
+        }
+    }
+    void Need()
+    {
+        Vector3 offset = new Vector3(0f, 250f, 0f);
+        Vector3 needPos = Camera.main.WorldToScreenPoint(lineUpPoint[1].position);
+        diagolueBG.transform.position = needPos + offset;
+    }
     void Combo()
     {
         comboText.text = _combo.ToString();
