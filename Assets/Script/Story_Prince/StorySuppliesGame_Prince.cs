@@ -44,8 +44,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void OnEnable()
     {
-        //StartCoroutine(StartSuppliesGame());
-        GameEnd();
+        StartCoroutine(StartSuppliesGame());
     }
 
     IEnumerator StartSuppliesGame()
