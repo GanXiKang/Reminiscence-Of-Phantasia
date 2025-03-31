@@ -291,6 +291,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
  
             if (HasReachedTarget())
             {
+                resident[_firstResident].position = lineUpPoint[7].position;
                 isLineUpMoving = false;
                 _firstResident++;
                 if (_firstResident >= resident.Length)
@@ -301,7 +302,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     bool HasReachedTarget()
     {
-        return Vector3.Distance(resident[_firstResident].position, lineUpPoint[6].position) < 0.01f &&
+        return Vector3.Distance(resident[_firstResident].position, lineUpPoint[6].position) < 1f &&
                Vector3.Distance(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position) < 0.01f &&
                Vector3.Distance(resident[_firstResident + 2].position, lineUpPoint[_firstResident + 1].position) < 0.01f &&
                Vector3.Distance(resident[_firstResident + 3].position, lineUpPoint[_firstResident + 2].position) < 0.01f &&
