@@ -212,7 +212,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     item[1].SetActive(true);
                     item[1].transform.position = pointItem[1].position;
                     item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
-                    //itemImage[1].fillAmount = Mathf.Lerp(itemImage[1].fillAmount, 1f, Time.deltaTime * 1f);
+                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 1f);
                     break;
 
                 case 2:
