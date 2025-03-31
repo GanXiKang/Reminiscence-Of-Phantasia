@@ -294,7 +294,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 int currentResident = _firstResident + i;
 
                 if (currentResident > 6)
-                    currentResident = _firstResident + i - 6;
+                    currentResident -= 6;
 
                 resident[currentResident].position = Vector3.Lerp(
                     resident[currentResident].position,
@@ -319,14 +319,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     bool HasReachedTarget()
     {
-        //return Vector3.Distance(resident[_firstResident].position, lineUpPoint[6].position) < 1f &&
-        //       Vector3.Distance(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position) < 0.01f &&
-        //       Vector3.Distance(resident[_firstResident + 2].position, lineUpPoint[_firstResident + 1].position) < 0.01f &&
-        //       Vector3.Distance(resident[_firstResident + 3].position, lineUpPoint[_firstResident + 2].position) < 0.01f &&
-        //       Vector3.Distance(resident[_firstResident + 4].position, lineUpPoint[_firstResident + 3].position) < 0.01f &&
-        //       Vector3.Distance(resident[_firstResident + 5].position, lineUpPoint[_firstResident + 4].position) < 0.01f;
-
-        float tolerance = 0.01f;
+        float tolerance = 0.1f;
 
         if (Vector3.Distance(resident[_firstResident].position, lineUpPoint[6].position) > tolerance)
             return false;
@@ -336,7 +329,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             int currentResident = _firstResident + i;
             if (currentResident > 6)
-                currentResident = _firstResident + i - 6;
+                currentResident -= 6;
 
             if (Vector3.Distance(resident[currentResident].position, lineUpPoint[pointIndex].position) > tolerance)
                 return false;
