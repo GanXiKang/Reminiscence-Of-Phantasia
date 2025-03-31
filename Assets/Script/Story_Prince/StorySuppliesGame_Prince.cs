@@ -192,6 +192,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         diagolueBG.SetActive(isNeedItem);
 
         if (!isNeedItem) return;
+
         _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
         for (int n = 1; n <= _itemCount; n++)
             _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
@@ -206,20 +207,20 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
             case 2:
                 diagolueBG.transform.localScale = new Vector3(4f, 2.5f, 1f);
-                item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
-                item[2].GetComponent<Image>().sprite = itemSprite[_itemNumber[2]];
-                item[1].transform.position = pointItem[2].position;
-                item[2].transform.position = pointItem[3].position;
+                for (int c = 1; c <= _itemCount; c++)
+                {
+                    item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
+                    item[c].transform.position = pointItem[c + 1].position;
+                }
                 break;
 
             case 3:
                 diagolueBG.transform.localScale = new Vector3(5.5f, 2.5f, 1f);
-                item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
-                item[2].GetComponent<Image>().sprite = itemSprite[_itemNumber[2]];
-                item[3].GetComponent<Image>().sprite = itemSprite[_itemNumber[3]];
-                item[1].transform.position = pointItem[4].position;
-                item[2].transform.position = pointItem[1].position;
-                item[2].transform.position = pointItem[5].position;
+                for (int c = 1; c <= _itemCount; c++)
+                {
+                    item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
+                    item[c].transform.position = pointItem[c + 3].position;
+                }
                 break;
         }
     }
