@@ -199,7 +199,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             if (isRandomOnce)
             {
-                _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 2);
+                _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
                 for (int n = 1; n <= _itemCount; n++)
                     _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
                 isRandomOnce = false;
@@ -212,7 +212,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     item[1].SetActive(true);
                     item[1].transform.position = pointItem[1].position;
                     item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
-                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 1f);
+                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
                     break;
 
                 case 2:
@@ -222,8 +222,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 1].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                        //itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
+                        //item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
                     }
+                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
+                    item[2].GetComponent<Image>().fillAmount = Mathf.Lerp(item[2].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 1.5f);
                     break;
 
                 case 3:
@@ -233,8 +235,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 3].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                        //itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
+                        //item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
                     }
+                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
+                    item[2].GetComponent<Image>().fillAmount = Mathf.Lerp(item[2].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 2f);
+                    item[3].GetComponent<Image>().fillAmount = Mathf.Lerp(item[3].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 1f);
                     break;
             }
         }
