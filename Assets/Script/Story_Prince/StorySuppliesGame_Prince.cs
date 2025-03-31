@@ -289,7 +289,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 );
 
             int pointIndex = 1;
-            for (int i = 1; i <= 5; i++)
+            int residentCount = isBusyTime ? 5 : 3;
+            for (int i = 1; i <= residentCount; i++)
             {
                 int currentResident = _firstResident + i;
 
@@ -325,7 +326,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             return false;
 
         int pointIndex = 1;
-        for (int i = 1; i <= 5; i++)
+        int residentCount = isBusyTime ? 5 : 3;
+        for (int i = 1; i <= residentCount; i++)
         {
             int currentResident = _firstResident + i;
             if (currentResident > 6)
