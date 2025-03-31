@@ -31,7 +31,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Image patienceBG;
     public Image barA, barB;
     float _patience;
-    float _smoothSpeed = 5f;
+    float _smoothSpeed = 2f;
 
     [Header("TimeUI")]
     public Image timeBG;
@@ -64,7 +64,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     //PlayerMove
     int _pointNum;
     bool isPlayerMove = false;
-    float _moveSpeed = 3f;
+    float _moveSpeed = 5f;
     //Animator
     bool isCarrying = false;
     bool isCorrect = false;
