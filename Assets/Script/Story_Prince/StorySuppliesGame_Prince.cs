@@ -63,6 +63,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] residentEasy;
     public GameObject[] residentHard;
     public Transform[] lineUpPoint;
+    bool isLineUpMoving;
 
     //PlayerMove
     int _pointNum;
@@ -118,6 +119,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         KeyBoardControl();
         PlayerMoveAndAnimator();
         BoxSpriteScale();
+        LineUp();
     }
 
 
@@ -188,6 +190,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            isLineUpMoving = true;
             print(_pointNum);
             if (_pointNum == 5)
                 isCorrect = true;
@@ -230,6 +233,13 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 boxSprite[i].transform.localScale = oriScale;
         }
     }
+    void LineUp()
+    {
+        if (isLineUpMoving)
+        {
+            StartCoroutine(LineUpMoving());
+        }
+    }
 
     void GameEnd()
     {
@@ -263,5 +273,37 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         BGM.PlayOneShot(gainEnergy);
         StorySkillControl_Prince.isGainEnegry = true;
         StorySkillControl_Prince._gainEnegryValue = 0.2f;
+    }
+
+    IEnumerator LineUpMoving()
+    {
+        isLineUpMoving = false;
+        if (residentHard.Length < 7 || lineUpPoint.Length < 8) yield break;
+
+        // 讓隊首的居民移動到最後的待命位置
+        GameObject firstResident = residentHard[1];
+        yield return MoveTo(firstResident, lineUpPoint[6].position);
+        firstResident.transform.position = lineUpPoint[7].position;
+
+        // 其他居民依次向前移動
+        for (int i = 1; i < residentHard.Length - 1; i++)
+        {
+            yield return MoveTo(residentHard[i + 1], lineUpPoint[i].position);
+        }
+    }
+
+    IEnumerator MoveTo(GameObject obj, Vector3 targetPosition)
+    {
+        float duration = 0.5f;
+        float elapsed = 0f;
+        Vector3 startPosition = obj.transform.position;
+
+        while (elapsed < duration)
+        {
+            obj.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        obj.transform.position = targetPosition;
     }
 }
