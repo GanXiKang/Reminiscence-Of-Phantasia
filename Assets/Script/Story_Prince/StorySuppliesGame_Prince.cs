@@ -111,7 +111,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         _score = 0;
         _patience = 100f;
-        _gameTime = 90f;
+        _gameTime = 35f;
         _combo = 0;
         _firstResident = 1;
 
