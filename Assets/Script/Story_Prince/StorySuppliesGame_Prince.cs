@@ -140,11 +140,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         _patience = Mathf.Clamp(_patience, 0, 100);
         float amount = _patience / 100;
 
-        if (Input.GetKeyDown(KeyCode.P))
-            _patience -= 10;
-        if (Input.GetKeyDown(KeyCode.O))
-            _patience += 10;
-
         if (amount > barB.fillAmount)
         {
             barA.fillAmount = amount;
@@ -156,12 +151,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             barB.fillAmount = amount;
             if (barA.fillAmount != amount)
                 barA.fillAmount = Mathf.Lerp(barA.fillAmount, barB.fillAmount, Time.deltaTime * _smoothSpeed);
-        }
-
-        if (_patience <= 0)
-        {
-            isError = true;
-            GameEnd();
         }
     }  
     
