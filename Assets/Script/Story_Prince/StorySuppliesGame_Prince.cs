@@ -44,7 +44,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject diagolue;
     public GameObject diagolueBG;
     public GameObject[] item;
-    public Image[] itemImage;
     public GameObject[] itemCorrect;
     public Transform[] pointItem;
     public Sprite[] itemSprite;
@@ -212,7 +211,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
                     item[1].SetActive(true);
                     item[1].transform.position = pointItem[1].position;
-                    itemImage[1].sprite = itemSprite[_itemNumber[1]];
+                    item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
                     //itemImage[1].fillAmount = Mathf.Lerp(itemImage[1].fillAmount, 1f, Time.deltaTime * 1f);
                     break;
 
@@ -222,7 +221,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     {
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 1].position;
-                        itemImage[c].sprite = itemSprite[_itemNumber[c]];
+                        item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
                         //itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
                     }
                     break;
@@ -233,7 +232,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     {
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 3].position;
-                        itemImage[c].sprite = itemSprite[_itemNumber[c]];
+                        item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
                         //itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
                     }
                     break;
@@ -243,25 +242,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             for (int t = 1; t < item.Length; t++)
             {
-                //item[t].SetActive(false);
-                //itemImage[t].fillAmount = 0;
-                if (item[t] == null)
-                {
-                    Debug.LogError($"item[{t}] is null");
-                }
-                else
-                {
-                    item[t].SetActive(false);
-                }
-
-                if (itemImage[t] == null)
-                {
-                    Debug.LogError($"itemImage[{t}] is null");
-                }
-                else
-                {
-                    itemImage[t].fillAmount = 0;
-                }
+                item[t].SetActive(false);
+                item[t].GetComponent<Image>().fillAmount = 0;
             }
         }
     }
