@@ -207,8 +207,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void BoxSpriteScale()
     {
-        Vector3 oriScale = new Vector3(0.1f, 0.1f, 0f);
-        Vector3 bigScale = new Vector3(0.12f, 0.12f, 0f);
+        Vector3 oriScale = new Vector3(0.0025f, 0.0025f, 0f);
+        Vector3 bigScale = new Vector3(0.003f, 0.003f, 0f);
 
         int a = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : 4;
         int b = StoryGameControl_Prince.isSuppliesGameEasy ? 4 : 8;
