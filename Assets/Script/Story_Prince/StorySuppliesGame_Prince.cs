@@ -19,7 +19,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject suppliesUI;
     public GameObject resultUI;
     public Image resultImage;
-    public Sprite winUI, LoseUI;
+    public Sprite win, Lose;
 
     [Header("ScoreUI")]
     public Image scoreBG;
@@ -41,7 +41,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Transform[] pointItem;
     public Sprite[] itemSprite;
 
-    [Header(ComboUI)]
+    [Header("ComboUI")]
     public GameObject comboUI;
     public Text comboText;
 
