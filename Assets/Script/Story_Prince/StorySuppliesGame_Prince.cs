@@ -282,13 +282,18 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (isLineUpMoving)
         {
-            resident[_firstResident].position = Vector3.Lerp(resident[_firstResident].position, lineUpPoint[6].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 1].position = Vector3.Lerp(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 2].position = Vector3.Lerp(resident[_firstResident + 2].position, lineUpPoint[_firstResident - 1].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 3].position = Vector3.Lerp(resident[_firstResident + 3].position, lineUpPoint[_firstResident - 2].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 4].position = Vector3.Lerp(resident[_firstResident + 4].position, lineUpPoint[_firstResident - 3].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 5].position = Vector3.Lerp(resident[_firstResident + 5].position, lineUpPoint[_firstResident - 4].position, Time.deltaTime * _moveSpeed);
-
+            //resident[_firstResident].position = Vector3.Lerp(resident[_firstResident].position, lineUpPoint[6].position, Time.deltaTime * _moveSpeed);
+            //resident[_firstResident + 1].position = Vector3.Lerp(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position, Time.deltaTime * _moveSpeed);
+            //resident[_firstResident + 2].position = Vector3.Lerp(resident[_firstResident + 2].position, lineUpPoint[_firstResident - 1].position, Time.deltaTime * _moveSpeed);
+            //resident[_firstResident + 3].position = Vector3.Lerp(resident[_firstResident + 3].position, lineUpPoint[_firstResident - 2].position, Time.deltaTime * _moveSpeed);
+            //resident[_firstResident + 4].position = Vector3.Lerp(resident[_firstResident + 4].position, lineUpPoint[_firstResident - 3].position, Time.deltaTime * _moveSpeed);
+            //resident[_firstResident + 5].position = Vector3.Lerp(resident[_firstResident + 5].position, lineUpPoint[_firstResident - 4].position, Time.deltaTime * _moveSpeed);
+            resident[_firstResident].position = lineUpPoint[6].position；
+            resident[_firstResident + 1].position = lineUpPoint[_firstResident].position;
+            resident[_firstResident + 2].position = lineUpPoint[_firstResident - 1].position;
+            resident[_firstResident + 3].position = lineUpPoint[_firstResident - 2].position;
+            resident[_firstResident + 4].position = lineUpPoint[_firstResident - 3].position;
+            resident[_firstResident + 5].position = lineUpPoint[_firstResident - 4].position;
             _firstResident++;
             if(_firstResident >= resident.Length)
                 _firstResident = 1;
