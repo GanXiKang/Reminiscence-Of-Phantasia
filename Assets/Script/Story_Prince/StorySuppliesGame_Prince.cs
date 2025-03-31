@@ -195,36 +195,36 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (!isNeedItem) return;
 
-        _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
-        for (int n = 1; n <= _itemCount; n++)
-            _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
+        //_itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
+        //for (int n = 1; n <= _itemCount; n++)
+        //    _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
 
-        switch (_itemCount)
-        {
-            case 1:
-                diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
-                item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
-                item[1].transform.position = pointItem[1].position;
-                break;
+        //switch (_itemCount)
+        //{
+        //    case 1:
+        //        diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
+        //        item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
+        //        item[1].transform.position = pointItem[1].position;
+        //        break;
 
-            case 2:
-                diagolueBG.transform.localScale = new Vector3(4f, 2.5f, 1f);
-                for (int c = 1; c <= _itemCount; c++)
-                {
-                    item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                    item[c].transform.position = pointItem[c + 1].position;
-                }
-                break;
+        //    case 2:
+        //        diagolueBG.transform.localScale = new Vector3(4f, 2.5f, 1f);
+        //        for (int c = 1; c <= _itemCount; c++)
+        //        {
+        //            item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
+        //            item[c].transform.position = pointItem[c + 1].position;
+        //        }
+        //        break;
 
-            case 3:
-                diagolueBG.transform.localScale = new Vector3(5.5f, 2.5f, 1f);
-                for (int c = 1; c <= _itemCount; c++)
-                {
-                    item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                    item[c].transform.position = pointItem[c + 3].position;
-                }
-                break;
-        }
+        //    case 3:
+        //        diagolueBG.transform.localScale = new Vector3(5.5f, 2.5f, 1f);
+        //        for (int c = 1; c <= _itemCount; c++)
+        //        {
+        //            item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
+        //            item[c].transform.position = pointItem[c + 3].position;
+        //        }
+        //        break;
+        //}
     }
     void Combo()
     {
