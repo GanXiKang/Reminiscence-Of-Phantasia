@@ -145,7 +145,8 @@ public class StorySkillControl_Prince : MonoBehaviour
             if (isRotating)
             {
                 isRotating = false;
-                CheckCurrentZone();
+                isReducing = false;
+                isCheckZone = false;
                 StopCoroutine(current);
                 BlackScreenControl.isOpenBlackScreen = true;
                 Invoke("NoEnergyGameOver", 1f);
