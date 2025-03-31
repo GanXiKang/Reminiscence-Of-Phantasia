@@ -31,7 +31,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Image patienceBG;
     public Image barA, barB;
     float _patience;
-    float _smoothSpeed = 0.5f;
+    float _smoothSpeed = 5f;
 
     [Header("TimeUI")]
     public Image timeBG;
