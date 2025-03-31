@@ -17,6 +17,21 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     [Header("UI")]
     public GameObject suppliesUI;
+    public GameObject resultUI;
+    public GameObject winUI, LoseUI;
+
+    [Header("ScoreUI")]
+    public Image scoreBG;
+    public Text scoreText;
+    public Text scoreTargetText;
+
+    [Header("PatienceUI")]
+    public Image patienceBG;
+    public Image barA, barB;
+
+    [Header("TimeUI")]
+    public Image timeBG;
+    public Text timeText;
 
     [Header("SceneGameObject")]
     public GameObject sceneObject;
@@ -24,6 +39,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject gameHardObject;
     public GameObject[] boxSprite;
     public Transform[] boxPoint;
+
+    [Header("Resident")]
+    public GameObject[] residentEasy;
+    public GameObject[] residentHard;
 
     //PlayerMove
     int _pointNum;
