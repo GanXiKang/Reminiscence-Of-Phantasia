@@ -30,7 +30,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("PatienceUI")]
     public Image patienceBG;
     public Image barA, barB;
-    int _patience;
+    float _patience;
+    float _smoothSpeed = 0.5f;
 
     [Header("TimeUI")]
     public Image timeBG;
@@ -95,8 +96,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         isPlayerMove = true;
         isCarrying = true;
         _score = 0;
-        _patience = 100;
-        _gameTime = 90;
+        _patience = 100f;
+        _gameTime = 90f;
         _combo = 0;
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
         player.transform.rotation = boxPoint[_pointNum].rotation;
@@ -136,7 +137,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void Patience()
     {
-        
+        _patience -= 5 * Time.deltaTime;
+        barA.fillAmount = _patience / 100;
+        barB.fillAmount = Mathf.Lerp(barB.fillAmount, barA.fillAmount, Time.deltaTime * smoothSpeed);
     }
     void Combo()
     {
