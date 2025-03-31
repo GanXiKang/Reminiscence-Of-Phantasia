@@ -47,6 +47,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Transform[] pointItem;
     public Sprite[] itemSprite;
     bool isNeedItem;
+    int _itemCount, _itemNumber;
 
     [Header("ComboUI")]
     public GameObject comboUI;
@@ -186,6 +187,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         Vector3 offset = new Vector3(0f, 300f, 0f);
         Vector3 needPos = suppliesCamera.GetComponent<Camera>().WorldToScreenPoint(lineUpPoint[1].position);
         diagolueBG.transform.position = needPos + offset;
+
+        diagolueBG.SetActive(isNeedItem);
+        if(isNeedItem)
     }
     void Combo()
     {
@@ -207,6 +211,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isLineUpMoving = true;
+            isNeedItem = false;
             if (_pointNum == 5)
                 isCorrect = true;
             else
@@ -305,11 +310,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 pointIndex++;
             }
 
-
             if (HasReachedTarget())
             {
-                resident[_firstResident].position = lineUpPoint[7].position;
                 isLineUpMoving = false;
+                isNeedItem = true;
+                resident[_firstResident].position = lineUpPoint[7].position;
+
                 _firstResident++;
                 if (_firstResident >= resident.Length)
                     _firstResident = 1;
