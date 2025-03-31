@@ -282,13 +282,30 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (isLineUpMoving)
         {
-            resident[_firstResident].position = Vector3.Lerp(resident[_firstResident].position, lineUpPoint[6].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 1].position = Vector3.Lerp(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 2].position = Vector3.Lerp(resident[_firstResident + 2].position, lineUpPoint[_firstResident + 1].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 3].position = Vector3.Lerp(resident[_firstResident + 3].position, lineUpPoint[_firstResident + 2].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 4].position = Vector3.Lerp(resident[_firstResident + 4].position, lineUpPoint[_firstResident + 3].position, Time.deltaTime * _moveSpeed);
-            resident[_firstResident + 5].position = Vector3.Lerp(resident[_firstResident + 5].position, lineUpPoint[_firstResident + 4].position, Time.deltaTime * _moveSpeed);
- 
+            resident[_firstResident].position = Vector3.Lerp(
+                resident[_firstResident].position, 
+                lineUpPoint[6].position, 
+                Time.deltaTime * _moveSpeed
+                );
+
+            int pointIndex = 1;
+            for (int i = 1; i <= 5; i++)
+            {
+                int currentResident = _firstResident + i;
+
+                if (currentResident > 6)
+                    currentResident = _firstResident + i - 6;
+
+                resident[currentResident].position = Vector3.Lerp(
+                    resident[currentResident].position,
+                    lineUpPoint[pointIndex].position,
+                    Time.deltaTime * _moveSpeed
+                );
+
+                pointIndex++;
+            }
+
+
             if (HasReachedTarget())
             {
                 resident[_firstResident].position = lineUpPoint[7].position;
@@ -302,12 +319,32 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     bool HasReachedTarget()
     {
-        return Vector3.Distance(resident[_firstResident].position, lineUpPoint[6].position) < 1f &&
-               Vector3.Distance(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position) < 0.01f &&
-               Vector3.Distance(resident[_firstResident + 2].position, lineUpPoint[_firstResident + 1].position) < 0.01f &&
-               Vector3.Distance(resident[_firstResident + 3].position, lineUpPoint[_firstResident + 2].position) < 0.01f &&
-               Vector3.Distance(resident[_firstResident + 4].position, lineUpPoint[_firstResident + 3].position) < 0.01f &&
-               Vector3.Distance(resident[_firstResident + 5].position, lineUpPoint[_firstResident + 4].position) < 0.01f;
+        //return Vector3.Distance(resident[_firstResident].position, lineUpPoint[6].position) < 1f &&
+        //       Vector3.Distance(resident[_firstResident + 1].position, lineUpPoint[_firstResident].position) < 0.01f &&
+        //       Vector3.Distance(resident[_firstResident + 2].position, lineUpPoint[_firstResident + 1].position) < 0.01f &&
+        //       Vector3.Distance(resident[_firstResident + 3].position, lineUpPoint[_firstResident + 2].position) < 0.01f &&
+        //       Vector3.Distance(resident[_firstResident + 4].position, lineUpPoint[_firstResident + 3].position) < 0.01f &&
+        //       Vector3.Distance(resident[_firstResident + 5].position, lineUpPoint[_firstResident + 4].position) < 0.01f;
+
+        float tolerance = 0.01f;
+
+        if (Vector3.Distance(resident[_firstResident].position, lineUpPoint[6].position) > tolerance)
+            return false;
+
+        int pointIndex = 1;
+        for (int i = 1; i <= 5; i++)
+        {
+            int currentResident = _firstResident + i;
+            if (currentResident > 6)
+                currentResident = _firstResident + i - 6;
+
+            if (Vector3.Distance(resident[currentResident].position, lineUpPoint[pointIndex].position) > tolerance)
+                return false;
+
+            pointIndex++;
+        }
+
+        return true;
     }
 
     void GameEnd()
