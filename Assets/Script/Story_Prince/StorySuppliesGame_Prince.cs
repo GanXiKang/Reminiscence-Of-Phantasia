@@ -212,7 +212,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
                 item[1].transform.position = pointItem[1].position;
                 itemImage[1].sprite = itemSprite[_itemNumber[1]];
-                itemImage[1].fillAmount = Mathf.Lerp(itemImage[1].fillAmount, 1f, Time.deltaTime * 1f);
+                //itemImage[1].fillAmount = Mathf.Lerp(itemImage[1].fillAmount, 1f, Time.deltaTime * 1f);
                 break;
 
             case 2:
@@ -221,7 +221,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 {
                     item[c].transform.position = pointItem[c + 1].position;
                     itemImage[c].sprite = itemSprite[_itemNumber[c]];
-                    itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
+                    //itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
                 }
                 break;
 
@@ -231,7 +231,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 {
                     item[c].transform.position = pointItem[c + 3].position;
                     itemImage[c].sprite = itemSprite[_itemNumber[c]];
-                    itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
+                    //itemImage[c].fillAmount = Mathf.Lerp(itemImage[c].fillAmount, 1f, Time.deltaTime * 1f);
                 }
                 break;
         }
