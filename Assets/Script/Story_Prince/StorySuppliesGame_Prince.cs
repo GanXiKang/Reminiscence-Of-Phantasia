@@ -207,7 +207,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isLineUpMoving = true;
-            print(_pointNum);
             if (_pointNum == 5)
                 isCorrect = true;
             else
@@ -314,7 +313,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 _firstResident++;
                 if (_firstResident >= resident.Length)
                     _firstResident = 1;
-                print("OK");
             }
         }
     }
