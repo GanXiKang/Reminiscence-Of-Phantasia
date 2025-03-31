@@ -139,7 +139,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         _patience -= 5 * Time.deltaTime;
         barA.fillAmount = _patience / 100;
-        barB.fillAmount = Mathf.Lerp(barB.fillAmount, barA.fillAmount, Time.deltaTime * smoothSpeed);
+        barB.fillAmount = Mathf.Lerp(barB.fillAmount, barA.fillAmount, Time.deltaTime * _smoothSpeed);
     }
     void Combo()
     {
