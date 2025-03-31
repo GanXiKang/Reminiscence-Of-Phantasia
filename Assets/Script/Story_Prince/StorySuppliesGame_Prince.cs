@@ -87,7 +87,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     IEnumerator StartSuppliesGame()
     {
         BlackScreenControl.isOpenBlackScreen = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.2f);
         suppliesUI.SetActive(true);
         sceneObject.SetActive(true);
         suppliesCamera.SetActive(true);
