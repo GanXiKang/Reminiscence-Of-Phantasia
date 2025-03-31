@@ -31,7 +31,7 @@ public class StorySkillControl_Prince : MonoBehaviour
     [Header("EnergyUI")]
     public Image energyBar;
     public Image bg;
-    public Sprite bgEnergy, bgNoEnergy;
+    public Sprite bgEnergy, bgNoEnergy, bgNowOnly, bgFutureOnly;
     public static int _zoneNum;
     float _energyValue = 0.7f;
     float _rotation = 0.008f;
