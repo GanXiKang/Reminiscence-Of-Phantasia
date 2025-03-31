@@ -30,6 +30,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("PatienceUI")]
     public Image patienceBG;
     public Image barA, barB;
+    int _patience;
 
     [Header("TimeUI")]
     public Image timeBG;
@@ -46,6 +47,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("ComboUI")]
     public GameObject comboUI;
     public Text comboText;
+    int _combo;
 
     [Header("SceneGameObject")]
     public GameObject sceneObject;
@@ -93,7 +95,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         isPlayerMove = true;
         isCarrying = true;
         _score = 0;
+        _patience = 100;
         _gameTime = 90;
+        _combo = 0;
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
         player.transform.rotation = boxPoint[_pointNum].rotation;
         yield return new WaitForSeconds(2f);
@@ -103,6 +107,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void Update()
     {
         GameTime();
+        Score();
+        Patience();
+        Combo();
         KeyBoardControl();
         PlayerMoveAndAnimator();
         BoxSpriteScale();
@@ -112,10 +119,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         if (!isGameStart) return;
 
-        if (gameTime > 0)
+        if (_gameTime > 0)
         {
-            gameTime -= Time.deltaTime;
-            timeText.text = gameTime.ToString("0");
+            _gameTime -= Time.deltaTime;
+            timeText.text = _gameTime.ToString("0");
         }
         else 
         {
@@ -126,6 +133,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         scoreText.text = _score.ToString();
         scoreTargetText.text = StoryGameControl_Prince.isSuppliesGameEasy ? "/2500" : "/3000";
+    }
+    void Patience()
+    {
+        
+    }
+    void Combo()
+    {
+        comboText.text = _combo.ToString();
     }
     void KeyBoardControl()
     {
