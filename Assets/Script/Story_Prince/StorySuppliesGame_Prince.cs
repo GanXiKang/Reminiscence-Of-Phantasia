@@ -241,11 +241,28 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         }
         else 
         {
-            //for (int t = 1; t < item.Length; t++)
-            //{
-            //    item[t].SetActive(false);
-            //    itemImage[t].fillAmount = 0;
-            //}
+            for (int t = 1; t < item.Length; t++)
+            {
+                //item[t].SetActive(false);
+                //itemImage[t].fillAmount = 0;
+                if (item[t] == null)
+                {
+                    Debug.LogError($"item[{t}] is null");
+                }
+                else
+                {
+                    item[t].SetActive(false);
+                }
+
+                if (itemImage[t] == null)
+                {
+                    Debug.LogError($"itemImage[{t}] is null");
+                }
+                else
+                {
+                    itemImage[t].fillAmount = 0;
+                }
+            }
         }
     }
     void Combo()
