@@ -37,7 +37,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Image timeBG;
     public Text timeText;
     float _gameTime;
-    bool isBusyTime = false;
+    bool isBusyTime;
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -64,8 +64,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] residentEasy;
     public GameObject[] residentHard;
     public Transform[] lineUpPoint;
+    bool isRecordResidentOnce;
     bool isLineUpMoving;
-    int firstResident;
+    int _firstResident;
 
     //PlayerMove
     int _pointNum;
@@ -94,19 +95,27 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1.2f);
+
         suppliesUI.SetActive(true);
         sceneObject.SetActive(true);
         suppliesCamera.SetActive(true);
         gameEasyObject.SetActive(StoryGameControl_Prince.isSuppliesGameEasy);
         gameHardObject.SetActive(StoryGameControl_Prince.isSuppliesGameHard);
+
         isPlayerMove = true;
         isCarrying = true;
+        isRecordResidentOnce = true;
+        isLineUpMoving = false;
+
         _score = 0;
         _patience = 100f;
         _gameTime = 90f;
         _combo = 0;
+        _firstResident = 1;
+
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
         player.transform.rotation = boxPoint[_pointNum].rotation;
+
         yield return new WaitForSeconds(2f);
         isGameStart = true;
     }
@@ -240,13 +249,34 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void LineUp()
     {
+        Transform[] resident;
+
+        if (StoryGameControl_Prince.isSuppliesGameEasy)
+        {
+            resident = new Transform[residentEasy.Length];
+            for (int i = 0; i < residentEasy.Length; i++)
+            {
+                if (residentEasy[i] != null)
+                    resident[i] = residentEasy[i].transform;
+            }
+        }
+        else
+        {
+            resident = new Transform[residentHard.Length];
+            for (int i = 0; i < residentHard.Length; i++)
+            {
+                if (residentHard[i] != null)
+                    resident[i] = residentHard[i].transform;
+            }
+        }
+
         if (isLineUpMoving)
         {
             isLineUpMoving = false;
 
-            for (int i = 1; i < 7 - 1; i++)
+            for (int i = 1; i < 7; i++)
             {
-                
+                //transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
             }
         }
     }
