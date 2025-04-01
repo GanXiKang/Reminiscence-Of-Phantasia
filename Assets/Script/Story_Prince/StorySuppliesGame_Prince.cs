@@ -40,6 +40,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Text timeText;
     float _gameTime;
     bool isBusyTime;
+    bool isEnterBusyTime;
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -119,6 +120,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         isCarrying = true;
         isRecordResidentOnce = true;
         isBusyTime = false;
+        isEnterBusyTime = false;
         isLineUpMoving = false;
 
         _score = 0;
@@ -163,6 +165,16 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         scoreText.text = _score.ToString();
         scoreTargetText.text = "/" + _scoreTarget;
+
+        if (_score >= _scoreTarget)
+        {
+            StoryNpcAnimator_Prince.isSmiling_Prince = true;
+            StoryNpcAnimator_Prince.isSmiling_Swallow = true;
+        }
+        else
+        {
+            
+        }
     }
     void Patience()
     {
@@ -192,7 +204,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             reducePatience = isBusyTime ? 4f : 5f;
         }
 
-        if (isNeedItem && !SettingControl.isSettingActive)
+        if (isNeedItem && !SettingControl.isSettingActive && !isEnterBusyTime)
         {
             _patience -= reducePatience * Time.deltaTime;
         }
@@ -208,20 +220,32 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (SettingControl.isSettingActive) return;
         if (!isGameStart) return;
+        if (isEnterBusyTime) return;
 
         float _busyTime = StoryGameControl_Prince.isSuppliesGameEasy ? 20f : 30f;
 
         if (_gameTime > 0)
         {
             _gameTime -= Time.deltaTime;
-            
-            if(_gameTime <= _busyTime)
+
+            if (_gameTime <= _busyTime)
+            {
                 isBusyTime = true;
+                isEnterBusyTime = false;
+                resultUI.SetActive(true);
+                resultImage.sprite = busy;
+                Invoke("FalseIsEnterBusyTime", 1f);
+            }
         }
         else
         {
             StartCoroutine(EndGame(true));
         }
+    }
+    void FalseIsEnterBusyTime()
+    {
+        isBusyTime = false;
+        resultUI.SetActive(false);
     }
     void Need()
     {
@@ -311,6 +335,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         if (SettingControl.isSettingActive) return;
         if (!isGameStart) return;
+        if (isEnterBusyTime) return;
 
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -540,6 +565,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         suppliesUI.SetActive(false);
         sceneObject.SetActive(false);
         suppliesCamera.SetActive(false);
+
+        StoryNpcAnimator_Prince.isSmiling_Prince = false;
+        StoryNpcAnimator_Prince.isSmiling_Swallow = false;
 
         player.transform.rotation = Quaternion.Euler(30f, -45f, 0f);
 
