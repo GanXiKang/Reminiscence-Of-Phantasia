@@ -190,7 +190,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             reducePatience = isBusyTime ? 4f : 5f;
         }
 
-        if (isNeedItem)
+        if (isNeedItem && !SettingControl.isSettingActive)
         {
             _patience -= reducePatience * Time.deltaTime;
         }
@@ -204,6 +204,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         timeText.text = _gameTime.ToString("0");
 
+        if (SettingControl.isSettingActive) return;
         if (!isGameStart) return;
 
         if (_gameTime > 0)
@@ -293,6 +294,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void KeyBoardControl()
     {
+        if (SettingControl.isSettingActive) return;
         if (!isGameStart) return;
 
         if (Input.GetKeyDown(KeyCode.A))
