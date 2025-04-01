@@ -484,12 +484,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         isGameStart = false;
         isNeedItem = false;
         yield return new WaitForSeconds(1f);
+
         resultUI.SetActive(true);
         if (isTimeOut)
         {
             if (_score >= _scoreTarget)
             {
-                //resultImage.sprite = win;
+                isCorrect = true;
+                resultImage.sprite = win;
 
                 if (StoryGameControl_Prince.isSuppliesGameEasy)
                     StoryGameControl_Prince.isPassGameEasy = true;
@@ -498,25 +500,28 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             }
             else
             {
-                //resultImage.sprite = lose;
+                isError = true;
+                resultImage.sprite = lose;
             }
         }
         else
         {
-            //resultImage.sprite = patience;
+            isError = true;
+            resultImage.sprite = patience;
         }
+
         yield return new WaitForSeconds(2f);
+        isCarrying = false;
         StoryUIControl_Prince.isSuppliesActive = false;
     }
 
     void OnDisable()
     {
+        isPlayerMove = false;
         resultUI.SetActive(false);
         suppliesUI.SetActive(false);
         sceneObject.SetActive(false);
         suppliesCamera.SetActive(false);
-
-        isCarrying = false;
 
         if (StoryGameControl_Prince.isPassGameEasy && _gameCount == 0)
         {
