@@ -80,6 +80,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     bool isLineUpMoving;
     int _firstResident;
 
+    [Header("Effects")]
+    public GameObject shinyEF;
+
     //PlayerMove
     int _pointNum;
     bool isPlayerMove = false;
@@ -356,6 +359,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 _patience += 5f;
                 isLineUpMoving = true;
                 isNeedItem = false;
+                shinyEF.SetActive(true);
             }
         }
     }
