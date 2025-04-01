@@ -272,8 +272,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             for (int c = 1; c <= _itemCount; c++)
             {
+                print("1");
                 if (!itemCorrect[c])
                 {
+                    print("2");
                     if (_pointNum == _itemNumber[c])
                     {
                         _score += 50;
@@ -290,8 +292,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             bool allItemsCorrect = true;
             for (int i = 1; i <= _itemCount; i++)
             {
+                print("3");
                 if (!isItemCorrect[i])
                 {
+                    print("4");
                     allItemsCorrect = false;
                     break;
                 }
