@@ -258,7 +258,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void AddComboScore()
     {
-        int add = _combo % 5;
+        int add = _combo / 5;
         _score += add * 5;
     }
     void KeyBoardControl()
