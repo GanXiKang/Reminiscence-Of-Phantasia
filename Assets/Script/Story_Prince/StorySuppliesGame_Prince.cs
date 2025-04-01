@@ -167,7 +167,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 barA.fillAmount = Mathf.Lerp(barA.fillAmount, barB.fillAmount, Time.deltaTime * _smoothSpeed);
         }
 
-        float reducePatience
+        float reducePatience;
         if (StoryGameControl_Prince.isPassGameEasy)
         {
             reducePatience = isBusyTime ? 0.03f : 0.02f;
