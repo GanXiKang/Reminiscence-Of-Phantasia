@@ -270,16 +270,22 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isLineUpMoving = true;
-            isNeedItem = false;
-            if (_pointNum == 5)
-                isCorrect = true;
-            else
-                isError = true;
-
-            switch (_itemCount)
+            for (int c = 1; c <= _itemCount; c++)
             {
-                
+                if (!itemCorrect[c])
+                {
+                    if (_pointNum == _itemNumber[c])
+                    {
+                        isCorrect = true;
+                        isLineUpMoving = true;
+                        isNeedItem = false;
+                        isItemCorrect[c] = true;
+                    }
+                    else
+                    {
+                        isError = true;
+                    }
+                }
             }
         }
     }
