@@ -8893,7 +8893,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 474737390568254864, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.31
+      value: -3.06
       objectReference: {fileID: 0}
     - target: {fileID: 474737390568254864, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8913,15 +8913,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940207515028200088, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
       propertyPath: lengthInSec
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4940207515028200088, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4940207515028200088, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.4
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940207515028200088, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8263909433701093723, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
       propertyPath: m_Name
