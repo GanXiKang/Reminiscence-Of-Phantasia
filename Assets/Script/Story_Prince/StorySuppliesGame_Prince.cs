@@ -20,8 +20,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject resultUI;
     public Image resultImage;
     public Sprite win, lose, patience;
-    public GameObject reallyUI;
-    public Image reallyImage;
     public Sprite really, go;
 
     [Header("ScoreUI")]
@@ -133,14 +131,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         player.transform.rotation = boxPoint[_pointNum].rotation;
 
         yield return new WaitForSeconds(0.8f);
-        reallyUI.SetActive(true);
-        reallyImage.sprite = really;
+        resultUI.SetActive(true);
+        resultImage.sprite = really;
 
         yield return new WaitForSeconds(0.5f);
-        reallyImage.sprite = go;
+        resultImage.sprite = go;
 
         yield return new WaitForSeconds(0.5f);
-        reallyUI.SetActive(false);
+        resultUI.SetActive(false);
         isGameStart = true;
         isNeedItem = true;
         isRandomOnce = true;
