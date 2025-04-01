@@ -41,6 +41,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     float _gameTime;
     bool isBusyTime;
     bool isEnterBusyTime;
+    bool isOnce;
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -119,6 +120,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         isPlayerMove = true;
         isCarrying = true;
         isRecordResidentOnce = true;
+        isOnce = true;
         isBusyTime = false;
         isEnterBusyTime = false;
         isLineUpMoving = false;
@@ -231,10 +233,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             if (_gameTime <= _busyTime)
             {
                 isBusyTime = true;
-                isEnterBusyTime = false;
-                resultUI.SetActive(true);
-                resultImage.sprite = busy;
-                Invoke("FalseIsEnterBusyTime", 1f);
+                if (isOnce)
+                {
+                    isOnce = false;
+                    isEnterBusyTime = true;
+                    resultUI.SetActive(true);
+                    resultImage.sprite = busy;
+                    Invoke("FalseIsEnterBusyTime", 2f);
+                }
             }
         }
         else
@@ -244,7 +250,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void FalseIsEnterBusyTime()
     {
-        isBusyTime = false;
+        isEnterBusyTime = false;
         resultUI.SetActive(false);
     }
     void Need()
