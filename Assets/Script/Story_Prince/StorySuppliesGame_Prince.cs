@@ -272,10 +272,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             for (int c = 1; c <= _itemCount; c++)
             {
-                if (!itemCorrect[c])
+                if (!isItemCorrect[c])
                 {
-                    print("a" + _pointNum);
-                    print("B" + _itemNumber[c]);
                     if (_pointNum == _itemNumber[c])
                     {
                         _score += 50;
