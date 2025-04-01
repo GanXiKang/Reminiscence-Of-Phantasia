@@ -512,6 +512,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void OnDisable()
     {
         resultUI.SetActive(false);
+        suppliesUI.SetActive(false);
+        sceneObject.SetActive(false);
+        suppliesCamera.SetActive(false);
+
+        isCarrying = false;
 
         if (StoryGameControl_Prince.isPassGameEasy && _gameCount == 0)
         {
