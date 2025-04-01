@@ -125,7 +125,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         _score = 0;
         _patience = 100f;
-        _gameTime = 60f;
+        _gameTime = StoryGameControl_Prince.isSuppliesGameEasy ? 45f : 60f;
         _combo = 0;
         _firstResident = 1;
 
@@ -211,10 +211,13 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (SettingControl.isSettingActive) return;
         if (!isGameStart) return;
 
+        float _busyTime = StoryGameControl_Prince.isSuppliesGameEasy ? 20f : 30f;
+
         if (_gameTime > 0)
         {
             _gameTime -= Time.deltaTime;
-            if(_gameTime <= 30)
+            
+            if(_gameTime <= _busyTime)
                 isBusyTime = true;
         }
         else
