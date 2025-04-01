@@ -510,8 +510,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             resultImage.sprite = patience;
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         isCarrying = false;
+        yield return new WaitForSeconds(1f);
         StoryUIControl_Prince.isSuppliesActive = false;
     }
 
@@ -522,6 +523,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         suppliesUI.SetActive(false);
         sceneObject.SetActive(false);
         suppliesCamera.SetActive(false);
+
+        player.transform.rotation = Quaternion.Euler(30f, -45f, 0f);
 
         if (StoryGameControl_Prince.isPassGameEasy && _gameCount == 0)
         {
