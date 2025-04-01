@@ -287,7 +287,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             for (int t = 1; t < item.Length; t++)
             {
                 item[t].SetActive(false);
-                itemBlack[c].SetActive(false);
+                itemBlack[t].SetActive(false);
                 item[t].GetComponent<Image>().fillAmount = 0;
                 isItemCorrect[t] = false;
             }
