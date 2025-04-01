@@ -326,7 +326,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     else
                     {
                         _combo = 0;
-                        _score -= 50;
                         _patience -= 5f;
                         isError = true;
                     }
