@@ -19,13 +19,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject suppliesUI;
     public GameObject resultUI;
     public Image resultImage;
-    public Sprite win, Lose;
+    public Sprite win, lose, patience;
 
     [Header("ScoreUI")]
     public Image scoreBG;
     public Text scoreText;
     public Text scoreTargetText;
     int _score;
+    int _scoreTarget;
 
     [Header("PatienceUI")]
     public Image patienceBG;
@@ -143,11 +144,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         LineUp();
     }
 
-
     void Score()
     {
+        _scoreTarget = StoryGameControl_Prince.isSuppliesGameEasy ? 2500 : 3000;
+
         scoreText.text = _score.ToString();
-        scoreTargetText.text = StoryGameControl_Prince.isSuppliesGameEasy ? "/2500" : "/3000";
+        scoreTargetText.text = "/" + _scoreTarget;
     }
     void Patience()
     {
@@ -170,16 +172,21 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         float reducePatience;
         if (StoryGameControl_Prince.isPassGameEasy)
         {
-            reducePatience = isBusyTime ? 0.03f : 0.02f;
+            reducePatience = isBusyTime ? 3f : 2f;
         }
         else
         {
-            reducePatience = isBusyTime ? 0.04f : 0.03f;
+            reducePatience = isBusyTime ? 4f : 5f;
         }
 
-        if (isGameStart)
+        if (isNeedItem)
         {
             _patience -= reducePatience * Time.deltaTime;
+        }
+
+        if (_patience <= 0 && isGameStart)
+        {
+            StartCoroutine(EndGame(false));
         }
     }
     void GameTime()
@@ -196,7 +203,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         }
         else
         {
-
+            StartCoroutine(EndGame(true));
         }
     }
     void Need()
@@ -275,6 +282,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     }
     void KeyBoardControl()
     {
+        if (!isGameStart) return;
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             _pointNum -= 1;
@@ -304,6 +313,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     else
                     {
                         _combo = 0;
+                        _score -= 50;
+                        _patience -= 5f;
                         isError = true;
                     }
                 }
@@ -322,7 +333,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             if (allItemsCorrect)
             {
                 _score += 100;
-                _patience += 0.05f;
+                _patience += 5f;
                 isLineUpMoving = true;
                 isNeedItem = false;
             }
@@ -457,21 +468,40 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         return true;
     }
 
-    void GameEnd()
+    IEnumerator EndGame(bool isTimeOut)
     {
+        isGameStart = false;
+        isNeedItem = false;
+        yield return new WaitForSeconds(1f);
+        resultUI.SetActive(true);
+        if (isTimeOut)
+        {
+            if (_score >= _scoreTarget)
+            {
+                //resultImage.sprite = win;
+
+                if (StoryGameControl_Prince.isSuppliesGameEasy)
+                    StoryGameControl_Prince.isPassGameEasy = true;
+                else if (StoryGameControl_Prince.isSuppliesGameHard)
+                    StoryGameControl_Prince.isPassGameHard = true;
+            }
+            else
+            {
+                //resultImage.sprite = lose;
+            }
+        }
+        else
+        {
+            //resultImage.sprite = patience;
+        }
+        yield return new WaitForSeconds(2f);
         StoryUIControl_Prince.isSuppliesActive = false;
-        if (StoryGameControl_Prince.isSuppliesGameEasy)
-        {
-            StoryGameControl_Prince.isPassGameEasy = true;
-        }
-        else if (StoryGameControl_Prince.isSuppliesGameHard)
-        {
-            StoryGameControl_Prince.isPassGameHard = true;
-        }
     }
 
     void OnDisable()
     {
+        resultUI.SetActive(false);
+
         if (StoryGameControl_Prince.isPassGameEasy && _gameCount == 0)
         {
             _gameCount++;
@@ -486,6 +516,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             StoryDialogueControl_Prince._textCount = 41;
             StoryGameControl_Prince.isSuppliesGameHard = false;
         }
+
         BGM.PlayOneShot(gainEnergy);
         StorySkillControl_Prince.isGainEnegry = true;
         StorySkillControl_Prince._gainEnegryValue = 0.2f;
