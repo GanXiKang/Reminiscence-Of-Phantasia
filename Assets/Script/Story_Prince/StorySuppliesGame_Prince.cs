@@ -48,6 +48,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject diagolue;
     public GameObject diagolueBG;
     public GameObject[] item;
+    public GameObject[] itemBlack;
     public GameObject[] itemCorrect;
     public Transform[] pointItem;
     public Sprite[] itemSprite;
