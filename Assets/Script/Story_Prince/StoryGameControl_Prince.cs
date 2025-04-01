@@ -54,6 +54,88 @@ public class StoryGameControl_Prince : MonoBehaviour
     void Start()
     {
         PlotNpcActive();
+        GameStatic();
+    }
+
+    void GameStatic()
+    {
+        isPlotNpcActive = false;
+        isSuppliesGameEasy = false;
+        isSuppliesGameHard = false;
+        isPassGameEasy = false;
+        isPassGameHard = false;
+        isBroken = false;
+        isFutureGood = false;
+
+        StoryGardenControl_Prince.isPlanting = false;
+        StoryGardenControl_Prince.isDigPlant = false;
+        StoryGardenControl_Prince.isCherryTree = false;
+        StoryGardenControl_Prince.isGrapeTree = false;
+
+        StoryGhostControl_Prince.isWatchSkill = false;
+        StoryGhostControl_Prince.isSmile = false;
+        StoryGhostControl_Prince.isWarp = false;
+        StoryGhostControl_Prince.isNoGem = false;
+        StoryGhostControl_Prince.isDisappear = false;
+        StoryGhostControl_Prince.isAscend = false;
+
+        StoryInteractableControl_Prince.isInteractableUI = false;
+        StoryInteractableControl_Prince.isGiveItem = false;
+        StoryInteractableControl_Prince.isBagGetItem = false;
+        StoryInteractableControl_Prince.isPlayerMove = true;
+        StoryInteractableControl_Prince.isReallyGoFutureGood = false;
+        StoryInteractableControl_Prince.isGoFutureGood = false;
+        StoryInteractableControl_Prince._askResident = 0;
+        StoryInteractableControl_Prince.isPlotBanMove = false;
+        StoryInteractableControl_Prince.isCanHelpPrince = false;
+        StoryInteractableControl_Prince._helpChildQian = 0;
+        StoryInteractableControl_Prince.isPrinceNoDie = false;
+        StoryInteractableControl_Prince.isGiveSuppliesBox = false;
+        StoryInteractableControl_Prince.isPrinceInNow = false;
+        StoryInteractableControl_Prince.isSwallowHunger = false;
+        StoryInteractableControl_Prince._swallowHunger = 0;
+        StoryInteractableControl_Prince.isCrownGiveQian = false;
+        StoryInteractableControl_Prince.isSwallowFindPrince = false;
+        StoryInteractableControl_Prince.isKangNeedGem = false;
+        StoryInteractableControl_Prince.isTakeGem = false;
+        StoryInteractableControl_Prince.isDoubleButter = false;
+        StoryInteractableControl_Prince.isNeedSauce = false;
+        StoryInteractableControl_Prince.isGetTomato = false;
+        StoryInteractableControl_Prince.isGivePlank = false;
+
+        StoryLoadingScene_Prince.isNowScene = true;
+        StoryLoadingScene_Prince.isPastScene = false;
+        StoryLoadingScene_Prince.isFutureScene = false;
+        StoryLoadingScene_Prince.isLoading = false;
+        StoryLoadingScene_Prince.isOpen = false;
+
+        StoryNpcAnimator_Prince.isWalk_Prince = false;
+        StoryNpcAnimator_Prince.isLeaveHelp = false;
+        StoryNpcAnimator_Prince.isWet = false;
+        StoryNpcAnimator_Prince.isSmiling_Prince = false;
+        StoryNpcAnimator_Prince.isDrown = false;
+        StoryNpcAnimator_Prince.isPrinceAppear = false;
+        StoryNpcAnimator_Prince.isSad_Swallow = false;
+        StoryNpcAnimator_Prince.isSurprise_Swallow = false;
+        StoryNpcAnimator_Prince.isHungry = false;
+        StoryNpcAnimator_Prince.isWalk_Swallow = false;
+        StoryNpcAnimator_Prince.isSmiling_Swallow = false;
+        StoryNpcAnimator_Prince.isFindFood = false;
+        StoryNpcAnimator_Prince.isComeBack = false;
+        StoryNpcAnimator_Prince.isLeave_Qian = false;
+        StoryNpcAnimator_Prince.isShock_Qian = false;
+        StoryNpcAnimator_Prince.isNearPrince = false;
+        StoryNpcAnimator_Prince.isFindGem = false;
+        StoryNpcAnimator_Prince.isLeave_Kang = false;
+        StoryNpcAnimator_Prince.isLeave_Bei = false;
+
+        StorySkillControl_Prince.isClockActice = false;
+        StorySkillControl_Prince.isDisabledClock = false;
+
+        StoryUIControl_Prince.isStoryStart = true;
+        StoryUIControl_Prince.isStoryEnding = false;
+        StoryUIControl_Prince.isSkillActive = false;
+        StoryUIControl_Prince.isSuppliesActive = false;
     }
 
     void Update()
