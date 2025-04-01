@@ -20,6 +20,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject resultUI;
     public Image resultImage;
     public Sprite win, lose, patience;
+    public GameObject reallyUI;
+    public Image reallyImage;
+    public Sprite really, go;
 
     [Header("ScoreUI")]
     public Image scoreBG;
