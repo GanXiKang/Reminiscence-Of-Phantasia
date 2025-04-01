@@ -128,7 +128,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
         player.transform.rotation = boxPoint[_pointNum].rotation;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         reallyUI.SetActive(true);
         reallyImage.sprite = really;
 
