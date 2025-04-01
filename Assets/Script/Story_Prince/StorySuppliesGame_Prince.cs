@@ -276,9 +276,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 {
                     if (_pointNum == _itemNumber[c])
                     {
+                        _score += 50;
                         isCorrect = true;
-                        isLineUpMoving = true;
-                        isNeedItem = false;
                         isItemCorrect[c] = true;
                     }
                     else
@@ -286,6 +285,22 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         isError = true;
                     }
                 }
+            }
+
+            bool allItemsCorrect = true;
+            for (int i = 1; i <= _itemCount; i++)
+            {
+                if (!isItemCorrect[i])
+                {
+                    allItemsCorrect = false;
+                    break;
+                }
+            }
+
+            if (allItemsCorrect)
+            {
+                isLineUpMoving = true;
+                isNeedItem = false;
             }
         }
     }
