@@ -167,9 +167,19 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 barA.fillAmount = Mathf.Lerp(barA.fillAmount, barB.fillAmount, Time.deltaTime * _smoothSpeed);
         }
 
+        float reducePatience
+        if (StoryGameControl_Prince.isPassGameEasy)
+        {
+            reducePatience = isBusyTime ? 0.03f : 0.02f;
+        }
+        else
+        {
+            reducePatience = isBusyTime ? 0.04f : 0.03f;
+        }
+
         if (isGameStart)
         {
-            _patience -= 0.02f * Time.deltaTime;
+            _patience -= reducePatience * Time.deltaTime;
         }
     }
     void GameTime()
@@ -312,6 +322,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             if (allItemsCorrect)
             {
                 _score += 100;
+                _patience += 0.05f;
                 isLineUpMoving = true;
                 isNeedItem = false;
             }
