@@ -245,8 +245,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 case 1:
                     diagolueBG.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
                     item[1].SetActive(true);
+                    itemBlack[1].SetActive(true);
                     item[1].transform.position = pointItem[1].position;
                     item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
+                    itemBlack[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
                     item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * _appearSpeed);
                     break;
 
@@ -255,8 +257,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     for (int c = 1; c <= _itemCount; c++)
                     {
                         item[c].SetActive(true);
+                        itemBlack[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 1].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
+                        itemBlack[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
                         item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * _appearSpeed);
                     }
                     break;
@@ -266,8 +270,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     for (int c = 1; c <= _itemCount; c++)
                     {
                         item[c].SetActive(true);
+                        itemBlack[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 3].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
+                        itemBlack[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
                         item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * _appearSpeed);
                     }
                     break;
@@ -278,6 +284,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             for (int t = 1; t < item.Length; t++)
             {
                 item[t].SetActive(false);
+                itemBlack[c].SetActive(false);
                 item[t].GetComponent<Image>().fillAmount = 0;
                 isItemCorrect[t] = false;
             }
