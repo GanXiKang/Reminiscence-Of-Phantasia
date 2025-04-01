@@ -6105,7 +6105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &302392355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6242,6 +6242,7 @@ MonoBehaviour:
   - {fileID: 1450487344}
   - {fileID: 919283706}
   - {fileID: 1835140225}
+  shinyEF: {fileID: 464101423}
 --- !u!1 &304645795
 GameObject:
   m_ObjectHideFlags: 0
@@ -8990,6 +8991,11 @@ PrefabInstance:
 --- !u!4 &464101422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8494002713310796444, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
+  m_PrefabInstance: {fileID: 464101421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &464101423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8705819589068854402, guid: e26a668e9d26eaf46a3aa598c3512bbd, type: 3}
   m_PrefabInstance: {fileID: 464101421}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &467595211
@@ -24866,7 +24872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &868062056
 Transform:
   m_ObjectHideFlags: 0
@@ -55264,7 +55270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1997743896
 Transform:
   m_ObjectHideFlags: 0
