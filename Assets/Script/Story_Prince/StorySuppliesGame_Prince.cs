@@ -47,6 +47,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public GameObject[] itemCorrect;
     public Transform[] pointItem;
     public Sprite[] itemSprite;
+    float _appearSpeed = 5f;
     bool isNeedItem;
     bool isRandomOnce;
     bool[] isItemCorrect = new bool[4];
@@ -197,6 +198,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         diagolueBG.SetActive(isNeedItem);
         for (int t = 1; t < item.Length; t++)
             itemCorrect[t].SetActive(isItemCorrect[t]);
+        _appearSpeed = isBusyTime ? 5f : 2f;
 
         if (isNeedItem)
         {
@@ -215,7 +217,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     item[1].SetActive(true);
                     item[1].transform.position = pointItem[1].position;
                     item[1].GetComponent<Image>().sprite = itemSprite[_itemNumber[1]];
-                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
+                    item[1].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * _appearSpeed);
                     break;
 
                 case 2:
@@ -225,7 +227,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 1].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                        item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
+                        item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * _appearSpeed);
                     }
                     break;
 
@@ -236,7 +238,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         item[c].SetActive(true);
                         item[c].transform.position = pointItem[c + 3].position;
                         item[c].GetComponent<Image>().sprite = itemSprite[_itemNumber[c]];
-                        item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * 3f);
+                        item[c].GetComponent<Image>().fillAmount = Mathf.Lerp(item[1].GetComponent<Image>().fillAmount, 1f, Time.deltaTime * _appearSpeed);
                     }
                     break;
             }
