@@ -116,7 +116,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         _score = 0;
         _patience = 100f;
-        _gameTime = 90f;
+        _gameTime = 60f;
         _combo = 0;
         _firstResident = 1;
 
@@ -254,6 +254,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void Combo()
     {
         comboText.text = _combo.ToString();
+        comboUI.SetActive(_combo >= 5);
+    }
+    void AddComboScore()
+    {
+        int add = _combo % 5;
+        _score += add * 5;
     }
     void KeyBoardControl()
     {
@@ -276,12 +282,16 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 {
                     if (_pointNum == _itemNumber[c])
                     {
+                        _combo++;
+                        AddComboScore();
                         _score += 50;
                         isCorrect = true;
                         isItemCorrect[c] = true;
+                        break;
                     }
                     else
                     {
+                        _combo = 0;
                         isError = true;
                     }
                 }
@@ -299,6 +309,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
             if (allItemsCorrect)
             {
+                _score += 100;
                 isLineUpMoving = true;
                 isNeedItem = false;
             }
