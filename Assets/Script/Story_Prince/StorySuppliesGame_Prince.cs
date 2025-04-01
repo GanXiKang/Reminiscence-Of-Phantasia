@@ -49,8 +49,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Sprite[] itemSprite;
     bool isNeedItem;
     bool isRandomOnce;
-    int _itemCount;
+    bool[] isItemCorrect = new bool[4];
     int[] _itemNumber = new int[4];
+    int _itemCount;
 
     [Header("ComboUI")]
     public GameObject comboUI;
@@ -194,6 +195,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         diagolue.transform.position = needPos + offset;
 
         diagolueBG.SetActive(isNeedItem);
+        for (int t = 1; t < item.Length; t++)
+            itemCorrect[t].SetActive(isItemCorrect[t]);
 
         if (isNeedItem)
         {
@@ -244,6 +247,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             {
                 item[t].SetActive(false);
                 item[t].GetComponent<Image>().fillAmount = 0;
+                isItemCorrect[t] = false;
             }
         }
     }
@@ -272,6 +276,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 isCorrect = true;
             else
                 isError = true;
+
+            switch (_itemCount)
+            {
+                
+            }
         }
     }
     void PlayerMoveAndAnimator()
