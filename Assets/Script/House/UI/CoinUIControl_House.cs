@@ -9,7 +9,7 @@ public class CoinUIControl_House : MonoBehaviour
     public Text coinText;
     public Transform inPoint, outPoint;
     public static int _coinTarget;
-    float _speed = 5f;
+    float _speed = 250f;
     bool isIn = false;
     bool isOut = false;
     bool isAdd = false;
@@ -35,7 +35,7 @@ public class CoinUIControl_House : MonoBehaviour
 
         if (Vector3.Distance(coinBG.transform.position, outPoint.position) > 0.01f)
         {
-            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, outPoint.position, _speed);
+            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, outPoint.position, _speed * Time.deltaTime);
         }
         else
         {
@@ -49,7 +49,7 @@ public class CoinUIControl_House : MonoBehaviour
 
         if (Vector3.Distance(coinBG.transform.position, inPoint.position) > 0.01f)
         {
-            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, inPoint.position, _speed);
+            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, inPoint.position, _speed * Time.deltaTime);
         }
         else
         {
@@ -61,7 +61,7 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isAdd) return;
 
-        _coinValue = Mathf.RoundToInt(Mathf.Lerp(_coinValue, _coinTarget, _speed));
+        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * Time.deltaTime));
         if (_coinValue == _coinTarget)
         {
             isAdd = false;
