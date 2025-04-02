@@ -429,16 +429,16 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         hasCorrect = true;
                         break;
                     }
-
-                    if(!hasCorrect)
-                    {
-                        BGM.PlayOneShot(error);
-                        _combo = 0;
-                        _patience -= 5f;
-                        patienceUI.sprite = angry;
-                        isError = true;
-                    }
                 }
+            }
+
+            if (!hasCorrect)
+            {
+                BGM.PlayOneShot(error);
+                _combo = 0;
+                _patience -= 5f;
+                patienceUI.sprite = angry;
+                isError = true;
             }
 
             bool allItemsCorrect = true;
