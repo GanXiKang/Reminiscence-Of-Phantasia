@@ -6151,12 +6151,20 @@ MonoBehaviour:
   go: {fileID: 21300000, guid: 0a7c836c92064ba45a05e4545a08cf9b, type: 3}
   busy: {fileID: 21300000, guid: 1dc123d51c16e894aa070d01880dacee, type: 3}
   scoreBG: {fileID: 1473432964}
+  pass: {fileID: 0}
+  not: {fileID: 0}
   scoreText: {fileID: 1567029418}
   scoreTargetText: {fileID: 1851954248}
-  patienceBG: {fileID: 2123666989}
+  patienceUI: {fileID: 0}
+  happy: {fileID: 0}
+  normal: {fileID: 0}
+  angry: {fileID: 0}
   barA: {fileID: 1462498322}
   barB: {fileID: 418564748}
   timeBG: {fileID: 1783829827}
+  t: {fileID: 0}
+  b: {fileID: 0}
+  e: {fileID: 0}
   timeText: {fileID: 1853895285}
   needUI: {fileID: 667529140}
   diagolue: {fileID: 479922071}
@@ -6194,6 +6202,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 95ec298a4190f1242ac4652d812d6e88, type: 3}
   - {fileID: 21300000, guid: cbd403d142bc9d140a78124923545eb4, type: 3}
   comboUI: {fileID: 1422420856}
+  c: {fileID: 0}
+  s: {fileID: 0}
+  g: {fileID: 0}
   comboText: {fileID: 1848065817}
   sceneObject: {fileID: 1997743895}
   gameEasyObject: {fileID: 241390754}
@@ -53435,7 +53446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4156863, g: 0.24313727, b: 0.1764706, a: 1}
+  m_Color: {r: 0.4156863, g: 0.2509804, b: 0.1882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
