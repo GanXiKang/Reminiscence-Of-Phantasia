@@ -12,6 +12,17 @@ public class UIControl_House : MonoBehaviour
     public GameObject dialogueUI;
     public static bool isDialogue = false;
 
+    [Header("DayUI")]
+    public GameObject dayUI;
+    public Image dayImage;
+    public Sprite[] day;
+    public Transform inPoint, outPoint;
+
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
