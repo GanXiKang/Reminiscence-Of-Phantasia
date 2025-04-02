@@ -175,6 +175,15 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         PlayerMoveAndAnimator();
         BoxSpriteScale();
         LineUp();
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                _gameTime = 2f;
+                _score = 3000;
+            }
+        }
     }
 
     void Score()
@@ -426,7 +435,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         _patience -= 5f;
                         patienceUI.sprite = angry;
                         isError = true;
-                        break;
                     }
                 }
             }
