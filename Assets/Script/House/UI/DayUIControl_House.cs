@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DayUIControl_House : MonoBehaviour
 {
-    [Header("DayUI")]
     public GameObject dayUI;
     public Sprite[] day;
     public Transform inPoint, outPoint;
