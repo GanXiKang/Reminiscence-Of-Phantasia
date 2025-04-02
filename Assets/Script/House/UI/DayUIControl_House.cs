@@ -14,18 +14,20 @@ public class DayUIControl_House : MonoBehaviour
 
     void Start()
     {
+        print("Start");
         StartCoroutine(DayUIMoveLoop());
         dayUI.GetComponent<Image>().sprite = day[GameControl_House._day];
     }
 
     IEnumerator DayUIMoveLoop()
     {
+        print("OK");
         for (int i = 0; i < 2; i++)
         {
             Vector3 target = isAppear ? inPoint.position : outPoint.position;
             while (Vector3.Distance(dayUI.transform.position, target) > 0.01f)
             {
-                dayUI.transform.position = Vector3.MoveTowards(dayUI.transform.position, target, _speed * Time.deltaTime);
+                dayUI.transform.position = Vector3.MoveTowards(dayUI.transform.position, target, _speed);
                 yield return null;
             }
 
