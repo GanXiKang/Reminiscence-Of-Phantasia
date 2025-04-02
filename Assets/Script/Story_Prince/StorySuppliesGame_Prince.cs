@@ -334,7 +334,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     void Combo()
     {
         comboText.text = _combo.ToString();
-        comboUI.SetActive(_combo >= 5);
+        comboUI.SetActive(_combo >= 10);
     }
     void AddComboScore()
     {
