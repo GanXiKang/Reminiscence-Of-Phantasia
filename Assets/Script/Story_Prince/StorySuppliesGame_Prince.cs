@@ -11,6 +11,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     [Header("Musia")]
     public AudioSource BGM;
     public AudioClip gainEnergy;
+    public AudioClip move, correct, error, whist, score, timehint;
 
     [Header("Camera")]
     public GameObject suppliesCamera;
