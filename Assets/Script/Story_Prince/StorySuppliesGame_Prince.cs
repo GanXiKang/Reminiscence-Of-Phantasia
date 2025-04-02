@@ -403,6 +403,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             {
                 if (!isItemCorrect[c])
                 {
+                    if (_itemNumber[c] == 0) return;
+
                     if (_pointNum == _itemNumber[c])
                     {
                         BGM.PlayOneShot(correct);
@@ -443,6 +445,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 isLineUpMoving = true;
                 isNeedItem = false;
                 shinyEF.SetActive(true);
+                for (int n = 1; n <= 3; n++)
+                    _itemNumber[n] = 0;
             }
         }
     }
