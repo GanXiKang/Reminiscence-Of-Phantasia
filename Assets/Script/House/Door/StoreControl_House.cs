@@ -22,7 +22,6 @@ public class StoreControl_House : MonoBehaviour
     [Header("Coin")]
     public Text coinAmount;
     public Button buyButton;
-    public static int _MyCoin = 300;
     int _productCoin = 0;
     bool isBuy = false;
 
@@ -82,8 +81,8 @@ public class StoreControl_House : MonoBehaviour
     }
     void Coin()
     {
-        coinAmount.text = _MyCoin + " / " + _productCoin;
-        buyButton.interactable = _MyCoin >= _productCoin;
+        coinAmount.text = GameControl_House._MyCoin + " / " + _productCoin;
+        buyButton.interactable = GameControl_House._MyCoin >= _productCoin;
         if (_productCoin == 0)
         {
             buyButton.interactable = false;
@@ -178,7 +177,7 @@ public class StoreControl_House : MonoBehaviour
     {
         BGM.PlayOneShot(buy);
         isBuy = true;
-        _MyCoin -= _productCoin;
+        GameControl_House._MyCoin -= _productCoin;
         CatControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 4;

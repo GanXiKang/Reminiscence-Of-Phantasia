@@ -56,8 +56,8 @@ public class UIControl_Menu : MonoBehaviour
         BGM.PlayOneShot(onClick);
         TransitionUIControl.isTransitionUIAnim_In = true;
         GameControl_House._day = 1;
+        GameControl_House._MyCoin = 300;
         GameControl_House._storyNum = 0;
-        StoreControl_House._MyCoin = 300;
         Invoke("GoToStartMovie", 1f);
     }
     public void Button_Continue()
@@ -67,8 +67,8 @@ public class UIControl_Menu : MonoBehaviour
 
         GameData gameData = SaveManagerControl.Instance.LoadGame();
         GameControl_House._day = gameData.gameDay;
+        GameControl_House._MyCoin = gameData.playerCoins;
         GameControl_House._storyNum = gameData.gameStoryNum;
-        StoreControl_House._MyCoin = gameData.playerCoins;
         Invoke("GoToLoadGameScene", 1f);
     }
     public void Button_Setting()
