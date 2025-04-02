@@ -24,19 +24,22 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     [Header("ScoreUI")]
     public Image scoreBG;
+    public Sprite pass, not;
     public Text scoreText;
     public Text scoreTargetText;
     int _score;
     int _scoreTarget;
 
     [Header("PatienceUI")]
-    public Image patienceBG;
+    public Image patienceUI;
+    public Sprite happy, normal, angry;
     public Image barA, barB;
     float _patience;
     float _smoothSpeed = 5f;
 
     [Header("TimeUI")]
     public Image timeBG;
+    public Sprite t, b, e;
     public Text timeText;
     float _gameTime;
     bool isBusyTime;
