@@ -8,19 +8,25 @@ public class CoinUIControl_House : MonoBehaviour
     public GameObject coinBG;
     public Text coinText;
     public Transform inPoint, outPoint;
+    public static int _coinTarget;
     float _speed = 2f;
     bool isIn = false;
     bool isOut = false;
+    bool isAdd = false;
+    int _coinValue;
 
     void OnEnable()
     {
         isIn = true;
+        _coinValue = GameControl_House._MyCoin;
+        coinText.text = _coinValue.ToString();
     }
 
     void Update()
     {
         InAnimation();
         OutAnimation();
+        CoinCountAdd();
     }
 
     void InAnimation()
@@ -34,6 +40,7 @@ public class CoinUIControl_House : MonoBehaviour
         else
         {
             isIn = false;
+            isAdd = true;
         }
     }
     void OutAnimation()
@@ -49,5 +56,21 @@ public class CoinUIControl_House : MonoBehaviour
             isOut = false;
             UIControl_House.isCoinAppear = false;
         }
+    }
+    void CoinCountAdd()
+    {
+        if (!isAdd) return;
+
+        _coinValue = Mathf.RoundToInt(Mathf.Lerp(_coinValue, _coinTarget, _speed));
+        if (_coinValue == _coinTarget)
+        {
+            isAdd = false;
+            GameControl_House._MyCoin = _coinValue;
+            Invoke("StartOutAnimation", 2f);
+        }
+    }
+    void StartOutAnimation()
+    {
+        isOut = true;
     }
 }
