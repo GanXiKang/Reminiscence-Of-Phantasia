@@ -228,7 +228,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             reducePatience = isBusyTime ? 4f : 5f;
         }
 
-        if (isNeedItem && !SettingControl.isSettingActive && !isEnterBusyTime)
+        if (isNeedItem && !isEnterBusyTime && !isGameStart && !SettingControl.isSettingActive)
         {
             _patience -= reducePatience * Time.deltaTime;
         }
@@ -426,6 +426,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         _patience -= 5f;
                         patienceUI.sprite = angry;
                         isError = true;
+                        break;
                     }
                 }
             }
