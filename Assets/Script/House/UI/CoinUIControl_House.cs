@@ -9,15 +9,17 @@ public class CoinUIControl_House : MonoBehaviour
     public Text coinText;
     public Transform inPoint, outPoint;
     public static int _coinTarget;
-    float _speed = 250f;
-    bool isIn = false;
-    bool isOut = false;
-    bool isAdd = false;
+    float _speed = 10f;
+    bool isIn;
+    bool isOut;
+    bool isAdd;
     int _coinValue;
 
     void OnEnable()
     {
         isIn = true;
+        bool isOut = false;
+        bool isAdd = false;
         _coinValue = GameControl_House._MyCoin;
         coinText.text = _coinValue.ToString();
     }
@@ -35,7 +37,7 @@ public class CoinUIControl_House : MonoBehaviour
 
         if (Vector3.Distance(coinBG.transform.position, outPoint.position) > 0.01f)
         {
-            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, outPoint.position, _speed * Time.deltaTime);
+            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, outPoint.position, _speed);
         }
         else
         {
@@ -49,7 +51,7 @@ public class CoinUIControl_House : MonoBehaviour
 
         if (Vector3.Distance(coinBG.transform.position, inPoint.position) > 0.01f)
         {
-            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, inPoint.position, _speed * Time.deltaTime);
+            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, inPoint.position, _speed);
         }
         else
         {
@@ -61,7 +63,7 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isAdd) return;
 
-        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * Time.deltaTime));
+        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * 2));
         if (_coinValue == _coinTarget)
         {
             isAdd = false;
