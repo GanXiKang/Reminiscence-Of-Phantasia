@@ -9,7 +9,7 @@ public class CoinUIControl_House : MonoBehaviour
     public Text coinText;
     public Transform inPoint, outPoint;
     public static int _coinTarget;
-    float _speed = 10f;
+    float _speed = 500f;
     bool isIn;
     bool isOut;
     bool isAdd;
@@ -35,9 +35,9 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isIn) return;
 
-        if (Vector3.Distance(coinBG.transform.position, outPoint.position) > 0.01f)
+        if (Vector3.Distance(coinBG.transform.position, inPoint.position) > 0.01f)
         {
-            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, outPoint.position, _speed);
+            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, inPoint.position, _speed * Time.deltaTime);
         }
         else
         {
@@ -49,9 +49,9 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isOut) return;
 
-        if (Vector3.Distance(coinBG.transform.position, inPoint.position) > 0.01f)
+        if (Vector3.Distance(coinBG.transform.position, outPoint.position) > 0.01f)
         {
-            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, inPoint.position, _speed);
+            coinBG.transform.position = Vector3.MoveTowards(coinBG.transform.position, outPoint.position, _speed * Time.deltaTime);
         }
         else
         {
@@ -63,9 +63,11 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isAdd) return;
 
-        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * 2));
+        print("1");
+        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * Time.deltaTime));
         if (_coinValue == _coinTarget)
         {
+            print("2");
             isAdd = false;
             GameControl_House._MyCoin = _coinValue;
             Invoke("StartOutAnimation", 2f);
