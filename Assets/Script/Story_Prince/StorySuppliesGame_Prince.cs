@@ -145,6 +145,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         yield return new WaitForSeconds(0.8f);
         resultImage.sprite = go;
+        BGM.PlayOneShot(whist);
 
         yield return new WaitForSeconds(0.5f);
         resultUI.SetActive(false);
@@ -176,6 +177,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (_score >= _scoreTarget)
         {
             scoreBG.sprite = pass;
+            BGM.PlayOneShot(score);
             StoryNpcAnimator_Prince.isSmiling_Prince = true;
             StoryNpcAnimator_Prince.isSmiling_Swallow = true;
         }
@@ -365,11 +367,13 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             _pointNum -= 1;
+            BGM.PlayOneShot(move);
             StoryPlayerControl._direction = 0;
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             _pointNum += 1;
+            BGM.PlayOneShot(move);
             StoryPlayerControl._direction = 1;
         }
 
@@ -381,6 +385,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 {
                     if (_pointNum == _itemNumber[c])
                     {
+                        BGM.PlayOneShot(correct);
                         _combo++;
                         AddComboScore();
                         _score += 50;
@@ -391,6 +396,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     }
                     else
                     {
+                        BGM.PlayOneShot(error);
                         _combo = 0;
                         _patience -= 5f;
                         patienceUI.sprite = angry;
@@ -551,6 +557,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     IEnumerator EndGame(bool isTimeOut)
     {
+        BGM.PlayOneShot(whist);
         isGameStart = false;
         isNeedItem = false;
         timeBG.sprite = e;
