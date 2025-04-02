@@ -44,9 +44,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Sprite t, b, e;
     public Text timeText;
     float _gameTime;
+    float _timeHint;
     bool isBusyTime;
     bool isEnterBusyTime;
     bool isOnce;
+    
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -117,6 +119,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1.2f);
 
+        BGM.Stop();
+        BGM.clip = suppliesBGM;
+        BGM.Play();
+
         suppliesUI.SetActive(true);
         sceneObject.SetActive(true);
         suppliesCamera.SetActive(true);
@@ -134,6 +140,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         _score = 0;
         _patience = 100f;
         _gameTime = StoryGameControl_Prince.isSuppliesGameEasy ? 45f : 60f;
+        _timeHint = 5f;
         _combo = 0;
         _firstResident = 1;
 
@@ -260,6 +267,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         else
         {
             StartCoroutine(EndGame(true));
+        }
+
+        if (_gameTime <= 5 && _gameTime == _timeHint)
+        {
+            BGM.PlayOneShot(timehint);
+            _timeHint--;
         }
     }
     void FalseIsEnterBusyTime()
@@ -600,6 +613,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void OnDisable()
     {
+        BGM.Stop();
+        BGM.clip = _gameCount == 0 ? pastBGM : nowBGM;
+        BGM.Play();
+
         isPlayerMove = false;
         resultUI.SetActive(false);
         suppliesUI.SetActive(false);
