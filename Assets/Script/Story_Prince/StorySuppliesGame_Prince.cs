@@ -411,12 +411,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            bool hasCorrect = false;
+
             for (int c = 1; c <= _itemCount; c++)
             {
-                if (!isItemCorrect[c])
+                if (!isItemCorrect[c] && _itemNumber[c] != 0)
                 {
-                    if (_itemNumber[c] == 0) return;
-
                     if (_pointNum == _itemNumber[c])
                     {
                         BGM.PlayOneShot(correct);
@@ -426,9 +426,11 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         patienceUI.sprite = normal;
                         isCorrect = true;
                         isItemCorrect[c] = true;
+                        hasCorrect = true;
                         break;
                     }
-                    else
+
+                    if(!hasCorrect)
                     {
                         BGM.PlayOneShot(error);
                         _combo = 0;
