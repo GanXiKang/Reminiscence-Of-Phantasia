@@ -8,7 +8,7 @@ public class DayUIControl_House : MonoBehaviour
     public GameObject dayUI;
     public Sprite[] day;
     public Transform inPoint, outPoint;
-    float _speed = 2f;
+    float _speed = 5f;
     bool isAppear = true;
 
     void Start()

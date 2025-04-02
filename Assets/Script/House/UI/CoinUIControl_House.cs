@@ -9,7 +9,7 @@ public class CoinUIControl_House : MonoBehaviour
     public Text coinText;
     public Transform inPoint, outPoint;
     public static int _coinTarget;
-    float _speed = 2f;
+    float _speed = 5f;
     bool isIn = false;
     bool isOut = false;
     bool isAdd = false;
