@@ -14,14 +14,12 @@ public class DayUIControl_House : MonoBehaviour
 
     void Start()
     {
-        print("Start");
         StartCoroutine(DayUIMoveLoop());
         dayUI.GetComponent<Image>().sprite = day[GameControl_House._day];
     }
 
     IEnumerator DayUIMoveLoop()
     {
-        print("OK");
         for (int i = 0; i < 2; i++)
         {
             Vector3 target = isAppear ? inPoint.position : outPoint.position;
