@@ -507,6 +507,24 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                             StoryBagControl.isOpenBag = false;
                         }
                         break;
+
+                    case 4:
+                    case 18:
+                    case 19:
+                    case 20:
+                        switch (_whoGiveNumber)
+                        {
+                            case 0:
+                                isPickedUp = true;
+                                isSkill = true;
+                                StoryBagControl._whichItem = _giveItemNumber[_whoGiveNumber];
+                                if (StoryBagControl.isOpenBag)
+                                {
+                                    StoryBagControl.isOpenBag = false;
+                                }
+                                break;
+                        }
+                        break;
                 }
             }
         }
@@ -798,6 +816,57 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     gameObject.GetComponent<BoxCollider>().enabled = false;
                     Destroy(this.gameObject, 2f);
                     break;
+
+                case 18:
+                    if (!isPrinceNoDie && isResidentOnce)
+                    {
+                        isResidentOnce = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 81;
+                    }
+                    else if (isPrinceNoDie && isResidentTwo)
+                    {
+                        isResidentTwo = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 84;
+                    }
+                    break;
+
+                case 19:
+                    if (!isPrinceNoDie && isResidentOnce)
+                    {
+                        isResidentOnce = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 82;
+                    }
+                    else if (isPrinceNoDie && isResidentTwo)
+                    {
+                        isResidentTwo = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 85;
+                    }
+                    break;
+
+                case 20:
+                    if (!isPrinceNoDie && isResidentOnce)
+                    {
+                        isResidentOnce = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 83;
+                    }
+                    else if (isPrinceNoDie && isResidentTwo)
+                    {
+                        isResidentTwo = false;
+                        StoryUIControl_Prince.isDialogue = true;
+                        StoryDialogueControl_Prince._isAboveWho1 = _who;
+                        StoryDialogueControl_Prince._textCount = 86;
+                    }
+                    break;
             }
         }
         else
@@ -1012,57 +1081,6 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                     StoryUIControl_Prince.isDialogue = true;
                     StoryDialogueControl_Prince._isAboveWho1 = _who;
                     StoryDialogueControl_Prince._textCount = 77;
-                    break;
-
-                case 18:
-                    if (!isPrinceNoDie && isResidentOnce)
-                    {
-                        isResidentOnce = false;
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 81;
-                    }
-                    else if (isPrinceNoDie && isResidentTwo)
-                    {
-                        isResidentTwo = false;
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 84;
-                    }
-                    break;
-
-                case 19:
-                    if (!isPrinceNoDie && isResidentOnce)
-                    {
-                        isResidentOnce = false;
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 82;
-                    }
-                    else if (isPrinceNoDie && isResidentTwo)
-                    {
-                        isResidentTwo = false;
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 85;
-                    }
-                    break;
-
-                case 20:
-                    if (!isPrinceNoDie && isResidentOnce)
-                    {
-                        isResidentOnce = false;
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 83;
-                    }
-                    else if (isPrinceNoDie && isResidentTwo)
-                    {
-                        isResidentTwo = false;
-                        StoryUIControl_Prince.isDialogue = true;
-                        StoryDialogueControl_Prince._isAboveWho1 = _who;
-                        StoryDialogueControl_Prince._textCount = 86;
-                    }
                     break;
 
                 case 21:

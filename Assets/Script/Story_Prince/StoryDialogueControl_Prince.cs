@@ -381,6 +381,9 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                         BGM.PlayOneShot(gainEnergy);
                         StoryPlayerControl.isHappy = true;
                         StorySkillControl_Prince.isGainEnegry = true;
+                        StoryInteractableControl_Prince.isGiveItem = true;
+                        StoryInteractableControl_Prince._whoGive = 4;
+                        StoryInteractableControl_Prince._whoGiveNumber = 0;
                         _countEvent++;
                         break;
 
@@ -942,15 +945,36 @@ public class StoryDialogueControl_Prince : MonoBehaviour
                 break;
 
             case 81:
-            case 82:
-            case 83:
             case 84:
+                BGM.PlayOneShot(gainEnergy);
+                StoryPlayerControl.isHappy = true;
+                StorySkillControl_Prince.isGainEnegry = true;
+                StorySkillControl_Prince._gainEnegryValue = 0.05f;
+                StoryInteractableControl_Prince.isGiveItem = true;
+                StoryInteractableControl_Prince._whoGive = 18;
+                StoryInteractableControl_Prince._whoGiveNumber = 0;
+                break;
+
+            case 82:
             case 85:
+                BGM.PlayOneShot(gainEnergy);
+                StoryPlayerControl.isHappy = true;
+                StorySkillControl_Prince.isGainEnegry = true;
+                StorySkillControl_Prince._gainEnegryValue = 0.05f;
+                StoryInteractableControl_Prince.isGiveItem = true;
+                StoryInteractableControl_Prince._whoGive = 19;
+                StoryInteractableControl_Prince._whoGiveNumber = 0;
+                break;
+
+            case 83:
             case 86:
                 BGM.PlayOneShot(gainEnergy);
                 StoryPlayerControl.isHappy = true;
                 StorySkillControl_Prince.isGainEnegry = true;
                 StorySkillControl_Prince._gainEnegryValue = 0.05f;
+                StoryInteractableControl_Prince.isGiveItem = true;
+                StoryInteractableControl_Prince._whoGive = 20;
+                StoryInteractableControl_Prince._whoGiveNumber = 0;
                 break;
         }
     }

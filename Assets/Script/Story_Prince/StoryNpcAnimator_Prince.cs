@@ -93,6 +93,10 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
 
             case 8:
                 anim.SetBool("isNormal", StoryInteractableControl_Prince.isPrinceNoDie);
+                if (StoryUIControl_Prince.isSuppliesActive)
+                    anim.SetFloat("Direction", 0);
+                else
+                    anim.SetFloat("Direction", 1);
                 break;
 
             case 9:
@@ -107,6 +111,20 @@ public class StoryNpcAnimator_Prince : MonoBehaviour
             case 12:
                 anim.SetBool("isNeedSauce", StoryInteractableControl_Prince.isNeedSauce);
                 anim.SetBool("isLeave", isLeave_Bei);
+                if (StoryUIControl_Prince.isSuppliesActive)
+                    anim.SetFloat("Direction", 0);
+                else
+                    anim.SetFloat("Direction", 1);
+                break;
+
+            case 11:
+            case 18:
+            case 20:
+            case 23:
+                if (StoryUIControl_Prince.isSuppliesActive)
+                    anim.SetFloat("Direction", 0);
+                else
+                    anim.SetFloat("Direction", 1);
                 break;
         }
     }
