@@ -48,7 +48,6 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     bool isBusyTime;
     bool isEnterBusyTime;
     bool isOnce;
-    
 
     [Header("NeedUI")]
     public GameObject needUI;
