@@ -156,13 +156,8 @@ public class StoryGameControl_Prince : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                StoryUIControl_Girl.isStoryEnding = true;
+                StoryUIControl_Prince.isStoryEnding = true;
             }
-        }
-
-        if (Input.GetKey(KeyCode.T))
-        {
-            isSuppliesGameHard = true;
         }
     }
 
