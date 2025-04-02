@@ -10701,7 +10701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107089ea430d3d4f9a35ad70f2afed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 1649575782}
+  targetPosition: {fileID: 0}
   paperDropPoint: {fileID: 457714725}
   starEF: {fileID: 2078317130}
 --- !u!114 &499848123
@@ -18848,7 +18848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107089ea430d3d4f9a35ad70f2afed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 1649575782}
+  targetPosition: {fileID: 0}
   paperDropPoint: {fileID: 457714725}
   starEF: {fileID: 1073651389}
 --- !u!114 &822938722
@@ -32561,7 +32561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107089ea430d3d4f9a35ad70f2afed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 1649575782}
+  targetPosition: {fileID: 0}
   paperDropPoint: {fileID: 457714725}
   starEF: {fileID: 1759433989}
 --- !u!114 &1271196688
@@ -32877,7 +32877,7 @@ MonoBehaviour:
   - {fileID: 48564643}
   - {fileID: 1047875720}
   - {fileID: 1014937074}
-  - {fileID: 1649575781}
+  - {fileID: 0}
   paper:
   - {fileID: 2030628451}
   - {fileID: 2028123344}
@@ -42515,37 +42515,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5133837810680771165, guid: 6b05d20002c209642b86b238cdc9dcbc, type: 3}
---- !u!1 &1649575781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1649575782}
-  m_Layer: 0
-  m_Name: PaperPoint4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1649575782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649575781}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.048, y: 0.1, z: -0.002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1802121601}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1656612912
 GameObject:
   m_ObjectHideFlags: 0
@@ -46375,9 +46344,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e58efd744eb269b40b25056628198c2f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1014937075}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e58efd744eb269b40b25056628198c2f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1649575782}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e58efd744eb269b40b25056628198c2f, type: 3}
       insertIndex: -1
