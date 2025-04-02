@@ -174,12 +174,13 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (_score >= _scoreTarget)
         {
+            scoreBG.sprite = pass;
             StoryNpcAnimator_Prince.isSmiling_Prince = true;
             StoryNpcAnimator_Prince.isSmiling_Swallow = true;
         }
         else
         {
-            
+            scoreBG.sprite = not;
         }
     }
     void Patience()
@@ -241,10 +242,15 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 {
                     isOnce = false;
                     isEnterBusyTime = true;
+                    timeBG.sprite = b;
                     resultUI.SetActive(true);
                     resultImage.sprite = busy;
                     Invoke("FalseIsEnterBusyTime", 2f);
                 }
+            }
+            else
+            {
+                timeBG.sprite = t;
             }
         }
         else
@@ -272,6 +278,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             if (isRandomOnce)
             {
+                patienceUI.sprite = normal;
                 _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
                 for (int n = 1; n <= _itemCount; n++)
                     _itemNumber[n] = StoryGameControl_Prince.isSuppliesGameEasy ? Random.Range(1, 4) : Random.Range(4, 8);
@@ -335,11 +342,18 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         comboText.text = _combo.ToString();
         comboUI.SetActive(_combo >= 10);
+
+        if (_combo >= 30)
+            comboUI.GetComponent<Image>().sprite = g;
+        else if (_combo >= 20)
+            comboUI.GetComponent<Image>().sprite = s;
+        else if (_combo >= 10)
+            comboUI.GetComponent<Image>().sprite = c;
     }
     void AddComboScore()
     {
-        int add = _combo / 5;
-        _score += add * 5;
+        int add = _combo / 10;
+        _score += add * 10;
     }
     void KeyBoardControl()
     {
@@ -369,6 +383,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                         _combo++;
                         AddComboScore();
                         _score += 50;
+                        patienceUI.sprite = normal;
                         isCorrect = true;
                         isItemCorrect[c] = true;
                         break;
@@ -377,6 +392,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     {
                         _combo = 0;
                         _patience -= 5f;
+                        patienceUI.sprite = angry;
                         isError = true;
                     }
                 }
@@ -396,6 +412,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             {
                 _score += 100;
                 _patience += 5f;
+                patienceUI.sprite = happy;
                 isLineUpMoving = true;
                 isNeedItem = false;
                 shinyEF.SetActive(true);
@@ -535,6 +552,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     {
         isGameStart = false;
         isNeedItem = false;
+        timeBG.sprite = e;
         yield return new WaitForSeconds(1f);
 
         resultUI.SetActive(true);
@@ -544,6 +562,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             {
                 isCorrect = true;
                 resultImage.sprite = win;
+                patienceUI.sprite = happy;
 
                 if (StoryGameControl_Prince.isSuppliesGameEasy)
                     StoryGameControl_Prince.isPassGameEasy = true;
@@ -554,12 +573,14 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             {
                 isError = true;
                 resultImage.sprite = lose;
+                patienceUI.sprite = normal;
             }
         }
         else
         {
             isError = true;
             resultImage.sprite = patience;
+            patienceUI.sprite = angry;
         }
 
         yield return new WaitForSeconds(1f);
@@ -575,6 +596,8 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         suppliesUI.SetActive(false);
         sceneObject.SetActive(false);
         suppliesCamera.SetActive(false);
+        timeBG.sprite = t;
+        patienceUI.sprite = normal;
 
         StoryNpcAnimator_Prince.isSmiling_Prince = false;
         StoryNpcAnimator_Prince.isSmiling_Swallow = false;
