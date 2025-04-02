@@ -13481,7 +13481,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618724925}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13490,7 +13490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -483, y: 383}
+  m_AnchoredPosition: {x: -533, y: 636}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618724927
@@ -25913,6 +25913,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionUI: {fileID: 47807403}
   dialogueUI: {fileID: 1431107578}
+  dayUI: {fileID: 992105696}
+  dayImage: {fileID: 618724927}
+  day:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 27e4a5e5dc9b9464380acb91fdf7eba5, type: 3}
+  - {fileID: 21300000, guid: 4c78735289e1ed6448f08d3e78fd5cb1, type: 3}
+  - {fileID: 21300000, guid: 8e2ab9e62127b084fb9d50336189e963, type: 3}
+  - {fileID: 21300000, guid: 4f0aeee83f8812a4896f4e0838600d4f, type: 3}
+  inPoint: {fileID: 428750728}
+  outPoint: {fileID: 2064254763}
 --- !u!1001 &1068578679
 PrefabInstance:
   m_ObjectHideFlags: 0
