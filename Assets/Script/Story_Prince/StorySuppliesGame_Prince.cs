@@ -64,6 +64,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     [Header("ComboUI")]
     public GameObject comboUI;
+    public Sprite c, s, g;
     public Text comboText;
     int _combo;
 
