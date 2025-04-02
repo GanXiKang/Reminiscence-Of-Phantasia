@@ -12,7 +12,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public AudioSource BGM;
     public AudioClip suppliesBGM, nowBGM, pastBGM;
     public AudioClip gainEnergy;
-    public AudioClip move, correct, error, whist, score, timehint;
+    public AudioClip move, correct, error, whist, score, timehint, need, suc, fai, rea, peak;
     bool isScoreOnce;
 
     [Header("Camera")]
@@ -151,6 +151,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         resultUI.SetActive(true);
         resultImage.sprite = really;
+        BGM.PlayOneShot(rea);
 
         yield return new WaitForSeconds(0.8f);
         resultImage.sprite = go;
@@ -257,6 +258,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 if (isOnce)
                 {
                     isOnce = false;
+                    BGM.PlayOneShot(peak);
                     isEnterBusyTime = true;
                     timeBG.sprite = b;
                     resultUI.SetActive(true);
@@ -301,6 +303,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         {
             if (isRandomOnce)
             {
+                BGM.PlayOneShot(need);
                 patienceUI.sprite = normal;
                 _itemCount = StoryGameControl_Prince.isSuppliesGameEasy ? 1 : Random.Range(1, 4);
                 for (int n = 1; n <= _itemCount; n++)
@@ -595,6 +598,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 isCorrect = true;
                 resultImage.sprite = win;
                 patienceUI.sprite = happy;
+                BGM.PlayOneShot(suc);
 
                 if (StoryGameControl_Prince.isSuppliesGameEasy)
                     StoryGameControl_Prince.isPassGameEasy = true;
@@ -606,6 +610,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                 isError = true;
                 resultImage.sprite = lose;
                 patienceUI.sprite = normal;
+                BGM.PlayOneShot(fai);
             }
         }
         else
@@ -613,6 +618,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             isError = true;
             resultImage.sprite = patience;
             patienceUI.sprite = angry;
+            BGM.PlayOneShot(fai);
         }
 
         yield return new WaitForSeconds(1f);
