@@ -7,7 +7,6 @@ public class DayUIControl_House : MonoBehaviour
 {
     [Header("DayUI")]
     public GameObject dayUI;
-    public Image dayImage;
     public Sprite[] day;
     public Transform inPoint, outPoint;
     float _speed = 2f;
@@ -16,7 +15,7 @@ public class DayUIControl_House : MonoBehaviour
     void Start()
     {
         StartCoroutine(DayUIMoveLoop());
-        dayImage.sprite = day[GameControl_House._day];
+        dayUI.GetComponent<Image>().sprite = day[GameControl_House._day];
     }
 
     IEnumerator DayUIMoveLoop()
@@ -35,6 +34,6 @@ public class DayUIControl_House : MonoBehaviour
             isAppear = !isAppear;
         }
 
-        dayUI.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
