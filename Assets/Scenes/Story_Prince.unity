@@ -6105,7 +6105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &302392355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6146,25 +6146,25 @@ MonoBehaviour:
   resultImage: {fileID: 1733279563}
   win: {fileID: 21300000, guid: a6482245bdc124646abe149826969e83, type: 3}
   lose: {fileID: 21300000, guid: bc95ae61841e1f241bc954c2f979451d, type: 3}
-  patience: {fileID: 21300000, guid: 714b36eb6c4b8bd469f2c3ee0697a3f8, type: 3}
+  patience: {fileID: 21300000, guid: 9eb3a0cc5ea4ac8479751c8384ed9416, type: 3}
   really: {fileID: 21300000, guid: a6e18a0000bc1784aaa0fb9c9148684c, type: 3}
   go: {fileID: 21300000, guid: 0a7c836c92064ba45a05e4545a08cf9b, type: 3}
-  busy: {fileID: 21300000, guid: 1dc123d51c16e894aa070d01880dacee, type: 3}
+  busy: {fileID: 21300000, guid: fffa7a7ec0e30d14ba0957673206faca, type: 3}
   scoreBG: {fileID: 1473432964}
-  pass: {fileID: 0}
-  not: {fileID: 0}
+  pass: {fileID: 21300000, guid: 581962be32bab964ea8c7c557a34d890, type: 3}
+  not: {fileID: 21300000, guid: 19156d318ea37d246b2a4f8a33af74fd, type: 3}
   scoreText: {fileID: 1567029418}
   scoreTargetText: {fileID: 1851954248}
-  patienceUI: {fileID: 0}
-  happy: {fileID: 0}
-  normal: {fileID: 0}
-  angry: {fileID: 0}
+  patienceUI: {fileID: 2123666989}
+  happy: {fileID: 21300000, guid: 7630b55096c584c4c9b51205d01e4890, type: 3}
+  normal: {fileID: 21300000, guid: 83f3b67c2aa32bc4dbee58b748451e2e, type: 3}
+  angry: {fileID: 21300000, guid: 40200c838081aa04397cc59a4a8bc728, type: 3}
   barA: {fileID: 1462498322}
   barB: {fileID: 418564748}
   timeBG: {fileID: 1783829827}
-  t: {fileID: 0}
-  b: {fileID: 0}
-  e: {fileID: 0}
+  t: {fileID: 21300000, guid: 8e93798cd17ba5743a7681a1e89908b6, type: 3}
+  b: {fileID: 21300000, guid: 33269127f7acae5478ea3d5241adf28b, type: 3}
+  e: {fileID: 21300000, guid: f58a959b093dc7242b2c445655ecb2cf, type: 3}
   timeText: {fileID: 1853895285}
   needUI: {fileID: 667529140}
   diagolue: {fileID: 479922071}
@@ -6202,9 +6202,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 95ec298a4190f1242ac4652d812d6e88, type: 3}
   - {fileID: 21300000, guid: cbd403d142bc9d140a78124923545eb4, type: 3}
   comboUI: {fileID: 1422420856}
-  c: {fileID: 0}
-  s: {fileID: 0}
-  g: {fileID: 0}
+  c: {fileID: 21300000, guid: 6f43eaecb61fbd0499fbd74f6ad1143c, type: 3}
+  s: {fileID: 21300000, guid: ee071f14347c22a4499ff20f233ab5e1, type: 3}
+  g: {fileID: 21300000, guid: b34078cc5fcfe1d45bfd4ae5eb5d9d34, type: 3}
   comboText: {fileID: 1848065817}
   sceneObject: {fileID: 1997743895}
   gameEasyObject: {fileID: 241390754}
@@ -37130,7 +37130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1112410245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57335,7 +57335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7630b55096c584c4c9b51205d01e4890, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83f3b67c2aa32bc4dbee58b748451e2e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
