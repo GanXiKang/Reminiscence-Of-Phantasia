@@ -45,10 +45,10 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public Sprite t, b, e;
     public Text timeText;
     float _gameTime;
-    float _timeHint;
     bool isBusyTime;
     bool isEnterBusyTime;
     bool isOnce;
+    int _timeHint;
 
     [Header("NeedUI")]
     public GameObject needUI;
@@ -141,7 +141,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         _score = 0;
         _patience = 100f;
         _gameTime = StoryGameControl_Prince.isSuppliesGameEasy ? 45f : 60f;
-        _timeHint = 5f;
+        _timeHint = 5;
         _combo = 0;
         _firstResident = 1;
 
@@ -274,9 +274,9 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             StartCoroutine(EndGame(true));
         }
 
-        if (_gameTime <= 5 && _gameTime == _timeHint)
+        int _gameTimeInt = Mathf.FloorToInt(_gameTime);
+        if (_gameTimeInt <= 5 && _gameTimeInt == _timeHint)
         {
-            print("Play");
             BGM.PlayOneShot(timehint);
             _timeHint--;
         }
