@@ -86,11 +86,5 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[3] = true;
             }
         }
-
-        if (Input.GetKey(KeyCode.T))
-        {
-            UIControl_House.isCoinAppear = true;
-            CoinUIControl_House._coinTarget = 1500;
-        }
     }
 }
