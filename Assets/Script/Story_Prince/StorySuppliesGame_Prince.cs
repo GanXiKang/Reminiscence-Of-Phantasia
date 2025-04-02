@@ -263,7 +263,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
                     timeBG.sprite = b;
                     resultUI.SetActive(true);
                     resultImage.sprite = busy;
-                    Invoke("FalseIsEnterBusyTime", 2f);
+                    Invoke("FalseIsEnterBusyTime", 1.5f);
                 }
             }
             else
