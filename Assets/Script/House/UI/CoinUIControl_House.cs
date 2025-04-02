@@ -18,8 +18,8 @@ public class CoinUIControl_House : MonoBehaviour
     void OnEnable()
     {
         isIn = true;
-        bool isOut = false;
-        bool isAdd = false;
+        isOut = false;
+        isAdd = false;
         _coinValue = GameControl_House._MyCoin;
         coinText.text = _coinValue.ToString();
     }
@@ -63,7 +63,7 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isAdd) return;
 
-        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * Time.deltaTime));
+        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * 3 * Time.deltaTime));
         coinText.text = _coinValue.ToString();
 
         if (_coinValue == _coinTarget)
