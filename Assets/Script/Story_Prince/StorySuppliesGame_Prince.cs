@@ -13,6 +13,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
     public AudioClip suppliesBGM, nowBGM, pastBGM;
     public AudioClip gainEnergy;
     public AudioClip move, correct, error, whist, score, timehint;
+    bool isScoreOnce;
 
     [Header("Camera")]
     public GameObject suppliesCamera;
@@ -128,6 +129,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         gameEasyObject.SetActive(StoryGameControl_Prince.isSuppliesGameEasy);
         gameHardObject.SetActive(StoryGameControl_Prince.isSuppliesGameHard);
 
+        isScoreOnce = true;
         isPlayerMove = true;
         isCarrying = true;
         isRecordResidentOnce = true;
@@ -183,8 +185,12 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (_score >= _scoreTarget)
         {
+            if (isScoreOnce)
+            {
+                BGM.PlayOneShot(score);
+                isScoreOnce = false;
+            }
             scoreBG.sprite = pass;
-            BGM.PlayOneShot(score);
             StoryNpcAnimator_Prince.isSmiling_Prince = true;
             StoryNpcAnimator_Prince.isSmiling_Swallow = true;
         }
@@ -270,6 +276,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         if (_gameTime <= 5 && _gameTime == _timeHint)
         {
+            print("Play");
             BGM.PlayOneShot(timehint);
             _timeHint--;
         }
