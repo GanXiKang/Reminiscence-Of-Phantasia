@@ -12,9 +12,14 @@ public class UIControl_House : MonoBehaviour
     public GameObject dialogueUI;
     public static bool isDialogue = false;
 
+    [Header("CoinUI")]
+    public GameObject coinUI;
+    public static bool isCoinAppear = false;
+
     void Update()
     {
         transitionUI.SetActive(TransitionUIControl.isTransitionUIAnim_In || TransitionUIControl.isTransitionUIAnim_Out);
         dialogueUI.SetActive(isDialogue);
+        coinUI.SetActive(isCoinAppear);
     }
 }
