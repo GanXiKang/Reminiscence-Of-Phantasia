@@ -63,11 +63,11 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isAdd) return;
 
-        print("1");
         _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * Time.deltaTime));
+        coinText.text = _coinValue.ToString();
+
         if (_coinValue == _coinTarget)
         {
-            print("2");
             isAdd = false;
             GameControl_House._MyCoin = _coinValue;
             Invoke("StartOutAnimation", 2f);
