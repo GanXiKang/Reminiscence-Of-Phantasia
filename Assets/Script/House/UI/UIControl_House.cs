@@ -33,7 +33,7 @@ public class UIControl_House : MonoBehaviour
             Vector3 target = isAppear ? inPoint.position : outPoint.position;
             while (Vector3.Distance(dayUI.transform.position, target) > 0.01f)
             {
-                dayUI.transform.position = Vector3.MoveTowards(dayUI.transform.position, target, speed * Time.deltaTime);
+                dayUI.transform.position = Vector3.MoveTowards(dayUI.transform.position, target, _speed * Time.deltaTime);
                 yield return null;
             }
 
