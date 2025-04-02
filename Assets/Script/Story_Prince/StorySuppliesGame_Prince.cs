@@ -228,7 +228,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             reducePatience = isBusyTime ? 4f : 5f;
         }
 
-        if (isNeedItem && !isEnterBusyTime && !isGameStart && !SettingControl.isSettingActive)
+        if (isNeedItem && !isEnterBusyTime && isGameStart && !SettingControl.isSettingActive)
         {
             _patience -= reducePatience * Time.deltaTime;
         }
