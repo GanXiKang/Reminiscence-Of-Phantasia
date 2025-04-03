@@ -111,31 +111,13 @@ public class StoreControl_House : MonoBehaviour
             StartCoroutine(AnimateButtonDisappear(homePageButton[2], 0.4f));
             StartCoroutine(AnimateButtonDisappear(homePageButton[1], 0.6f));
             for (int p = 1; p < contentUI.Length; p++)
-            {
-                if (p == _product)
-                {
-                    contentUI[p].SetActive(true);
-                }
-                else
-                {
-                    contentUI[p].SetActive(false);
-                }
-            }
+                contentUI[p].SetActive(p == _product);
         }
         else
         {
             _productCoin = 0;
             for (int p = 1; p < contentUI.Length; p++)
-            {
-                if (p == _product)
-                {
-                    contentUI[p].SetActive(true);
-                }
-                else
-                {
-                    contentUI[p].SetActive(false);
-                }
-            }
+                contentUI[p].SetActive(p == _product);
         }
     }
     public void Button_Content(int _content)
@@ -181,6 +163,8 @@ public class StoreControl_House : MonoBehaviour
         CatControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 4;
+
+
     }
     public void Button_Back()
     {
