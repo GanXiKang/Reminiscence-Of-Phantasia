@@ -102,6 +102,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         StoryInteractableControl_Prince.isNeedSauce = false;
         StoryInteractableControl_Prince.isGetTomato = false;
         StoryInteractableControl_Prince.isGivePlank = false;
+        StoryInteractableControl_Prince.isPlantWrong = false;
 
         StoryLoadingScene_Prince.isNowScene = true;
         StoryLoadingScene_Prince.isPastScene = false;
