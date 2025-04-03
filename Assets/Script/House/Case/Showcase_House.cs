@@ -28,6 +28,17 @@ public class Showcase_House : MonoBehaviour
     public GameObject showcaseUI;
     public GameObject buttonA, buttonD;
 
+    void Start()
+    {
+        SpecialEndPaper();
+    }
+
+    void SpecialEndPaper()
+    {
+        for (int i = 1; i < storySpecialEnd.Length; i++)
+            storySpecialEnd[i].SetActive(isSpecialEnd[i]);
+    }
+
     void Update()
     {
         UIActive();
