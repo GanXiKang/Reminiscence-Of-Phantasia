@@ -174,6 +174,11 @@ public class InteractableControl_House : MonoBehaviour
                                     UIControl_House.isCoinAppear = true;
                                     CoinUIControl_House._coinTarget = 2000;
                                     break;
+
+                                case 3:
+                                    UIControl_House.isDialogue = true;
+                                    DialogueControl_House._textCount = 48;
+                                    break;
                             }
                         }
                         break;
