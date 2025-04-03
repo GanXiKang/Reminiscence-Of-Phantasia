@@ -65,6 +65,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool isClickSaveButton = false;
     public static bool[] isChangeColor = new bool[13];
     public static bool[] isColorUnlock = new bool[11];
+    public static bool isRenewColorLock = false;
 
     [Header("Step4")]
     public Transform storyBookPoint;
@@ -541,6 +542,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void ColorUnLock()
     {
+        if (!isRenewColorLock) return;
+
         for (int i = 1; i < colorLock.Length; i++)
         {
             if (isColorUnlock[i])
@@ -549,6 +552,7 @@ public class WorkbenchControl_House : MonoBehaviour
                 colorLock[i].GetComponent<Button>().interactable = true;
             }
         }
+        isRenewColorLock = false;
     }
     bool FinishedColoring()
     {
