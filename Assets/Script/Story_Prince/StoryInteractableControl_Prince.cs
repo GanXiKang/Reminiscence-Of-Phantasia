@@ -1335,13 +1335,18 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                         StoryGardenControl_Prince.isPlanting = true;
                                         StoryGardenControl_Prince.isGrapeTree = true;
                                     }
-                                    else if(StoryGardenControl_Prince.isCherryTree && isPlantWrong)
+                                    else if (StoryGardenControl_Prince.isCherryTree && isPlantWrong)
                                     {
                                         StoryUIControl_Prince.isDialogue = true;
                                         StoryDialogueControl_Prince._textCount = 37;
                                         StoryGardenControl_Prince.isPlanting = true;
                                         StoryGardenControl_Prince.isGrapeTree = true;
                                         StoryGardenControl_Prince.isCherryTree = false;
+                                    }
+                                    else
+                                    {
+                                        StoryBagControl.isItemNumber[_getItemNumber[i]] = true;
+                                        StoryBagControl._howManyGrids++;
                                     }
                                 }
                                 else
