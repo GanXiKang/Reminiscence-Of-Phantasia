@@ -25,21 +25,11 @@ public class DragAndDrop_Workbench : MonoBehaviour
 
     void Update()
     {
-        BoxColliderEnable();
+        boxC.enabled = WorkbenchControl_House._process == 4;
+
         Fixed();
     }
 
-    void BoxColliderEnable()
-    {
-        if (WorkbenchControl_House._process == 4)
-        {
-            boxC.enabled = true;
-        }
-        else
-        {
-            boxC.enabled = false;
-        }
-    }
     void Fixed()
     {
         if (WorkbenchControl_House._process != 4) return;
