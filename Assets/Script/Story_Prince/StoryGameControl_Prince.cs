@@ -144,7 +144,7 @@ public class StoryGameControl_Prince : MonoBehaviour
         MouseCursor();
 
         MainNpcActive();
-        SuppliesNpcRotation();
+        SuppliesActive();
         PlotObjectActive();
         PrinceState_Now();
         SceneFuture();
@@ -234,18 +234,22 @@ public class StoryGameControl_Prince : MonoBehaviour
         npc[7].SetActive(StoryInteractableControl_Prince.isNeedSauce);
         npc[8].SetActive(StoryInteractableControl_Prince.isNeedSauce);
     }
-    void SuppliesNpcRotation()
+    void SuppliesActive()
     {
         if (StoryUIControl_Prince.isSuppliesActive)
         {
-            npc[2].transform.rotation = Quaternion.Euler(25f, 0f, 0f);
-            npc[3].transform.rotation = Quaternion.Euler(25f, 0f, 0f);
+            Invoke("NpcRotation", 1f);
         }
         else
         {
             npc[2].transform.rotation = Quaternion.Euler(30f, -45f, 0f);
             npc[3].transform.rotation = Quaternion.Euler(30f, -45f, 0f);
         }
+    }
+    void NpcRotation()
+    {
+        npc[2].transform.rotation = Quaternion.Euler(25f, 0f, 0f);
+        npc[3].transform.rotation = Quaternion.Euler(25f, 0f, 0f);
     }
     void PlotObjectActive()
     {
