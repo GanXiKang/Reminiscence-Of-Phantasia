@@ -589,14 +589,18 @@ public class WorkbenchControl_House : MonoBehaviour
         buttonUI[0].SetActive(false);
         storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", false);
         yield return new WaitForSeconds(0.5f);
+
         paper[_paperNum].SetActive(false);
         yield return new WaitForSeconds(0.3f);
+
         naniEF.SetActive(true);
         CameraControl_House.isLookPlayer = true;
         PlayerControl_House.isHappy = true;
         yield return new WaitForSeconds(3.5f);
+
         BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
+
         _process = 0;
         workbenchUI.SetActive(false);
         CameraControl_House.isLookPlayer = false;
@@ -607,8 +611,10 @@ public class WorkbenchControl_House : MonoBehaviour
         storyBook[GameControl_House._storyNum].transform.position = originalPoint.position;
         storyBook[GameControl_House._storyNum].transform.rotation = originalPoint.rotation;
         yield return new WaitForSeconds(0.5f);
+
         buttonUI[0].SetActive(true);
         UIAboveObject_House.isAboveWorkbench = false;
+        InteractableControl_House.isBookcasePlotOnce = true;
         switch (GameControl_House._storyNum)
         {
             case 0:
