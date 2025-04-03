@@ -69,13 +69,14 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isAdd) return;
 
-        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTarget, _speed * 3 * Time.deltaTime));
+        int _coinTotal = _coinValue + _coinTarget;
+        _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTotal, _speed * 3 * Time.deltaTime));
         coinText.text = _coinValue.ToString();
 
-        if (_coinValue == _coinTarget)
+        if (_coinValue == _coinTotal)
         {
             isAdd = false;
-            GameControl_House._MyCoin = _coinValue;
+            GameControl_House._MyCoin = _coinTotal;
             Invoke("StartOutAnimation", 2f);
         }
     }
