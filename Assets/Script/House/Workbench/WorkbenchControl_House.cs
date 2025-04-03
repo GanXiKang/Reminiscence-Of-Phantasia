@@ -311,8 +311,10 @@ public class WorkbenchControl_House : MonoBehaviour
 
             case 3:
                 contentImage[1].GetComponent<Image>().sprite = contentSprite[7];
-                contentImage[2].GetComponent<Image>().sprite = contentSprite[8];
-                contentImage[3].GetComponent<Image>().sprite = contentSprite[9];
+                contentImage[2].GetComponent<Image>().sprite = contentSprite[0];
+                contentImage[2].GetComponent<Button>().interactable = false;
+                contentImage[3].GetComponent<Image>().sprite = contentSprite[0];
+                contentImage[3].GetComponent<Button>().interactable = false;
                 break;
         }
     }
