@@ -1246,6 +1246,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
 
                             case 1:
                                 isCrownGiveQian = true;
+                                Showcase_House.isSpecialEnd[3] = true;
                                 StoryUIControl_Prince.isDialogue = true;
                                 StoryDialogueControl_Prince._isAboveWho1 = _who;
                                 StoryDialogueControl_Prince._textCount = 70;

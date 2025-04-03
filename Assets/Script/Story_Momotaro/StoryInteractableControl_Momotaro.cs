@@ -453,6 +453,7 @@ public class StoryInteractableControl_Momotaro : MonoBehaviour
                                         if (_findPartner >= 3 && !isSpecialOver)
                                         {
                                             isSpecialEnding = true;
+                                            Showcase_House.isSpecialEnd[2] = true;
                                             StoryUIControl_Momotaro.isDialogue = true;
                                             StoryDialogueControl_Momotaro._isAboveWho1 = _who;
                                             StoryDialogueControl_Momotaro._textCount = 12;

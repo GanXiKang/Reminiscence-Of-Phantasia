@@ -667,6 +667,7 @@ public class StoryInteractableControl_Girl : MonoBehaviour
                     if (isTrashCanLid)
                     {
                         BGM.PlayOneShot(fight);
+                        Showcase_House.isSpecialEnd[1] = true;
                         StoryNpcAnimator_Girl.isScared = true;
                         StoryNpcAnimator_Girl.isFightRunAway = true;
                         StoryUIControl_Girl.isDialogue = true;
