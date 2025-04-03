@@ -58,6 +58,8 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("ColorUI")]
     public GameObject colorUI;
+    public Image[] colorLock;
+    public Sprite singleBox;
     public static bool isFinishClickColor = false;
     public static bool isFinishColor = false;
     public static bool isClickSaveButton = false;
@@ -531,8 +533,14 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Step3_Color()
     {
+        ColorUnLock();
+
         isFinishClickColor = FinishedColoring();
         isNext = isFinishColor;
+    }
+    void ColorUnLock()
+    {
+        
     }
     bool FinishedColoring()
     {
