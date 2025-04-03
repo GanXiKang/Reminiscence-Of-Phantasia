@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class CoinUIControl_House : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource BGM;
+    public AudioClip coin;
+
+    [Header("CoinUI")]
     public GameObject coinBG;
     public Text coinText;
     public Transform inPoint, outPoint;
@@ -43,6 +48,7 @@ public class CoinUIControl_House : MonoBehaviour
         {
             isIn = false;
             isAdd = true;
+            BGM.PlayOneShot(coin);
         }
     }
     void OutAnimation()
