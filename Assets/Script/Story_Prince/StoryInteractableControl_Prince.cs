@@ -93,6 +93,8 @@ public class StoryInteractableControl_Prince : MonoBehaviour
     public static bool isGetTomato = false;
     //14Plank
     public static bool isGivePlank = false;
+    //15Garden
+    public static bool isPlantWrong = false;
     // Resident
     bool isResidentOnce = true;
     bool isResidentTwo = true;
@@ -662,6 +664,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                     }
                                     else if (StoryGardenControl_Prince.isCherryTree)
                                     {
+                                        isPlantWrong = true;
                                         StoryUIControl_Prince.isDialogue = true;
                                         StoryDialogueControl_Prince._isAboveWho1 = _who;
                                         StoryDialogueControl_Prince._isAboveWho2 = 4;
@@ -1332,7 +1335,7 @@ public class StoryInteractableControl_Prince : MonoBehaviour
                                         StoryGardenControl_Prince.isPlanting = true;
                                         StoryGardenControl_Prince.isGrapeTree = true;
                                     }
-                                    else
+                                    else if(StoryGardenControl_Prince.isCherryTree && isPlantWrong)
                                     {
                                         StoryUIControl_Prince.isDialogue = true;
                                         StoryDialogueControl_Prince._textCount = 37;
