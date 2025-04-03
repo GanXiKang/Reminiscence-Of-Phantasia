@@ -8,9 +8,9 @@ public class GameControl_House : MonoBehaviour
     public AudioSource BGM;
     public AudioClip morning;
 
-    public static int _day = 1;
+    public static int _day = 4;
     public static int _MyCoin = 300;
-    public static int _storyNum = 0;
+    public static int _storyNum = 3;
 
     void Start()
     {
