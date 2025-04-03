@@ -226,11 +226,7 @@ public class WorkbenchControl_House : MonoBehaviour
             }
         }
     }
-    public void Button_ToolBox()
-    {
-        BGM.PlayOneShot(open);
-        isOpenBox = !isOpenBox;
-    }
+
     public void Button_Next()
     {
         isNext = false;
@@ -575,14 +571,10 @@ public class WorkbenchControl_House : MonoBehaviour
     void Step4_Install()
     {
         if (!isPaperAdjustScale)
-        {
             isPaperAdjustScale = true;
-        }
+
         if (isFinishStoryBook)
         {
-            toolBoxBG.SetActive(false);
-            buttonUI[1].SetActive(false);
-            buttonUI[2].SetActive(false);
             isFinishStoryBook = false;
             CameraControl_House.isLookStorkBook = true;
             Invoke("FinishpPocess", 1.5f);
