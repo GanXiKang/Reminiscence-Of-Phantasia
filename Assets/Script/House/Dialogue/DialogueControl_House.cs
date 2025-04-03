@@ -206,13 +206,9 @@ public class DialogueControl_House : MonoBehaviour
     void DialoguePoint()
     {
         if (!DoorControl_House.isEntrust && !DoorControl_House.isStore)
-        {
             whoDialogue[_whoDia].transform.position = dialoguePos[0].position;
-        }
         else
-        {
             whoDialogue[_whoDia].transform.position = dialoguePos[3].position;
-        }
     }
     void DialogueEvent()
     {
@@ -273,6 +269,7 @@ public class DialogueControl_House : MonoBehaviour
 
             case 17:
             case 30:
+            case 46:
                 CameraControl_House.isFreeLook = true;
                 break;
 
@@ -301,6 +298,7 @@ public class DialogueControl_House : MonoBehaviour
             case 28:
             case 31:
             case 35:
+            case 47:
                 BlackScreenControl.isOpenBlackScreen = true;
                 Invoke("WaitBlackScreenEvent", 1f);
                 break;
@@ -334,6 +332,8 @@ public class DialogueControl_House : MonoBehaviour
             case 48:
                 InteractableControl_House.isEnding = true;
                 InteractableControl_House.isColliderActive[2] = true;
+                UIAboveObject_House.isAboveDoor = true;
+                UIAboveObject_House.isAboveBookcase = false;
                 break;
         }
     }
@@ -342,6 +342,7 @@ public class DialogueControl_House : MonoBehaviour
         switch (_textCount)
         {
             case 18:
+            case 47:
                 CameraControl_House.isFreeLook = true;
                 CameraControl_House.isLookWorkPlot = false;
                 UIAboveObject_House.isAboveBookcase = true;
