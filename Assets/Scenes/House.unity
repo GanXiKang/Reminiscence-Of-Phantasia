@@ -2589,7 +2589,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 131285238}
   m_OnClick:
     m_PersistentCalls:
@@ -11312,7 +11312,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 524835745}
   m_OnClick:
     m_PersistentCalls:
@@ -12989,7 +12989,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 591372812}
   m_OnClick:
     m_PersistentCalls:
@@ -16298,7 +16298,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 700199371}
   m_OnClick:
     m_PersistentCalls:
@@ -19039,7 +19039,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 828239003}
   m_OnClick:
     m_PersistentCalls:
@@ -26879,7 +26879,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1093621266}
   m_OnClick:
     m_PersistentCalls:
@@ -32976,6 +32976,19 @@ MonoBehaviour:
   - {fileID: 2060967204}
   - {fileID: 700032843}
   colorUI: {fileID: 418946787}
+  colorLock:
+  - {fileID: 0}
+  - {fileID: 524835745}
+  - {fileID: 1093621266}
+  - {fileID: 1328092083}
+  - {fileID: 131285238}
+  - {fileID: 828239003}
+  - {fileID: 1865168033}
+  - {fileID: 700199371}
+  - {fileID: 1714033221}
+  - {fileID: 591372812}
+  - {fileID: 2032660026}
+  singleBox: {fileID: 21300000, guid: 4958281df81a9be4e8e45b95a17c9f41, type: 3}
   storyBookPoint: {fileID: 1635740524}
   originalPoint: {fileID: 1410833727}
   storyBook:
@@ -34722,7 +34735,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1328092083}
   m_OnClick:
     m_PersistentCalls:
@@ -43873,7 +43886,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1714033221}
   m_OnClick:
     m_PersistentCalls:
@@ -47568,7 +47581,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1865168033}
   m_OnClick:
     m_PersistentCalls:
@@ -50914,7 +50927,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2032660026}
   m_OnClick:
     m_PersistentCalls:
