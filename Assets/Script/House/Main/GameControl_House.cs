@@ -43,6 +43,16 @@ public class GameControl_House : MonoBehaviour
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 17;
                 break;
+
+            case 4:
+                UIAboveObject_House.isAboveWorkbench = true;
+                UIAboveObject_House.isAboveBed = false;
+                InteractableControl_House.isColliderActive[1] = true;
+                InteractableControl_House.isColliderActive[4] = true;
+                InteractableControl_House.isColliderActive[5] = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 46;
+                break;
         }
     }
 
