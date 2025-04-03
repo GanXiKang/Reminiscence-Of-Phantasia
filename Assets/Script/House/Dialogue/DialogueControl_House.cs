@@ -228,6 +228,7 @@ public class DialogueControl_House : MonoBehaviour
             case 1:
             case 9:
             case 19:
+            case 48:
                 BGM.PlayOneShot(bell);
                 break;
 
@@ -335,6 +336,11 @@ public class DialogueControl_House : MonoBehaviour
                 UIAboveObject_House.isAboveBookcase = false;
                 BirdControl_House._goPointNum = 0;
                 DoorControl_House.isEntrust = true;
+                break;
+
+            case 48:
+                InteractableControl_House.isEnding = true;
+                InteractableControl_House.isColliderActive[2] = true;
                 break;
         }
     }
