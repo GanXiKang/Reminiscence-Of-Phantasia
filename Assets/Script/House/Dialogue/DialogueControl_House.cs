@@ -97,9 +97,7 @@ public class DialogueControl_House : MonoBehaviour
         if (!isMove) return;
 
         if (isPosA)
-        {
             whoDialogue[PosANum].transform.position = Vector3.MoveTowards(whoDialogue[PosANum].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
-        }
 
         if (!DoorControl_House.isEntrust && !DoorControl_House.isStore)
         {
@@ -117,13 +115,9 @@ public class DialogueControl_House : MonoBehaviour
         else
         {
             if (whoDialogue[_whoDia].transform.position != dialoguePos[4].position)
-            {
                 whoDialogue[_whoDia].transform.position = Vector3.MoveTowards(whoDialogue[_whoDia].transform.position, dialoguePos[4].position, _moveSpeed * Time.deltaTime);
-            }
             else
-            {
                 isMove = false;
-            }
         }
     }
     void AutoNext()
