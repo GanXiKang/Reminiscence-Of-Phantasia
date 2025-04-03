@@ -631,10 +631,16 @@ public class WorkbenchControl_House : MonoBehaviour
                 DialogueControl_House._textCount = 31;
                 break;
 
-            default:
+            case 2:
                 CameraControl_House.isLookWorkPlot = true;
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 18;
+                break;
+
+            case 3:
+                CameraControl_House.isLookWorkPlot = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 47;
                 break;
         }
     }
