@@ -58,7 +58,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     [Header("ColorUI")]
     public GameObject colorUI;
-    public Image[] colorLock;
+    public GameObject[] colorLock;
     public Sprite singleBox;
     public static bool isFinishClickColor = false;
     public static bool isFinishColor = false;
@@ -544,7 +544,10 @@ public class WorkbenchControl_House : MonoBehaviour
         for (int i = 1; i < colorLock.Length; i++)
         {
             if (isColorUnlock[i])
-                colorLock[i].sprite = singleBox;
+            {
+                colorLock[i].GetComponent<Image>().sprite = singleBox;
+                colorLock[i].GetComponent<Button>().interactable = true;
+            }
         }
     }
     bool FinishedColoring()
