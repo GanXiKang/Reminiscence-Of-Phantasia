@@ -188,7 +188,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
     void Score()
     {
-        _scoreTarget = StoryGameControl_Prince.isSuppliesGameEasy ? 2500 : 3000;
+        _scoreTarget = StoryGameControl_Prince.isSuppliesGameEasy ? 2500 : 4000;
 
         scoreText.text = _score.ToString();
         scoreTargetText.text = "/" + _scoreTarget;
