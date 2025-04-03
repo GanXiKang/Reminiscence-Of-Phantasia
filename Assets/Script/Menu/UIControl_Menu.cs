@@ -46,9 +46,7 @@ public class UIControl_Menu : MonoBehaviour
         MouseCursor();
 
         if (Input.GetKeyDown(KeyCode.F11))
-        {
             FullScreen(!SettingControl.isFullS);
-        }
     }
 
     public void Button_Start()
