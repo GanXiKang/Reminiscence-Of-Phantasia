@@ -32,8 +32,9 @@ public class InteractableControl_House : MonoBehaviour
     public static bool isBirdLeave = false;
     public static bool isReadMomLetter = false;
     public static bool isBookcasePlotOnce = false;
-    bool isBirdFirstMeet = false;
-    bool isMomEntrust = true;
+    public static bool isBirdFirstMeet = false;
+    public static bool isMomEntrust = true;
+    public static bool isEnding = false;
 
     void Awake()
     {
@@ -118,7 +119,7 @@ public class InteractableControl_House : MonoBehaviour
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
-                            else if(isBirdFirstMeet)
+                            else if (isBirdFirstMeet)
                             {
                                 isBirdFirstMeet = false;
                                 _eventNum = 3;
@@ -129,6 +130,13 @@ public class InteractableControl_House : MonoBehaviour
                             {
                                 isMomEntrust = false;
                                 _eventNum = 4;
+                                BlackScreenControl.isOpenBlackScreen = true;
+                                Invoke("WaitEvent", 1f);
+                            }
+                            else if (isEnding)
+                            {
+                                isEnding = false;
+                                _eventNum = 5;
                                 BlackScreenControl.isOpenBlackScreen = true;
                                 Invoke("WaitEvent", 1f);
                             }
@@ -304,6 +312,13 @@ public class InteractableControl_House : MonoBehaviour
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 34;
+                break;
+
+            case 5:
+                CameraControl_House.isFreeLook = false;
+                CameraControl_House.isLookDoorPlot = true;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House._textCount = 49;
                 break;
         }
     }
