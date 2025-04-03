@@ -27,11 +27,6 @@ public class WorkbenchControl_House : MonoBehaviour
     bool isNext = false;
     bool isFinish = false;
 
-    [Header("ToolBox")]
-    public GameObject toolBoxBG;
-    public Transform openPoint, closePoint;
-    bool isOpenBox = false;
-
     [Header("Step1")]
     public GameObject blankPaper;
     public GameObject stamp;
@@ -131,12 +126,9 @@ public class WorkbenchControl_House : MonoBehaviour
         switch (_process)
         {
             case 0:
-                toolBoxBG.SetActive(false);
                 isPaperAdjustScale = false;
                 for (int c = 1; c < isChangeColor.Length; c++)
-                {
                     isChangeColor[c] = false;
-                }
                 break;
 
             case 1:
@@ -146,7 +138,6 @@ public class WorkbenchControl_House : MonoBehaviour
 
             case 2:
                 isTeachHint = true;
-                toolBoxBG.SetActive(true);
                 isPaperRotation = true;
                 if (GameControl_House._storyNum == 0)
                 {
@@ -232,22 +223,6 @@ public class WorkbenchControl_House : MonoBehaviour
                 {
                     Button_Finish();
                 }
-            }
-        }
-
-        if (_process > 1 && !isFinishStoryBook)
-        {
-            if (isOpenBox)
-            {
-                buttonUI[1].SetActive(false);
-                buttonUI[2].SetActive(true);
-                toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, openPoint.position, 8f);
-            }
-            else
-            {
-                buttonUI[1].SetActive(true);
-                buttonUI[2].SetActive(false);
-                toolBoxBG.transform.position = Vector3.MoveTowards(toolBoxBG.transform.position, closePoint.position, 10f);
             }
         }
     }
