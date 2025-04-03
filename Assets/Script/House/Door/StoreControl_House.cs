@@ -27,9 +27,7 @@ public class StoreControl_House : MonoBehaviour
 
     [Header("ProductContent")]
     public GameObject[] scissors;
-    public GameObject[] auxiliary;
     public GameObject[] shading;
-    public GameObject[] decorate;
 
     void Update()
     {
