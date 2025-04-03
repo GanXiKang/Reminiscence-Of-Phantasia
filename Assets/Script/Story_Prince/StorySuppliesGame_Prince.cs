@@ -634,6 +634,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         isCarrying = false;
+        BlackScreenControl.isOpenBlackScreen = true;
         yield return new WaitForSeconds(1f);
         StoryUIControl_Prince.isSuppliesActive = false;
     }
