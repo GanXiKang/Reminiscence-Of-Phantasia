@@ -179,13 +179,9 @@ public class WorkbenchControl_House : MonoBehaviour
         for (int i = 0; i < paper.Length; i++)
         {
             if (i == _paperNum)
-            {
                 paper[i].SetActive(true);
-            }
             else
-            {
                 paper[i].SetActive(false);
-            }
         }
     }
     void WorkbenchUI()
