@@ -19,6 +19,7 @@ public class CoinUIControl_House : MonoBehaviour
     bool isOut;
     bool isAdd;
     int _coinValue;
+    int _coinTotal;
 
     void OnEnable()
     {
@@ -48,6 +49,7 @@ public class CoinUIControl_House : MonoBehaviour
         {
             isIn = false;
             isAdd = true;
+            _coinTotal = _coinValue + _coinTarget;
             BGM.PlayOneShot(coin);
         }
     }
@@ -69,7 +71,6 @@ public class CoinUIControl_House : MonoBehaviour
     {
         if (!isAdd) return;
 
-        int _coinTotal = _coinValue + _coinTarget;
         _coinValue = Mathf.RoundToInt(Mathf.MoveTowards(_coinValue, _coinTotal, _speed * 3 * Time.deltaTime));
         coinText.text = _coinValue.ToString();
 
