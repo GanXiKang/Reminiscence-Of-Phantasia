@@ -146,7 +146,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         _firstResident = 1;
 
         _pointNum = StoryGameControl_Prince.isSuppliesGameEasy ? 2 : 5;
-        player.transform.rotation = boxPoint[_pointNum].rotation;
+        player.transform.rotation = Quaternion.Euler(25f, 0f, 0f);
 
         yield return new WaitForSeconds(0.5f);
         resultUI.SetActive(true);
