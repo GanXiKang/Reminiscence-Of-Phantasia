@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -164,7 +165,11 @@ public class StoreControl_House : MonoBehaviour
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 4;
 
-
+        if (contentUI[1].activeSelf)
+        {
+            for(int i = 1; i < scissors.Length; i++)
+                scissors[i].GetComponent<Button>().interactable = false;
+        }
     }
     public void Button_Back()
     {
