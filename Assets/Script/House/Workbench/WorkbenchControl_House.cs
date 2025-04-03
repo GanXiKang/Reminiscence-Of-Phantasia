@@ -190,8 +190,8 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void WorkbenchUI()
     {
-        buttonUI[3].SetActive(isNext);
-        buttonUI[4].SetActive(isFinish);
+        buttonUI[1].SetActive(isNext);
+        buttonUI[2].SetActive(isFinish);
         teachHint.SetActive(isTeachHint);
 
         for (int p = 1; p < processNum.Length; p++)
@@ -589,7 +589,6 @@ public class WorkbenchControl_House : MonoBehaviour
     {
         BGM.PlayOneShot(closeBook);
         buttonUI[0].SetActive(false);
-        buttonUI[1].SetActive(false);
         storyBook[GameControl_House._storyNum].GetComponent<Animator>().SetBool("isOpen", false);
         yield return new WaitForSeconds(0.5f);
         paper[_paperNum].SetActive(false);
