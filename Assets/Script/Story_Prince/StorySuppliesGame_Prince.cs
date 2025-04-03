@@ -660,20 +660,22 @@ public class StorySuppliesGame_Prince : MonoBehaviour
         if (StoryGameControl_Prince.isPassGameEasy && _gameCount == 0)
         {
             _gameCount++;
+            BGM.PlayOneShot(gainEnergy);
+            StorySkillControl_Prince.isGainEnegry = true;
+            StorySkillControl_Prince._gainEnegryValue = 0.2f;
             StoryNpcAnimator_Prince.isFindGem = true;
             StoryGameControl_Prince.isSuppliesGameEasy = false;
         }
         if (StoryGameControl_Prince.isPassGameHard && _gameCount >= 1)
         {
+            BGM.PlayOneShot(gainEnergy);
+            StorySkillControl_Prince.isGainEnegry = true;
+            StorySkillControl_Prince._gainEnegryValue = 0.2f;
             StoryUIControl_Prince.isDialogue = true;
             StoryDialogueControl_Prince._isAboveWho1 = 2;
             StoryDialogueControl_Prince._isAboveWho2 = 4;
             StoryDialogueControl_Prince._textCount = 41;
             StoryGameControl_Prince.isSuppliesGameHard = false;
         }
-
-        BGM.PlayOneShot(gainEnergy);
-        StorySkillControl_Prince.isGainEnegry = true;
-        StorySkillControl_Prince._gainEnegryValue = 0.2f;
     }
 }
