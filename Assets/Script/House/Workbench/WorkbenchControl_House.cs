@@ -64,6 +64,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool isFinishColor = false;
     public static bool isClickSaveButton = false;
     public static bool[] isChangeColor = new bool[13];
+    public static bool[] isColorUnlock = new bool[11];
 
     [Header("Step4")]
     public Transform storyBookPoint;
