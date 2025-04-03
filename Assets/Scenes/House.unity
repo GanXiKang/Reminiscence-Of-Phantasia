@@ -27767,6 +27767,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1103959793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6189976353207885748, guid: 6e4f9e87922641544b29bf5b2306ab35, type: 3}
+  m_PrefabInstance: {fileID: 1103959789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1109104414
 GameObject:
   m_ObjectHideFlags: 0
@@ -33304,6 +33309,11 @@ MonoBehaviour:
   - {fileID: 2108493105}
   - {fileID: 1103959791}
   - {fileID: 1802121602}
+  storySpecialEnd:
+  - {fileID: 0}
+  - {fileID: 2108493107}
+  - {fileID: 1103959793}
+  - {fileID: 1802121604}
   showPoint: {fileID: 595292080}
   originalPoint: {fileID: 1410833727}
   storyBookPoint:
@@ -46849,6 +46859,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1802121604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3680780086892808241, guid: e58efd744eb269b40b25056628198c2f, type: 3}
+  m_PrefabInstance: {fileID: 1802121600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1808224801
 GameObject:
   m_ObjectHideFlags: 0
@@ -53645,6 +53660,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2108493107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5489962755992335875, guid: 2cece670ecdd6e14fb79fc80c10def3b, type: 3}
+  m_PrefabInstance: {fileID: 2108493103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2112311667
 GameObject:
   m_ObjectHideFlags: 0
