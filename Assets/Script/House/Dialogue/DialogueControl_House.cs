@@ -135,9 +135,8 @@ public class DialogueControl_House : MonoBehaviour
         if (!isAutoPlot) return;
 
         if (isTextFinish)
-        {
             StartCoroutine(AutoPlotRound());
-        }
+
         AvatarControl_House.isTalk = !isTextFinish;
     }
 
