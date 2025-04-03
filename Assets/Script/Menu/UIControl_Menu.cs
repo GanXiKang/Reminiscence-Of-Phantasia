@@ -53,9 +53,9 @@ public class UIControl_Menu : MonoBehaviour
     {
         BGM.PlayOneShot(onClick);
         TransitionUIControl.isTransitionUIAnim_In = true;
-        GameControl_House._day = 4;
+        GameControl_House._day = 1;
         GameControl_House._MyCoin = 300;
-        GameControl_House._storyNum = 3;
+        GameControl_House._storyNum = 0;
         Invoke("GoToStartMovie", 1f);
     }
     public void Button_Continue()
