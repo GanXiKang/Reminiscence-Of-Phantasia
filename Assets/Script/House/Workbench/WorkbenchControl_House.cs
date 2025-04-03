@@ -541,7 +541,11 @@ public class WorkbenchControl_House : MonoBehaviour
     }
     void ColorUnLock()
     {
-        
+        for (int i = 1; i < colorLock.Length; i++)
+        {
+            if (isColorUnlock[i])
+                colorLock[i].sprite = singleBox;
+        }
     }
     bool FinishedColoring()
     {
