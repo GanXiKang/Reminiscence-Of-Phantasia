@@ -10,9 +10,11 @@ public class Showcase_House : MonoBehaviour
 
     [Header("StoryBook")]
     public GameObject[] storyBook;
+    public GameObject[] storySpecialEnd;
     public Transform showPoint;
     public Transform originalPoint;
     public static int _showNum = 0;
+    public static bool[] isSpecialEnd = new bool[4];
     bool isShow = false;
 
     [Header("StoryBookPoint")]
