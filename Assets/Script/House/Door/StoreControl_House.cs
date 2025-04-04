@@ -14,8 +14,8 @@ public class StoreControl_House : MonoBehaviour
     public GameObject scissorsUI;
     public GameObject shadingUI;
     public static bool isStoreActive = false;
+    public static int _enterCount;
     bool isEnterOnce = true;
-    int _enterCount;
 
     [Header("Coin")]
     public Text coinAmount;
@@ -216,6 +216,7 @@ public class StoreControl_House : MonoBehaviour
 
     void LeaveState()
     {
+        isEnterOnce = true;
         DoorControl_House.isLeave = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 7;
