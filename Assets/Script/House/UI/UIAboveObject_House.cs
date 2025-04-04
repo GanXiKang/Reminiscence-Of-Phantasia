@@ -50,7 +50,7 @@ public class UIAboveObject_House : MonoBehaviour
         else
             hint.SetActive(false);
         
-        store.SetActive(isStoreHintActive && !StoreControl_House.isStoreActive);
+        store.SetActive(isStoreHintActive && !CameraControl_House.isLookDoor);
 
         Hint();
     }
