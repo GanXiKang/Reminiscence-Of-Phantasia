@@ -27,6 +27,9 @@ public class StoreControl_House : MonoBehaviour
     public GameObject[] shading;
     int _productNum;
 
+    //Plot
+    public static bool isPlotBut = false;
+
     void Update()
     {
         storeUI.SetActive(isStoreActive);
@@ -142,6 +145,7 @@ public class StoreControl_House : MonoBehaviour
 
         if (scissorsUI.activeSelf)
         {
+            isPlotBut = true;
             for (int i = 1; i < scissors.Length; i++)
                 scissors[i].GetComponent<Button>().interactable = false;
         }
@@ -200,6 +204,8 @@ public class StoreControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
+        if (!isPlotBut) return;
+
         BGM.PlayOneShot(leave);
         CatControl_House.isBag_On = true;
         CatControl_House.isBye = true;
