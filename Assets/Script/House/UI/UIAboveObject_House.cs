@@ -36,6 +36,7 @@ public class UIAboveObject_House : MonoBehaviour
     public GameObject hint;
     public GameObject store;
     public Text hintName;
+    public static bool isStoreHintActive = false;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class UIAboveObject_House : MonoBehaviour
         else
             hint.SetActive(false);
         
-        store.SetActive(DoorControl_House.isStore && !StoreControl_House.isStoreActive);
+        store.SetActive(isStoreHintActive && !StoreControl_House.isStoreActive);
 
         Hint();
     }
@@ -100,7 +101,7 @@ public class UIAboveObject_House : MonoBehaviour
             hintName.text = "展示臺";
         }
 
-        if (DoorControl_House.isStore)
+        if (isStoreHintActive)
         {
             Vector3 storePosition = new Vector3(player.transform.position.x, store.GetComponent<RectTransform>().transform.position.y, player.transform.position.z);
             store.GetComponent<RectTransform>().LookAt(storePosition);
