@@ -222,7 +222,6 @@ public class EntrustControl_House : MonoBehaviour
         {
             case 2:
             case 3:
-                InteractableControl_House.isColliderActive[2] = true;
                 UIAboveObject_House.isStoreHintActive = true;
                 break;
         }
