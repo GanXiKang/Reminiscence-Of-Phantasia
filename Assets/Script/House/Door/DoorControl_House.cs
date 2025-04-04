@@ -45,7 +45,7 @@ public class DoorControl_House : MonoBehaviour
         StoreControl_House.isStoreActive = false;
         yield return new WaitForSeconds(1f);
 
-        InteractableControl_House.isColliderActive[2] = false;
+        InteractableControl_House.isColliderActive[2] = UIAboveObject_House.isStoreHintActive;
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookDoor = false;
         UIAboveObject_House.isAboveDoor = false;
