@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class StoreControl_House : MonoBehaviour
     public GameObject scissorsUI;
     public GameObject shadingUI;
     public static bool isStoreActive = false;
+    bool isEnterOnce = true;
+    int _enterCount;
 
     [Header("Coin")]
     public Text coinAmount;
@@ -23,10 +26,13 @@ public class StoreControl_House : MonoBehaviour
     [Header("ProductContent")]
     public GameObject[] scissors;
     public GameObject[] shading;
+    int _productNum;
 
     void Update()
     {
         storeUI.SetActive(isStoreActive);
+        scissorsUI.SetActive(_enterCount == 1);
+        shadingUI.SetActive(_enterCount > 1);
 
         OpenUI();
         Coin();
@@ -36,6 +42,14 @@ public class StoreControl_House : MonoBehaviour
     {
         if (!isStoreActive) return;
 
+        if (isEnterOnce)
+        {
+            _enterCount++;
+            _productCoin = 0;
+            CatControl_House.isBag = true;
+            isEnterOnce = false;
+        }
+
         if (storeUI.GetComponent<RectTransform>().localScale.x < 1)
             storeUI.GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
     }
@@ -44,17 +58,9 @@ public class StoreControl_House : MonoBehaviour
         coinAmount.text = GameControl_House._MyCoin + " / " + _productCoin;
         buyButton.interactable = GameControl_House._MyCoin >= _productCoin;
         if (_productCoin == 0)
-        {
             buyButton.interactable = false;
-        }
     }
 
-    public void Button_Product(int _product)
-    {
-        BGM.PlayOneShot(comfirm);
-        _productCoin = 0;
-        CatControl_House.isBag = true;
-    }
     public void Button_Content(int _content)
     {
         BGM.PlayOneShot(comfirm);
@@ -65,6 +71,7 @@ public class StoreControl_House : MonoBehaviour
         else if (shadingUI.activeSelf)
         {
             _productCoin = 350;
+            _productNum = _content;
         }
     }
     public void Button_Info(int _num)
@@ -141,7 +148,55 @@ public class StoreControl_House : MonoBehaviour
         }
         else if (shadingUI.activeSelf)
         {
-            
+            WorkbenchControl_House.isRenewColorLock = true;
+            WorkbenchControl_House.isColorUnlock[_productNum] = true;
+            switch (_productNum)
+            {
+                case 1:
+                    for (int i = 1; i <= 4; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 2:
+                    for (int i = 5; i <= 8; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 3:
+                    for (int i = 9; i <= 12; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 4:
+                    for (int i = 13; i <= 16; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 5:
+                    for (int i = 17; i <= 20; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 6:
+                    for (int i = 21; i <= 24; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 7:
+                    for (int i = 25; i <= 28; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 8:
+                    for (int i = 29; i <= 32; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+
+                case 9:
+                    for (int i = 31; i <= 36; i++)
+                        shading[i].GetComponent<Button>().interactable = false;
+                    break;
+            }
         }
     }
     public void Button_Back()
