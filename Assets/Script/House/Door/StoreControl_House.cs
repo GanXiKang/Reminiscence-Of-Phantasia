@@ -39,26 +39,7 @@ public class StoreControl_House : MonoBehaviour
         if (!isStoreActive) return;
 
         if (storeUI.GetComponent<RectTransform>().localScale.x < 1)
-        {
             storeUI.GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
-        }
-        else
-        {
-            if (!isHomePageActive && !isContentActive)
-            {
-                isHomePageActive = true;
-                StartCoroutine(AnimateButtonAppear(homePageButton[1], 0f));
-                StartCoroutine(AnimateButtonAppear(homePageButton[2], 0.3f));
-                StartCoroutine(AnimateButtonAppear(homePageButton[3], 0.6f));
-                StartCoroutine(AnimateButtonAppear(homePageButton[4], 0.9f));
-            }
-        }
-
-        homePageButton[0].GetComponent<CanvasGroup>().interactable = isBuy;
-        if (!isBuy)
-            homePageButton[0].GetComponent<CanvasGroup>().alpha = 0;
-        else
-            homePageButton[0].GetComponent<CanvasGroup>().alpha = 1;
     }
     void StoreUI()
     {
