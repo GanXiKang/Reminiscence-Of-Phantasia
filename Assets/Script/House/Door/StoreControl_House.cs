@@ -50,6 +50,17 @@ public class StoreControl_House : MonoBehaviour
             _productCoin = 0;
             CatControl_House.isBag = true;
             isEnterOnce = false;
+            for (int c = 1; c <= 9; c++)
+            {
+                if (!WorkbenchControl_House.isColorUnlock[c]) continue;
+
+                int startIndex = (c - 1) * 4 + 1;
+                int endIndex = startIndex + 3;
+
+                for (int i = startIndex; i <= endIndex && i < shading.Length; i++)
+                    shading[i].GetComponent<Button>().interactable = false;
+            }
+
         }
 
         if (storeUI.GetComponent<RectTransform>().localScale.x < 1)
@@ -153,53 +164,12 @@ public class StoreControl_House : MonoBehaviour
         {
             WorkbenchControl_House.isRenewColorLock = true;
             WorkbenchControl_House.isColorUnlock[_productNum] = true;
-            switch (_productNum)
-            {
-                case 1:
-                    for (int i = 1; i <= 4; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
 
-                case 2:
-                    for (int i = 5; i <= 8; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
+            int startIndex = (_productNum - 1) * 4 + 1;
+            int endIndex = startIndex + 3;
 
-                case 3:
-                    for (int i = 9; i <= 12; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
-
-                case 4:
-                    for (int i = 13; i <= 16; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
-
-                case 5:
-                    for (int i = 17; i <= 20; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
-
-                case 6:
-                    for (int i = 21; i <= 24; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
-
-                case 7:
-                    for (int i = 25; i <= 28; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
-
-                case 8:
-                    for (int i = 29; i <= 32; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
-
-                case 9:
-                    for (int i = 31; i <= 36; i++)
-                        shading[i].GetComponent<Button>().interactable = false;
-                    break;
-            }
+            for (int i = startIndex; i <= endIndex && i < shading.Length; i++)
+                shading[i].GetComponent<Button>().interactable = false;
         }
 
         _productCoin = 0;
