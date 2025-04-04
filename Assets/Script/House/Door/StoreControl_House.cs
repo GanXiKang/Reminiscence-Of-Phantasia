@@ -10,11 +10,9 @@ public class StoreControl_House : MonoBehaviour
     public AudioClip leave, back, comfirm, info, buy;
 
     [Header("UI")]
-    public GameObject[] storeUI;
-    public GameObject[] contentUI;
-    public Button[] homePageButton;
-    public Image backgound;
-    public Sprite main, content;
+    public GameObject storeUI;
+    public GameObject scissorsUI;
+    public GameObject shadingUI;
     public static bool isStoreActive = false;
     bool isHomePageActive = false;
     bool isContentActive = false;
@@ -40,9 +38,9 @@ public class StoreControl_House : MonoBehaviour
     {
         if (!isStoreActive) return;
 
-        if (storeUI[0].GetComponent<RectTransform>().localScale.x < 1)
+        if (storeUI.GetComponent<RectTransform>().localScale.x < 1)
         {
-            storeUI[0].GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
+            storeUI.GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
         }
         else
         {
