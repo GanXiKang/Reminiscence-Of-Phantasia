@@ -91,43 +91,43 @@ public class StoreControl_House : MonoBehaviour
                     break;
 
                 case 2:
-                    shading[5].SetActive(!shading[5].activeSelf);
                     shading[7].SetActive(shading[5].activeSelf);
+                    shading[5].SetActive(!shading[5].activeSelf);
                     break;
 
                 case 3:
-                    shading[9].SetActive(!shading[9].activeSelf);
                     shading[11].SetActive(shading[9].activeSelf);
+                    shading[9].SetActive(!shading[9].activeSelf);
                     break;
 
                 case 4:
-                    shading[13].SetActive(!shading[13].activeSelf);
                     shading[15].SetActive(shading[13].activeSelf);
+                    shading[13].SetActive(!shading[13].activeSelf);
                     break;
 
                 case 5:
-                    shading[17].SetActive(!shading[17].activeSelf);
                     shading[19].SetActive(shading[17].activeSelf);
+                    shading[17].SetActive(!shading[17].activeSelf);
                     break;
 
                 case 6:
-                    shading[21].SetActive(!shading[21].activeSelf);
                     shading[23].SetActive(shading[21].activeSelf);
+                    shading[21].SetActive(!shading[21].activeSelf);
                     break;
 
                 case 7:
-                    shading[25].SetActive(!shading[25].activeSelf);
                     shading[27].SetActive(shading[25].activeSelf);
+                    shading[25].SetActive(!shading[25].activeSelf);
                     break;
 
                 case 8:
-                    shading[29].SetActive(!shading[29].activeSelf);
                     shading[31].SetActive(shading[29].activeSelf);
+                    shading[29].SetActive(!shading[29].activeSelf);
                     break;
 
                 case 9:
-                    shading[33].SetActive(!shading[33].activeSelf);
                     shading[35].SetActive(shading[33].activeSelf);
+                    shading[33].SetActive(!shading[33].activeSelf);
                     break;
             }
         }
