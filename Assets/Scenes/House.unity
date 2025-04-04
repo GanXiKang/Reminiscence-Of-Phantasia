@@ -27477,32 +27477,55 @@ MonoBehaviour:
   comfirm: {fileID: 8300000, guid: ee22ffc7408123d4a9c788a17d676dff, type: 3}
   info: {fileID: 8300000, guid: dc6eb4cfe10262246b433befcdfd3457, type: 3}
   buy: {fileID: 8300000, guid: e0c487dabf8fb0e4eab6471cd85a9433, type: 3}
-  storeUI:
-  - {fileID: 971938934}
-  - {fileID: 0}
-  - {fileID: 197099233}
-  contentUI:
-  - {fileID: 0}
-  - {fileID: 1913417171}
-  - {fileID: 1444881433}
-  homePageButton:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  backgound: {fileID: 1198664041}
-  main: {fileID: 21300000, guid: 34da202c31d8e8c428d75642640d091d, type: 3}
-  content: {fileID: 21300000, guid: c395430ea3928814ca69c785c2d27e1f, type: 3}
+  storeUI: {fileID: 971938934}
+  scissorsUI: {fileID: 1913417171}
+  shadingUI: {fileID: 1444881433}
   coinAmount: {fileID: 2044501188}
   buyButton: {fileID: 56040442}
   scissors:
   - {fileID: 0}
   - {fileID: 510723173}
-  - {fileID: 1671243452}
   - {fileID: 1488881118}
+  - {fileID: 1671243452}
   - {fileID: 2055783112}
-  shading: []
+  shading:
+  - {fileID: 0}
+  - {fileID: 1604822899}
+  - {fileID: 1856991172}
+  - {fileID: 1473495175}
+  - {fileID: 1828402061}
+  - {fileID: 640778222}
+  - {fileID: 976621565}
+  - {fileID: 421014061}
+  - {fileID: 1478719760}
+  - {fileID: 863036582}
+  - {fileID: 396498334}
+  - {fileID: 1984940321}
+  - {fileID: 2006650055}
+  - {fileID: 1533965351}
+  - {fileID: 1525340103}
+  - {fileID: 1095190795}
+  - {fileID: 1068783258}
+  - {fileID: 1290382736}
+  - {fileID: 464519364}
+  - {fileID: 1319507298}
+  - {fileID: 864552139}
+  - {fileID: 1934759962}
+  - {fileID: 557951811}
+  - {fileID: 716202366}
+  - {fileID: 1772313508}
+  - {fileID: 29347720}
+  - {fileID: 433021410}
+  - {fileID: 1773465533}
+  - {fileID: 718779816}
+  - {fileID: 561033851}
+  - {fileID: 1494388231}
+  - {fileID: 442518784}
+  - {fileID: 1151718364}
+  - {fileID: 1734550869}
+  - {fileID: 703701557}
+  - {fileID: 628982493}
+  - {fileID: 967650359}
 --- !u!114 &1065493215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40322,7 +40345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1444881434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51961,7 +51984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1913417172
 RectTransform:
   m_ObjectHideFlags: 0
