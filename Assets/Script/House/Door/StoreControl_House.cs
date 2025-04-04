@@ -14,7 +14,6 @@ public class StoreControl_House : MonoBehaviour
     public GameObject scissorsUI;
     public GameObject shadingUI;
     public static bool isStoreActive = false;
-    bool isHomePageActive = false;
     bool isContentActive = false;
 
     [Header("Coin")]
@@ -29,8 +28,9 @@ public class StoreControl_House : MonoBehaviour
 
     void Update()
     {
+        storeUI.SetActive(isStoreActive);
+
         OpenUI();
-        StoreUI();
         Coin();
     }
 
@@ -40,21 +40,6 @@ public class StoreControl_House : MonoBehaviour
 
         if (storeUI.GetComponent<RectTransform>().localScale.x < 1)
             storeUI.GetComponent<RectTransform>().localScale += new Vector3(2f, 2f, 0f) * Time.deltaTime;
-    }
-    void StoreUI()
-    {
-        storeUI[0].SetActive(isStoreActive);
-        storeUI[1].SetActive(isHomePageActive);
-        storeUI[2].SetActive(isContentActive);
-
-        if (isHomePageActive)
-        {
-            backgound.sprite = main;
-        }
-        else
-        {
-            backgound.sprite = content;
-        }
     }
     void Coin()
     {
@@ -70,10 +55,8 @@ public class StoreControl_House : MonoBehaviour
         DoorControl_House.isLeave = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 7;
-        isHomePageActive = false;
         isContentActive = false;
-        storeUI[1].GetComponent<CanvasGroup>().interactable = true;
-        storeUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+        storeUI.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
     }
 
     public void Button_Product(int _product)
