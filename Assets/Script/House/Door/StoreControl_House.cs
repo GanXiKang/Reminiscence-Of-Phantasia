@@ -221,5 +221,8 @@ public class StoreControl_House : MonoBehaviour
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 7;
         storeUI.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+
+        if (_enterCount == 1)
+            UIAboveObject_House.isStoreHintActive = false;
     }
 }
