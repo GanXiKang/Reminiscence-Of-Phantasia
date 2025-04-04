@@ -78,16 +78,16 @@ public class StoreControl_House : MonoBehaviour
         BGM.PlayOneShot(info);
         if (scissorsUI.activeSelf)
         {
-            scissors[_num].SetActive(!scissors[_num].activeSelf);
             scissors[_num + 2].SetActive(scissors[_num].activeSelf);
+            scissors[_num].SetActive(!scissors[_num].activeSelf);
         }
         else if (shadingUI.activeSelf)
         {
             switch (_num)
             {
                 case 1:
-                    shading[1].SetActive(!shading[1].activeSelf);
                     shading[3].SetActive(shading[1].activeSelf);
+                    shading[1].SetActive(!shading[1].activeSelf);
                     break;
 
                 case 2:
@@ -198,16 +198,10 @@ public class StoreControl_House : MonoBehaviour
             }
         }
     }
-    public void Button_Back()
-    {
-        BGM.PlayOneShot(back);
-        CatControl_House.isBag_On = true;
-        DialogueControl_House.isAutoNext = true;
-        DialogueControl_House._paragraph = 5;
-    }
     public void Button_Leave()
     {
         BGM.PlayOneShot(leave);
+        CatControl_House.isBag_On = true;
         CatControl_House.isBye = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 6;
