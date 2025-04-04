@@ -35,9 +35,7 @@ public class DoorControl_House : MonoBehaviour
         if (CameraControl_House.isLookDoor)
         {
             if (isLeave)
-            {
                 StartCoroutine(LeaveDoor());
-            }
         }
     }
     IEnumerator LeaveDoor()
