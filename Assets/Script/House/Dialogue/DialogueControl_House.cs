@@ -256,6 +256,11 @@ public class DialogueControl_House : MonoBehaviour
                         break;
                 }
                 break;
+
+            case 33:
+                UIControl_House.isCoinAppear = true;
+                CoinUIControl_House._coinTarget = 1500;
+                break;
         }
     }
     void DialogueEnd()
