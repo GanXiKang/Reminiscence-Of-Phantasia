@@ -96,5 +96,11 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[3] = true;
             }
         }
+
+        if (Input.GetKey(KeyCode.T))
+        {
+            InteractableControl_House.isColliderActive[2] = true;
+            DoorControl_House.isStore = true;
+        }
     }
 }
