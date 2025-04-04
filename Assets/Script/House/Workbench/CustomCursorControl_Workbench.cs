@@ -16,15 +16,14 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     public Texture2D interactable1;
     public Texture2D interactable2;
     public Vector2 hotSpot = Vector2.zero; 
-    bool isStamp = false;
     bool isScissors = false;
-    bool isPencil = false;
-    bool isGlue = false;
     bool isClick = false;
     bool isAnim = false;
 
     [Header("Object")]
     public GameObject objectToMove;
+
+    Texture2D currentCursorTexture = null;
 
     void Update()
     {
@@ -33,34 +32,22 @@ public class CustomCursorControl_Workbench : MonoBehaviour
             switch (WorkbenchControl_House._process)
             {
                 case 1:
-                    if (!isStamp)
-                    {
-                        Cursor.SetCursor(stampA, hotSpot, CursorMode.Auto);
-                        isStamp = true;
-                    }
-                    if (Input.GetMouseButton(0))
-                        Cursor.SetCursor(stampB, hotSpot, CursorMode.Auto);
-                    if (Input.GetMouseButtonUp(0))
-                        Cursor.SetCursor(stampA, hotSpot, CursorMode.Auto);
+                    Cursor.SetCursor(Input.GetMouseButton(0) ? stampB : stampA, hotSpot, CursorMode.Auto);
                     break;
 
                 case 2:
-                    if (!isScissors)
-                    {
-                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
-                        isScissors = true;
-                    }
+                    Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+
                     if (ScissorsControl_Workbench.isUseScissors)
                     {
+                        isScissors = true;
                         if (!isAnim)
-                        {
                             StartCoroutine(ScissorsAnimation());
-                        }
                     }
                     else
                     {
-                        StopCoroutine(ScissorsAnimation());
-                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                        StopAllCoroutines();
+                        isScissors = false;
                         isAnim = false;
                     }
 
@@ -68,53 +55,32 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     break;
 
                 case 3:
-                    if (!isPencil)
-                    {
-                        Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
-                        isPencil = true;
-                    }
-                    if (Input.GetMouseButton(0))
-                        Cursor.SetCursor(pencil2, hotSpot, CursorMode.Auto);
-                    if (Input.GetMouseButtonUp(0))
-                        Cursor.SetCursor(pencil1, hotSpot, CursorMode.Auto);
+                    Cursor.SetCursor(Input.GetMouseButton(0) ? pencil2 : pencil1, hotSpot, CursorMode.Auto);
                     break;
 
                 case 4:
-                    if (!isGlue)
-                    {
-                        Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
-                        isGlue = true;
-                    }
-                    if (Input.GetMouseButton(0))
-                        Cursor.SetCursor(glue2, hotSpot, CursorMode.Auto);
-                    if (Input.GetMouseButtonUp(0))
-                        Cursor.SetCursor(glue1, hotSpot, CursorMode.Auto);
+                    Cursor.SetCursor(Input.GetMouseButton(0) ? glue2 : glue1, hotSpot, CursorMode.Auto);
                     break;
 
                 default:
-                    isStamp = false;
-                    isScissors = false;
-                    isPencil = false;
-                    isGlue = false;
                     Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                     break;
             }
         }
         else
         {
-            if (isClick)
-            {
-                Cursor.SetCursor(interactable2, hotSpot, CursorMode.Auto);
-            }
-            else
-            {
-                Cursor.SetCursor(interactable1, hotSpot, CursorMode.Auto);
-            }
-
             if (Input.GetMouseButtonDown(0))
             {
                 isClick = true;
                 Invoke("FalseisClick", 0.5f);
+            }
+
+            Texture2D targetCursor = isClick ? interactable2 : interactable1;
+
+            if (currentCursorTexture != targetCursor)
+            {
+                Cursor.SetCursor(targetCursor, hotSpot, CursorMode.Auto);
+                currentCursorTexture = targetCursor;
             }
         }
     }
