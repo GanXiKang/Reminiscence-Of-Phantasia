@@ -44,14 +44,16 @@ public class DoorControl_House : MonoBehaviour
         BlackScreenControl.isOpenBlackScreen = true;
         StoreControl_House.isStoreActive = false;
         yield return new WaitForSeconds(1f);
+
+        InteractableControl_House.isColliderActive[2] = false;
         CameraControl_House.isFreeLook = true;
         CameraControl_House.isLookDoor = false;
         UIAboveObject_House.isAboveDoor = false;
-        InteractableControl_House.isColliderActive[2] = false;
         isEntrust = false;
         isStore = false;
         isBird = false;
         isCat = false;
+
         if (!InteractableControl_House.isCatLeave)
         {
             isCat = true;
