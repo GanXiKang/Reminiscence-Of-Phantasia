@@ -139,8 +139,6 @@ public class StoreControl_House : MonoBehaviour
     {
         BGM.PlayOneShot(buy);
         GameControl_House._MyCoin -= _productCoin;
-        _productCoin = 0;
-        _productNum = 0;
         CatControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 4;
@@ -203,6 +201,9 @@ public class StoreControl_House : MonoBehaviour
                     break;
             }
         }
+
+        _productCoin = 0;
+        _productNum = 0;
     }
     public void Button_Leave()
     {
