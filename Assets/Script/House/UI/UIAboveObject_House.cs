@@ -33,8 +33,8 @@ public class UIAboveObject_House : MonoBehaviour
     public static bool isAboveShowcase = false;
 
     [Header("Hint")]
-    public GameObject hintObject;
-    public RectTransform hint;
+    public GameObject hint;
+    public GameObject store;
     public Text hintName;
 
     void Start()
@@ -45,21 +45,20 @@ public class UIAboveObject_House : MonoBehaviour
     void Update()
     {
         if (isHintActive())
-        {
-            hintObject.SetActive(CameraControl_House.isFreeLook);
-        }
+            hint.SetActive(CameraControl_House.isFreeLook);
         else
-        {
-            hintObject.SetActive(false);
-        }
+            hint.SetActive(false);
         
+        store.SetActive(DoorControl_House.isStore);
+
         Hint();
     }
 
     bool isHintActive()
     {
         return isAboveWorkbench ||
-               isAboveDoor ||
+               isAboveDoor && 
+               !DoorControl_House.isStore ||
                isAboveBed ||
                isAboveBookcase ||
                isAboveShowcase;
@@ -67,38 +66,44 @@ public class UIAboveObject_House : MonoBehaviour
 
     void Hint()
     {
-        Vector3 targetPosition = new Vector3(player.transform.position.x, hint.transform.position.y, player.transform.position.z);
-        hint.LookAt(targetPosition);
+        Vector3 targetPosition = new Vector3(player.transform.position.x, hint.GetComponent<RectTransform>().transform.position.y, player.transform.position.z);
+        hint.GetComponent<RectTransform>().LookAt(targetPosition);
 
         if (isAboveWorkbench)
         {
             Vector3 workbenchPos = workbench.position + workbenchOffset;
-            hint.position = workbenchPos;
+            hint.GetComponent<RectTransform>().position = workbenchPos;
             hintName.text = "工作臺";
         }
-        else if (isAboveDoor)
+        else if (isAboveDoor && !DoorControl_House.isStore)
         {
             Vector3 doorPos = door.position + doorOffset;
-            hint.position = doorPos;
+            hint.GetComponent<RectTransform>().position = doorPos;
             hintName.text = "大門";
         }
         else if (isAboveBed)
         {
             Vector3 bedPos = bed.position + bedOffset;
-            hint.position = bedPos;
+            hint.GetComponent<RectTransform>().position = bedPos;
             hintName.text = "睡床";
         }
         else if (isAboveBookcase)
         {
             Vector3 bookcasePos = bookcase.position + bookcaseOffset;
-            hint.position = bookcasePos;
+            hint.GetComponent<RectTransform>().position = bookcasePos;
             hintName.text = "書架";
         }
         else if (isAboveShowcase)
         {
             Vector3 showcasePos = showcase.position + showcaseOffset;
-            hint.position = showcasePos;
+            hint.GetComponent<RectTransform>().position = showcasePos;
             hintName.text = "展示臺";
+        }
+
+        if (DoorControl_House.isStore)
+        {
+            Vector3 doorPos = door.position + doorOffset;
+            store.GetComponent<RectTransform>().position = doorPos;
         }
     }
 }
