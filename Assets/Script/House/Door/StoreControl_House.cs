@@ -14,13 +14,11 @@ public class StoreControl_House : MonoBehaviour
     public GameObject scissorsUI;
     public GameObject shadingUI;
     public static bool isStoreActive = false;
-    bool isContentActive = false;
 
     [Header("Coin")]
     public Text coinAmount;
     public Button buyButton;
     int _productCoin = 0;
-    bool isBuy = false;
 
     [Header("ProductContent")]
     public GameObject[] scissors;
@@ -90,7 +88,6 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Buy()
     {
         BGM.PlayOneShot(buy);
-        isBuy = true;
         GameControl_House._MyCoin -= _productCoin;
         CatControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
@@ -109,7 +106,6 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Back()
     {
         BGM.PlayOneShot(back);
-        isContentActive = false;
         CatControl_House.isBag_On = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 5;
@@ -128,7 +124,6 @@ public class StoreControl_House : MonoBehaviour
         DoorControl_House.isLeave = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 7;
-        isContentActive = false;
         storeUI.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
     }
 }
