@@ -20,6 +20,7 @@ public class GameControl_House : MonoBehaviour
             case 1:
                 UIAboveObject_House.isAboveDoor = true;
                 InteractableControl_House.isColliderActive[2] = true;
+
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 1;
                 break;
@@ -29,6 +30,7 @@ public class GameControl_House : MonoBehaviour
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveBed = false;
                 InteractableControl_House.isColliderActive[1] = true;
+
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 30;
@@ -41,8 +43,10 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[1] = true;
                 InteractableControl_House.isColliderActive[4] = true;
                 InteractableControl_House.isColliderActive[5] = true;
+
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 17;
+                DialogueControl_House.isAutoNext = false;
                 break;
 
             case 4:
@@ -52,8 +56,10 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[1] = true;
                 InteractableControl_House.isColliderActive[4] = true;
                 InteractableControl_House.isColliderActive[5] = true;
+
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 46;
+                DialogueControl_House.isAutoNext = false;
                 break;
         }
     }
