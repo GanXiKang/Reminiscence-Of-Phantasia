@@ -294,7 +294,7 @@ public class BookcaseControl_House : MonoBehaviour
             book[k].transform.position = originalPoint[k].transform.position;
             book[k].transform.rotation = originalPoint[k].transform.rotation;
         }
-        if (GameControl_House._day > 2 && isEntrustCome)
+        if (GameControl_House._day == 3 && isEntrustCome)
         {
             isEntrustCome = false;
             UIControl_House.isDialogue = true;
