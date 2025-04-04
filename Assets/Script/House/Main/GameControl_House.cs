@@ -96,11 +96,5 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[3] = true;
             }
         }
-
-        if (Input.GetKey(KeyCode.P))
-        {
-            InteractableControl_House.isColliderActive[2] = true;
-            UIAboveObject_House.isStoreHintActive = true;
-        }
     }
 }
