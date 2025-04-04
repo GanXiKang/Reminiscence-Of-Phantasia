@@ -36,18 +36,20 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     break;
 
                 case 2:
-                    Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                    if (!isScissors)
+                    {
+                        isScissors = true;
+                        Cursor.SetCursor(scissors2, hotSpot, CursorMode.Auto);
+                    }
 
                     if (ScissorsControl_Workbench.isUseScissors)
                     {
-                        isScissors = true;
                         if (!isAnim)
                             StartCoroutine(ScissorsAnimation());
                     }
                     else
                     {
                         StopAllCoroutines();
-                        isScissors = false;
                         isAnim = false;
                     }
 
@@ -63,6 +65,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     break;
 
                 default:
+                    isScissors = false;
                     Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                     break;
             }
