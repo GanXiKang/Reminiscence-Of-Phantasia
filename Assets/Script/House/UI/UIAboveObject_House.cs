@@ -58,8 +58,7 @@ public class UIAboveObject_House : MonoBehaviour
     bool isHintActive()
     {
         return isAboveWorkbench ||
-               isAboveDoor && 
-               !DoorControl_House.isStore ||
+               isAboveDoor ||
                isAboveBed ||
                isAboveBookcase ||
                isAboveShowcase;
