@@ -75,7 +75,7 @@ public class UIAboveObject_House : MonoBehaviour
             hint.GetComponent<RectTransform>().position = workbenchPos;
             hintName.text = "工作臺";
         }
-        else if (isAboveDoor && !DoorControl_House.isStore)
+        else if (isAboveDoor && !isStoreHintActive)
         {
             Vector3 doorPos = door.position + doorOffset;
             hint.GetComponent<RectTransform>().position = doorPos;
