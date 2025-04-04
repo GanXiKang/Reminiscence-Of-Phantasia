@@ -103,10 +103,10 @@ public class InteractableControl_House : MonoBehaviour
 
                     case 2:
                         isColliderActive[2] = false;
+
                         if (UIAboveObject_House.isStoreHintActive)
-                        {
                             DoorControl_House.isStore = true;
-                        }
+
                         if (DoorControl_House.isEntrust || DoorControl_House.isStore)
                         {
                             DoorControl_House.isLoading = true;
