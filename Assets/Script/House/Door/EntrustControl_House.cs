@@ -28,7 +28,7 @@ public class EntrustControl_House : MonoBehaviour
 
     [Header("LetterReceive")]
     public Image receiveImage;
-    public Sprite[] receiveSprite;    //Î´íÆäËûÎ¯ÍÐÔÚÍ¬Ò»Ìì ³ý·Ç·Öé_ ²»È»ÓÐücëyÕûÀí 29/11
+    public Sprite[] receiveSprite;
     bool isReceive = false;
 
     [Header("LetterContent")]
