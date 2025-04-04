@@ -97,7 +97,7 @@ public class GameControl_House : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.T))
+        if (Input.GetKey(KeyCode.P))
         {
             InteractableControl_House.isColliderActive[2] = true;
             DoorControl_House.isStore = true;
