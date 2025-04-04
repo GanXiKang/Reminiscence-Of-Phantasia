@@ -62,35 +62,19 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Product(int _product)
     {
         BGM.PlayOneShot(comfirm);
-        if (isHomePageActive)
-        {
-            _productCoin = 0;
-            CatControl_House.isBag = true;
-            StartCoroutine(AnimateButtonDisappear(homePageButton[4], 0f));
-            StartCoroutine(AnimateButtonDisappear(homePageButton[3], 0.2f));
-            StartCoroutine(AnimateButtonDisappear(homePageButton[2], 0.4f));
-            StartCoroutine(AnimateButtonDisappear(homePageButton[1], 0.6f));
-            for (int p = 1; p < contentUI.Length; p++)
-                contentUI[p].SetActive(p == _product);
-        }
-        else
-        {
-            _productCoin = 0;
-            for (int p = 1; p < contentUI.Length; p++)
-                contentUI[p].SetActive(p == _product);
-        }
+        _productCoin = 0;
+        CatControl_House.isBag = true;
     }
     public void Button_Content(int _content)
     {
         BGM.PlayOneShot(comfirm);
-        if (contentUI[1].activeSelf)
+        if (scissorsUI.activeSelf)
         {
-            switch (_content)
-            {
-                case 1:
-                    _productCoin = 250;
-                    break;
-            }
+            _productCoin = 250;
+        }
+        else if (shadingUI.activeSelf)
+        {
+            _productCoin = 350;
         }
     }
     public void Button_Info(int _num)
