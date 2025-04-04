@@ -282,6 +282,7 @@ public class DialogueControl_House : MonoBehaviour
 
             case 9:
             case 19:
+                UIAboveObject_House.isAboveDoor = true;
                 InteractableControl_House.isColliderActive[2] = true;
                 break;
 
@@ -305,7 +306,6 @@ public class DialogueControl_House : MonoBehaviour
 
             case 23:
                 InteractableControl_House.isColliderActive[2] = true;
-                UIAboveObject_House.isAboveDoor = true;
                 UIAboveObject_House.isAboveBookcase = false;
                 UIAboveObject_House.isStoreHintActive = true;
                 CatControl_House._goPointNum = 0;
