@@ -91,7 +91,7 @@ public class UIAboveObject_House : MonoBehaviour
         {
             Vector3 bookcasePos = bookcase.position + bookcaseOffset;
             hint.GetComponent<RectTransform>().position = bookcasePos;
-            hintName.text = "書架";
+            hintName.text = "書櫃";
         }
         else if (isAboveShowcase)
         {
