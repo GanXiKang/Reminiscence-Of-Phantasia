@@ -40,14 +40,6 @@ public class EntrustControl_House : MonoBehaviour
         DeliverButtonInitialState();
     }
 
-    void Update()
-    {
-        EntrustUI();
-        OpenUI();
-        LetterDeliverDay();
-        LetterReceiveAndContent();
-    }
-
     void DeliverButtonInitialState()
     {
         isReceive = false;
@@ -58,6 +50,15 @@ public class EntrustControl_House : MonoBehaviour
             rect.anchoredPosition = new Vector2(20f, rect.anchoredPosition.y);
         }
     }
+
+    void Update()
+    {
+        EntrustUI();
+        OpenUI();
+        LetterDeliverDay();
+        LetterReceiveAndContent();
+    }
+    
     void EntrustUI()
     {
         entrustUI[0].SetActive(isEntrustActive);
@@ -66,13 +67,9 @@ public class EntrustControl_House : MonoBehaviour
         entrustUI[3].SetActive(isContentActive);
 
         if (isDeliverActive)
-        {
             background.sprite = normalBG;
-        }
         else
-        {
             background.sprite = darkBG;
-        }
 
         deliverButton[0].GetComponent<CanvasGroup>().interactable = isReceive;
         if (!isReceive)
@@ -157,9 +154,8 @@ public class EntrustControl_House : MonoBehaviour
         isReceiveActive = false;
         isDeliverActive = true;
         if (!alreadyReceived[_entrustNum].activeSelf)
-        {
             isAlready = true;
-        }
+
         BirdControl_House.isHappy = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 3;
@@ -216,12 +212,20 @@ public class EntrustControl_House : MonoBehaviour
         isReceiveActive = false;
         isContentActive = false;
         for (int i = 1; i < alreadyReceived.Length; i++)
-        {
             alreadyReceived[i].SetActive(false);
-        }
+
         entrustUI[1].GetComponent<CanvasGroup>().interactable = true;
         entrustUI[0].GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.5f, 1f);
         DeliverButtonInitialState();
+
+        switch (GameControl_House._day)
+        {
+            case 2:
+            case 3:
+                InteractableControl_House.isColliderActive[2] = true;
+                UIAboveObject_House.isStoreHintActive = true;
+                break;
+        }
     }
 
     IEnumerator AnimateButtonAppear(Button button, float delay, bool isShouldMove)
