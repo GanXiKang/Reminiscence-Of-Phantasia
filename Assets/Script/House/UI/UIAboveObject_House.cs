@@ -49,7 +49,7 @@ public class UIAboveObject_House : MonoBehaviour
         else
             hint.SetActive(false);
         
-        store.SetActive(DoorControl_House.isStore);
+        store.SetActive(DoorControl_House.isStore && !StoreControl_House.isStoreActive);
 
         Hint();
     }
