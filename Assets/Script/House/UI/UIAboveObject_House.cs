@@ -102,6 +102,9 @@ public class UIAboveObject_House : MonoBehaviour
 
         if (DoorControl_House.isStore)
         {
+            Vector3 storePosition = new Vector3(player.transform.position.x, store.GetComponent<RectTransform>().transform.position.y, player.transform.position.z);
+            store.GetComponent<RectTransform>().LookAt(storePosition);
+
             Vector3 doorPos = door.position + doorOffset;
             store.GetComponent<RectTransform>().position = doorPos;
         }
