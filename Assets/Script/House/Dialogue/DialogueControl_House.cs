@@ -98,7 +98,10 @@ public class DialogueControl_House : MonoBehaviour
         if (!isMove) return;
 
         if (isPosA)
+        {
             whoDialogue[PosANum].transform.position = Vector3.MoveTowards(whoDialogue[PosANum].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
+            whoDialogue[PosBNum].transform.position = Vector3.MoveTowards(whoDialogue[PosBNum].transform.position, dialoguePos[5].position, _moveSpeed * Time.deltaTime);
+        }
 
         if (!DoorControl_House.isEntrust && !DoorControl_House.isStore)
         {
