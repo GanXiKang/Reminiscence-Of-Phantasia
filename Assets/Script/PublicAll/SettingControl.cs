@@ -32,7 +32,6 @@ public class SettingControl : MonoBehaviour
     bool isMoving = false; 
     bool isAppear = false;
 
-
     void Start()
     {
         player = GameObject.Find("Player");
