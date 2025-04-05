@@ -6,14 +6,10 @@ using System.IO;
 [System.Serializable]
 public class GameData
 {
-    //public Vector3 playerPosition;
     public int gameDay;
     public int gameStoryNum;
     public int playerCoins;
     public string currentSceneName;
-    //public bool[] houseBooleans;
-    //public bool[] girlBooleans;
-    //public bool[] momotaroBooleans;
 }
 
 public class SaveManagerControl : MonoBehaviour
