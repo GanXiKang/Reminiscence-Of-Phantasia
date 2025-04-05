@@ -278,7 +278,21 @@ public class DialogueControl_House : MonoBehaviour
                 break;
 
             case 49:
-                isEndThreeTalk = true;
+                switch (_countEvent)
+                {
+                    case 0:
+                        _countEvent++;
+                        isEndThreeTalk = true;
+                        break;
+
+                    case 1:
+                        _countEvent = 0;
+                        PlayerControl_House.isHappy = true;
+                        CatControl_House.isHappy = true;
+                        BirdControl_House.isHappy = true;
+                        break;
+                }
+                
                 break;
         }
     }
