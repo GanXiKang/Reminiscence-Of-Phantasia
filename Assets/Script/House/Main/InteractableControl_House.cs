@@ -324,6 +324,7 @@ public class InteractableControl_House : MonoBehaviour
                 BirdControl_House.isIdle = true;
                 BirdControl_House._goPointNum = 4;
                 CatControl_House._goPointNum = 3;
+                PlayerControl_House.isPlayerEndPoint = true;
 
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
