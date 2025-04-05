@@ -90,7 +90,6 @@ public class PlayerControl_House : MonoBehaviour
 
         transform.position = endingPoint.position;
         transform.rotation = endingPoint.rotation;
-        isPlayerEndPoint = false;
     }
 
     bool isCanMove()
