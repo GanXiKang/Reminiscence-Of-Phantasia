@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 475611459}
   m_IndirectSpecularColor: {r: 0.47884, g: 0.8001845, b: 0.90072787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -10687,7 +10687,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10696,7 +10696,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.4
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -10745,13 +10745,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475611458}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.16547678, y: -0.6751657, z: 0.15938418, w: 0.70097464}
+  m_LocalPosition: {x: -1.12, y: 5.89, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 26.565, y: -87.851, z: 0}
 --- !u!114 &475611461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35477,7 +35477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b89625727ac00c4ba31d886abd7bda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bed: {fileID: 2012088642}
+  bed: {fileID: 1695716471}
   bedPos: {fileID: 168339547}
   storyBook:
   - {fileID: 426732115}
@@ -36025,7 +36025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7051883572359471211, guid: 4c2e922ab5bb33445b9b95c30f0f0ef8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7680469234879986385, guid: 4c2e922ab5bb33445b9b95c30f0f0ef8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39438,6 +39438,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -2377570719066984362, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2234965212669792388, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -39516,7 +39520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
       propertyPath: m_StaticEditorFlags
