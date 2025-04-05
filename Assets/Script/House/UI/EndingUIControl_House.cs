@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class EndingUIControl_House : MonoBehaviour
 {
+    [Header("Musia")]
+    public AudioSource BGM;
+    public AudioClip ending;
+
     void OnEnable()
     {
+        BGM.Stop();
+        BGM.clip = ending;
+        BGM.Play();
+
         Invoke("TransitionUI", 9f);
         Invoke("BackMenu", 10f);
     }
