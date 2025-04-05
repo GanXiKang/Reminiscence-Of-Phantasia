@@ -319,6 +319,10 @@ public class InteractableControl_House : MonoBehaviour
             case 5:
                 CameraControl_House.isFreeLook = false;
                 CameraControl_House.isLookDoorPlot = true;
+                DoorControl_House.isCat = true;
+                DoorControl_House.isBird = true;
+                BirdControl_House.isIdle = true;
+
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 49;
                 break;
