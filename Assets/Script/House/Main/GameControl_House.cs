@@ -64,6 +64,11 @@ public class GameControl_House : MonoBehaviour
         }
     }
 
+    void GameStatic()
+    {
+        
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift)) 
