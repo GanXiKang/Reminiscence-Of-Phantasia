@@ -69,6 +69,7 @@ public class DialogueControl_House : MonoBehaviour
     }
     void TextController()
     {
+        if (isMove) return;
         if (isAutoPlot) return;
         if (SettingControl.isSettingActive) return;
         if (DoorControl_House.isEntrust || DoorControl_House.isStore) return;
