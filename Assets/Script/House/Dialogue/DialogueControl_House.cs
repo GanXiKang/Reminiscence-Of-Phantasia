@@ -181,6 +181,13 @@ public class DialogueControl_House : MonoBehaviour
                 _index++;
                 break;
 
+            case "Target2":
+                _whoDia = 2;
+                isMove = true;
+                DialoguePoint();
+                _index++;
+                break;
+
             case "End":
                 DialogueEnd();
                 UIControl_House.isDialogue = false;
