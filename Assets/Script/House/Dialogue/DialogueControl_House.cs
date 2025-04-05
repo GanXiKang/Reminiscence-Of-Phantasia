@@ -22,6 +22,7 @@ public class DialogueControl_House : MonoBehaviour
     bool isMove;
     bool isPosA;
     int PosANum;
+    int PosBNum;
 
     [Header("TextFile")]
     public TextAsset[] textFile;
@@ -109,6 +110,8 @@ public class DialogueControl_House : MonoBehaviour
             {
                 isMove = false;
                 isPosA = true;
+                if (InteractableControl_House.isEnding)
+                    PosBNum = PosANum;
                 PosANum = _whoDia;
             }
         }
