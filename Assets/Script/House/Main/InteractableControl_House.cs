@@ -324,6 +324,7 @@ public class InteractableControl_House : MonoBehaviour
                 BirdControl_House.isIdle = true;
 
                 UIControl_House.isDialogue = true;
+                DialogueControl_House.isBirdTalk = true;
                 DialogueControl_House._textCount = 49;
                 break;
         }
