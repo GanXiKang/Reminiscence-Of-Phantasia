@@ -324,6 +324,7 @@ public class DialogueControl_House : MonoBehaviour
             case 31:
             case 35:
             case 47:
+            case 49:
                 BlackScreenControl.isOpenBlackScreen = true;
                 Invoke("WaitBlackScreenEvent", 1f);
                 break;
@@ -358,10 +359,6 @@ public class DialogueControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[2] = true;
                 UIAboveObject_House.isAboveDoor = true;
                 UIAboveObject_House.isAboveBookcase = false;
-                break;
-
-            case 49:
-                isEndThreeTalk = false;
                 break;
         }
     }
@@ -430,6 +427,11 @@ public class DialogueControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[3] = true;
                 UIAboveObject_House.isAboveDoor = false;
                 UIAboveObject_House.isAboveBed = true;
+                break;
+
+            case 49:
+                isEndThreeTalk = false;
+                UIControl_House.isEndingAppear = true;
                 break;
         }
     }
