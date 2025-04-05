@@ -92,10 +92,7 @@ public class PlayerControl_House : MonoBehaviour
         transform.rotation = endingPoint.rotation;
 
         if (transform.position == endingPoint.position)
-        {
             isPlayerEndPoint = false;
-            print("OK");
-        }
     }
 
     bool isCanMove()
@@ -103,6 +100,7 @@ public class PlayerControl_House : MonoBehaviour
         return CameraControl_House.isFreeLook &&
                !CameraStartMove_House.isStartMoveCamera &&
                !SettingControl.isSettingActive &&
-               !UIControl_House.isDialogue;
+               !UIControl_House.isDialogue &&
+               isPlayerEndPoint;
     }
 }
