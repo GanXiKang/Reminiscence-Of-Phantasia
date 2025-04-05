@@ -104,5 +104,11 @@ public class GameControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[3] = true;
             }
         }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            UIControl_House.isDialogue = true;
+            DialogueControl_House._textCount = 49;
+        }
     }
 }
