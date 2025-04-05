@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class OpenStoryBook_Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator animGirl;
+    public Animator animMomo;
+    public Animator animPrince;
+
+    public bool isOpenGirl;
+    public bool isOpenMomo;
+    public bool isOpenPrince;
+
     void Start()
     {
-        
+        isOpenGirl = false;
+        isOpenMomo = false;
+        isOpenPrince = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        animGirl.SetBool("isOpen", isOpenGirl);
+        animMomo.SetBool("isOpen", isOpenMomo);
+        animPrince.SetBool("isOpen", isOpenPrince);
     }
 }
