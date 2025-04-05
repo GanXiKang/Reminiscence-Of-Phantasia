@@ -21190,15 +21190,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5368071d81a57fa4c896b5b2f3d77082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workbench: {fileID: 0}
+  workbench: {fileID: 1455919607}
   workbenchOffset: {x: 1, y: 2, z: 0}
-  door: {fileID: 0}
+  door: {fileID: 1426630447}
   doorOffset: {x: 1, y: 2, z: -1}
-  bed: {fileID: 0}
+  bed: {fileID: 1695716468}
   bedOffset: {x: 0, y: 3, z: 0}
-  bookcase: {fileID: 0}
+  bookcase: {fileID: 1831953514}
   bookcaseOffset: {x: 1, y: 1, z: 0}
-  showcase: {fileID: 0}
+  showcase: {fileID: 1131357220}
   showcaseOffset: {x: -1, y: 3, z: 0}
   hint: {fileID: 645830662}
   store: {fileID: 1357384344}
@@ -30226,6 +30226,11 @@ BoxCollider:
 --- !u!1 &1131357219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4268428232099541663, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
+  m_PrefabInstance: {fileID: 1382775842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1131357220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -925104984413785050, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
   m_PrefabInstance: {fileID: 1382775842}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1131357223
@@ -40316,6 +40321,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
   m_PrefabInstance: {fileID: 1382775842}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1426630447 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1950733119399844177, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
+  m_PrefabInstance: {fileID: 1382775842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1426630450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41063,6 +41073,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01709315, y: 0.017344102, z: 0.036008995}
   m_Center: {x: -0.00046270728, y: 0.000227319, z: 0.0151788285}
+--- !u!4 &1455919607 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 145640628294949171, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
+  m_PrefabInstance: {fileID: 1382775842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1460354676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46810,6 +46825,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6479137908180158667, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
   m_PrefabInstance: {fileID: 1382775842}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1695716468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7491156907005536401, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
+  m_PrefabInstance: {fileID: 1382775842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1695716471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51084,6 +51104,11 @@ Rigidbody:
 --- !u!1 &1831953513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4518735879568768519, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
+  m_PrefabInstance: {fileID: 1382775842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1831953514 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4201216101865814131, guid: f1691c0b2b4a4634f924009c71fa3ca8, type: 3}
   m_PrefabInstance: {fileID: 1382775842}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &1831953517
