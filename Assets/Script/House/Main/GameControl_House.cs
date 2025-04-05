@@ -111,5 +111,14 @@ public class GameControl_House : MonoBehaviour
             DialogueControl_House.isBirdTalk = true;
             DialogueControl_House._textCount = 49;
         }
+
+        if (Input.GetKey(KeyCode.O))
+        {
+            CameraControl_House.isFreeLook = false;
+            PlayerControl_House.isPlayerEndPoint = true;
+            UIControl_House.isDialogue = true;
+            DialogueControl_House.isBirdTalk = true;
+            DialogueControl_House._textCount = 49;
+        }
     }
 }
