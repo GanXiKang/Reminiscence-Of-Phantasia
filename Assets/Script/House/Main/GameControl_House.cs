@@ -103,22 +103,21 @@ public class GameControl_House : MonoBehaviour
                 _storyNum = 3;
                 InteractableControl_House.isColliderActive[3] = true;
             }
-        }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                CameraControl_House.isFreeLook = false;
+                CameraControl_House.isLookEndingPlot = true;
+                DoorControl_House.isCat = true;
+                DoorControl_House.isBird = true;
+                BirdControl_House.isIdle = true;
+                BirdControl_House._goPointNum = 4;
+                CatControl_House._goPointNum = 3;
+                PlayerControl_House.isPlayerEndPoint = true;
 
-        if (Input.GetKey(KeyCode.P))
-        {
-            CameraControl_House.isFreeLook = false;
-            CameraControl_House.isLookEndingPlot = true;
-            DoorControl_House.isCat = true;
-            DoorControl_House.isBird = true;
-            BirdControl_House.isIdle = true;
-            BirdControl_House._goPointNum = 4;
-            CatControl_House._goPointNum = 3;
-            PlayerControl_House.isPlayerEndPoint = true;
-
-            UIControl_House.isDialogue = true;
-            DialogueControl_House.isBirdTalk = true;
-            DialogueControl_House._textCount = 49;
+                UIControl_House.isDialogue = true;
+                DialogueControl_House.isBirdTalk = true;
+                DialogueControl_House._textCount = 49;
+            }
         }
     }
 }
