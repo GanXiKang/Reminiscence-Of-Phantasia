@@ -15,6 +15,7 @@ public class GameControl_House : MonoBehaviour
     void Start()
     {
         BGM.PlayOneShot(morning);
+        GameStatic();
         switch (_day)
         {
             case 1:
@@ -66,7 +67,19 @@ public class GameControl_House : MonoBehaviour
 
     void GameStatic()
     {
-        
+        CameraControl_House.isFreeLook = false;
+        CameraControl_House.isLookWorkbench = false;
+        CameraControl_House.isLookStorkBook = false;
+        CameraControl_House.isLookPlayer = false;
+        CameraControl_House.isLookDoor = false;
+        CameraControl_House.isLookBed = false;
+        CameraControl_House.isLookBedcase = false;
+        CameraControl_House.isLookBookcase = false;
+        CameraControl_House.isLookShowcase = false;
+        CameraControl_House.isLookDoorPlot = false;
+        CameraControl_House.isLookWorkPlot = false;
+        CameraControl_House.isLookEndingPlot = false;
+
     }
 
     void Update()
