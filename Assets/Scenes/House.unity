@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 9238653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.73, y: 1.4000001, z: -1.336}
+  m_LocalPosition: {x: 1.898, y: 1.4000001, z: -1.336}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14185,6 +14185,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 666811862e92fe8419e7293c983d8596, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fb41d0b117e77f4fab663c8322f8fa4, type: 2}
     - target: {fileID: 919132149155446097, guid: 666811862e92fe8419e7293c983d8596, type: 3}
       propertyPath: m_Name
       value: BigStamp
@@ -21193,7 +21197,7 @@ MonoBehaviour:
   workbench: {fileID: 1455919607}
   workbenchOffset: {x: 1, y: 2, z: 0}
   door: {fileID: 1426630447}
-  doorOffset: {x: 0, y: 2, z: -1}
+  doorOffset: {x: 0, y: 3, z: -1}
   bed: {fileID: 1695716468}
   bedOffset: {x: 0, y: 3, z: 0}
   bookcase: {fileID: 1831953514}
