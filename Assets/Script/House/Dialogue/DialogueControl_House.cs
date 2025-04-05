@@ -39,6 +39,7 @@ public class DialogueControl_House : MonoBehaviour
     public static bool isAutoNext = false;
     //Plot
     public static bool isAutoPlot = false;
+    bool isEndThreeTalk = false;
 
     void OnEnable()
     {
@@ -100,7 +101,7 @@ public class DialogueControl_House : MonoBehaviour
         if (isPosA)
         {
             whoDialogue[PosANum].transform.position = Vector3.MoveTowards(whoDialogue[PosANum].transform.position, dialoguePos[2].position, _moveSpeed * Time.deltaTime);
-            if(InteractableControl_House.isEnding)
+            if(isEndThreeTalk)
                 whoDialogue[PosBNum].transform.position = Vector3.MoveTowards(whoDialogue[PosBNum].transform.position, dialoguePos[5].position, _moveSpeed * Time.deltaTime);
         }
 
@@ -114,7 +115,7 @@ public class DialogueControl_House : MonoBehaviour
             {
                 isMove = false;
                 isPosA = true;
-                if (InteractableControl_House.isEnding)
+                if (isEndThreeTalk)
                     PosBNum = PosANum;
                 PosANum = _whoDia;
             }
@@ -275,6 +276,10 @@ public class DialogueControl_House : MonoBehaviour
                 UIControl_House.isCoinAppear = true;
                 CoinUIControl_House._coinTarget = 1500;
                 break;
+
+            case 49:
+                isEndThreeTalk = true;
+                break;
         }
     }
     void DialogueEnd()
@@ -353,6 +358,10 @@ public class DialogueControl_House : MonoBehaviour
                 InteractableControl_House.isColliderActive[2] = true;
                 UIAboveObject_House.isAboveDoor = true;
                 UIAboveObject_House.isAboveBookcase = false;
+                break;
+
+            case 49:
+                isEndThreeTalk = false;
                 break;
         }
     }
