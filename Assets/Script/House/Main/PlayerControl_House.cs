@@ -101,6 +101,6 @@ public class PlayerControl_House : MonoBehaviour
                !CameraStartMove_House.isStartMoveCamera &&
                !SettingControl.isSettingActive &&
                !UIControl_House.isDialogue &&
-               isPlayerEndPoint;
+               !isPlayerEndPoint;
     }
 }
