@@ -172,8 +172,8 @@ public class DialogueControl_House : MonoBehaviour
                     isMove = true;
                     DialoguePoint();
                 }
-               else if(isCatTalk)
-               {
+                else if (isCatTalk)
+                {
                     _whoDia = 2;
                     isMove = true;
                     DialoguePoint();
