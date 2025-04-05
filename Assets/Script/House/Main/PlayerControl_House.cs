@@ -18,6 +18,10 @@ public class PlayerControl_House : MonoBehaviour
     private Vector3 _moveInput;
     private Vector3 _velocity;
 
+    [Header("EndingPoint")]
+    public Transform endingPoint;
+    public static bool isPlayerEndPoint = false;
+
     //Animation
     public static bool isWave = false;
     public static bool isHappy = false;
@@ -37,6 +41,7 @@ public class PlayerControl_House : MonoBehaviour
         PlayerMove();
         PlayerOnTheGround();
         Animation();
+        PlayerEndingPoint();
     }
 
     void OnMove(InputValue value)
@@ -78,6 +83,14 @@ public class PlayerControl_House : MonoBehaviour
         anim.SetBool("isWave", isWave);
         anim.SetBool("isHappy", isHappy);
         anim.SetBool("isSleep", isSleep);
+    }
+    void PlayerEndingPoint()
+    {
+        if (!isPlayerEndPoint) return;
+
+        transform.position = endingPoint.position;
+        transform.rotation = endingPoint.rotation;
+        isPlayerEndPoint = false;
     }
 
     bool isCanMove()
