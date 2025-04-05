@@ -112,7 +112,7 @@ public class GameControl_House : MonoBehaviour
                 BirdControl_House.isIdle = true;
                 BirdControl_House._goPointNum = 4;
                 CatControl_House._goPointNum = 3;
-                Invoke("IsPlayerEndingPoint", 0.5f);
+                Invoke("IsPlayerEndingPoint", 0.3f);
 
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
