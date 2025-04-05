@@ -107,15 +107,15 @@ public class GameControl_House : MonoBehaviour
 
         if (Input.GetKey(KeyCode.P))
         {
-            UIControl_House.isDialogue = true;
-            DialogueControl_House.isBirdTalk = true;
-            DialogueControl_House._textCount = 49;
-        }
-
-        if (Input.GetKey(KeyCode.O))
-        {
             CameraControl_House.isFreeLook = false;
+            CameraControl_House.isLookEndingPlot = true;
+            DoorControl_House.isCat = true;
+            DoorControl_House.isBird = true;
+            BirdControl_House.isIdle = true;
+            BirdControl_House._goPointNum = 4;
+            CatControl_House._goPointNum = 3;
             PlayerControl_House.isPlayerEndPoint = true;
+
             UIControl_House.isDialogue = true;
             DialogueControl_House.isBirdTalk = true;
             DialogueControl_House._textCount = 49;
