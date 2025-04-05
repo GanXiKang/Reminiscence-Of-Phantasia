@@ -67,6 +67,8 @@ public class GameControl_House : MonoBehaviour
 
     void GameStatic()
     {
+        BedControl_House.isMovingToBed = false;
+
         CameraControl_House.isFreeLook = false;
         CameraControl_House.isLookWorkbench = false;
         CameraControl_House.isLookStorkBook = false;
@@ -79,6 +81,10 @@ public class GameControl_House : MonoBehaviour
         CameraControl_House.isLookDoorPlot = false;
         CameraControl_House.isLookWorkPlot = false;
         CameraControl_House.isLookEndingPlot = false;
+
+        CameraStartMove_House.isStartMoveCamera = false;
+        CameraStartMove_House.isMoving = false;
+
 
     }
 
