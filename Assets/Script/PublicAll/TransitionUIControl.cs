@@ -29,13 +29,9 @@ public class TransitionUIControl : MonoBehaviour
     void OnEnable()
     {
         if (isHouse)
-        {
             gameObject.GetComponent<Image>().sprite = house;
-        }
         else
-        {
             gameObject.GetComponent<Image>().sprite = book;
-        }
     }
 
     void Update()
