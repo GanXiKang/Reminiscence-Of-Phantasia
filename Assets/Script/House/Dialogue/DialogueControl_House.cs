@@ -446,6 +446,7 @@ public class DialogueControl_House : MonoBehaviour
             case 49:
                 isEndThreeTalk = false;
                 UIControl_House.isEndingAppear = true;
+                PlayerControl_House.isPlayerEndPoint = false;
                 break;
         }
     }
