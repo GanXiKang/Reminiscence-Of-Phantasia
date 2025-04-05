@@ -85,7 +85,7 @@ public class GameControl_House : MonoBehaviour
         CameraStartMove_House.isStartMoveCamera = false;
         CameraStartMove_House.isMoving = false;
 
-
+        BookcaseControl_House._bookNum = 0;
     }
 
     void Update()
