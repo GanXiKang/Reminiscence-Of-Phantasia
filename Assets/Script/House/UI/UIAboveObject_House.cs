@@ -50,7 +50,7 @@ public class UIAboveObject_House : MonoBehaviour
         else
             hint.SetActive(false);
         
-        store.SetActive(isStoreHintActive && !CameraControl_House.isLookDoor);
+        store.SetActive(isStoreHintAppear());
 
         Hint();
     }
@@ -58,10 +58,16 @@ public class UIAboveObject_House : MonoBehaviour
     bool isHintActive()
     {
         return isAboveWorkbench ||
-               isAboveDoor && !isStoreHintActive ||
+               (isAboveDoor && !isStoreHintActive) ||
                isAboveBed ||
                isAboveBookcase ||
                isAboveShowcase;
+    }
+    bool isStoreHintAppear()
+    {
+        return isStoreHintActive &&
+               !CameraControl_House.isLookDoor &&
+               !CameraControl_House.isLookDoorPlot;
     }
 
     void Hint()
