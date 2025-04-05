@@ -23,7 +23,7 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
 
         for (int i = 0; i < paperOut.Length; i++)
         {
-            if (paperOut[i].activeSelf)
+            if (paperOut[i] != null && paperOut[i].activeSelf)
                 Destroy(paperOut[i]);
         }
         isShowDestoryPaperOut = false;
