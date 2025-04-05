@@ -156,6 +156,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 StoryUIControl_Momotaro.isStoryEnding = true;
+                Showcase_House.isSpecialEnd[2] = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha8))
             {

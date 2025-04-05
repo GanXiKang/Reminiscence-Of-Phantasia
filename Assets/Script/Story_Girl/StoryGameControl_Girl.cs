@@ -121,6 +121,7 @@ public class StoryGameControl_Girl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 StoryUIControl_Girl.isStoryEnding = true;
+                Showcase_House.isSpecialEnd[1] = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) 
             {

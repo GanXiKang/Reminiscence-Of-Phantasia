@@ -158,6 +158,7 @@ public class StoryGameControl_Prince : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 StoryUIControl_Prince.isStoryEnding = true;
+                Showcase_House.isSpecialEnd[3] = true;
             }
         }
     }
