@@ -108,6 +108,7 @@ public class GameControl_House : MonoBehaviour
         if (Input.GetKey(KeyCode.P))
         {
             UIControl_House.isDialogue = true;
+            DialogueControl_House.isBirdTalk = true;
             DialogueControl_House._textCount = 49;
         }
     }
