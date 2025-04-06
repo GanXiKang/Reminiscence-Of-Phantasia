@@ -116,6 +116,10 @@ public class GameControl_House : MonoBehaviour
         UIAboveObject_House.isAboveBed = false;
         UIAboveObject_House.isAboveBookcase = false;
         UIAboveObject_House.isStoreHintActive = false;
+
+        UIControl_House.isDialogue = false;
+        UIControl_House.isCoinAppear = false;
+        UIControl_House.isEndingAppear = false;
     }
     void GameDay01()
     {
