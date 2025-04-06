@@ -216,8 +216,8 @@ public class GameControl_House : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                DoorControl_House.isStore = true;
-                InteractableControl_House.isColliderActive[2] = true;
+                _storyNum = 3;
+                InteractableControl_House.isColliderActive[3] = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) 
             {
@@ -233,11 +233,6 @@ public class GameControl_House : MonoBehaviour
                 BookcaseControl_House.bookActive[3] = true;
                 InteractableControl_House.isColliderActive[4] = true;
                 InteractableControl_House.isColliderActive[5] = true;
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha0))
-            {
-                _storyNum = 3;
-                InteractableControl_House.isColliderActive[3] = true;
             }
             if (Input.GetKeyDown(KeyCode.P))
             {
