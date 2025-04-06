@@ -30,10 +30,8 @@ public class UIControl_Menu : MonoBehaviour
 
     void Start()
     {
-        if (SaveManagerControl.Instance != null && !SaveManagerControl.Instance.SaveFileExists())
-        {
-            continueButton.interactable = false;
-        }
+        if (SaveManagerControl.Instance != null && SaveManagerControl.Instance.SaveFileExists())
+            continueButton.interactable = true;
 
         sliderBGM.value = SettingControl.volumeBGM;
         BGM.volume = SettingControl.volumeBGM;
