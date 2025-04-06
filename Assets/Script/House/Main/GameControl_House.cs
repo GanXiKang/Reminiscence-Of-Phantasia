@@ -97,6 +97,30 @@ public class GameControl_House : MonoBehaviour
         DialogueControl_House._paragraph = 0;
         DialogueControl_House.isAutoNext = false;
         DialogueControl_House.isAutoPlot = false;
+
+        BirdControl_House.isIdle = false;
+        BirdControl_House.isDeliver = false;
+        BirdControl_House.isDeliver_Close = false;
+        BirdControl_House.isHappy = false;
+        BirdControl_House.isBye = false;
+        BirdControl_House._goPointNum = 0;
+
+        CatControl_House.isHappy = false;
+        CatControl_House.isWave = false;
+        CatControl_House.isBye = false;
+        CatControl_House.isBag = false;
+        CatControl_House.isBag_On = false;
+        CatControl_House._goPointNum = 0;
+
+        DoorControl_House.isLoading = false;
+        DoorControl_House.isEntrust = false;
+        DoorControl_House.isStore = false;
+        DoorControl_House.isBird = false;
+        DoorControl_House.isCat = false;
+        DoorControl_House.isLeave = false;
+
+        EntrustControl_House.isEntrustActive = false;
+        StoreControl_House.isStoreActive = false;
     }
     void GameDay01()
     {
@@ -105,6 +129,8 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = false;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 0;
+
+        StoreControl_House.isPlotBut = false;
     }
     void GameDay02()
     {
@@ -113,6 +139,8 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = false;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 1;
+
+        StoreControl_House.isPlotBut = true;
     }
     void GameDay03()
     {
@@ -121,6 +149,8 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = false;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 2;
+
+        StoreControl_House.isPlotBut = true;
     }
     void GameDay04()
     {
@@ -129,6 +159,8 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = true;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 3;
+
+        StoreControl_House.isPlotBut = true;
     }
     void SaveGame()
     {
