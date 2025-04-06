@@ -20,6 +20,7 @@ public class GameControl_House : MonoBehaviour
         {
             case 1:
                 GameDay01();
+                SaveGame();
                 UIAboveObject_House.isAboveDoor = true;
                 InteractableControl_House.isColliderActive[2] = true;
 
@@ -122,6 +123,17 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = true;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 3;
+    }
+    void SaveGame()
+    {
+        GameData gameData = new GameData
+        {
+            gameDay = GameControl_House._day,
+            gameStoryNum = GameControl_House._storyNum,
+            playerCoins = GameControl_House._MyCoin,
+        };
+
+        SaveManagerControl.Instance.SaveGame(gameData);
     }
 
     void Update()
