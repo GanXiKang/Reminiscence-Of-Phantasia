@@ -10,7 +10,7 @@ public class SettingControl : MonoBehaviour
 
     [Header("Musia")]
     public AudioSource BGM;
-    public AudioClip onClick, open, save, leave;
+    public AudioClip onClick, open, leave;
 
     [Header("UI")]
     public GameObject settingsUI;
