@@ -30,10 +30,10 @@ public class UIControl_Menu : MonoBehaviour
 
     void Start()
     {
-        //if (SaveManagerControl.Instance.SaveFileExists())
-        //    continueButton.interactable = true;
-        //else
-        //    continueButton.interactable = false;
+        if (SaveManagerControl.Instance != null && !SaveManagerControl.Instance.SaveFileExists())
+        {
+            continueButton.interactable = false;
+        }
 
         sliderBGM.value = SettingControl.volumeBGM;
         BGM.volume = SettingControl.volumeBGM;
@@ -67,7 +67,7 @@ public class UIControl_Menu : MonoBehaviour
         GameControl_House._day = gameData.gameDay;
         GameControl_House._MyCoin = gameData.playerCoins;
         GameControl_House._storyNum = gameData.gameStoryNum;
-        Invoke("GoToLoadGameScene", 1f);
+        SceneManager.LoadScene(1);
     }
     public void Button_Setting()
     {
@@ -147,9 +147,5 @@ public class UIControl_Menu : MonoBehaviour
     void GoToStartMovie()
     {
         SceneManager.LoadScene(5);
-    }
-    void GoToLoadGameScene()
-    {
-        SceneManager.LoadScene(SaveManagerControl.Instance.LoadGame().currentSceneName);
     }
 }
