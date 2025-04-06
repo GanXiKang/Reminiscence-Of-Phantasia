@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class GameControl_House : MonoBehaviour
@@ -122,6 +123,7 @@ public class GameControl_House : MonoBehaviour
         UIControl_House.isEndingAppear = false;
 
         ScissorsControl_Workbench.isUseScissors = false;
+        WorkbenchControl_House._process = 0;
         WorkbenchControl_House.isFinishCut = false;
         WorkbenchControl_House.isFinishClickColor = false;
         WorkbenchControl_House.isFinishColor = false;
