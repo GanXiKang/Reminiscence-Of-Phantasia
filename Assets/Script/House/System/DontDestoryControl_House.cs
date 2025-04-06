@@ -18,12 +18,4 @@ public class DontDestoryControl_House : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void FixedUpdate()
-    {
-        //if ()
-        //{
-        //    Destroy(gameObject);
-        //}
-    }
 }
