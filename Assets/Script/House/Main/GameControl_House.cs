@@ -111,7 +111,11 @@ public class GameControl_House : MonoBehaviour
         PlayerControl_House.isHappy = false;
         PlayerControl_House.isSleep = false;
 
-
+        UIAboveObject_House.isAboveWorkbench = _day != 1;
+        UIAboveObject_House.isAboveDoor = _day == 1;
+        UIAboveObject_House.isAboveBed = false;
+        UIAboveObject_House.isAboveBookcase = false;
+        UIAboveObject_House.isStoreHintActive = false;
     }
     void GameDay01()
     {
@@ -122,7 +126,6 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House._bookActiveNum = 0;
 
         InteractableControl_House.isColliderActive[2] = true;
-        UIAboveObject_House.isAboveDoor = true;
 
         UIControl_House.isDialogue = true;
         DialogueControl_House._textCount = 1;
@@ -136,8 +139,7 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House._bookActiveNum = 1;
 
         InteractableControl_House.isColliderActive[1] = true;
-        UIAboveObject_House.isAboveWorkbench = true;
-        UIAboveObject_House.isAboveBed = false;
+        
 
         UIControl_House.isDialogue = true;
         DialogueControl_House.isBirdTalk = true;
@@ -154,9 +156,6 @@ public class GameControl_House : MonoBehaviour
         InteractableControl_House.isColliderActive[1] = true;
         InteractableControl_House.isColliderActive[4] = true;
         InteractableControl_House.isColliderActive[5] = true;
-        UIAboveObject_House.isAboveWorkbench = true;
-        UIAboveObject_House.isAboveBed = false;
-        UIAboveObject_House.isStoreHintActive = false;
 
         UIControl_House.isDialogue = true;
         DialogueControl_House._textCount = 17;
@@ -172,9 +171,6 @@ public class GameControl_House : MonoBehaviour
         InteractableControl_House.isColliderActive[1] = true;
         InteractableControl_House.isColliderActive[4] = true;
         InteractableControl_House.isColliderActive[5] = true;
-        UIAboveObject_House.isAboveWorkbench = true;
-        UIAboveObject_House.isAboveBed = false;
-        UIAboveObject_House.isStoreHintActive = false;
 
         UIControl_House.isDialogue = true;
         DialogueControl_House._textCount = 46;
