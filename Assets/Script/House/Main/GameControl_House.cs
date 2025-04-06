@@ -21,8 +21,6 @@ public class GameControl_House : MonoBehaviour
             case 1:
                 GameDay01();
                 UIAboveObject_House.isAboveDoor = true;
-                InteractableControl_House.isColliderActive[2] = true;
-
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 1;
                 break;
@@ -32,7 +30,7 @@ public class GameControl_House : MonoBehaviour
                 DoorControl_House.isBird = true;
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveBed = false;
-                InteractableControl_House.isColliderActive[1] = true;
+                
 
                 UIControl_House.isDialogue = true;
                 DialogueControl_House.isBirdTalk = true;
@@ -44,9 +42,6 @@ public class GameControl_House : MonoBehaviour
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveBed = false;
                 UIAboveObject_House.isStoreHintActive = false;
-                InteractableControl_House.isColliderActive[1] = true;
-                InteractableControl_House.isColliderActive[4] = true;
-                InteractableControl_House.isColliderActive[5] = true;
 
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 17;
@@ -57,9 +52,6 @@ public class GameControl_House : MonoBehaviour
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveBed = false;
                 UIAboveObject_House.isStoreHintActive = false;
-                InteractableControl_House.isColliderActive[1] = true;
-                InteractableControl_House.isColliderActive[4] = true;
-                InteractableControl_House.isColliderActive[5] = true;
 
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 46;
@@ -121,7 +113,25 @@ public class GameControl_House : MonoBehaviour
 
         EntrustControl_House.isEntrustActive = false;
         StoreControl_House.isStoreActive = false;
-    }
+
+        InteractableControl_House.isInteractable = false;
+        InteractableControl_House.isCatSeeWorkbench = false;
+        for (int c = 1; c < InteractableControl_House.isColliderActive.Length; c++)
+            InteractableControl_House.isColliderActive[c] = false;
+
+        
+        InteractableControl_House.isCatLeave = false;
+        InteractableControl_House.isBirdDoorBell = false;
+        InteractableControl_House.isBirdEntrust = false;
+        InteractableControl_House.isBirdSeeBed = false;
+        InteractableControl_House.isBirdSeeBookcase = false;
+        InteractableControl_House.isBirdLeave = false;
+        InteractableControl_House.isReadMomLetter = false;
+        InteractableControl_House.isBookcasePlotOnce = false;
+        InteractableControl_House.isBirdFirstMeet = false;
+        InteractableControl_House.isMomEntrust = true;
+        InteractableControl_House.isEnding = false;
+}
     void GameDay01()
     {
         BookcaseControl_House.bookActive[0] = false;
@@ -131,6 +141,8 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House._bookActiveNum = 0;
 
         StoreControl_House.isPlotBut = false;
+
+        InteractableControl_House.isColliderActive[2] = true;
     }
     void GameDay02()
     {
@@ -141,6 +153,8 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House._bookActiveNum = 1;
 
         StoreControl_House.isPlotBut = true;
+
+        InteractableControl_House.isColliderActive[1] = true;
     }
     void GameDay03()
     {
@@ -151,6 +165,10 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House._bookActiveNum = 2;
 
         StoreControl_House.isPlotBut = true;
+
+        InteractableControl_House.isColliderActive[1] = true;
+        InteractableControl_House.isColliderActive[4] = true;
+        InteractableControl_House.isColliderActive[5] = true;
     }
     void GameDay04()
     {
@@ -161,6 +179,10 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House._bookActiveNum = 3;
 
         StoreControl_House.isPlotBut = true;
+
+        InteractableControl_House.isColliderActive[1] = true;
+        InteractableControl_House.isColliderActive[4] = true;
+        InteractableControl_House.isColliderActive[5] = true;
     }
     void SaveGame()
     {
