@@ -54,7 +54,6 @@ public class UIControl_Menu : MonoBehaviour
         GameControl_House._day = 1;
         GameControl_House._MyCoin = 300;
         GameControl_House._storyNum = 0;
-        SaveGame();
         Invoke("GoToStartMovie", 1f);
     }
     public void Button_Continue()
@@ -146,17 +145,5 @@ public class UIControl_Menu : MonoBehaviour
     void GoToStartMovie()
     {
         SceneManager.LoadScene(5);
-    }
-
-    void SaveGame()
-    {
-        GameData gameData = new GameData
-        {
-            gameDay = GameControl_House._day,
-            gameStoryNum = GameControl_House._storyNum,
-            playerCoins = GameControl_House._MyCoin,
-        };
-
-        SaveManagerControl.Instance.SaveGame(gameData);
     }
 }
