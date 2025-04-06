@@ -119,13 +119,9 @@ public class WorkbenchControl_House : MonoBehaviour
         for (int i = 1; i < processObject.Length; i++)
         {
             if (i == _process)
-            {
                 processObject[i].SetActive(true);
-            }
             else
-            {
                 processObject[i].SetActive(false);
-            }
         }
         switch (_process)
         {
