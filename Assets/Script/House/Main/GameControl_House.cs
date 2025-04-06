@@ -50,7 +50,6 @@ public class GameControl_House : MonoBehaviour
 
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 17;
-                DialogueControl_House.isAutoNext = false;
                 break;
 
             case 4:
@@ -64,7 +63,6 @@ public class GameControl_House : MonoBehaviour
 
                 UIControl_House.isDialogue = true;
                 DialogueControl_House._textCount = 46;
-                DialogueControl_House.isAutoNext = false;
                 break;
         }
         //SaveGame();
@@ -91,6 +89,14 @@ public class GameControl_House : MonoBehaviour
         CameraStartMove_House.isMoving = false;
 
         BookcaseControl_House._bookNum = 0;
+
+        AvatarControl_House.isTalk = false;
+
+        DialogueControl_House.isBirdTalk = false;
+        DialogueControl_House.isCatTalk = false;
+        DialogueControl_House._paragraph = 0;
+        DialogueControl_House.isAutoNext = false;
+        DialogueControl_House.isAutoPlot = false;
     }
     void GameDay01()
     {
@@ -131,6 +137,9 @@ public class GameControl_House : MonoBehaviour
             gameDay = _day,
             gameStoryNum = _storyNum,
             playerCoins = _MyCoin,
+
+            isSpecialEnd = Showcase_House.isSpecialEnd,
+            storyBookPaperNum = Showcase_House._storyBookPaperNum
         };
 
         SaveManagerControl.Instance.SaveGame(gameData);
