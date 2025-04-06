@@ -9,7 +9,6 @@ public class PaperEffectsControl_Workbench : MonoBehaviour
     public static bool isShowDestoryPaperOut = false;
     bool isOnce = true;
 
-
     void Update()
     {
         Showcase();
