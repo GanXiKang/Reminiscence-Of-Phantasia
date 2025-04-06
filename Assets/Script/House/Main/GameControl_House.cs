@@ -120,6 +120,8 @@ public class GameControl_House : MonoBehaviour
         UIControl_House.isDialogue = false;
         UIControl_House.isCoinAppear = false;
         UIControl_House.isEndingAppear = false;
+
+        ScissorsControl_Workbench.isUseScissors = false;
     }
     void GameDay01()
     {
