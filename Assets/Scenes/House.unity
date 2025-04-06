@@ -35024,7 +35024,6 @@ GameObject:
   - component: {fileID: 1275040583}
   - component: {fileID: 1275040582}
   - component: {fileID: 1275040581}
-  - component: {fileID: 1275040587}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -35062,7 +35061,6 @@ MonoBehaviour:
   BGM: {fileID: 437453298}
   onClick: {fileID: 8300000, guid: be2afbaf654b3304093e068dc2c937c1, type: 3}
   open: {fileID: 8300000, guid: 8651bec12aa7f36489ecf7ce62e7feb9, type: 3}
-  save: {fileID: 8300000, guid: 8e2f92d3095720c4891378e6e502fcaa, type: 3}
   leave: {fileID: 8300000, guid: ed07cd7a178520c4387ff3f7034325b2, type: 3}
   settingsUI: {fileID: 1747420577}
   setting: {fileID: 1146000308}
@@ -35420,18 +35418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 437453298}
   morning: {fileID: 8300000, guid: ca16ba7c7d6505c4d80129f3495531df, type: 3}
---- !u!114 &1275040587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275040576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 755803735e6a69c4a902ebf6b61b6e90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1285031402
 PrefabInstance:
   m_ObjectHideFlags: 0
