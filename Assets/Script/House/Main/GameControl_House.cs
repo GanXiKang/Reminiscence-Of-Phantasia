@@ -122,6 +122,8 @@ public class GameControl_House : MonoBehaviour
         UIControl_House.isEndingAppear = false;
 
         ScissorsControl_Workbench.isUseScissors = false;
+        WorkbenchControl_House.isFinishClickColor = false;
+        WorkbenchControl_House.isFinishColor = false;
     }
     void GameDay01()
     {
