@@ -19,6 +19,7 @@ public class GameControl_House : MonoBehaviour
         switch (_day)
         {
             case 1:
+                GameDay01();
                 UIAboveObject_House.isAboveDoor = true;
                 InteractableControl_House.isColliderActive[2] = true;
 
@@ -27,6 +28,7 @@ public class GameControl_House : MonoBehaviour
                 break;
 
             case 2:
+                GameDay02();
                 DoorControl_House.isBird = true;
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveBed = false;
@@ -38,6 +40,7 @@ public class GameControl_House : MonoBehaviour
                 break;
 
             case 3:
+                GameDay03();
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveBed = false;
                 UIAboveObject_House.isStoreHintActive = false;
@@ -51,6 +54,7 @@ public class GameControl_House : MonoBehaviour
                 break;
 
             case 4:
+                GameDay04();
                 UIAboveObject_House.isAboveWorkbench = true;
                 UIAboveObject_House.isAboveBed = false;
                 UIAboveObject_House.isStoreHintActive = false;
@@ -86,6 +90,38 @@ public class GameControl_House : MonoBehaviour
         CameraStartMove_House.isMoving = false;
 
         BookcaseControl_House._bookNum = 0;
+    }
+    void GameDay01()
+    {
+        BookcaseControl_House.bookActive[0] = false;
+        BookcaseControl_House.bookActive[1] = false;
+        BookcaseControl_House.bookActive[2] = false;
+        BookcaseControl_House.bookActive[3] = false;
+        BookcaseControl_House._bookActiveNum = 0;
+    }
+    void GameDay02()
+    {
+        BookcaseControl_House.bookActive[0] = true;
+        BookcaseControl_House.bookActive[1] = false;
+        BookcaseControl_House.bookActive[2] = false;
+        BookcaseControl_House.bookActive[3] = false;
+        BookcaseControl_House._bookActiveNum = 1;
+    }
+    void GameDay03()
+    {
+        BookcaseControl_House.bookActive[0] = true;
+        BookcaseControl_House.bookActive[1] = true;
+        BookcaseControl_House.bookActive[2] = false;
+        BookcaseControl_House.bookActive[3] = false;
+        BookcaseControl_House._bookActiveNum = 2;
+    }
+    void GameDay04()
+    {
+        BookcaseControl_House.bookActive[0] = true;
+        BookcaseControl_House.bookActive[1] = true;
+        BookcaseControl_House.bookActive[2] = true;
+        BookcaseControl_House.bookActive[3] = false;
+        BookcaseControl_House._bookActiveNum = 3;
     }
 
     void Update()
