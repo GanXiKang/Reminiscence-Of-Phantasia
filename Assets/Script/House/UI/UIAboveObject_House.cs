@@ -27,11 +27,6 @@ public class UIAboveObject_House : MonoBehaviour
     public Vector3 bookcaseOffset;
     public static bool isAboveBookcase = false;
 
-    [Header("Showcase")]
-    public Transform showcase;
-    public Vector3 showcaseOffset;
-    public static bool isAboveShowcase = false;
-
     [Header("Hint")]
     public GameObject hint;
     public GameObject store;
@@ -60,8 +55,7 @@ public class UIAboveObject_House : MonoBehaviour
         return isAboveWorkbench ||
                (isAboveDoor && !isStoreHintActive) ||
                isAboveBed ||
-               isAboveBookcase ||
-               isAboveShowcase;
+               isAboveBookcase;
     }
     bool isStoreHintAppear()
     {
@@ -98,12 +92,6 @@ public class UIAboveObject_House : MonoBehaviour
             Vector3 bookcasePos = bookcase.position + bookcaseOffset;
             hint.GetComponent<RectTransform>().position = bookcasePos;
             hintName.text = "書櫃";
-        }
-        else if (isAboveShowcase)
-        {
-            Vector3 showcasePos = showcase.position + showcaseOffset;
-            hint.GetComponent<RectTransform>().position = showcasePos;
-            hintName.text = "展示臺";
         }
 
         if (isStoreHintActive)
