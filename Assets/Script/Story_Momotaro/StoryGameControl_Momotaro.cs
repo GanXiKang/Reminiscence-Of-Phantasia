@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryGameControl_Momotaro : MonoBehaviour
 {
@@ -157,6 +158,10 @@ public class StoryGameControl_Momotaro : MonoBehaviour
             {
                 StoryUIControl_Momotaro.isStoryEnding = true;
                 Showcase_House.isSpecialEnd[2] = true;
+            }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                SceneManager.LoadScene(4);
             }
             if (Input.GetKeyDown(KeyCode.Alpha8))
             {

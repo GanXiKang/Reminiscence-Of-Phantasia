@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryGameControl_Girl : MonoBehaviour
 {
@@ -122,6 +121,10 @@ public class StoryGameControl_Girl : MonoBehaviour
             {
                 StoryUIControl_Girl.isStoryEnding = true;
                 Showcase_House.isSpecialEnd[1] = true;
+            }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                SceneManager.LoadScene(3);
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) 
             {
