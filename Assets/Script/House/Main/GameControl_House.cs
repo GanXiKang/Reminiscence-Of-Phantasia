@@ -112,7 +112,7 @@ public class GameControl_House : MonoBehaviour
         PlayerControl_House.isSleep = false;
 
 
-}
+    }
     void GameDay01()
     {
         BookcaseControl_House.bookActive[0] = false;
