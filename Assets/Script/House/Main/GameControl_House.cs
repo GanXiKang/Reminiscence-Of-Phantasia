@@ -116,13 +116,10 @@ public class GameControl_House : MonoBehaviour
 
         InteractableControl_House.isInteractable = false;
         InteractableControl_House.isCatSeeWorkbench = false;
+        InteractableControl_House.isBirdDoorBell = false;
         for (int c = 1; c < InteractableControl_House.isColliderActive.Length; c++)
             InteractableControl_House.isColliderActive[c] = false;
 
-        
-        InteractableControl_House.isCatLeave = false;
-        InteractableControl_House.isBirdDoorBell = false;
-        InteractableControl_House.isBirdEntrust = false;
         InteractableControl_House.isBirdSeeBed = false;
         InteractableControl_House.isBirdSeeBookcase = false;
         InteractableControl_House.isBirdLeave = false;
@@ -143,6 +140,8 @@ public class GameControl_House : MonoBehaviour
         StoreControl_House.isPlotBut = false;
 
         InteractableControl_House.isColliderActive[2] = true;
+        InteractableControl_House.isCatLeave = false;
+        InteractableControl_House.isBirdEntrust = false;
     }
     void GameDay02()
     {
@@ -155,6 +154,8 @@ public class GameControl_House : MonoBehaviour
         StoreControl_House.isPlotBut = true;
 
         InteractableControl_House.isColliderActive[1] = true;
+        InteractableControl_House.isCatLeave = true;
+        InteractableControl_House.isBirdEntrust = true;
     }
     void GameDay03()
     {
@@ -169,6 +170,8 @@ public class GameControl_House : MonoBehaviour
         InteractableControl_House.isColliderActive[1] = true;
         InteractableControl_House.isColliderActive[4] = true;
         InteractableControl_House.isColliderActive[5] = true;
+        InteractableControl_House.isCatLeave = true;
+        InteractableControl_House.isBirdEntrust = true;
     }
     void GameDay04()
     {
@@ -183,6 +186,8 @@ public class GameControl_House : MonoBehaviour
         InteractableControl_House.isColliderActive[1] = true;
         InteractableControl_House.isColliderActive[4] = true;
         InteractableControl_House.isColliderActive[5] = true;
+        InteractableControl_House.isCatLeave = true;
+        InteractableControl_House.isBirdEntrust = true;
     }
     void SaveGame()
     {
