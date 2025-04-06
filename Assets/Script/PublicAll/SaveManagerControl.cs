@@ -9,9 +9,9 @@ public class GameData
     public int gameDay;
     public int gameStoryNum;
     public int playerCoins;
-
-    public bool[] isSpecialEnd = new bool[4];
     public int[] storyBookPaperNum = new int[5];
+    public bool[] isSpecialEnd = new bool[4];
+    public bool[] isColorUnlock = new bool[11];
 }
 
 public class SaveManagerControl : MonoBehaviour
