@@ -26,9 +26,9 @@ public class ColliderControl_House : MonoBehaviour
             {
                 if (InteractableControl_House.isCatSeeWorkbench)
                 {
+                    InteractableControl_House.isCatSeeWorkbench = false;
                     CameraControl_House.isFreeLook = false;
                     CameraControl_House.isLookWorkPlot = true;
-                    InteractableControl_House.isCatSeeWorkbench = false;
                     UIControl_House.isDialogue = true;
                     DialogueControl_House.isCatTalk = true;
                     DialogueControl_House._textCount = 21;
