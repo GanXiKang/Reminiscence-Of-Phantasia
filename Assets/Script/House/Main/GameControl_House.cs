@@ -34,7 +34,7 @@ public class GameControl_House : MonoBehaviour
                 GameDay04();
                 break;
         }
-        //SaveGame();
+        SaveGame();
     }
 
     void GameStatic()
@@ -192,10 +192,10 @@ public class GameControl_House : MonoBehaviour
             gameDay = _day,
             gameStoryNum = _storyNum,
             playerCoins = _MyCoin,
-
+            storyBookPaperNum = Showcase_House._storyBookPaperNum,
             isSpecialEnd = Showcase_House.isSpecialEnd,
-            storyBookPaperNum = Showcase_House._storyBookPaperNum
-        };
+            isColorUnlock = WorkbenchControl_House.isColorUnlock,
+};
 
         SaveManagerControl.Instance.SaveGame(gameData);
     }
