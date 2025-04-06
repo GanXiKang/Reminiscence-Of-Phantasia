@@ -8,7 +8,6 @@ public class DontDestoryControl_House : MonoBehaviour
 
     void Start()
     {
-        print("YOUYOUYOU");
         if (instance == null)
         {
             instance = this;
