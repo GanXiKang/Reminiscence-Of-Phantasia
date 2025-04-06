@@ -20,41 +20,18 @@ public class GameControl_House : MonoBehaviour
         {
             case 1:
                 GameDay01();
-                UIAboveObject_House.isAboveDoor = true;
-                UIControl_House.isDialogue = true;
-                DialogueControl_House._textCount = 1;
                 break;
 
             case 2:
                 GameDay02();
-                DoorControl_House.isBird = true;
-                UIAboveObject_House.isAboveWorkbench = true;
-                UIAboveObject_House.isAboveBed = false;
-                
-
-                UIControl_House.isDialogue = true;
-                DialogueControl_House.isBirdTalk = true;
-                DialogueControl_House._textCount = 30;
                 break;
 
             case 3:
                 GameDay03();
-                UIAboveObject_House.isAboveWorkbench = true;
-                UIAboveObject_House.isAboveBed = false;
-                UIAboveObject_House.isStoreHintActive = false;
-
-                UIControl_House.isDialogue = true;
-                DialogueControl_House._textCount = 17;
                 break;
 
             case 4:
                 GameDay04();
-                UIAboveObject_House.isAboveWorkbench = true;
-                UIAboveObject_House.isAboveBed = false;
-                UIAboveObject_House.isStoreHintActive = false;
-
-                UIControl_House.isDialogue = true;
-                DialogueControl_House._textCount = 46;
                 break;
         }
         //SaveGame();
@@ -107,27 +84,34 @@ public class GameControl_House : MonoBehaviour
         DoorControl_House.isLoading = false;
         DoorControl_House.isEntrust = false;
         DoorControl_House.isStore = false;
-        DoorControl_House.isBird = false;
         DoorControl_House.isCat = false;
         DoorControl_House.isLeave = false;
+        DoorControl_House.isBird = _day == 2;
 
         EntrustControl_House.isEntrustActive = false;
         StoreControl_House.isStoreActive = false;
+        StoreControl_House.isPlotBut = _day != 1;
 
         InteractableControl_House.isInteractable = false;
         InteractableControl_House.isCatSeeWorkbench = false;
         InteractableControl_House.isBirdDoorBell = false;
+        InteractableControl_House.isBirdLeave = false;
+        InteractableControl_House.isReadMomLetter = false;
+        InteractableControl_House.isBookcasePlotOnce = false;
+        InteractableControl_House.isBirdFirstMeet = false;
+        InteractableControl_House.isEnding = false;
+        InteractableControl_House.isMomEntrust = _day == 3;
         InteractableControl_House.isCatLeave = _day != 1;
         InteractableControl_House.isBirdEntrust = _day != 1;
         for (int c = 1; c < InteractableControl_House.isColliderActive.Length; c++)
             InteractableControl_House.isColliderActive[c] = false;
 
-        InteractableControl_House.isBirdLeave = false;
-        InteractableControl_House.isReadMomLetter = false;
-        InteractableControl_House.isBookcasePlotOnce = false;
-        InteractableControl_House.isBirdFirstMeet = false;
-        InteractableControl_House.isMomEntrust = true;
-        InteractableControl_House.isEnding = false;
+        PlayerControl_House.isPlayerEndPoint = false;
+        PlayerControl_House.isWave = false;
+        PlayerControl_House.isHappy = false;
+        PlayerControl_House.isSleep = false;
+
+
 }
     void GameDay01()
     {
@@ -137,11 +121,11 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 0;
 
-        StoreControl_House.isPlotBut = false;
-
         InteractableControl_House.isColliderActive[2] = true;
-        InteractableControl_House.isCatLeave = false;
-        InteractableControl_House.isBirdEntrust = false;
+        UIAboveObject_House.isAboveDoor = true;
+
+        UIControl_House.isDialogue = true;
+        DialogueControl_House._textCount = 1;
     }
     void GameDay02()
     {
@@ -151,9 +135,13 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 1;
 
-        StoreControl_House.isPlotBut = true;
-
         InteractableControl_House.isColliderActive[1] = true;
+        UIAboveObject_House.isAboveWorkbench = true;
+        UIAboveObject_House.isAboveBed = false;
+
+        UIControl_House.isDialogue = true;
+        DialogueControl_House.isBirdTalk = true;
+        DialogueControl_House._textCount = 30;
     }
     void GameDay03()
     {
@@ -163,11 +151,15 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 2;
 
-        StoreControl_House.isPlotBut = true;
-
         InteractableControl_House.isColliderActive[1] = true;
         InteractableControl_House.isColliderActive[4] = true;
         InteractableControl_House.isColliderActive[5] = true;
+        UIAboveObject_House.isAboveWorkbench = true;
+        UIAboveObject_House.isAboveBed = false;
+        UIAboveObject_House.isStoreHintActive = false;
+
+        UIControl_House.isDialogue = true;
+        DialogueControl_House._textCount = 17;
     }
     void GameDay04()
     {
@@ -177,11 +169,15 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 3;
 
-        StoreControl_House.isPlotBut = true;
-
         InteractableControl_House.isColliderActive[1] = true;
         InteractableControl_House.isColliderActive[4] = true;
         InteractableControl_House.isColliderActive[5] = true;
+        UIAboveObject_House.isAboveWorkbench = true;
+        UIAboveObject_House.isAboveBed = false;
+        UIAboveObject_House.isStoreHintActive = false;
+
+        UIControl_House.isDialogue = true;
+        DialogueControl_House._textCount = 46;
     }
     void SaveGame()
     {
