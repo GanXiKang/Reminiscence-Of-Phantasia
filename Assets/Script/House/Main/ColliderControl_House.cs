@@ -69,8 +69,6 @@ public class ColliderControl_House : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
-        {
             InteractableControl_House.isInteractable = false;
-        }
     }
 }
