@@ -123,8 +123,6 @@ public class GameControl_House : MonoBehaviour
         for (int c = 1; c < InteractableControl_House.isColliderActive.Length; c++)
             InteractableControl_House.isColliderActive[c] = false;
 
-        
-        InteractableControl_House.isBirdSeeBookcase = false;
         InteractableControl_House.isBirdLeave = false;
         InteractableControl_House.isReadMomLetter = false;
         InteractableControl_House.isBookcasePlotOnce = false;
