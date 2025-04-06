@@ -422,6 +422,7 @@ public class DialogueControl_House : MonoBehaviour
                 CameraControl_House.isFreeLook = true;
                 CameraControl_House.isLookDoorPlot = false;
                 InteractableControl_House.isColliderActive[3] = true;
+                InteractableControl_House.isBirdSeeBed = true;
                 UIAboveObject_House.isAboveDoor = false;
                 UIAboveObject_House.isAboveBed = true;
                 BirdControl_House._goPointNum = 1;
