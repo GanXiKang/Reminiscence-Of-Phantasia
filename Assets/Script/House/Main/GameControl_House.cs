@@ -117,7 +117,6 @@ public class GameControl_House : MonoBehaviour
         InteractableControl_House.isInteractable = false;
         InteractableControl_House.isCatSeeWorkbench = false;
         InteractableControl_House.isBirdDoorBell = false;
-        InteractableControl_House.isBirdSeeBed = false;
         InteractableControl_House.isCatLeave = _day != 1;
         InteractableControl_House.isBirdEntrust = _day != 1;
         for (int c = 1; c < InteractableControl_House.isColliderActive.Length; c++)

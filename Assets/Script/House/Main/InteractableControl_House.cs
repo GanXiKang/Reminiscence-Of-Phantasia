@@ -27,7 +27,6 @@ public class InteractableControl_House : MonoBehaviour
     public static bool isCatLeave = false;
     public static bool isBirdDoorBell = false;
     public static bool isBirdEntrust = false;
-    public static bool isBirdSeeBed = false;
     public static bool isBirdLeave = false;
     public static bool isReadMomLetter = false;
     public static bool isBookcasePlotOnce = false;
