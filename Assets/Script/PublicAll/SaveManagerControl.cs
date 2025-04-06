@@ -9,7 +9,6 @@ public class GameData
     public int gameDay;
     public int gameStoryNum;
     public int playerCoins;
-    public string currentSceneName;
 }
 
 public class SaveManagerControl : MonoBehaviour
