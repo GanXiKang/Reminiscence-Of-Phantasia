@@ -11,7 +11,7 @@ public class PlayerExpression_House : MonoBehaviour
     public Material openEyes;
     public Material closeEyes;
     public Material happy;
-    public Material Sad;
+    public Material sleep;
     bool isBlink;
     bool isHappyExp;
     bool isSleepExp;
@@ -85,7 +85,7 @@ public class PlayerExpression_House : MonoBehaviour
                     StopCoroutine(blinkCoroutine);
                     blinkCoroutine = null;
                 }
-                smr.material = closeEyes;
+                smr.material = sleep;
             }
         }
     }
