@@ -17092,8 +17092,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 2, y: -0.5, z: -0.5}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
+  m_Center: {x: 1.8, y: -0.5, z: -0.5}
 --- !u!114 &672602023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54555,7 +54555,7 @@ GameObject:
   m_Layer: 0
   m_Name: StoryBookPos
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -54567,13 +54567,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986440825}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19583985, y: -0.6794459, z: 0.19583985, w: 0.6794459}
-  m_LocalPosition: {x: -2.4950447, y: 2.236901, z: -10.579942}
+  m_LocalRotation: {x: 0.15304591, y: -0.6903456, z: 0.15304591, w: 0.6903456}
+  m_LocalPosition: {x: -2.733, y: 2.065, z: -10.579942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 833199412}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: -90, z: 0}
 --- !u!1 &2001214939
 GameObject:
   m_ObjectHideFlags: 0
