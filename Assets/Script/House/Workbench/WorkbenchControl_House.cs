@@ -76,6 +76,7 @@ public class WorkbenchControl_House : MonoBehaviour
 
     void Start()
     {
+        _process = 0;
         Process();
     }
 
