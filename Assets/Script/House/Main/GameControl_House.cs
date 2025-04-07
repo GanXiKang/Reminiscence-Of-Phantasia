@@ -126,6 +126,7 @@ public class GameControl_House : MonoBehaviour
         WorkbenchControl_House.isFinishCut = false;
         WorkbenchControl_House.isFinishClickColor = false;
         WorkbenchControl_House.isFinishColor = false;
+        WorkbenchControl_House.isRenewColorLock = true;
     }
     void GameDay01()
     {
