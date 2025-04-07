@@ -41,18 +41,18 @@ public class SaveManagerControl : MonoBehaviour
     public void SaveGame(GameData gameData)
     {
         string json = JsonUtility.ToJson(gameData);
+        string path = Application.persistentDataPath + "/saveData.json";
         File.WriteAllText(saveFilePath, json);
         Debug.Log("Game saved to " + saveFilePath);
     }
 
     public GameData LoadGame()
     {
+        string path = Application.persistentDataPath + "/saveData.json";
         if (File.Exists(saveFilePath))
         {
             string json = File.ReadAllText(saveFilePath);
-            GameData gameData = JsonUtility.FromJson<GameData>(json);
-
-            return gameData;
+            return JsonUtility.FromJson<GameData>(json);
         }
         else
         {
