@@ -63,7 +63,7 @@ public class WorkbenchControl_House : MonoBehaviour
     public static bool isFinishClickColor = false;
     public static bool isFinishColor = false;
     public static bool[] isChangeColor = new bool[13];
-    public static bool[] isColorUnlock = new bool[11];
+    public static bool[] isColorUnlock = new bool[10];
     public static bool isRenewColorLock = false;
 
     [Header("Step4")]
