@@ -24,6 +24,7 @@ public class CustomCursorControl_Workbench : MonoBehaviour
     public GameObject objectToMove;
 
     Texture2D currentCursorTexture = null;
+    Coroutine scissorsRoutine;
 
     void Update()
     {
@@ -45,12 +46,16 @@ public class CustomCursorControl_Workbench : MonoBehaviour
                     if (ScissorsControl_Workbench.isUseScissors)
                     {
                         if (!isAnim)
-                            StartCoroutine(ScissorsAnimation());
+                            scissorsRoutine = StartCoroutine(ScissorsAnimation());
                     }
                     else
                     {
-                        StopAllCoroutines();
-                        isAnim = false;
+                        if (scissorsRoutine != null)
+                        {
+                            StopCoroutine(scissorsRoutine);
+                            scissorsRoutine = null;
+                            isAnim = false;
+                        }
                     }
 
                     MoveObjectWithMouse();
@@ -72,6 +77,13 @@ public class CustomCursorControl_Workbench : MonoBehaviour
         }
         else
         {
+            if (isAnim)
+            {
+                StopCoroutine(scissorsRoutine);
+                isAnim = false;
+                isScissors = false;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 isClick = true;
