@@ -58,6 +58,7 @@ public class GameControl_House : MonoBehaviour
         CameraStartMove_House.isMoving = false;
 
         BookcaseControl_House._bookNum = 0;
+        BookcaseControl_House.isNewBookActive = true;
 
         AvatarControl_House.isTalk = false;
 
