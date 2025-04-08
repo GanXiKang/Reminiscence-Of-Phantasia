@@ -113,13 +113,9 @@ public class Showcase_House : MonoBehaviour
     void Limit()
     {
         if (_showNum < 0)
-        {
             _showNum = 0;
-        }
         if (_showNum >= storyBook.Length)
-        {
             _showNum = storyBook.Length - 1;
-        }
     }
     void WaitOpenBookPaper()
     {
