@@ -147,9 +147,9 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = false;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 1;
+        BirdControl_House._goPointNum = 1;
 
         InteractableControl_House.isColliderActive[1] = true;
-        
 
         UIControl_House.isDialogue = true;
         DialogueControl_House.isBirdTalk = true;
@@ -177,6 +177,7 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = true;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 3;
+        BirdControl_House._goPointNum = 0;
 
         InteractableControl_House.isColliderActive[1] = true;
         InteractableControl_House.isColliderActive[4] = true;
