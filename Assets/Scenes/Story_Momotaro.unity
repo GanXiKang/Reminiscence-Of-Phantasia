@@ -27556,7 +27556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1487504410
 Transform:
   m_ObjectHideFlags: 0
@@ -28886,7 +28886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1597263628
 Transform:
   m_ObjectHideFlags: 0
@@ -30565,6 +30565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3657530923141558976, guid: ac03a10388c8cd748acc3b32c742ded6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 69.8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ac03a10388c8cd748acc3b32c742ded6, type: 3}
       propertyPath: m_Name
       value: New_Forest
@@ -30572,6 +30576,18 @@ PrefabInstance:
     - target: {fileID: 2916157298149685985, guid: ac03a10388c8cd748acc3b32c742ded6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347154515666061948, guid: ac03a10388c8cd748acc3b32c742ded6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 43.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347154515666061948, guid: ac03a10388c8cd748acc3b32c742ded6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347154515666061948, guid: ac03a10388c8cd748acc3b32c742ded6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 93.1
       objectReference: {fileID: 0}
     - target: {fileID: 6974592450029834896, guid: ac03a10388c8cd748acc3b32c742ded6, type: 3}
       propertyPath: m_IsActive
