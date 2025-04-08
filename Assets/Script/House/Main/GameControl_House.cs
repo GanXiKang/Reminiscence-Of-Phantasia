@@ -72,7 +72,6 @@ public class GameControl_House : MonoBehaviour
         BirdControl_House.isDeliver_Close = false;
         BirdControl_House.isHappy = false;
         BirdControl_House.isBye = false;
-        BirdControl_House._goPointNum = 0;
 
         CatControl_House.isHappy = false;
         CatControl_House.isWave = false;
@@ -134,6 +133,7 @@ public class GameControl_House : MonoBehaviour
         BookcaseControl_House.bookActive[2] = false;
         BookcaseControl_House.bookActive[3] = false;
         BookcaseControl_House._bookActiveNum = 0;
+        BirdControl_House._goPointNum = 0;
 
         InteractableControl_House.isColliderActive[2] = true;
 
