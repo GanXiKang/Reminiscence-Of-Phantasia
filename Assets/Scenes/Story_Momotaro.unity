@@ -22931,6 +22931,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7486359992484562764, guid: 5e3d23e2d7a36fc418589d23fdd7e179, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 57.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486359992484562764, guid: 5e3d23e2d7a36fc418589d23fdd7e179, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486359992484562764, guid: 5e3d23e2d7a36fc418589d23fdd7e179, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -141.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -26829,7 +26841,6 @@ MonoBehaviour:
   BGM: {fileID: 391252026}
   onClick: {fileID: 8300000, guid: be2afbaf654b3304093e068dc2c937c1, type: 3}
   open: {fileID: 8300000, guid: 8651bec12aa7f36489ecf7ce62e7feb9, type: 3}
-  save: {fileID: 8300000, guid: 8e2f92d3095720c4891378e6e502fcaa, type: 3}
   leave: {fileID: 8300000, guid: ed07cd7a178520c4387ff3f7034325b2, type: 3}
   settingsUI: {fileID: 851443300}
   setting: {fileID: 366933206}
