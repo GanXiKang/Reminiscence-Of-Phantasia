@@ -90,7 +90,7 @@ public class GameControl_House : MonoBehaviour
 
         EntrustControl_House.isEntrustActive = false;
         StoreControl_House.isStoreActive = false;
-        StoreControl_House._enterCount = _day;
+        StoreControl_House._enterCount = _day - 1;
         StoreControl_House.isPlotBut = _day != 1;
 
         InteractableControl_House.isInteractable = false;
