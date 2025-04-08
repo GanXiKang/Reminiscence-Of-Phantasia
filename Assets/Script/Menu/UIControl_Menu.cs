@@ -55,11 +55,12 @@ public class UIControl_Menu : MonoBehaviour
         GameControl_House._day = 1;
         GameControl_House._MyCoin = 300;
         GameControl_House._storyNum = 0;
-        for (int a = 1; a < 4; a++)
+        for (int a = 0; a < 4; a++)
+        {
             Showcase_House._storyBookPaperNum[a] = 0;
-        for (int b = 1; b < 4; b++)
-            Showcase_House.isSpecialEnd[b] = false;
-        for (int c = 1; c < 10; c++)
+            Showcase_House.isSpecialEnd[a] = false;
+        }
+        for (int c = 0; c < 10; c++)
             WorkbenchControl_House.isColorUnlock[c] = false;
 
         Invoke("GoToStartMovie", 1f);
