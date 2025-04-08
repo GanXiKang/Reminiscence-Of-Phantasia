@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class UIControl_Menu : MonoBehaviour
 {
@@ -51,9 +52,17 @@ public class UIControl_Menu : MonoBehaviour
     {
         BGM.PlayOneShot(onClick);
         TransitionUIControl.isTransitionUIAnim_In = true;
+
         GameControl_House._day = 1;
         GameControl_House._MyCoin = 300;
         GameControl_House._storyNum = 0;
+        for (int a = 1; a < 4; a++)
+            Showcase_House._storyBookPaperNum[a] = 0;
+        for (int b = 1; b < 4; b++)
+            Showcase_House.isSpecialEnd[b] = false;
+        for (int c = 1; c < 10; c++)
+            WorkbenchControl_House.isColorUnlock[c] = false;
+
         Invoke("GoToStartMovie", 1f);
     }
     public void Button_Continue()
@@ -65,6 +74,10 @@ public class UIControl_Menu : MonoBehaviour
         GameControl_House._day = gameData.gameDay;
         GameControl_House._MyCoin = gameData.playerCoins;
         GameControl_House._storyNum = gameData.gameStoryNum;
+        Showcase_House._storyBookPaperNum = gameData.storyBookPaperNum;
+        Showcase_House.isSpecialEnd = gameData.isSpecialEnd;
+        WorkbenchControl_House.isColorUnlock = gameData.isColorUnlock;
+
         SceneManager.LoadScene(1);
     }
     public void Button_Setting()
