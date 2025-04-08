@@ -19,7 +19,7 @@ public class Showcase_House : MonoBehaviour
 
     [Header("StoryBookPoint")]
     public GameObject[] storyBookPoint;
-    public static int[] _storyBookPaperNum = new int[5];
+    public static int[] _storyBookPaperNum = new int[4];
 
     [Header("Paper")]
     public GameObject[] paper;
