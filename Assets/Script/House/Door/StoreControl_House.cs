@@ -181,7 +181,6 @@ public class StoreControl_House : MonoBehaviour
         if (!isPlotBut) return;
         if (isCloseUI) return;
 
-        print("ok");
         BGM.PlayOneShot(leave);
         isCloseUI = true;
         CatControl_House.isBag_On = true;
