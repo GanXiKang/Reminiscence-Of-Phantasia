@@ -181,7 +181,7 @@ public class StorySuppliesGame_Prince : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha9))
             {
                 _gameTime = 2f;
-                _score = 3000;
+                _score = 4000;
             }
         }
     }
