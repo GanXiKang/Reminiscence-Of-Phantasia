@@ -19,8 +19,10 @@ public class PlayerControl_House : MonoBehaviour
     private Vector3 _moveInput;
     private Vector3 _velocity;
 
-    [Header("EndingPoint")]
+    [Header("Point")]
     public Transform endingPoint;
+    public Transform doorPoint;
+    public Transform workbenchPoint;
     public static bool isPlayerEndPoint = false;
 
     //Animation
@@ -42,7 +44,7 @@ public class PlayerControl_House : MonoBehaviour
         PlayerMove();
         PlayerOnTheGround();
         Animation();
-        PlayerEndingPoint();
+        PlayerPoint();
     }
 
     void OnMove(InputValue value)
@@ -83,12 +85,25 @@ public class PlayerControl_House : MonoBehaviour
         anim.SetBool("isHappy", isHappy);
         anim.SetBool("isSleep", isSleep);
     }
-    void PlayerEndingPoint()
+    void PlayerPoint()
     {
-        if (!isPlayerEndPoint) return;
+        if (CameraControl_House.isLookDoorPlot)
+        {
+            transform.position = doorPoint.position;
+            transform.rotation = doorPoint.rotation;
+        }
 
-        transform.position = endingPoint.position;
-        transform.rotation = endingPoint.rotation;
+        if (CameraControl_House.isLookWorkPlot)
+        {
+            transform.position = workbenchPoint.position;
+            transform.rotation = workbenchPoint.rotation;
+        }
+
+        if (isPlayerEndPoint)
+        {
+            transform.position = endingPoint.position;
+            transform.rotation = endingPoint.rotation;
+        }
     }
 
     bool isCanMove()
