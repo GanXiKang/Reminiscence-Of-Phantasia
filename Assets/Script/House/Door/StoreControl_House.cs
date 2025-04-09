@@ -16,6 +16,7 @@ public class StoreControl_House : MonoBehaviour
     public static bool isStoreActive = false;
     public static int _enterCount;
     bool isEnterOnce = true;
+    bool isCloseUI = false;
 
     [Header("Coin")]
     public Text coinAmount;
@@ -178,8 +179,11 @@ public class StoreControl_House : MonoBehaviour
     public void Button_Leave()
     {
         if (!isPlotBut) return;
+        if (isCloseUI) return;
 
+        print("ok");
         BGM.PlayOneShot(leave);
+        isCloseUI = true;
         CatControl_House.isBag_On = true;
         CatControl_House.isBye = true;
         DialogueControl_House.isAutoNext = true;
@@ -190,6 +194,7 @@ public class StoreControl_House : MonoBehaviour
     void LeaveState()
     {
         isEnterOnce = true;
+        isCloseUI = false;
         DoorControl_House.isLeave = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 7;
