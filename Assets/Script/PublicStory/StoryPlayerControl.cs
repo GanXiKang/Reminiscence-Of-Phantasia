@@ -159,8 +159,6 @@ public class StoryPlayerControl : MonoBehaviour
                StoryInteractableControl_Girl.isPlayerMove &&
                !StoryLoadingScene_Girl.isLoading &&
                !StoryUIControl_Girl.isDialogue &&
-               !StoryUIControl_Girl.isStoryStart &&
-               !StoryUIControl_Girl.isStoryEnding &&
                !StoryThermometerControl_Girl.isDead &&
 
                StoryInteractableControl_Momotaro.isPlayerMove &&
@@ -168,8 +166,6 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryLoadingScene_Momotaro.isPlotAnimator &&
                !StoryUIControl_Momotaro.isDialogue &&
                !StoryUIControl_Momotaro.isPerformances &&
-               !StoryUIControl_Momotaro.isStoryStart &&
-               !StoryUIControl_Momotaro.isStoryEnding &&
                !StoryRiceDumpling_Momotaro.isEat &&
                !StoryPlayerAnimator_Momotaro.isStone &&
                !StoryStrongWind_Momotaro.isBlownAway &&
@@ -179,8 +175,6 @@ public class StoryPlayerControl : MonoBehaviour
                !StoryLoadingScene_Prince.isLoading &&
                !StoryUIControl_Prince.isDialogue &&
                !StoryUIControl_Prince.isSuppliesActive &&
-               !StoryUIControl_Prince.isStoryStart &&
-               !StoryUIControl_Prince.isStoryEnding &&
                !StorySkillControl_Prince.isClockActice &&
                !StoryGhostControl_Prince.isWatchSkill;
     }
