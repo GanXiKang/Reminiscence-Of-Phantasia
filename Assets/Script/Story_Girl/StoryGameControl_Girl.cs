@@ -31,6 +31,9 @@ public class StoryGameControl_Girl : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
     bool isClick = false;
 
+    [Header("SceneSound")]
+    public AudioSource[] sceneSound;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -114,6 +117,7 @@ public class StoryGameControl_Girl : MonoBehaviour
         TeachWall();
         PlayerResurrection();
         MouseCursor();
+        SceneSound();
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -188,6 +192,12 @@ public class StoryGameControl_Girl : MonoBehaviour
     void FalseisClick()
     {
         isClick = false;
+    }
+    void SceneSound()
+    {
+        sceneSound[0].volume = SettingControl.volumeBGM;
+        sceneSound[1].volume = SettingControl.volumeBGM;
+        sceneSound[2].volume = SettingControl.volumeBGM;
     }
 
     IEnumerator ResurrectionState()
