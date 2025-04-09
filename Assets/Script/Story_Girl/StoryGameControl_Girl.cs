@@ -50,8 +50,6 @@ public class StoryGameControl_Girl : MonoBehaviour
         isResurrection = false;
         isRenewTemperature = false;
 
-        StoryTeachControl.isTeachActive = false;
-
         StoryPileWood_Girl.isFireActice = false;
 
         StoryExitControl_Girl.isExit = false;
