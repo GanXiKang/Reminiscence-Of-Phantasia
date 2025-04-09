@@ -54,4 +54,17 @@ public class StoryColliderControl_Girl : MonoBehaviour
             }
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            switch (_whatCollider)
+            {
+                case 3:
+                    AudioSource sound = GetComponent<AudioSource>();
+                    sound.Stop();
+                    break;
+            }
+        }
+    }
 }
