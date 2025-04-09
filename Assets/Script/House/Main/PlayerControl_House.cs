@@ -14,6 +14,7 @@ public class PlayerControl_House : MonoBehaviour
 
     [Header("Movement")]
     public float _moveSpeed = 7f;
+    public float _rotationSpeed = 5f;
     public float _gravity = 20f;
     private Vector3 _moveInput;
     private Vector3 _velocity;
@@ -55,10 +56,12 @@ public class PlayerControl_House : MonoBehaviour
         Vector3 cameraForward = playerCamera.transform.forward;
         cameraForward.y = 0;
         cameraForward.Normalize();
+
         Vector3 movement = cameraForward * _moveInput.z + playerCamera.transform.right * _moveInput.x;
         if (movement != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(movement);
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
             anim.SetBool("isWalk", true);
         }
         else
