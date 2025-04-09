@@ -49,6 +49,8 @@ public class StoryGameControl_Momotaro : MonoBehaviour
         isReadly = false;
         isParrotActive = false;
 
+        StoryTeachControl.isTeachActive = false;
+
         StoryColliderControl_Momotaro.isStoneSuccess = true;
 
         StoryExitControl_Momotaro.isExit = false;

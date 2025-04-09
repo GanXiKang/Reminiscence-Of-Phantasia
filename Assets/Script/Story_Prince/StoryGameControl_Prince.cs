@@ -67,6 +67,8 @@ public class StoryGameControl_Prince : MonoBehaviour
         isBroken = false;
         isFutureGood = false;
 
+        StoryTeachControl.isTeachActive = false;
+
         StoryGardenControl_Prince.isPlanting = false;
         StoryGardenControl_Prince.isDigPlant = false;
         StoryGardenControl_Prince.isCherryTree = false;
