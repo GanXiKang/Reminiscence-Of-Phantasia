@@ -9,12 +9,12 @@ public class StoryColliderControl_Girl : MonoBehaviour
 
     void Update()
     {
-        if (_whatCollider == 2)
+        switch (_whatCollider)
         {
-            if (StoryInteractableControl_Girl.isNeedHelp)
-            {
-                gameObject.GetComponent<BoxCollider>().isTrigger = true;
-            }
+            case 2:
+                if (StoryInteractableControl_Girl.isNeedHelp)
+                    gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                break;
         }
     }
 
@@ -22,28 +22,35 @@ public class StoryColliderControl_Girl : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (_whatCollider == 1)
+            switch (_whatCollider)
             {
-                if (isOnce)
-                {
-                    isOnce = false;
-                    StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._isAboveWho1 = 1;
-                    StoryDialogueControl_Girl._textCount = 30;
-                }
-            }
-            else 
-            {
-                if (!StoryNpcAnimator_Girl.isShotRunAway && !StoryNpcAnimator_Girl.isAttractWolf)
-                {
-                    StoryUIControl_Girl.isDialogue = true;
-                    StoryDialogueControl_Girl._isAboveWho1 = 1;
-                    StoryDialogueControl_Girl._textCount = 31;
-                }
-                else 
-                {
-                    Destroy(gameObject);
-                }
+                case 1:
+                    if (isOnce)
+                    {
+                        isOnce = false;
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = 1;
+                        StoryDialogueControl_Girl._textCount = 30;
+                    }
+                    break;
+
+                case 2:
+                    if (!StoryNpcAnimator_Girl.isShotRunAway && !StoryNpcAnimator_Girl.isAttractWolf)
+                    {
+                        StoryUIControl_Girl.isDialogue = true;
+                        StoryDialogueControl_Girl._isAboveWho1 = 1;
+                        StoryDialogueControl_Girl._textCount = 31;
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                    }
+                    break;
+
+                case 3:
+                    AudioSource sound = GetComponent<AudioSource>();
+                    sound.Play();
+                    break;
             }
         }
     }
