@@ -30,7 +30,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
     [Header("Npc")]
     public SpriteRenderer momotaro;
     public SpriteRenderer cat;
-    public GameObject donkey;
+    public SpriteRenderer donkey;
     public GameObject parrot;
     public static bool isParrotActive;
 
@@ -203,9 +203,9 @@ public class StoryGameControl_Momotaro : MonoBehaviour
             momotaro.enabled = true;
 
         if (StoryNpcAnimator_Momotaro._dating == 0)
-            donkey.SetActive(sceneForest.activeSelf);
+            donkey.enabled = sceneForest.activeSelf;
         else
-            donkey.SetActive(true);
+            donkey.enabled = scenePlaza.activeSelf;
     }
     void MouseCursor()
     {
