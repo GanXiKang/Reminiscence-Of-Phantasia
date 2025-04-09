@@ -70,13 +70,9 @@ public class PlayerControl_House : MonoBehaviour
     void PlayerOnTheGround()
     {
         if (!cc.isGrounded)
-        {
             _velocity.y -= _gravity * Time.deltaTime;
-        }
         else
-        {
             _velocity.y = 0;
-        }
     }
     void Animation()
     {
