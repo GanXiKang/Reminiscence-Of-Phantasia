@@ -153,29 +153,44 @@ public class StoryPlayerControl : MonoBehaviour
 
     bool isCanMove()
     {
-        return !SettingControl.isSettingActive &&
-               !StoryTeachControl.isTeachActive &&
+        switch (GameControl_House._storyNum)
+        {
+            case 1:
+                return !SettingControl.isSettingActive &&
+                       !StoryTeachControl.isTeachActive &&
 
-               StoryInteractableControl_Girl.isPlayerMove &&
-               !StoryLoadingScene_Girl.isLoading &&
-               !StoryUIControl_Girl.isDialogue &&
-               !StoryThermometerControl_Girl.isDead &&
+                       StoryInteractableControl_Girl.isPlayerMove &&
+                       !StoryLoadingScene_Girl.isLoading &&
+                       !StoryUIControl_Girl.isDialogue &&
+                       !StoryThermometerControl_Girl.isDead;
 
-               StoryInteractableControl_Momotaro.isPlayerMove &&
-               !StoryLoadingScene_Momotaro.isLoading &&
-               !StoryLoadingScene_Momotaro.isPlotAnimator &&
-               !StoryUIControl_Momotaro.isDialogue &&
-               !StoryUIControl_Momotaro.isPerformances &&
-               !StoryRiceDumpling_Momotaro.isEat &&
-               !StoryPlayerAnimator_Momotaro.isStone &&
-               !StoryStrongWind_Momotaro.isBlownAway &&
+            case 2:
+                return !SettingControl.isSettingActive &&
+                       !StoryTeachControl.isTeachActive &&
 
-               StoryInteractableControl_Prince.isPlayerMove &&
-               !StoryInteractableControl_Prince.isPlotBanMove &&
-               !StoryLoadingScene_Prince.isLoading &&
-               !StoryUIControl_Prince.isDialogue &&
-               !StoryUIControl_Prince.isSuppliesActive &&
-               !StorySkillControl_Prince.isClockActice &&
-               !StoryGhostControl_Prince.isWatchSkill;
+                        StoryInteractableControl_Momotaro.isPlayerMove &&
+                       !StoryLoadingScene_Momotaro.isLoading &&
+                       !StoryLoadingScene_Momotaro.isPlotAnimator &&
+                       !StoryUIControl_Momotaro.isDialogue &&
+                       !StoryUIControl_Momotaro.isPerformances &&
+                       !StoryRiceDumpling_Momotaro.isEat &&
+                       !StoryPlayerAnimator_Momotaro.isStone &&
+                       !StoryStrongWind_Momotaro.isBlownAway;
+
+            case 3:
+                return !SettingControl.isSettingActive &&
+                       !StoryTeachControl.isTeachActive &&
+
+                        StoryInteractableControl_Prince.isPlayerMove &&
+                       !StoryInteractableControl_Prince.isPlotBanMove &&
+                       !StoryLoadingScene_Prince.isLoading &&
+                       !StoryUIControl_Prince.isDialogue &&
+                       !StoryUIControl_Prince.isSuppliesActive &&
+                       !StorySkillControl_Prince.isClockActice &&
+                       !StoryGhostControl_Prince.isWatchSkill;
+
+            default:
+                return false;
+        }   
     }
 }
