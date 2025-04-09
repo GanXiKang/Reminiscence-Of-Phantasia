@@ -17,6 +17,9 @@ public class EntrustControl_House : MonoBehaviour
     bool isDeliverActive = false;
     bool isReceiveActive = false;
     bool isContentActive = false;
+    bool isDeliverButtonOnClick = false;
+    bool isReceiveButtonOnClick = false;
+    bool isCloseUI = false;
     int _entrustNum = 0;
 
     [Header("LetterDeliver")]
@@ -139,8 +142,11 @@ public class EntrustControl_House : MonoBehaviour
     
     public void Button_Deliver(int _letter)
     {
+        if (isDeliverButtonOnClick) return;
+
         BGM.PlayOneShot(turn);
         _entrustNum = _letter;
+        isDeliverButtonOnClick = true;
         BirdControl_House.isDeliver_Close = true;
         StartCoroutine(AnimateButtonDisappear(deliverButton[0].GetComponent<Button>(), 0f, false));
         StartCoroutine(AnimateButtonDisappear(deliverButton[3].GetComponent<Button>(), 0f, true));
@@ -149,10 +155,13 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Receive()
     {
+        if (isReceiveButtonOnClick) return;
+
         BGM.PlayOneShot(receive);
         isReceive = true;
         isReceiveActive = false;
         isDeliverActive = true;
+        isReceiveButtonOnClick = true;
         if (!alreadyReceived[_entrustNum].activeSelf)
             isAlready = true;
 
@@ -194,7 +203,10 @@ public class EntrustControl_House : MonoBehaviour
     }
     public void Button_Leave()
     {
+        if (isCloseUI) return;
+
         BGM.PlayOneShot(onClick);
+        isCloseUI = true;
         BirdControl_House.isBye = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 5;
@@ -204,6 +216,7 @@ public class EntrustControl_House : MonoBehaviour
 
     void LeaveState()
     {
+        isCloseUI = false;
         DoorControl_House.isLeave = true;
         DialogueControl_House.isAutoNext = true;
         DialogueControl_House._paragraph = 6;
@@ -263,6 +276,7 @@ public class EntrustControl_House : MonoBehaviour
             alreadyReceived[_entrustNum].SetActive(true);
             StartCoroutine(AnimateAlreadyReceived());
             isAlready = false;
+            isReceiveButtonOnClick = false;
         }
     }
     IEnumerator AnimateButtonDisappear(Button button, float delay, bool isShouldMove)
@@ -302,6 +316,7 @@ public class EntrustControl_House : MonoBehaviour
             StartCoroutine(AnimateReceiveAppear());
             isReceiveActive = true;
             isDeliverActive = false;
+            isDeliverButtonOnClick = false;
         }
     }
     IEnumerator AnimateReceiveAppear()
