@@ -45,6 +45,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     [Header("SceneFuture")]
     public GameObject futureBad;
     public GameObject futureGood;
+    public GameObject endCollider;
     public static bool isFutureGood = false;
 
     [Header("SceneSound")]
@@ -316,6 +317,7 @@ public class StoryGameControl_Prince : MonoBehaviour
     {
         futureBad.SetActive(!isFutureGood);
         futureGood.SetActive(isFutureGood);
+        endCollider.SetActive(StoryGhostControl_Prince.isAscend);
     }
     void SceneSound()
     {

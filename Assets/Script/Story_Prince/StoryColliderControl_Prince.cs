@@ -49,7 +49,7 @@ public class StoryColliderControl_Prince : MonoBehaviour
                     break;
 
                 case 5:
-                    if (StoryGhostControl_Prince.isAscend && isPrinceAppearOnce)
+                    if (isPrinceAppearOnce)
                     {
                         isPrinceAppearOnce = false;
                         StoryUIControl_Prince.isDialogue = true;
