@@ -214,11 +214,13 @@ public class GameControl_House : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
+                _day = 2;
                 _storyNum = 2;
                 InteractableControl_House.isColliderActive[3] = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
+                _day = 3;
                 _storyNum = 3;
                 InteractableControl_House.isColliderActive[3] = true;
             }
