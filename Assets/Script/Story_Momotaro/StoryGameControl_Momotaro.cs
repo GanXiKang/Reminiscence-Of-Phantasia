@@ -162,6 +162,7 @@ public class StoryGameControl_Momotaro : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.X))
             {
                 GameControl_House._day = 3;
+                GameControl_House._storyNum = 3;
                 SceneManager.LoadScene(4);
             }
             if (Input.GetKeyDown(KeyCode.Alpha8))

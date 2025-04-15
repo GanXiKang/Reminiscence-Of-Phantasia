@@ -129,6 +129,7 @@ public class StoryGameControl_Girl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.X))
             {
                 GameControl_House._day = 2;
+                GameControl_House._storyNum = 2;
                 SceneManager.LoadScene(3);
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) 
